@@ -50,7 +50,8 @@ BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("附录 J　硬核扩展：加权、有向与离散曲率（含证明）", "appendix_j_hardcore.html", "apxJ"),
         ("附录 K　登记但未展开的猜想：计算与学习", "appendix_k_conjectures.html", "apxK"),
         ("附录 L　与其他基础框架的比较", "appendix_l_comparison.html", "apxL"),
-        ("附录 M　一次失败尝试的记录：五种代数穷尽性的六框架论证", "appendix_m_failed_attempt.html", "apxM")]
+        ("附录 M　一次失败尝试的记录：五种代数穷尽性的六框架论证", "appendix_m_failed_attempt.html", "apxM"),
+        ("附录 N　O19 的开放性与证明需求", "appendix_n_o19_needs.html", "apxN")]
 
 
 def load_json(p, default=None):
