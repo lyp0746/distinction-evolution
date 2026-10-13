@@ -113,6 +113,44 @@ def nonnorm(L):
     return float(np.linalg.norm(A) / (np.linalg.norm(L) ** 2 + 1e-12))
 
 
+def defective(L, tol=1e-7):
+    """几何重数 < 代数重数（有 Jordan 块）？"""
+    ev = np.linalg.eigvals(L)
+    uniq = []
+    for e in ev:
+        for u in uniq:
+            if abs(e - u[0]) < 1e-6:
+                u[1] += 1
+                break
+        else:
+            uniq.append([e, 1])
+    for e, alg in uniq:
+        geo = len(L) - np.linalg.matrix_rank(L - e * np.eye(len(L)), tol=tol)
+        if geo < alg:
+            return 1.0
+    return 0.0
+
+
+def antisym_norm(L):
+    A = (L - L.T) / 2
+    return float(np.max(np.abs(np.linalg.eigvals(A))))
+
+
+def rayleigh_gap(L):
+    """max-Re 特征向量的对称部 Rayleigh 商与最大值之差。"""
+    Ls = (L + L.T) / 2
+    ev, evec = np.linalg.eig(L)
+    k0 = int(np.argmax(ev.real))
+    v0 = np.real(evec[:, k0])
+    v0 = v0 / (np.linalg.norm(v0) + 1e-12)
+    R0 = float(v0 @ Ls @ v0 / (v0 @ v0))
+    Rs = []
+    for k in range(len(L)):
+        vk = np.real(evec[:, k])
+        Rs.append(float(vk @ Ls @ vk / (vk @ vk + 1e-12)))
+    return max(Rs) - R0
+
+
 def negative_checks(n_trials=4000, seed=1):
     rng = np.random.default_rng(seed)
     rows = []
@@ -126,7 +164,8 @@ def negative_checks(n_trials=4000, seed=1):
             if u != v:
                 arcs.append((int(u), int(v)))
         L = lap(n, arcs)
-        rows.append((nonnorm(L), float(strong(n, arcs)), float(reversal(L, arcs))))
+        rows.append((nonnorm(L), float(strong(n, arcs)), float(reversal(L, arcs)),
+                     defective(L), antisym_norm(L), rayleigh_gap(L)))
     rows = np.array(rows)
     nn, sc, rv = rows[:, 0], rows[:, 1], rows[:, 2]
     # 分位分箱（非正规性）
@@ -142,10 +181,16 @@ def negative_checks(n_trials=4000, seed=1):
         "reversal_rate": round(float(rv.mean()), 4),
         "nonnorm_bins": bins,
         "corr_nonnorm_reversal": round(float(np.corrcoef(nn, rv)[0, 1]), 3),
+        "corr_defective_reversal": round(float(np.corrcoef(rows[:, 3], rv)[0, 1]), 3),
+        "corr_antisym_reversal": round(float(np.corrcoef(rows[:, 4], rv)[0, 1]), 3),
+        "corr_rayleigh_gap_reversal": round(float(np.corrcoef(rows[:, 5], rv)[0, 1]), 3),
+        "defective_reversal_rate": round(float(rv[rows[:, 3] > 0.5].mean()), 4) if (rows[:, 3] > 0.5).any() else None,
+        "nondefective_reversal_rate": round(float(rv[rows[:, 3] < 0.5].mean()), 4) if (rows[:, 3] < 0.5).any() else None,
         "strongly_connected_n": int(sc_mask.sum()),
         "strongly_connected_reversal_rate": (round(float(rv[sc_mask].mean()), 4) if sc_mask.sum() else None),
         "not_strongly_connected_reversal_rate": (round(float(rv[~sc_mask].mean()), 4) if (~sc_mask).sum() else None),
-        "verdict": ("非正规性与强连通性都不能预测反转；非正规性与反转率负相关。"
+        "verdict": ("五个候选判别法（非正规性、强连通性、Jordan 缺陷、反对称范数、Rayleigh 间隙）"
+                    "均不能预测反转；最强的反对称范数相关也仅 +0.13。"
                     "反转的充要条件仍是开放问题。"),
     }
 

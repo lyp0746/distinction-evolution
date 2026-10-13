@@ -35,10 +35,15 @@
       }
     ],
     "corr_nonnorm_reversal": -0.132,
+    "corr_defective_reversal": -0.074,
+    "corr_antisym_reversal": 0.132,
+    "corr_rayleigh_gap_reversal": 0.045,
+    "defective_reversal_rate": 0.062,
+    "nondefective_reversal_rate": 0.1031,
     "strongly_connected_n": 56,
     "strongly_connected_reversal_rate": 0.0714,
     "not_strongly_connected_reversal_rate": 0.0842,
-    "verdict": "非正规性与强连通性都不能预测反转；非正规性与反转率负相关。反转的充要条件仍是开放问题。"
+    "verdict": "五个候选判别法（非正规性、强连通性、Jordan 缺陷、反对称范数、Rayleigh 间隙）均不能预测反转；最强的反对称范数相关也仅 +0.13。反转的充要条件仍是开放问题。"
   },
   "open_problem": "给定非对称生成元 M=−αI+βL，刻画‘最大 Re 特征向量不是最局部模式’的充要条件。目前已知：对称 ⇒ 不反转（定理 B1）；非对称 ⇒ 可能反转（B2），但无简单结构判据。"
 }
