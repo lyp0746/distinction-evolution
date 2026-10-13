@@ -111,6 +111,12 @@
 <b>预期收益：</b>若成功，框架跨过连续—离散鸿沟。<br>
 <b>参考文献：</b>Clausen–Scholze, <i>Condensed Mathematics</i>（Lect. 1–2）；本书第 4 章。</div>
 
+<div class="define"><span class="bt">O17　独立特征复核（已执行，负面结果）</span>
+<b>当前卡点：</b>原 6.14 的 PCA 由六元组导出的特征算出，存在循环风险。<br>
+<b>第一步（已做）：</b>用 8 个与六元组无关的特征对 27 个领域重做 PCA（<code>analysis/independent_features.py</code>）。<br>
+<b>结果：</b>有效维度 <span class="s">N<sub>eff</sub> ≈ 2.9</span>，与猜想 D2 不相容。<b>该实验已于本书完成时执行；本节保留脚本与数据供重复验证。D2 因此被下调为“已被削弱的假设”。</b><br>
+<b>救回路径：</b>用真实书目计量数据（nLab/zbMATH/MSC 条目计数、Mathlib 覆盖率）重跑；数据缺口见附录 F。</div>
+
 <div class="define"><span class="bt">G7　1/3 的代数根源（前沿二）</span>
 <b>当前卡点：</b>三处 <span class="s">1/3</span> 现象（热核归一化、椭圆曲线 3-挠子群、模曲线 <span class="s">X(3)</span> 分支）是否同源尚未计算。<br>
 <b>第一步：</b>分别计算三者的 <span class="s">1/3</span> 系数并列表对比；若至少两者的数值机制相同，则"同源"获得一半证据。<br>
