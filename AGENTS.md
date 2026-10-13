@@ -30,6 +30,7 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/encoding_preservation.py # 附录 I.3 / 表 B.5 编码保结构（15 个对象）
 "$PY" analysis/independent_features.py  # O17 独立特征复核（削弱猜想 D2）
 "$PY" analysis/axiom_consistency.py    # 第 14.6.1 六公理自洽核算
+"$PY" analysis/axiom_independence.py   # 表 14.6 公理独立性预检
 "$PY" analysis/a4_wellposedness.py     # 表 14.5 A4 六领域小实例
 "$PY" analysis/forbidden_combinations.py # 第 23.5.2 禁戒可达性探测
 "$PY" analysis/boundary_probe.py       # 表 22.8 边界探测（支持 O16）

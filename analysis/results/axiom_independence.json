@@ -1,0 +1,110 @@
+{
+  "rows": [
+    {
+      "graph": "Petersen",
+      "spectrum": [
+        -0.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        2.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "A1_observation_complete": "T（托词）",
+      "A2_precision_continuous": "T（托词）",
+      "A3_curvature_bounded": "T（托词）",
+      "A4_evolution_wellposed": "T（托词）",
+      "A5_separation_complete": "C（违反：重谱）",
+      "A6_normalization": "N（不适用）",
+      "simple_spectrum": false
+    },
+    {
+      "graph": "K5",
+      "spectrum": [
+        -0.0,
+        5.0,
+        5.0,
+        5.0,
+        5.0
+      ],
+      "A1_observation_complete": "T（托词）",
+      "A2_precision_continuous": "T（托词）",
+      "A3_curvature_bounded": "T（托词）",
+      "A4_evolution_wellposed": "T（托词）",
+      "A5_separation_complete": "C（违反：重谱）",
+      "A6_normalization": "N（不适用）",
+      "simple_spectrum": false
+    },
+    {
+      "graph": "C6",
+      "spectrum": [
+        -0.0,
+        1.0,
+        1.0,
+        3.0,
+        3.0,
+        4.0
+      ],
+      "A1_observation_complete": "T（托词）",
+      "A2_precision_continuous": "T（托词）",
+      "A3_curvature_bounded": "T（托词）",
+      "A4_evolution_wellposed": "T（托词）",
+      "A5_separation_complete": "C（违反：重谱）",
+      "A6_normalization": "N（不适用）",
+      "simple_spectrum": false
+    },
+    {
+      "graph": "P8",
+      "spectrum": [
+        -0.0,
+        0.1522,
+        0.5858,
+        1.2346,
+        2.0,
+        2.7654,
+        3.4142,
+        3.8478
+      ],
+      "A1_observation_complete": "T（托词）",
+      "A2_precision_continuous": "T（托词）",
+      "A3_curvature_bounded": "T（托词）",
+      "A4_evolution_wellposed": "T（托词）",
+      "A5_separation_complete": "C（有内容）",
+      "A6_normalization": "N（不适用）",
+      "simple_spectrum": true
+    },
+    {
+      "graph": "Star6",
+      "spectrum": [
+        -0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        6.0
+      ],
+      "A1_observation_complete": "T（托词）",
+      "A2_precision_continuous": "T（托词）",
+      "A3_curvature_bounded": "T（托词）",
+      "A4_evolution_wellposed": "T（托词）",
+      "A5_separation_complete": "C（违反：重谱）",
+      "A6_normalization": "N（不适用）",
+      "simple_spectrum": false
+    }
+  ],
+  "summary": {
+    "A1_observation_complete": "托词（对所有图成立，无内容）",
+    "A2_precision_continuous": "托词（对所有图成立，无内容）",
+    "A3_curvature_bounded": "托词（对所有图成立，无内容）",
+    "A4_evolution_wellposed": "托词（对所有图成立，无内容）",
+    "A5_separation_complete": "有内容（存在满足者与违反者）",
+    "A6_normalization": "不适用"
+  },
+  "n_contentful_axioms": 1,
+  "verdict": "六条公理在图上大多为托词 => 独立性不是正确的问题；真正有内容的是 A5（及定理 15.1/14.1/12.1），不是公理组。",
+  "caveat": "有限图情形的预检；托词指'对所有图成立因而无约束'。"
+}

@@ -47,7 +47,8 @@ BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("附录 H　形式化路线图：从 sorry 到编译", "appendix_h_formalization.html", "apxH"),
         ("附录 I　工程验证记录：可运行的实验与失败", "appendix_i_engineering.html", "apxI"),
         ("附录 J　硬核扩展：加权、有向与离散曲率（含证明）", "appendix_j_hardcore.html", "apxJ"),
-        ("附录 K　登记但未展开的猜想：计算与学习", "appendix_k_conjectures.html", "apxK")]
+        ("附录 K　登记但未展开的猜想：计算与学习", "appendix_k_conjectures.html", "apxK"),
+        ("附录 L　与其他基础框架的比较", "appendix_l_comparison.html", "apxL")]
 
 
 def load_json(p, default=None):
