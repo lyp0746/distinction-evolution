@@ -17,5 +17,7 @@ run "附录 I.3：编码结构保持"               analysis/encoding_preservati
 run "附录 J：加权/有向相变（定理 B1 + 反例 B2）" analysis/weighted_directed_transition.py
 run "附录 J：离散分离曲率（定理 C）"        analysis/discrete_curvature.py
 run "附录 J：高维缺口（证伪 G4）"          analysis/higher_dim_gap.py
+run "附录 J：顺序判据 B1'（Rayleigh + 否定）" analysis/reversal_criterion.py
+run "第六部分：Fisher 曲率与能力涌现"      analysis/fisher_curvature.py
 
 echo "全部实验完成。结果写入 analysis/results/ 与 assets/charts/。"

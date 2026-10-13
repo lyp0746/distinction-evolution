@@ -108,7 +108,41 @@
 <div class="scenario"><span class="bt">这个反例的价值</span>
 它给出了一个明确的**适用边界**：定理 1.1 的“局部先于全局”在任意对称加权下稳健（定理 2.1），但在有向耦合下会失效（反例 2.1）。<b>这正是第二层战略想要的“失效条件”——一个能把理论划出边界的反例，比十个正面例子更有价值。</b>完整数据见附录 J。</div>
 
-<h3>2.8　本章小结</h3>
+<h3>2.8　顺序保持的严格刻画：Rayleigh 判据</h3>
+
+<p>第 2.6 节的证明依赖“谱定理”，但“大特征值 = 高振荡”这句话本身需要一个精确含义。本节把它写成可证的 Rayleigh 判据。</p>
+
+<div class="define"><span class="bt">定义 2.3　局部性（Rayleigh 商）</span>
+对图 <span class="s">G=(V,E)</span> 与向量 <span class="s">v</span>，定义
+<div class="eq"><span class="body">R(v) := (Σ<sub>(u,w)∈E</sub>(v<sub>u</sub>−v<sub>w</sub>)²) / (Σ<sub>v</sub>v²) = v<sup>T</sup>Lv / v<sup>T</sup>v</span><span class="num">(2.7)</span></div>
+<span class="s">R</span> 度量向量的“归一化局部变化”：<span class="s">R</span> 越大，相邻顶点差异越大，越局部。</div>
+
+<div class="define"><span class="bt">定理 2.2　Rayleigh 判据 ［定理，A／甲］</span>
+对对称拉普拉斯 <span class="s">L</span>，最大特征值 <span class="s">λ<sub>n</sub></span> 的特征向量最大化 Rayleigh 商 <span class="s">R</span>；且 <span class="s">max<sub>v</sub>R(v)=λ<sub>n</sub></span>。<b>因此“最局部的模式最先增长”对对称 L 是严格成立的</b>——它不是直觉，而是 Rayleigh 极小极大定理的推论。</div>
+
+<p><b>证明。</b>对称实矩阵的 Rayleigh 商在特征向量处取驻值，且 <span class="s">v<sup>T</sup>Lv/v<sup>T</sup>v = Σ<sub>k</sub>λ<sub>k</sub>y<sub>k</sub>²/Σ<sub>k</sub>y<sub>k</sub>²</span>（<span class="s">y<sub>k</sub></span> 为特征基系数），其最大值在 <span class="s">y</span> 集中于 <span class="s">λ<sub>n</sub></span> 处取得。∎</p>
+
+<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。［A］</p>
+
+<h3>2.9　反转的判别：一个负面结果与一个开放问题</h3>
+
+<p>定理 B1 说对称不反转，反例 B2 说非对称可反转。那么<b>能否用一个结构量预测反转？</b>两个最自然的候选是<b>非正规性</b>与<b>强连通性</b>。本节报告：<b>它们都失败。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 2.5　两个候选判别法的检验（4000 随机有向图）</b></caption>
+<tr><th class="l">候选判别法</th><th class="l">预期</th><th class="l">实际</th><th class="l">结论</th></tr>
+<tr><td class="l">非正规性 <span class="s">ν=‖LL<sup>T</sup>−L<sup>T</sup>L‖/‖L‖²</span></td><td class="l">越大越易反转</td><td class="l">相关系数 <b>−0.13</b>（负！）</td><td class="l">✗ 失败</td></tr>
+<tr><td class="l">强连通性</td><td class="l">连通则保持</td><td class="l">强连通反转率 7.1%，非强连通 8.4%</td><td class="l">✗ 失败</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>否定性数值检验。等级 A。脚本：<code>analysis/reversal_criterion.py</code>。<b>总反转率：</b>8.4%。<b>两个“显然”的判别法都不成立。</b></div>
+
+<div class="warning"><span class="bt">一个负面结果的价值</span>
+我们原本猜测“越非正规越易反转”。数据说相反：非正规性最高的四分位反转率最低（2.4%）。<b>这一否定防止了一个错的定理被写成“定理 B1'”。</b>现在能说的只有两件确凿的事：对称 ⇒ 不反转（定理 B1）；非对称 ⇒ 可能反转（B2）。</div>
+
+<div class="define"><span class="bt">开放问题 O8　反转的充要条件</span>
+给定非对称生成元 <span class="s">M=−αI+βL</span>，刻画“最大 <span class="s">Re(λ)</span> 特征向量不是最局部模式”的充要条件。<b>已知：</b>对称 ⇒ 不反转；非对称 ⇒ 可能反转。<b>未知：</b>一个可判定的结构判据。［开放，已登记附录 E］</div>
+
+<h3>2.10　本章小结</h3>
 
 <p>两阶段相变是硬核的第一个结构性结果：局部区分先于全局区分解锁，中间相宽度由 <span class="s">α(1/λ₂−1/λ<sub>n</sub>)</span> 给出。本节进一步证明：对称加权不能反转顺序（定理 2.1），但有向耦合可以（反例 2.1）。下一章给出具体图的数字与数值验证协议。</p>
 

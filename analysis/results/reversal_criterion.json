@@ -1,0 +1,44 @@
+{
+  "B1p_rayleigh_theorem": {
+    "trials": 500,
+    "max_rayleigh_is_top_eigenmode": 500,
+    "holds": true,
+    "theorem": "对称 L：λₙ 的特征向量最大化 Rayleigh 商 R(v)=Σ_e(v_u−v_v)²/Σv²。"
+  },
+  "B1p_negative_checks": {
+    "n_trials": 4000,
+    "reversal_rate": 0.084,
+    "nonnorm_bins": [
+      {
+        "nonnorm_lo": 0.0,
+        "nonnorm_hi": 0.3399,
+        "reversal_rate": 0.1134,
+        "n": 1005
+      },
+      {
+        "nonnorm_lo": 0.3399,
+        "nonnorm_hi": 0.4041,
+        "reversal_rate": 0.1101,
+        "n": 1017
+      },
+      {
+        "nonnorm_lo": 0.4041,
+        "nonnorm_hi": 0.4859,
+        "reversal_rate": 0.0837,
+        "n": 1052
+      },
+      {
+        "nonnorm_lo": 0.4859,
+        "nonnorm_hi": 0.805,
+        "reversal_rate": 0.0236,
+        "n": 1019
+      }
+    ],
+    "corr_nonnorm_reversal": -0.132,
+    "strongly_connected_n": 56,
+    "strongly_connected_reversal_rate": 0.0714,
+    "not_strongly_connected_reversal_rate": 0.0842,
+    "verdict": "非正规性与强连通性都不能预测反转；非正规性与反转率负相关。反转的充要条件仍是开放问题。"
+  },
+  "open_problem": "给定非对称生成元 M=−αI+βL，刻画‘最大 Re 特征向量不是最局部模式’的充要条件。目前已知：对称 ⇒ 不反转（定理 B1）；非对称 ⇒ 可能反转（B2），但无简单结构判据。"
+}

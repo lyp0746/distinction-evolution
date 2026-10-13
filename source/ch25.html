@@ -1,0 +1,67 @@
+<h2 class="chapter">第 25 章　开放地平线三：区分与学习</h2>
+
+<p class="lead">前两章是纯猜想。本章不同：它包含一个<b>真正运行过的实验</b>，以及一个<b>弱支持但混合</b>的结果。本章示范：即使在最思辨的方向上，也可以给出可复算的数字，而不是只有宏大的类比。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+"神经网络的能力涌现是否对应参数空间曲率的相变？"这个问题可以被<b>数值检验</b>。<b>本章报告一个合成实验：Hessian 顶特征值的峰值与能力跃迁同步，而 Fisher 信息迹的峰值不同步。结果是弱支持、且明确混合的。</b></div>
+
+<h3>25.1　把"涌现"写成一个可检验的问题</h3>
+
+<p>"能力涌现"通常被描述为"模型规模超过阈值后突然出现新能力"。这个描述不可检验，因为"突然"没有定义。把它变成可检验的问题需要两步：</p>
+
+<ol>
+<li><b>选一个可观测的"能力跃迁"。</b>本章用最简单的：训练精度从随机（低于 0.5）跃升到记忆（高于 0.9）的 epoch。</li>
+<li><b>选一个可计算的"曲率量"。</b>本章用两个：Fisher 信息迹 <span class="s">F=E[‖∇<sub>θ</sub>log p(y|x)‖²]</span>（Gauss–Newton 曲率的迹），以及 Hessian 顶特征值 <span class="s">λ<sub>max</sub></span>（幂迭代估计）。</li>
+</ol>
+
+<div class="define"><span class="bt">假说 25.1　曲率—涌现同步 ［假说，C／丙］</span>
+能力跃迁发生的 epoch，与 Fisher 迹或 Hessian 顶特征值的<b>峰值</b> epoch 相同（或接近）。<br>
+<b>证伪条件：</b>曲率峰值与能力跃迁显著不同步（相差超过若干个记录间隔）。</div>
+
+<h3>25.2　实验</h3>
+
+<p><b>设置：</b>模加法任务（<span class="s">p=23</span>），2 隐藏层 MLP（128×128），Adam（<span class="s">lr=10⁻³</span>），权重衰减 <span class="s">10⁻³</span>，训练 3000 epoch，每 200 epoch 记录一次。脚本：<code>analysis/fisher_curvature.py</code>。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 25.1　曲率与能力跃迁的同步检验（真实运行）</b></caption>
+<tr><th class="l">量</th><th class="l">峰值/跃迁 epoch</th><th class="l">是否同步</th></tr>
+<tr><td class="l">能力跃迁（train&gt;0.9）</td><td class="l">200</td><td class="l">—</td></tr>
+<tr><td class="l">Fisher 信息迹 <span class="s">F</span></td><td class="l">0（训练初期）</td><td class="l">✗ <b>不同步</b></td></tr>
+<tr><td class="l">Hessian 顶特征值 <span class="s">λ<sub>max</sub></span></td><td class="l">200</td><td class="l">✓ 同步</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>合成网络实验。等级 B（可复算）／但外部效度 C。<b>末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>判定：</b>弱支持——两个曲率量一个同步、一个不同步。</div>
+
+<div class="warning"><span class="bt">这个结果怎么读（不要过读）</span>
+<b>可以说：</b>在本次运行中，Hessian 顶特征值在能力跃迁处出现峰值，与假说一致。<br>
+<b>不可以说：</b>"涌现是曲率相变"。理由：（1）只有一个合成网络、一次运行；（2）Fisher 迹<b>不</b>同步，说明结果依赖你选哪个曲率量；（3）模型没有泛化（test=0），所以这只是<b>记忆化</b>的跃迁，不是"新能力"。（4）峰值与跃迁都是 200，但记录间隔也是 200——<b>时间分辨率不足以区分"同步"与"恰好落在同一格"</b>。</div>
+
+<h3>25.3　一个更诚实的版本：把结论降级为"可检验方向"</h3>
+
+<p>按第 5 章的分级纪律，本实验的结论应当写成：</p>
+
+<div class="define"><span class="bt">结论 25.1　（降级版）［论证，C］</span>
+曲率—涌现同步假说<b>在本次合成实验中未被否定，也未被有力支持</b>。Hessian 顶特征值与记忆化跃迁落在同一记录点，但时间分辨率不足；Fisher 迹不同步。<b>要把这个方向变成可检验的科学，至少需要：</b>（i）更细的时间分辨率；（ii）多个网络与任务；（iii）一个<b>真正的泛化跃迁</b>（grokking），而非记忆化。</div>
+
+<h3>25.4　如果要继续，应该怎么做</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 25.2　从"合成提示"到"可检验科学"的路线</b></caption>
+<tr><th class="l">步骤</th><th class="l">内容</th><th class="l">难度</th></tr>
+<tr><td class="l">1</td><td class="l">提高时间分辨率（每 10 epoch 记录），确认峰值与跃迁的相对位置</td><td class="l">低（普通计算机即可）</td></tr>
+<tr><td class="l">2</td><td class="l">训练到真正的 grokking（test 精度也跃升），检验曲率在泛化跃迁处的行为</td><td class="l">中</td></tr>
+<tr><td class="l">3</td><td class="l">在多个任务（模加法、模乘法、置换群）上重复，检验稳健性</td><td class="l">中</td></tr>
+<tr><td class="l">4</td><td class="l">用公开 LLM 检查点，计算 Fisher/Hessian 代理量，与已知涌现阈值对照</td><td class="l">高（需 torch + HF）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>路线图。等级 C。<b>注意：</b>步骤 1 是本书作者在普通计算机上就能完成的；步骤 4 需要本书构建环境所没有的资源。</div>
+
+<h3>25.5　本章小结</h3>
+
+<p>本章把"学习的几何"从一个口号变成一个可运行的实验，并诚实地报告了它的混合结果。结论是：曲率—涌现同步假说<b>未被否定也未被支持</b>，需要更细的时间分辨率和真正的泛化跃迁才能检验。<b>本章的价值不在于它发现了什么，而在于它示范了：即使在最思辨的方向上，也可以拒绝空谈，给出数字——以及数字的局限。</b></p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Amari, S. (1998). Natural gradient works efficiently in learning. <i>Neural Computation</i> 10(2).</p>
+<p>Pascanu, R., &amp; Bengio, Y. (2014). Revisiting natural gradient for deep networks. <i>ICLR</i>.</p>
+<p>Power, A., Burda, Y., Edwards, H., Babuschkin, I., &amp; Misra, V. (2022). Grokking: Generalization beyond overfitting on small algorithmic datasets. arXiv:2201.02177.</p>
+<p>Wei, J., et al. (2022). Emergent abilities of large language models. <i>Transactions on Machine Learning Research</i>.</p>
+</div>
