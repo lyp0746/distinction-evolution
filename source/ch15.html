@@ -93,6 +93,28 @@
 
 <p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"分离曲率"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
 
+
+<h3>15.6.1　这个定理的适用范围：为什么它不会在 26 个领域复制成 26 个定理</h3>
+
+<p>定理 15.1 的证明只用到一件事：生成元 <span class="s">M=−αI+βL</span> <b>自伴</b>，于是谱为 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>，两个阈值是 <span class="s">α/λ<sub>max</sub></span> 与 <span class="s">α/λ<sub>2</sub></span>；而 <span class="s">λ<sub>max</sub>≥λ<sub>2</sub></span> 使"高频／局部先解锁"成为<b>谱序的自动结果</b>。</p>
+
+<div class="warning"><span class="bt">这个论点里没有"图"</span>
+上面每一步都不依赖图：<b>对任何有限维自伴算子 <span class="s">L</span>，同样的公式成立。</b>因此把它搬到 Markov 链（可逆）、PDE 的 Laplacian、热核等<b>自伴</b>情形，得到的不是新定理，而是<b>同一条谱事实换了一个算子</b>。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 15.5　定理 15.1 的适用范围</b></caption>
+<tr><th class="l">情形</th><th class="l">是否产生新定理</th><th class="l">位置</th></tr>
+<tr><td class="l">自伴线性（图、可逆 Markov 链、PDE 的 Laplacian）</td><td class="l"><b>否</b>：同一条谱事实</td><td class="l">定理 15.1</td></tr>
+<tr><td class="l">非自伴线性（有向图）</td><td class="l"><b>是</b>：顺序可反转（反例 B2）；一般判据开放（O8）</td><td class="l">第 16 章</td></tr>
+<tr><td class="l">非线性</td><td class="l"><b>是</b>：保证衰减阈值与有限时间爆破</td><td class="l">第 18 章</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>适用范围核算。<b>等级 A／甲（可复算的代数事实）。</b>结论：<b>领域给出的是"实例"，不是"新定理"。</b></div>
+
+<p>因此，把定理 15.1 在每个领域重述一遍，不会产生 26 个硬核；它产生<b>一个硬核加 26 个实例</b>。要得到真正的新定理，必须在<b>自伴性失效</b>或<b>非线性</b>的地方下手——这正是本书已经找到反例的两处（有向图反转 B2、非线性阈值第 18 章）。</p>
+
+<div class="warning"><span class="bt">"下一个硬核在哪里"</span>
+答案不是"换一个领域重述相变"，而是 <b>O8：为非正规生成元的顺序反转给出充要判据</b>。这是本书唯一还有一个硬核空位的地方（第 16.9 节已报告：非正规性、强连通性等五个候选预测量全部失败）。<b>把它证出来，才配得上第二个 A／甲 定理。</b></div>
+
 <h3>15.7　本章小结</h3>
 
 <p>在有限图上，演化区分系统的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
