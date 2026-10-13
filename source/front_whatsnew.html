@@ -1,0 +1,40 @@
+<h1>本次新增了什么：一张对照表</h1>
+
+<p class="lead">这一页回答一个读者最先会问的问题：<b>与上一版相比，这一版增加了什么？</b>答案不是"更多框架"，而是<b>更多可复算的硬结果</b>——一个推广定理、一个反例、一个恒等式、一个证伪，以及对一个软结果的诚实降级。</p>
+
+<h2>一、硬核的变化</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 0.10　硬核的增补对照</b></caption>
+<tr><th class="l">项目</th><th class="l">上一版</th><th class="l">本版</th><th class="l">类型</th><th class="l">意义</th></tr>
+<tr><td class="l">相变定理</td><td class="l">无权图：<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span></td><td class="l">+ 对称加权推广（定理 B1）<br>+ 有向图反例（B2）</td><td class="l">推广 + 反例</td><td class="l">划出"局部先于全局"的适用边界</td></tr>
+<tr><td class="l">分离曲率</td><td class="l">仅连续情形（<span class="s">κ=R/6</span>）</td><td class="l">+ 离散恒等式 <span class="s">κ_info=Var(λ)/2</span>（C）</td><td class="l">新恒等式</td><td class="l">把"曲率=观测熵变分"精确落到图上</td></tr>
+<tr><td class="l"><span class="s">1/3</span> 缺口</td><td class="l">猜 <span class="s">f(n)=1/(2n+1)</span>，未检验</td><td class="l">球面计算<b>证伪</b>该猜想（G4）</td><td class="l">证伪</td><td class="l">证明 <span class="s">1/3</span> 是二维特有；推广须换曲率对象</td></tr>
+<tr><td class="l">轨形解释</td><td class="l">"可能成立"</td><td class="l">精确化：当且仅当无奇异点</td><td class="l">收窄</td><td class="l">每一个锥点都是一个反例</td></tr>
+<tr><td class="l"><span class="s">κ_info</span> 的用途</td><td class="l">（新引入）</td><td class="l">诚实降级：<b>不是</b>相变宽度的代理</td><td class="l">负结果</td><td class="l">秩相关 <span class="s">−0.357</span>，防止过强声称</td></tr>
+<tr><td class="l">形式化</td><td class="l">仅有路线图</td><td class="l">Lean 骨架 + 5 引理分解 + 4 瓶颈</td><td class="l">工程交付</td><td class="l">把承诺变成可接手的工单（仍未编译）</td></tr>
+<tr><td class="l">工程验证</td><td class="l">仅有玩具 ODE</td><td class="l">3 个真实运行的实验（含失败）</td><td class="l">经验证据</td><td class="l">激活探针结果混合；编码保结构有反例</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>版本对照。全部可复算，脚本见 <code>analysis/</code> 与附录 I—J。<b>净增：</b>一个推广定理、一个反例、一个恒等式、一个证伪、一个收窄、一个负结果。</div>
+
+<h2>二、结构的变化：硬核先行的物理重排</h2>
+
+<p>上一版的问题不是内容不足，而是<b>顺序不对</b>：读者要先读方法论与框架，才看到第一个严格定理。本版把顺序倒过来。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 0.11　结构对照</b></caption>
+<tr><th class="l">位置</th><th class="l">上一版</th><th class="l">本版</th></tr>
+<tr><td class="l">第 1 部分</td><td class="l">方法论与框架</td><td class="l"><b>硬核定理</b>（相变、加权、有向、离散曲率）</td></tr>
+<tr><td class="l">第 2 部分</td><td class="l">框架演示</td><td class="l">框架的反向推导（从定理反推六条公理）</td></tr>
+<tr><td class="l">第 3 部分</td><td class="l">EDS 框架</td><td class="l">压缩演示（微分形式、生成拓扑、非标准分析、类型论）</td></tr>
+<tr><td class="l">第 4 部分</td><td class="l">硬核定理</td><td class="l">连续情形与 <span class="s">1/3</span> 缺口</td></tr>
+<tr><td class="l">第 5、6 部分</td><td class="l">连续与新领域</td><td class="l">新领域展望与路线图</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>结构对照。<b>关键：</b>硬核不再是"读者坚持到第 150 页才看到的奖励"，而是全书的入口。</div>
+
+<h2>三、没变的东西（重要）</h2>
+
+<p>本版没有增加新的宏大承诺。<b>框架仍然只承诺 U1（同约束）级别的统一</b>；连续情形的对应仍然是工具性的（B 级）；轨形解释仍然未证。<b>增加的是"兑现"，不是"宣称"。</b></p>
+
+<div class="scenario"><span class="bt">如果你只想看新的硬结果</span>
+读第 1 部分（第 1—4 章的相变定理与它的推广/反例）、第 7.6 节（离散分离曲率）、附录 J（完整证明与数值）。这三处包含了本版全部的新增硬核。<b>其余部分是诠释与推广。</b></div>
