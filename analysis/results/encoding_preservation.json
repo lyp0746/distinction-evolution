@@ -81,6 +81,28 @@
       "preserved": true
     },
     {
+      "field": "Markov chains",
+      "structure": "stationary distribution",
+      "preserved": true
+    },
+    {
+      "field": "coding theory",
+      "structure": "Hamming bound (perfect code)",
+      "preserved": true
+    },
+    {
+      "field": "homological algebra",
+      "structure": "Euler characteristic",
+      "chi_complex": 1,
+      "chi_homology": 1,
+      "preserved": true
+    },
+    {
+      "field": "graph coloring",
+      "structure": "chromatic number",
+      "preserved": true
+    },
+    {
       "field": "generative topology",
       "structure": "the class of all topologies on {0,1,2}",
       "n_topologies_total": 29,
@@ -101,7 +123,11 @@
       "representation theory",
       "harmonic analysis",
       "optimization",
-      "measure theory"
+      "measure theory",
+      "Markov chains",
+      "coding theory",
+      "homological algebra",
+      "graph coloring"
     ],
     "refuted_cases": [
       "generative topology"

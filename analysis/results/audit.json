@@ -39,7 +39,7 @@
       "first": "ch08.html"
     },
     "区分动作": {
-      "total": 76,
+      "total": 77,
       "by_chapter": [
         [
           "ch02.html",
@@ -87,7 +87,7 @@
         ],
         [
           "ch22.html",
-          6
+          7
         ],
         [
           "ch23.html",
@@ -127,7 +127,7 @@
       "first": "ch11.html"
     },
     "不可区分": {
-      "total": 20,
+      "total": 21,
       "by_chapter": [
         [
           "ch04.html",
@@ -151,7 +151,7 @@
         ],
         [
           "ch22.html",
-          2
+          3
         ],
         [
           "ch26.html",
@@ -475,7 +475,7 @@
       "first": "ch06.html"
     },
     "生成拓扑": {
-      "total": 20,
+      "total": 28,
       "by_chapter": [
         [
           "ch02.html",
@@ -499,7 +499,7 @@
         ],
         [
           "ch22.html",
-          2
+          10
         ],
         [
           "ch27.html",
@@ -603,7 +603,7 @@
       "first": "ch01.html"
     },
     "单价公理": {
-      "total": 11,
+      "total": 12,
       "by_chapter": [
         [
           "ch01.html",
@@ -611,7 +611,7 @@
         ],
         [
           "ch05.html",
-          4
+          5
         ],
         [
           "ch06.html",
@@ -773,7 +773,7 @@
       "first": "ch03.html"
     },
     "可证伪": {
-      "total": 23,
+      "total": 24,
       "by_chapter": [
         [
           "ch01.html",
@@ -797,6 +797,10 @@
         ],
         [
           "ch20.html",
+          1
+        ],
+        [
+          "ch22.html",
           1
         ],
         [
@@ -825,11 +829,11 @@
       "first": "ch03.html"
     },
     "有效维度": {
-      "total": 8,
+      "total": 10,
       "by_chapter": [
         [
           "ch22.html",
-          8
+          10
         ]
       ],
       "first": "ch22.html"
@@ -1155,6 +1159,7 @@
       "ch06.html",
       "ch10.html",
       "ch14.html",
+      "ch22.html",
       "ch26.html"
     ],
     "15": [
@@ -2116,6 +2121,9 @@
     ],
     "Program": [
       "2013"
+    ],
+    "Voevodsky": [
+      "2014"
     ]
   },
   "A6_defined": {
