@@ -197,6 +197,27 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <b>技术性未验证（20 格）：</b>结构存在、公理可陈述、但尚未计算——A3（15 格）与 A4（5 格）。<br>
 <b>含义：</b>"未验证 95→89"这个数字里，<b>只有约 20 格是"可以算但没算"，其余 69 格是"公理在那里无效"</b>。这把"框架在非图论领域未被检验"进一步精确为"框架的公理多数在非图论领域<b>无法被陈述</b>"。</div>
 
+
+<h4>14.6.3　反向工程：定理 15.1 强迫了六元组中的哪几项？</h4>
+
+<p>独立性预检问的是"公理之间是否独立"。一个更根本的问题：<b>六元组的六个项，哪几项是定理 15.1 真正用到的？</b>逐项移除、看定理能否仍被陈述与证明（脚本 <code>analysis/reverse_engineer.py</code>）：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 14.7　定理 15.1 与六元组各项的关系</b></caption>
+<tr><th class="l">项</th><th class="l">被定理 15.1 使用？</th><th class="l">在何处出现</th></tr>
+<tr><td class="l">X　对象集</td><td class="l">是</td><td class="l">L 定义在顶点集 X 上</td></tr>
+<tr><td class="l">𝒟　区分动作族</td><td class="l">是</td><td class="l">L（邻接/边）即区分结构；谱由 𝒟 决定</td></tr>
+<tr><td class="l">O　观测泛函</td><td class="l">是</td><td class="l">状态向量 D 即观测；ODE 描述 D 的演化</td></tr>
+<tr><td class="l">∼　不可区分关系</td><td class="l"><b>否</b></td><td class="l">定理纯谱，未出现任何等价关系</td></tr>
+<tr><td class="l">κ　分离曲率</td><td class="l"><b>否（下游导出）</b></td><td class="l"><span class="s">κ=Var(λ)/2</span> 是定理 12.1 的导出量，不是 15.1 的输入</td></tr>
+<tr><td class="l">Φ　演化流</td><td class="l">是</td><td class="l"><span class="s">Ḋ=(−αI+βL)D</span> 及其解即 Φ</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>反向工程。<b>等级 B／乙（概念核查，非机器证明）。</b>判据：该项是否出现在定理的陈述或证明里。</div>
+
+<div class="warning"><span class="bt">结论：六元组在图上不是最小的</span>
+定理 15.1 只强迫 <b>(X, 𝒟, O, Φ)</b> 四项；<b>∼ 未被使用，κ 是下游导出</b>。也就是说，在图上，六元组是"<b>四项 + 一个导出量 + 一个未用项</b>"。<br>
+这与 14.6.2 的独立性预检一致：六元组不是被定理逼出来的最小结构，而是一套<b>词汇表</b>——它把相关概念组织在一起，但内容只用到其中四项。<b>把这个结果写出来，比维护"六元组对称美观"更有用。</b>［结论，B／乙（图论情形）］</div>
+
 <h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
 
 <p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>

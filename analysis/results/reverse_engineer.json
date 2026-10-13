@@ -1,0 +1,53 @@
+{
+  "theorem": "定理 15.1(有限图两阶段相变)",
+  "rows": [
+    {
+      "item": "X　对象集",
+      "needed": true,
+      "where": "L 定义在顶点集 X 上",
+      "removed": "移除后无载体，L 与 D 都无从定义"
+    },
+    {
+      "item": "D　区分动作族",
+      "needed": true,
+      "where": "L(邻接/边)即区分结构；谱由 D 决定",
+      "removed": "移除后没有谱，定理无法陈述"
+    },
+    {
+      "item": "O　观测泛函",
+      "needed": true,
+      "where": "状态向量 D 即观测；ODE 描述 D 的演化",
+      "removed": "移除后没有可谈论的'区分强度'"
+    },
+    {
+      "item": "~　不可区分关系",
+      "needed": false,
+      "where": "定理纯谱，未出现任何等价关系",
+      "removed": "移除后定理陈述与证明均不变 ⇒ 非必要"
+    },
+    {
+      "item": "k　分离曲率",
+      "needed": false,
+      "where": "k=Var(lam)/2 是定理 12.1 的导出量，不是 15.1 的输入",
+      "removed": "移除后定理不变；k 是下游导出"
+    },
+    {
+      "item": "Phi　演化流",
+      "needed": true,
+      "where": "D'=(-alphaI+betaL)D 及其解 e^{tM} 即 Phi",
+      "removed": "移除后没有动力学，临界耦合无从谈起"
+    }
+  ],
+  "minimal_set": [
+    "X　对象集",
+    "D　区分动作族",
+    "O　观测泛函",
+    "Phi　演化流"
+  ],
+  "not_forced": [
+    "~　不可区分关系",
+    "k　分离曲率"
+  ],
+  "conclusion": "定理 15.1 只强迫 X、D、O、Phi 四项；~ 未被使用，k 是下游导出(定理 12.1)。因此在图上，六元组不是最小结构：它是四项 + 一个导出量 + 一个未用项。",
+  "caveat": "概念核查(B／乙)，非机器证明；判据是'是否出现在定理的陈述/证明中'。"
+}
