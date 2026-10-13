@@ -1,5 +1,5 @@
 # 区分的演化
-### 统一值不值：一套压缩方法、一个可复算的硬核、一堵没绕开的墙
+### 统一值不值——一套压缩方法、一个图上的硬核定理、三次自我检视，与一堵没绕开的墙
 
 > **The Evolution of Distinction** — From a Graph-Theoretic Hard Core to a Program for Unification: Axioms, Reproducible Results, and a Declaration of Limits
 

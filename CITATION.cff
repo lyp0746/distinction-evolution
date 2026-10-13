@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below. 若使用本作，请按下述格式引用。"
 type: book
-title: "区分的演化：统一值不值——一套压缩方法、一个可复算的硬核、一堵没绕开的墙 / The Evolution of Distinction: Is Unification Worth It? A Compression Method, a Reproducible Hard Core, and a Wall Left Standing"
+title: "统一值不值——一套压缩方法、一个图上的硬核定理、三次自我检视，与一堵没绕开的墙 / Is Unification Worth It? A Compression Method, a Graph-Theoretic Theorem, Three Self-Checks, and a Wall Left Standing"
 abstract: >-
   本书把"抽象统摄具体"写成可操作的方法（压缩），把它实现为一个形式框架——
   演化区分系统（EDS），并在有限图上给出一个完整、可复现的相变定理：区分耦合越过
