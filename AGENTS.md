@@ -45,8 +45,8 @@ bash scripts/verify-experiments.sh   # 一键复现全部数值实验
 bash scripts/build.sh                # audit→印刷PDF→电子阅读PDF→EPUB→Markdown
 bash scripts/validate.sh             # 校对 + EPUB 结构校验
 bash scripts/release.sh              # 组装 release/
-"$PY" scripts/create_github_release_per_artifact.py --list
-"$PY" scripts/create_github_release_per_artifact.py --date 2026-10-13   # 一个产物一个 tag
+# 发布：单一 release（含全部产物）；详见下方“仓库约定”
+"$PY" scripts/create_github_release_single.py --date 2026-10-13
 ```
 
 ## 仓库约定
@@ -55,7 +55,7 @@ bash scripts/release.sh              # 组装 release/
 - 图表：脚本输出 `assets/svg/*.svg`；正文用相对路径 `assets/svg/...` 引用。
 - 改正文后顺序：`analysis/make_figures.py`（如改图）→ `analysis/audit.py` → `bash scripts/build.sh`。
 - 结论标注：证据等级 A/B/C 与概念等级 甲/乙/丙 双重标注；全书数字必须带等级。
-- **一个产物一个 tag**：`scripts/create_github_release_per_artifact.py` 为每个产物各建一个 tag/release，每个 release 只承载一个资产。
+- **单一 release**：本仓库只保留**一个** release（tag `edition-<日期>`），一次承载全部产物（PDF/EPUB/HTML/Markdown/封面/说明）。**不要**再创建 per-artifact 的 release/tag；更新用 `--refresh` 覆盖同名资产。历史脚本 `create_github_release_per_artifact.py` 已弃用。
 - **可证伪登记簿**（`source/appendix_e_preregistration.html` 与 `docs/preregistration/`）为 **append-only**：只追加，绝不改写旧行。
 - **正文与元数据不含版本号**；日期使用真实完成日期（`source/book.json` 单一来源）。
 

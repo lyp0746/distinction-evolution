@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-"""create_github_release_per_artifact.py — 一个产物一个 tag：为每个发布产物各建一个 GitHub Release。
+"""create_github_release_per_artifact.py — [已弃用] 一个产物一个 tag。
+
+本仓库现行约定是「单一 release」（见 create_github_release_single.py）；保留本脚本仅作参考。
+
 
 与 ``create_github_release.py``（单 release 多资产）相对。当每个产物需要被独立引用／
 独立归档（例如各获得一个 Zenodo 版本 DOI）时使用本脚本。
