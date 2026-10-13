@@ -79,6 +79,7 @@
 <li><b>只追加。</b>核销以新行追加到 <code>docs/preregistration/checkups.csv</code>；旧行永不修改。</li>
 <li><b>报告差异。</b>核销时须写明"原始预测／实际观察／是否命中／差异原因"。</li>
 <li><b>失败也是结果。</b>被证伪的命题以原样保留，并标记为"已证伪"。</li>
+<li><b>版本控制。</b>本登记簿的"只追加"由 Git 历史强制：核销以新行追加到 <code>docs/preregistration/checkups.csv</code>，旧行不修改；任何修改旧行的提交都能从历史中被检出。脚本 <code>analysis/preregistration_checkup.py</code> 另行校验结构与日期顺序。</li>
 </ol>
 
 <div class="warning"><span class="bt">本登记簿的现状</span>

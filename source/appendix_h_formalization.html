@@ -21,6 +21,16 @@
 <tr><td class="l">5</td><td class="l"><code>critical_coupling</code>：三情形符号分析</td><td class="l">高</td><td class="l">有限主项提取 + 指数增长 <code>Filter.Tendsto</code></td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>形式化任务分解。等级乙（作者判断）。<b>建议：</b>先完成 1、2，它们可以在一天内真正编译通过，从而把"承诺"变成"第一个已编译引理"。</div>
+<table class="nat">
+<caption class="cap"><b>表 H.2　形式化工作量评估</b></caption>
+<tr><th class="l">引理</th><th class="l">难度</th><th class="l">预计工作量</th><th class="l">风险</th></tr>
+<tr><td class="l">1 intermediate_phase_nonempty</td><td class="l">低</td><td class="l">数小时</td><td class="l">低</td></tr>
+<tr><td class="l">2 laplacian_symm</td><td class="l">低</td><td class="l">数小时</td><td class="l">低</td></tr>
+<tr><td class="l">3 evolution_is_solution</td><td class="l">中</td><td class="l">数天</td><td class="l">中（接口适配）</td></tr>
+<tr><td class="l">4 spectral_decomposition</td><td class="l">高</td><td class="l">一周以上</td><td class="l">高（Mathlib API 漂移）</td></tr>
+<tr><td class="l">5 critical_coupling</td><td class="l">高</td><td class="l">一周以上</td><td class="l">高</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>工作量评估。<b>等级乙（作者判断）。</b>总量随 Mathlib 版本漂移；引理 1、2 是最可能先兑现的部分。</div>
 
 <h2>H.3　四个关键瓶颈</h2>
 
