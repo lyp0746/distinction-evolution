@@ -94,7 +94,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <p>前面几章反复声明“只有公理 4 在图上被完整验证”。本节把这个状态<b>逐条核算清楚</b>，并给出一个此前的遗漏：<b>公理 5 在图论中有一条真正的定理</b>。同时本节诚实报告：<b>公理 1 与公理 2 在图上可证为平凡——找不到非平凡的定理。</b></p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.1　六条公理在图论情形的精确状态（可核算）</b></caption>
+<caption class="cap"><b>表 14.2　六条公理在图论情形的精确状态（可核算）</b></caption>
 <tr><th class="l">公理</th><th class="l">图论状态</th><th class="l">依据</th></tr>
 <tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
 <tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
@@ -117,7 +117,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <p><b>证明。</b>（i）谱投影是特征空间的止交投影，由 <span class="s">L</span> 唯一确定。（ii）若 <span class="s">dim E<sub>k</sub>=1</span>，则 <span class="s">E<sub>k</sub></span> 内只有一个单位向量（差符号），故 rank-1 原子唯一；若 <span class="s">dim E<sub>k</sub>&gt;1</span>，则可在 <span class="s">E<sub>k</sub></span> 内任意旋转正交基，得到不同的 rank-1 分解。（iii）拼接所有 <span class="s">k</span>。∎</p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.2　测试图的光谱多重度（公理 5）</b></caption>
+<caption class="cap"><b>表 14.3　测试图的光谱多重度（公理 5）</b></caption>
 <tr><th class="l">图</th><th class="l">单谱？</th><th class="l">重数分布</th><th class="l">原子分解</th></tr>
 <tr><td class="l">P₈（路径）</td><td class="l"><b>是</b></td><td class="l">[1,1,1,1,1,1,1,1]</td><td class="l"><b>唯一</b></td></tr>
 <tr><td class="l">Petersen</td><td class="l">否</td><td class="l">[1,5,4]</td><td class="l">不唯一</td></tr>
@@ -127,6 +127,26 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>定理 + 计算。等级 A／甲。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
+
+<h3>14.6.1　六条公理在 27 个领域中的核算：一次"空框架"自检</h3>
+
+<p>表 14.1 只对比了三个领域。用脚本 <code>analysis/axiom_consistency.py</code> 把核算推广到全部 27 个编码领域，得到一张不太好看、但必须公开的表（未验证／不适用占绝大多数）：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 14.4　六条公理在 27 个领域中的状态汇总</b></caption>
+<tr><th class="l">公理</th><th class="l">成立</th><th class="l">平凡</th><th class="l">不适用</th><th class="l">未验证</th></tr>
+<tr><td class="l">A1 观测完备</td><td class="l">0</td><td class="l">1</td><td class="l">0</td><td class="l">26</td></tr>
+<tr><td class="l">A2 精度连续</td><td class="l">0</td><td class="l">11</td><td class="l">0</td><td class="l">16</td></tr>
+<tr><td class="l">A3 曲率有界</td><td class="l">1</td><td class="l">0</td><td class="l">11</td><td class="l">15</td></tr>
+<tr><td class="l">A4 演化适定</td><td class="l">1</td><td class="l">0</td><td class="l">15</td><td class="l">11</td></tr>
+<tr><td class="l">A5 分离完备</td><td class="l">1</td><td class="l">0</td><td class="l">0</td><td class="l">26</td></tr>
+<tr><td class="l">A6 标准化</td><td class="l">0</td><td class="l">0</td><td class="l">26</td><td class="l">1</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>公理自检。<b>等级 B／乙（元数据机械推导；脚本可复算）。</b>规则见脚本注释：只有图论列是已核算的，其余为按"是否有限、演化流类型"的机械推导。总计 162 个格子：<b>成立 3、平凡 12、不适用 52、未验证 95。</b></div>
+
+<div class="warning"><span class="bt">这张表说了什么（诚实结论）</span>
+六个公理里，"成立"的格子总共只有 <b>3 个，全部在图论</b>；而"未验证"有 <b>95 个</b>、"不适用"有 <b>52 个</b>。也就是说：<b>EDS 作为"框架"的严格内容，几乎全部来自图论这一个实例；在其余 26 个领域里，六条公理的地位是"待验证"或"不适用"，不是"默认成立"。</b><br>
+这把前言里"框架（B）"的说法精确化：<b>B 指的是"有论证的组织方式"，不是"27 个领域都满足的公理系统"。</b>把这层说清楚，比让读者以为六条公理已被普遍验证要诚实得多——这也是本章最该记住的一句。</div>
 
 <h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
 
@@ -145,7 +165,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <div class="note"><b>本章清单</b>
 <ul>
 <li><b>⊗ 可引用（A）：</b>定理 14.1（原子分解唯一 ⟺ 单谱，公理 5 的图论版）；笛卡尔积图相变结构推论。</li>
-<li><b>⊕ 有论证（B）：</b>定义 14.1（EDS 六元组）；六条公理；表 14.1（公理在图上的真实状态）。</li>
+<li><b>⊕ 有论证（B）：</b>定义 14.1（EDS 六元组）；六条公理；表 14.1、14.2（公理的跨域与图论状态）；表 14.4（27 领域自检：成立仅 3 格）。</li>
 <li><b>○ 启发／描述（C）：</b>公理 1、2 在图上平凡（否定性结论）；“为每条公理编一个定理”不可能。</li>
 <li><b>？ 未解决：</b>公理 3、4 之外的公理在连续情形的状态。</li>
 <li><b>↔ 连接：</b>从第 15 章定理反推而来；面向第 19—25 章的边界。</li>
