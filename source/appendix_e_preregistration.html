@@ -10,18 +10,18 @@
 <table class="nat">
 <caption class="cap"><b>表 E.1　硬核结果的可复现登记</b></caption>
 <tr><th class="l">编号</th><th class="l">命题</th><th class="l">证据</th><th class="l">核验方式</th></tr>
-<tr><td class="l">H1</td><td class="l">连通图的临界耦合为 <span class="s">β₁=α/λ<sub>n</sub></span>、<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">定理 12.1（完整证明）</td><td class="l">运行协议 V1（附录 A.5）</td></tr>
+<tr><td class="l">H1</td><td class="l">连通图的临界耦合为 <span class="s">β₁=α/λ<sub>n</sub></span>、<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">定理 15.1（完整证明）</td><td class="l">运行复现协议（附录 A.5）</td></tr>
 <tr><td class="l">H2</td><td class="l">Petersen 图临界值为 (0.2, 0.5)（α=1）</td><td class="l">谱计算</td><td class="l"><code>numpy.linalg.eigvalsh</code></td></tr>
 <tr><td class="l">H3</td><td class="l">路径图中间相宽度随 n² 增长</td><td class="l">渐近谱公式</td><td class="l">对 n=10,20,40 数值验证</td></tr>
-<tr><td class="l">H4</td><td class="l">对称非线性系统爆破时间由式 (15.4) 给出</td><td class="l">命题 15.1</td><td class="l">数值积分比较</td></tr>
-<tr><td class="l">H5</td><td class="l">保证衰减阈值 <span class="s">α/[β(1−1/k)]</span> 对所有分布成立</td><td class="l">定理 15.1</td><td class="l">随机分布数值检验</td></tr>
-<tr><td class="l">H6</td><td class="l">对称加权图：<span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立（顺序不可反转）</td><td class="l">定理 13.1 / J.1</td><td class="l">400 随机加权图扫描</td></tr>
-<tr><td class="l">H7</td><td class="l">有向图弧集 (0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2) 上顺序反转</td><td class="l">反例 13.1 / J.3</td><td class="l">特征值 + 总变差计算</td></tr>
-<tr><td class="l">H8</td><td class="l">离散分离曲率 <span class="s">κ_info=Var(λ)/2</span></td><td class="l">定理 9.1 / J.2</td><td class="l">有限差分验证（误差 &lt;10⁻⁶）</td></tr>
-<tr><td class="l">H9</td><td class="l">对称 L：最大特征值模式最大化 Rayleigh 商</td><td class="l">定理 13.2 / J.3</td><td class="l">500/500 数值验证</td></tr>
-<tr><td class="l">H11</td><td class="l">原子分解唯一 ⟺ 单谱（公理 5 的图论定理）</td><td class="l">定理 11.1 / J.5</td><td class="l">7 图光谱多重度计算</td></tr>
-<tr><td class="l">H12</td><td class="l">公理 1 在图上平凡（谱嵌入必单射）</td><td class="l">表 11.1 / J.8（否定性）</td><td class="l">min row distance 全正</td></tr>
-<tr><td class="l">H10</td><td class="l">非正规性与强连通性<b>不能</b>预测反转（负结果）</td><td class="l">表 13.5 / J.7</td><td class="l">4000 随机有向图；相关系数 −0.13</td></tr>
+<tr><td class="l">H4</td><td class="l">对称非线性系统爆破时间由式 (18.4) 给出</td><td class="l">命题 18.1</td><td class="l">数值积分比较</td></tr>
+<tr><td class="l">H5</td><td class="l">保证衰减阈值 <span class="s">α/[β(1−1/k)]</span> 对所有分布成立</td><td class="l">定理 18.1</td><td class="l">随机分布数值检验</td></tr>
+<tr><td class="l">H6</td><td class="l">对称加权图：<span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立（顺序不可反转）</td><td class="l">定理 16.1 / J.1</td><td class="l">400 随机加权图扫描</td></tr>
+<tr><td class="l">H7</td><td class="l">有向图弧集 (0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2) 上顺序反转</td><td class="l">反例 16.1 / J.3</td><td class="l">特征值 + 总变差计算</td></tr>
+<tr><td class="l">H8</td><td class="l">离散分离曲率 <span class="s">κ_info=Var(λ)/2</span></td><td class="l">定理 12.1 / J.2</td><td class="l">有限差分验证（误差 &lt;10⁻⁶）</td></tr>
+<tr><td class="l">H9</td><td class="l">对称 L：最大特征值模式最大化 Rayleigh 商</td><td class="l">定理 16.2 / J.3</td><td class="l">500/500 数值验证</td></tr>
+<tr><td class="l">H11</td><td class="l">原子分解唯一 ⟺ 单谱（公理 5 的图论定理）</td><td class="l">定理 14.1 / J.5</td><td class="l">7 图光谱多重度计算</td></tr>
+<tr><td class="l">H12</td><td class="l">公理 1 在图上平凡（谱嵌入必单射）</td><td class="l">表 14.1 / J.8（否定性）</td><td class="l">min row distance 全正</td></tr>
+<tr><td class="l">H10</td><td class="l">非正规性与强连通性<b>不能</b>预测反转（负结果）</td><td class="l">表 16.5 / J.7</td><td class="l">4000 随机有向图；相关系数 −0.13</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>已证结果登记。等级 A。<b>这些不是"待证伪"的假说，而是"待复现"的结论；若复现失败，说明本书有误。</b></div>
 
@@ -66,7 +66,7 @@
 <tr><td class="l">A3</td><td class="l">时变图的失稳区域大于单个图失稳区域的并</td><td class="l">B</td><td class="l">构造反例：切换提高了稳定性</td><td class="l">中期（2027）</td></tr>
 <tr><td class="l">A4</td><td class="l">加权图局部阈值下降而全局阈值不变</td><td class="l">B</td><td class="l">构造权重使全局阈值显著改变</td><td class="l">短期（2026）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>应用层登记。A1、A2 依赖第 15.5 节的假说，标注 C。<b>本书不主张 A1/A2 已被验证。</b></div>
+<div class="datasrc"><b>性质：</b>应用层登记。A1、A2 依赖第 18.5 节的假说，标注 C。<b>本书不主张 A1/A2 已被验证。</b></div>
 
 <h2>E.5　登记纪律</h2>
 

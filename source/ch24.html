@@ -1,0 +1,84 @@
+<h2 class="chapter">第 24 章　涌现的新领域（○ 展望）</h2>
+
+<p class="lead">第 23 章的三条轴留下若干空缺。本章评估这些空缺中最有前景的几个，把它们组织成候选新领域，并按"是否值得投入"排序。<b>评估标准是第 2 章的 P3（问题解决力）：一个候选领域只有在能提出可写的、可检验的新命题时，才值得投入。</b></p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+框架暴露出的空缺提示了若干候选新领域：区分几何学、时间区分理论、超有限李理论、演化数论、量子区分理论、区分机器学习理论。<b>本章按 P3 给它们排序，并明确指出：区分几何学与时间区分理论最值得投入，其余次之。</b></div>
+
+<h3>24.1　导论：新领域从哪里来</h3>
+
+<p>新领域通常不是凭空发明的，而是从已有结构的空缺处生长出来的。第 23 章的空缺表给出了搜索方向。本章把每个候选逐步展开：定义、核心定理候选、应用、可行性。</p>
+
+<p>评估一个候选领域是否值得投入，用一个三问清单：<b>（1）它是否有清晰的基本对象？</b>（2）它是否至少有一个可写的、可能被证明的核心命题？<b>（3）它是否与已有领域有可检验的联系？</b>三问全过者列为第一梯队。</p>
+
+<h3>24.2　区分几何学</h3>
+
+<div class="define"><span class="bt">候选领域 21.1　区分几何学［第一梯队，C］</span>
+<b>基本对象：</b>区分流形 <span class="s">(M,D,κ)</span>。<b>核心命题：</b>分离 Gauss–Bonnet（式 19.3）与高维缺口因子 <span class="s">f(n)</span>。<b>应用：</b>信息几何、LLM 潜在空间的几何分析。<b>可行性：</b>局部定义已完成；缺口需要新构造。</div>
+
+<p>区分几何学是第 19—21 章的直接产物。它落在第 23 章"度量×负×连续"与"拓扑×正×连续"两个空缺格子上。<b>它的第一优先级来自一个具体的技术问题：<span class="s">1/3</span> 缺口。</b>有具体问题，就有具体进展的可能。</p>
+
+<h3>24.3　时间区分理论</h3>
+
+<div class="define"><span class="bt">候选领域 21.2　时间区分理论［第一梯队，C］</span>
+<b>基本对象：</b>时间区分系统 <span class="s">(𝒯,D,Φ)</span>。<b>核心命题：</b>时间涌现定理（命题 13.1）的严格化。<b>应用：</b>统一微分方程、动力系统、概率、量子中的"时间"。<b>可行性：</b>图的迭代情形已证；连续情形需证明 <span class="s">κ<sub>net</sub></span> 单调性。</div>
+
+<p>时间区分理论落在"序×正×连续"与"逻辑×正×连续"两个空缺格子上。它的吸引力在于概念统一，困难在于严格化。</p>
+
+<h3>24.4　超有限李理论</h3>
+
+<div class="define"><span class="bt">候选领域 21.3　超有限李理论［第二梯队，C］</span>
+<b>基本对象：</b>超有限李群 <span class="s">*G</span>、超有限李代数 <span class="s">*𝔤</span>。<b>核心命题：</b>超有限 Peter–Weyl（有限直和）、超有限特征标公式。<b>应用：</b>量子场论的规范群、质量间隙的表示论表述。<b>可行性：</b>依赖非标准分析基础。</div>
+
+<p>这个领域把第 9 章的超有限方法推到李群。它的风险是：非标准分析的李理论可能只是把已有结果重新包装，而不产生新内容（P3 未过）。因此列为第二梯队。<b>本书已把它落到实处：</b>附录 I.5 给出超有限李群的定义与一个可证伪命题（超有限 Peter–Weyl），并明确写出“它可能是空壳”的风险——在证明完成前，不再称它为“新理论”。</p>
+
+<h3>24.5　演化数论与量子区分理论</h3>
+
+<div class="define"><span class="bt">候选领域 21.4　演化数论［第三梯队，C］</span>
+<b>基本对象：</b>算术演化系统 <span class="s">(Spec Z, D, Φ, κ)</span>。<b>核心命题：</b>素数分布的动力学重述；黎曼假设的曲率表述。<b>风险：</b>黎曼假设的曲率表述极易滑向不可证伪的隐喻；需要严格的零点计数对应。</div>
+
+<div class="define"><span class="bt">候选领域 21.5　量子区分理论［第二梯队，C］</span>
+<b>基本对象：</b>量子区分系统 <span class="s">(H, D, κ)</span>（POVM 为区分动作，纠缠熵增长为曲率）。<b>核心命题：</b>纠缠熵 = 分离曲率积分；量子相变 = 曲率奇点。<b>风险：</b>与已有量子信息论重叠严重，需要明确它提供了什么新工具。</div>
+
+<p>演化数论与量子区分理论都容易变成"用新词重述旧结果"。它们的价值取决于是否能给出一个旧框架没有的预言。目前都没有。</p>
+
+<h3>24.6　区分机器学习理论</h3>
+
+<div class="define"><span class="bt">候选领域 21.6　区分机器学习理论［第一梯队，C］</span>
+<b>基本对象：</b>学习区分系统 <span class="s">(X, Y, D, κ)</span>。<b>核心命题：</b>泛化误差界 <span class="s">≤ κ·√(VCdim/n)</span>；涌现 = 分离曲率相变；对齐税 = 新旧分离器冲突度。<b>应用：</b>预测 LLM 涌现阈值、控制语义漂移。<b>可行性：</b>有大量可获得的公开训练数据可供事后检验。</div>
+
+<p>区分机器学习理论落在"线性×正×连续"空缺格子上。<b>本书已给出第一个可复算的实验（附录 I.1）：</b>在模加法任务上训练 MLP，逐层测量激活与有效秩；结果是混合的（一层支持耦合、一层反例）。它是候选领域中最容易与经验数据对接的一个——训练过程中的激活、损失、涌现现象都有公开记录。<b>它的 P3 门槛是：能否给出一个可被独立实验验证的定量预言。</b>第 18.5 节的阈值假说是朝这个方向的一次尝试，但标注为 C。</p>
+
+<h3>24.7　优先级评估</h3>
+
+<img class="fig" src="assets/svg/fig22-new-fields.svg" alt="新领域优先级">
+
+<div class="cap"><b>图 24.1　候选新领域的优先级</b>。横轴为"概念清晰度"，纵轴为"P3 可行性（能否提出可检验命题）"。右上角为第一梯队（区分几何、时间区分、区分机器学习）；左下角为第三梯队（演化数论、凝聚区分）。圆的大小表示与已有领域的联系强度。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 24.1　候选新领域的优先级评估</b></caption>
+<tr><th class="l">领域</th><th class="l">概念清晰度</th><th class="l">P3 可行性</th><th class="l">联系强度</th><th class="l">梯队</th></tr>
+<tr><td class="l">区分几何学</td><td class="l">高</td><td class="l">高（1/3 缺口）</td><td class="l">强（轨形、TMF）</td><td class="l">一</td></tr>
+<tr><td class="l">时间区分理论</td><td class="l">中</td><td class="l">中（单调性）</td><td class="l">强（PDE、概率）</td><td class="l">一</td></tr>
+<tr><td class="l">区分机器学习</td><td class="l">中</td><td class="l">高（可检验预言）</td><td class="l">强（LLM）</td><td class="l">一</td></tr>
+<tr><td class="l">超有限李理论</td><td class="l">中</td><td class="l">中</td><td class="l">中（非标准分析）</td><td class="l">二</td></tr>
+<tr><td class="l">量子区分理论</td><td class="l">中</td><td class="l">低（重叠）</td><td class="l">中（量子信息）</td><td class="l">二</td></tr>
+<tr><td class="l">演化数论</td><td class="l">低</td><td class="l">低（易不可证伪）</td><td class="l">弱</td><td class="l">三</td></tr>
+<tr><td class="l">凝聚区分论</td><td class="l">低</td><td class="l">低</td><td class="l">弱</td><td class="l">三</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>优先级评估。等级 C（作者判断，非客观测量）。</div>
+
+<div class="warning"><span class="bt">警告 24.1　新领域的诱惑</span>
+"提出一个新领域"是学术写作中最廉价也最危险的成就。一个只有名字的新领域，与一个只有名字的空壳没有区别。本书因此把评估标准钉在 P3 上：<b>能否提出一个当下可写、可被独立检验的命题。</b>按此标准，七个候选领域中只有三个值得优先投入。</div>
+
+<h3>24.8　本章小结</h3>
+
+<p>框架的空缺提示七个候选新领域，其中区分几何学、时间区分理论、区分机器学习理论最值得投入（第一梯队）。评估标准是 P3（问题解决力），不是概念的宏大程度。下一章给出全书最后的状态清单与可执行路线图。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Amari, S. (2016). <i>Information Geometry and Its Applications</i>. Springer.</p>
+<p>Zhang, C., Bengio, S., Hardt, M., Recht, B., &amp; Vinyals, O. (2017). Understanding deep learning requires rethinking generalization. <i>ICLR</i>.</p>
+<p>Power, A., Burda, Y., Edwards, H., Babuschkin, I., &amp; Misra, V. (2022). Grokking: Generalization beyond overfitting on small algorithmic datasets. arXiv:2201.02177.</p>
+<p>Connes, A., &amp; Marcolli, M. (2008). <i>Noncommutative Geometry, Quantum Fields and Motives</i>. AMS.</p>
+</div>

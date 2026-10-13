@@ -1,96 +1,80 @@
-<h2 class="chapter">第 6 章　非标准分析与超有限降级</h2>
+<h2 class="chapter">第 6 章　在交汇点看"区分"：互补、局限与下一步</h2>
 
-<p class="lead">本章演示方法的第三个动作：<b>把技术性层次折叠掉。</b>非标准分析通过把"无穷小"合法化，把 ε-δ 语言的整套不等式机器压缩为一次"取标准部分"。更激进的是超有限方法：它把无穷维结构压成"超有限维"结构，使谱定理变成有限维特征分解加一次标准部分。这是本书框架中"降级"工具的来源。</p>
+<p class="lead">本章把前两章的评价收成一张表，并回答一个决定全书定位的问题：<b>当周围已经有概型、凝聚、单价、∞-范畴这些成熟统一工具时，一个只在有限图上完全严格的小框架，凭什么值得存在？</b>答案不是"它也能统一数学"，而是"它在一个被这些工具忽略的参数上，给出了可完全验证的样本"。本章同时诚实地划出它现在跨不过去的墙，并把它变成三件可动手的工程。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-非标准分析不是替代品，而是一种<b>降级</b>：它把无穷维、连续谱、无界算子这些技术负担，翻译为超有限框架内平凡的对象，再用标准部分映射翻译回来。<b>本案例通过了全部四判据，并已产生新结果（组合数论、拓扑动力学）。</b></div>
+区分框架的定位不是"下一个朗兰兹纲领"，而是<b>对现代统一浪潮的一个小型、严格、互补的元分析</b>：现代框架用拓扑、路径、同伦来处理"对象由关系决定"；区分框架追问"关系在什么分辨率下成立"，并<b>在一个最小情形（有限图）上把这个分辨率参数化、度量、并完全兑现为定理</b>。它的价值在于小范围的严格，不在于大范围的宣称。［论证，B］</div>
 
-<h3>6.1　导论：把无穷小合法化</h3>
-
-<p>传统微积分用 ε-δ 语言定义极限、连续、导数、积分。每个概念都需要独立的"∀ε>0, ∃δ>0"句式，证明中反复出现"取 δ=min(δ₁,δ₂)"式的技术拼接。这些不等式操作是<b>冗余层次</b>：它们服务于极限的严格性，却不携带新的数学内容。</p>
-
-<p>非标准分析做了一个抽象选择：<b>不再把无穷小量排除在外，而是把它变成合法的数学对象。</b>一旦无穷小被合法化，ε-δ 的整套不等式机器就变成了冗余层次，可以被压缩掉。［已知］</p>
-
-<h3>6.2　超实数与转移原理</h3>
-
-<img class="fig" src="assets/svg/fig06-nonstandard-descent.svg" alt="非标准分析的降级机制">
-
-<div class="cap"><b>图 6.1　非标准分析的降级机制</b>。实数系 <span class="s">ℝ</span> 被嵌入超实数系 <span class="s">*ℝ</span>；在 <span class="s">*ℝ</span> 中可以直接使用无穷小量进行代数运算；结果通过标准部分映射 <span class="s">st</span> 翻译回标准实数。转移原理保证一阶命题的真值不变。</div>
-
-<img class="fig" src="assets/svg/fig06b-reconstruction-nonstandard.svg" alt="非标准分析的重建对比">
-
-<div class="cap"><b>图 6.2　非标准分析的降级对比</b>。左侧的多个 ε-δ 定义被右侧的一个“取标准部分”操作覆盖。这与图 6.1 互补：6.1 讲机制，6.2 讲收益与代价。注意它是四个案例中唯一在全部四判据上通过的。</div>
-
-<div class="define"><span class="bt">定义 6.1　超实数系与转移原理［已知，A］</span>
-超实数系 <span class="s">*ℝ</span> 是实数系经模型论方法扩张得到的域，包含所有标准实数，并含无穷小量（绝对值小于任何正标准实数的非零元素）与无穷大量。**转移原理**：任何在 <span class="s">ℝ</span> 中为真的一阶逻辑命题，在 <span class="s">*ℝ</span> 中同样为真。</div>
-
-<h3>6.3　极限、导数、积分的非标准定义</h3>
+<h3>6.1　竞争力对标表</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 6.1　ε-δ 定义与超实数定义的对照</b></caption>
-<tr><th class="l">概念</th><th class="l">ε-δ 定义</th><th class="l">超实数定义</th></tr>
-<tr><td class="l">极限</td><td class="l">∀ε>0, ∃δ>0, 0&lt;|x−a|&lt;δ ⇒ |f(x)−L|&lt;ε</td><td class="l"><span class="s">x≈a, x≠a ⇒ f(x)≈L</span></td></tr>
-<tr><td class="l">连续</td><td class="l">∀ε>0, ∃δ>0, |x−a|&lt;δ ⇒ |f(x)−f(a)|&lt;ε</td><td class="l"><span class="s">x≈a ⇒ f(x)≈f(a)</span></td></tr>
-<tr><td class="l">导数</td><td class="l"><span class="s">lim<sub>h→0</sub>[f(a+h)−f(a)]/h</span></td><td class="l"><span class="s">f′(a)=st([f(a+dx)−f(a)]/dx)</span></td></tr>
-<tr><td class="l">积分</td><td class="l">黎曼和的极限</td><td class="l">超有限和 <span class="s">st(Σ f(x<sub>i</sub>)Δx)</span> 的标准部分</td></tr>
+<caption class="cap"><b>表 6.1　四类统一工具的相对位置（作者评估）</b></caption>
+<tr><th class="l">工具</th><th class="l">当前优势</th><th class="l">相对区分框架</th><th class="l">区分框架的互补点</th></tr>
+<tr><td class="l">HoTT + 单价公理</td><td class="l">处理无穷维 / 路径空间；形式化基础</td><td class="l">领先（我们仍在离散）</td><td class="l">把"相等"参数化为精度（待升维）</td></tr>
+<tr><td class="l">凝聚数学</td><td class="l">统一分析与数论；跨连续—离散</td><td class="l">领先（我们还没跨越）</td><td class="l">把"粘合"显式化为分辨率</td></tr>
+<tr><td class="l">∞-范畴论</td><td class="l">代数拓扑完全现代化；维度足够高</td><td class="l">领先（我们维度太低）</td><td class="l">相变的临界维数跳跃作为同伦信号（猜想）</td></tr>
+<tr><td class="l">区分框架</td><td class="l">离散结构的谱完备性；<b>唯一完全可证的样本</b></td><td class="l">范围极小，但严格</td><td class="l">给出"分辨率—曲率—相变"的可复算样本</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>定义对照。等级 A（非标准分析的标准结果）。</div>
+<div class="datasrc"><b>性质：</b>作者评估表。<b>等级 C：</b>相对位置是本书的判断，不是这些工具的自身评价；<b>注释：</b>"领先/落后"仅指覆盖范围与成熟度，不含价值判断；区分框架的"严格"只在第 15—18 章成立。</div>
 
-<p>以微积分基本定理为例。在 ε-δ 框架下，证明需要构造黎曼和、利用一致连续性、进行不等式估计。在超实数框架下，证明骨架变成：取无穷自然数 <span class="s">N</span>，<span class="s">Δx=(b−a)/N</span>；则 <span class="s">[F(x+Δx)−F(x)]/Δx = ∫<sub>x</sub><sup>x+Δx</sup>f/Δx ≈ f(x)</span>，因为无穷小区间上的平均值与 <span class="s">f(x)</span> 相差无穷小；取标准部分即得 <span class="s">F′(x)=f(x)</span>。<b>没有不等式拼接，没有一致连续性的技术引用。</b></p>
+<div class="note"><b>怎么读这张表</b>：它不宣布区分框架胜过谁，也不宣布它被谁取代。它只说明一件事——<b>在"离散、有限、谱可计算"这个格子里，区分框架给出的严格性，是四类工具都没有直接给出的。</b>这个格子很小，但它是真的。</div>
 
-<h3>6.4　超有限维希尔伯特空间</h3>
+<h3>6.2　为什么区分框架目前只在离散对象上严格</h3>
 
-<p>超有限方法更进一步。它把可分无穷维希尔伯特空间 <span class="s">H</span> 嵌入非标准希尔伯特空间 <span class="s">*H</span>，后者有一个<b>内部正交基</b> <span class="s">{e<sub>n</sub>}<sub>n=1..γ</sub></span>，其中 <span class="s">γ</span> 是非标准自然数（无穷大但在内部视角下是"有限"的）。［已知］</p>
+<p>答案不是"连续太难"，而是一个结构性的三点差异。有限图上，三个前提同时成立：</p>
 
-<div class="define"><span class="bt">定义 6.2　超有限维希尔伯特空间［已知，B］</span>
-一个超有限维希尔伯特空间是一个内积空间，其维数 <span class="s">γ</span> 是非标准自然数。它满足：<br>
-（1）可以进行有限维线性代数的全部运算（求和、内积、线性算子）；<br>
-（2）位置、动量、哈密顿量等算子在 <span class="s">*H</span> 上处处有界；<br>
-（3）所有谱都是离散的（因为空间在内部视角下有限维）；<br>
-（4）通过标准部分，物理预测与标准量子力学一致。</div>
+<ul>
+<li><b>对象是组合的</b>：顶点与边给出有限维向量空间，拉普拉斯算子是一个有限矩阵。</li>
+<li><b>分离是代数的</b>：分离曲率可以被谱投影完全捕捉（第 12 章恒等式 <span class="s">κ_info=Var(λ)/2</span>），是精确的代数恒等式。</li>
+<li><b>乘积是笛卡尔的</b>：笛卡尔积图的谱是因子谱的和，相变结构由因子直接算出（第 14 章生成性推论）。</li>
+</ul>
 
-<h3>6.5　谱定理的降级</h3>
-
-<p>这个构造最漂亮的战绩是把泛函分析的技术负担折叠掉。</p>
+<p>光滑流形上，这三点逐条失效：对象由开覆盖与转移函数给出（超限的），分离必须由层茎的极限描述（分析的），乘积需要 Künneth 型修正（不再是简单加法）。<b>于是"谱 → 曲率 → 拓扑"这条链上出现了一个无法代数消解的缺口。</b>［论证，B］</p>
 
 <table class="nat">
-<caption class="cap"><b>表 6.2　超有限框架折叠掉的技术层次</b></caption>
-<tr><th class="l">标准框架</th><th class="l">超有限框架</th></tr>
-<tr><td class="l">无界算子需要独立理论</td><td class="l">所有算子有界、处处有定义</td></tr>
-<tr><td class="l">稠密定义域、闭算子、自伴扩张</td><td class="l">算子处处有定义，问题消失</td></tr>
-<tr><td class="l">连续谱 vs 离散谱的二分</td><td class="l">所有谱离散；连续谱是无穷密集点的标准部分</td></tr>
-<tr><td class="l">广义函数（δ 函数）独立理论</td><td class="l">δ 是普通非标准函数，奇异性来自标准部分</td></tr>
-<tr><td class="l">谱定理的复杂证明</td><td class="l">有限维特征分解 + 取标准部分</td></tr>
+<caption class="cap"><b>表 6.2　离散硬核与连续情形的结构差异</b></caption>
+<tr><th class="l">环节</th><th class="l">有限图（第 15—18 章）</th><th class="l">光滑流形（第 19—21 章）</th></tr>
+<tr><td class="l">对象构成</td><td class="l">顶点 + 边（组合的）</td><td class="l">开覆盖 + 转移函数（超限的）</td></tr>
+<tr><td class="l">分离判别</td><td class="l">谱投影（有限和）</td><td class="l">层茎的双射性（极限）</td></tr>
+<tr><td class="l">曲率完备</td><td class="l"><span class="s">κ</span> 的代数恒等式</td><td class="l">热核展开（分析的）</td></tr>
+<tr><td class="l">乘积结构</td><td class="l">笛卡尔积，谱相加</td><td class="l">需要 Künneth 修正</td></tr>
+<tr><td class="l">统一困难</td><td class="l">无</td><td class="l">因子 <span class="s">1/3</span> 缺口</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>层次折叠对照。等级 B（公开结果的整理）；<b>参考：</b>Almeida &amp; Teixeira (2004) 的超有限量子力学重构。</div>
+<div class="datasrc"><b>性质：</b>结构性对照。<b>等级 B（论证）：</b>各行差异是标准事实；<b>等级 C：</b>"因此无法代数消解"是本书的判断，其精确形式仍是开放问题（见 6.3）。</div>
 
-<div class="scenario"><span class="bt">降级的本质</span>
-超有限方法的威力来自一句话：<b>把"无穷维"重新定义为"维数是无穷大的有限维"。</b>一旦采用内部视角，泛函分析中为处理无穷而引入的技术层次（无界、稠密、连续谱、广义函数）全部变成冗余。这不是"消除无穷"，而是把无穷折叠进一个更大的离散结构，再用标准部分取回连续图景。</div>
+<h3>6.3　1/3 缺口：症状，而不是判决</h3>
 
-<h3>6.6　有效性检验与边界</h3>
+<p>把热核展开给出的分离曲率 <span class="s">κ=R/6</span> 与二维 Gauss–Bonnet 定理对照，会得到一个因子 <span class="s">1/3</span>：</p>
 
-<table class="nat">
-<caption class="cap"><b>表 6.3　非标准分析压缩的四判据评分</b></caption>
-<tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
-<tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">ε-δ 的多个定义 → 一个标准部分操作；泛函分析的多层技术 → 有限维代数</td></tr>
-<tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">连续、导数、积分、谱定理成为同一套代数操作的应用</td></tr>
-<tr><td class="l">P3 问题解决力</td><td class="l">通过</td><td class="l">已在组合数论（Jin 的 sumset 定理）、近似群论、拓扑动力学中产生新证明</td></tr>
-<tr><td class="l">P4 可迁移性</td><td class="l">通过</td><td class="l">已迁移至测度论（Loeb 测度）、概率论（超有限概率）、动力系统</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>方法论评分。等级 B（依据公开文献）。<b>这是四个案例中唯一在全部四判据上通过的。</b></div>
+<div class="eq"><span class="body">∫<sub>M</sub> κ dμ = (1/3)∫<sub>M</sub> K dμ = (2π/3) χ(M)</span></div>
 
-<div class="warning"><span class="bt">边界（诚实清单）</span>
-非标准分析有三个代价：<b>（1）模型论依赖</b>——需要超滤子、饱和模型等工具，入门门槛高；<b>（2）非构造性</b>——它告诉你"存在一个超有限维空间"，但通常不给出显式构造；<b>（3）互译成本</b>——把结果翻译回标准语言有时需要额外技术。因此它是<b>可选工具</b>，不是框架的必要基础（见第 3.4 节）。</div>
+<p>而 Gauss–Bonnet 要求 <span class="s">∫<sub>M</sub> K dμ = 2π χ(M)</span>。第 20—21 章把这个缺口当作纲领的中心问题处理，并指出它与轨形、模曲线 <span class="s">X(3)</span>、椭圆上同调中反复出现的 <span class="s">1/3</span> 的可能联系。<b>本书不假装填上它。</b>［纲领，C］</p>
 
-<h3>6.7　本章小结</h3>
+<div class="warning"><span class="bt">警告 6.1　不要把缺口"证明"掉</span>
+一个错误的做法是：假设"分离结构给出 <span class="s">Z/3Z</span> 对称性"，从而把 <span class="s">1/3</span> 定义为"区分欧拉示性数"。这只是把一个假设写进定义，使它无法被反驳。第 20 章明确指出：轨形解释并非普遍成立，球面 <span class="s">S²</span> 就是一个反例（<span class="s">χ(S²)=2</span>，而 <span class="s">2/3</span> 不是整数）。<b>诚实的现状是：缺口未被解释，它的根源（局部分析量与整体拓扑量之间为何出现超越性失配）是一个开放的分析问题。</b></div>
 
-<p>非标准分析与超有限方法展示了压缩的最高回报：它不仅减少层次，而且产生新定理。它也是本书框架中"标准部分映射"这一分量的来源（第 11.2 节公理 6）。下一章进入最后一类语言工具：类型与范畴，它们把"相等"本身结构化。</p>
+<h3>6.4　三条真正的前沿</h3>
+
+<p>把上面的局限反过来，得到三件可以动手、而不是只可畅想的事。</p>
+
+<div class="define"><span class="bt">前沿一　同伦升维</span>
+能否为有限图的区分系统赋予同伦结构，使"局部先于全局"的相变（第 16 章）可表示为<b>同伦群的临界维数跳跃</b>？具体地：构造一个显式的同伦分类空间，使两阶段相变对应其上同调群在某度数处从零变为非零。若成功，硬核将从"谱定理的应用"升级为"同伦不变量的计算"，覆盖面扩大到代数拓扑。<b>这是三条前沿中最可动手的一条。</b>［假说，C］</div>
+
+<div class="define"><span class="bt">前沿二　1/3 缺口的代数根源</span>
+热核系数 <span class="s">1/6 = (1/2)(1/3)</span>，其中 <span class="s">1/2</span> 来自二维，<span class="s">1/3</span> 来自何处？候选来源有三：拉普拉斯热核的高斯型归一化、椭圆曲线的高阶挠子群、模曲线 <span class="s">X(3)</span> 的分支结构。三条线索在源材料中都出现 <span class="s">1/3</span>。要做的不是宣布它们同源，而是<b>逐条计算并比较</b>：若数值一致，缺口获得统一解释；若不一致，则"同源"被证伪——<b>两种结果都是科学成果。</b>［假说，C］</div>
+
+<div class="define"><span class="bt">前沿三　连续区分系统的存在性</span>
+能否给凝聚集、层、层茎赋予"区分序列"结构（一个由有限精度索引的分离族），并证明在凝聚条件下该结构的某个不变量重现 Scholze 的定理？这需要把"粘合"翻译成"区分动作的相容性"。<b>这是把区分框架升级到现代代数几何基础的关键一步，也是最困难的一步。</b>［假说，C］</div>
+
+<p>三条前沿共享一个判据：<b>它们都能被写成"若成立则如何、若失败则如何"的具体命题</b>，而不是"这条联系可能很深刻"。附录 K 与附录 E 为它们登记了证伪条件与核验方向。</p>
+
+<h3>6.5　本章小结</h3>
+
+<p>区分框架不是竞争中的胜者，而是现代统一浪潮里一个<b>小型、严格、互补</b>的参与者：它在有限图上把"分辨率—曲率—相变"完全兑现，在连续情形撞上 <span class="s">1/3</span> 缺口，并把缺口与升级路径写成三件可动手的工程。<b>把这个定位写进全书，是本书从"试图成为大统一理论"转向"诚实的元分析"的关键一步。</b>下一部分回到方法本身，用四个成熟领域检验第 2 章提出的压缩操作。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p>
-<p>Almeida, R., &amp; Teixeira, F. (2004). The space of state vectors: A hyperfinite approach. <i>Journal of Mathematical Physics</i>.</p>
-<p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces. <i>Transactions of the AMS</i> 211.</p>
-<p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p>
-<p>Jin, R. (2018). Sumset phenomenon in countable amenable groups. arXiv.</p>
+<p>Clausen, D., &amp; Scholze, P. (2019–). <i>Condensed Mathematics</i> (lecture notes).</p>
+<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
+<p>Milnor, J., &amp; Stasheff, J. (1974). <i>Characteristic Classes</i>. Princeton University Press.</p>
 </div>

@@ -1,101 +1,108 @@
-<h2 class="chapter">第 19 章　十五个领域的统一编码</h2>
+<h2 class="chapter">第 19 章　分离几何学：从流形到区分流形（○ 工具对应）</h2>
 
-<p class="lead">本章把前文零散出现的领域集中起来，给出它们在同一套语言下的编码。这不是"证明它们统一"，而是"证明它们可以用同一套词描述"。<b>本章的核心纪律是：编码表标注每个领域的每一条对应是严格的、工具性的还是仅仅可疑的。</b></p>
+<p class="lead">第五部分把框架实现于离散图。本章尝试把它推到连续情形：用一个"区分流形"取代黎曼流形，用"分离度量"取代距离，用"分离曲率"取代标量曲率。<b>这个尝试目前给出的是工具对应，不是定理。</b>本章把能说的与不能说的一并列出。</p>
+
+<div class="warning"><span class="bt">本部分的诚实标注</span>
+从本章起进入第六部分（第 19—25 章）。这一部分的<b>排版形式与前面无异，但严格度不同</b>。全书统一使用四个符号：<br>
+<b>⊗</b> 已完全证明（第五部分的定理及其直接推论）；<b>⊕</b> 有论证支持的框架断言（B 级）；<b>○</b> 启发式对应，尚无严格证明（C 级）；<b>？</b> 明确的开放问题（登记于附录 E、K）。<br>
+如果你期望第六部分的陈述有第五部分的严格度，你会感到失望。<b>这不是偷工减料，是诚实的界定</b>：本部分的价值在于指出"下一步需要什么"，而不在于"已经证了什么"。［等级 C］</div>
+
+
 
 <div class="scenario"><span class="bt">本章主张</span>
-十余个数学领域可以被写成 EDS 语言：区分动作、观测、不可区分、分离曲率、演化流。<b>编码是真实的（可以写出映射），但编码不等于等价（映射不一定保持所有结构）。</b>本章给出编码，第 20 章给出分类，第 22 章给出状态清单。</div>
+分离几何学是黎曼几何的"区分版"：把基本对象从"距离"换成"区分难度"，把核心不变量从"曲率张量"换成"分离曲率"。<b>热核展开给出分离曲率的一个自然候选 <span class="s">κ=R/6</span>，但把它与全局拓扑联系起来时会撞上一个因子 1/3 的缺口（第 20 章）。</b></div>
 
-<h3>19.1　导论：一张编码表意味着什么</h3>
+<h3>19.1　导论：以"区分"取代"距离"</h3>
 
-<p>要避免一个常见的误读：编码表不是"这些领域本质上是一个东西"的证明。它证明的是更强也更弱的事：<b>存在一套词汇，可以同时描述它们。</b>这比"它们本质上相同"弱得多，但比"它们毫无关系"强得多。</p>
+<p>黎曼几何的全部结构从一个度量张量 <span class="s">g</span> 生长出来：距离、测地线、联络、曲率、体积。分离几何学问：如果基本对象不是"两点有多远"，而是"两点有多难被分开"，会长出什么样的几何？</p>
 
-<p>判断编码表是否有价值，回到第 2 章的四判据：压缩比（P1）、统一度（P2）、问题解决力（P3）、可迁移性（P4）。本章在 P1/P2 上给出证据，P3 只在图论上通过。</p>
+<p>这个替换并非任意。在信息几何中，统计流形上的"距离"由 Fisher 度量给出，而 Fisher 度量的本质就是"两个分布有多难被区分"（KL 散度的二阶展开）。因此分离几何学与信息几何共享同一个直觉：<b>几何的基本量可以是可区分性，而不是空间距离。</b>［已知］</p>
 
-<h3>19.2　静态领域：线性、拓扑、度量、序、逻辑</h3>
+<h3>19.2　分离流形与分离度量</h3>
 
-<p>按"区分动作的代数结构"分组，静态领域分五类。</p>
+<div class="define"><span class="bt">定义 19.1　分离流形与分离度量</span>
+一个<b>分离流形</b>是三元组 <span class="s">(M, D, O)</span>，其中 <span class="s">M</span> 是紧致 Hausdorff 空间，<span class="s">D</span> 是区分动作族，<span class="s">O</span> 是 Hölder 连续的观测泛函。<b>分离度量</b>定义为
+<div class="eq"><span class="body">d<sub>D</sub>(x,y) := inf{ α : x ∼<sub>α</sub> y }</span><span class="num">(16.1)</span></div>
+即把两点变得不可区分所需的最小精度。</div>
+
+<p>与黎曼度量的差别在于：黎曼度量给出"两点有多远"，分离度量给出"两点有多难分开"。在局部，这两个量通过二阶展开相联系；在整体，它们的拓扑含义可能不同——这正是第 20 章缺口的技术根源。</p>
+
+<h3>19.3　分离曲率张量</h3>
+
+<div class="define"><span class="bt">定义 19.2　分离曲率</span>
+在分离流形上，定义<b>分离曲率</b>为观测泛函在演化下的对数增长率的二阶变分：
+<div class="eq"><span class="body">κ(D,x) = lim<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span></div>
+在光滑情形，其二阶变分给出<b>分离曲率张量</b>
+<div class="eq"><span class="body">R<sup>D</sup><sub>ijkl</sub> := ∂²κ<sub>ij</sub> / ∂x<sup>k</sup>∂x<sup>l</sup></span><span class="num">(16.2)</span></div></div>
+
+<p>这个定义的形式与黎曼曲率张量相似，但含义不同：黎曼曲率来自联络的交换子，分离曲率来自观测增长的二阶变分。二者的桥接是本纲领的核心技术问题。</p>
+
+<h3>19.4　一个待验证的猜想：分离 Gauss–Bonnet 会是什么形式？</h3>
+
+<p>在黎曼几何中，Gauss–Bonnet 定理把局部曲率的积分与整体拓扑联系起来：对二维紧致可定向曲面，<span class="s">∫<sub>M</sub>K dA = 2πχ(M)</span>。分离几何学的自然期望是：</p>
+
+<div class="define"><span class="bt">期望 16.1　分离 Gauss–Bonnet（待定形式）</span>
+对紧致可定向分离流形，存在一个<b>区分欧拉示性数</b> <span class="s">χ(D)</span>，使得
+<div class="eq"><span class="body">∫<sub>M</sub> κ dμ = 2π χ(D)</span><span class="num">(16.3)</span></div>
+其中 <span class="s">χ(D)</span> 是分离结构的某种拓扑不变量。</div>
+
+<p>这个期望的形式是自然的，问题在于 <span class="s">χ(D)</span> 是什么，以及它与 <span class="s">χ(M)</span> 的关系。第 20 章会说明：如果取 <span class="s">κ=R/6</span>（热核展开的自然系数），则 <span class="s">χ(D)=χ(M)/3</span>，这带来一个因子 1/3 的缺口。</p>
+
+<h3>19.5　与黎曼几何的类比表</h3>
+
+<img class="fig" src="assets/svg/fig17-riemann-vs-distinction.svg" alt="黎曼几何与分离几何的类比">
+
+<div class="cap"><b>图 19.1　黎曼几何与分离几何的类比</b>。左列为黎曼几何的对象，右列为分离几何的对应物。实线表示"有严格对应"，虚线表示"仅形式类比"。核心的差别在于：黎曼曲率来自联络的交换子，而分离曲率来自观测增长，其与全局拓扑的关系尚未建立。</div>
+
+<img class="fig" src="assets/svg/fig16b-separation-vs-euclidean.svg" alt="分离度量与欧氏度量">
+
+<div class="cap"><b>图 19.2　分离度量与欧氏度量的差别</b>。左：欧氏距离与“分离难度等值线”并不同心——两点在欧氏意义上等距，在分离意义上未必等价。右：分离度量的定义与它在信息几何／流形上的对应。<b>两种度量在局部相容、在整体可能分歧，这正是 1/3 缺口的技术根源。</b></div>
 
 <table class="nat">
-<caption class="cap"><b>表 19.1　静态领域的 EDS 编码</b></caption>
-<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">κ</th><th class="l">严格度</th></tr>
-<tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">0</td><td class="l">B</td></tr>
-<tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构表示</td><td class="l">0</td><td class="l">B</td></tr>
-<tr><td class="l">调和分析</td><td class="l">特征标</td><td class="l">傅里叶系数</td><td class="l">同谱类</td><td class="l">0</td><td class="l">B</td></tr>
-<tr><td class="l">点集拓扑</td><td class="l">开集／邻域</td><td class="l">连续函数</td><td class="l">同胚局部</td><td class="l">负</td><td class="l">B</td></tr>
-<tr><td class="l">代数拓扑</td><td class="l">单纯形</td><td class="l">同调类</td><td class="l">同伦</td><td class="l">负</td><td class="l">B</td></tr>
-<tr><td class="l">测度论</td><td class="l">可测区分</td><td class="l">测度</td><td class="l">几乎处处</td><td class="l">正</td><td class="l">B</td></tr>
-<tr><td class="l">组合数学</td><td class="l">子结构</td><td class="l">计数</td><td class="l">等价结构</td><td class="l">正</td><td class="l">B</td></tr>
-<tr><td class="l">数论</td><td class="l">因子分解</td><td class="l">可整除性</td><td class="l">同余</td><td class="l">正</td><td class="l">C</td></tr>
-<tr><td class="l">数理逻辑</td><td class="l">可证公式</td><td class="l">真值</td><td class="l">可互推</td><td class="l">0</td><td class="l">B</td></tr>
+<caption class="cap"><b>表 19.1　黎曼几何与分离几何的类比</b></caption>
+<tr><th class="l">黎曼几何</th><th class="l">分离几何</th><th class="l">严格程度</th></tr>
+<tr><td class="l">度量张量 <span class="s">g<sub>ij</sub></span></td><td class="l">区分动作 <span class="s">D<sub>i</sub></span></td><td class="l">形式类比（乙）</td></tr>
+<tr><td class="l">曲率张量 <span class="s">R<sub>ijkl</sub></span></td><td class="l">分离曲率 <span class="s">κ</span></td><td class="l">形式类比（乙）</td></tr>
+<tr><td class="l">测地线</td><td class="l">区分稳定路径</td><td class="l">定义清晰，定理待证</td></tr>
+<tr><td class="l">和乐群</td><td class="l">区分和乐群</td><td class="l">尚未定义</td></tr>
+<tr><td class="l">Gauss–Bonnet</td><td class="l">分离曲率积分</td><td class="l">有 1/3 缺口（第 20 章）</td></tr>
+<tr><td class="l">热核展开 <span class="s">a₁=R/6</span></td><td class="l"><span class="s">κ=R/6</span></td><td class="l">B（局部展开，接口未证）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>静态领域编码表。<b>严格度列：</b>B 表示"可写出映射，但未证明保持全部结构"；C 表示"仅方向性"。注意：本表只有图论（下一节）达到 A。</div>
+<div class="datasrc"><b>性质：</b>类比对照表。<b>关键：</b>本表的大部分行标注为"形式类比"，意味着它们只是概念对应，不是等价定理。</div>
 
-<h3>19.3　动态领域：微分方程、动力系统、概率、量子</h3>
+<h3>19.6　当前状态：工具对应而非定理</h3>
 
-<p>动态领域需要时间区分 <span class="s">D<sub>t</sub></span>。</p>
-
-<table class="nat">
-<caption class="cap"><b>表 19.2　动态领域的 EDS 编码</b></caption>
-<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">演化流 Φ</th><th class="l">κ</th><th class="l">严格度</th></tr>
-<tr><td class="l">微分方程</td><td class="l">解的水平集</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">L 的特征增长率</td><td class="l">B</td></tr>
-<tr><td class="l">动力系统</td><td class="l">轨道区分</td><td class="l">迭代／流</td><td class="l">Lyapunov 指数</td><td class="l">B</td></tr>
-<tr><td class="l">概率论</td><td class="l">条件区分</td><td class="l">条件期望</td><td class="l">信息率</td><td class="l">B</td></tr>
-<tr><td class="l">信息论</td><td class="l">信息分割</td><td class="l">Boltzmann 分布</td><td class="l">−β</td><td class="l">B</td></tr>
-<tr><td class="l">算子代数</td><td class="l">投影</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">模谱</td><td class="l">C</td></tr>
-<tr><td class="l">量子数学</td><td class="l">POVM</td><td class="l">薛定谔算子</td><td class="l">纠缠熵增长</td><td class="l">C</td></tr>
-<tr><td class="l">博弈论</td><td class="l">策略区分</td><td class="l">策略更新</td><td class="l">收益梯度</td><td class="l">C</td></tr>
-<tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l"><span class="s">e^{(−αI+βL)t}</span></td><td class="l"><span class="s">βλ<sub>k</sub>−α</span></td><td class="l"><b>A</b></td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>动态领域编码表。<b>只有最后一行（图论）达到 A</b>，它是第四部分的硬核。</div>
-
-<h3>19.4　统一图景</h3>
-
-<img class="fig" src="assets/svg/fig20-field-encoding-map.svg" alt="领域编码地图">
-
-<div class="cap"><b>图 19.1　领域编码地图</b>。中央是 EDS 六元组；外围是各领域。距离中心的远近表示编码的严格程度：内圈（图论、线性代数）为严格或半严格编码；中圈（拓扑、测度、概率、信息）为工具对应；外圈（数论、量子、博弈）为方向性对应。虚线表示联系仅为猜测。</div>
-
-<h3>19.5　编码的诚实边界</h3>
-
-<p>编码表最容易产生的三个误读，必须逐一排除。</p>
+<p>必须直说：分离几何学目前<b>没有</b>一个完整定理。它的状态是：</p>
 
 <ul>
-<li><b>误读一：编码 = 等价。</b>事实：编码给出的是"可以用 EDS 词描述"，不是"EDS 定理自动适用于该领域"。要得到后者，必须证明编码保持结构（一个单射且保定理的映射）。</li>
-<li><b>误读二：所有领域同等严格。</b>事实：表中严格度从 A 到 C 分布，只有图论是 A。把 C 级编码当作 A 级使用，是本书最担心的误用。</li>
-<li><b>误读三：编码表本身就是统一理论。</b>事实：编码表是<b>语言成就</b>（P1/P2），不是<b>问题解决成就</b>（P3）。一个语言可以描述一切，却不解决任何问题。</li>
+<li><b>定义清晰：</b>分离度量、分离曲率、分离流形都有明确的形式定义（甲级概念）。</li>
+<li><b>局部对应：</b>热核展开给出 <span class="s">κ=R/6</span>，这是有公开来源的（B级证据）。</li>
+<li><b>整体对应缺失：</b><span class="s">∫κ</span> 与拓扑不变量的关系尚未建立（缺口）。</li>
+<li><b>无新定理：</b>尚未用分离几何证明黎曼几何无法证明的结果（P3 未通过）。</li>
 </ul>
 
-<div class="warning"><span class="bt">警告 19.1　P3 是唯一硬门槛</span>
-如果本书只提供编码表，它就是一种新的记号系统，价值有限。<b>本书的价值来自第四部分的 P3（图论硬核）与第五部分的 P3 尝试（1/3 缺口）。</b>读者应当这样评价本书：不是看它编码了多少领域，而是看它是否产生了原领域难以表达的新命题。目前答案：图论是（第 12—15 章），其余否。</div>
+<div class="warning"><span class="bt">警告 19.1　不要把"类比"读成"对应"</span>
+分离几何学的类比表看起来很完整，容易让人以为它已经建立了黎曼几何的平行理论。<b>它没有。</b>类比表的作用是指出"哪些概念应当有对应物"，而不是声称"这些对应物已经满足同样的定理"。断言"分离几何学的 Gauss–Bonnet 定理"存在，是本书明确不做的过度宣称之一。</div>
 
-<h4>19.5.1　一个可复算的反省：编码矩阵真的多维吗</h4>
+<div class="scenario"><span class="bt">诚实的价值</span>
+一个纲领最有价值的时刻，往往不是它成功的时候，而是它<b>撞上一堵具体的墙</b>的时候。分离几何学撞上的墙，就是第 20 章的 <span class="s">1/3</span> 因子。这堵墙是具体的、可计算的、可讨论的——它比十句"前景广阔"更能推动研究。</div>
 
-<p>编码表最容易受到的质疑是：<b>如果所有领域只是同一列特征的排列组合，那么"统一"不过是同义反复。</b>这个质疑可以被量化为一个主成分分析（<b>PCA</b>，Principal Component Analysis）问题。把每个领域的编码写成 11 维特征向量（区分动作代数、曲率符号、演化流、严格度），对 25 个领域组成的矩阵做主成分分析，并做平行分析。</p>
+<h3>19.7　本章小结</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 19.3　编码矩阵的 PCA 结果</b></caption>
-<tr><th class="l">统计量</th><th class="l">数值</th><th class="l">解读</th></tr>
-<tr><td class="l">特征数 K</td><td class="l">{{D:pca_k}}</td><td class="l">编码使用的特征维度</td></tr>
-<tr><td class="l">有效维度 N<sub>eff</sub></td><td class="l">{{D:pca_neff}}</td><td class="l">远离 1，接近但仍小于 K</td></tr>
-<tr><td class="l">PC1 方差解释</td><td class="l">{{D:pca_pc1}}</td><td class="l">第一主成分不占主导</td></tr>
-<tr><td class="l">平行分析保留成分数</td><td class="l">{{D:pca_retained}}</td><td class="l">真实结构确实多维</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>PCA／审稿人问答。等级 A（可复算）。脚本：<code>analysis/pca_fields.py</code>。<b>结论（诚实版）：</b>编码矩阵的有效维度约为 {{D:pca_neff}}（K={{D:pca_k}}），既不是 1（否则"统一"是同义反复），也不是 11（否则各领域完全独立）。这支持"一个主导过程加若干次要维度"的读法，而不支持"所有领域完全同一"的强主张。</div>
+<p>分离几何学以"区分"取代"距离"，给出一个形式完整的类比框架。它的局部对应（<span class="s">κ=R/6</span>）有公开来源，整体对应（<span class="s">∫κ</span> 与拓扑）尚未建立。这个缺口是下一章的主题。本章的全部价值在于把"连续情形怎么办"从空想变成了一个具体的技术问题。</p>
 
-<img class="fig" src="assets/svg/fig19b-encoding-heatmap.svg" alt="领域编码矩阵热力图">
-
-<div class="cap"><b>图 19.2　领域编码矩阵热力图</b>。行 = 领域，列 = 编码特征，蓝色表示该特征被使用。热力图显示：不同领域的编码向量差异显著（没有两行完全相同），这与 PCA 的有效维度 <span class="s">N<sub>eff</sub>≈{{D:pca_neff}}</span> 一致。<b>编码矩阵是“同一语言”，不是“同一个向量”。</b></div>
-
-<p>这个结果对本书的定位有一处直接影响：它把"统一"限定在<b>语言层</b>。编码矩阵多维意味着不同领域在框架中<b>仍然不同</b>；框架提供的是共享坐标，而不是同一坐标。</p>
-
-<h3>19.6　本章小结</h3>
-
-<p>十余个领域可以被写成 EDS 语言，但严格程度从 A 到 C 不等。编码表实现了 P1（压缩比）与 P2（统一度），但 P3（问题解决力）只在图论上通过。下一章把这些编码组织成三条分类轴，并指出框架暴露出的空缺。</p>
+<div class="note"><b>本章清单</b>
+<ul>
+<li><b>○ 描述性（C）：</b>定义 19.1（分离流形与分离度量）、定义 19.2（分离曲率）、分离曲率张量、期望的分离 Gauss–Bonnet 形式——目前是工具对应，不是定理。</li>
+<li><b>？ 未解决：</b>分离曲率的统一定义；<span class="s">1/3</span> 缺口（第 20—21 章）。</li>
+<li><b>↔ 连接：</b>本章把第 12 章的分离曲率推到连续情形；结果引向第 20—21 章。</li>
+</ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Mac Lane, S. (1998). <i>Categories for the Working Mathematician</i>. Springer.</p>
-<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i>. Wiley.</p>
-<p>Kallenberg, O. (2002). <i>Foundations of Modern Probability</i> (2nd ed.). Springer.</p>
-<p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p>
-<p>Rudin, W. (1991). <i>Functional Analysis</i> (2nd ed.). McGraw-Hill.</p>
+<p>do Carmo, M. P. (1992). <i>Riemannian Geometry</i>. Birkhäuser.</p>
+<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i>. CRC Press.</p>
+<p>Amari, S. (2016). <i>Information Geometry and Its Applications</i>. Springer.</p>
+<p>Cheeger, J., &amp; Ebin, D. G. (1975). <i>Comparison Theorems in Riemannian Geometry</i>. North-Holland.</p>
+<p>Berger, M. (2003). <i>A Panoramic View of Riemannian Geometry</i>. Springer.</p>
 </div>

@@ -20,7 +20,7 @@
 </table>
 <div class="datasrc"><b>性质：</b>合成网络实验。等级 A（可复算）／但外部效度 C。<b>运行末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>失败记录：</b>层 S2 的同号率（0.27）<b>低于随机</b>，是对"激活—秩耦合普遍成立"的一个直接反例。</div>
 
-<p><b>这个结果怎么读：</b>它<b>既不</b>支持"假说普遍成立"，<b>也不</b>简单地推翻它。它显示机制是<b>按层分裂</b>的：一层的激活增长伴随表示扩张，另一层则不。这与第 15.3 节的分析一致——朴素的全局阈值本就不成立，正确的陈述依赖每层的有效探针数。</p>
+<p><b>这个结果怎么读：</b>它<b>既不</b>支持"假说普遍成立"，<b>也不</b>简单地推翻它。它显示机制是<b>按层分裂</b>的：一层的激活增长伴随表示扩张，另一层则不。这与第 18.3 节的分析一致——朴素的全局阈值本就不成立，正确的陈述依赖每层的有效探针数。</p>
 
 <div class="warning"><span class="bt">为什么模型没有泛化</span>
 train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验的是"激活—秩"机制，而非泛化，因此记忆相下的结果仍有意义；但它<b>不能</b>回答"泛化时机制是否相同"。这个缺口已登记在附录 F。</div>
@@ -30,7 +30,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <p><b>脚本：</b><code>analysis/orbifold_gap.py</code>。用轨形 Gauss–Bonnet 与 Satake 欧拉示性数 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub>−Σ(1−1/α<sub>i</sub>)</span> 计算。</p>
 
 <div class="define"><span class="bt">精确化（本附录的贡献）</span>
-取 <span class="s">κ=K/3</span>，由轨形 Gauss–Bonnet，<span class="s">∫κ=(2π/3)χ<sub>orb</sub></span>，故 <span class="s">χ(D)=χ<sub>orb</sub>/3</span>。而第 17 章的朴素猜想是 <span class="s">χ(D)=χ<sub>geom</sub>/3</span>。<b>二者相等当且仅当 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub></span>，即轨形无奇异点。</b>每一个锥点都是一个反例。</div>
+取 <span class="s">κ=K/3</span>，由轨形 Gauss–Bonnet，<span class="s">∫κ=(2π/3)χ<sub>orb</sub></span>，故 <span class="s">χ(D)=χ<sub>orb</sub>/3</span>。而第 20 章的朴素猜想是 <span class="s">χ(D)=χ<sub>geom</sub>/3</span>。<b>二者相等当且仅当 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub></span>，即轨形无奇异点。</b>每一个锥点都是一个反例。</div>
 
 <table class="nat">
 <caption class="cap"><b>表 I.2　χ(D)=χ<sub>geom</sub>/3 的成立与失败（真实计算）</b></caption>
@@ -41,7 +41,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l">S²，三个 3 阶锥点</td><td class="l">2</td><td class="l">0</td><td class="l">0</td><td class="l">2/3</td><td class="l">✗</td></tr>
 <tr><td class="l">T²，三个 3 阶锥点</td><td class="l">0</td><td class="l">−2</td><td class="l">−2/3</td><td class="l">0</td><td class="l">✗</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>精确计算。等级 A。<b>总结果：</b>9 个案例中 4 个匹配、5 个反例。<b>这精确刻画了第 17.5 节的球面矛盾，并把"缺口是否是错误"变成"缺口只在有奇异点时出现"。</b></div>
+<div class="datasrc"><b>性质：</b>精确计算。等级 A。<b>总结果：</b>9 个案例中 4 个匹配、5 个反例。<b>这精确刻画了第 20.5 节的球面矛盾，并把"缺口是否是错误"变成"缺口只在有奇异点时出现"。</b></div>
 
 <h2>I.3　领域编码的结构保持：一个反例</h2>
 
@@ -55,7 +55,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l">概率论</td><td class="l">条件期望作为 L² 投影（幂等 + 自伴 + 方差分解）</td><td class="l">✓ 保持</td></tr>
 <tr><td class="l">生成拓扑</td><td class="l">{0,1,2} 上的全部 29 个拓扑</td><td class="l"><b>✗ 反例：点权重+单阈值只生成 8/29（27.6%）</b></td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可复算检验。等级 A。<b>结论：</b>编码可以保持被显式检验的结构，但不能覆盖全部结构。这坐实了第 19.5 节"编码 ≠ 等价"的边界，并给出一个具体反例。</div>
+<div class="datasrc"><b>性质：</b>可复算检验。等级 A。<b>结论：</b>编码可以保持被显式检验的结构，但不能覆盖全部结构。这坐实了第 22.5 节"编码 ≠ 等价"的边界，并给出一个具体反例。</div>
 
 <h2>I.4　离散—连续桥接：一个候选函子（猜想）</h2>
 
@@ -69,7 +69,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 
 <h2>I.5　超有限李理论：降级与一个可证伪命题</h2>
 
-<p>第 21.4 节把超有限李理论列为第二梯队，但只有名字。本附录把它落到实处，给出定义与一个可证伪命题，同时指出它可能是空壳的风险。</p>
+<p>第 24.4 节把超有限李理论列为第二梯队，但只有名字。本附录把它落到实处，给出定义与一个可证伪命题，同时指出它可能是空壳的风险。</p>
 
 <div class="define"><span class="bt">定义 I.1　超有限李群（候选，C）</span>
 设 <span class="s">G</span> 是紧李群。取 <span class="s">G</span> 的一个超有限近似：一个非标准自然数 <span class="s">γ</span> 与内部群 <span class="s">*G</span>，使得 <span class="s">*G</span> 在内部视角下是"有限生成"的，且其标准部分 <span class="s">st(*G)=G</span>。<br>

@@ -1,8 +1,14 @@
 <h1>先读这一页　三个可复算的定理</h1>
 
-<p class="lead">如果你只读一本书的一小部分，读这三页。<b>本书的可信度不来自它的框架有多大，而来自它先兑现了三个可以被独立复算的定理。</b>框架（第三部分）是对这三个定理共同结构的诠释；其余部分是对它的推广与边界。先看兑现，再看诠释。</p>
+<p class="lead">如果你只读一本书的一小部分，读这三页。<b>本书的可信度不来自它的框架有多大，而来自它先兑现了三个可以被独立复算的定理。</b>框架（第四部分）是对这三个定理共同结构的诠释；其余部分是对它的推广与边界。先看兑现，再看诠释。</p>
 
-<h2>定理 A　图上的两阶段相变（第 12—15 章）</h2>
+<div class="scenario"><span class="bt">如何复现这一页的数字</span>
+依赖：Python 3.9+、NumPy、SciPy。全部数值只需一条命令：<br>
+<code>bash scripts/verify-experiments.sh</code><br>
+单个实验（例如两阶段相变的临界耦合）：<code>python analysis/graph_phase_transition.py</code>。<br>
+生成插图：<code>python analysis/make_figures.py</code>。完整复现协议见附录 A、G。</div>
+
+<h2>定理 A　图上的两阶段相变（第 15—18 章）</h2>
 
 <div class="define"><span class="bt">定理 A ［定理，A／甲］</span>
 设 <span class="s">G</span> 是连通有限图，拉普拉斯谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λₙ</span>。区分强度按 <span class="s">Ḋ=(−αI+βL)D</span> 演化。则临界耦合为
@@ -24,35 +30,36 @@
 较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），<span class="s">β=1.0</span>。<br>
 <b>全局模式先增长，局部模式后增长——顺序反转。</b>反转由生成元的非正规性引起，对称加权下不可能。</div>
 
-<h2>定理 C　离散分离曲率（第 9.6 节）</h2>
+<h2>定理 C　离散分离曲率（第 12.6 节）</h2>
 
 <div class="define"><span class="bt">定理 C　κ_info = Var(λ)/2 ［定理，A／甲］</span>
 取热核的 von Neumann 熵 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>，<span class="s">S(t)=−tr(ρ log ρ)</span>。定义离散分离曲率
 <div class="eq"><span class="body">κ_info(G) := −(1/2) S″(0⁺)</span></div>
 则<b>恒有</b>
 <div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>) = (1/2)[ (1/n)Σλ<sub>k</sub>² − ((1/n)Σλ<sub>k</sub>)² ]</span></div>
-即<b>离散分离曲率等于拉普拉斯谱方差的一半</b>。这把第 16 章"分离曲率 = 观测熵的变分"精确落到离散情形。数值验证误差 <span class="s">&lt;10⁻⁶</span>。［推导见第 9.6 节与附录 J］</div>
+即<b>离散分离曲率等于拉普拉斯谱方差的一半</b>。这把第 19 章"分离曲率 = 观测熵的变分"精确落到离散情形。数值验证误差 <span class="s">&lt;10⁻⁶</span>。［推导见第 12.6 节与附录 J］</div>
 
 <p>一个诚实的补充：<span class="s">κ_info</span> <b>不是</b>中间相宽度 <span class="s">W</span> 的代理。在 8 个测试图上，二者的 Spearman 秩相关为 <b>−0.357</b>（星图 <span class="s">κ_info</span> 高但 <span class="s">W</span> 低，路径图相反）。它们是两个不同的不变量。</p>
 
 <h2>三个定理的强度与位置</h2>
 
 <table class="nat">
-<caption class="cap"><b>表 0.9　硬核三定理一览</b></caption>
+<caption class="cap"><b>表 0.7　硬核三定理一览</b></caption>
 <tr><th class="l">定理</th><th class="l">内容</th><th class="l">强度</th><th class="l">位置</th></tr>
-<tr><td class="l">A</td><td class="l">图上两阶段相变，<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span></td><td class="l">定理 A／甲</td><td class="l">第 12—15 章</td></tr>
-<tr><td class="l">B1</td><td class="l">对称加权图顺序不可反转</td><td class="l">定理 A／甲</td><td class="l">第 13.6 节</td></tr>
-<tr><td class="l">B2</td><td class="l">有向图顺序可反转（显式反例）</td><td class="l">反例 A／甲</td><td class="l">第 13.7 节</td></tr>
-<tr><td class="l">C</td><td class="l"><span class="s">κ_info = Var(λ)/2</span></td><td class="l">定理 A／甲</td><td class="l">第 9.6 节</td></tr>
+<tr><td class="l">A</td><td class="l">图上两阶段相变，<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span></td><td class="l">定理 A／甲</td><td class="l">第 15—18 章</td></tr>
+<tr><td class="l">B1</td><td class="l">对称加权图顺序不可反转</td><td class="l">定理 A／甲</td><td class="l">第 16.6 节</td></tr>
+<tr><td class="l">B2</td><td class="l">有向图顺序可反转（显式反例）</td><td class="l">反例 A／甲</td><td class="l">第 16.7 节</td></tr>
+<tr><td class="l">C</td><td class="l"><span class="s">κ_info = Var(λ)/2</span></td><td class="l">定理 A／甲</td><td class="l">第 12.6 节</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>硬核总表。全部可复算。<b>复现：</b><code>bash scripts/verify-experiments.sh</code>。</div>
 
 <h2>框架是诠释，不是前提</h2>
 
-<p>这三个定理讨论的是不同的对象（无权图、加权图、有向图、谱方差），但它们的证明共享同一个数学内核：<b>一个线性生成元的谱，决定区分能力随时间的方向。</b>第三部分的六元组框架，就是对这个共同内核的抽象——<b>它是从定理反推出来的诠释，而不是先验的前提。</b></p>
+<p>这三个定理讨论的是不同的对象（无权图、加权图、有向图、谱方差），但它们的证明共享同一个数学内核：<b>一个线性生成元的谱，决定区分能力随时间的方向。</b>第四部分的六元组框架，就是对这个共同内核的抽象——<b>它是从定理反推出来的诠释，而不是先验的前提。</b></p>
 
 <div class="scenario"><span class="bt">推荐的读法（硬→软）</span>
-<b>第一步（信任）：</b>本页 + 第 12—15 章 + 第 13.6—13.7 节 + 第 9.6 节 + 附录 J。这些是严格、可复现的结果。<br>
-<b>第二步（诠释）：</b>第三部分（第 8—11 章）——看看这三个定理共同的结构如何被抽象成六条公理。<br>
-<b>第三步（推广）：</b>第二、四、五部分——把框架用到其他领域，并诚实地标出哪里只是工具对应。<br>
+<b>第一步（信任）：</b>本页 + 第 15—18 章 + 第 13.6—13.7 节 + 第 12.6 节 + 附录 J。这些是严格、可复现的结果。<br>
+<b>第二步（诠释）：</b>第四部分（第 11—14 章）——看看这三个定理共同的结构如何被抽象成六条公理。<br>
+<b>第三步（定位）：</b>第二部分（第 4—6 章）——看看这些小结果在现代统一框架（概型/凝聚/单价/∞-范畴）旁边站在哪里。<br>
+<b>第四步（推广）：</b>第三、六部分——把框架用到其他领域，并诚实地标出哪里只是工具对应。<br>
 <b>如果你走完第一步就停下来，本书仍然成立</b>——你获得的是三个定理和它们的可复现证明。这正是本书希望达到的最低标准。</div>

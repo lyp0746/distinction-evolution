@@ -11,7 +11,7 @@
 <b>对称 <span class="s">M</span>：</b><span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 实数，谱定理保证"大特征值 = 高振荡"。<br>
 <b>非对称 <span class="s">M</span>：</b>增长率是 <span class="s">Re(μ<sub>k</sub>)</span>，"最大实部"与"最振荡"解耦。</div>
 
-<p>第三部分的六元组框架，正是从这个内核抽象出来的。本附录的四个结果，是它的四个具体实例。</p>
+<p>第四部分的六元组框架，正是从这个内核抽象出来的。本附录的四个结果，是它的四个具体实例。</p>
 
 <h2>J.2　定理 B1：对称加权不可反转</h2>
 
@@ -20,7 +20,7 @@
 <div class="eq"><span class="body">x<sup>T</sup>L<sub>w</sub>x = Σ<sub>{u,v}∈E</sub> w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)² ≥ 0</span></div>
 故 <span class="s">L<sub>w</sub></span> 实对称半正定，谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>。于是 <span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立。</div>
 
-<p><b>证明。</b>对称性、半正定性、谱定理均如第 13.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
+<p><b>证明。</b>对称性、半正定性、谱定理均如第 16.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
 
 <table class="nat">
 <caption class="cap"><b>表 J.1　对称加权扫描（400 个随机加权连通图，α=1）</b></caption>
@@ -58,7 +58,7 @@
 <p><b>这就是顺序反转：全局先于局部。</b>根因是生成元的<b>非正规性</b>——对称情形下谱定理把"大特征值"与"高振荡"捆绑，非对称情形下这个捆绑断裂。［A］</p>
 
 <div class="warning"><span class="bt">反例划出的边界</span>
-定理 12.1 的"局部先于全局"：
+定理 15.1 的"局部先于全局"：
 <b>（i）</b>在任意对称加权下稳健（J.2）；
 <b>（ii）</b>在有向耦合下失效（J.3）。
 这条边界是本书框架的第一条<b>明确适用边界</b>——它比任何正面例子都更有信息量。</div>
@@ -74,7 +74,7 @@
 <div class="eq"><span class="body">S″(0)=(A/Z)′|<sub>0</sub>=(A′Z−AZ′)/Z²|<sub>0</sub>=(−nΣλ²+(Σλ)²)/n²=−Var(λ)</span></div>
 故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
 
-<p>数值验证（有限差分）误差 <span class="s">&lt;10⁻⁶</span>。计算值见正文表 9.3。［A］</p>
+<p>数值验证（有限差分）误差 <span class="s">&lt;10⁻⁶</span>。计算值见正文表 12.3。［A］</p>
 
 <h2>J.5　一个诚实的负结果：κ_info 不是 W 的代理</h2>
 
@@ -91,7 +91,7 @@
 
 <h2>J.6　高维缺口：f(n)=1/(2n+1) 被证伪</h2>
 
-<p>第 17 章的开放问题 G4 猜测高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 检验：</p>
+<p>第 20 章的开放问题 G4 猜测高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 检验：</p>
 
 <div class="eq"><span class="body">ratio(n) = χ_naive/χ(S<sup>2n</sup>) = R·Vol(S<sup>2n</sup>)/(24π)，　R=2n(2n−1)</span></div>
 
@@ -144,7 +144,7 @@
 <pre class="code">python analysis/weighted_directed_transition.py   # 定理 B1 + 反例 B2
 python analysis/discrete_curvature.py             # 定理 C + 负结果 J.5
 python analysis/higher_dim_gap.py                 # 证伪 J.6
-python analysis/graph_phase_transition.py         # 定理 A（协议 V1）</pre>
+python analysis/graph_phase_transition.py         # 定理 A（复现协议）</pre>
 
 <div class="note"><b>本附录的意义</b>
 它把"先兑现"从口号变成实物：<b>一个推广定理（B1）、一个反例（B2）、一个恒等式（C）、一个证伪（J.6）。</b>其中两个是正面结果，两个是负面结果——而负面结果同样有价值，因为它们划出了理论的边界。这正是本书承诺的"记录失败"的具体兑现。</div>

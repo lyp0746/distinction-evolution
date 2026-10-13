@@ -1,151 +1,76 @@
-<h2 class="chapter">第 11 章　六条公理与元理论</h2>
+<h2 class="chapter">第 11 章　区分动作、观测与不可区分关系</h2>
 
-<p class="lead">本章把前几章的分量组织成一个公理系统，并给出三条元理论陈述。它同时是全书最需要诚实的地方：<b>六条公理中，只有一条在图上被完整验证；其余五条是"框架公理"，其作用是组织语言，不是产生定理。</b>本章明确区分这两类公理。</p>
+<p class="lead">从这里开始构造框架。演化区分系统（EDS）由六个分量组成，本章定义其中三个与"静态"有关的分量：<b>区分动作族、观测泛函、不可区分关系。</b>它们的关系是<b>对偶</b>的——任何两个都可以在给定第三个时确定另一个。这一对偶是框架严格性的来源。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值是让不同领域共享同一组概念；它的局限是部分公理（尤其是曲率演化与标准化）目前只在特定实现中被验证。把它们当作"已证基础"是误读。</b></div>
+"区分"不是一个模糊的直觉，而是可以被形式化的对象：一族把对象映射到观测值的函数。<b>三个分量（动作、观测、不可区分）互为对偶；公理化的关键，是要求观测完备性与精度连续性。</b>本部分是框架层（B），不是定理层。</div>
 
-<h3>11.1　导论：从定义到公理</h3>
+<h3>11.1　导论：三个基本对象</h3>
 
-<p>一个数学框架要能被使用，必须先说清哪些是定义、哪些是公理、哪些是定理。定义是约定；公理是假设；定理是被证明的命题。混用三者，是"统一理论"最常见的病。本节把 EDS 的三层分清。</p>
+<p>传统数学的起点是"对象"（集合、空间、群）。EDS 的起点是"操作"：<b>一个把对象分辨开的最小操作</b>。这个操作被称为区分动作。它像一个探针、一把尺子、一个开集、一个观测量——任何能回答"这两个东西在这里是否不同"的东西。</p>
 
-<div class="define"><span class="bt">定义 11.1　演化区分系统（EDS）</span>
-一个演化区分系统是一个六元组
-<div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
-其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 6 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
+<p>把区分动作当作基本对象，会立刻带来一个问题：如果只有动作，那么"区分"的是什么？答案是：区分动作通过对对象赋值来工作，而赋值就是观测。观测值相同，则对象在当前动作下不可区分。三个概念互相定义。</p>
 
-<h3>11.2　六条公理</h3>
+<h3>11.2　区分动作族</h3>
 
-<img class="fig" src="assets/svg/fig11-axiom-dependency.svg" alt="六条公理的依赖关系">
+<div class="define"><span class="bt">定义 11.1　区分动作族</span>
+设 <span class="s">X</span> 是一个对象集合。一个<b>区分动作族</b> <span class="s">D</span> 是 <span class="s">X</span> 的一族子集（或 <span class="s">X</span> 上的一族函数），满足：<br>
+<b>（D1）边界条件：</b><span class="s">∅, X ∈ D</span>；<br>
+<b>（D2）交封闭：</b>若 <span class="s">{D<sub>i</sub>}<sub>i∈I</sub> ⊆ D</span>，则 <span class="s">⋂<sub>i</sub> D<sub>i</sub> ∈ D</span>；<br>
+<b>（D3）精化存在：</b>对任意 <span class="s">D₁,D₂∈D</span>，存在 <span class="s">D′∈D</span> 使得 <span class="s">∅≠D′⊆D₁∩D₂</span>。<br>
+<span class="s">D</span> 中的元素称为<b>区分动作</b>。</div>
 
-<div class="cap"><b>图 11.1　六条公理的依赖关系</b>。公理 1（观测完备）与公理 5（分离完备）是结构性的；公理 2（精度连续）与公理 3（曲率有界）是技术性的；公理 4（演化适定）与公理 6（标准化）提供动力学与降级。带星号者为在图论实现中已验证。</div>
+<p>与拓扑的并封闭不同，这里要求交封闭与精化存在。直觉上：区分动作是"缩小的透镜"，你可以把它们叠在一起看得更细（交），但不能指望任意并仍在族内（把两个不同透镜的视野直接相加没有意义）。</p>
 
-<div class="define"><span class="bt">公理 1　观测完备性</span>
-对所有 <span class="s">D∈D</span>，<span class="s">O(D)(x)=O(D)(y) ⇔ x∼<sub>0</sub>y</span>。观测与不可区分互为对偶。〔图论：✓ 已验证〕</div>
+<div class="note"><b>例子</b>
+图论：<span class="s">D<sub>G</sub>={V<sub>S</sub>: S⊆V}</span>（顶点子集族）。<br>
+拓扑：任何拓扑的子基。<br>
+代数：某个群的全部子群。<br>
+信息论：一族检验函数。<br>
+不同领域的"区分"差别很大，但都满足 D1—D3。</div>
 
-<div class="define"><span class="bt">公理 2　精度连续性</span>
-对任意 <span class="s">D∈D</span> 与 <span class="s">ε&gt;0</span>，存在 <span class="s">δ&gt;0</span>，使得精度参数变化不超过 <span class="s">δ</span> 时，等价关系的细化程度变化不超过 <span class="s">ε</span>。〔图论：✓ 离散情形平凡〕</div>
+<h3>11.3　观测泛函</h3>
 
-<div class="define"><span class="bt">公理 3　曲率有界性</span>
-对任意紧子族 <span class="s">K⊆D</span> 与任意 <span class="s">T&gt;0</span>，<span class="s">sup{|κ(Φ<sub>t</sub>(D),x)| : D∈K, t∈[0,T], x∈X} &lt; ∞</span>。有限范围内曲率不发散。〔图论：✓（有限矩阵，谱有界）〕</div>
+<div class="define"><span class="bt">定义 11.2　观测泛函</span>
+<b>观测泛函</b> <span class="s">O: D → [0,1]<sup>X</sup></span> 把每个区分动作映为一族观测值，满足：<br>
+<b>（O1）单调性：</b><span class="s">D₁⊆D₂ ⇒ O(D₁)(x) ≤ O(D₂)(x)</span>；<br>
+<b>（O2）边界条件：</b><span class="s">O(∅)(x)=0</span>，<span class="s">O(X)(x)=1</span>；<br>
+<b>（O3）右连续性：</b><span class="s">O(·)(x)</span> 关于包含偏序右连续。</div>
 
-<div class="define"><span class="bt">公理 4　演化适定性★</span>
-对任意初始 <span class="s">D<sub>0</sub>∈D</span>，存在唯一演化 <span class="s">Φ<sub>t</sub>(D<sub>0</sub>)</span> 定义在最大时间区间上，满足
-<div class="eq"><span class="body">(d/dt)O(Φ<sub>t</sub>(D<sub>0</sub>))(x) = κ(Φ<sub>t</sub>(D<sub>0</sub>),x)·O(Φ<sub>t</sub>(D<sub>0</sub>))(x)</span></div>
-即演化由分离曲率唯一决定。〔图论：✓ 已验证——这是第四部分的核心〕</div>
+<p>观测值 <span class="s">O(D)(x)∈[0,1]</span> 表示"在区分动作 <span class="s">D</span> 下，点 <span class="s">x</span> 的可区分／可观测程度"。单调性说的是：更大的区分动作（更粗的透镜）给出更确定的观测。这是一个自然的约定：如果你已经知道整条曲线，你对某个点的观测不会少于只知道一个小区间时。</p>
 
-<div class="define"><span class="bt">公理 5　分离完备性</span>
-每个 <span class="s">D∈D</span> 可写成有限个原子区分动作的精化交。<span class="s">D = D₁ ⊓ … ⊓ D<sub>n</sub></span>，每个 <span class="s">D<sub>i</sub></span> 在某精度下不可再分。〔图论：部分（谱分解给出有限原子）〕</div>
+<h3>11.4　不可区分关系与精度层级</h3>
 
-<div class="define"><span class="bt">公理 6　标准化存在性（可选）</span>
-对任意超有限区分动作族 <span class="s">*D</span>，其标准部分 <span class="s">st(*D)</span> 满足
-<div class="eq"><span class="body">O(st(*D))(x) = st( (1/|*D|) Σ<sub>d∈*D</sub> O(d)(x) )</span></div>
-〔图论：不需要（有限图无超有限）〕</div>
+<div class="define"><span class="bt">定义 11.3　精度等价关系族</span>
+对每个精度参数 <span class="s">α∈(0,∞)</span>，定义等价关系 <span class="s">∼<sub>α</sub></span>，满足：<br>
+<b>（E1）精度单调：</b><span class="s">α₁&lt;α₂</span> 且 <span class="s">x∼<sub>α₂</sub>y ⇒ x∼<sub>α₁</sub>y</span>（精度越高，区分越细）；<br>
+<b>（E2）完备性：</b><span class="s">x∼<sub>0</sub>y ⇔ O(D)(x)=O(D)(y)</span> 对所有 <span class="s">D</span> 成立；<br>
+<b>（E3）分离能力：</b><span class="s">α(x,y) := inf{α : x≁<sub>α</sub>y}</span> 度量 <span class="s">x,y</span> 的区分难度。</div>
 
-<div class="warning"><span class="bt">警告 11.1　务必分清"框架公理"与"已验证公理"</span>
-公理 4 在第四部分有一个完整、严格的验证（图上的相变定理）。公理 6 只在非标准分析中独立成立，与框架的接口未证。公理 5 在图论中部分成立。其余公理是<b>组织性假设</b>：它们的用途是让不同领域的描述共享词汇，而不是产生新定理。<b>本书从不把它们当作已证基础来推导其他结论。</b></div>
+<p>这套关系把"不可区分"变成一个有刻度的概念。两个对象不是简单地"一样"或"不一样"，而是在多大精度下才能被分开。<b>这正是后续"分离曲率"要度量的东西的静态版本。</b></p>
 
-<h3>11.3　元理论定理</h3>
+<h3>11.5　三个基本对象如何互为对偶</h3>
 
-<p>元理论陈述是关于框架本身的命题。它们大多属于"论证"级别。</p>
+<img class="fig" src="assets/svg/fig08-eds-sextuple.svg" alt="演化区分系统的六元组">
 
-<div class="define"><span class="bt">元理论 11.1　普遍编码（论证／纲领）</span>
-任何满足下列条件的数学对象 <span class="s">M</span> 都可被编码为某个 EDS：（i）具有离散化结构（子集族、子结构、等价类族）；（ii）具有观测或测量机制（范数、测度、迹、期望）；（iii）具有参数化的演化或变形。编码在"<span class="s">M</span> 的已知定理翻译为 EDS 定理"的意义下是自然的。［论证，乙］</div>
+<div class="cap"><b>图 11.1　演化区分系统的六元组</b>。左侧三个分量（区分动作、观测、不可区分）构成静态骨架；中间一个分量（分离曲率）是核心不变量；右侧两个分量（演化流、标准部分）提供动力学与降级能力。三个静态分量互为对偶，使得框架可以用任意一个作为入口。</div>
 
-<div class="define"><span class="bt">元理论 11.2　精度不变性（论证）</span>
-任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
+<div class="define"><span class="bt">公理 8.1　观测完备性</span>
+<span class="s">∀x,y∈X: O(D)(x)=O(D)(y)</span> 对所有 <span class="s">D∈D</span> 成立 <span class="s">⇔ x∼<sub>0</sub>y</span>。<br>
+即：若两点在所有区分动作下观测相同，则它们在精度 0 下不可区分；反之亦然。</div>
 
-<div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
-EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 12 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
+<p>这条对偶公理是框架的关键。它保证三个静态分量不是各自独立定义的，而是同一结构的三种投影。在不同领域，它表现为不同的熟悉事实：拓扑学里"两点有相同的邻域当且仅当局部不可分"；代数里"两个元素所有特征值相同当且仅当相似"；概率论里"两个事件在所有检验下分布相同当且仅当几乎必然相等"。</p>
 
-<h3>11.4　公理的独立性与边界</h3>
+<div class="scenario"><span class="bt">为什么对偶重要</span>
+一个统一框架最容易犯的错误，是让不同领域的"基本对象"互不兼容。EDS 通过公理 8.1 强制三者对偶，使得无论从哪个领域的哪个概念切入，都能落到同一个三元结构上。<b>这是"统一语言"能被真正使用（而不只是被宣告）的技术原因。</b></div>
 
-<p>一个公理系统必须面对两个问题：公理之间是否一致？是否独立？本书对这两个问题的回答是诚实的：<b>未知，且不声称已解决。</b></p>
+<h3>11.6　本章小结</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 11.1　六条公理的验证状态</b></caption>
-<tr><th class="l">公理</th><th class="l">图论</th><th class="l">连续（流形）</th><th class="l">信息论</th><th class="l">状态</th></tr>
-<tr><td class="l">1 观测完备</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">框架</td></tr>
-<tr><td class="l">2 精度连续</td><td class="l">✓</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">3 曲率有界</td><td class="l">✓</td><td class="l">部分</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">4 演化适定 ★</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">定理（图）</td></tr>
-<tr><td class="l">5 分离完备</td><td class="l">部分</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">6 标准化</td><td class="l">不需要</td><td class="l">未证</td><td class="l">未证</td><td class="l">可选工具</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>验证状态表。等级 B（作者判断，可核查）。<b>这是读第三部分最该记住的表。</b></div>
-
-<div class="scenario"><span class="bt">唯一的星号</span>
-表中只有一个星号：公理 4（演化适定性）。它之所以特殊，是因为它在第四部分有一个完整证明——而这正好说明框架不是一座悬空的楼：<b>它至少有一根柱子在岩石上。</b>其余柱子是否也能落地，是后面各部分要回答的问题。</div>
-
-<h3>11.5　与范畴论、类型论的关系</h3>
-
-<p>EDS 可以被放进不同的基础语言，各有得失。</p>
-
-<ul>
-<li><b>在集合论中：</b>六元组是集合与映射，公理是集合论命题。这是本书硬核使用的语言，最易检验。</li>
-<li><b>在范畴论中：</b>EDS 可被表述为一个函子 <span class="s">D: X → Type</span>，分离曲率是它的"增长速率"。这更符合"态射优先"，但增加了抽象层。</li>
-<li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
-</ul>
-
-<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 7.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
-
-<h3>11.6　公理在图论情形的精确状态</h3>
-
-<p>前面几章反复声明“只有公理 4 在图上被完整验证”。本节把这个状态<b>逐条核算清楚</b>，并给出一个此前的遗漏：<b>公理 5 在图论中有一条真正的定理</b>。同时本节诚实报告：<b>公理 1 与公理 2 在图上可证为平凡——找不到非平凡的定理。</b></p>
-
-<table class="nat">
-<caption class="cap"><b>表 11.1　六条公理在图论情形的精确状态（可核算）</b></caption>
-<tr><th class="l">公理</th><th class="l">图论状态</th><th class="l">依据</th></tr>
-<tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
-<tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
-<tr><td class="l">3 曲率有界</td><td class="l">有定理</td><td class="l"><span class="s">κ_info=Var(λ)/2</span>（第 9.6 节）</td></tr>
-<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 12—15 章）</td></tr>
-<tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 11.1，本节）</td></tr>
-<tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>公理状态核算。等级 A（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
-
-<div class="warning"><span class="bt">一个诚实的反结论：公理 1 在图上没有非平凡定理</span>
-一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
-
-<div class="define"><span class="bt">定理 11.1　原子分解的唯一性 ［定理，A］</span>
-在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
-<b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
-<b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
-<b>（iii）</b>因此，<b>原子分解唯一 ⟺ 谱是单谱（所有特征值互异）</b>。</div>
-
-<p><b>证明。</b>（i）谱投影是特征空间的止交投影，由 <span class="s">L</span> 唯一确定。（ii）若 <span class="s">dim E<sub>k</sub>=1</span>，则 <span class="s">E<sub>k</sub></span> 内只有一个单位向量（差符号），故 rank-1 原子唯一；若 <span class="s">dim E<sub>k</sub>&gt;1</span>，则可在 <span class="s">E<sub>k</sub></span> 内任意旋转正交基，得到不同的 rank-1 分解。（iii）拼接所有 <span class="s">k</span>。∎</p>
-
-<table class="nat">
-<caption class="cap"><b>表 11.2　测试图的光谱多重度（公理 5）</b></caption>
-<tr><th class="l">图</th><th class="l">单谱？</th><th class="l">重数分布</th><th class="l">原子分解</th></tr>
-<tr><td class="l">P₈（路径）</td><td class="l"><b>是</b></td><td class="l">[1,1,1,1,1,1,1,1]</td><td class="l"><b>唯一</b></td></tr>
-<tr><td class="l">Petersen</td><td class="l">否</td><td class="l">[1,5,4]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">K₅</td><td class="l">否</td><td class="l">[1,4]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">K₄,₄</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">星图 S₈</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
-
-<h3>11.7　生成性推论：笛卡尔积图的相变结构</h3>
-
-<p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
-
-<div class="define"><span class="bt">推论 11.1　乘积图的相变结构 ［推论，A］</span>
-<div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
-故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
-
-<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A］</p>
-
-<h3>11.8　本章小结</h3>
-
-<p>EDS 是一个六元组加六条公理。其中只有公理 4 在图上被完整验证；其余是组织性框架公理。这一诚实的分级是本书全部可信度的基础。第四部分现在给出那个唯一的星号：图上的相变定理。</p>
+<p>三个静态分量——区分动作、观测、不可区分——构成了 EDS 的骨架，且互为对偶。它们的公理（交封闭、单调、精度单调、观测完备）刻画了"区分"这个操作的最一般性质。下一章定义核心不变量：分离曲率，它度量这三个分量随精度或时间的变化率。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Mac Lane, S., &amp; Moerdijk, I. (1992). <i>Sheaves in Geometry and Logic</i>. Springer.</p>
-<p>Johnstone, P. T. (2002). <i>Sketches of an Elephant: A Topos Theory Compendium</i>. Oxford University Press.</p>
-<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
-<p>Voevodsky, V., et al. (2013). <i>Homotopy Type Theory</i>. IAS.</p>
+<p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p>
+<p>Gierz, G., et al. (2003). <i>Continuous Lattices and Domains</i>. Cambridge University Press.</p>
+<p>Engelking, R. (1989). <i>General Topology</i>. Heldermann.</p>
 </div>

@@ -1,106 +1,115 @@
-<h2 class="chapter">第 15 章　精确解、爆破时间与非线性相变</h2>
+<h2 class="chapter">第 15 章　图上演化区分系统与临界耦合定理</h2>
 
-<p class="lead">线性情形完全可解，但真实的区分系统通常是非线性的：区分动作之间会相互增强或抑制。本章给出一个精确可解的非线性模型，证明一个"保证衰减"的阈值，并给出一个对称情形的有限时间爆破公式。<b>本章同时演示第 2 章的一条纪律：定理要按它能证明的强度陈述，不能按它希望证明的强度陈述。</b></p>
+<p class="lead">本章是全书唯一完全严格的部分。它在有限图上定义演化区分系统，证明临界耦合由拉普拉斯谱决定。<b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-在非线性竞争–合作模型 <span class="s">Ḋ<sub>i</sub>=D<sub>i</sub>(−α+βΣ<sub>j≠i</sub>D<sub>j</sub>)</span> 中，存在一个严格的"保证衰减"阈值；对称情形下可精确求得有限时间爆破。<b>朴素的 <span class="s">S<sub>c</sub>=α/β</span> 结论只在均匀分布下成立；本章给出正确的、更弱但可证的版本。</b></div>
+在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的硬核，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
 
-<h3>15.1　导论：从线性到非线性</h3>
+<h3>15.1　导论：为什么从图开始</h3>
 
-<p>第 12 章的线性模型假设区分动作之间不相互作用。真实系统里它们会：一个探针的激活可能让另一个探针更容易激活（正反馈），也可能抑制它。最简的非线性模型是竞争–合作系统：每个探针以速率 <span class="s">α</span> 衰减，以速率 <span class="s">β</span> 被其他探针的总激活增强。</p>
+<p>一个统一框架若只在语言上成立，就只是修辞。要让纲领可信，必须至少在一个领域给出完整、严格、可复现的结果。图论是理想的首发地，原因有三：</p>
 
-<p>这样的系统可能出现有限时间爆破——这不是缺陷，而是一个真实的相变标志：区分强度在有限时间内趋于无穷（或在有饱和项时停在某个高值）。</p>
+<ul>
+<li><b>谱定理可用。</b>图的拉普拉斯矩阵是实对称的，其特征值理论完备，无需泛函分析。</li>
+<li><b>动力学是线性的。</b>演化方程是线性 ODE，可精确求解。</li>
+<li><b>数字可复算。</b>任何读者用十几行代码即可得到同样的临界值。</li>
+</ul>
 
-<h3>15.2　逻辑斯蒂精确解与爆破时间</h3>
+<p>更重要的原因是：图论中的"区分"有明确的对应物。<b>一个顶点能否与另一个顶点区分，取决于拉普拉斯扩散模式是否落在它上面。</b>这正是第 11—12 章的抽象概念在离散情形的具体实现。</p>
 
-<div class="define"><span class="bt">定义 15.1　非线性演化区分系统</span>
-设 <span class="s">X</span> 是有限集，<span class="s">D<sub>1</sub>,…,D<sub>k</sub>:X→[0,∞)</span> 是区分动作。演化方程
-<div class="eq"><span class="body">Ḋ<sub>i</sub>(x) = D<sub>i</sub>(x)(−α + β Σ<sub>j≠i</sub> D<sub>j</sub>(x))</span><span class="num">(15.1)</span></div>
-其中 <span class="s">α,β&gt;0</span>。</div>
+<h3>15.2　构造与演化方程</h3>
 
-<p>考虑对称情形：所有 <span class="s">D<sub>i</sub></span> 相等，记为 <span class="s">d</span>。则式 (15.1) 化为逻辑斯蒂方程</p>
+<div class="define"><span class="bt">定义 15.1　图上演化区分系统</span>
+设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
+<div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>)</span><span class="num">(12.1)</span></div>
+其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度。用拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span> 写成矩阵形式：
+<div class="eq"><span class="body">Ḋ = (−αI + βL)D</span><span class="num">(12.2)</span></div></div>
 
-<div class="eq"><span class="body">ḋ = −αd + β(k−1)d²</span><span class="num">(15.2)</span></div>
+<p>这个方程的物理含义：每个顶点的区分强度以速率 <span class="s">α</span> 衰减（不维护就会丢失），同时通过邻接边以速率 <span class="s">β</span> 促进区分向相邻顶点传播。<b>当传播速率足够高时，区分不再衰减，反而增长。</b>这个转变就是相变。</p>
 
-<div class="define"><span class="bt">命题 15.1　对称情形的精确解［定理，A］</span>
-式 (15.2) 以 <span class="s">d(0)=d<sub>0</sub>&gt;0</span> 为初值的解为
-<div class="eq"><span class="body">d(t) = αd<sub>0</sub>e<sup>−αt</sup> / [α − β(k−1)d<sub>0</sub>(1−e<sup>−αt</sup>)]</span><span class="num">(15.3)</span></div>
-若 <span class="s">d<sub>0</sub> &lt; α/(β(k−1))</span>，则 <span class="s">d(t)→0</span>；若 <span class="s">d<sub>0</sub> &gt; α/(β(k−1))</span>，则 <span class="s">d(t)</span> 在有限时间
-<div class="eq"><span class="body">t* = (1/α) ln[ β(k−1)d<sub>0</sub> / (β(k−1)d<sub>0</sub> − α) ]</span><span class="num">(15.4)</span></div>
-处爆破。</div>
+<p>对应第 11—12 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；分离曲率由演化方程 (12.2) 定义（见式 (15.4)）；演化流是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。公理 1—4 在有限图情形下都成立。</p>
 
-<p><b>证明。</b>分离变量：<span class="s">∫ dd/[d(−α+β(k−1)d)] = ∫ dt</span>。用部分分式 <span class="s">1/[d(β(k−1)d−α)] = (1/α)[1/(β(k−1)d−α) − 1/d]·(−1)</span>……更直接地，令 <span class="s">u=e^{−αt}</span>，验证式 (15.3) 在 <span class="s">t=0</span> 给出 <span class="s">d(0)=d<sub>0</sub></span>，且满足式 (15.2)。当 <span class="s">d<sub>0</sub>&gt;α/(β(k−1))</span> 时，式 (15.3) 的分母 <span class="s">α−β(k−1)d<sub>0</sub>(1−u)</span> 在 <span class="s">1−u<sub>*</sub>=α/(β(k−1)d<sub>0</sub>)</span> 处为零，对应 <span class="s">t*</span> 如式 (15.4)。<span class="s">∎</span></p>
+<h3>15.3　谱分解</h3>
 
-<img class="fig" src="assets/svg/fig15-blowup-time.svg" alt="爆破时间">
+<div class="define"><span class="bt">定义 15.2　拉普拉斯谱</span>
+图拉普拉斯矩阵 <span class="s">L</span> 是实对称半正定矩阵。记其正交归一特征向量为 <span class="s">v<sub>1</sub>,…,v<sub>n</sub></span>，特征值按序排列
+<div class="eq"><span class="body">0 = λ<sub>1</sub> &lt; λ<sub>2</sub> ≤ ⋯ ≤ λ<sub>n</sub></span></div>
+其中 <span class="s">λ<sub>1</sub>=0</span> 对应常向量 <span class="s">v<sub>1</sub>=𝟙/√n</span>（因为 <span class="s">G</span> 连通，零特征值重数为 1）。<span class="s">λ<sub>2</sub></span> 称<b>代数连通度</b>（Fiedler 值），<span class="s">λ<sub>n</sub></span> 是最大特征值。</div>
 
-<div class="cap"><b>图 15.1　爆破时间与初值的关系</b>。横轴为初始区分强度 <span class="s">d<sub>0</sub></span>（以阈值 <span class="s">d<sub>c</sub>=α/(β(k−1))</span> 为单位），纵轴为爆破时间 <span class="s">t*</span>。当 <span class="s">d<sub>0</sub>→d<sub>c</sub><sup>+</sup></span> 时 <span class="s">t*→∞</span>（临界慢化）；当 <span class="s">d<sub>0</sub></span> 很大时 <span class="s">t*→0</span>。</div>
+<p>把初值 <span class="s">D(0)</span> 在特征基下展开：<span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span>，<span class="s">c<sub>k</sub>=⟨D(0),v<sub>k</sub>⟩</span>。由于 <span class="s">L</span> 与 <span class="s">−αI</span> 交换，演化方程在特征基下解耦。</p>
 
-<h3>15.3　区分相变定理</h3>
+<h3>15.4　临界耦合定理</h3>
 
-<p>对称解只是特例。对一般的 <span class="s">D<sub>i</sub></span>，不能用单个 <span class="s">d</span> 描述。但可以用总激活 <span class="s">S=Σ<sub>i</sub>D<sub>i</sub></span> 得到一个严格的、尽管更弱的定理。</p>
+<img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="两阶段相变">
 
-<div class="define"><span class="bt">定理 15.1（保证衰减阈值）［定理，A］</span>
-设 <span class="s">S(t)=Σ<sub>i</sub>D<sub>i</sub>(t)</span>。若
-<div class="eq"><span class="body">S(0) &lt; α / [β(1−1/k)]</span><span class="num">(15.5)</span></div>
-则 <span class="s">S(t)→0</span>，且所有 <span class="s">D<sub>i</sub>(t)→0</span>，无论各 <span class="s">D<sub>i</sub></span> 如何分布。</div>
+<div class="cap"><b>图 15.1　临界耦合与两阶段相变</b>。横轴为耦合强度 <span class="s">β</span>，纵轴为各模式的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。每条直线对应一个拉普拉斯特征值。最先越过零的是最高频模式（<span class="s">λ<sub>n</sub></span>），在 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 处；Fiedler 模式（<span class="s">λ<sub>2</sub></span>）在 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 处越零。两者之间是"局部增长相"。</div>
 
-<p><b>证明。</b>对 <span class="s">S</span> 求导：
-<div class="eq"><span class="body">Ṡ = Σ<sub>i</sub>Ḋ<sub>i</sub> = Σ<sub>i</sub>D<sub>i</sub>(−α+β(S−D<sub>i</sub>)) = −αS + βS² − βΣ<sub>i</sub>D<sub>i</sub>²</span></div>
-由 Cauchy–Schwarz，<span class="s">Σ<sub>i</sub>D<sub>i</sub>² ≥ S²/k</span>（因为共有 <span class="s">k</span> 项）。故
-<div class="eq"><span class="body">Ṡ ≤ −αS + βS² − βS²/k = S(−α + βS(1−1/k))</span></div>
-若 <span class="s">S &lt; α/[β(1−1/k)]</span>，则右端 <span class="s">&lt;0</span>，故 <span class="s">Ṡ&lt;0</span>，<span class="s">S</span> 单调递减。因为右端关于 <span class="s">S</span> 是二次的且仅在 <span class="s">S&lt;α/[β(1−1/k)]</span> 时为负，递减的 <span class="s">S</span> 将一直保持在这个区间内，故 <span class="s">S→0</span>。<span class="s">∎</span></p>
+<img class="fig" src="assets/svg/fig12b-potential-landscape.svg" alt="临界耦合的势能景观">
 
-<div class="warning"><span class="bt">警告 15.1　朴素结论 <span class="s">S<sub>c</sub>=α/β</span> 不正确</span>
-一个诱人的陈述是"<span class="s">S&gt;α/β</span> 就增长"。<b>这是错的。</b>正确的分析给出：<span class="s">Ṡ = S(−α+βS(1−Σp<sub>i</sub>²))</span>，其中 <span class="s">p<sub>i</sub>=D<sub>i</sub>/S</span> 是归一化分布，<span class="s">Σp<sub>i</sub>²∈[1/k,1]</span>。<b>增长率依赖于分布的形状</b>，而不只是总激活。当分布极不均匀（<span class="s">Σp<sub>i</sub>²→1</span>，一个探针主导）时，<span class="s">Ṡ→−αS</span>，系统衰减，无论 <span class="s">S</span> 多大。§15.5 把这一点变成一条可检验的警示。</div>
+<div class="cap"><b>图 15.2　临界耦合的势能景观</b>。同一个 <span class="s">β</span> 下，各模式以不同斜率越过 <span class="s">κ=0</span>。斜率由 <span class="s">λ<sub>k</sub></span> 决定：<span class="s">λ</span> 越大，越早解锁。这张图是图 15.1 的“全景版”：把三相位展开为完整的阈值序列。</div>
 
-<div class="scenario"><span class="bt">为什么保留这个"失败"</span>
-按第 3 章的纪律，负面结果必须写在正文。朴素的 <span class="s">S<sub>c</sub>=α/β</span> 是一个漂亮的公式，但它不成立。正确的定理 (7.5) 更弱，但可证。<b>本书选择可证的弱定理，而不是漂亮的错公式。</b>这正是"诚实削弱命题"的一次具体实践。</div>
+<div class="define"><span class="bt">定理 15.1（临界耦合定理）［定理，A］</span>
+设 <span class="s">G</span> 是连通有限图，<span class="s">L</span> 的谱为 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>。考虑式 (15.2) 的演化。定义
+<div class="eq"><span class="body">β<sub>1</sub> := α/λ<sub>n</sub>,  β<sub>2</sub> := α/λ<sub>2</sub></span><span class="num">(12.3)</span></div>
+则对一般的初值 <span class="s">D(0)</span>（即投影 <span class="s">c<sub>n</sub>≠0</span>）：<br>
+<b>（i）衰减相</b>（<span class="s">β&lt;β<sub>1</sub></span>）：<span class="s">‖D(t)‖→0</span> 指数快，主导衰减率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>；<br>
+<b>（ii）局部增长相</b>（<span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>）：<span class="s">D(t)</span> 沿所有满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的<b>高频模式</b>指数增长（特别包括最高频模式 <span class="s">v<sub>n</sub></span>），沿所有满足 <span class="s">λ<sub>k</sub>&lt;α/β</span> 的<b>低频模式</b>衰减（特别包括 Fiedler 模式 <span class="s">v<sub>2</sub></span>）；<br>
+<b>（iii）全局增长相</b>（<span class="s">β&gt;β<sub>2</sub></span>）：至少沿 <span class="s">v<sub>n</sub></span> 与 <span class="s">v<sub>2</sub></span> 两个独立方向指数增长。</div>
 
-<h3>15.4　临界重叠数与曲率解释</h3>
+<h3>15.5　完整证明</h3>
 
-<p>用分布修正后的有效阈值可以写成一个"有效探针数"的形式。定义参与比</p>
+<p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (15.2) 变为
+<div class="eq"><span class="body">ẏ<sub>k</sub> = (−α+βλ<sub>k</sub>)y<sub>k</sub>,  k=1,…,n</span></div>
+这是 <span class="s">n</span> 个独立的一阶线性 ODE。</p>
 
-<div class="eq"><span class="body">k<sub>eff</sub> := 1 / Σ<sub>i</sub>p<sub>i</sub>²,  p<sub>i</sub>=D<sub>i</sub>/S</span><span class="num">(15.6)</span></div>
+<p><b>第二步（求解）。</b>每个方程的解为
+<div class="eq"><span class="body">y<sub>k</sub>(t) = y<sub>k</sub>(0)e^{μ<sub>k</sub>t},  μ<sub>k</sub> := −α + βλ<sub>k</sub></span><span class="num">(12.4)</span></div>
+因此 <span class="s">D(t)=Σ<sub>k</sub>y<sub>k</sub>(0)e^{μ<sub>k</sub>t}v<sub>k</sub></span>。分离曲率（演化型定义 12.2）正是 <span class="s">κ<sub>k</sub>=μ<sub>k</sub></span>。</p>
 
-<p>则 <span class="s">Ṡ = S(−α + βS(1−1/k<sub>eff</sub>))</span>，增长条件为 <span class="s">S &gt; α/[β(1−1/k<sub>eff</sub>)]</span>。<span class="s">k<sub>eff</sub></span> 在均匀分布时等于 <span class="s">k</span>，在集中分布时趋近 1（此时 <span class="s">1−1/k<sub>eff</sub>→0</span>，增长极难）。</p>
+<p><b>第三步（符号分析）。</b><span class="s">μ<sub>1</sub>=−α&lt;0</span>（常向量分量衰减）。对 <span class="s">k≥2</span>，<span class="s">λ<sub>k</sub>&gt;0</span>，故
+<div class="eq"><span class="body">μ<sub>k</sub>&gt;0 ⇔ β &gt; α/λ<sub>k</sub></span></div>
+由于 <span class="s">λ<sub>n</sub>≥λ<sub>k</sub>≥λ<sub>2</sub></span>，有 <span class="s">α/λ<sub>n</sub> ≤ α/λ<sub>k</sub> ≤ α/λ<sub>2</sub></span>，即 <span class="s">β<sub>1</sub>≤α/λ<sub>k</sub>≤β<sub>2</sub></span>。</p>
 
-<p>用分离曲率解释：<span class="s">κ := βS(1−1/k<sub>eff</sub>) − α</span>。<span class="s">κ&lt;0</span> 时塌缩，<span class="s">κ=0</span> 时临界，<span class="s">κ&gt;0</span> 时增长。<b>曲率的符号再次决定一切——但这次它依赖于一个由分布决定的量 <span class="s">k<sub>eff</sub></span>，而不是一个固定的常数。</b>［论证，乙］</p>
+<p><b>第四步（三情形）。</b></p>
 
-<h3>15.5　一个可证伪的预测及其边界</h3>
+<p>（i）若 <span class="s">β&lt;β<sub>1</sub>=α/λ<sub>n</sub></span>，则对所有 <span class="s">k≥2</span>，<span class="s">μ<sub>k</sub>≤μ<sub>n</sub>=−α+βλ<sub>n</sub>&lt;0</span>。又 <span class="s">μ<sub>1</sub>&lt;0</span>。故所有模式衰减，<span class="s">‖D(t)‖≤‖D(0)‖e^{μ<sub>max</sub>t}</span>，主导率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>。</p>
 
-<p>把上面的分析搬到神经网络上，可以得到一个关于"激活范数"的假说。若把某一层的激活看作区分动作 <span class="s">D<sub>i</sub></span>，把权重衰减看作 <span class="s">α</span>，把层内耦合看作 <span class="s">β</span>，则式 (15.5) 给出一个阈值行为。</p>
+<p>（ii）若 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>，则 <span class="s">μ<sub>n</sub>=−α+βλ<sub>n</sub>&gt;0</span>（因为 <span class="s">β&gt;α/λ<sub>n</sub></span>），而对所有 <span class="s">k&lt;n</span>，<span class="s">μ<sub>k</sub>=−α+βλ<sub>k</sub>≤−α+βλ<sub>n−1</sub></span>。需要说明 <span class="s">μ<sub>k</sub>&lt;0</span> 对 <span class="s">k&lt;n</span>：由 <span class="s">β&lt;β<sub>2</sub>=α/λ<sub>2</sub></span> 得 <span class="s">βλ<sub>2</sub>&lt;α</span>，而 <span class="s">λ<sub>k</sub>≤λ<sub>n</sub></span>……这里需要更细：实际上对 <span class="s">k&lt;n</span> 未必有 <span class="s">μ<sub>k</sub>&lt;0</span>，因为可能存在 <span class="s">λ<sub>k</sub>&gt;λ<sub>2</sub></span> 且 <span class="s">βλ<sub>k</sub>&gt;α</span>。正确的陈述是：在 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span> 中，那些满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的模式增长，其中 <span class="s">α/β∈(λ<sub>2</sub>,λ<sub>n</sub>)</span>。因此增长的模式是"高频"模式（<span class="s">λ<sub>k</sub></span> 较大者），衰减的模式是"低频"模式（<span class="s">λ<sub>k</sub></span> 较小者，特别包括 Fiedler 模式 <span class="s">λ<sub>2</sub></span>，因为 <span class="s">βλ<sub>2</sub>&lt;α</span>）。<b>这正是"局部先于全局"的精确含义：高频（局部）模式先增长，Fiedler（全局切割）模式滞后。</b>主导增长率为 <span class="s">μ<sub>n</sub>&gt;0</span>。</p>
 
-<div class="define"><span class="bt">假说 7.1　激活范数的阈值［假说，C］</span>
-在简化模型下，若某层的总激活 <span class="s">S</span> 长期低于 <span class="s">α/[β(1−1/k<sub>eff</sub>)]</span>，则其特征塌缩（梯度消失、欠拟合）；若长期显著高于，则特征放大（梯度爆炸、过拟合）。<b>最优训练被推测为使 <span class="s">S</span> 保持在阈值附近。</b></div>
+<p>（iii）若 <span class="s">β&gt;β<sub>2</sub>=α/λ<sub>2</sub></span>，则 <span class="s">μ<sub>2</sub>=−α+βλ<sub>2</sub>&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>，至少两个独立方向增长。<span class="s">∎</span></p>
 
-<div class="warning"><span class="bt">边界（必须同时读）</span>
-这个假说有四个明显的边界：<b>（1）玩具模型</b>——真实网络有非线性激活、层间耦合、注意力机制，远复杂于式 (15.1)；<b>（2）<span class="s">k<sub>eff</sub></span> 难以测量</b>——它在训练中变化；<b>（3）<span class="s">α,β</span> 不是从架构直接读出的</b>；<b>（4）没有实验数据</b>——本书不主张它已被验证。它是<b>一个标注为 C 的假说</b>，其价值是给出一个可被独立检验的方向（监测总激活与阈值的关系），而不是一个结论。</p></div>
+<div class="note"><b>关于"一般情况下 <span class="s">c<sub>n</sub>≠0</span>"</b>
+若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎必然满足。</div>
 
-<p>对这个假说做一次敏感性分析，可以看清它的可信边界。把 <span class="s">α</span>、<span class="s">β</span>、<span class="s">k<sub>eff</sub></span> 当作有不确定性的量（对数正态 CV≈0.3），采样 4×10⁵ 次，计算 <span class="s">κ=βS(1−1/k<sub>eff</sub>)−α</span> 的符号：</p>
+<h3>15.6　这个定理的地位</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 15.2　阈值假说的敏感性（脚本 <code>analysis/monte_carlo_sensitivity.py</code>）</b></caption>
-<tr><th class="l">观测总激活 S</th><th class="l">P(κ&gt;0)</th><th class="l">与朴素判据的方向翻转率</th><th class="l">可给出的结论</th></tr>
-<tr><td class="l">0.5</td><td class="l">0.038</td><td class="l">0.009</td><td class="l">仅符号（大概率塌缩）</td></tr>
-<tr><td class="l">1.0</td><td class="l">{{D:mc_S1_pos}}</td><td class="l">0.043</td><td class="l"><b>方向不稳定</b>（阈值附近）</td></tr>
-<tr><td class="l">2.0</td><td class="l">{{D:mc_S2_pos}}</td><td class="l">{{D:mc_S2_flip}}</td><td class="l">序关系 + 窄区间</td></tr>
-<tr><td class="l">5.0</td><td class="l">1.000</td><td class="l">0.000</td><td class="l">序关系 + 窄区间</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>敏感性分析。等级 C（regime 参数是规定性的）。<b>诚实的读法：</b>在阈值 <span class="s">S∼1</span> 附近，方向本身就不稳定——这与"相变"的预期一致；远离阈值时方向才是稳健的。因此这个假说<b>不能</b>被用来对处于临界区的层做具体预测，只能给出远离临界区时的方向判断。</div>
+<p>必须把话说清楚：这个定理<b>不是什么</b>。</p>
 
-<div class="note"><b>一条方法论示范</b>
-把式 (15.1) 的分析搬到 LLM 上，是全书最接近"过拟合类比"的地方。本书的处理方式——<b>先给出可证的弱定理，再明确标注迁移到 LLM 是 C 级假说，并列出四条边界</b>——是第 2 章"有效性判据"与第 3 章"分级制度"的联合应用。读者若要攻击本书，这里是成本最低的入口。
-<br><br><b>工程验证（附录 I.1）。</b>本假说已在一个<b>真实训练循环</b>上被检验：在模加法任务上训练一个带权重衰减的 MLP，逐层测量总激活 <span class="s">S</span> 与有效秩 <span class="s">r</span>。结果是<b>混合的</b>：层 1 同号率 0.95（支持耦合），层 2 同号率 0.27（<b>不支持</b>，甚至低于随机）。这说明机制是<b>按层分裂</b>的，而不是全局统一的——与本节"朴素阈值不成立"的分析一致。完整数字与脚本见附录 I。</div>
+<ul>
+<li>它<b>不</b>是"图上的数学大一统"。它只是线性稳定性分析应用在图的拉普拉斯上。</li>
+<li>它<b>不</b>声称对非线性和演化图普遍成立（第 18 章给出一个非线性版本及它的边界）。</li>
+<li>它<b>不</b>直接推广到连续流形（第 19—21 章说明推广的困难）。</li>
+</ul>
 
-<h3>15.6　本章小结</h3>
+<p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"分离曲率"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
 
-<p>非线性情形仍然可解：对称时给出精确解与有限时间爆破公式；一般情形给出一个可证的"保证衰减"阈值。<b>关键的诚实之处在于：朴素的 <span class="s">S<sub>c</sub>=α/β</span> 被证明为错，正确的定理用 <span class="s">k<sub>eff</sub></span> 修正。</b>至此，硬核部分结束——它是本书唯一完全严格、可复现的部分。第五部分转向连续与几何，在那里会遇到一个尚未填合的缺口。</p>
+<h3>15.7　本章小结</h3>
+
+<p>在有限图上，演化区分系统的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
+
+<div class="note"><b>本章清单</b>
+<ul>
+<li><b>⊗ 可引用（A）：</b>定理 15.1（临界耦合定理：<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span>，含完整证明）；定义 15.1（图上演化区分系统）；定义 15.2（拉普拉斯谱）。</li>
+<li><b>⊕ 有论证（B）：</b>临界值的谱—模式解释（高频先解锁、Fiedler 后解锁）。</li>
+<li><b>？ 未解决：</b>有向与非线性情形（第 16、18 章）。</li>
+<li><b>↔ 连接：</b>第 16 章由此证明两阶段相变；第 22 章用其结论建立"图→信息论"编码。</li>
+</ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Murray, J. D. (2002). <i>Mathematical Biology I: An Introduction</i> (3rd ed.). Springer.</p>
+<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p>
+<p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
+<p>Fiedler, M. (1973). Algebraic connectivity of graphs. <i>Czechoslovak Mathematical Journal</i> 23.</p>
+<p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p>
 <p>Hirsch, M. W., Smale, S., &amp; Devaney, R. L. (2012). <i>Differential Equations, Dynamical Systems, and an Introduction to Chaos</i> (3rd ed.). Academic Press.</p>
-<p>Lotka, A. J. (1925). <i>Elements of Physical Biology</i>. Williams &amp; Wilkins.</p>
-<p>Volterra, V. (1931). <i>Leçons sur la théorie mathématique de la lutte pour la vie</i>. Gauthier-Villars.</p>
-<p>Sornette, D. (2009). <i>Critical Phenomena in Natural Sciences</i> (2nd ed.). Springer.</p>
 </div>

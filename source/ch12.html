@@ -1,107 +1,122 @@
-<h2 class="chapter">第 12 章　图上演化区分系统与临界耦合定理</h2>
+<h2 class="chapter">第 12 章　分离曲率：核心不变量</h2>
 
-<p class="lead">本章是全书唯一完全严格的部分。它在有限图上定义演化区分系统，证明临界耦合由拉普拉斯谱决定。<b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
+<p class="lead">如果 EDS 只有一个核心不变量，那就是<b>分离曲率</b> <span class="s">κ</span>。它度量"区分能力随精度或时间的指数增长率"，其符号把系统分成三类。本章定义它、解释它、并诚实说明它在不同领域形式不同这一事实。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的硬核，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
+分离曲率是本书的核心不变量：它把"区分能力是增长、平衡还是衰减"变成一个可计算的量。<b>三者（负、零、正）覆盖了从结构塌缩到结构爆炸的全部行为。但它在不同领域的具体公式不同，它们的统一目前是纲领，不是定理。</b></div>
 
-<h3>12.1　导论：为什么从图开始</h3>
+<h3>12.1　导论：为什么曲率是核心</h3>
 
-<p>一个统一框架若只在语言上成立，就只是修辞。要让纲领可信，必须至少在一个领域给出完整、严格、可复现的结果。图论是理想的首发地，原因有三：</p>
+<p>统一工作需要一个不变量，正如几何需要曲率、群论需要特征标。区分结构的最自然不变量是"随精度移动时，区分动作增加得有多快"：如果每提高一点精度，可用的区分动作就指数增长，那么系统是"区分器过剩"的；如果它们迅速枯竭，系统是"区分器稀缺"的。</p>
 
-<ul>
-<li><b>谱定理可用。</b>图的拉普拉斯矩阵是实对称的，其特征值理论完备，无需泛函分析。</li>
-<li><b>动力学是线性的。</b>演化方程是线性 ODE，可精确求解。</li>
-<li><b>数字可复算。</b>任何读者用十几行代码即可得到同样的临界值。</li>
-</ul>
+<p>这个量之所以叫"曲率"，是因为它与几何曲率共享同一个本质：<b>它衡量一个结构相对于平坦参照的偏离速率。</b>平坦意味着区分能力随精度线性增长（<span class="s">κ=0</span>）；正曲率意味着指数增长（像球面上测地线汇聚）；负曲率意味着迅速枯竭（像双曲空间里测地线发散）。这个类比不是修辞，它在图论中有一个精确的对应（第 15—18 章）。</p>
 
-<p>更重要的原因是：图论中的"区分"有明确的对应物。<b>一个顶点能否与另一个顶点区分，取决于拉普拉斯扩散模式是否落在它上面。</b>这正是第 8—9 章的抽象概念在离散情形的具体实现。</p>
+<h3>12.2　分离曲率的定义</h3>
 
-<h3>12.2　构造与演化方程</h3>
+<div class="define"><span class="bt">定义 12.1　分离曲率（精度型）</span>
+设区分动作族带有一个精度过滤 <span class="s">D<sub>0</sub>⊆D<sub>1</sub>⊆D<sub>2</sub>⊆…</span>，其中 <span class="s">D<sub>n</sub></span> 是精度 <span class="s">n</span> 下的区分动作集。定义
+<div class="eq"><span class="body">κ := lim<sub>n→∞</sub> (1/n) log( |D<sub>n</sub>| / |D<sub>n−1</sub>| )</span><span class="num">(9.1)</span></div>
+即区分动作数目随精度层级的指数增长率。</div>
 
-<div class="define"><span class="bt">定义 12.1　图上演化区分系统</span>
-设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
-<div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>)</span><span class="num">(12.1)</span></div>
-其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度。用拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span> 写成矩阵形式：
-<div class="eq"><span class="body">Ḋ = (−αI + βL)D</span><span class="num">(12.2)</span></div></div>
+<div class="define"><span class="bt">定义 12.2　分离曲率（演化型）</span>
+若系统带有演化流 <span class="s">Φ<sub>t</sub></span>，定义
+<div class="eq"><span class="body">κ(D,x) := lim sup<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span><span class="num">(9.2)</span></div>
+即观测值在演化下的相对增长速率。在光滑情形下，<span class="s">κ = (1/O)·∂<sub>t</sub>O</span>。</div>
 
-<p>这个方程的物理含义：每个顶点的区分强度以速率 <span class="s">α</span> 衰减（不维护就会丢失），同时通过邻接边以速率 <span class="s">β</span> 促进区分向相邻顶点传播。<b>当传播速率足够高时，区分不再衰减，反而增长。</b>这个转变就是相变。</p>
+<p>两个定义的关系是：精度型度量静态的"区分复杂度增长"，演化型度量动态的"观测增长"。在图上（第五部分），它们重合为一个可计算的量。</p>
 
-<p>对应第 8—9 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；分离曲率由演化方程 (12.2) 定义（见式 (12.4)）；演化流是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。公理 1—4 在有限图情形下都成立。</p>
+<h3>12.3　曲率符号分类：负、零、正</h3>
 
-<h3>12.3　谱分解</h3>
+<img class="fig" src="assets/svg/fig09-curvature-signs.svg" alt="分离曲率的符号分类">
 
-<div class="define"><span class="bt">定义 12.2　拉普拉斯谱</span>
-图拉普拉斯矩阵 <span class="s">L</span> 是实对称半正定矩阵。记其正交归一特征向量为 <span class="s">v<sub>1</sub>,…,v<sub>n</sub></span>，特征值按序排列
-<div class="eq"><span class="body">0 = λ<sub>1</sub> &lt; λ<sub>2</sub> ≤ ⋯ ≤ λ<sub>n</sub></span></div>
-其中 <span class="s">λ<sub>1</sub>=0</span> 对应常向量 <span class="s">v<sub>1</sub>=𝟙/√n</span>（因为 <span class="s">G</span> 连通，零特征值重数为 1）。<span class="s">λ<sub>2</sub></span> 称<b>代数连通度</b>（Fiedler 值），<span class="s">λ<sub>n</sub></span> 是最大特征值。</div>
+<div class="cap"><b>图 12.1　曲率符号分类</b>。横轴为精度或时间，纵轴为区分能力。三条曲线对应三种符号：<span class="s">κ<0</span>（区分器稀缺，结构塌缩）、<span class="s">κ=0</span>（平衡，区分能力线性增长）、<span class="s">κ>0</span>（区分器过剩，指数增长）。</div>
 
-<p>把初值 <span class="s">D(0)</span> 在特征基下展开：<span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span>，<span class="s">c<sub>k</sub>=⟨D(0),v<sub>k</sub>⟩</span>。由于 <span class="s">L</span> 与 <span class="s">−αI</span> 交换，演化方程在特征基下解耦。</p>
+<table class="nat">
+<caption class="cap"><b>表 12.1　曲率符号分类及其领域表现</b></caption>
+<tr><th class="l">κ 符号</th><th class="l">含义</th><th class="l">图论表现</th><th class="l">几何直觉</th><th class="l">信息论表现</th></tr>
+<tr><td class="l">κ&lt;0</td><td class="l">区分器稀缺</td><td class="l">β&lt;α/λ<sub>n</sub>，衰减</td><td class="l">双曲（发散）</td><td class="l">信息快速丢失</td></tr>
+<tr><td class="l">κ=0</td><td class="l">平衡</td><td class="l">β=α/λ<sub>n</sub>，临界</td><td class="l">平坦（欧氏）</td><td class="l">信息守恒</td></tr>
+<tr><td class="l">κ&gt;0</td><td class="l">区分器过剩</td><td class="l">β&gt;α/λ<sub>n</sub>，增长</td><td class="l">球面（汇聚）</td><td class="l">相关性放大</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>分类表。图论列为 A（定理），几何与信息论列为 B（工具对应）。</div>
 
-<h3>12.4　临界耦合定理</h3>
+<h3>12.4　曲率与已知几何量的对应</h3>
 
-<img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="两阶段相变">
+<p>分离曲率在不同领域取不同形式。这一节列出最常用的对应，并标注严格程度。</p>
 
-<div class="cap"><b>图 12.1　临界耦合与两阶段相变</b>。横轴为耦合强度 <span class="s">β</span>，纵轴为各模式的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。每条直线对应一个拉普拉斯特征值。最先越过零的是最高频模式（<span class="s">λ<sub>n</sub></span>），在 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 处；Fiedler 模式（<span class="s">λ<sub>2</sub></span>）在 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 处越零。两者之间是"局部增长相"。</div>
+<table class="nat">
+<caption class="cap"><b>表 12.2　分离曲率的领域对应</b></caption>
+<tr><th class="l">领域</th><th class="l">κ 的表达</th><th class="l">来源</th><th class="l">严格程度</th></tr>
+<tr><td class="l">有限图</td><td class="l">κ = βλ<sub>k</sub> − α</td><td class="l">拉普拉斯谱</td><td class="l">A（定理）</td></tr>
+<tr><td class="l">黎曼流形</td><td class="l">κ = R/6</td><td class="l">热核展开 <span class="s">a₁</span></td><td class="l">B（局部展开，接口未证）</td></tr>
+<tr><td class="l">信息论</td><td class="l">κ = −β（逆温度）</td><td class="l">Boltzmann 分布</td><td class="l">B（重述）</td></tr>
+<tr><td class="l">线性代数</td><td class="l">κ = 0</td><td class="l">谱分解的不变性</td><td class="l">B（重述）</td></tr>
+<tr><td class="l">LLM 潜在空间</td><td class="l">κ = βS − α</td><td class="l">总激活的线性化</td><td class="l">C（假说）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>对应表。这是全书最关键也最脆弱的一处：<b>五个公式形式不同，它们的统一是纲领（第 14.4 节），不是定理。</b>读者若只记住一句话，请记住这句。</div>
 
-<img class="fig" src="assets/svg/fig12b-potential-landscape.svg" alt="临界耦合的势能景观">
+<div class="warning"><span class="bt">警告 12.1　不要假装这些公式是同一个</span>
+图上 <span class="s">κ=βλ−α</span> 是精确的线性增长率；流形上 <span class="s">κ=R/6</span> 是热核展开的局部系数，其与全局拓扑的关系正是第 20 章的缺口；LLM 上 <span class="s">κ=βS−α</span> 是线性化近似。把它们写成"都是分离曲率"是一种<b>组织</b>，不是一种<b>证明</b>。声称它们已被统一，是本书最需要避免的过度宣称。</div>
 
-<div class="cap"><b>图 12.2　临界耦合的势能景观</b>。同一个 <span class="s">β</span> 下，各模式以不同斜率越过 <span class="s">κ=0</span>。斜率由 <span class="s">λ<sub>k</sub></span> 决定：<span class="s">λ</span> 越大，越早解锁。这张图是图 12.1 的“全景版”：把三相位展开为完整的阈值序列。</div>
+<h3>12.5　曲率的三条性质</h3>
 
-<div class="define"><span class="bt">定理 12.1（临界耦合定理）［定理，A］</span>
-设 <span class="s">G</span> 是连通有限图，<span class="s">L</span> 的谱为 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>。考虑式 (12.2) 的演化。定义
-<div class="eq"><span class="body">β<sub>1</sub> := α/λ<sub>n</sub>,  β<sub>2</sub> := α/λ<sub>2</sub></span><span class="num">(12.3)</span></div>
-则对一般的初值 <span class="s">D(0)</span>（即投影 <span class="s">c<sub>n</sub>≠0</span>）：<br>
-<b>（i）衰减相</b>（<span class="s">β&lt;β<sub>1</sub></span>）：<span class="s">‖D(t)‖→0</span> 指数快，主导衰减率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>；<br>
-<b>（ii）局部增长相</b>（<span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>）：<span class="s">D(t)</span> 沿所有满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的<b>高频模式</b>指数增长（特别包括最高频模式 <span class="s">v<sub>n</sub></span>），沿所有满足 <span class="s">λ<sub>k</sub>&lt;α/β</span> 的<b>低频模式</b>衰减（特别包括 Fiedler 模式 <span class="s">v<sub>2</sub></span>）；<br>
-<b>（iii）全局增长相</b>（<span class="s">β&gt;β<sub>2</sub></span>）：至少沿 <span class="s">v<sub>n</sub></span> 与 <span class="s">v<sub>2</sub></span> 两个独立方向指数增长。</div>
+<p>尽管定义形式不同，分离曲率在所有已知实现中共享三条性质。它们属于框架层（乙），可作为进一步研究的起点。</p>
 
-<h3>12.5　完整证明</h3>
+<p><b>性质一（符号决定长期行为）：</b><span class="s">κ<0</span> 时区分能力在有限步／有限时间内塌缩；<span class="s">κ=0</span> 时线性增长；<span class="s">κ>0</span> 时指数增长。这在图论中是定理（第 15 章），在其他领域是待证命题。</p>
 
-<p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (12.2) 变为
-<div class="eq"><span class="body">ẏ<sub>k</sub> = (−α+βλ<sub>k</sub>)y<sub>k</sub>,  k=1,…,n</span></div>
-这是 <span class="s">n</span> 个独立的一阶线性 ODE。</p>
+<p><b>性质二（不可逆性）：</b>若区分动作被粗化（信息被丢弃），在没有独立通道的情况下不能恢复。这是数据处理不等式在区分语言中的重述：<b>被压缩掉的信息不会自己回来。</b>（注意：这是定理级的陈述，但它同时也是设计原则的来源——外部记忆、检索、睡眠重放都是"另开一条通道"。）</p>
 
-<p><b>第二步（求解）。</b>每个方程的解为
-<div class="eq"><span class="body">y<sub>k</sub>(t) = y<sub>k</sub>(0)e^{μ<sub>k</sub>t},  μ<sub>k</sub> := −α + βλ<sub>k</sub></span><span class="num">(12.4)</span></div>
-因此 <span class="s">D(t)=Σ<sub>k</sub>y<sub>k</sub>(0)e^{μ<sub>k</sub>t}v<sub>k</sub></span>。分离曲率（演化型定义 9.2）正是 <span class="s">κ<sub>k</sub>=μ<sub>k</sub></span>。</p>
+<p><b>性质三（与拓扑量挂钩的潜力）：</b>曲率的积分可能对应于某个拓扑不变量。这是第 19—21 章的纲领：<span class="s">∫κ</span> 与欧拉示性数的关系，以及那个著名的 <span class="s">1/3</span> 因子。</p>
 
-<p><b>第三步（符号分析）。</b><span class="s">μ<sub>1</sub>=−α&lt;0</span>（常向量分量衰减）。对 <span class="s">k≥2</span>，<span class="s">λ<sub>k</sub>&gt;0</span>，故
-<div class="eq"><span class="body">μ<sub>k</sub>&gt;0 ⇔ β &gt; α/λ<sub>k</sub></span></div>
-由于 <span class="s">λ<sub>n</sub>≥λ<sub>k</sub>≥λ<sub>2</sub></span>，有 <span class="s">α/λ<sub>n</sub> ≤ α/λ<sub>k</sub> ≤ α/λ<sub>2</sub></span>，即 <span class="s">β<sub>1</sub>≤α/λ<sub>k</sub>≤β<sub>2</sub></span>。</p>
+<div class="scenario"><span class="bt">曲率的双重角色</span>
+分离曲率在本书里扮演两个角色：<b>描述性的</b>（刻画一个系统的行为，如图上的三相位）与<b>生成性的</b>（解释为什么不同领域呈现相似的相变结构）。第一个角色在图论中完全实现；第二个角色是纲领。清楚地区分二者，是读第五、六部分的前提。</div>
 
-<p><b>第四步（三情形）。</b></p>
+<h3>12.6　离散分离曲率：κ_info = Var(λ)/2</h3>
 
-<p>（i）若 <span class="s">β&lt;β<sub>1</sub>=α/λ<sub>n</sub></span>，则对所有 <span class="s">k≥2</span>，<span class="s">μ<sub>k</sub>≤μ<sub>n</sub>=−α+βλ<sub>n</sub>&lt;0</span>。又 <span class="s">μ<sub>1</sub>&lt;0</span>。故所有模式衰减，<span class="s">‖D(t)‖≤‖D(0)‖e^{μ<sub>max</sub>t}</span>，主导率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>。</p>
+<p>第 19 章会把分离曲率定义为“观测熵的变分”。这是一个连续情形的定义。但它能不能精确落到离散情形？可以——而且得到一个完全可证的恒等式。</p>
 
-<p>（ii）若 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>，则 <span class="s">μ<sub>n</sub>=−α+βλ<sub>n</sub>&gt;0</span>（因为 <span class="s">β&gt;α/λ<sub>n</sub></span>），而对所有 <span class="s">k&lt;n</span>，<span class="s">μ<sub>k</sub>=−α+βλ<sub>k</sub>≤−α+βλ<sub>n−1</sub></span>。需要说明 <span class="s">μ<sub>k</sub>&lt;0</span> 对 <span class="s">k&lt;n</span>：由 <span class="s">β&lt;β<sub>2</sub>=α/λ<sub>2</sub></span> 得 <span class="s">βλ<sub>2</sub>&lt;α</span>，而 <span class="s">λ<sub>k</sub>≤λ<sub>n</sub></span>……这里需要更细：实际上对 <span class="s">k&lt;n</span> 未必有 <span class="s">μ<sub>k</sub>&lt;0</span>，因为可能存在 <span class="s">λ<sub>k</sub>&gt;λ<sub>2</sub></span> 且 <span class="s">βλ<sub>k</sub>&gt;α</span>。正确的陈述是：在 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span> 中，那些满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的模式增长，其中 <span class="s">α/β∈(λ<sub>2</sub>,λ<sub>n</sub>)</span>。因此增长的模式是"高频"模式（<span class="s">λ<sub>k</sub></span> 较大者），衰减的模式是"低频"模式（<span class="s">λ<sub>k</sub></span> 较小者，特别包括 Fiedler 模式 <span class="s">λ<sub>2</sub></span>，因为 <span class="s">βλ<sub>2</sub>&lt;α</span>）。<b>这正是"局部先于全局"的精确含义：高频（局部）模式先增长，Fiedler（全局切割）模式滞后。</b>主导增长率为 <span class="s">μ<sub>n</sub>&gt;0</span>。</p>
+<div class="define"><span class="bt">定义 12.3　离散分离曲率 κ_info</span>
+设 <span class="s">G</span> 是 <span class="s">n</span> 顶点图，<span class="s">L</span> 为拉普拉斯矩阵。取热核的密度矩阵
+<div class="eq"><span class="body">ρ(t) = e<sup>−tL</sup> / Z(t),　Z(t) = tr(e<sup>−tL</sup>)</span><span class="num">(9.3)</span></div>
+与 von Neumann 熵 <span class="s">S(t)=−tr(ρ(t) log ρ(t))</span>。定义
+<div class="eq"><span class="body">κ_info(G) := −(1/2) S″(0⁺)</span><span class="num">(9.4)</span></div></div>
 
-<p>（iii）若 <span class="s">β&gt;β<sub>2</sub>=α/λ<sub>2</sub></span>，则 <span class="s">μ<sub>2</sub>=−α+βλ<sub>2</sub>&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>，至少两个独立方向增长。<span class="s">∎</span></p>
+<div class="define"><span class="bt">定理 12.1　离散分离曲率恒等式 ［定理，A］</span>
+对任意有限图，
+<div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>) = (1/2)[ (1/n)Σ<sub>k</sub>λ<sub>k</sub>² − ((1/n)Σ<sub>k</sub>λ<sub>k</sub>)² ]</span><span class="num">(9.5)</span></div>
+即离散分离曲率等于拉普拉斯谱方差的一半，且对 <span class="s">n≥2</span> 恒有 <span class="s">κ_info&gt;0</span>。</div>
 
-<div class="note"><b>关于"一般情况下 <span class="s">c<sub>n</sub>≠0</span>"</b>
-若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎必然满足。</div>
+<p><b>推导。</b>由 <span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，得
+<span class="s">S(t)=log Z + tA/Z</span>，其中 <span class="s">A(t)=Σ<sub>k</sub>λ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。直接求导：<span class="s">S′(t)=t(A/Z)′</span>，故 <span class="s">S′(0)=0</span>，且
+<div class="eq"><span class="body">S″(0) = (A′Z−AZ′)/Z²|<sub>0</sub> = (−nΣλ² + (Σλ)²)/n² = −Var(λ)</span></div>
+故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
 
-<h3>12.6　这个定理的地位</h3>
+<table class="nat">
+<caption class="cap"><b>表 12.3　κ_info 的计算（α 无关；数值验证误差 &lt;10⁻⁶）</b></caption>
+<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">κ_info</th></tr>
+<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2.0</td><td class="l">5.0</td><td class="l">1.50</td></tr>
+<tr><td class="l">C₁₀</td><td class="l">10</td><td class="l">0.382</td><td class="l">4.0</td><td class="l">1.00</td></tr>
+<tr><td class="l">K₅</td><td class="l">5</td><td class="l">5.0</td><td class="l">5.0</td><td class="l">2.00</td></tr>
+<tr><td class="l">P₂₀</td><td class="l">20</td><td class="l">0.025</td><td class="l">3.975</td><td class="l">0.995</td></tr>
+<tr><td class="l">星图 S₁₀</td><td class="l">10</td><td class="l">1.0</td><td class="l">10.0</td><td class="l">3.78</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>精确恒等式 + 数值。等级 A。脚本：<code>analysis/discrete_curvature.py</code>。<b>这是本书提出的一个图不变量</b>（它与 λ₂、λₙ 有关但不等同于任何单一谱量）。</div>
 
-<p>必须把话说清楚：这个定理<b>不是什么</b>。</p>
+<h3>12.7　κ_info 与中间相宽度的关系</h3>
 
-<ul>
-<li>它<b>不</b>是"图上的数学大一统"。它只是线性稳定性分析应用在图的拉普拉斯上。</li>
-<li>它<b>不</b>声称对非线性和演化图普遍成立（第 15 章给出一个非线性版本及它的边界）。</li>
-<li>它<b>不</b>直接推广到连续流形（第 16—18 章说明推广的困难）。</li>
-</ul>
+<p>一个自然的问题是：<span class="s">κ_info</span> 是不是中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理？<b>答案是否定的。</b>在表 12.3 的 8 个图上，二者的 Spearman 秩相关为 <b>−0.357</b>：星图的 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低（0.9），路径图的 <span class="s">κ_info</span> 低（0.995）但 <span class="s">W</span> 极大（40.36）。</p>
 
-<p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"分离曲率"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
+<div class="warning"><span class="bt">一个诚实的负结果</span>
+我们原本希望 <span class="s">κ_info</span> 能预测相变宽度。数据说不能。<span class="s">κ_info</span> 度量的是谱的“总方差”，而 <span class="s">W</span> 度量的是“两端比值 <span class="s">λₙ/λ₂</span>”。两个图可以有相同的谱方差却不同的两端比值。<b>这个负结果被写进正文而不是删掉，因为它防止了一个过强的声称。</b></div>
 
-<h3>12.7　本章小结</h3>
+<h3>12.8　本章小结</h3>
 
-<p>在有限图上，演化区分系统的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
+<p>分离曲率是本书的核心不变量，其符号把系统分为塌缩、平衡、精细三类。在离散情形，它可以被精确定义为热核熵的变分，并满足恒等式 <span class="s">κ_info=Var(λ)/2</span>。但它<b>不</b>是相变宽度的代理（秩相关 −0.36）。下一章引入动力学分量：演化流与时间区分。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p>
+<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. American Mathematical Society.</p>
+<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i> (2nd ed.). CRC Press.</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p>
 <p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
-<p>Fiedler, M. (1973). Algebraic connectivity of graphs. <i>Czechoslovak Mathematical Journal</i> 23.</p>
-<p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p>
-<p>Hirsch, M. W., Smale, S., &amp; Devaney, R. L. (2012). <i>Differential Equations, Dynamical Systems, and an Introduction to Chaos</i> (3rd ed.). Academic Press.</p>
 </div>

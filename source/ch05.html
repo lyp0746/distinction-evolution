@@ -1,97 +1,67 @@
-<h2 class="chapter">第 5 章　从区分生成空间：生成拓扑与可测区分</h2>
+<h2 class="chapter">第 5 章　四场统一：概型、凝聚、单价与 ∞-范畴</h2>
 
-<p class="lead">本章演示方法的第二步：<b>把"空间"当作导出概念，而不是预设公理。</b>传统拓扑学从开集公理出发，传统测度论从 σ-代数公理出发。本章展示，如果从更原始的"区分动作"出发，开集与可测集可以被<b>生成</b>出来，而不是被假设。这是本书全部框架的原始动作。</p>
+<p class="lead">本章逐一进入当代四场最重要的统一，并用第 4 章的三个特征（实体→关系、相等→同构、局部→整体）给它们定位。目的不是"用区分重述它们"——那太便宜，也不诚实——而是问一个更难的问题：<b>在每一场里，"区分"是一个它们已经解决的技术环节，还是一个它们没有处理的问题？</b>答案因场而异，有成立、有勉强、有失效。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-开集公理与 σ-代数公理不是必需的第一原理。从一个"区分动作"与一个"精度阈值"出发，可以生成一个拓扑结构或一个可测结构，经典公理成为生成规则的推论。<b>本案例通过了 P1/P2，并在 P3 上给出可检验的重述（如连通=区分不可切割），但尚未证明新定理。</b></div>
+四场统一都建立在一个共同直觉上：<b>对象由它与其他对象的关系决定。</b>这与本书"区分动作决定对象"的直觉共享同一个源头。但四场统一各自携带一个区分视角所没有的技术装置——环的谱、凝聚拓扑、路径空间、单纯集。<b>区分视角能否被这些装置吸收，取决于它能否回答一个它们不回答的问题：关系的分辨率从何而来、如何被度量。</b>［论证，B］</div>
 
-<h3>5.1　导论：拆掉开集公理</h3>
+<h3>5.1　Grothendieck 概型：点不是出发点</h3>
 
-<p>点集拓扑被公认为最难教的数学课程之一：它把距离、大小、形状、方向全部抽走，只剩下一族满足三条公理的"开集"。学生学完后常常问：这些公理为什么长这样？为什么并封闭是任意的、交封闭是有限的？教材的标准回答是"因为它能导出我们想要的结论"——这是一个圆滑但空洞的回答。</p>
+<p>概型论的核心操作是把"几何空间"从"点集"中解放出来。给定一个交换环 <span class="s">A</span>，其谱 <span class="s">Spec A</span> 是所有素理想的集合，配上 Zariski 拓扑与结构层。<b>点不再是基本对象，而是代数结构的副产物</b>；一个"几何对象"由它的结构层（局部环的层）及其粘合决定。格罗滕迪克进一步用"函子观点"把这一操作推到底：一个概型就是它的点函子 <span class="s">Hom(−, X)</span>，而 Yoneda 引理保证"知道所有从它出发的映射"等同于"知道它本身"。［已知，B］</p>
 
-<p>生成拓扑的做法是把这个回答变成操作：<b>不预设开集，只预设"什么被区分出来"。</b>开集成为区分动作的稳定区域，公理成为生成规则的自动产物。</p>
+<p>这与第 11 章的"区分完备性"有<b>平行但不等价</b>的关系。Yoneda 说的是：对象被它对全部探测对象的作用唯一决定。区分完备性说的是：对象被区分动作族分离。二者的共同点是"由行为定义对象"；差别在于，Yoneda 的探测对象是一个完整的范畴（任意概型），而区分动作族通常是一个受精度参数索引的小族。<b>Yoneda 是"完全探测"，区分是"带分辨率的探测"。</b>［论证，B］</p>
 
-<h3>5.2　生成拓扑：P[x]=w/θ</h3>
+<div class="note"><b>要点</b>：概型论已经处理了"关系决定对象"。区分视角若只重复这一点，就是换词；它的潜在贡献是把"关系"参数化为"精度"。</div>
 
-<p>最简版本由 Mazin 提出（生成拓扑学），其核心是一个比值：</p>
+<h3>5.2　Scholze 凝聚数学：用映射定义空间</h3>
 
-<div class="define"><span class="bt">定义 5.1　本体论内容（生成拓扑）［已知，B］</span>
-设 <span class="s">x</span> 是候选对象，<span class="s">w(x)≥0</span> 是它的区分权重，<span class="s">θ>0</span> 是阈值。定义<b>本体论内容</b>
-<div class="eq"><span class="body">P[x] = w(x) / θ</span></div>
-则 <span class="s">P[x]>1</span> 称 <span class="s">x</span> 属于<b>内部</b>，<span class="s">P[x]=1</span> 称 <span class="s">x</span> 处于<b>边界</b>，<span class="s">P[x]<1</span> 称 <span class="s">x</span> 属于<b>外部</b>。</div>
+<p>凝聚数学的出发点是：经典拓扑空间在代数运算下"坏"——函子空间、商、完备化常常失去良好性质。Clausen 与 Scholze 的做法是改变"空间"的定义：</p>
 
-<img class="fig" src="assets/svg/fig05-generative-topology.svg" alt="生成拓扑的三区域结构">
+<ul>
+<li><b>凝聚集</b>是"投射有限集"上的层：一个凝聚集 <span class="s">X</span> 把每个投射有限集 <span class="s">S</span> 映为 <span class="s">X(S)</span>，并要求有限联合满射构成覆盖。空间的性质由"从极度离散的对象到它的连续映射"读出。</li>
+<li><b>凝聚性</b>提供了一个同时容纳离散与连续的结构：<span class="s">ℝ</span>、<span class="s">ℤ_p</span>、解析空间都可以在同一个范畴里做代数。这让"分析"与"数论"第一次真正共享同调代数。</li>
+</ul>
 
-<div class="cap"><b>图 5.1　生成拓扑的三区域</b>。一个比值把对象空间分成内部（稳定可区分）、边界（临界）与外部（未区分）。开集、闭集、边界这些概念由此生成。选择不同的遍历规则 <span class="s">R</span>、权重 <span class="s">w</span> 与阈值 <span class="s">θ</span>，可以得到度量拓扑、Alexandrov 拓扑、Zariski 拓扑等经典理论。</div>
+<p>关键在于：凝聚数学跨越连续—离散鸿沟，靠的不是更聪明的近似，而是<b>把"粘合"本身放进定义</b>。它的拓扑（pro-étale / 有限联合满射）规定了"什么算局部数据、数据如何相容"。［已知，B］</p>
 
-<img class="fig" src="assets/svg/fig05b-reconstruction-topology.svg" alt="生成拓扑的重建对比">
+<div class="warning"><span class="bt">警告 5.1　凝聚数学跨过的东西，区分框架还没跨过</span>
+第 12 章会证明，在有限图上"分离曲率"可以被拉普拉斯谱完全捕捉；但在光滑流形上，热核展开给出的 <span class="s">κ=R/6</span> 与 Gauss–Bonnet 要求的拓扑积分之间出现因子 <span class="s">1/3</span> 缺口（第 20—21 章）。<b>凝聚数学解决"连续—离散"靠的是对象最初构成时的拓扑兼容性；本书的区分框架目前还没有把这层兼容性代数固化。</b>这不是计算错误，而是框架范围的诚实边界。</div>
 
-<div class="cap"><b>图 5.2　生成拓扑的重建前后对比</b>。左侧为传统拓扑的独立概念（开集、闭集、邻域、连续…）；右侧为生成视角下它们共同的来源——区分动作与阈值。<b>注意底部：P3（新定理）仍待检验。</b>这正是第 2 章警告 2.1 的具体体现。</div>
+<h3>5.3　Voevodsky 单价公理：同构即相等</h3>
 
-<p>这个构造的要点在于：<b>它把"开集"从公理降级为导出概念。</b>内部区域自动满足开集的性质，因为"稳定可区分"对并封闭、对有限交封闭，这些不再需要假设，而是从权重的比较中推出来。［已知］</p>
+<p>同伦类型论把"相等"从一个命题变成一个类型：<span class="s">a =_A b</span> 的元素是"从 <span class="s">a</span> 到 <span class="s">b</span> 的路径"。单价公理进一步断言 <span class="s">(A ≃ B) ≃ (A = B)</span>：<b>两个结构的等价，就是它们的相等。</b>由此得到结构同一性原则（structure identity principle）：同构的结构具有完全相同的高阶性质，无需逐一搬运定理。［已知，B］</p>
 
-<h3>5.3　三元素集合上的区分结构</h3>
+<p>这与本书的"不可区分关系"（第 11 章）在哲学上高度一致：二者都拒绝把"相等"当作不可分析的原始判断，而要求它由一个可检验的结构（等价 / 不可区分）来支撑。但技术层级不同：单价公理中的"相等"居住在一个类型论里，带有路径的高阶结构；而本书的不可区分关系目前是一个精度的等价关系，不带同伦层。<b>这个差别正是第 6 章"同伦升维"前沿的动机。</b>［论证，B］</p>
 
-<p>为了看清机制，考虑最朴素的例子：<span class="s">X={a,b,c}</span>。给每个点一个区分动作 <span class="s">D: X → {1, *, 0}</span>，其中 <span class="s">1</span> 表示稳定区分，<span class="s">*</span> 表示临界，<span class="s">0</span> 表示未区分。</p>
+<h3>5.4　∞-范畴：把相等逐层结构化</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 5.1　三种区分方案生成的拓扑</b></caption>
-<tr><th class="l">区分方案</th><th class="l">(D(a),D(b),D(c))</th><th class="l">生成的开集</th><th class="l">性质</th></tr>
-<tr><td class="l">方案 1</td><td class="l">(1,1,1)</td><td class="l">∅,{a},{b},{c},{a,b},{a,c},{b,c},X</td><td class="l">离散拓扑（Hausdorff）</td></tr>
-<tr><td class="l">方案 2</td><td class="l">(1,*,0)</td><td class="l">∅,{a},{a,b},X</td><td class="l">非 Hausdorff：b,c 不可分离</td></tr>
-<tr><td class="l">方案 3</td><td class="l">(1,0,1)</td><td class="l">∅,{a},{c},{a,c},X</td><td class="l">b 消失在背景中</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>离散实例。等级 A（可直接验证）。<b>关键：</b>同一个集合上不同的区分动作生成不同的拓扑——拓扑是区分动作的自动产物，不是硬塞的公理。</div>
+<p>∞-范畴（准范畴、simplicial 集）把范畴中的"相等"逐层替换为高维态射：对象之间是 1-态射，态射之间是 2-态射，依此类推，直到无穷。这样做的直接收益是：<b>同伦等价成为唯一的相等标准，同调代数与代数拓扑被完全现代化</b>（导出范畴、稳定 ∞-范畴、谱）。Lurie 的 <i>Higher Topos Theory</i> 与 <i>Higher Algebra</i> 是这一纲领的纪念碑。［已知，B］</p>
 
-<h3>5.4　连续、紧致、连通的区分重述</h3>
+<p>∞-范畴与本书的关系最远，也最有启发：如果"区分"要被升维，自然的候选就是把区分动作族组织成一个 ∞-群胚，用相变的临界维数跳跃（第 16 章"局部先于全局"）作为同伦层次变化的迹象。这目前是猜想，不是定理（第 6 章"前沿一"）。［假说，C］</p>
 
-<p>生成视角的真正价值，是把经典概念重述为可操作的区分条件。</p>
+<h3>5.5　四场统一的对照与"区分坐标"</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 5.2　拓扑概念的区分重述</b></caption>
-<tr><th class="l">传统定义</th><th class="l">区分重述</th></tr>
-<tr><td class="l">连续：开集的原像是开集</td><td class="l">连续 = 保持区分结构（若 <span class="s">D<sub>X</sub>(x)=1</span>，则 <span class="s">D<sub>Y</sub>(f(x))=1</span>）</td></tr>
-<tr><td class="l">紧致：任何开覆盖有有限子覆盖</td><td class="l">紧致 = 任何区分衰减序列在有限步到达稳定区分点</td></tr>
-<tr><td class="l">连通：不能表示为两个非空开集的并</td><td class="l">连通 = 区分动作无法把空间切成两个互不干扰的稳定区域</td></tr>
-<tr><td class="l">分离公理 T0/T1/T2</td><td class="l">分属性 = 区分动作的精细度谱</td></tr>
+<caption class="cap"><b>表 5.1　四场统一的区分坐标</b></caption>
+<tr><th class="l">框架</th><th class="l">基本对象</th><th class="l">"区分/探测"由什么承担</th><th class="l">区分视角是补充还是换词</th></tr>
+<tr><td class="l">概型论</td><td class="l">环的谱 / 点函子</td><td class="l">全部概型的 Hom（Yoneda）</td><td class="l">换词（已被 Yoneda 覆盖）</td></tr>
+<tr><td class="l">凝聚数学</td><td class="l">投射有限集上的层</td><td class="l">从投射有限集的连续映射 + 粘合</td><td class="l">补充（分辨率参数被显式化）</td></tr>
+<tr><td class="l">同伦类型论</td><td class="l">类型 / 路径空间</td><td class="l">相等类型（路径）</td><td class="l">补充（同伦升维是方向）</td></tr>
+<tr><td class="l">∞-范畴</td><td class="l">n-态射网络</td><td class="l">态射的态射（同伦层）</td><td class="l">待检验（维度较高）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>概念重述表。等级 B（论证）；<b>注意：</b>这些重述与经典定义等价需要额外的技术条件，本表给出的是直观对应，严格等价见附录 A。</div>
+<div class="datasrc"><b>性质：</b>结构性对照。<b>等级 B（公开共识）</b>为前三列；<b>第四列为作者判断，等级 C：</b>"补充/换词"的区分是本书的评估，不是这些框架的结论。</div>
 
-<p>这些重述的吸引力在于它们<b>可直觉化、可计算</b>。紧致性不再是"任意开覆盖"，而是"你无法无限地越来越模糊下去而不碰到一个被稳定识别出来的东西"。连通性不再是抽象的"两个非空开集"，而是"区分动作切不开它"。</p>
+<p>这张表给出的诚实结论是：<b>在概型论里，区分视角基本是换词</b>——Yoneda 已经完成了"由关系定义对象"。<b>在凝聚数学与同伦类型论里，区分视角可能补充一个被忽略的参数</b>——分辨率或同伦层。<b>在 ∞-范畴里，区分视角尚未证明自己能提供新东西。</b>承认这一点，比宣称"区分统一了四场"重要得多。</p>
 
-<h3>5.5　可测区分与 σ-代数的生成</h3>
+<h3>5.6　本章小结</h3>
 
-<p>同一个动作可以用在测度论上。拆掉 σ-代数公理，只预设一个"可测区分" <span class="s">D: X → {0,1,*}</span>：<span class="s">1</span> 表示稳定识别为"可测"，<span class="s">0</span> 表示落在不可测背景，<span class="s">*</span> 表示临界（零测集候选）。</p>
-
-<div class="define"><span class="bt">定义 5.2　可测集（区分生成版）</span>
-集合 <span class="s">A⊆X</span> 是<b>可测的</b>，当且仅当 <span class="s">A</span> 中每一点的区分状态不依赖于 <span class="s">A</span> 之外的任何点。这个条件自动迫使可测集族对补集封闭（若 <span class="s">A</span> 的可测性不依赖外部，则 <span class="s">A<sup>c</sup></span> 也不依赖），并对可数并封闭（外部已被每个 <span class="s">A<sub>n</sub></span> 排除干净）。</div>
-
-<p>因此，σ-代数公理不再是公理，而是"可测区分"这个动作的自动产物。类似地，可测函数 <span class="s">f</span> 可被重述为"保持区分结构"的函数，勒贝格积分可被重述为"区分动作的加权读数"。［论证］</p>
-
-<div class="warning"><span class="bt">警告 5.1　"自动"需要小心</span>
-"补集封闭与可数并封闭自动成立"这句话的严格版本需要一个技术前提：区分状态对可数并的稳定性。这个前提在朴素形式下成立，但在病态集合上可能失效（例如需要依赖选择公理的 Vitali 集）。因此本节的结论是<b>生成直觉</b>（B），不是"σ-代数公理可以删除"的定理（那需要更仔细的基础工作）。</div>
-
-<h3>5.6　有效性检验与边界</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 5.3　生成拓扑／可测区分的四判据评分</b></caption>
-<tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
-<tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">开集公理、σ-代数公理被一个区分动作取代</td></tr>
-<tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">度量拓扑、序拓扑、Zariski 拓扑、Borel 结构被同一机制覆盖</td></tr>
-<tr><td class="l">P3 问题解决力</td><td class="l">待检验</td><td class="l">尚未用此框架证明经典拓扑无法证明的新定理</td></tr>
-<tr><td class="l">P4 可迁移性</td><td class="l">部分通过</td><td class="l">与序列收敛生成拓扑、超有限测度有自然联系（第 6 章）</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>方法论评分。等级 B（作者的判断）。<b>边界：</b>P3 未通过，故本案例是"方法论成功、问题解决力待验证"的典型，与第 2 章的警告 2.1 一致。</div>
-
-<h3>5.7　本章小结</h3>
-
-<p>生成拓扑与可测区分展示了本书的原始动作：<b>不预设空间结构，从区分行为反向生成空间。</b>这个动作在压缩比与统一度上成功，在问题解决力上尚待检验。它也是本书框架的起点——第 8 章把"区分动作"正式定义为演化区分系统的第一个分量。下一章引入关键的降级工具：非标准分析。</p>
+<p>四场统一共享"对象由关系决定"的直觉。它们的成熟度不同，区分视角在其间的地位也不同：在概型论里是换词，在凝聚与同伦类型论里可能是补充，在 ∞-范畴里是未兑现的猜想。<b>下一章把这几条线索收成一张竞争力对标表，并指出把区分框架升级到这些层级所缺的三样东西。</b></p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Mazin, A. (2025). <i>Generative Topology</i>. Zenodo.</p>
-<p>Munkres, J. R. (2000). <i>Topology</i> (2nd ed.). Prentice Hall.</p>
-<p>Kelley, J. L. (1955). <i>General Topology</i>. Van Nostrand.</p>
-<p>Halmos, P. R. (1950). <i>Measure Theory</i>. Van Nostrand.</p>
-<p>Franklin, S. P. (1965). Spaces in which sequences suffice. <i>Fundamenta Mathematicae</i> 57.</p>
+<p>Hartshorne, R. (1977). <i>Algebraic Geometry</i>. Springer.</p>
+<p>Clausen, D., &amp; Scholze, P. (2019–). <i>Condensed Mathematics</i> (lecture notes).</p>
+<p>Univalent Foundations Program (2013). <i>Homotopy Type Theory: Univalent Foundations of Mathematics</i>. Institute for Advanced Study.</p>
+<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
+<p>Scholze, P. (2019). <i>Lectures on Condensed Mathematics</i>.</p>
 </div>

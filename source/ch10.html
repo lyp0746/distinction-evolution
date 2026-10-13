@@ -1,80 +1,85 @@
-<h2 class="chapter">第 10 章　演化流与时间区分</h2>
+<h2 class="chapter">第 10 章　结构语言：类型、范畴与相等的层级</h2>
 
-<p class="lead">静态框架能描述"什么和什么可区分"，但不能描述"区分结构如何变化"。本章补上动力学分量：<b>演化流</b>与<b>时间区分族</b>。关键的技术主张是：时间不必预设，它可以被理解为区分精度的参数化——即由区分结构的演化自动生成。这个主张一部分可证（图的迭代），一部分是纲领（连续情形）。</p>
+<p class="lead">前两章的压缩工具处理"空间"与"极限"。本章处理更底层的东西：<b>"相等"本身。</b>集合论里，两个对象要么相等要么不等，这是一个布尔判断。类型论（尤其是同伦类型论）把相等变成一个有结构的对象：路径、路径的路径、无穷高阶路径。这一改变使"结构主义"获得了严格的公理化基础，也是本书框架最后一块语言拼图。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-动态领域（微分方程、概率、量子、算子代数、博弈）之所以曾难以纳入静态框架，唯一障碍是"时间"。<b>引入时间区分族 <span class="s">D<sub>t</sub></span> 后，它们共享同一底层结构：演化流作用在区分动作上。时间本身从区分演化中生成，而不是外部预设。</b></div>
+集合论语言埋没了两样东西：<b>结构是派生的</b>（不是附加在集合上的），以及<b>相等可以有层级</b>。<b>类型论通过"相等即路径"与单价公理恢复了这两点；范畴论通过"态射优先"恢复了第一点。本章说明它们与 EDS 框架的关系，并明确它是一个可选的结构语言层。</b></div>
 
-<h3>10.1　导论：时间是预设还是生成</h3>
+<h3>10.1　导论：为什么需要"非集合"的语言</h3>
 
-<p>在多数数学分支里，时间是外部参数：微分方程里是自变量 <span class="s">t</span>，概率论里是滤子指标，量子力学里是演化参数。它们共享一个假设——时间是给定的。EDS 提出的问题是：<b>时间能不能从区分结构的演化中被构造出来？</b></p>
+<p>集合论是数学的通用底座，但它有代价。在集合论里，"群"不是基本对象，而是"一个集合加一个乘法、一个逆、一个单位元，满足若干公理"的一串附加结构。于是"两个群相等吗"这个问题变得别扭：它们可能是同一个群的不同表示，集合层面不相等，结构层面相等。集合论无法自然表达"结构上相同即相等"。</p>
 
-<p>如果答案是"能"，那么"动态领域"就不需要一个新的框架，只需要在 EDS 上增加"时间区分"这一个分量。这正是第 3 部分的结构。</p>
+<p>类型论与范畴论各自解决这个问题的一半。范畴论说：不要问对象是什么，问它与其他对象之间的态射是什么。类型论说：不要问两个东西是否用等号相连，问它们之间有没有路径。</p>
 
-<h3>10.2　演化流半群</h3>
+<h3>10.2　从集合到类型：依赖类型</h3>
 
-<div class="define"><span class="bt">定义 10.1　演化流</span>
-<b>演化流</b>是一族映射 <span class="s">Φ<sub>t</sub>: D → D</span>（<span class="s">t∈[0,∞)</span>），满足：<br>
-<b>（F1）恒等性：</b><span class="s">Φ<sub>0</sub>(D)=D</span>；<br>
-<b>（F2）半群性：</b><span class="s">Φ<sub>t+s</sub>(D)=Φ<sub>t</sub>(Φ<sub>s</sub>(D))</span>；<br>
-<b>（F3）强连续：</b><span class="s">t↦Φ<sub>t</sub>(D)</span> 右连续；<br>
-<b>（F4）生成元：</b>存在算子 <span class="s">𝓛</span> 使得 <span class="s">(d/dt)Φ<sub>t</sub>(D)=𝓛(Φ<sub>t</sub>(D))</span>；<br>
-<b>（F5）区分相容：</b>若 <span class="s">x∼<sub>α</sub>y</span>，则 <span class="s">Φ<sub>t</sub>(D)</span> 下仍保持某种等价。</div>
+<p>在依赖类型论中，"类型"取代"集合"，"项"取代"元素"，但关键的新东西是<b>依赖类型</b>：一个类型可以依赖另一个类型的项。例如，"长度为 <span class="s">n</span> 的向量"是一个依赖于 <span class="s">n</span> 的类型，而不是一个固定的集合。</p>
 
-<p>半群性是"时间方向"的代数表达：先演化 <span class="s">s</span> 再演化 <span class="s">t</span>，等于一次演化 <span class="s">s+t</span>。生成元 <span class="s">𝓛</span> 是"无穷小时间"的算子，在图上它就是 <span class="s">−αI+βL</span>（第 12 章）。</p>
+<div class="define"><span class="bt">定义 10.1　依赖类型与命题即类型［已知，A］</span>
+依赖类型族 <span class="s">B: A → Type</span> 给每个 <span class="s">a: A</span> 指定一个类型 <span class="s">B(a)</span>。在"命题即类型"对应下，命题被解释为类型，命题的证明被解释为该项。于是"证明"成为可被机器检查的对象——这是 Lean、Coq 等形式化工具的基础。</div>
 
-<h3>10.3　时间区分族</h3>
+<p>这个设计的直接后果是：<b>结构不再是被附加到集合上的东西，而是类型系统的内在性质。</b>"群结构"不是"集合 + 附加数据"，而是一个依赖类型的记录；"同构的群"在这个系统里可以自然地被视为相等。</p>
 
-<img class="fig" src="assets/svg/fig10-time-distinction.svg" alt="时间区分族与时间生成">
+<h3>10.3　相等即路径：同伦类型论</h3>
 
-<div class="cap"><b>图 10.1　时间区分族</b>。区分动作随"时间"参数变化，形成一族 <span class="s">{D<sub>t</sub>}</span>。时间类型可以是离散的（<span class="s">ℕ</span>）、连续的（<span class="s">ℝ</span>）或超有限的（<span class="s">*ℕ</span>）。关键断言：时间 = 区分动作演化的参数，而不是外部给定的连续统。</div>
+<img class="fig" src="assets/svg/fig07-equality-hierarchy.svg" alt="相等的层级">
 
-<div class="define"><span class="bt">定义 10.2　时间区分族</span>
-设 <span class="s">𝒯</span> 是时间类型（<span class="s">ℕ</span>、<span class="s">ℝ</span> 或 <span class="s">*ℕ</span>）。<b>时间区分族</b>是一族 <span class="s">{D<sub>t</sub>}<sub>t∈𝒯</sub></span>，满足：<br>
-<b>（T1）因果性：</b>若 <span class="s">s&lt;t</span>，则 <span class="s">D<sub>s</sub></span> 比 <span class="s">D<sub>t</sub></span> 更粗糙（区分能力随时间递增）；<br>
-<b>（T2）时间生成：</b><span class="s">(∂/∂t)O<sub>t</sub> = κ(D<sub>t</sub>)·O<sub>t</sub></span>（观测的时间导数由分离曲率决定）；<br>
-<b>（T3）因果完备：</b>任意两个时刻的状态都因果可比。</div>
+<div class="cap"><b>图 10.1　相等的层级</b>。在传统集合论中，<span class="s">a=b</span> 是一个布尔判断（有或没有）。在同伦类型论中，<span class="s">a=b</span> 本身是一个类型（"从 <span class="s">a</span> 到 <span class="s">b</span> 的路径"）；两条路径之间也可以有路径（同伦），如此无究上升。相等被结构化了。</div>
 
-<p>三条性质中，T2 是核心：它把时间演化的"速率"精确地交给分离曲率。这与公理 4（演化的适定性，第 11.2 节）一致。</p>
+<img class="fig" src="assets/svg/fig07b-reconstruction-types.svg" alt="结构语言的重建对比">
 
-<h3>10.4　时间涌现：一个条件性命题</h3>
+<div class="cap"><b>图 10.2　结构语言的重建前后对比</b>。集合论把结构当作集合的附加物；类型论把结构当作派生的内在性质。“同构即相等”是这一转变的核心收益，形式化成本是它的代价。</div>
 
-<div class="define"><span class="bt">命题 10.1　时间涌现［论证／假说，C］</span>
-定义净曲率 <span class="s">κ<sub>net</sub>(t) := ∫<sub>X</sub> κ(D<sub>t</sub>,x) dμ(x)</span>。若 <span class="s">κ<sub>net</sub>&gt;0</span>，则存在唯一的演化参数 <span class="s">τ := ∫<sub>0</sub><sup>t</sup>κ<sub>net</sub>(s)ds</span>，使得 <span class="s">D<sub>t</sub>=Φ<sub>τ</sub>(D<sub>0</sub>)</span>。<b>时间由分离的演化自动生成，无需外部参数。</b></div>
+<div class="define"><span class="bt">定义 10.2　同伦类型论（HoTT）［已知，A］</span>
+HoTT 把类型解释为空间（同伦类型），项解释为点，类型 <span class="s">a=b</span> 解释为从 <span class="s">a</span> 到 <span class="s">b</span> 的路径空间。相等关系满足：自反性（常路径）、对称性（逆路径）、传递性（路径拼接），且这些操作本身之间还有高阶同伦。**高阶路径**（路径的路径）自然编码了"两个证明也可以被证明等价"。</div>
 
-<p>这个命题在图的迭代情形下是平凡的：若 <span class="s">D<sub>n+1</sub>=Φ(D<sub>n</sub>)</span>，则迭代次数天然就是时间。它在连续情形下是实质性的：需要证明 <span class="s">κ<sub>net</sub></span> 的单调性，并建立 <span class="s">τ</span> 与物理时间的对应。目前只有图论情形严格。［论证］</p>
+<p>在这个框架里，"把两个对象视为相等"不再是一个粗暴的断言，而是一个<b>可审计的操作</b>：你必须给出路径。这个约束在很多场合下恰恰是我们想要的——它强制作者说清"相等"到底在哪一层成立。</p>
 
-<div class="warning"><span class="bt">警告 10.1　时间涌现不是已证定理</span>
-"时间从区分演化中涌现"这句话听起来深刻，但它的现状是<b>一个条件性命题（C）</b>：<span class="s">κ<sub>net</sub>&gt;0</span> 的单调性只对图论成立；测度 <span class="s">μ</span> 的选择影响 <span class="s">τ</span>；与热力学第二定律的严格关联尚未建立。读者不应当把它当作关于时间本质的结论。<b>它是一个组织动态领域的技术工具，不是一个物理理论。</b></div>
+<h3>10.4　单价公理与结构主义</h3>
 
-<h3>10.5　动态领域如何被统摄</h3>
+<div class="define"><span class="bt">公理 15.1　单价公理（Univalence）［已知，B］</span>
+对类型 <span class="s">A,B</span>，类型等价 <span class="s">A ≃ B</span> 与相等类型 <span class="s">A = B</span> 之间存在等价：<span class="s">(A = B) ≃ (A ≃ B)</span>。换言之：<b>同构即相等。</b></div>
 
-<p>时间区分一旦引入，原先"不适用"的动态领域就共享同一结构。</p>
+<p>单价公理是结构主义的严格实现。它断言：如果两个结构同构，那么在类型系统中它们必须被视为完全等价。这个公理直接减少了"因底层表示不同而带来的冗余抽象"——你不再需要为每个同构的结构分别建立一套理论。［已知］</p>
+
+<div class="scenario"><span class="bt">单价与本书框架的关系</span>
+EDS 框架的一个潜在优势是它天然适合"结构主义"：分离曲率、稳态、相变都是<b>同构不变</b>的性质。若把 EDS 搬到 HoTT 中，则"两个区分结构同构"可以自动升级为"它们相等"，框架中的冗余会进一步被压缩。这是第 24 章"连续类型论"的动机，但目前只是纲领。</div>
+
+<h3>10.5　范畴论与态射优先</h3>
+
+<p>范畴论用另一条路达到同样的目标。它把基本对象从"集合与元素"换成"对象与态射"，并要求所有构造都只用态射表述（"泛性质"）。这带来两个好处：<b>（1）它自动过滤掉依赖具体表示的伪概念</b>（如"元素的成员关系"在范畴里没有地位）；<b>（2）它使"结构保持映射"成为主角</b>，恰好是统一工作需要的。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 10.1　动态领域的统一编码</b></caption>
-<tr><th class="l">领域</th><th class="l">时间类型 𝒯</th><th class="l">区分流 Φ</th><th class="l">曲率演化</th></tr>
-<tr><td class="l">微分方程</td><td class="l">ℝ</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">动态</td></tr>
-<tr><td class="l">动力系统</td><td class="l">ℕ 或 ℝ</td><td class="l">迭代／流映射</td><td class="l">动态</td></tr>
-<tr><td class="l">概率论</td><td class="l">ℕ 或 ℝ</td><td class="l">条件期望</td><td class="l">动态</td></tr>
-<tr><td class="l">算子代数</td><td class="l">ℝ</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">动态</td></tr>
-<tr><td class="l">博弈论</td><td class="l">ℕ</td><td class="l">策略更新</td><td class="l">动态</td></tr>
-<tr><td class="l">量子数学</td><td class="l">ℝ</td><td class="l">薛定谔算子</td><td class="l">动态</td></tr>
+<caption class="cap"><b>表 10.1　三种结构语言的分工</b></caption>
+<tr><th class="l">语言</th><th class="l">基本对象</th><th class="l">强项</th><th class="l">弱项</th></tr>
+<tr><td class="l">集合论</td><td class="l">集合与元素</td><td class="l">通用、直观</td><td class="l">结构是附加的；相等是布尔判断</td></tr>
+<tr><td class="l">范畴论</td><td class="l">对象与态射</td><td class="l">结构保持映射、泛性质</td><td class="l">抽象层可无限叠加；不易形式化</td></tr>
+<tr><td class="l">类型论/HoTT</td><td class="l">类型与项</td><td class="l">构造性、可机器验证、相等分层</td><td class="l">形式化冗长、几何直觉薄弱</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>统一编码表。等级 B（语言层对应）；<b>注意：</b>本表证明的是"可以这样描述"，不是"这些领域服从同一定理"。</div>
+<div class="datasrc"><b>性质：</b>语言对照表。等级 B（公开共识）。</div>
 
-<div class="scenario"><span class="bt">从"不适用"到"同语言"</span>
-在引入时间区分之前，动态领域被排除在框架之外。引入之后，它们与静态领域共享同一底层结构。<b>这个转变不是通过增加新公理完成的，而是通过承认"时间也是区分的一个维度"完成的。</b>这是本书最简洁的一次压缩：一个分量，覆盖了一半领域。</div>
+<h3>10.6　三种语言与本书框架的关系</h3>
 
-<h3>10.6　本章小结</h3>
+<p>本书采用一套务实的分工：</p>
 
-<p>演化流与时间区分把 EDS 从静态框架升级为动态框架。时间被重新理解为区分精度的参数化，动态领域由此共享同一语言。时间涌现是一个条件性命题：图的迭代下平凡成立，连续情形下待证。下一章把全部分量组织成六条公理，并给出元理论。</p>
+<ul>
+<li><b>硬核（第五部分）用集合论 + 线性代数。</b>图上的相变定理不需要任何结构语言，只需谱定理与线性 ODE。这保证它可被最广泛的读者检验。</li>
+<li><b>框架层（第四部分）用"半形式化"的集合论语言。</b>六条公理用集合与映射陈述，但保留升级到类型论的空间。</li>
+<li><b>结构语言层（本章）作为可选工具。</b>它不参与硬核的证明，但为框架的"结构主义倾向"提供严格基础，并为未来在 Lean 4 中的形式化铺路。</li>
+</ul>
+
+<div class="note"><b>为什么不在硬核里用 HoTT</b>
+因为 HoTT 的价值是"把相等结构化"，而图上的相变定理不涉及任何需要结构化的相等——它只需要实对称矩阵的谱定理。把 HoTT 引入硬核，只会增加形式化负担而不增加严格性。这与第 2 章"何时不该压缩"的原则一致：<b>不要用更复杂的抽象换取更少的公理。</b></div>
+
+<h3>10.7　本章小结</h3>
+
+<p>类型论与范畴论为本书提供了两块语言拼图：相等可以被分层（路径），结构可以被派生（依赖类型／泛性质）。它们不参与硬核证明，但决定了框架的"气质"——一个把同构不变性质当作基本对象的框架。至此，方法演示结束。第四部分正式开始构造演化区分系统。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Pazy, A. (1983). <i>Semigroups of Linear Operators and Applications to PDEs</i>. Springer.</p>
-<p>Doob, J. L. (1953). <i>Stochastic Processes</i>. Wiley.</p>
-<p>Bratteli, O., &amp; Robinson, D. W. (1987). <i>Operator Algebras and Quantum Statistical Mechanics</i>. Springer.</p>
-<p>Connes, A. (1994). <i>Noncommutative Geometry</i>. Academic Press.</p>
-<p>Barbour, J. (1999). <i>The End of Time</i>. Oxford University Press.</p>
+<p>Foundations, Univalent (2013). <i>Homotopy Type Theory</i>. Institute for Advanced Study.</p>
+<p>Voevodsky, V. (2015). An experimental library of formalized mathematics based on the univalent foundations. <i>Mathematical Structures in Computer Science</i> 25.</p>
+<p>Awodey, S. (2010). <i>Category Theory</i> (2nd ed.). Oxford University Press.</p>
+<p>Rijke, E. (2022). <i>Introduction to Homotopy Type Theory</i>. arXiv:2212.11082.</p>
+<p>Community, Lean (2024). <i>Mathlib4</i>. GitHub.</p>
 </div>

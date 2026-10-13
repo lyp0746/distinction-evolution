@@ -1,6 +1,6 @@
 <h1 class="chapter">附录 A　数学补充：谱、线性方程与相变</h1>
 
-<p class="lead">本附录给出第四部分硬核的完整数学细节，使读者无需回到正文即可检查每一步。所有记号与正文一致。</p>
+<p class="lead">本附录给出第五部分硬核的完整数学细节，使读者无需回到正文即可检查每一步。所有记号与正文一致。</p>
 
 <h2>A.1　拉普拉斯矩阵与谱定理</h2>
 
@@ -54,7 +54,7 @@
 
 <h2>A.5　数值验证协议（完整版）</h2>
 
-<p><b>协议 V1。</b>复现 §12—14 的全部结果：</p>
+<p><b>复现协议。</b>复现 §12—14 的全部结果：</p>
 
 <ol>
 <li>对目标图构造 <span class="s">L=D<sub>adj</sub>−A</span>（<code>numpy</code>）。</li>
@@ -67,13 +67,13 @@
 </ol>
 
 <div class="note"><b>实现</b>
-随书脚本 <code>analysis/graph_phase_transition.py</code> 实现协议 V1，输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。运行命令：<code>python analysis/graph_phase_transition.py</code>。依赖：numpy、scipy。</div>
+随书脚本 <code>analysis/graph_phase_transition.py</code> 实现复现协议，输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。运行命令：<code>python analysis/graph_phase_transition.py</code>。依赖：numpy、scipy。</div>
 
 <h2>A.6　非线性结果的技术细节</h2>
 
-<p><b>对称解。</b>式 (15.3) 的推导：把 <span class="s">u=e^{−αt}</span> 代入验证。爆破时间式 (15.4) 由分母为零得到。</p>
+<p><b>对称解。</b>式 (18.3) 的推导：把 <span class="s">u=e^{−αt}</span> 代入验证。爆破时间式 (18.4) 由分母为零得到。</p>
 
-<p><b>保证衰减阈值。</b>式 (15.5) 的推导：<span class="s">Ṡ=−αS+βS²−βΣ<sub>i</sub>D<sub>i</sub>²</span>，而由 Cauchy–Schwarz <span class="s">Σ<sub>i</sub>D<sub>i</sub>²≥S²/k</span>，故 <span class="s">Ṡ≤S(−α+βS(1−1/k))</span>。</p>
+<p><b>保证衰减阈值。</b>式 (18.5) 的推导：<span class="s">Ṡ=−αS+βS²−βΣ<sub>i</sub>D<sub>i</sub>²</span>，而由 Cauchy–Schwarz <span class="s">Σ<sub>i</sub>D<sub>i</sub>²≥S²/k</span>，故 <span class="s">Ṡ≤S(−α+βS(1−1/k))</span>。</p>
 
 <p><b>有效探针数。</b><span class="s">k<sub>eff</sub>=1/Σp<sub>i</sub>²</span>，其中 <span class="s">p<sub>i</sub>=D<sub>i</sub>/S</span>。由 <span class="s">Σp<sub>i</sub>²≥1/k</span> 得 <span class="s">1≤k<sub>eff</sub>≤k</span>。均匀分布时 <span class="s">k<sub>eff</sub>=k</span>；集中分布时 <span class="s">k<sub>eff</sub>→1</span>。</p>
 

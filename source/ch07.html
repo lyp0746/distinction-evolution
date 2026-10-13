@@ -1,85 +1,100 @@
-<h2 class="chapter">第 7 章　结构语言：类型、范畴与相等的层级</h2>
+<h2 class="chapter">第 7 章　微分形式：一个公式统摄四个积分定理</h2>
 
-<p class="lead">前两章的压缩工具处理"空间"与"极限"。本章处理更底层的东西：<b>"相等"本身。</b>集合论里，两个对象要么相等要么不等，这是一个布尔判断。类型论（尤其是同伦类型论）把相等变成一个有结构的对象：路径、路径的路径、无穷高阶路径。这一改变使"结构主义"获得了严格的公理化基础，也是本书框架最后一块语言拼图。</p>
+<p class="lead">本章是方法演示的第一个案例。它刻意选择一个<b>已经成功、且被广泛接受</b>的压缩：外微分把牛顿–莱布尼茨、格林、高斯、斯托克斯四个积分定理统一为广义斯托克斯定理的一个特例。选择已知案例，是为了让读者先看清"压缩"长什么样，再判断它在别处是否可信。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-集合论语言埋没了两样东西：<b>结构是派生的</b>（不是附加在集合上的），以及<b>相等可以有层级</b>。<b>类型论通过"相等即路径"与单价公理恢复了这两点；范畴论通过"态射优先"恢复了第一点。本章说明它们与 EDS 框架的关系，并明确它是一个可选的结构语言层。</b></div>
+四个经典积分定理的"冗余"是真实的：它们共享同一个"边界积分"骨架。<b>外微分把这个骨架变成基本对象，使四个定理成为同一个定理在不同维数下的实例。</b>这个案例通过了第 2 章的全部四判据，是压缩有效性的标准样本。</div>
 
-<h3>7.1　导论：为什么需要"非集合"的语言</h3>
+<h3>7.1　导论：四个定理，四套符号</h3>
 
-<p>集合论是数学的通用底座，但它有代价。在集合论里，"群"不是基本对象，而是"一个集合加一个乘法、一个逆、一个单位元，满足若干公理"的一串附加结构。于是"两个群相等吗"这个问题变得别扭：它们可能是同一个群的不同表示，集合层面不相等，结构层面相等。集合论无法自然表达"结构上相同即相等"。</p>
+<p>微积分教材里，四个积分定理各占一章，各有一套符号：牛顿–莱布尼茨公式把定积分化为原函数在端点的差；格林公式把平面区域的二重积分化为边界曲线积分；高斯公式把空间区域的体积分化为边界曲面积分；斯托克斯公式把曲面上的曲面积分化为边界曲线积分。学生必须分别记忆它们，并分别处理各自的技术条件（区域的形状、边界的光滑性、定向的约定）。［已知］</p>
 
-<p>类型论与范畴论各自解决这个问题的一半。范畴论说：不要问对象是什么，问它与其他对象之间的态射是什么。类型论说：不要问两个东西是否用等号相连，问它们之间有没有路径。</p>
+<p>这种重复不是内容的重复，而是<b>表述冗余</b>。四个定理的数学内容各不相同，但它们的证明结构与表述形式被同一件事支配：一个微分形式在区域上的积分，等于它的某种"导数"在区域上的积分。</p>
 
-<h3>7.2　从集合到类型：依赖类型</h3>
+<h3>7.2　冗余层次分析</h3>
 
-<p>在依赖类型论中，"类型"取代"集合"，"项"取代"元素"，但关键的新东西是<b>依赖类型</b>：一个类型可以依赖另一个类型的项。例如，"长度为 <span class="s">n</span> 的向量"是一个依赖于 <span class="s">n</span> 的类型，而不是一个固定的集合。</p>
-
-<div class="define"><span class="bt">定义 7.1　依赖类型与命题即类型［已知，A］</span>
-依赖类型族 <span class="s">B: A → Type</span> 给每个 <span class="s">a: A</span> 指定一个类型 <span class="s">B(a)</span>。在"命题即类型"对应下，命题被解释为类型，命题的证明被解释为该项。于是"证明"成为可被机器检查的对象——这是 Lean、Coq 等形式化工具的基础。</div>
-
-<p>这个设计的直接后果是：<b>结构不再是被附加到集合上的东西，而是类型系统的内在性质。</b>"群结构"不是"集合 + 附加数据"，而是一个依赖类型的记录；"同构的群"在这个系统里可以自然地被视为相等。</p>
-
-<h3>7.3　相等即路径：同伦类型论</h3>
-
-<img class="fig" src="assets/svg/fig07-equality-hierarchy.svg" alt="相等的层级">
-
-<div class="cap"><b>图 7.1　相等的层级</b>。在传统集合论中，<span class="s">a=b</span> 是一个布尔判断（有或没有）。在同伦类型论中，<span class="s">a=b</span> 本身是一个类型（"从 <span class="s">a</span> 到 <span class="s">b</span> 的路径"）；两条路径之间也可以有路径（同伦），如此无究上升。相等被结构化了。</div>
-
-<img class="fig" src="assets/svg/fig07b-reconstruction-types.svg" alt="结构语言的重建对比">
-
-<div class="cap"><b>图 7.2　结构语言的重建前后对比</b>。集合论把结构当作集合的附加物；类型论把结构当作派生的内在性质。“同构即相等”是这一转变的核心收益，形式化成本是它的代价。</div>
-
-<div class="define"><span class="bt">定义 7.2　同伦类型论（HoTT）［已知，A］</span>
-HoTT 把类型解释为空间（同伦类型），项解释为点，类型 <span class="s">a=b</span> 解释为从 <span class="s">a</span> 到 <span class="s">b</span> 的路径空间。相等关系满足：自反性（常路径）、对称性（逆路径）、传递性（路径拼接），且这些操作本身之间还有高阶同伦。**高阶路径**（路径的路径）自然编码了"两个证明也可以被证明等价"。</div>
-
-<p>在这个框架里，"把两个对象视为相等"不再是一个粗暴的断言，而是一个<b>可审计的操作</b>：你必须给出路径。这个约束在很多场合下恰恰是我们想要的——它强制作者说清"相等"到底在哪一层成立。</p>
-
-<h3>7.4　单价公理与结构主义</h3>
-
-<div class="define"><span class="bt">公理 15.1　单价公理（Univalence）［已知，B］</span>
-对类型 <span class="s">A,B</span>，类型等价 <span class="s">A ≃ B</span> 与相等类型 <span class="s">A = B</span> 之间存在等价：<span class="s">(A = B) ≃ (A ≃ B)</span>。换言之：<b>同构即相等。</b></div>
-
-<p>单价公理是结构主义的严格实现。它断言：如果两个结构同构，那么在类型系统中它们必须被视为完全等价。这个公理直接减少了"因底层表示不同而带来的冗余抽象"——你不再需要为每个同构的结构分别建立一套理论。［已知］</p>
-
-<div class="scenario"><span class="bt">单价与本书框架的关系</span>
-EDS 框架的一个潜在优势是它天然适合"结构主义"：分离曲率、稳态、相变都是<b>同构不变</b>的性质。若把 EDS 搬到 HoTT 中，则"两个区分结构同构"可以自动升级为"它们相等"，框架中的冗余会进一步被压缩。这是第 21 章"连续类型论"的动机，但目前只是纲领。</div>
-
-<h3>7.5　范畴论与态射优先</h3>
-
-<p>范畴论用另一条路达到同样的目标。它把基本对象从"集合与元素"换成"对象与态射"，并要求所有构造都只用态射表述（"泛性质"）。这带来两个好处：<b>（1）它自动过滤掉依赖具体表示的伪概念</b>（如"元素的成员关系"在范畴里没有地位）；<b>（2）它使"结构保持映射"成为主角</b>，恰好是统一工作需要的。</p>
+<p>用第 2 章的判据扫描，四个定理的冗余层次如下：</p>
 
 <table class="nat">
-<caption class="cap"><b>表 7.1　三种结构语言的分工</b></caption>
-<tr><th class="l">语言</th><th class="l">基本对象</th><th class="l">强项</th><th class="l">弱项</th></tr>
-<tr><td class="l">集合论</td><td class="l">集合与元素</td><td class="l">通用、直观</td><td class="l">结构是附加的；相等是布尔判断</td></tr>
-<tr><td class="l">范畴论</td><td class="l">对象与态射</td><td class="l">结构保持映射、泛性质</td><td class="l">抽象层可无限叠加；不易形式化</td></tr>
-<tr><td class="l">类型论/HoTT</td><td class="l">类型与项</td><td class="l">构造性、可机器验证、相等分层</td><td class="l">形式化冗长、几何直觉薄弱</td></tr>
+<caption class="cap"><b>表 7.1　四个积分定理的冗余层次</b></caption>
+<tr><th class="l">定理</th><th class="l">左边</th><th class="l">右边</th><th class="l">冗余所在</th></tr>
+<tr><td class="l">牛顿–莱布尼茨</td><td class="l">区间上的 1-形式积分</td><td class="l">0-形式在端点差</td><td class="l">C1 同构证明骨架</td></tr>
+<tr><td class="l">格林</td><td class="l">平面区域上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3 平行语言</td></tr>
+<tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
+<tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>语言对照表。等级 B（公开共识）。</div>
+<div class="datasrc"><b>性质：</b>冗余分析表。等级 B（标准数学史共识）。</div>
 
-<h3>7.6　三种语言与本书框架的关系</h3>
+<h3>7.3　外微分：把被积表达式当成主角</h3>
 
-<p>本书采用一套务实的分工：</p>
+<p>压缩的关键动作是<b>改变基本对象</b>。传统微积分把"函数"当作主角，把"微分表达式"当作配角。外微分反过来：把<b>微分形式</b>当作基本对象，函数只是 0-形式。</p>
+
+<div class="define"><span class="bt">定义 7.1　微分形式与外微分</span>
+在光滑流形 <span class="s">M</span> 上，一个 <span class="s">k</span>-形式 <span class="s">ω</span> 是一个反对称的余切张量场。外微分 <span class="s">d</span> 把 <span class="s">k</span>-形式映为 <span class="s">(k+1)</span>-形式，满足：<br>
+（1）<span class="s">d</span> 是线性的；<br>
+（2）对函数 <span class="s">f</span>，<span class="s">df</span> 是普通微分；<br>
+（3）<span class="s">d(ω∧η) = dω∧η + (−1)<sup>k</sup>ω∧dη</span>（分次莱布尼茨律）；<br>
+（4）<span class="s">d² = 0</span>。<br>
+条件（2）—（4）唯一确定 <span class="s">d</span>。</div>
+
+<p>这个定义有两个非凡之处。<b>第一，它把梯度、旋度、散度三个算子统一为同一个 <span class="s">d</span> 在不同维数下的表现。</b>对 0-形式，<span class="s">d</span> 就是梯度；对 1-形式，<span class="s">d</span> 在线性情形给出旋度；对 2-形式，<span class="s">d</span> 给出散度。<b>第二，<span class="s">d²=0</span> 是自动的，不需要单独证明</b>——它是外代数反对称性的直接结果，而传统矢量微积分里 <span class="s">∇×∇f=0</span> 与 <span class="s">∇·(∇×v)=0</span> 是两个需要分别验证的恒等式。［已知］</p>
+
+<h3>7.4　广义斯托克斯定理</h3>
+
+<div class="define"><span class="bt">定理 7.1（广义斯托克斯定理）［已知，A］</span>
+设 <span class="s">M</span> 是带边界 <span class="s">∂M</span> 的紧致可定向光滑 <span class="s">n</span> 维流形，<span class="s">ω</span> 是 <span class="s">M</span> 上的光滑 <span class="s">(n−1)</span>-形式，则
+<div class="eq"><span class="body">∫<sub>M</sub> dω = ∫<sub>∂M</sub> ω</span></div>
+其中 <span class="s">∂M</span> 取诱导定向。</div>
+
+<p>一个公式。所有四个定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。</p>
+
+<h3>7.5　四定理如何变成特例</h3>
+
+<img class="fig" src="assets/svg/fig04-stokes-unification.svg" alt="广义斯托克斯定理统摄四个定理">
+
+<div class="cap"><b>图 7.1　一个公式，四个特例</b>。横轴为流形的维数与类型，纵轴为对应的经典定理。它们都是广义斯托克斯定理在特定 <span class="s">M</span> 与 <span class="s">ω</span> 下的取值。</div>
+
+<img class="fig" src="assets/svg/fig04b-reconstruction-forms.svg" alt="微分形式的重建对比">
+
+<div class="cap"><b>图 7.2　重建前后对比</b>。四个经典定理（上）被压缩为一个广义定理（中），并产生新的数学对象（下）。这正是第 2 章“压缩”的一次完整示范：原定理成为特例，而非被废弃。</div>
+
+<p>把四个定理逐一化为特例：</p>
 
 <ul>
-<li><b>硬核（第四部分）用集合论 + 线性代数。</b>图上的相变定理不需要任何结构语言，只需谱定理与线性 ODE。这保证它可被最广泛的读者检验。</li>
-<li><b>框架层（第三部分）用"半形式化"的集合论语言。</b>六条公理用集合与映射陈述，但保留升级到类型论的空间。</li>
-<li><b>结构语言层（本章）作为可选工具。</b>它不参与硬核的证明，但为框架的"结构主义倾向"提供严格基础，并为未来在 Lean 4 中的形式化铺路。</li>
+<li><b>牛顿–莱布尼茨：</b>取 <span class="s">M=[a,b]</span>（一维），<span class="s">ω=f</span>（0-形式）。则 <span class="s">dω=f′dx</span>，边界 <span class="s">∂M={a,b}</span> 带符号。<span class="s">∫<sub>[a,b]</sub> f′dx = f(b)−f(a)</span>。</li>
+<li><b>格林：</b>取 <span class="s">M⊂ℝ²</span> 为平面区域，<span class="s">ω=P dx+Q dy</span>。则 <span class="s">dω=(∂Q/∂x−∂P/∂y)dx∧dy</span>，得到格林公式。</li>
+<li><b>高斯：</b>取 <span class="s">M⊂ℝ³</span> 为空间区域，<span class="s">ω</span> 为 2-形式。则 <span class="s">dω</span> 给出散度，边界积分给出通量。</li>
+<li><b>斯托克斯：</b>取 <span class="s">M</span> 为 ℝ³ 中的曲面，<span class="s">ω</span> 为 1-形式。则 <span class="s">dω</span> 给出旋度，边界积分给出环量。</li>
 </ul>
 
-<div class="note"><b>为什么不在硬核里用 HoTT</b>
-因为 HoTT 的价值是"把相等结构化"，而图上的相变定理不涉及任何需要结构化的相等——它只需要实对称矩阵的谱定理。把 HoTT 引入硬核，只会增加形式化负担而不增加严格性。这与第 2 章"何时不该压缩"的原则一致：<b>不要用更复杂的抽象换取更少的公理。</b></div>
+<div class="note"><b>注意"特例"的确切含义</b>
+这里说的是：经典定理的<b>陈述</b>是广义斯托克斯定理的实例，且经典定理的<b>证明骨架</b>（分割区域、取极限、边界相消）是同一个。这属于 U2（同律）级别的统一，不是 U4（同一）：四个经典定理讨论的是不同的几何对象，不能互相替换。</div>
+
+<h3>7.6　有效性检验：压缩比与可迁移性</h3>
+
+<p>用第 2 章的四判据打分：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 7.2　微分形式压缩的四判据检验</b></caption>
+<tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
+<tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">4 个定理 + 3 个矢量微分算子 → 1 个定理 + 1 个算子 <span class="s">d</span></td></tr>
+<tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">微积分、矢量分析、复分析（Cauchy 定理）被同一语言覆盖</td></tr>
+<tr><td class="l">P3 问题解决力</td><td class="l">通过</td><td class="l">德拉姆上同调、de Rham 定理、Atiyah–Singer 指标定理均以此为基础</td></tr>
+<tr><td class="l">P4 可迁移性</td><td class="l">通过</td><td class="l">被物理（电磁学、广义相对论）、复几何、辛几何广泛借用</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>方法论评分。等级 B（作者的判断，依据为公开数学史）。</div>
+
+<div class="scenario"><span class="bt">从案例学到什么</span>
+微分形式的成功有三条可迁移的经验：<b>（1）改变基本对象</b>（从函数改到形式）；<b>（2）让新对象自动携带恒等式</b>（<span class="s">d²=0</span> 免除了两个独立恒等式的证明）；<b>（3）让原定理成为新定理的特例</b>，而非被废弃。第 8—10 章的三个案例将重复这三个动作。</div>
 
 <h3>7.7　本章小结</h3>
 
-<p>类型论与范畴论为本书提供了两块语言拼图：相等可以被分层（路径），结构可以被派生（依赖类型／泛性质）。它们不参与硬核证明，但决定了框架的"气质"——一个把同构不变性质当作基本对象的框架。至此，方法演示结束。第三部分正式开始构造演化区分系统。</p>
+<p>微分形式是"压缩"的标准样本：它通过改变基本对象，把四个积分定理折叠为一个，并在此过程中产生了新的数学（上同调、指标定理）。本案例说明压缩不只是重新命名——它可以产生原框架无法表达的新结构。下一章把这个动作放到更原始的位置：从"区分"生成拓扑结构。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Foundations, Univalent (2013). <i>Homotopy Type Theory</i>. Institute for Advanced Study.</p>
-<p>Voevodsky, V. (2015). An experimental library of formalized mathematics based on the univalent foundations. <i>Mathematical Structures in Computer Science</i> 25.</p>
-<p>Awodey, S. (2010). <i>Category Theory</i> (2nd ed.). Oxford University Press.</p>
-<p>Rijke, E. (2022). <i>Introduction to Homotopy Type Theory</i>. arXiv:2212.11082.</p>
-<p>Community, Lean (2024). <i>Mathlib4</i>. GitHub.</p>
+<p>Spivak, M. (1965). <i>Calculus on Manifolds</i>. Benjamin.</p>
+<p>do Carmo, M. P. (1994). <i>Differential Forms and Applications</i>. Springer.</p>
+<p>Bott, R., &amp; Tu, L. W. (1982). <i>Differential Forms in Algebraic Topology</i>. Springer.</p>
+<p>Arnold, V. I. (1989). <i>Mathematical Methods of Classical Mechanics</i> (2nd ed.). Springer.</p>
 </div>

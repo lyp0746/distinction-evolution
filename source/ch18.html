@@ -1,79 +1,114 @@
-<h2 class="chapter">第 18 章　1/3 的三条线索：轨形、模形式、椭圆上同调</h2>
+<h2 class="chapter">第 18 章　精确解、爆破时间与非线性相变</h2>
 
-<p class="lead">第 17 章留下一个因子 <span class="s">1/3</span>。本章追踪这个数字在数学其他地方的出现：轨形欧拉示性数、模曲线 <span class="s">X(3)</span>、椭圆上同调的系数环 <span class="s">Z[1/3]</span>、三次域的单位根。<b>这些线索可能是同源的，也可能只是数字巧合。</b>本章的纪律是：列出它们，标注等级，不宣布联系已经建立。</p>
+<p class="lead">线性情形完全可解，但真实的区分系统通常是非线性的：区分动作之间会相互增强或抑制。本章给出一个精确可解的非线性模型，证明一个"保证衰减"的阈值，并给出一个对称情形的有限时间爆破公式。<b>本章同时演示第 2 章的一条纪律：定理要按它能证明的强度陈述，不能按它希望证明的强度陈述。</b></p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-数字 <span class="s">1/3</span> 在至少四个数学领域反复出现，且都与"三阶对称性"有关。<b>这提示分离结构的 <span class="s">1/3</span> 可能不是孤立现象，而是某个三元结构的投影。</b>但"提示"不等于"证明"；本章给出的是一个可攻击的研究纲领。</div>
+在非线性竞争–合作模型 <span class="s">Ḋ<sub>i</sub>=D<sub>i</sub>(−α+βΣ<sub>j≠i</sub>D<sub>j</sub>)</span> 中，存在一个严格的"保证衰减"阈值；对称情形下可精确求得有限时间爆破。<b>朴素的 <span class="s">S<sub>c</sub>=α/β</span> 结论只在均匀分布下成立；本章给出正确的、更弱但可证的版本。</b></div>
 
-<h3>18.1　导论：一个数字为何值得追踪</h3>
+<h3>18.1　导论：从线性到非线性</h3>
 
-<p>在数学中，一个特定的数字反复出现，通常意味着一个共同的结构。因子 2 与"对合"有关，因子 <span class="s">π</span> 与圆有关，因子 <span class="s">ζ(2)</span> 与二次数域有关。因子 3 反复出现，往往指向<b>三阶对称性</b>——<span class="s">Z/3Z</span> 作用、三次扩张、3-挠子群。</p>
+<p>第 15 章的线性模型假设区分动作之间不相互作用。真实系统里它们会：一个探针的激活可能让另一个探针更容易激活（正反馈），也可能抑制它。最简的非线性模型是竞争–合作系统：每个探针以速率 <span class="s">α</span> 衰减，以速率 <span class="s">β</span> 被其他探针的总激活增强。</p>
 
-<p>本章追踪 <span class="s">1/3</span> 的四条线索，并把它们与第 17 章的缺口并置。<b>如果这些线索同源，则分离几何的缺口就有了一个候选解释；如果它们只是巧合，则第 17 章的缺口就更可能只是错误。</b>无论哪种，这个追踪都是有价值的。</p>
+<p>这样的系统可能出现有限时间爆破——这不是缺陷，而是一个真实的相变标志：区分强度在有限时间内趋于无穷（或在有饱和项时停在某个高值）。</p>
 
-<h3>18.2　轨形欧拉示性数</h3>
+<h3>18.2　逻辑斯蒂精确解与爆破时间</h3>
 
-<p>轨形是局部同构于 <span class="s">ℝ<sup>n</sup>/G</span>（<span class="s">G</span> 有限群）的空间。它的欧拉示性数是<b>有理数</b>：</p>
+<div class="define"><span class="bt">定义 18.1　非线性演化区分系统</span>
+设 <span class="s">X</span> 是有限集，<span class="s">D<sub>1</sub>,…,D<sub>k</sub>:X→[0,∞)</span> 是区分动作。演化方程
+<div class="eq"><span class="body">Ḋ<sub>i</sub>(x) = D<sub>i</sub>(x)(−α + β Σ<sub>j≠i</sub> D<sub>j</sub>(x))</span><span class="num">(15.1)</span></div>
+其中 <span class="s">α,β&gt;0</span>。</div>
 
-<div class="eq"><span class="body">χ<sub>orb</sub>(M) = Σ<sub>strata</sub> χ(stratum)/|G<sub>stratum</sub>|</span><span class="num">(18.1)</span></div>
+<p>考虑对称情形：所有 <span class="s">D<sub>i</sub></span> 相等，记为 <span class="s">d</span>。则式 (18.1) 化为逻辑斯蒂方程</p>
 
-<p>若 <span class="s">M</span> 有一个 <span class="s">Z/3Z</span> 的轨形结构，则 <span class="s">χ<sub>orb</sub>=χ(M)/3</span>。这与第 17 章的 <span class="s">χ(D)=χ(M)/3</span> 形式一致。例：<span class="s">χ<sub>orb</sub>(S²/(Z/3Z))=2/3</span>。［已知，B］</p>
+<div class="eq"><span class="body">ḋ = −αd + β(k−1)d²</span><span class="num">(15.2)</span></div>
 
-<p>但第 17.5 节的球面反例说明：一般 <span class="s">Z/3Z</span> 轨形未必给出 <span class="s">χ(M)/3</span>，还要看奇异点结构。因此这条线索是"形式相符，机制未定"。</p>
+<div class="define"><span class="bt">命题 18.1　对称情形的精确解［定理，A］</span>
+式 (18.2) 以 <span class="s">d(0)=d<sub>0</sub>&gt;0</span> 为初值的解为
+<div class="eq"><span class="body">d(t) = αd<sub>0</sub>e<sup>−αt</sup> / [α − β(k−1)d<sub>0</sub>(1−e<sup>−αt</sup>)]</span><span class="num">(15.3)</span></div>
+若 <span class="s">d<sub>0</sub> &lt; α/(β(k−1))</span>，则 <span class="s">d(t)→0</span>；若 <span class="s">d<sub>0</sub> &gt; α/(β(k−1))</span>，则 <span class="s">d(t)</span> 在有限时间
+<div class="eq"><span class="body">t* = (1/α) ln[ β(k−1)d<sub>0</sub> / (β(k−1)d<sub>0</sub> − α) ]</span><span class="num">(15.4)</span></div>
+处爆破。</div>
 
-<h3>18.3　模曲线 X(3)</h3>
+<p><b>证明。</b>分离变量：<span class="s">∫ dd/[d(−α+β(k−1)d)] = ∫ dt</span>。用部分分式 <span class="s">1/[d(β(k−1)d−α)] = (1/α)[1/(β(k−1)d−α) − 1/d]·(−1)</span>……更直接地，令 <span class="s">u=e^{−αt}</span>，验证式 (18.3) 在 <span class="s">t=0</span> 给出 <span class="s">d(0)=d<sub>0</sub></span>，且满足式 (18.2)。当 <span class="s">d<sub>0</sub>&gt;α/(β(k−1))</span> 时，式 (18.3) 的分母 <span class="s">α−β(k−1)d<sub>0</sub>(1−u)</span> 在 <span class="s">1−u<sub>*</sub>=α/(β(k−1)d<sub>0</sub>)</span> 处为零，对应 <span class="s">t*</span> 如式 (18.4)。<span class="s">∎</span></p>
 
-<p>模曲线 <span class="s">X(3)</span> 是完全 3-级结构（full level-3 structure）的模空间。它的欧拉示性数满足</p>
+<img class="fig" src="assets/svg/fig15-blowup-time.svg" alt="爆破时间">
 
-<div class="eq"><span class="body">χ(X(3)) = (1/3) χ(X(1)) = −1/3</span><span class="num">(18.2)</span></div>
+<div class="cap"><b>图 18.1　爆破时间与初值的关系</b>。横轴为初始区分强度 <span class="s">d<sub>0</sub></span>（以阈值 <span class="s">d<sub>c</sub>=α/(β(k−1))</span> 为单位），纵轴为爆破时间 <span class="s">t*</span>。当 <span class="s">d<sub>0</sub>→d<sub>c</sub><sup>+</sup></span> 时 <span class="s">t*→∞</span>（临界慢化）；当 <span class="s">d<sub>0</sub></span> 很大时 <span class="s">t*→0</span>。</div>
 
-<p>这个 <span class="s">1/3</span> 来自覆盖 <span class="s">X(3)→X(1)</span> 的分支修正：覆盖次数是 <span class="s">|PSL(2,Z/3Z)|=12</span>，但因为分支点，欧拉示性数之比是 <span class="s">1/3</span> 而非 <span class="s">1/12</span>。<b>这是一个精确的、可验证的 <span class="s">1/3</span>，且它明确来自三阶结构。</b>［已知，A］</p>
+<h3>18.3　区分相变定理</h3>
 
-<div class="note"><b>为什么 X(3) 特别重要</b>
-椭圆曲线有 3-挠子群 <span class="s">E[3]≅(Z/3Z)²</span>，而 <span class="s">X(3)</span> 正是参数化"带完全 3-级结构的椭圆曲线"的模空间。因此 <span class="s">1/3</span> 在这里不是偶然数字，而是三阶算术结构的直接产物。若第 17 章的缺口与它同源，则分离几何应当自然地与椭圆曲线耦合——这是一个具体、可攻击的猜测。</div>
+<p>对称解只是特例。对一般的 <span class="s">D<sub>i</sub></span>，不能用单个 <span class="s">d</span> 描述。但可以用总激活 <span class="s">S=Σ<sub>i</sub>D<sub>i</sub></span> 得到一个严格的、尽管更弱的定理。</p>
 
-<h3>18.4　椭圆上同调与 Z[1/3]</h3>
+<div class="define"><span class="bt">定理 18.1（保证衰减阈值）［定理，A］</span>
+设 <span class="s">S(t)=Σ<sub>i</sub>D<sub>i</sub>(t)</span>。若
+<div class="eq"><span class="body">S(0) &lt; α / [β(1−1/k)]</span><span class="num">(15.5)</span></div>
+则 <span class="s">S(t)→0</span>，且所有 <span class="s">D<sub>i</sub>(t)→0</span>，无论各 <span class="s">D<sub>i</sub></span> 如何分布。</div>
 
-<p>椭圆上同调（elliptic cohomology）是连接代数拓扑与椭圆曲线的现代理论。它的系数环自然地包含 <span class="s">1/3</span>（即系数环是 <span class="s">Z[1/3]</span> 上的某个环），因为椭圆曲线的 3-挠子群在其中扮演核心角色。相关的拓扑模形式（TMF）理论与椭圆曲线的模空间（带上 3-级结构）密切相关。［已知，B］</p>
+<p><b>证明。</b>对 <span class="s">S</span> 求导：
+<div class="eq"><span class="body">Ṡ = Σ<sub>i</sub>Ḋ<sub>i</sub> = Σ<sub>i</sub>D<sub>i</sub>(−α+β(S−D<sub>i</sub>)) = −αS + βS² − βΣ<sub>i</sub>D<sub>i</sub>²</span></div>
+由 Cauchy–Schwarz，<span class="s">Σ<sub>i</sub>D<sub>i</sub>² ≥ S²/k</span>（因为共有 <span class="s">k</span> 项）。故
+<div class="eq"><span class="body">Ṡ ≤ −αS + βS² − βS²/k = S(−α + βS(1−1/k))</span></div>
+若 <span class="s">S &lt; α/[β(1−1/k)]</span>，则右端 <span class="s">&lt;0</span>，故 <span class="s">Ṡ&lt;0</span>，<span class="s">S</span> 单调递减。因为右端关于 <span class="s">S</span> 是二次的且仅在 <span class="s">S&lt;α/[β(1−1/k)]</span> 时为负，递减的 <span class="s">S</span> 将一直保持在这个区间内，故 <span class="s">S→0</span>。<span class="s">∎</span></p>
 
-<div class="define"><span class="bt">线索 18.1　椭圆上同调中的 1/3［已知，B］</span>
-椭圆上同调的系数环包含 <span class="s">1/3</span>，来自 3-挠子群。若分离结构的 <span class="s">1/3</span> 与它同源，则分离几何应当与拓扑模形式（TMF）有自然联系。<b>这是本书提出的最"前沿"也最不确定的一条线索。</b></div>
+<div class="warning"><span class="bt">警告 18.1　朴素结论 <span class="s">S<sub>c</sub>=α/β</span> 不正确</span>
+一个诱人的陈述是"<span class="s">S&gt;α/β</span> 就增长"。<b>这是错的。</b>正确的分析给出：<span class="s">Ṡ = S(−α+βS(1−Σp<sub>i</sub>²))</span>，其中 <span class="s">p<sub>i</sub>=D<sub>i</sub>/S</span> 是归一化分布，<span class="s">Σp<sub>i</sub>²∈[1/k,1]</span>。<b>增长率依赖于分布的形状</b>，而不只是总激活。当分布极不均匀（<span class="s">Σp<sub>i</sub>²→1</span>，一个探针主导）时，<span class="s">Ṡ→−αS</span>，系统衰减，无论 <span class="s">S</span> 多大。§15.5 把这一点变成一条可检验的警示。</div>
 
-<h3>18.5　三次域与单位根</h3>
+<div class="scenario"><span class="bt">为什么保留这个"失败"</span>
+按第 3 章的纪律，负面结果必须写在正文。朴素的 <span class="s">S<sub>c</sub>=α/β</span> 是一个漂亮的公式，但它不成立。正确的定理 (10.5) 更弱，但可证。<b>本书选择可证的弱定理，而不是漂亮的错公式。</b>这正是"诚实削弱命题"的一次具体实践。</div>
 
-<p>在代数数论中，三次域有自然的三阶现象。类数公式中含有 <span class="s">1/w</span> 因子，其中 <span class="s">w</span> 是单位根个数。对某些三次域 <span class="s">w=3</span>，给出因子 <span class="s">1/3</span>。这与三次单位根 <span class="s">ω=e^{2πi/3}</span> 直接相关。［已知，B］</p>
+<h3>18.4　临界重叠数与曲率解释</h3>
 
-<img class="fig" src="assets/svg/fig19-one-third-clues.svg" alt="1/3 的四条线索">
+<p>用分布修正后的有效阈值可以写成一个"有效探针数"的形式。定义参与比</p>
 
-<div class="cap"><b>图 18.1　1/3 的四条线索</b>。中央是第 17 章的缺口（分离曲率与 Gauss–Bonnet）。四条线索分别来自轨形（Z/3Z 结构）、模曲线 X(3)、椭圆上同调（Z[1/3]）、三次域（单位根 ω）。实线表示"该领域内的 <span class="s">1/3</span> 已被证明"，虚线表示"与分离缺口的联系是猜测"。</div>
+<div class="eq"><span class="body">k<sub>eff</sub> := 1 / Σ<sub>i</sub>p<sub>i</sub>²,  p<sub>i</sub>=D<sub>i</sub>/S</span><span class="num">(15.6)</span></div>
 
-<h3>18.6　可攻击的研究纲领</h3>
+<p>则 <span class="s">Ṡ = S(−α + βS(1−1/k<sub>eff</sub>))</span>，增长条件为 <span class="s">S &gt; α/[β(1−1/k<sub>eff</sub>)]</span>。<span class="s">k<sub>eff</sub></span> 在均匀分布时等于 <span class="s">k</span>，在集中分布时趋近 1（此时 <span class="s">1−1/k<sub>eff</sub>→0</span>，增长极难）。</p>
 
-<p>把上面的线索转成可攻击的命题。这些命题构成附录 E 的一部分。</p>
+<p>用分离曲率解释：<span class="s">κ := βS(1−1/k<sub>eff</sub>) − α</span>。<span class="s">κ&lt;0</span> 时塌缩，<span class="s">κ=0</span> 时临界，<span class="s">κ&gt;0</span> 时增长。<b>曲率的符号再次决定一切——但这次它依赖于一个由分布决定的量 <span class="s">k<sub>eff</sub></span>，而不是一个固定的常数。</b>［论证，乙］</p>
+
+<h3>18.5　一个可证伪的预测及其边界</h3>
+
+<p>把上面的分析搬到神经网络上，可以得到一个关于"激活范数"的假说。若把某一层的激活看作区分动作 <span class="s">D<sub>i</sub></span>，把权重衰减看作 <span class="s">α</span>，把层内耦合看作 <span class="s">β</span>，则式 (18.5) 给出一个阈值行为。</p>
+
+<div class="define"><span class="bt">假说 10.1　激活范数的阈值［假说，C］</span>
+在简化模型下，若某层的总激活 <span class="s">S</span> 长期低于 <span class="s">α/[β(1−1/k<sub>eff</sub>)]</span>，则其特征塌缩（梯度消失、欠拟合）；若长期显著高于，则特征放大（梯度爆炸、过拟合）。<b>最优训练被推测为使 <span class="s">S</span> 保持在阈值附近。</b></div>
+
+<div class="warning"><span class="bt">边界（必须同时读）</span>
+这个假说有四个明显的边界：<b>（1）玩具模型</b>——真实网络有非线性激活、层间耦合、注意力机制，远复杂于式 (18.1)；<b>（2）<span class="s">k<sub>eff</sub></span> 难以测量</b>——它在训练中变化；<b>（3）<span class="s">α,β</span> 不是从架构直接读出的</b>；<b>（4）没有实验数据</b>——本书不主张它已被验证。它是<b>一个标注为 C 的假说</b>，其价值是给出一个可被独立检验的方向（监测总激活与阈值的关系），而不是一个结论。</p></div>
+
+<p>对这个假说做一次敏感性分析，可以看清它的可信边界。把 <span class="s">α</span>、<span class="s">β</span>、<span class="s">k<sub>eff</sub></span> 当作有不确定性的量（对数正态 CV≈0.3），采样 4×10⁵ 次，计算 <span class="s">κ=βS(1−1/k<sub>eff</sub>)−α</span> 的符号：</p>
 
 <table class="nat">
-<caption class="cap"><b>表 18.1　1/3 纲领的可攻击命题</b></caption>
-<tr><th class="l">编号</th><th class="l">命题</th><th class="l">证伪条件</th><th class="l">等级</th></tr>
-<tr><td class="l">G1</td><td class="l">分离结构自然产生 <span class="s">Z/3Z</span> 轨形对称性</td><td class="l">找到无 <span class="s">Z/3Z</span> 对称性的分离结构</td><td class="l">C</td></tr>
-<tr><td class="l">G2</td><td class="l">区分欧拉示性数等于某个轨形欧拉示性数</td><td class="l">球面反例若无法被特殊结构解释</td><td class="l">C</td></tr>
-<tr><td class="l">G3</td><td class="l">分离 Gauss–Bonnet 是轨形指标定理的特例</td><td class="l">若指标定理的有理指标与 <span class="s">χ(D)</span> 不符</td><td class="l">C</td></tr>
-<tr><td class="l">G4</td><td class="l">高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>（猜想）</td><td class="l">计算 <span class="s">n=2</span>（四维）情形</td><td class="l">C</td></tr>
-<tr><td class="l">G5</td><td class="l">分离结构与椭圆上同调/TMF 自然耦合</td><td class="l">若 <span class="s">1/3</span> 可由其他机制解释</td><td class="l">C</td></tr>
+<caption class="cap"><b>表 18.2　阈值假说的敏感性（脚本 <code>analysis/monte_carlo_sensitivity.py</code>）</b></caption>
+<tr><th class="l">观测总激活 S</th><th class="l">P(κ&gt;0)</th><th class="l">与朴素判据的方向翻转率</th><th class="l">可给出的结论</th></tr>
+<tr><td class="l">0.5</td><td class="l">0.038</td><td class="l">0.009</td><td class="l">仅符号（大概率塌缩）</td></tr>
+<tr><td class="l">1.0</td><td class="l">{{D:mc_S1_pos}}</td><td class="l">0.043</td><td class="l"><b>方向不稳定</b>（阈值附近）</td></tr>
+<tr><td class="l">2.0</td><td class="l">{{D:mc_S2_pos}}</td><td class="l">{{D:mc_S2_flip}}</td><td class="l">序关系 + 窄区间</td></tr>
+<tr><td class="l">5.0</td><td class="l">1.000</td><td class="l">0.000</td><td class="l">序关系 + 窄区间</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>研究纲领命题表。<b>全部为 C 级（假说）。</b>这是本书最需要被攻击的部分，也是最可能产生新数学的部分。</div>
+<div class="datasrc"><b>性质：</b>敏感性分析。等级 C（regime 参数是规定性的）。<b>诚实的读法：</b>在阈值 <span class="s">S∼1</span> 附近，方向本身就不稳定——这与"相变"的预期一致；远离阈值时方向才是稳健的。因此这个假说<b>不能</b>被用来对处于临界区的层做具体预测，只能给出远离临界区时的方向判断。</div>
 
-<div class="warning"><span class="bt">警告 18.1　不要把这些线索读成一个理论</span>
-本章的四条线索可以拼成一幅漂亮的图，但这幅图<b>不是理论</b>。它是四个各自独立的数学事实（或猜测），加上一个把它们与分离缺口联系起来的<b>愿望</b>。在 G1—G5 中，只有 G4 有明确的证伪路线（计算四维情形）；其余需要新的数学构造。读者若引用本章，请引用"存在四条 <span class="s">1/3</span> 线索"这一事实，而<b>不要</b>引用"它们同源"这一结论——后者尚未被建立。</div>
+<div class="note"><b>一条方法论示范</b>
+把式 (18.1) 的分析搬到 LLM 上，是全书最接近"过拟合类比"的地方。本书的处理方式——<b>先给出可证的弱定理，再明确标注迁移到 LLM 是 C 级假说，并列出四条边界</b>——是第 2 章"有效性判据"与第 3 章"分级制度"的联合应用。读者若要攻击本书，这里是成本最低的入口。
+<br><br><b>工程验证（附录 I.1）。</b>本假说已在一个<b>真实训练循环</b>上被检验：在模加法任务上训练一个带权重衰减的 MLP，逐层测量总激活 <span class="s">S</span> 与有效秩 <span class="s">r</span>。结果是<b>混合的</b>：层 1 同号率 0.95（支持耦合），层 2 同号率 0.27（<b>不支持</b>，甚至低于随机）。这说明机制是<b>按层分裂</b>的，而不是全局统一的——与本节"朴素阈值不成立"的分析一致。完整数字与脚本见附录 I。</div>
 
-<h3>18.7　本章小结</h3>
+<h3>18.6　本章小结</h3>
 
-<p>数字 <span class="s">1/3</span> 在轨形、模曲线 <span class="s">X(3)</span>、椭圆上同调、三次域中反复出现，且都与三阶对称性有关。这提示分离几何的缺口可能不是孤立现象。但四条线索的联系目前全是猜测（C 级）。本章的价值在于把"一个数字"变成"一组可攻击的命题"。第五部分把这些命题与更大的统一图景放在一起，并给出全书最后的状态清单。</p>
+<p>非线性情形仍然可解：对称时给出精确解与有限时间爆破公式；一般情形给出一个可证的"保证衰减"阈值。<b>关键的诚实之处在于：朴素的 <span class="s">S<sub>c</sub>=α/β</span> 被证明为错，正确的定理用 <span class="s">k<sub>eff</sub></span> 修正。</b>至此，硬核部分结束——它是本书唯一完全严格、可复现的部分。第六部分转向连续与几何，在那里会遇到一个尚未填合的缺口。</p>
+
+<div class="note"><b>本章清单</b>
+<ul>
+<li><b>⊗ 可引用（A）：</b>定义 18.1（非线性演化区分系统）、命题 18.1（对称精确解与有限时间爆破）、定理 18.1（保证衰减阈值）。</li>
+<li><b>✗ 负面结果：</b>朴素阈值 <span class="s">S_c=α/β</span> 被证明不成立。</li>
+<li><b>？ 未解决：</b>临界重叠数与曲率解释的精确关系。</li>
+<li><b>↔ 连接：</b>第 20 章的 1/3 缺口在此首次以"局部分析量 vs 整体拓扑量"的形式出现。</li>
+</ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Thurston, W. P. (1976–1981). Notes on orbifolds. Princeton lecture notes.</p>
-<p>Diamond, F., &amp; Shurman, J. (2005). <i>A First Course in Modular Forms</i>. Springer.</p>
-<p>Ando, M., Hopkins, M. J., &amp; Rezk, C. (2001). Multiplicative orientations of KO-theory and of the spectrum of topological modular forms. Preprint.</p>
-<p>Hopkins, M. J. (2002). Algebraic topology and modular forms. <i>Proceedings of the ICM</i>.</p>
-<p>Cohen, H. (1993). <i>A Course in Computational Algebraic Number Theory</i>. Springer.</p>
+<p>Murray, J. D. (2002). <i>Mathematical Biology I: An Introduction</i> (3rd ed.). Springer.</p>
+<p>Hirsch, M. W., Smale, S., &amp; Devaney, R. L. (2012). <i>Differential Equations, Dynamical Systems, and an Introduction to Chaos</i> (3rd ed.). Academic Press.</p>
+<p>Lotka, A. J. (1925). <i>Elements of Physical Biology</i>. Williams &amp; Wilkins.</p>
+<p>Volterra, V. (1931). <i>Leçons sur la théorie mathématique de la lutte pour la vie</i>. Gauthier-Villars.</p>
+<p>Sornette, D. (2009). <i>Critical Phenomena in Natural Sciences</i> (2nd ed.). Springer.</p>
 </div>

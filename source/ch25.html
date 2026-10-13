@@ -1,0 +1,125 @@
+<h2 class="chapter">第 25 章　证明现状、开放问题与研究纲领（⊕ 纲领）</h2>
+
+<p class="lead">最后一章给出全书最需要的三样东西：<b>一份诚实的状态清单、一份可攻击的开放问题列表、一份可执行的路线图。</b>如果读者只记住一句话，希望是：本书的价值不在于它主张的统一，而在于它把统一的每一步都标上了严格程度。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+到本章为止，本书严格证明的只有第五部分（图上相变定理及其推论）；框架层（第四部分）部分严格；连续情形（第六部分）是工具对应与纲领。<b>这不是失败，而是诚实——一个纲领的第一步，必须是知道自己站在哪里。</b></div>
+
+<h3>25.1　导论：诚实的状态清单</h3>
+
+<p>一份理论著作的最后一章，最常见的两种失败是：宣布胜利，或匆忙列举"未来工作"。前者不诚实，后者无信息。本章做第三件事：<b>给出一张可以被逐条核查的状态表。</b></p>
+
+<h3>25.2　已严格证明的</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 25.1　已严格证明的结果（A 级）</b></caption>
+<tr><th class="l">结果</th><th class="l">内容</th><th class="l">证明工具</th><th class="l">位置</th></tr>
+<tr><td class="l">临界耦合定理</td><td class="l"><span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">谱定理 + 线性 ODE</td><td class="l">定理 15.1</td></tr>
+<tr><td class="l">两阶段相变</td><td class="l">局部区分先于全局区分解锁</td><td class="l">谱分析</td><td class="l">第 16 章</td></tr>
+<tr><td class="l">中间相宽度</td><td class="l"><span class="s">W=α(1/λ<sub>2</sub>−1/λ<sub>n</sub>)</span></td><td class="l">代数</td><td class="l">式 8.1</td></tr>
+<tr><td class="l">对称爆破时间</td><td class="l"><span class="s">t*=(1/α)ln[β(k−1)d<sub>0</sub>/(β(k−1)d<sub>0</sub>−α)]</span></td><td class="l">分离变量</td><td class="l">命题 18.1</td></tr>
+<tr><td class="l">保证衰减阈值</td><td class="l"><span class="s">S(0)&lt;α/[β(1−1/k)]⇒S→0</span></td><td class="l">Cauchy–Schwarz</td><td class="l">定理 18.1</td></tr>
+<tr><td class="l">具体图临界值</td><td class="l">Petersen (0.2, 0.5)、C₁₀ (0.25, 2.618) 等</td><td class="l">谱计算</td><td class="l">第 17 章</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>已证结果清单。全部可复现（复现协议）。<b>这是本书可以被放心引用的部分。</b></div>
+
+<h3>25.3　部分严格的</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 25.2　部分严格的结果（B 级）</b></caption>
+<tr><th class="l">结果</th><th class="l">已证明的部分</th><th class="l">未证明的部分</th></tr>
+<tr><td class="l">六条公理</td><td class="l">公理 1—4 在图论中验证</td><td class="l">公理 5、6 的一般情形</td></tr>
+<tr><td class="l">分离曲率 <span class="s">κ=R/6</span></td><td class="l">热核展开给出局部系数</td><td class="l">与全局拓扑的联系</td></tr>
+<tr><td class="l">时间涌现</td><td class="l">图的迭代情形</td><td class="l">连续情形 <span class="s">κ<sub>net</sub></span> 单调性</td></tr>
+<tr><td class="l">领域编码</td><td class="l">可写出映射</td><td class="l">映射保持结构</td></tr>
+<tr><td class="l">非线性 <span class="s">k<sub>eff</sub></span> 分析</td><td class="l">阈值与分布依赖</td><td class="l">一般初值的长期行为</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>部分严格清单。等级 B。<b>这些结果可以被当作工作假设，但不能当作定理引用。</b></div>
+
+<h3>25.4　启发式的</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 25.3　启发式主张（C 级）</b></caption>
+<tr><th class="l">主张</th><th class="l">现状</th><th class="l">核验路线</th></tr>
+<tr><td class="l">轨形解释 <span class="s">χ(D)=χ(M)/3</span></td><td class="l">球面例子矛盾</td><td class="l">特殊奇异点结构构造</td></tr>
+<tr><td class="l">1/3 与椭圆上同调同源</td><td class="l">仅形式相符</td><td class="l">构造 TMF 联系</td></tr>
+<tr><td class="l">高维缺口 <span class="s">f(n)=1/(2n+1)</span></td><td class="l">仅二维检验</td><td class="l">计算四维情形</td></tr>
+<tr><td class="l">LLM 激活阈值假说</td><td class="l">玩具模型 + 无实验</td><td class="l">公开训练数据事后检验</td></tr>
+<tr><td class="l">时间从区分涌现</td><td class="l">图论平凡</td><td class="l">连续情形严格化</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>启发式清单。等级 C。<b>这些主张不应被引用为结论；它们的作用是指出攻击方向。附录 E 为它们登记了证伪条件。</b></div>
+
+<h3>25.5　七大开放问题</h3>
+
+<p>从上面的清单提炼出七个开放问题，按可攻击性排序。</p>
+
+<div class="define"><span class="bt">开放问题 O1　分离曲率定义的统一</span>
+图上 <span class="s">κ=βλ−α</span>，流形上 <span class="s">κ=R/6</span>，信息论上 <span class="s">κ=−β</span>。是否存在一个统一定义，使三者都是它的特例？<b>可攻击性：高</b>（可通过检验三者在各自粗化极限下是否一致来推进）。</div>
+
+<div class="define"><span class="bt">开放问题 O2　1/3 因子的解释</span>
+Gauss–Bonnet 缺口是错误、修正项，还是新不变量？<b>可攻击性：高</b>（四维情形可计算）。</div>
+
+<div class="define"><span class="bt">开放问题 O3　连续情形的时间涌现</span>
+<span class="s">κ<sub>net</sub></span> 在什么条件下单调？能否严格定义 <span class="s">τ</span>？<b>可攻击性：中高</b>（需要构造性条件）。</div>
+
+<div class="define"><span class="bt">开放问题 O4　领域编码的结构保持</span>
+编码映射是否保持至少一个非平凡结构（如谱、度量或序）？<b>可攻击性：中</b>（逐领域证明）。</div>
+
+<div class="define"><span class="bt">开放问题 O5　两阶段相变的连续类比</span>
+流形上是否存在"局部曲率先于全局曲率"的相变？<b>可攻击性：中</b>（需要定义流形上的演化区分系统）。</div>
+
+<div class="define"><span class="bt">开放问题 O6　超有限方法的框架接口</span>
+超有限降级与 EDS 公理 6 的接口能否被严格证明？<b>可攻击性：中低</b>（非标准分析技术密集）。</div>
+
+<div class="define"><span class="bt">开放问题 O7　离散与连续的桥接</span>
+是否存在一个函子，把离散 EDS 映射到连续 EDS，并保持相变结构？<b>可攻击性：低</b>（需要新的数学）。</div>
+
+<h3>25.6　可执行的研究路线图</h3>
+
+<img class="fig" src="assets/svg/fig23-roadmap-matrix.svg" alt="研究路线图">
+
+<div class="cap"><b>图 25.1　研究路线图矩阵</b>。横轴为时间（短期／中期／长期），纵轴为难度（低／中／高）。高价值低难度的问题（右上）应优先；高难度高价值的问题（右下）作为长期目标。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 25.4　研究路线图（含实际交付状态）</b></caption>
+<tr><th class="l">阶段</th><th class="l">任务</th><th class="l">产出</th><th class="l">当前状态</th></tr>
+<tr><td class="l">短期</td><td class="l">用 Lean 4 形式化定理 15.1</td><td class="l">机器验证的相变定理</td><td class="l"><b>骨架已交付</b>（附录 H，5 引理分解 + 4 瓶颈；未编译）</td></tr>
+<tr><td class="l">短期</td><td class="l">检验 LLM 激活阈值假说</td><td class="l">可复算的实验结果</td><td class="l"><b>已执行</b>（附录 I.1；合成 MLP，结果混合，含反例）</td></tr>
+<tr><td class="l">短期</td><td class="l">确定 1/3 缺口的成立条件</td><td class="l">猜想的精确边界</td><td class="l"><b>已完成</b>（附录 I.2；当且仅当无奇异点）</td></tr>
+<tr><td class="l">中期</td><td class="l">统一分离曲率定义（O1）</td><td class="l">框架从“语言”升级为“理论”</td><td class="l">未开始</td></tr>
+<tr><td class="l">中期</td><td class="l">验证领域编码的结构保持（F5）</td><td class="l">逐领域证明或反例</td><td class="l"><b>已部分执行</b>（附录 I.3；三个 PASS，一个反例）</td></tr>
+<tr><td class="l">长期</td><td class="l">离散—连续函子（O7）与连续时间涌现（O3）</td><td class="l">框架覆盖连续数学</td><td class="l">仅候选猜想（附录 I.4）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>路线图（含交付状态）。等级 C（作者规划）。<b>本书的做法：</b>短期任务从“列名”变为“有实物”——Lean 骨架、三个可运行实验、一个精确化的猜想边界。这些实物多数是<b>负结果或收窄结果</b>，但它们把“可证伪”从承诺变成了事实。详见附录 H—I。</div>
+
+<p><b>已交付的硬核扩展（附录 J）。</b>四个结果全部可复算：定理 B1（对称加权不可反转）、反例 B2（有向图可反转）、定理 C（<span class="s">κ_info=Var(λ)/2</span>）、以及证伪 G4（<span class="s">f(n)=1/(2n+1)</span> 不成立）。其中两个是正面结果，两个是负面结果。<b>它们把"先兑现"从口号变成实物：读者可以先读第 15—18 章与附录 J，获得四个可独立验证的结果，再把框架（第四部分）读作对这些结果共同结构的诠释。</b></p>
+
+<div class="warning"><span class="bt">不要承诺超过能力的成果</span>
+本书不承诺"解决黎曼假设""证明质量间隙"之类的结果。第 20 章曾经的"黎曼假设曲率表述"（在早期草稿中）已被降级为不可证伪的隐喻，并从正式主张中移除。<b>一个纲领的可信度，取决于它承诺的与它能交付的之间的比例。</b>本书宁愿承诺少而交付真。</div>
+
+<h3>25.7　本章与全书小结</h3>
+
+<p>让我们回到最初的赌注。本书主张：<b>从"区分"出发可以构造一个既能涵盖多领域、又能在至少一个领域被严格实现的框架。</b>检查这个赌注：</p>
+
+<ul>
+<li><b>涵盖多领域：</b>通过。第 22—23 章给出编码与分类。但这只是语言层（P1/P2）。</li>
+<li><b>至少一个领域严格：</b>通过。第五部分给出完整证明与数值验证（P3，图论）。</li>
+<li><b>产生新命题：</b>部分通过。图论硬核是新的（至少是在此框架下首次表述）；<span class="s">1/3</span> 缺口是可攻击的新问题；其余是纲领。</li>
+<li><b>统一整个数学：</b>未通过，且本书不主张。</li>
+</ul>
+
+<p>因此，对本书最准确的一句话评价是：<b>一个有严格核心（图论）、有清晰语言（EDS）、有一个诚实缺口（1/3）的研究纲领。</b>它不是大一统理论，但它是一个可以被继续建造、也可以被具体攻击的东西。对一份理论纲领来说，这已经足够。</p>
+
+<div class="note"><b>三个承诺的最终状态</b>
+<b>保底（已交付）：</b>图上的相变定理，严格、可复现、可形式化。［定理，A］<br>
+<b>有条件（部分交付）：</b>EDS 作为跨领域统一语言；连续与动态领域共享同一结构。［框架，B］<br>
+<b>推测（未交付）：</b>1/3 因子的解释、连续时间涌现、领域编码的结构保持。［纲领，C］<br>
+读者若只用一句话记住本书：<b>它严格地解决了一个小问题，诚实地提出了一个大问题。</b></div>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Polya, G. (1945). <i>How to Solve It</i>. Princeton University Press.</p>
+<p>Hamming, R. W. (1986). You and your research. Bell Communications Research Colloquium.</p>
+<p>Zeitz, P. (2006). <i>The Art and Craft of Problem Solving</i> (2nd ed.). Wiley.</p>
+<p>Wigner, E. (1960). The unreasonable effectiveness of mathematics in the natural sciences. <i>Communications in Pure and Applied Mathematics</i> 13.</p>
+</div>

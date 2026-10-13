@@ -1,102 +1,151 @@
-<h2 class="chapter">第 14 章　可计算的实例</h2>
+<h2 class="chapter">第 14 章　六条公理与元理论</h2>
 
-<p class="lead">一个定理只有在能被算出来时才真正可信。本章给出五类图的精确临界耦合，并给出一个可复现的数值验证协议。<b>本节的每个数字都可以用十几行代码独立复算；随书脚本 <code>analysis/graph_phase_transition.py</code> 生成它们。</b></p>
+<p class="lead">本章把前几章的分量组织成一个公理系统，并给出三条元理论陈述。它同时是全书最需要诚实的地方：<b>六条公理中，只有一条在图上被完整验证；其余五条是"框架公理"，其作用是组织语言，不是产生定理。</b>本章明确区分这两类公理。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 对任何具体图都是可精确计算的。<b>本章给出的数字构成硬核的可复现证据：任何读者都能在几分钟内验证它们。</b></div>
+EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值是让不同领域共享同一组概念；它的局限是部分公理（尤其是曲率演化与标准化）目前只在特定实现中被验证。把它们当作"已证基础"是误读。</b></div>
 
-<h3>14.1　导论：可复现的数字</h3>
+<h3>14.1　导论：从定义到公理</h3>
 
-<p>数学论文里的"经计算可得"常常是空头支票。本章把它兑现：每个图给出拉普拉斯谱、两个临界耦合、以及中间相宽度。约定 <span class="s">α=1</span>；其他 <span class="s">α</span> 只需按比例缩放。</p>
+<p>一个数学框架要能被使用，必须先说清哪些是定义、哪些是公理、哪些是定理。定义是约定；公理是假设；定理是被证明的命题。混用三者，是"统一理论"最常见的病。本节把 EDS 的三层分清。</p>
 
-<h3>14.2　Petersen 图</h3>
+<div class="define"><span class="bt">定义 14.1　演化区分系统（EDS）</span>
+一个演化区分系统是一个六元组
+<div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
+其中：<span class="s">D</span> 是区分动作族（定义 11.1）；<span class="s">O</span> 是观测泛函（定义 11.2）；<span class="s">∼</span> 是精度等价关系族（定义 11.3）；<span class="s">κ</span> 是分离曲率（定义 12.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 13.1）；<span class="s">st</span> 是标准部分映射（第 9 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
 
-<p>Petersen 图：10 个顶点，3-正则，强正则参数 (10,3,0,1)。它是图论中最著名的反例来源之一，也是本书硬核的最小非平凡实例。</p>
+<h3>14.2　六条公理</h3>
 
-<div class="define"><span class="bt">例 14.1　Petersen 图</span>
-拉普拉斯谱：<span class="s">λ<sub>1</sub>=0</span>（重数 1），<span class="s">λ=2</span>（重数 5），<span class="s">λ<sub>n</sub>=5</span>（重数 4）。因此
-<div class="eq"><span class="body">β<sub>1</sub>=α/5=0.2α,  β<sub>2</sub>=α/2=0.5α,  W=0.3α</span></div></div>
+<img class="fig" src="assets/svg/fig11-axiom-dependency.svg" alt="六条公理的依赖关系">
 
-<p>取 <span class="s">α=1</span>：<span class="s">β&lt;0.2</span> 全部衰减；<span class="s">0.2&lt;β&lt;0.5</span> 沿高频模式增长；<span class="s">β&gt;0.5</span> 沿高频与 Fiedler 模式增长。</p>
+<div class="cap"><b>图 14.1　六条公理的依赖关系</b>。公理 1（观测完备）与公理 5（分离完备）是结构性的；公理 2（精度连续）与公理 3（曲率有界）是技术性的；公理 4（演化适定）与公理 6（标准化）提供动力学与降级。带星号者为在图论实现中已验证。</div>
 
-<h3>14.3　环与路径图</h3>
+<div class="define"><span class="bt">公理 1　观测完备性</span>
+对所有 <span class="s">D∈D</span>，<span class="s">O(D)(x)=O(D)(y) ⇔ x∼<sub>0</sub>y</span>。观测与不可区分互为对偶。〔图论：✓ 已验证〕</div>
 
-<p>环 <span class="s">C<sub>n</sub></span> 的拉普拉斯特征值为 <span class="s">λ<sub>k</sub>=2−2cos(2πk/n)</span>，<span class="s">k=0,…,n−1</span>。</p>
+<div class="define"><span class="bt">公理 2　精度连续性</span>
+对任意 <span class="s">D∈D</span> 与 <span class="s">ε&gt;0</span>，存在 <span class="s">δ&gt;0</span>，使得精度参数变化不超过 <span class="s">δ</span> 时，等价关系的细化程度变化不超过 <span class="s">ε</span>。〔图论：✓ 离散情形平凡〕</div>
 
-<div class="define"><span class="bt">例 14.2　环 C<sub>10</sub></span>
-<div class="eq"><span class="body">λ<sub>2</sub>=2−2cos(36°)≈0.382,  λ<sub>n</sub>=4</span></div>
-<div class="eq"><span class="body">β<sub>1</sub>=0.25α,  β<sub>2</sub>≈2.618α,  W≈2.368α</span></div></div>
+<div class="define"><span class="bt">公理 3　曲率有界性</span>
+对任意紧子族 <span class="s">K⊆D</span> 与任意 <span class="s">T&gt;0</span>，<span class="s">sup{|κ(Φ<sub>t</sub>(D),x)| : D∈K, t∈[0,T], x∈X} &lt; ∞</span>。有限范围内曲率不发散。〔图论：✓（有限矩阵，谱有界）〕</div>
 
-<p>路径图 <span class="s">P<sub>n</sub></span> 的特征值为 <span class="s">λ<sub>k</sub>=2−2cos(π(k−1)/n)</span>。对大 <span class="s">n</span>：<span class="s">λ<sub>2</sub>≈π²/n²</span>，<span class="s">λ<sub>n</sub>≈4</span>，故 <span class="s">β<sub>1</sub>≈0.25α</span>，<span class="s">β<sub>2</sub>≈αn²/π²</span>。<b>中间相宽度随 <span class="s">n²</span> 增长——这是"局部先于全局"最戏剧化的表现。</b></p>
+<div class="define"><span class="bt">公理 4　演化适定性★</span>
+对任意初始 <span class="s">D<sub>0</sub>∈D</span>，存在唯一演化 <span class="s">Φ<sub>t</sub>(D<sub>0</sub>)</span> 定义在最大时间区间上，满足
+<div class="eq"><span class="body">(d/dt)O(Φ<sub>t</sub>(D<sub>0</sub>))(x) = κ(Φ<sub>t</sub>(D<sub>0</sub>),x)·O(Φ<sub>t</sub>(D<sub>0</sub>))(x)</span></div>
+即演化由分离曲率唯一决定。〔图论：✓ 已验证——这是第五部分的核心〕</div>
 
-<h3>14.4　完全图与完全二分图</h3>
+<div class="define"><span class="bt">公理 5　分离完备性</span>
+每个 <span class="s">D∈D</span> 可写成有限个原子区分动作的精化交。<span class="s">D = D₁ ⊓ … ⊓ D<sub>n</sub></span>，每个 <span class="s">D<sub>i</sub></span> 在某精度下不可再分。〔图论：部分（谱分解给出有限原子）〕</div>
 
-<div class="define"><span class="bt">例 14.3　完全图 K<sub>n</sub></span>
-谱：<span class="s">0</span>（重数 1），<span class="s">n</span>（重数 <span class="s">n−1</span>）。故 <span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>。<b>没有中间相</b>——所有非零模式同时解锁。</div>
+<div class="define"><span class="bt">公理 6　标准化存在性（可选）</span>
+对任意超有限区分动作族 <span class="s">*D</span>，其标准部分 <span class="s">st(*D)</span> 满足
+<div class="eq"><span class="body">O(st(*D))(x) = st( (1/|*D|) Σ<sub>d∈*D</sub> O(d)(x) )</span></div>
+〔图论：不需要（有限图无超有限）〕</div>
 
-<div class="define"><span class="bt">例 14.4　完全二分图 K<sub>n,n</sub></span>
-谱：<span class="s">0</span>（重数 1），<span class="s">n</span>（重数 <span class="s">2n−2</span>），<span class="s">2n</span>（重数 1）。故
-<div class="eq"><span class="body">β<sub>1</sub>=α/(2n),  β<sub>2</sub>=α/n,  W=α/(2n)</span></div>
-中间相宽度随 <span class="s">n</span> 减小。</div>
+<div class="warning"><span class="bt">警告 14.1　务必分清"框架公理"与"已验证公理"</span>
+公理 4 在第五部分有一个完整、严格的验证（图上的相变定理）。公理 6 只在非标准分析中独立成立，与框架的接口未证。公理 5 在图论中部分成立。其余公理是<b>组织性假设</b>：它们的用途是让不同领域的描述共享词汇，而不是产生新定理。<b>本书从不把它们当作已证基础来推导其他结论。</b></div>
 
-<h3>14.5　超立方体：多阶段相变</h3>
+<h3>14.3　元理论定理</h3>
 
-<img class="fig" src="assets/svg/fig14-graph-instances.svg" alt="具体图的临界耦合">
+<p>元理论陈述是关于框架本身的命题。它们大多属于"论证"级别。</p>
 
-<div class="cap"><b>图 14.1　具体图的谱与临界耦合</b>。四个面板分别给出 Petersen 图、环 C₁₀、完全图 K₅、完全二分图 K₄,₄ 的谱与阈值。横轴为 β，纵轴为增长率 μ；阴影区为中间相（局部增长相）。</div>
+<div class="define"><span class="bt">元理论 11.1　普遍编码（论证／纲领）</span>
+任何满足下列条件的数学对象 <span class="s">M</span> 都可被编码为某个 EDS：（i）具有离散化结构（子集族、子结构、等价类族）；（ii）具有观测或测量机制（范数、测度、迹、期望）；（iii）具有参数化的演化或变形。编码在"<span class="s">M</span> 的已知定理翻译为 EDS 定理"的意义下是自然的。［论证，乙］</div>
 
-<p>超立方体 <span class="s">Q<sub>n</sub></span> 的谱是 <span class="s">λ<sub>k</sub>=2k</span>，重数 <span class="s">C(n,k)</span>，<span class="s">k=0,…,n</span>。这给出 <span class="s">n</span> 个不同的临界耦合：</p>
+<div class="define"><span class="bt">元理论 11.2　精度不变性（论证）</span>
+任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
 
-<div class="define"><span class="bt">例 14.5　超立方体 Q<sub>n</sub>（n 阶段相变）</span>
-<div class="eq"><span class="body">β<sub>k</sub>=α/(2k),  k=1,…,n</span></div>
-当 <span class="s">β</span> 从 0 增大时，系统依次经历 <span class="s">n</span> 个相，每越过一个门槛，就有一个新的"频率"模式被激活。<b>这是"区分能力的逐层解锁"。</b></div>
+<div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
+EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 15 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
 
-<p>取 <span class="s">α=1, n=5</span>：<span class="s">β₁=0.1</span>（激活最高频），<span class="s">β₂=0.2</span>，<span class="s">β₃≈0.333</span>，<span class="s">β₄=0.5</span>，<span class="s">β₅=1.0</span>（激活 Fiedler）。</p>
+<h3>14.4　公理的独立性与边界</h3>
 
-<h3>14.6　加权图、时变图与随机图</h3>
-
-<p><b>加权图。</b>给边赋电导 <span class="s">w<sub>uv</sub>&gt;0</span>，用加权拉普拉斯 <span class="s">(L<sub>w</sub>D)<sub>v</sub>=(1/m<sub>v</sub>)Σ<sub>u∼v</sub>w<sub>uv</sub>(D<sub>u</sub>−D<sub>v</sub>)</span>。定理 12.1 照常成立，只需用 <span class="s">L<sub>w</sub></span> 的谱。例：环 <span class="s">C₄</span> 若把 <span class="s">w₁₂=w₃₄=10</span>，<span class="s">w₂₃=w₄₁=1</span>，则谱变为 <span class="s">{0, 2, 12, 20}</span>，<span class="s">β₁=0.05</span>，<span class="s">β₂=0.5</span>。<b>加权降低了局部阈值，却几乎不影响全局阈值。</b></p>
-
-<p><b>时变图。</b>若图在有限个图 <span class="s">G₁,…,G<sub>m</sub></span> 间切换，<span class="s">Ḋ=(−αI+βL<sub>σ(t)</sub>)D</span>。稳定性由是否存在公共李雅普诺夫函数决定：若存在正定 <span class="s">P</span> 使所有 <span class="s">k</span> 满足 <span class="s">(−αI+βL<sub>k</sub>)<sup>T</sup>P+P(−αI+βL<sub>k</sub>)≺0</span>，则 <span class="s">D→0</span> 对所有切换成立。<b>切换系统比单个系统更易失稳——这是一个可检验的预言。</b>［论证，B］</p>
-
-<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎必然）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B］</p>
-
-<h3>14.7　数值验证协议与结果</h3>
-
-<img class="fig" src="assets/svg/fig14b-numerical-verification.svg" alt="数值验证">
-
-<div class="cap"><b>图 14.2　数值验证</b>。左：Petersen 图在 <span class="s">β=0.3</span>（中间相）时，各模式投影的对数随时间的演化；最高频模式线性上升，其余下降。右：<span class="s">β=0.6</span>（全局增长相）时，最高频与 Fiedler 模式同时上升。斜率与 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 的预测一致。</div>
-
-<div class="define"><span class="bt">验证协议 V1（可复现）</span>
-（1）构造目标图的拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span>；<br>
-（2）用 <code>numpy.linalg.eigvalsh(L)</code> 计算谱；<br>
-（3）计算 <span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ<sub>2</sub></span>；<br>
-（4）取随机初值 <span class="s">D(0)</span>，用 <code>scipy.integrate.solve_ivp</code> 演化式 (12.2)；<br>
-（5）把 <span class="s">D(t)</span> 投影到各特征向量，检查对数斜率是否等于 <span class="s">μ<sub>k</sub></span>；<br>
-（6）对 <span class="s">β</span> 取三相位各一个值，重复。</div>
+<p>一个公理系统必须面对两个问题：公理之间是否一致？是否独立？本书对这两个问题的回答是诚实的：<b>未知，且不声称已解决。</b></p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.1　数值验证的预期结果（α=1）</b></caption>
-<tr><th class="l">图</th><th class="l">β 取值</th><th class="l">所处相</th><th class="l">预期主导速率</th></tr>
-<tr><td class="l">Petersen</td><td class="l">0.15</td><td class="l">衰减</td><td class="l">μ<sub>n</sub>=−0.25</td></tr>
-<tr><td class="l">Petersen</td><td class="l">0.30</td><td class="l">局部增长</td><td class="l">μ<sub>n</sub>=+0.50</td></tr>
-<tr><td class="l">Petersen</td><td class="l">0.60</td><td class="l">全局增长</td><td class="l">μ<sub>n</sub>=+2.00；μ<sub>2</sub>=+0.20</td></tr>
-<tr><td class="l">C<sub>10</sub></td><td class="l">1.00</td><td class="l">局部增长</td><td class="l">μ<sub>n</sub>=+3.00；Fiedler 衰减</td></tr>
+<caption class="cap"><b>表 14.1　六条公理的验证状态</b></caption>
+<tr><th class="l">公理</th><th class="l">图论</th><th class="l">连续（流形）</th><th class="l">信息论</th><th class="l">状态</th></tr>
+<tr><td class="l">1 观测完备</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">框架</td></tr>
+<tr><td class="l">2 精度连续</td><td class="l">✓</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">3 曲率有界</td><td class="l">✓</td><td class="l">部分</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">4 演化适定 ★</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">定理（图）</td></tr>
+<tr><td class="l">5 分离完备</td><td class="l">部分</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">6 标准化</td><td class="l">不需要</td><td class="l">未证</td><td class="l">未证</td><td class="l">可选工具</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可复现预测。等级 A。<b>注意：</b>表中"预期主导速率"可由 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 手算，脚本验证其与数值积分一致。</div>
+<div class="datasrc"><b>性质：</b>验证状态表。等级 B（作者判断，可核查）。<b>这是读第四部分最该记住的表。</b></div>
 
-<div class="note"><b>复现方法</b>
-在仓库根目录运行 <code>python analysis/graph_phase_transition.py</code>。脚本会计算上述所有图的谱与临界耦合，做数值演化，把结果写入 <code>data/injected.json</code> 与 <code>analysis/results/</code>，并生成图 14.1、14.2。不需要任何特殊库，只需要 numpy 与 scipy。</div>
+<div class="scenario"><span class="bt">唯一的星号</span>
+表中只有一个星号：公理 4（演化适定性）。它之所以特殊，是因为它在第五部分有一个完整证明——而这正好说明框架不是一座悬空的楼：<b>它至少有一根柱子在岩石上。</b>其余柱子是否也能落地，是后面各部分要回答的问题。</div>
+
+<h3>14.5　与范畴论、类型论的关系</h3>
+
+<p>EDS 可以被放进不同的基础语言，各有得失。</p>
+
+<ul>
+<li><b>在集合论中：</b>六元组是集合与映射，公理是集合论命题。这是本书硬核使用的语言，最易检验。</li>
+<li><b>在范畴论中：</b>EDS 可被表述为一个函子 <span class="s">D: X → Type</span>，分离曲率是它的"增长速率"。这更符合"态射优先"，但增加了抽象层。</li>
+<li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
+</ul>
+
+<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 10.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
+
+<h3>14.6　公理在图论情形的精确状态</h3>
+
+<p>前面几章反复声明“只有公理 4 在图上被完整验证”。本节把这个状态<b>逐条核算清楚</b>，并给出一个此前的遗漏：<b>公理 5 在图论中有一条真正的定理</b>。同时本节诚实报告：<b>公理 1 与公理 2 在图上可证为平凡——找不到非平凡的定理。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 14.1　六条公理在图论情形的精确状态（可核算）</b></caption>
+<tr><th class="l">公理</th><th class="l">图论状态</th><th class="l">依据</th></tr>
+<tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
+<tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
+<tr><td class="l">3 曲率有界</td><td class="l">有定理</td><td class="l"><span class="s">κ_info=Var(λ)/2</span>（第 12.6 节）</td></tr>
+<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 15—18 章）</td></tr>
+<tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 14.1，本节）</td></tr>
+<tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>公理状态核算。等级 A（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
+
+<div class="warning"><span class="bt">一个诚实的反结论：公理 1 在图上没有非平凡定理</span>
+一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
+
+<div class="define"><span class="bt">定理 14.1　原子分解的唯一性 ［定理，A］</span>
+在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
+<b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
+<b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
+<b>（iii）</b>因此，<b>原子分解唯一 ⟺ 谱是单谱（所有特征值互异）</b>。</div>
+
+<p><b>证明。</b>（i）谱投影是特征空间的止交投影，由 <span class="s">L</span> 唯一确定。（ii）若 <span class="s">dim E<sub>k</sub>=1</span>，则 <span class="s">E<sub>k</sub></span> 内只有一个单位向量（差符号），故 rank-1 原子唯一；若 <span class="s">dim E<sub>k</sub>&gt;1</span>，则可在 <span class="s">E<sub>k</sub></span> 内任意旋转正交基，得到不同的 rank-1 分解。（iii）拼接所有 <span class="s">k</span>。∎</p>
+
+<table class="nat">
+<caption class="cap"><b>表 14.2　测试图的光谱多重度（公理 5）</b></caption>
+<tr><th class="l">图</th><th class="l">单谱？</th><th class="l">重数分布</th><th class="l">原子分解</th></tr>
+<tr><td class="l">P₈（路径）</td><td class="l"><b>是</b></td><td class="l">[1,1,1,1,1,1,1,1]</td><td class="l"><b>唯一</b></td></tr>
+<tr><td class="l">Petersen</td><td class="l">否</td><td class="l">[1,5,4]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">K₅</td><td class="l">否</td><td class="l">[1,4]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">K₄,₄</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">星图 S₈</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
+
+<h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
+
+<p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
+
+<div class="define"><span class="bt">推论 14.1　乘积图的相变结构 ［推论，A］</span>
+<div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
+故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
+
+<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A］</p>
 
 <h3>14.8　本章小结</h3>
 
-<p>硬核的临界耦合对具体图是可精确计算的：Petersen 图 <span class="s">(0.2, 0.5)</span>，环 <span class="s">C₁₀</span> <span class="s">(0.25, 2.618)</span>，完全图无中间相，超立方体有 <span class="s">n</span> 个阶段。数值验证协议给出了可复现的检验步骤。下一章把线性情形推广到非线性，并给出一个精确可解的爆破时间。</p>
+<p>EDS 是一个六元组加六条公理。其中只有公理 4 在图上被完整验证；其余是组织性框架公理。这一诚实的分级是本书全部可信度的基础。第五部分现在给出那个唯一的星号：图上的相变定理。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Chung, F. R. K., &amp; Lu, L. (2006). <i>Complex Graphs and Networks</i>. AMS.</p>
-<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p>
-<p>Brouwer, A. E., &amp; Haemers, W. H. (2012). <i>Spectra of Graphs</i>. Springer.</p>
-<p>Chung, F., Lu, L., &amp; Vu, V. (2003). Spectra of random graphs with given expected degrees. <i>PNAS</i> 100(11).</p>
-<p>Liberzon, D. (2003). <i>Switching in Systems and Control</i>. Birkhäuser.</p>
+<p>Mac Lane, S., &amp; Moerdijk, I. (1992). <i>Sheaves in Geometry and Logic</i>. Springer.</p>
+<p>Johnstone, P. T. (2002). <i>Sketches of an Elephant: A Topos Theory Compendium</i>. Oxford University Press.</p>
+<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
+<p>Voevodsky, V., et al. (2013). <i>Homotopy Type Theory</i>. IAS.</p>
 </div>
