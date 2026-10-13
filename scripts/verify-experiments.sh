@@ -14,6 +14,7 @@ run "第四部分：阈值假说敏感性"              analysis/monte_carlo_sen
 run "附录 I.1：LLM 激活探针（合成 MLP）"   analysis/llm_activation_probe.py
 run "附录 I.2：轨形缺口（1/3）"            analysis/orbifold_gap.py
 run "附录 I.3：编码结构保持"               analysis/encoding_preservation.py
+run "附录 I：O17 独立特征复核"            analysis/independent_features.py
 run "附录 J：加权/有向相变（定理 B1 + 反例 B2）" analysis/weighted_directed_transition.py
 run "附录 J：离散分离曲率（定理 C）"        analysis/discrete_curvature.py
 run "附录 J：高维缺口（证伪 G4）"          analysis/higher_dim_gap.py

@@ -103,6 +103,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l"><code>analysis/pca_fields.py</code></td><td class="l">编码矩阵的有效维度</td><td class="l">≈ 6.14 / 11（把“统一”限定在语言层）</td></tr>
 <tr><td class="l"><code>analysis/monte_carlo_sensitivity.py</code></td><td class="l">阈值假说的方向翻转概率</td><td class="l">报告区间与方向翻转率，不升格为结论</td></tr>
 <tr><td class="l"><code>analysis/fisher_curvature.py</code></td><td class="l">曲率—涌现同步（附录 K）</td><td class="l">弱支持、<b>混合</b>（记录间隔不足）</td></tr>
+<tr><td class="l"><code>analysis/independent_features.py</code></td><td class="l">O17：独立特征的 PCA（猜想 D2）</td><td class="l"><b>负面</b>：N<sub>eff</sub>≈2.9 ≠ 6，D2 被削弱</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>脚本清单。<b>等级 A／甲（可运行）/ 结论等级见各行。</b>每个脚本只依赖 NumPy/SciPy，无需 GPU。</div>
 

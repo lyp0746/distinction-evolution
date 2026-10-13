@@ -27,7 +27,8 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/monte_carlo_sensitivity.py # 阈值假说敏感性
 "$PY" analysis/llm_activation_probe.py # 附录 I.1 激活探针（合成 MLP）
 "$PY" analysis/orbifold_gap.py       # 附录 I.2 轨形缺口
-"$PY" analysis/encoding_preservation.py # 附录 I.3 / 表 B.5 编码保结构（11 个领域）
+"$PY" analysis/encoding_preservation.py # 附录 I.3 / 表 B.5 编码保结构（15 个对象）
+"$PY" analysis/independent_features.py  # O17 独立特征复核（削弱猜想 D2）
 "$PY" analysis/weighted_directed_transition.py # 附录 J 加权/有向相变
 "$PY" analysis/discrete_curvature.py # 附录 J 离散分离曲率
 "$PY" analysis/higher_dim_gap.py     # 附录 J 高维缺口（证伪 G4）

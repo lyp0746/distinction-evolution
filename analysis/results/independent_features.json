@@ -1,0 +1,28 @@
+{
+  "n_domains": 27,
+  "n_features": 8,
+  "features": [
+    "prereq_depth",
+    "cored_defs",
+    "age_decades",
+    "comp_verifiable",
+    "cross_links",
+    "open_problems",
+    "formal_coverage",
+    "method_diversity"
+  ],
+  "effective_dim": 2.9123,
+  "eigenvalues": [
+    4.2901,
+    1.4969,
+    0.8618,
+    0.6553,
+    0.3108,
+    0.2097,
+    0.1205,
+    0.0549
+  ],
+  "parallel_p95": 6.8521,
+  "note": "作者估计（C／丙）上的概念性复核，非独立测量。若结果≈6，仅与猜想 D2 相容，不构成证明；真实验证需书目计量数据（数据缺口，见附录 F）。",
+  "verdict": "inconsistent_with_D2"
+}
