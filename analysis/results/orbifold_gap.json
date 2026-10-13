@@ -1,0 +1,177 @@
+{
+  "definitions": {
+    "chi_geom": "2 - 2g  (underlying surface)",
+    "chi_orb": "chi_geom - sum_i (1 - 1/alpha_i)  (Satake)",
+    "chi_D": "chi_orb / 3   (integration of kappa = K/3 via orbifold Gauss-Bonnet)",
+    "naive_conjecture": "chi_D = chi_geom / 3"
+  },
+  "catalog": [
+    {
+      "name": "smooth surface genus 0 (no action)",
+      "genus_underlying": 0,
+      "cone_orders": [],
+      "chi_geom": 2,
+      "chi_orb": 2,
+      "chi_D_gauss_bonnet": 0.666667,
+      "chi_geom_over_3": 0.666667,
+      "matches": true,
+      "no_singular_points": true,
+      "note": "无奇异点：χ_orb=χ_geom=2，χ(D)=2/3 自洽"
+    },
+    {
+      "name": "smooth surface genus 2",
+      "genus_underlying": 2,
+      "cone_orders": [],
+      "chi_geom": -2,
+      "chi_orb": -2,
+      "chi_D_gauss_bonnet": -0.666667,
+      "chi_geom_over_3": -0.666667,
+      "matches": true,
+      "no_singular_points": true,
+      "note": "无奇异点：χ_orb=χ_geom=-2，自洽"
+    },
+    {
+      "name": "free Z/3Z quotient (genus-2 bottom)",
+      "genus_underlying": 2,
+      "cone_orders": [],
+      "chi_geom": -2,
+      "chi_orb": -2,
+      "chi_D_gauss_bonnet": -0.666667,
+      "chi_geom_over_3": -0.666667,
+      "matches": true,
+      "no_singular_points": true,
+      "note": "自由 Z/3Z 作用的商：底流形 genus 2，无锥点，自洽"
+    },
+    {
+      "name": "free Z/3Z quotient (genus-1 bottom)",
+      "genus_underlying": 1,
+      "cone_orders": [],
+      "chi_geom": 0,
+      "chi_orb": 0,
+      "chi_D_gauss_bonnet": 0.0,
+      "chi_geom_over_3": 0.0,
+      "matches": true,
+      "no_singular_points": true,
+      "note": "自由 Z/3Z 作用的商：环面，χ=0，自洽"
+    },
+    {
+      "name": "S^2/(Z/3Z), two fixed pts",
+      "genus_underlying": 0,
+      "cone_orders": [
+        3,
+        3
+      ],
+      "chi_geom": 2,
+      "chi_orb": 0.666667,
+      "chi_D_gauss_bonnet": 0.222222,
+      "chi_geom_over_3": 0.666667,
+      "matches": false,
+      "no_singular_points": false,
+      "note": "底流形 S^2，两个 3 阶锥点；χ_orb=2/3，χ(D)=2/9 ≠ 2/3 → 反例"
+    },
+    {
+      "name": "S^2 with three 3-cones",
+      "genus_underlying": 0,
+      "cone_orders": [
+        3,
+        3,
+        3
+      ],
+      "chi_geom": 2,
+      "chi_orb": 0.0,
+      "chi_D_gauss_bonnet": 0.0,
+      "chi_geom_over_3": 0.666667,
+      "matches": false,
+      "no_singular_points": false,
+      "note": "底流形 S^2，三个 3 阶锥点；χ_orb=0，χ(D)=0 ≠ 2/3 → 反例（第 17.5 节）"
+    },
+    {
+      "name": "S^2 with one 3-cone",
+      "genus_underlying": 0,
+      "cone_orders": [
+        3
+      ],
+      "chi_geom": 2,
+      "chi_orb": 1.333333,
+      "chi_D_gauss_bonnet": 0.444444,
+      "chi_geom_over_3": 0.666667,
+      "matches": false,
+      "no_singular_points": false,
+      "note": "底流形 S^2，一个 3 阶锥点；χ_orb=4/3，χ(D)=4/9 ≠ 2/3 → 反例"
+    },
+    {
+      "name": "T^2 with three 3-cones",
+      "genus_underlying": 1,
+      "cone_orders": [
+        3,
+        3,
+        3
+      ],
+      "chi_geom": 0,
+      "chi_orb": -2.0,
+      "chi_D_gauss_bonnet": -0.666667,
+      "chi_geom_over_3": 0.0,
+      "matches": false,
+      "no_singular_points": false,
+      "note": "底流形环面，三个 3 阶锥点；χ_orb=-2，χ(D)=-2/3 ≠ 0 → 反例"
+    },
+    {
+      "name": "genus-2 bottom with one 3-cone",
+      "genus_underlying": 2,
+      "cone_orders": [
+        3
+      ],
+      "chi_geom": -2,
+      "chi_orb": -2.666667,
+      "chi_D_gauss_bonnet": -0.888889,
+      "chi_geom_over_3": -0.666667,
+      "matches": false,
+      "no_singular_points": false,
+      "note": "底流形 genus 2，一个锥点；χ_orb=-8/3，χ(D)=-8/9 ≠ -2/3 → 反例"
+    }
+  ],
+  "free_action_genus": [
+    {
+      "g_covering": 1,
+      "chi_covering": 0,
+      "chi_bottom": 0,
+      "g_bottom": 1
+    },
+    {
+      "g_covering": 4,
+      "chi_covering": -6,
+      "chi_bottom": -2,
+      "g_bottom": 2
+    },
+    {
+      "g_covering": 7,
+      "chi_covering": -12,
+      "chi_bottom": -4,
+      "g_bottom": 3
+    },
+    {
+      "g_covering": 10,
+      "chi_covering": -18,
+      "chi_bottom": -6,
+      "g_bottom": 4
+    },
+    {
+      "g_covering": 13,
+      "chi_covering": -24,
+      "chi_bottom": -8,
+      "g_bottom": 5
+    },
+    {
+      "g_covering": 16,
+      "chi_covering": -30,
+      "chi_bottom": -10,
+      "g_bottom": 6
+    }
+  ],
+  "summary": {
+    "n_cases": 9,
+    "n_matches": 4,
+    "n_refuted": 5,
+    "verdict": "χ(D)=χ(M)/3 当且仅当轨形无奇异点（χ_orb=χ_geom）；任何带锥点的轨形都是反例。这精确刻画了第 17.5 节的球面矛盾。"
+  }
+}

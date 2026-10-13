@@ -1,0 +1,63 @@
+{
+  "checked": [
+    {
+      "field": "graph theory",
+      "structure": "Laplacian spectrum",
+      "original": [
+        0.0,
+        3.0,
+        3.0
+      ],
+      "recovered": [
+        -0.0,
+        3.0,
+        3.0
+      ],
+      "preserved": true
+    },
+    {
+      "field": "linear algebra",
+      "structure": "eigenvalues",
+      "original": [
+        1.0,
+        3.0
+      ],
+      "recovered": [
+        1.0,
+        3.0
+      ],
+      "preserved": true
+    },
+    {
+      "field": "probability",
+      "structure": "conditional expectation as L2 projection",
+      "idempotent": true,
+      "selfadjoint": true,
+      "variance_decomposition": [
+        0.923865,
+        0.923865
+      ],
+      "preserved": true
+    },
+    {
+      "field": "generative topology",
+      "structure": "the class of all topologies on {0,1,2}",
+      "n_topologies_total": 29,
+      "n_generated_by_point_threshold": 8,
+      "fraction": 0.2759,
+      "counterexample_exists": true,
+      "note": "点权重 + 单阈值只能生成主滤子型拓扑（≤ 2^n 个）；一般拓扑需要更丰富的生成规则（子集权重／遍历规则）。"
+    }
+  ],
+  "summary": {
+    "preserved_cases": [
+      "graph theory",
+      "linear algebra",
+      "probability"
+    ],
+    "refuted_cases": [
+      "generative topology"
+    ],
+    "note": "编码可以保持被显式检验的结构（谱、特征值、投影），但不能覆盖全部结构：生成拓扑的简单模型只生成 8/29 个三元素拓扑。"
+  }
+}

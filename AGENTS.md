@@ -24,6 +24,13 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/graph_phase_transition.py  # 第四部分数值（协议 V1）
 "$PY" analysis/pca_fields.py         # 编码矩阵 PCA
 "$PY" analysis/monte_carlo_sensitivity.py # 阈值假说敏感性
+"$PY" analysis/llm_activation_probe.py # 附录 I.1 激活探针（合成 MLP）
+"$PY" analysis/orbifold_gap.py       # 附录 I.2 轨形缺口
+"$PY" analysis/encoding_preservation.py # 附录 I.3 编码保结构
+"$PY" analysis/weighted_directed_transition.py # 附录 J 加权/有向相变
+"$PY" analysis/discrete_curvature.py # 附录 J 离散分离曲率
+"$PY" analysis/higher_dim_gap.py     # 附录 J 高维缺口（证伪 G4）
+bash scripts/verify-experiments.sh   # 一键复现全部数值实验
 "$PY" analysis/audit.py              # 校对 → 刷新 校对清单.md
 bash scripts/build.sh                # audit→印刷PDF→电子阅读PDF→EPUB→Markdown
 bash scripts/validate.sh             # 校对 + EPUB 结构校验

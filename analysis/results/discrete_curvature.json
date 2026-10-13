@@ -1,0 +1,78 @@
+{
+  "definition": "kappa_info(G) = -(1/2) S''(0), S(t) = vN entropy of e^{-tL}/Z(t)",
+  "identity": "kappa_info(G) = Var(lambda_k)/2",
+  "verification_max_abs_diff": 7.14335044449399e-07,
+  "identity_verified": true,
+  "graphs": {
+    "Petersen": {
+      "n": 10,
+      "lambda_2": 2.0,
+      "lambda_n": 5.0,
+      "kappa_info": 1.5,
+      "W": 0.3,
+      "ln_over_l2": 2.5
+    },
+    "C10": {
+      "n": 10,
+      "lambda_2": 0.381966,
+      "lambda_n": 4.0,
+      "kappa_info": 1.0,
+      "W": 2.368034,
+      "ln_over_l2": 10.4721
+    },
+    "K5": {
+      "n": 5,
+      "lambda_2": 5.0,
+      "lambda_n": 5.0,
+      "kappa_info": 2.0,
+      "W": 0.0,
+      "ln_over_l2": 1.0
+    },
+    "P20": {
+      "n": 20,
+      "lambda_2": 0.024623,
+      "lambda_n": 3.975377,
+      "kappa_info": 0.995,
+      "W": 40.360361,
+      "ln_over_l2": 161.4476
+    },
+    "Star10": {
+      "n": 10,
+      "lambda_2": 1.0,
+      "lambda_n": 10.0,
+      "kappa_info": 3.78,
+      "W": 0.9,
+      "ln_over_l2": 10.0
+    },
+    "K4,4": {
+      "n": 8,
+      "lambda_2": 4.0,
+      "lambda_n": 8.0,
+      "kappa_info": 2.0,
+      "W": 0.125,
+      "ln_over_l2": 2.0
+    },
+    "Q3": {
+      "n": 8,
+      "lambda_2": 2.0,
+      "lambda_n": 6.0,
+      "kappa_info": 1.5,
+      "W": 0.333333,
+      "ln_over_l2": 3.0
+    },
+    "Q4": {
+      "n": 16,
+      "lambda_2": 2.0,
+      "lambda_n": 8.0,
+      "kappa_info": 2.0,
+      "W": 0.375,
+      "ln_over_l2": 4.0
+    }
+  },
+  "spearman_kappa_W": -0.3571,
+  "summary": {
+    "theorem": "离散分离曲率等于拉普拉斯谱方差的一半（恒等式）。",
+    "association": "κ_info 与中间相宽度 W 的 Spearman 秩相关 = -0.357；二者同向但不相等：W 依赖比值 λₙ/λ₂，κ_info 依赖方差。",
+    "note": "κ_info 是本书提出的一个图不变量；它与 λ₂、λₙ 有关但不等同于任何单一谱量。其可证恒等式见上。"
+  }
+}

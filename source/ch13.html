@@ -78,9 +78,39 @@
 </table>
 <div class="datasrc"><b>性质：</b>对照表。等级 A（可直接由谱分析验证）。</div>
 
-<h3>13.6　本章小结</h3>
+<h3>13.6　加权图：顺序为何不可反转</h3>
 
-<p>两阶段相变是硬核的第一个结构性结果：局部区分先于全局区分解锁，中间相宽度由 <span class="s">α(1/λ<sub>2</sub>−1/λ<sub>n</sub>)</span> 给出。这个结果把"局部 vs 全局"变成一个可计算的谱量。下一章给出具体图的数字与数值验证协议。</p>
+<p>定理 12.1 是针对无权图的。一个自然的推广问题是：<b>如果给每条边赋一个正权重，相变顺序会不会改变？</b>直觉上，不均匀的权重可能让某个“全局”模式提前解锁。本节证明这种直觉是错的。</p>
+
+<div class="define"><span class="bt">定理 13.1　对称加权不可反转 ［定理，A／甲］</span>
+设 <span class="s">G</span> 连通，每条边赋正权 <span class="s">w<sub>uv</sub>&gt;0</span>，加权拉普拉斯为 <span class="s">(L<sub>w</sub>)<sub>uv</sub>=−w<sub>uv</sub></span>（<span class="s">u≠v</span>），<span class="s">(L<sub>w</sub>)<sub>uu</sub>=Σ<sub>v</sub>w<sub>uv</sub></span>。则 <span class="s">L<sub>w</sub></span> 实对称半正定，谱满足 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>，故
+<div class="eq"><span class="body">β₁ = α/λ<sub>n</sub> ≤ α/λ₂ = β₂</span><span class="num">(13.4)</span></div>
+恒成立。</div>
+
+<p><b>证明。</b><span class="s">L<sub>w</sub></span> 对称性由 <span class="s">w<sub>uv</sub>=w<sub>vu</sub></span> 直接得。半正定性：对任意 <span class="s">x</span>，<span class="s">x<sup>T</sup>L<sub>w</sub>x=Σ<sub>{u,v}∈E</sub>w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)²≥0</span>。由谱定理，特征值实且可排序；连通性给 <span class="s">λ₂&gt;0</span>。于是 <span class="s">λ₂≤λ<sub>n</sub></span>，而 <span class="s">α&gt;0</span>，故 <span class="s">α/λ<sub>n</sub>≤α/λ₂</span>。<span class="s">∎</span></p>
+
+<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。［A］</p>
+
+<h3>13.7　有向图：反转的反例</h3>
+
+<p>如果允许耦合是<b>非对称</b>的（有向图），情形就变了。取有向拉普拉斯 <span class="s">L=D<sub>out</sub>−A</span>，它一般不对称，特征值可为复数。生成元 <span class="s">M=−αI+βL</span> 非正规，增长率由 <span class="s">Re(μ<sub>k</sub>)=βRe(λ<sub>k</sub>)−α</span> 决定。<b>第一个增长的模式是 <span class="s">Re(λ<sub>k</sub>)</span> 最大者——它未必是最振荡的局部模式。</b></p>
+
+<div class="define"><span class="bt">定义 13.2　局部性的度量（总变差）</span>
+对特征向量 <span class="s">v</span> 与有向弧集 <span class="s">E</span>，定义 <span class="s">TV(v)=Σ<sub>(u,w)∈E</sub>|v<sub>u</sub>−v<sub>w</sub>| / (‖v‖·|E|)</span>。<span class="s">TV</span> 高 = 相邻顶点取值差异大 = 局部振荡；<span class="s">TV</span> 低 = 平滑 = 全局。</div>
+
+<div class="define"><span class="bt">反例 13.1　有向图上的顺序反转 ［反例，A／甲］</span>
+6 顶点有向图，弧集
+<div class="eq"><span class="body">(0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2)</span><span class="num">(13.5)</span></div>
+则：首个增长模式 <span class="s">Re(λ)=2.0</span>，<span class="s">TV=0.25</span>（全局/平滑），临界 <span class="s">β=α/2</span>；较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），临界 <span class="s">β=α</span>。<b>全局模式先增长，局部模式后增长——顺序与对称情形相反。</b></div>
+
+<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>［A］</p>
+
+<div class="scenario"><span class="bt">这个反例的价值</span>
+它给出了一个明确的**适用边界**：定理 12.1 的“局部先于全局”在任意对称加权下稳健（定理 13.1），但在有向耦合下会失效（反例 13.1）。<b>这正是第二层战略想要的“失效条件”——一个能把理论划出边界的反例，比十个正面例子更有价值。</b>完整数据见附录 J。</div>
+
+<h3>13.8　本章小结</h3>
+
+<p>两阶段相变是硬核的第一个结构性结果：局部区分先于全局区分解锁，中间相宽度由 <span class="s">α(1/λ₂−1/λ<sub>n</sub>)</span> 给出。本节进一步证明：对称加权不能反转顺序（定理 13.1），但有向耦合可以（反例 13.1）。下一章给出具体图的数字与数值验证协议。</p>
 
 <h3>本章参考文献</h3>
 <div class="refs">

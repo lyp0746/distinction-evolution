@@ -1,0 +1,112 @@
+{
+  "alpha": 1.0,
+  "A1.1_symmetric_weighted": {
+    "n_trials": 400,
+    "order_preserved_count": 400,
+    "order_preserved": true,
+    "width_min": 0.2583,
+    "width_max": 18.6184,
+    "ln_over_l2_min": 5.7356,
+    "ln_over_l2_max": 296.9071,
+    "conclusion": "对称加权下 β₁≤β₂ 恒成立；‘局部先于全局’不可反转。"
+  },
+  "A1.2_directed": {
+    "n_trials": 4000,
+    "reversal_found": true,
+    "reversal_examples": 916,
+    "first_example": {
+      "arcs": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "re_max": 2.000000010328868,
+      "tv_of_max": 0.55556,
+      "other_re": 1.8774388331233467,
+      "tv_of_other": 0.57997,
+      "note": "最大 Re 模式更平滑（更全局），其它模式更振荡（更局部）"
+    },
+    "conclusion": "有向耦合可以反转顺序：非对称 Laplacian 的最大实部模式未必是最振荡的局部模式。反转的存在性由非正规性引起，对称加权不可能。"
+  },
+  "A1.2_explicit_counterexample": {
+    "arcs": [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        2
+      ]
+    ],
+    "max_real_part": 2.0,
+    "tv_of_max_real_part": 0.25,
+    "beta_of_max_real_part": 0.5,
+    "other_mode_real_part": 1.0,
+    "tv_of_other": 0.7071,
+    "beta_of_other": 1.0,
+    "reversal": true,
+    "reading": "首个增长模式是全局（低 TV），局部（高 TV）模式反而后增长；与对称情形的‘局部先于全局’相反。"
+  },
+  "summary": {
+    "theorem": "对称加权图：β₁=α/λₙ ≤ α/λ₂=β₂，顺序不可反转。",
+    "counterexample": "有向图：见 A1.2_explicit_counterexample；全局模式可先于局部模式增长。"
+  }
+}

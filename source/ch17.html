@@ -55,18 +55,16 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 
 <h3>17.5　球面例子与它的矛盾</h3>
 
-<p>用一个具体例子检验轨形解释，可以看清困难。</p>
+<p>用一个具体例子检验轨形解释，可以看清困难。<b>先把定义说精确：</b>底流形的欧拉示性数记为 <span class="s">χ<sub>geom</sub></span>，Satake 轨形欧拉示性数为 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub>−Σ(1−1/α<sub>i</sub>)</span>。由轨形 Gauss–Bonnet，<span class="s">∫κ=(2π/3)χ<sub>orb</sub></span>，故区分欧拉示性数 <span class="s">χ(D)=χ<sub>orb</sub>/3</span>。而本节的朴素猜想是 <span class="s">χ(D)=χ<sub>geom</sub>/3</span>——<b>二者相等当且仅当 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub></span>，即轨形无奇异点。</b></p>
 
-<p>取球面 <span class="s">S²</span>，<span class="s">χ(S²)=2</span>。若轨形解释正确，<span class="s">χ(D)=2/3</span>。轨形 <span class="s">S²/(Z/3Z)</span> 的欧拉示性数确实是 <span class="s">2/3</span>，与解释一致。</p>
+<p>取球面 <span class="s">S²</span>，<span class="s">χ<sub>geom</sub>=2</span>。它的 <span class="s">Z/3Z</span> 旋转商的底流形仍是球面，有两个不动点（两极），故 <span class="s">χ<sub>orb</sub>=2−2/3−2/3=2/3</span>。于是 <span class="s">χ(D)=2/9</span>，而朴素猜想给出 <span class="s">2/3</span>。<b>即使这个看起来“匹配”的例子也不匹配。</b></p>
 
-<p>但考虑一个带三个 3 阶奇异点的轨形（这是 <span class="s">Z/3Z</span> 作用的典型情形）：</p>
+<p>带三个 3 阶锥点时更明显：<span class="s">χ<sub>orb</sub>=2−3·(2/3)=0</span>，于是 <span class="s">χ(D)=0</span>，与朴素猜想的 <span class="s">2/3</span> 相差更远。</p>
 
-<div class="eq"><span class="body">χ<sub>orb</sub> = 2 − Σ<sub>i=1</sub><sup>3</sup>(1 − 1/3) = 2 − 3·(2/3) = 0</span></div>
-
-<p>如果底流形是球面，理论要求 <span class="s">χ(D)=2/3</span>，而轨形公式给出 0。<b>矛盾。</b>这说明简单的 <span class="s">Z/3Z</span> 轨形解释至多只在特定奇异点结构下成立，一般情形需要更复杂的构造。［论证，C］</p>
+<p>这个精确化把一个模糊的“矛盾”变成了一个明确的判定：<b>朴素猜想 <span class="s">χ(D)=χ<sub>geom</sub>/3</span> 仅对无奇异点的曲面成立；每一个锥点都是一个反例。</b>完整的 9 例数值对比（4 例匹配、5 例反例）见附录 I.2 与脚本 <code>analysis/orbifold_gap.py</code>。［定理（数值），A］</p>
 
 <div class="scenario"><span class="bt">矛盾的价值</span>
-这个球面矛盾是本书最有价值的负面结果之一。它把"轨形解释"从一句漂亮的话，变成了一个<b>有明确反例条件</b>的命题：要么存在一类特殊的轨形结构使公式成立，要么 <span class="s">χ(D)</span> 不是轨形欧拉示性数。<b>无论哪种，都是一个可攻击的具体问题。</b></div>
+这个球面矛盾是本书最有价值的负面结果之一。它把“轨形解释”从一句漂亮的话，变成了一个<b>有明确反例条件</b>的命题：要么存在一类特殊的轨形结构使公式成立，要么 <span class="s">χ(D)</span> 不是轨形欧拉示性数。<b>无论哪种，都是一个可攻击的具体问题。</b>附录 I.2 把这个条件算清楚了：<b>成立当且仅当轨形无奇异点。</b></div>
 
 <h3>17.6　诚实的现状</h3>
 
@@ -79,6 +77,8 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 <tr><td class="l">是否存在新拓扑不变量？</td><td class="l">未知</td><td class="l">若 <span class="s">χ(D)</span> 可由已知不变量表示</td><td class="l">C</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>现状清单。等级见末列。<b>本表是附录 E 可证伪登记的核心内容之一。</b></div>
+
+<p><b>高维推广的证伪（本版新增）。</b>第 17 章原本猜想高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 计算后，这个猜想<b>被证伪</b>：<span class="s">n=1</span>（二维）时 ratio 为 <span class="s">1/3</span>，但 <span class="s">n=2</span> 时为 <span class="s">4π/3≈4.19</span>，<span class="s">n=3</span> 时为 <span class="s">4π²/3≈13.16</span>，均不等于 <span class="s">1/(2n+1)</span>。<b>结论：不存在一个普适常数 <span class="s">f(n)</span>；因子 <span class="s">1/3</span> 是二维特有的</b>（因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑定）。正确的推广必须使用陈–高斯–博内的<b>欧拉形式</b>，而不是标量曲率。完整计算见附录 J.6。［定理（计算），A］</p>
 
 <h3>17.7　本章小结</h3>
 

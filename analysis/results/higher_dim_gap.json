@@ -1,0 +1,82 @@
+{
+  "setup": "unit round sphere S^{2n}, kappa = R/6, chi_naive = int(kappa)/(2 pi)",
+  "rows": [
+    {
+      "n": 1,
+      "dim": 2,
+      "vol": 12.566370614359172,
+      "scalar_curvature": 2,
+      "int_kappa": 4.1887902047863905,
+      "chi_naive": 0.6666666666666666,
+      "chi": 2.0,
+      "ratio": 0.3333333333333333,
+      "conjectured_1_over_2n_plus_1": 0.3333333333333333,
+      "matches_conjecture": true
+    },
+    {
+      "n": 2,
+      "dim": 4,
+      "vol": 26.31894506957162,
+      "scalar_curvature": 12,
+      "int_kappa": 52.637890139143245,
+      "chi_naive": 8.377580409572783,
+      "chi": 2.0,
+      "ratio": 4.188790204786391,
+      "conjectured_1_over_2n_plus_1": 0.2,
+      "matches_conjecture": false
+    },
+    {
+      "n": 3,
+      "dim": 6,
+      "vol": 33.07336179231981,
+      "scalar_curvature": 30,
+      "int_kappa": 165.36680896159905,
+      "chi_naive": 26.318945069571626,
+      "chi": 2.0,
+      "ratio": 13.159472534785813,
+      "conjectured_1_over_2n_plus_1": 0.14285714285714285,
+      "matches_conjecture": false
+    },
+    {
+      "n": 4,
+      "dim": 8,
+      "vol": 29.686580124648366,
+      "scalar_curvature": 56,
+      "int_kappa": 277.0747478300514,
+      "chi_naive": 44.097815723093085,
+      "chi": 2.0,
+      "ratio": 22.048907861546542,
+      "conjectured_1_over_2n_plus_1": 0.1111111111111111,
+      "matches_conjecture": false
+    },
+    {
+      "n": 5,
+      "dim": 10,
+      "vol": 20.725142673288897,
+      "scalar_curvature": 90,
+      "int_kappa": 310.8771400993334,
+      "chi_naive": 49.477633541080586,
+      "chi": 2.0,
+      "ratio": 24.738816770540293,
+      "conjectured_1_over_2n_plus_1": 0.09090909090909091,
+      "matches_conjecture": false
+    },
+    {
+      "n": 6,
+      "dim": 12,
+      "vol": 11.838173812182678,
+      "scalar_curvature": 132,
+      "int_kappa": 260.4398238680189,
+      "chi_naive": 41.45028534657779,
+      "chi": 2.0,
+      "ratio": 20.725142673288897,
+      "conjectured_1_over_2n_plus_1": 0.07692307692307693,
+      "matches_conjecture": false
+    }
+  ],
+  "summary": {
+    "n_cases": 6,
+    "n_matches_conjecture": 1,
+    "verdict": "f(n)=1/(2n+1) 只在 n=1 成立；高维 ratio 含 π 且随 n 变化。因此该猜想不是良定义的一般化；正确的推广须用欧拉形式而非标量曲率。"
+  }
+}

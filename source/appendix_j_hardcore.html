@@ -1,0 +1,118 @@
+<h1 class="chapter">附录 J　硬核扩展：加权、有向与离散曲率（含证明）</h1>
+
+<p class="lead">本附录汇总本版新增的硬核结果，给出完整证明与数值。它们是"硬核先行"策略的兑现：在扩展框架之前，先让定理存在。四个结果——对称加权不可反转（定理 B1）、有向图反转反例（B2）、离散分离曲率恒等式（C）、高维缺口猜想的证伪——全部可复算。</p>
+
+<h2>J.1　统一的数学内核</h2>
+
+<p>四个结果看似分散，却共享同一个内核：<b>一个线性生成元的谱，决定区分能力随时间的方向。</b></p>
+
+<div class="define"><span class="bt">统一框架</span>
+系统由 <span class="s">Ḋ=M D</span> 描述，解为 <span class="s">D(t)=Σ<sub>k</sub>c<sub>k</sub>e<sup>μ<sub>k</sub>t</sup>v<sub>k</sub></span>，其中 <span class="s">μ<sub>k</sub></span> 是 <span class="s">M</span> 的谱。<br>
+<b>对称 <span class="s">M</span>：</b><span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 实数，谱定理保证"大特征值 = 高振荡"。<br>
+<b>非对称 <span class="s">M</span>：</b>增长率是 <span class="s">Re(μ<sub>k</sub>)</span>，"最大实部"与"最振荡"解耦。</div>
+
+<p>第三部分的六元组框架，正是从这个内核抽象出来的。本附录的四个结果，是它的四个具体实例。</p>
+
+<h2>J.2　定理 B1：对称加权不可反转</h2>
+
+<div class="define"><span class="bt">定理 J.1 ［定理，A／甲］</span>
+设 <span class="s">G</span> 连通，边权 <span class="s">w<sub>uv</sub>&gt;0</span> 对称。加权拉普拉斯 <span class="s">L<sub>w</sub></span> 满足：
+<div class="eq"><span class="body">x<sup>T</sup>L<sub>w</sub>x = Σ<sub>{u,v}∈E</sub> w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)² ≥ 0</span></div>
+故 <span class="s">L<sub>w</sub></span> 实对称半正定，谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>。于是 <span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立。</div>
+
+<p><b>证明。</b>对称性、半正定性、谱定理均如第 13.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.1　对称加权扫描（400 个随机加权连通图，α=1）</b></caption>
+<tr><th class="l">量</th><th class="l">结果</th></tr>
+<tr><td class="l">保持顺序 β₁≤β₂ 的比例</td><td class="l">400/400</td></tr>
+<tr><td class="l">中间相宽度 W 的范围</td><td class="l">[0.258, 18.618]</td></tr>
+<tr><td class="l">谱比 λₙ/λ₂ 的范围</td><td class="l">[5.74, 296.91]</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>定理 + 数值扫描。等级 A。脚本：<code>analysis/weighted_directed_transition.py</code>。<b>结论：</b>加权可任意拉宽中间相（<span class="s">λₙ/λ₂</span> 高达 297），但顺序不可反转。</div>
+
+<h2>J.3　反例 B2：有向图的顺序反转（完整计算）</h2>
+
+<p>取有向耦合 <span class="s">L=D<sub>out</sub>−A</span>。6 顶点图，弧集为</p>
+
+<div class="eq"><span class="body">(0,2), (1,0), (2,4), (3,1), (3,2), (4,1), (5,1), (5,2)</span><span class="num">(J.1)</span></div>
+
+<p><span class="s">L</span> 的特征值（按实部降序）与对应特征向量的总变差：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.2　反例的特征结构（实部降序）</b></caption>
+<tr><th class="l">Re(λ)</th><th class="l">Im(λ)</th><th class="l">TV（局部性）</th><th class="l">模式形状</th></tr>
+<tr><td class="l">2.000</td><td class="l">0</td><td class="l">0.250</td><td class="l">集中在顶点 3（或 5）——汇点型，<b>平滑/全局</b></td></tr>
+<tr><td class="l">2.000</td><td class="l">0</td><td class="l">0.354</td><td class="l">顶点 3 与 5 的叠加</td></tr>
+<tr><td class="l">1.000</td><td class="l">±1.000</td><td class="l"><b>0.707</b></td><td class="l">顶点 1 与 2 之间振荡，<b>局部/振荡</b></td></tr>
+<tr><td class="l">0.000</td><td class="l">0</td><td class="l">0.000</td><td class="l">常向量</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>显式反例。等级 A。复现：<code>python analysis/weighted_directed_transition.py</code>。</div>
+
+<p><b>相变顺序。</b>增长率 <span class="s">Re(μ<sub>k</sub>)=βRe(λ<sub>k</sub>)−α</span>。随 <span class="s">β</span> 从 0 增大：</p>
+<ul>
+<li><span class="s">β&gt;α/2</span>：汇点型模式（<span class="s">Re(λ)=2</span>，<span class="s">TV=0.25</span>，全局）先增长；</li>
+<li><span class="s">β&gt;α</span>：振荡模式（<span class="s">Re(λ)=1</span>，<span class="s">TV=0.71</span>，局部）后增长。</li>
+</ul>
+
+<p><b>这就是顺序反转：全局先于局部。</b>根因是生成元的<b>非正规性</b>——对称情形下谱定理把"大特征值"与"高振荡"捆绑，非对称情形下这个捆绑断裂。［A］</p>
+
+<div class="warning"><span class="bt">反例划出的边界</span>
+定理 12.1 的"局部先于全局"：
+<b>（i）</b>在任意对称加权下稳健（J.2）；
+<b>（ii）</b>在有向耦合下失效（J.3）。
+这条边界是本书框架的第一条<b>明确适用边界</b>——它比任何正面例子都更有信息量。</div>
+
+<h2>J.4　定理 C：离散分离曲率的完整推导</h2>
+
+<div class="define"><span class="bt">定理 J.2 ［定理，A／甲］</span>
+设 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>，<span class="s">S(t)=−tr(ρ log ρ)</span>。则 <span class="s">κ_info(G):=−(1/2)S″(0⁺)=Var(λ)/2</span>。</div>
+
+<p><b>证明。</b><span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，故
+<span class="s">S(t)=−Σp<sub>k</sub>log p<sub>k</sub>=(tA/Z)+log Z</span>，<span class="s">A=Σλ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。
+于是 <span class="s">S′=(Z′/Z)+(A/Z)+t(A/Z)′=−A/Z+A/Z+t(A/Z)′=t(A/Z)′</span>，<span class="s">S′(0)=0</span>。
+<div class="eq"><span class="body">S″(0)=(A/Z)′|<sub>0</sub>=(A′Z−AZ′)/Z²|<sub>0</sub>=(−nΣλ²+(Σλ)²)/n²=−Var(λ)</span></div>
+故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
+
+<p>数值验证（有限差分）误差 <span class="s">&lt;10⁻⁶</span>。计算值见正文表 9.3。［A］</p>
+
+<h2>J.5　一个诚实的负结果：κ_info 不是 W 的代理</h2>
+
+<p>我们原本希望 <span class="s">κ_info</span> 能预测中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>。<b>数据否定它。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.3　κ_info 与 W 的对照（部分图）</b></caption>
+<tr><th class="l">图</th><th class="l">κ_info</th><th class="l">W</th></tr>
+<tr><td class="l">星图 S₁₀</td><td class="l">3.78（高）</td><td class="l">0.90（低）</td></tr>
+<tr><td class="l">路径 P₂₀</td><td class="l">0.995（低）</td><td class="l">40.36（高）</td></tr>
+<tr><td class="l">Petersen</td><td class="l">1.50</td><td class="l">0.30</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>负结果。等级 A。8 图上的 Spearman 秩相关 = <b>−0.357</b>。<b>结论：</b><span class="s">κ_info</span> 度量谱的总方差，<span class="s">W</span> 度量两端比值 <span class="s">λₙ/λ₂</span>；二者不同。这个负结果防止了一个过强的声称。</div>
+
+<h2>J.6　高维缺口：f(n)=1/(2n+1) 被证伪</h2>
+
+<p>第 17 章的开放问题 G4 猜测高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 检验：</p>
+
+<div class="eq"><span class="body">ratio(n) = χ_naive/χ(S<sup>2n</sup>) = R·Vol(S<sup>2n</sup>)/(24π)，　R=2n(2n−1)</span></div>
+
+<table class="nat">
+<caption class="cap"><b>表 J.4　高维缺口因子的计算（S^{2n}）</b></caption>
+<tr><th class="l">n</th><th class="l">维数</th><th class="l">R</th><th class="l">ratio(n)</th><th class="l">猜想 1/(2n+1)</th><th class="l">匹配</th></tr>
+<tr><td class="l">1</td><td class="l">2</td><td class="l">2</td><td class="l">0.3333</td><td class="l">0.3333</td><td class="l">✓</td></tr>
+<tr><td class="l">2</td><td class="l">4</td><td class="l">12</td><td class="l">4.1888 = 4π/3</td><td class="l">0.2000</td><td class="l">✗</td></tr>
+<tr><td class="l">3</td><td class="l">6</td><td class="l">30</td><td class="l">13.1595 = 4π²/3</td><td class="l">0.1429</td><td class="l">✗</td></tr>
+<tr><td class="l">4</td><td class="l">8</td><td class="l">56</td><td class="l">22.0489</td><td class="l">0.1111</td><td class="l">✗</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>证伪。等级 A。脚本：<code>analysis/higher_dim_gap.py</code>。<b>结论：</b>猜想只在 <span class="s">n=1</span>（二维）成立。高维 <span class="s">ratio</span> 含 <span class="s">π</span> 且随 <span class="s">n</span> 变化，<b>不存在一个普适常数 <span class="s">f(n)</span></b>。正确的推广必须用陈–高斯–博内的<b>欧拉形式</b>（曲率张量的 Pfaffian），而不是标量曲率。</div>
+
+<div class="scenario"><span class="bt">这个证伪的价值</span>\n它把一个"漂亮但错误"的猜想换成了一个"精确但受限"的结论：<b>因子 <span class="s">1/3</span> 是二维特有的，因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑在一起。</b>高维的推广不是找一个常数，而是换一个曲率对象。这直接把研究指向欧拉形式，而不是徒劳地寻找 <span class="s">f(n)</span>。</div>
+
+<h2>J.7　复现</h2>
+
+<pre class="code">python analysis/weighted_directed_transition.py   # 定理 B1 + 反例 B2
+python analysis/discrete_curvature.py             # 定理 C + 负结果 J.5
+python analysis/higher_dim_gap.py                 # 证伪 J.6
+python analysis/graph_phase_transition.py         # 定理 A（协议 V1）</pre>
+
+<div class="note"><b>本附录的意义</b>
+它把"硬核先行"从口号变成实物：<b>一个推广定理（B1）、一个反例（B2）、一个恒等式（C）、一个证伪（J.6）。</b>其中两个是正面结果，两个是负面结果——而负面结果同样有价值，因为它们划出了理论的边界。这正是本书承诺的"记录失败"的具体兑现。</div>

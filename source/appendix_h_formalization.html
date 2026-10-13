@@ -1,0 +1,48 @@
+<h1 class="chapter">附录 H　形式化路线图：从 sorry 到编译</h1>
+
+<p class="lead">第 22.6 节把"用 Lean 4 形式化定理 12.1"列为短期任务，并标注难度"中等"。这是一个承诺，不是交付。本附录把这个承诺落成可执行的缺口清单——包括形式化文件、引理分解、瓶颈与建议的 PR 顺序，并明确声明：<b>它尚未编译通过。</b></p>
+
+<div class="warning"><span class="bt">诚实声明（请先读）</span>
+本附录随书提供的 <code>formalization/Distinction.lean</code> 是一个<b>含 <code>sorry</code> 的未编译骨架</b>，不是已通过的证明。本书构建环境没有安装 Lean 4 工具链，因此它<b>未经编译器验证</b>；预期会出现若干因 Mathlib API 版本差异导致的类型错误。<b>本附录不声称定理 12.1 已被形式化。</b>它声称的是：形式化的目标、缺口与瓶颈已被写清楚，任何人可以据此接手。</div>
+
+<h2>H.1　为什么这一步重要</h2>
+
+<p>定理 12.1 的证明只用实对称矩阵的谱定理与线性常微分方程——它<b>不依赖</b>本书特有的任何未定义框架。这意味着形式化它是标准数学任务，一旦通过，就为整个纲领提供一块机器可验证的基石。这也是为什么第 3.4 节把"可形式化"当作硬核层的一条证据标准。</p>
+
+<h2>H.2　建议的 PR 顺序（由易到难）</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 H.1　形式化引理的依赖顺序</b></caption>
+<tr><th class="l">顺序</th><th class="l">引理</th><th class="l">难度</th><th class="l">卡点</th></tr>
+<tr><td class="l">1</td><td class="l"><code>intermediate_phase_nonempty</code>：<span class="s">λ₂&lt;λₙ ⇒ β₁&lt;β₂</span></td><td class="l">低</td><td class="l">纯代数，<code>div_lt_div_of_pos_left</code></td></tr>
+<tr><td class="l">2</td><td class="l"><code>laplacian_symm</code>：拉普拉斯矩阵对称</td><td class="l">低</td><td class="l">组合簿记</td></tr>
+<tr><td class="l">3</td><td class="l"><code>evolution_is_solution</code>：<span class="s">D(t)=e^{tM}D₀</span> 满足 ODE</td><td class="l">中</td><td class="l">矩阵指数与 <code>ContinuousLinearMap</code> 的接口</td></tr>
+<tr><td class="l">4</td><td class="l"><code>spectral_decomposition</code>：实对称矩阵正交对角化 + 排序</td><td class="l">高</td><td class="l">Mathlib 谱定理 API 分散</td></tr>
+<tr><td class="l">5</td><td class="l"><code>critical_coupling</code>：三情形符号分析</td><td class="l">高</td><td class="l">有限主项提取 + 指数增长 <code>Filter.Tendsto</code></td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>形式化任务分解。等级乙（作者判断）。<b>建议：</b>先完成 1、2，它们可以在一天内真正编译通过，从而把"承诺"变成"第一个已编译引理"。</div>
+
+<h2>H.3　四个关键瓶颈</h2>
+
+<div class="define"><span class="bt">瓶颈 1　谱定理的 API 碎片化</span>
+Mathlib 中实对称矩阵的谱定理散布在若干模块。把"存在正交特征基"与"特征值排序 <span class="s">0=λ₁&lt;λ₂≤⋯≤λₙ</span>"拼到一起，是<b>最重</b>的一步。建议先做一个只含矩阵、不含 ODE 的独立引理文件。</div>
+
+<div class="define"><span class="bt">瓶颈 2　矩阵指数与 ODE 的衔接</span>
+<span class="s">e^{tM}D₀</span> 的导数需要对"矩阵乘向量"的 <code>ContinuousLinearMap</code> 接口。Mathlib 有矩阵指数的现成引理，但作用点需要额外适配。</div>
+
+<div class="define"><span class="bt">瓶颈 3　"最大时间区间"的表述</span>
+定理原文陈述"定义在最大时间区间上"。但在图论情形，解对所有 <span class="s">t∈ℝ</span> 存在（矩阵指数处处有定义），故形式化版本可直接断言"对所有 <span class="s">t</span> 成立"，<b>去掉</b>这个更一般的表述以简化。这是一次合法的"为形式化而收窄陈述"。</div>
+
+<div class="define"><span class="bt">瓶颈 4　一般初值 <span class="s">cₙ≠0</span></span>
+这是一个零测度条件。形式化时要么显式假设"最高频投影非零"，要么证明对几乎处处的初值成立。前者更简单、更诚实。</div>
+
+<h2>H.4　如何接手</h2>
+
+<pre class="code"># 需要 Lean 4 工具链（本仓库未安装）
+curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh
+cd formalization
+lake init edstmp &amp;&amp; lake exe cache get
+# 把 Distinction.lean 放入，替换 sorry</pre>
+
+<div class="note"><b>本附录与第 22.6 节的关系</b>
+第 22.6 节的形式化任务标注为"短期、难度中等"。本附录把它细化为五个引理、四个瓶颈与一个可立即完成的起点。<b>在骨架被编译通过之前，第 22.6 节的这一项仍应读作"未兑现的承诺"。</b>本附录的作用，是让这个承诺变成一份别人可以执行的工单，而不是一句口号。</div>

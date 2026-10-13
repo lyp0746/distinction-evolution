@@ -81,15 +81,18 @@ Gauss–Bonnet 缺口是错误、修正项，还是新不变量？<b>可攻击�
 <div class="cap"><b>图 22.1　研究路线图矩阵</b>。横轴为时间（短期／中期／长期），纵轴为难度（低／中／高）。高价值低难度的问题（右上）应优先；高难度高价值的问题（右下）作为长期目标。</div>
 
 <table class="nat">
-<caption class="cap"><b>表 22.4　研究路线图</b></caption>
-<tr><th class="l">阶段</th><th class="l">任务</th><th class="l">产出</th><th class="l">难度</th></tr>
-<tr><td class="l">短期（可立即完成）</td><td class="l">用 Lean 4 形式化定理 12.1</td><td class="l">机器验证的相变定理</td><td class="l">中（Mathlib 已有图论与线性代数）</td></tr>
-<tr><td class="l">短期</td><td class="l">计算四维 Gauss–Bonnet 情形的缺口因子</td><td class="l">检验 <span class="s">f(n)=1/(2n+1)</span> 猜想</td><td class="l">中</td></tr>
-<tr><td class="l">中期</td><td class="l">统一分离曲率定义（O1）</td><td class="l">框架从"语言"升级为"理论"</td><td class="l">高</td></tr>
-<tr><td class="l">中期</td><td class="l">用公开训练数据分析 LLM 激活阈值（O4 的一个实例）</td><td class="l">区分机器学习的第一个可检验结果</td><td class="l">中（数据公开）</td></tr>
-<tr><td class="l">长期</td><td class="l">连续情形的时间涌现（O3）与离散—连续桥接（O7）</td><td class="l">框架覆盖连续数学</td><td class="l">很高</td></tr>
+<caption class="cap"><b>表 22.4　研究路线图（含本版实际交付状态）</b></caption>
+<tr><th class="l">阶段</th><th class="l">任务</th><th class="l">产出</th><th class="l">本版状态</th></tr>
+<tr><td class="l">短期</td><td class="l">用 Lean 4 形式化定理 12.1</td><td class="l">机器验证的相变定理</td><td class="l"><b>骨架已交付</b>（附录 H，5 引理分解 + 4 瓶颈；未编译）</td></tr>
+<tr><td class="l">短期</td><td class="l">检验 LLM 激活阈值假说</td><td class="l">可复算的实验结果</td><td class="l"><b>已执行</b>（附录 I.1；合成 MLP，结果混合，含反例）</td></tr>
+<tr><td class="l">短期</td><td class="l">确定 1/3 缺口的成立条件</td><td class="l">猜想的精确边界</td><td class="l"><b>已完成</b>（附录 I.2；当且仅当无奇异点）</td></tr>
+<tr><td class="l">中期</td><td class="l">统一分离曲率定义（O1）</td><td class="l">框架从“语言”升级为“理论”</td><td class="l">未开始</td></tr>
+<tr><td class="l">中期</td><td class="l">验证领域编码的结构保持（F5）</td><td class="l">逐领域证明或反例</td><td class="l"><b>已部分执行</b>（附录 I.3；三个 PASS，一个反例）</td></tr>
+<tr><td class="l">长期</td><td class="l">离散—连续函子（O7）与连续时间涌现（O3）</td><td class="l">框架覆盖连续数学</td><td class="l">仅候选猜想（附录 I.4）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>路线图。等级 C（作者规划）。<b>注意：</b>难度评估基于作者判断；实际难度可能更高。</div>
+<div class="datasrc"><b>性质：</b>路线图（含交付状态）。等级 C（作者规划）。<b>本版的转变：</b>短期任务从“列名”变为“有实物”——Lean 骨架、三个可运行实验、一个精确化的猜想边界。这些实物多数是<b>负结果或收窄结果</b>，但它们把“可证伪”从承诺变成了事实。详见附录 H—I。</div>
+
+<p><b>本版交付的硬核扩展（附录 J）。</b>四个结果全部可复算：定理 B1（对称加权不可反转）、反例 B2（有向图可反转）、定理 C（<span class="s">κ_info=Var(λ)/2</span>）、以及证伪 G4（<span class="s">f(n)=1/(2n+1)</span> 不成立）。其中两个是正面结果，两个是负面结果。<b>它们把"硬核先行"从口号变成实物：读者可以先读第 12—15 章与附录 J，获得四个可独立验证的结果，再把框架（第三部分）读作对这些结果共同结构的诠释。</b></p>
 
 <div class="warning"><span class="bt">不要承诺超过能力的成果</span>
 本书不承诺"解决黎曼假设""证明质量间隙"之类的结果。第 17 章曾经的"黎曼假设曲率表述"（在早期草稿中）已被降级为不可证伪的隐喻，并从正式主张中移除。<b>一个纲领的可信度，取决于它承诺的与它能交付的之间的比例。</b>本书宁愿承诺少而交付真。</div>
