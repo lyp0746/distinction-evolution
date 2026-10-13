@@ -33,6 +33,7 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/a4_wellposedness.py     # 表 14.5 A4 六领域小实例
 "$PY" analysis/forbidden_combinations.py # 第 23.5.2 禁戒可达性探测
 "$PY" analysis/boundary_probe.py       # 表 22.8 边界探测（支持 O16）
+"$PY" analysis/reclassify.py           # 表 23.6 从六元组重导分类
 "$PY" analysis/weighted_directed_transition.py # 附录 J 加权/有向相变
 "$PY" analysis/discrete_curvature.py # 附录 J 离散分离曲率
 "$PY" analysis/higher_dim_gap.py     # 附录 J 高维缺口（证伪 G4）

@@ -235,6 +235,20 @@ for c in CHAPTERS:
         fate_hits.append({"chapter": c, "word": m.group(0), "snippet": ctx.strip()})
 R["A11_fatalism"] = fate_hits
 
+# ------------------------------------------------ A12 文件内重复标题（应为空）
+dup_hits = []
+for fn in ALL_SRC:
+    with open(os.path.join(CONTENT, fn), encoding="utf-8") as f:
+        txt = f.read()
+    seen = {}
+    for m in re.finditer(r"<h2[^>]*>(.*?)</h2>", txt, re.S):
+        label = re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        seen[label] = seen.get(label, 0) + 1
+    for label, n in seen.items():
+        if n > 1:
+            dup_hits.append({"file": fn, "heading": label, "count": n})
+R["A12_duplicate_headings"] = dup_hits
+
 os.makedirs(OUT, exist_ok=True)
 with open(os.path.join(OUT, "audit.json"), "w", encoding="utf-8") as f:
     json.dump(R, f, ensure_ascii=False, indent=2)
@@ -304,6 +318,10 @@ for d in R["A10_version_labels"][:20]:
 
 L.append("\n## 表 A11　宿命词扫描（应仅出现在定理或交易句）\n")
 L.append(f"检出 {len(R['A11_fatalism'])} 处。")
+
+L.append("\n## 表 A12　文件内重复标题（应为空）\n")
+L.append(f"检出 {len(R['A12_duplicate_headings'])} 处。{R['A12_duplicate_headings'] or '（无）'}")
+L.append(f"检出 {len(R['A11_fatalism'])} 处。")
 for d in R["A11_fatalism"][:20]:
     L.append(f"- `{d['chapter']}`：{d['snippet']}")
 
@@ -325,4 +343,5 @@ print("异常公式块：", R["A8_eq_malformed"])
 print("内部／调试字串：", R["A9_debug_strings"])
 print("版本字样（应为空）：", R["A10_version_labels"])
 print("宿命词（应仅为定理/交易）：", len(R["A11_fatalism"]), "处")
+print("重复标题（应为空）：", R["A12_duplicate_headings"])
 print("wrote 校对清单.md")
