@@ -93,12 +93,21 @@ def ensure_release(tok, repo, tag, name, body, draft, prerelease):
     return rel
 
 
-def upload(tok, repo, rel, src, dst):
+def upload(tok, repo, rel, src, dst, refresh=False):
     p = os.path.join(HERE, src)
     if not os.path.exists(p):
         print(f"  [skip] 缺文件 {src}")
         return
-    have = {a["name"] for a in rel.get("assets", [])}
+    base = f"https://api.github.com/repos/{repo}"
+    deleted = set()
+    if refresh:
+        # 删除同名旧资产，强制重传（用于内容更新但 tag 不变）
+        for a in rel.get("assets", []):
+            if a["name"] == dst:
+                d = api(tok, "DELETE", f"{base}/releases/assets/{a['id']}")
+                deleted.add(a["name"])
+                print(f"  [del] {dst} ({d.status_code})")
+    have = {a["name"] for a in rel.get("assets", [])} - deleted
     if dst in have:
         print(f"  [have] {dst}")
         return
@@ -120,6 +129,7 @@ def main():
     ap.add_argument("--draft", action="store_true")
     ap.add_argument("--prerelease", action="store_true")
     ap.add_argument("--only", default="", help="只发布某个 kind")
+    ap.add_argument("--refresh", action="store_true", help="删除同名旧资产并重传（内容更新时用）")
     ap.add_argument("--list", action="store_true")
     args = ap.parse_args()
 
@@ -138,7 +148,7 @@ def main():
         body = (f"{desc}\n\n本 release 仅承载一个产物（一个产物一个 tag）。")
         rel = ensure_release(tok, args.repo, tag, rel_name, body,
                              args.draft, args.prerelease)
-        upload(tok, args.repo, rel, src, dst)
+        upload(tok, args.repo, rel, src, dst, refresh=args.refresh)
         print(f"      -> {rel.get('html_url')}")
     print("完成。")
 

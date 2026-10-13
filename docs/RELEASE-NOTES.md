@@ -31,6 +31,10 @@
 bash scripts/verify-experiments.sh
 ```
 
+## 归档标识
+
+DOI：10.5281/zenodo.23345013（https://doi.org/10.5281/zenodo.23345013）。
+
 ## 许可
 
 正文 CC BY 4.0；代码 MIT。

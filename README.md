@@ -1,9 +1,9 @@
 # 区分的演化
 ### 统一值不值——一套压缩方法、一个图上的硬核定理、三次自我检视，与一堵没绕开的墙
 
-> **The Evolution of Distinction** — From a Graph-Theoretic Hard Core to a Program for Unification: Axioms, Reproducible Results, and a Declaration of Limits
+> **The Evolution of Distinction** — Is Unification Worth It? A Compression Method, a Graph-Theoretic Theorem, Three Self-Checks, and a Wall Left Standing
 
-李毅芃　著　·　2026　·　CC BY 4.0
+李毅芃　著　·　2026　·　CC BY 4.0　·　DOI: [10.5281/zenodo.23345013](https://doi.org/10.5281/zenodo.23345013)
 
 ---
 

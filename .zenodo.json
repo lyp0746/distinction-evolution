@@ -45,7 +45,12 @@
       "identifier": "https://github.com/lyp0746/distinction-evolution",
       "relation": "isSupplementTo",
       "resource_type": "software"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.23345013",
+      "relation": "isIdenticalTo",
+      "resource_type": "publication"
     }
   ],
-  "notes": "DOI pending (no Zenodo webhook configured at release time). This field will be updated once minted."
+  "notes": "Zenodo DOI (version): 10.5281/zenodo.23345013. Concept/version DOI to be cited as https://doi.org/10.5281/zenodo.23345013."
 }
