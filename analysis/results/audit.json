@@ -1,45 +1,45 @@
 {
   "A1_terms": {
     "演化区分系统": {
-      "total": 16,
+      "total": 18,
       "by_chapter": [
         [
-          "ch05.html",
-          1
-        ],
-        [
-          "ch07.html",
-          1
-        ],
-        [
           "ch08.html",
-          2
+          1
+        ],
+        [
+          "ch10.html",
+          1
         ],
         [
           "ch11.html",
           2
         ],
         [
-          "ch12.html",
-          4
-        ],
-        [
-          "ch13.html",
-          4
+          "ch14.html",
+          2
         ],
         [
           "ch15.html",
-          1
+          5
         ],
         [
-          "ch22.html",
+          "ch16.html",
+          4
+        ],
+        [
+          "ch18.html",
+          2
+        ],
+        [
+          "ch25.html",
           1
         ]
       ],
-      "first": "ch05.html"
+      "first": "ch08.html"
     },
     "区分动作": {
-      "total": 74,
+      "total": 70,
       "by_chapter": [
         [
           "ch02.html",
@@ -47,94 +47,68 @@
         ],
         [
           "ch05.html",
-          13
-        ],
-        [
-          "ch08.html",
-          16
-        ],
-        [
-          "ch09.html",
-          6
-        ],
-        [
-          "ch10.html",
-          3
-        ],
-        [
-          "ch11.html",
-          5
-        ],
-        [
-          "ch12.html",
-          1
-        ],
-        [
-          "ch15.html",
           4
         ],
         [
-          "ch16.html",
-          2
-        ],
-        [
-          "ch19.html",
-          5
-        ],
-        [
-          "ch20.html",
-          8
-        ],
-        [
-          "ch21.html",
+          "ch06.html",
           1
         ],
         [
-          "ch24.html",
+          "ch08.html",
+          13
+        ],
+        [
+          "ch11.html",
+          16
+        ],
+        [
+          "ch12.html",
+          6
+        ],
+        [
+          "ch13.html",
+          3
+        ],
+        [
+          "ch14.html",
+          5
+        ],
+        [
+          "ch15.html",
+          1
+        ],
+        [
+          "ch18.html",
+          4
+        ],
+        [
+          "ch19.html",
+          2
+        ],
+        [
+          "ch22.html",
+          5
+        ],
+        [
+          "ch23.html",
           8
         ],
         [
-          "ch26.html",
+          "ch24.html",
           1
         ]
       ],
       "first": "ch02.html"
     },
     "观测泛函": {
-      "total": 8,
+      "total": 7,
       "by_chapter": [
         [
-          "ch08.html",
+          "ch11.html",
           4
         ],
         [
-          "ch11.html",
-          1
-        ],
-        [
-          "ch16.html",
-          2
-        ],
-        [
-          "ch24.html",
-          1
-        ]
-      ],
-      "first": "ch08.html"
-    },
-    "不可区分": {
-      "total": 14,
-      "by_chapter": [
-        [
-          "ch08.html",
-          9
-        ],
-        [
-          "ch11.html",
-          2
-        ],
-        [
-          "ch16.html",
+          "ch14.html",
           1
         ],
         [
@@ -142,30 +116,60 @@
           2
         ]
       ],
-      "first": "ch08.html"
+      "first": "ch11.html"
+    },
+    "不可区分": {
+      "total": 18,
+      "by_chapter": [
+        [
+          "ch04.html",
+          1
+        ],
+        [
+          "ch05.html",
+          3
+        ],
+        [
+          "ch11.html",
+          9
+        ],
+        [
+          "ch14.html",
+          2
+        ],
+        [
+          "ch19.html",
+          1
+        ],
+        [
+          "ch22.html",
+          2
+        ]
+      ],
+      "first": "ch04.html"
     },
     "分离曲率": {
-      "total": 58,
+      "total": 64,
       "by_chapter": [
         [
           "ch03.html",
           1
         ],
         [
-          "ch07.html",
+          "ch04.html",
           1
         ],
         [
-          "ch08.html",
-          3
+          "ch05.html",
+          1
         ],
         [
-          "ch09.html",
-          17
+          "ch06.html",
+          2
         ],
         [
           "ch10.html",
-          2
+          1
         ],
         [
           "ch11.html",
@@ -173,18 +177,18 @@
         ],
         [
           "ch12.html",
+          17
+        ],
+        [
+          "ch13.html",
+          2
+        ],
+        [
+          "ch14.html",
           3
         ],
         [
           "ch15.html",
-          1
-        ],
-        [
-          "ch16.html",
-          12
-        ],
-        [
-          "ch17.html",
           3
         ],
         [
@@ -193,7 +197,7 @@
         ],
         [
           "ch19.html",
-          1
+          16
         ],
         [
           "ch20.html",
@@ -201,15 +205,23 @@
         ],
         [
           "ch21.html",
-          2
+          1
         ],
         [
           "ch22.html",
+          1
+        ],
+        [
+          "ch23.html",
           3
         ],
         [
           "ch24.html",
           2
+        ],
+        [
+          "ch25.html",
+          3
         ]
       ],
       "first": "ch03.html"
@@ -218,108 +230,112 @@
       "total": 21,
       "by_chapter": [
         [
-          "ch08.html",
-          1
-        ],
-        [
-          "ch09.html",
-          2
-        ],
-        [
-          "ch10.html",
-          7
-        ],
-        [
           "ch11.html",
           1
         ],
         [
           "ch12.html",
+          2
+        ],
+        [
+          "ch13.html",
+          7
+        ],
+        [
+          "ch14.html",
           1
         ],
         [
-          "ch19.html",
+          "ch15.html",
+          1
+        ],
+        [
+          "ch22.html",
           3
         ],
         [
-          "ch20.html",
+          "ch23.html",
           6
         ]
       ],
-      "first": "ch08.html"
+      "first": "ch11.html"
     },
     "时间区分": {
       "total": 23,
       "by_chapter": [
         [
-          "ch09.html",
-          1
-        ],
-        [
-          "ch10.html",
-          11
-        ],
-        [
-          "ch11.html",
-          1
-        ],
-        [
-          "ch19.html",
-          1
-        ],
-        [
-          "ch21.html",
-          9
-        ]
-      ],
-      "first": "ch09.html"
-    },
-    "临界耦合": {
-      "total": 19,
-      "by_chapter": [
-        [
           "ch12.html",
-          8
+          1
         ],
         [
           "ch13.html",
-          3
+          11
         ],
         [
           "ch14.html",
-          7
+          1
         ],
         [
           "ch22.html",
           1
+        ],
+        [
+          "ch24.html",
+          9
         ]
       ],
       "first": "ch12.html"
     },
-    "两阶段相变": {
-      "total": 10,
+    "临界耦合": {
+      "total": 21,
       "by_chapter": [
         [
-          "ch11.html",
+          "ch15.html",
+          9
+        ],
+        [
+          "ch16.html",
+          3
+        ],
+        [
+          "ch17.html",
+          8
+        ],
+        [
+          "ch25.html",
+          1
+        ]
+      ],
+      "first": "ch15.html"
+    },
+    "两阶段相变": {
+      "total": 12,
+      "by_chapter": [
+        [
+          "ch06.html",
           1
         ],
         [
-          "ch12.html",
-          2
+          "ch14.html",
+          1
         ],
         [
-          "ch13.html",
+          "ch15.html",
+          3
+        ],
+        [
+          "ch16.html",
           5
         ],
         [
-          "ch22.html",
+          "ch25.html",
           2
         ]
       ],
-      "first": "ch11.html"
+      "first": "ch06.html"
     },
     "相变": {
-      "total": 47,
+      "total": 53,
       "by_chapter": [
         [
           "ch02.html",
@@ -330,81 +346,93 @@
           2
         ],
         [
-          "ch07.html",
-          3
+          "ch05.html",
+          1
         ],
         [
-          "ch09.html",
-          3
+          "ch06.html",
+          6
         ],
         [
-          "ch11.html",
-          8
+          "ch10.html",
+          3
         ],
         [
           "ch12.html",
           3
         ],
         [
-          "ch13.html",
-          9
-        ],
-        [
           "ch14.html",
-          2
+          8
         ],
         [
           "ch15.html",
           4
         ],
         [
-          "ch20.html",
+          "ch16.html",
+          9
+        ],
+        [
+          "ch17.html",
+          2
+        ],
+        [
+          "ch18.html",
+          4
+        ],
+        [
+          "ch23.html",
           1
         ],
         [
-          "ch21.html",
+          "ch24.html",
           2
-        ],
-        [
-          "ch22.html",
-          7
         ],
         [
           "ch25.html",
-          2
+          7
         ]
       ],
       "first": "ch02.html"
     },
     "拉普拉斯": {
-      "total": 24,
+      "total": 28,
       "by_chapter": [
         [
-          "ch09.html",
-          3
-        ],
-        [
-          "ch11.html",
+          "ch05.html",
           1
         ],
         [
-          "ch12.html",
-          9
+          "ch06.html",
+          2
         ],
         [
-          "ch13.html",
-          5
+          "ch12.html",
+          3
         ],
         [
           "ch14.html",
+          1
+        ],
+        [
+          "ch15.html",
+          10
+        ],
+        [
+          "ch16.html",
           5
         ],
         [
           "ch17.html",
+          5
+        ],
+        [
+          "ch20.html",
           1
         ]
       ],
-      "first": "ch09.html"
+      "first": "ch05.html"
     },
     "生成拓扑": {
       "total": 14,
@@ -418,15 +446,15 @@
           1
         ],
         [
-          "ch04.html",
+          "ch07.html",
           1
         ],
         [
-          "ch05.html",
+          "ch08.html",
           10
         ],
         [
-          "ch12.html",
+          "ch15.html",
           1
         ]
       ],
@@ -440,27 +468,27 @@
           1
         ],
         [
-          "ch05.html",
+          "ch08.html",
           1
         ],
         [
-          "ch06.html",
+          "ch09.html",
           10
         ],
         [
-          "ch11.html",
+          "ch14.html",
           1
         ],
         [
-          "ch12.html",
+          "ch15.html",
           1
         ],
         [
-          "ch21.html",
+          "ch24.html",
           3
         ],
         [
-          "ch22.html",
+          "ch25.html",
           1
         ]
       ],
@@ -470,34 +498,34 @@
       "total": 34,
       "by_chapter": [
         [
-          "ch05.html",
+          "ch08.html",
           1
         ],
         [
-          "ch06.html",
+          "ch09.html",
           16
         ],
         [
-          "ch10.html",
+          "ch13.html",
           1
         ],
         [
-          "ch11.html",
+          "ch14.html",
           3
         ],
         [
-          "ch21.html",
+          "ch24.html",
           11
         ],
         [
-          "ch22.html",
+          "ch25.html",
           2
         ]
       ],
-      "first": "ch05.html"
+      "first": "ch08.html"
     },
     "同伦类型论": {
-      "total": 6,
+      "total": 15,
       "by_chapter": [
         [
           "ch01.html",
@@ -508,28 +536,44 @@
           1
         ],
         [
-          "ch07.html",
+          "ch04.html",
+          5
+        ],
+        [
+          "ch05.html",
+          4
+        ],
+        [
+          "ch10.html",
           4
         ]
       ],
       "first": "ch01.html"
     },
     "单价公理": {
-      "total": 5,
+      "total": 9,
       "by_chapter": [
         [
           "ch01.html",
           1
         ],
         [
-          "ch07.html",
+          "ch05.html",
+          3
+        ],
+        [
+          "ch06.html",
+          1
+        ],
+        [
+          "ch10.html",
           4
         ]
       ],
       "first": "ch01.html"
     },
     "压缩": {
-      "total": 55,
+      "total": 60,
       "by_chapter": [
         [
           "ch01.html",
@@ -545,37 +589,45 @@
         ],
         [
           "ch04.html",
-          11
-        ],
-        [
-          "ch05.html",
-          2
+          4
         ],
         [
           "ch06.html",
-          5
+          1
         ],
         [
           "ch07.html",
-          3
+          11
+        ],
+        [
+          "ch08.html",
+          2
         ],
         [
           "ch09.html",
-          1
+          5
         ],
         [
           "ch10.html",
+          3
+        ],
+        [
+          "ch12.html",
           1
         ],
         [
-          "ch19.html",
+          "ch13.html",
+          1
+        ],
+        [
+          "ch22.html",
           2
         ]
       ],
       "first": "ch01.html"
     },
     "同约束": {
-      "total": 4,
+      "total": 5,
       "by_chapter": [
         [
           "ch01.html",
@@ -584,59 +636,63 @@
         [
           "ch03.html",
           1
+        ],
+        [
+          "ch04.html",
+          1
         ]
       ],
       "first": "ch01.html"
     },
     "分离度量": {
-      "total": 8,
+      "total": 9,
       "by_chapter": [
         [
-          "ch16.html",
-          8
+          "ch19.html",
+          9
         ]
       ],
-      "first": "ch16.html"
+      "first": "ch19.html"
     },
     "区分流形": {
-      "total": 4,
+      "total": 3,
       "by_chapter": [
         [
-          "ch16.html",
+          "ch19.html",
           2
-        ],
-        [
-          "ch21.html",
-          1
         ],
         [
           "ch24.html",
           1
         ]
       ],
-      "first": "ch16.html"
+      "first": "ch19.html"
     },
     "轨形": {
-      "total": 32,
+      "total": 33,
       "by_chapter": [
         [
-          "ch17.html",
+          "ch06.html",
+          2
+        ],
+        [
+          "ch20.html",
           19
         ],
         [
-          "ch18.html",
-          11
+          "ch21.html",
+          10
         ],
         [
-          "ch21.html",
+          "ch24.html",
           1
         ],
         [
-          "ch22.html",
+          "ch25.html",
           1
         ]
       ],
-      "first": "ch17.html"
+      "first": "ch06.html"
     },
     "椭圆上同调": {
       "total": 11,
@@ -646,53 +702,57 @@
           1
         ],
         [
-          "ch18.html",
-          9
+          "ch06.html",
+          1
         ],
         [
-          "ch22.html",
+          "ch21.html",
+          8
+        ],
+        [
+          "ch25.html",
           1
         ]
       ],
       "first": "ch03.html"
     },
     "可证伪": {
-      "total": 22,
+      "total": 18,
       "by_chapter": [
+        [
+          "ch01.html",
+          1
+        ],
         [
           "ch03.html",
           8
         ],
         [
-          "ch15.html",
+          "ch04.html",
           1
         ],
         [
-          "ch17.html",
+          "ch06.html",
           1
         ],
         [
-          "ch21.html",
-          3
+          "ch18.html",
+          1
         ],
         [
-          "ch22.html",
-          2
-        ],
-        [
-          "ch23.html",
-          2
+          "ch20.html",
+          1
         ],
         [
           "ch24.html",
-          1
+          3
         ],
         [
-          "ch26.html",
-          4
+          "ch25.html",
+          2
         ]
       ],
-      "first": "ch03.html"
+      "first": "ch01.html"
     },
     "证据等级": {
       "total": 3,
@@ -708,41 +768,41 @@
       "total": 3,
       "by_chapter": [
         [
-          "ch19.html",
+          "ch22.html",
           3
         ]
       ],
-      "first": "ch19.html"
+      "first": "ch22.html"
     }
   },
   "A1_definitions": {
-    "5.1": "ch01.html",
-    "6.1": "ch02.html",
-    "7.1": "ch03.html",
-    "12.1": "ch04.html",
-    "13.1": "ch05.html",
-    "13.2": "ch05.html",
-    "14.1": "ch06.html",
-    "14.2": "ch06.html",
-    "15.1": "ch07.html",
-    "15.2": "ch07.html",
+    "1.1": "ch01.html",
+    "2.1": "ch02.html",
+    "3.1": "ch03.html",
+    "4.1": "ch04.html",
+    "7.1": "ch07.html",
     "8.1": "ch08.html",
     "8.2": "ch08.html",
-    "8.3": "ch08.html",
     "9.1": "ch09.html",
     "9.2": "ch09.html",
-    "9.3": "ch09.html",
     "10.1": "ch10.html",
     "10.2": "ch10.html",
     "11.1": "ch11.html",
-    "1.1": "ch12.html",
-    "1.2": "ch12.html",
-    "2.2": "ch13.html",
-    "2.3": "ch13.html",
-    "4.1": "ch15.html",
-    "16.1": "ch16.html",
+    "11.2": "ch11.html",
+    "11.3": "ch11.html",
+    "12.1": "ch12.html",
+    "12.2": "ch12.html",
+    "12.3": "ch12.html",
+    "13.1": "ch13.html",
+    "13.2": "ch13.html",
+    "14.1": "ch14.html",
+    "15.1": "ch15.html",
+    "15.2": "ch15.html",
     "16.2": "ch16.html",
-    "24.1": "ch24.html"
+    "16.3": "ch16.html",
+    "18.1": "ch18.html",
+    "19.1": "ch19.html",
+    "19.2": "ch19.html"
   },
   "A2_formulas_defined": [
     "11.1",
@@ -766,7 +826,6 @@
     "18.1",
     "18.2",
     "2.7",
-    "26.1",
     "9.1",
     "9.2",
     "9.3",
@@ -776,7 +835,7 @@
   "A2_formula_refs": {},
   "A2_refs_missing_def": [],
   "A2_continuity": {
-    "ch09.html": {
+    "ch12.html": {
       "numbers": [
         1,
         2,
@@ -786,14 +845,14 @@
       ],
       "continuous": true
     },
-    "ch11.html": {
+    "ch14.html": {
       "numbers": [
         1,
         2
       ],
       "continuous": true
     },
-    "ch12.html": {
+    "ch15.html": {
       "numbers": [
         1,
         2,
@@ -802,7 +861,7 @@
       ],
       "continuous": true
     },
-    "ch13.html": {
+    "ch16.html": {
       "numbers": [
         1,
         4,
@@ -811,7 +870,7 @@
       ],
       "continuous": false
     },
-    "ch15.html": {
+    "ch18.html": {
       "numbers": [
         1,
         2,
@@ -822,7 +881,7 @@
       ],
       "continuous": true
     },
-    "ch16.html": {
+    "ch19.html": {
       "numbers": [
         1,
         2,
@@ -830,378 +889,438 @@
       ],
       "continuous": true
     },
-    "ch18.html": {
+    "ch21.html": {
       "numbers": [
         1,
         2
       ],
       "continuous": true
-    },
-    "ch26.html": {
-      "numbers": [
-        1
-      ],
-      "continuous": true
     }
   },
   "A3_tables_defined": [
+    "1.1",
     "10.1",
-    "11.1",
-    "11.2",
     "12.1",
     "12.2",
+    "12.3",
     "13.1",
-    "13.2",
-    "13.3",
     "14.1",
     "14.2",
-    "14.3",
-    "15.1",
     "16.1",
+    "16.2",
+    "16.3",
+    "16.5",
     "17.1",
-    "17.2",
-    "18.1",
+    "18.2",
     "19.1",
-    "19.2",
-    "19.3",
     "2.1",
     "2.2",
     "2.3",
-    "2.5",
     "20.1",
     "20.2",
-    "20.3",
-    "20.4",
     "21.1",
     "22.1",
     "22.2",
     "22.3",
-    "22.4",
     "23.1",
+    "23.2",
+    "23.3",
+    "23.4",
     "24.1",
     "25.1",
     "25.2",
-    "26.1",
+    "25.3",
+    "25.4",
     "3.1",
-    "4.2",
+    "3.2",
+    "4.1",
     "5.1",
     "6.1",
     "6.2",
-    "6.3",
     "7.1",
     "7.2",
+    "8.1",
+    "8.2",
+    "8.3",
     "9.1",
     "9.2",
     "9.3"
   ],
   "A3_figures_defined": [
     "1.1",
-    "1.2",
     "10.1",
+    "10.2",
     "11.1",
     "12.1",
-    "12.2",
     "13.1",
-    "13.2",
     "14.1",
-    "14.2",
     "15.1",
     "15.2",
     "16.1",
     "16.2",
     "17.1",
+    "17.2",
     "18.1",
     "19.1",
     "19.2",
     "2.1",
-    "2.2",
     "20.1",
     "21.1",
     "22.1",
+    "22.2",
+    "23.1",
+    "24.1",
+    "25.1",
     "3.1",
-    "3.2",
-    "4.1",
-    "5.1",
-    "6.1",
     "7.1",
+    "7.2",
     "8.1",
-    "9.1"
+    "8.2",
+    "9.1",
+    "9.2"
   ],
   "A3_table_refs_missing_def": [],
   "A3_figure_refs_missing_def": [],
   "A3_tables_unreferenced": [],
   "A3_figures_unreferenced": [],
-  "A4_c_grade": [],
+  "A4_c_grade": [
+    {
+      "chapter": "ch05.html",
+      "snippet": "［假说，C］"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "［纲领，C］"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "［假说，C］"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "［假说，C］"
+    },
+    {
+      "chapter": "ch06.html",
+      "snippet": "［假说，C］"
+    },
+    {
+      "chapter": "ch13.html",
+      "snippet": "［论证／假说，C］"
+    },
+    {
+      "chapter": "ch18.html",
+      "snippet": "［假说，C］"
+    },
+    {
+      "chapter": "ch19.html",
+      "snippet": "（C 级）"
+    },
+    {
+      "chapter": "ch20.html",
+      "snippet": "［纲领，C］"
+    },
+    {
+      "chapter": "ch21.html",
+      "snippet": "（C 级）"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第一梯队，C］"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第一梯队，C］"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第二梯队，C］"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第三梯队，C］"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第二梯队，C］"
+    },
+    {
+      "chapter": "ch24.html",
+      "snippet": "［第一梯队，C］"
+    },
+    {
+      "chapter": "ch25.html",
+      "snippet": "（C 级）"
+    },
+    {
+      "chapter": "ch25.html",
+      "snippet": "［纲领，C］"
+    }
+  ],
   "A5_chapter_refs": {
     "1": [
-      "ch09.html",
-      "ch10.html",
-      "ch11.html",
-      "ch12.html",
-      "ch13.html",
-      "ch15.html"
+      "ch01.html",
+      "ch04.html"
     ],
     "10": [
-      "ch10.html",
-      "ch20.html"
+      "ch10.html"
     ],
     "11": [
+      "ch05.html",
+      "ch08.html",
       "ch11.html"
     ],
     "12": [
-      "ch04.html"
-    ],
-    "13": [
-      "ch05.html"
-    ],
-    "14": [
+      "ch04.html",
       "ch05.html",
       "ch06.html",
-      "ch11.html",
-      "ch21.html"
+      "ch12.html",
+      "ch19.html",
+      "ch23.html"
+    ],
+    "13": [
+      "ch13.html",
+      "ch23.html"
+    ],
+    "14": [
+      "ch06.html",
+      "ch14.html"
     ],
     "15": [
-      "ch07.html"
+      "ch12.html",
+      "ch13.html",
+      "ch14.html",
+      "ch15.html",
+      "ch16.html",
+      "ch18.html"
     ],
     "16": [
-      "ch09.html",
-      "ch16.html"
+      "ch05.html",
+      "ch06.html",
+      "ch15.html",
+      "ch16.html",
+      "ch25.html"
     ],
     "17": [
-      "ch09.html",
       "ch16.html",
       "ch17.html",
-      "ch18.html",
-      "ch22.html"
+      "ch25.html"
     ],
     "18": [
-      "ch17.html",
+      "ch15.html",
       "ch18.html"
     ],
     "19": [
-      "ch02.html",
+      "ch12.html",
       "ch19.html"
     ],
     "2": [
-      "ch13.html",
-      "ch22.html"
+      "ch01.html",
+      "ch02.html",
+      "ch04.html",
+      "ch06.html",
+      "ch07.html",
+      "ch08.html",
+      "ch10.html",
+      "ch18.html",
+      "ch22.html",
+      "ch24.html"
     ],
     "20": [
+      "ch06.html",
+      "ch12.html",
+      "ch18.html",
       "ch19.html",
       "ch20.html",
-      "ch21.html"
+      "ch21.html",
+      "ch25.html"
     ],
     "21": [
-      "ch02.html",
-      "ch07.html",
       "ch20.html",
       "ch21.html"
     ],
     "22": [
-      "ch19.html",
+      "ch02.html",
+      "ch15.html",
       "ch22.html"
     ],
     "23": [
-      "ch23.html"
+      "ch22.html",
+      "ch23.html",
+      "ch24.html"
     ],
     "24": [
+      "ch02.html",
+      "ch10.html",
+      "ch23.html",
       "ch24.html"
     ],
     "25": [
+      "ch22.html",
       "ch25.html"
-    ],
-    "26": [
-      "ch26.html"
     ],
     "3": [
-      "ch14.html",
-      "ch22.html"
-    ],
-    "4": [
-      "ch12.html",
-      "ch15.html"
-    ],
-    "5": [
-      "ch01.html",
-      "ch24.html",
-      "ch25.html"
-    ],
-    "6": [
-      "ch01.html",
-      "ch02.html",
-      "ch04.html",
-      "ch05.html",
-      "ch07.html",
-      "ch15.html",
-      "ch19.html",
-      "ch21.html"
-    ],
-    "7": [
       "ch01.html",
       "ch03.html",
-      "ch15.html"
+      "ch18.html"
+    ],
+    "4": [
+      "ch04.html",
+      "ch05.html"
+    ],
+    "5": [
+      "ch05.html"
+    ],
+    "6": [
+      "ch05.html",
+      "ch06.html"
+    ],
+    "7": [
+      "ch07.html"
     ],
     "8": [
-      "ch05.html",
       "ch08.html"
     ],
     "9": [
+      "ch08.html",
       "ch09.html",
-      "ch20.html"
+      "ch14.html",
+      "ch24.html"
     ]
   },
   "A5_chapter_refs_invalid": [],
   "A5_section_refs": {
-    "0.000": [
-      "ch25.html"
-    ],
     "0.043": [
-      "ch15.html"
+      "ch18.html"
     ],
     "0.05": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.08": [
-      "ch13.html"
+      "ch16.html"
     ],
     "0.09": [
-      "ch13.html"
+      "ch16.html"
     ],
     "0.1": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.13": [
-      "ch13.html"
+      "ch16.html"
     ],
     "0.143": [
-      "ch11.html"
+      "ch14.html"
     ],
     "0.15": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.2": [
-      "ch14.html",
-      "ch22.html"
+      "ch17.html",
+      "ch25.html"
     ],
     "0.20": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.25": [
-      "ch13.html",
-      "ch14.html",
-      "ch22.html"
+      "ch16.html",
+      "ch17.html",
+      "ch25.html"
     ],
     "0.27": [
-      "ch15.html"
+      "ch18.html"
     ],
     "0.3": [
-      "ch14.html",
-      "ch15.html"
+      "ch17.html",
+      "ch18.html"
     ],
     "0.30": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.333": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.357": [
-      "ch09.html"
+      "ch12.html"
     ],
     "0.36": [
-      "ch09.html"
+      "ch12.html"
     ],
     "0.382": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.5": [
-      "ch14.html",
-      "ch22.html",
+      "ch17.html",
       "ch25.html"
     ],
     "0.50": [
-      "ch14.html",
-      "ch15.html"
+      "ch17.html",
+      "ch18.html"
     ],
     "0.500": [
-      "ch11.html"
+      "ch14.html"
     ],
     "0.6": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.60": [
-      "ch14.html"
+      "ch17.html"
     ],
     "0.7071": [
-      "ch13.html"
+      "ch16.html"
     ],
     "0.9": [
-      "ch09.html",
-      "ch25.html"
+      "ch12.html"
     ],
     "0.95": [
-      "ch15.html"
+      "ch18.html"
     ],
     "0.995": [
-      "ch09.html"
+      "ch12.html"
     ],
     "0000.000": [
-      "ch15.html"
+      "ch18.html"
     ],
     "01.00": [
-      "ch09.html"
+      "ch12.html"
     ],
     "01.50": [
-      "ch09.html"
+      "ch12.html"
     ],
     "02.00": [
-      "ch09.html"
+      "ch12.html"
     ],
     "03.78": [
-      "ch09.html"
+      "ch12.html"
     ],
     "0380.009": [
-      "ch15.html"
+      "ch18.html"
     ],
     "1.0": [
-      "ch13.html",
-      "ch14.html",
-      "ch15.html"
-    ],
-    "1.000": [
-      "ch25.html"
+      "ch16.html",
+      "ch17.html",
+      "ch18.html"
     ],
     "1.1": [
-      "ch12.html",
-      "ch13.html",
-      "ch14.html",
-      "ch22.html"
+      "ch01.html"
     ],
     "1.2": [
-      "ch12.html",
-      "ch14.html"
+      "ch01.html"
     ],
     "1.3": [
-      "ch12.html"
+      "ch01.html"
     ],
     "1.4": [
-      "ch12.html"
+      "ch01.html"
     ],
     "1.5": [
-      "ch12.html"
+      "ch01.html"
     ],
     "1.6": [
-      "ch12.html"
-    ],
-    "1.616": [
-      "ch26.html"
-    ],
-    "1.7": [
-      "ch12.html"
+      "ch01.html"
     ],
     "10.1": [
       "ch10.html",
-      "ch11.html",
-      "ch21.html"
+      "ch18.html"
     ],
     "10.2": [
       "ch10.html"
@@ -1213,39 +1332,45 @@
       "ch10.html"
     ],
     "10.5": [
-      "ch10.html"
+      "ch10.html",
+      "ch18.html"
     ],
     "10.6": [
+      "ch10.html",
+      "ch14.html"
+    ],
+    "10.7": [
       "ch10.html"
     ],
     "100.3824": [
-      "ch09.html"
+      "ch12.html"
     ],
     "100.38240": [
-      "ch13.html"
+      "ch16.html"
     ],
     "101.00": [
-      "ch14.html"
+      "ch17.html"
     ],
     "101.010": [
-      "ch09.html"
+      "ch12.html"
     ],
     "102.05": [
-      "ch09.html"
+      "ch12.html"
     ],
     "11.1": [
-      "ch11.html"
+      "ch11.html",
+      "ch14.html"
     ],
     "11.2": [
-      "ch06.html",
-      "ch10.html",
-      "ch11.html"
+      "ch11.html",
+      "ch14.html",
+      "ch23.html"
     ],
     "11.3": [
-      "ch11.html"
+      "ch11.html",
+      "ch14.html"
     ],
     "11.4": [
-      "ch09.html",
       "ch11.html"
     ],
     "11.5": [
@@ -1254,125 +1379,136 @@
     "11.6": [
       "ch11.html"
     ],
-    "11.7": [
-      "ch11.html"
-    ],
-    "11.8": [
-      "ch11.html"
-    ],
     "12.1": [
-      "ch04.html",
-      "ch12.html"
+      "ch12.html",
+      "ch14.html",
+      "ch15.html"
     ],
     "12.2": [
-      "ch04.html",
-      "ch12.html"
+      "ch12.html",
+      "ch15.html"
     ],
     "12.3": [
-      "ch04.html",
-      "ch12.html"
+      "ch12.html",
+      "ch15.html"
     ],
     "12.4": [
-      "ch04.html",
-      "ch12.html"
+      "ch12.html",
+      "ch15.html"
     ],
     "12.5": [
-      "ch04.html"
+      "ch12.html"
     ],
     "12.6": [
-      "ch04.html"
-    ],
-    "12.7": [
-      "ch04.html"
-    ],
-    "13.1": [
-      "ch05.html",
-      "ch13.html",
-      "ch22.html"
-    ],
-    "13.16": [
-      "ch17.html"
-    ],
-    "13.2": [
-      "ch05.html"
-    ],
-    "13.3": [
-      "ch05.html"
-    ],
-    "13.4": [
-      "ch05.html",
-      "ch13.html"
-    ],
-    "13.5": [
-      "ch05.html",
-      "ch13.html"
-    ],
-    "13.6": [
-      "ch05.html"
-    ],
-    "13.7": [
-      "ch05.html"
-    ],
-    "14.1": [
-      "ch06.html"
-    ],
-    "14.2": [
-      "ch06.html",
+      "ch12.html",
       "ch14.html"
     ],
+    "12.7": [
+      "ch12.html"
+    ],
+    "12.8": [
+      "ch12.html"
+    ],
+    "13.1": [
+      "ch13.html",
+      "ch14.html",
+      "ch16.html",
+      "ch24.html"
+    ],
+    "13.16": [
+      "ch20.html"
+    ],
+    "13.2": [
+      "ch13.html"
+    ],
+    "13.3": [
+      "ch13.html"
+    ],
+    "13.4": [
+      "ch13.html",
+      "ch16.html"
+    ],
+    "13.5": [
+      "ch13.html",
+      "ch16.html"
+    ],
+    "13.6": [
+      "ch13.html"
+    ],
+    "14.1": [
+      "ch14.html"
+    ],
+    "14.2": [
+      "ch09.html",
+      "ch13.html",
+      "ch14.html",
+      "ch17.html"
+    ],
     "14.3": [
-      "ch06.html"
+      "ch14.html"
     ],
     "14.4": [
-      "ch06.html"
+      "ch12.html",
+      "ch14.html"
     ],
     "14.5": [
-      "ch06.html"
+      "ch14.html"
     ],
     "14.6": [
-      "ch06.html"
+      "ch14.html"
     ],
     "14.7": [
-      "ch06.html"
+      "ch14.html"
+    ],
+    "14.8": [
+      "ch14.html"
     ],
     "15.1": [
-      "ch07.html",
-      "ch15.html"
+      "ch10.html",
+      "ch15.html",
+      "ch16.html",
+      "ch17.html",
+      "ch18.html",
+      "ch25.html"
     ],
     "15.2": [
-      "ch07.html",
-      "ch15.html"
+      "ch15.html",
+      "ch17.html",
+      "ch18.html"
     ],
     "15.3": [
-      "ch07.html",
-      "ch15.html"
+      "ch15.html",
+      "ch18.html"
     ],
     "15.4": [
-      "ch07.html",
-      "ch15.html"
+      "ch15.html",
+      "ch18.html"
     ],
     "15.5": [
-      "ch07.html",
-      "ch15.html"
+      "ch15.html",
+      "ch18.html"
     ],
     "15.6": [
-      "ch07.html",
-      "ch11.html",
-      "ch15.html"
+      "ch15.html",
+      "ch18.html"
     ],
     "15.7": [
-      "ch07.html"
+      "ch15.html"
     ],
     "16.1": [
+      "ch16.html",
+      "ch19.html"
+    ],
+    "16.10": [
       "ch16.html"
     ],
     "16.2": [
-      "ch16.html"
+      "ch16.html",
+      "ch19.html"
     ],
     "16.3": [
       "ch16.html",
-      "ch17.html",
-      "ch21.html"
+      "ch19.html"
     ],
     "16.4": [
       "ch16.html"
@@ -1386,8 +1522,15 @@
     "16.7": [
       "ch16.html"
     ],
+    "16.8": [
+      "ch16.html"
+    ],
+    "16.9": [
+      "ch16.html"
+    ],
     "17.1": [
-      "ch17.html"
+      "ch17.html",
+      "ch20.html"
     ],
     "17.2": [
       "ch17.html"
@@ -1399,20 +1542,26 @@
       "ch17.html"
     ],
     "17.5": [
-      "ch17.html",
-      "ch18.html"
+      "ch17.html"
     ],
     "17.6": [
       "ch17.html"
     ],
     "17.7": [
+      "ch16.html",
+      "ch17.html"
+    ],
+    "17.8": [
       "ch17.html"
     ],
     "18.1": [
-      "ch18.html"
+      "ch18.html",
+      "ch21.html",
+      "ch25.html"
     ],
     "18.2": [
-      "ch18.html"
+      "ch18.html",
+      "ch21.html"
     ],
     "18.3": [
       "ch18.html"
@@ -1421,12 +1570,10 @@
       "ch18.html"
     ],
     "18.5": [
-      "ch18.html"
+      "ch18.html",
+      "ch24.html"
     ],
     "18.6": [
-      "ch18.html"
-    ],
-    "18.7": [
       "ch18.html"
     ],
     "19.1": [
@@ -1436,7 +1583,9 @@
       "ch19.html"
     ],
     "19.3": [
-      "ch19.html"
+      "ch19.html",
+      "ch20.html",
+      "ch24.html"
     ],
     "19.4": [
       "ch19.html"
@@ -1447,49 +1596,45 @@
     "19.6": [
       "ch19.html"
     ],
+    "19.7": [
+      "ch19.html"
+    ],
     "2.0": [
-      "ch13.html",
-      "ch15.html"
+      "ch16.html",
+      "ch18.html"
     ],
     "2.00": [
-      "ch14.html"
+      "ch17.html"
     ],
     "2.1": [
-      "ch13.html"
-    ],
-    "2.10": [
-      "ch13.html"
+      "ch02.html",
+      "ch08.html"
     ],
     "2.2": [
-      "ch13.html"
+      "ch02.html"
     ],
     "2.3": [
-      "ch13.html"
+      "ch02.html"
     ],
     "2.368": [
-      "ch14.html"
+      "ch17.html"
     ],
     "2.4": [
-      "ch13.html"
+      "ch02.html"
     ],
     "2.5": [
-      "ch13.html"
+      "ch02.html"
     ],
     "2.6": [
-      "ch13.html"
+      "ch02.html"
     ],
     "2.618": [
-      "ch14.html",
-      "ch22.html"
+      "ch17.html",
+      "ch25.html"
     ],
     "2.7": [
-      "ch13.html"
-    ],
-    "2.8": [
-      "ch13.html"
-    ],
-    "2.9": [
-      "ch13.html"
+      "ch02.html",
+      "ch16.html"
     ],
     "20.1": [
       "ch20.html"
@@ -1504,36 +1649,43 @@
       "ch20.html"
     ],
     "20.5": [
-      "ch20.html"
+      "ch20.html",
+      "ch21.html"
     ],
     "20.6": [
       "ch20.html"
     ],
+    "20.7": [
+      "ch20.html"
+    ],
     "200.0253": [
-      "ch09.html"
+      "ch12.html"
     ],
     "21.1": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.2": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.3": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.4": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.5": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.6": [
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.7": [
-      "ch21.html"
-    ],
-    "21.8": [
       "ch21.html"
     ],
     "22.1": [
@@ -1554,15 +1706,11 @@
     "22.6": [
       "ch22.html"
     ],
-    "22.7": [
-      "ch22.html"
-    ],
     "2201.02177": [
-      "ch21.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "2212.11082": [
-      "ch07.html"
+      "ch10.html"
     ],
     "23.1": [
       "ch23.html"
@@ -1579,6 +1727,9 @@
     "23.5": [
       "ch23.html"
     ],
+    "23.6": [
+      "ch23.html"
+    ],
     "24.1": [
       "ch24.html"
     ],
@@ -1586,13 +1737,21 @@
       "ch24.html"
     ],
     "24.3": [
-      "ch24.html",
-      "ch26.html"
+      "ch24.html"
     ],
     "24.4": [
       "ch24.html"
     ],
     "24.5": [
+      "ch24.html"
+    ],
+    "24.6": [
+      "ch24.html"
+    ],
+    "24.7": [
+      "ch24.html"
+    ],
+    "24.8": [
       "ch24.html"
     ],
     "25.1": [
@@ -1610,180 +1769,151 @@
     "25.5": [
       "ch25.html"
     ],
+    "25.6": [
+      "ch25.html"
+    ],
+    "25.7": [
+      "ch25.html"
+    ],
     "250.2000": [
-      "ch13.html"
+      "ch16.html"
     ],
     "2502.6182": [
-      "ch13.html"
-    ],
-    "26.1": [
-      "ch26.html"
-    ],
-    "26.2": [
-      "ch26.html"
-    ],
-    "26.3": [
-      "ch26.html"
-    ],
-    "26.4": [
-      "ch26.html"
-    ],
-    "26.5": [
-      "ch26.html"
-    ],
-    "26.6": [
-      "ch26.html"
-    ],
-    "26.7": [
-      "ch26.html"
+      "ch16.html"
     ],
     "3.00": [
-      "ch14.html"
-    ],
-    "3.1": [
-      "ch14.html"
-    ],
-    "3.2": [
-      "ch14.html"
-    ],
-    "3.3": [
-      "ch14.html"
-    ],
-    "3.4": [
-      "ch14.html"
-    ],
-    "3.5": [
-      "ch14.html"
-    ],
-    "3.6": [
-      "ch14.html"
-    ],
-    "3.7": [
-      "ch13.html",
-      "ch14.html"
-    ],
-    "3.78": [
-      "ch09.html"
-    ],
-    "3.8": [
-      "ch14.html"
-    ],
-    "4.1": [
-      "ch15.html",
-      "ch22.html"
-    ],
-    "4.19": [
       "ch17.html"
     ],
+    "3.1": [
+      "ch03.html"
+    ],
+    "3.2": [
+      "ch03.html"
+    ],
+    "3.3": [
+      "ch03.html"
+    ],
+    "3.4": [
+      "ch03.html",
+      "ch09.html"
+    ],
+    "3.5": [
+      "ch03.html"
+    ],
+    "3.6": [
+      "ch03.html"
+    ],
+    "3.7": [
+      "ch03.html"
+    ],
+    "3.78": [
+      "ch12.html"
+    ],
+    "4.1": [
+      "ch04.html"
+    ],
+    "4.19": [
+      "ch20.html"
+    ],
     "4.2": [
-      "ch15.html"
+      "ch04.html"
     ],
     "4.3": [
-      "ch15.html"
+      "ch04.html"
     ],
     "4.4": [
-      "ch15.html"
+      "ch04.html"
     ],
     "4.5": [
-      "ch15.html",
-      "ch21.html"
+      "ch04.html"
     ],
     "4.6": [
-      "ch15.html"
+      "ch04.html"
     ],
     "40.36": [
-      "ch09.html"
+      "ch12.html"
     ],
     "5.01": [
-      "ch15.html"
+      "ch18.html"
     ],
     "5.1": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5.2": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5.3": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5.4": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5.5": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5.6": [
-      "ch01.html"
+      "ch05.html"
     ],
     "5000.300": [
-      "ch13.html"
+      "ch16.html"
     ],
     "55.05": [
-      "ch09.html"
+      "ch12.html"
     ],
     "6.1": [
-      "ch02.html",
-      "ch05.html",
-      "ch06.html"
+      "ch06.html",
+      "ch09.html"
     ],
     "6.2": [
+      "ch06.html",
+      "ch09.html"
+    ],
+    "6.3": [
+      "ch06.html"
+    ],
+    "6.4": [
       "ch02.html",
       "ch06.html"
     ],
-    "6.3": [
-      "ch02.html"
-    ],
-    "6.4": [
-      "ch02.html"
-    ],
     "6.5": [
-      "ch02.html"
-    ],
-    "6.6": [
-      "ch02.html"
-    ],
-    "6.7": [
-      "ch02.html"
-    ],
-    "7.1": [
-      "ch03.html",
-      "ch13.html"
-    ],
-    "7.2": [
-      "ch03.html"
-    ],
-    "7.3": [
-      "ch03.html"
-    ],
-    "7.4": [
-      "ch03.html",
       "ch06.html"
     ],
+    "7.1": [
+      "ch07.html",
+      "ch16.html"
+    ],
+    "7.2": [
+      "ch07.html"
+    ],
+    "7.3": [
+      "ch07.html"
+    ],
+    "7.4": [
+      "ch07.html"
+    ],
     "7.5": [
-      "ch03.html"
+      "ch07.html"
     ],
     "7.6": [
-      "ch03.html"
+      "ch07.html"
     ],
     "7.7": [
-      "ch03.html"
+      "ch07.html"
     ],
     "8.1": [
       "ch08.html",
-      "ch11.html"
+      "ch11.html",
+      "ch25.html"
     ],
     "8.2": [
-      "ch08.html",
-      "ch11.html",
-      "ch20.html"
+      "ch08.html"
     ],
     "8.3": [
-      "ch08.html",
-      "ch11.html"
+      "ch08.html"
     ],
     "8.4": [
       "ch08.html",
-      "ch13.html"
+      "ch16.html"
     ],
     "8.5": [
       "ch08.html"
@@ -1791,36 +1921,38 @@
     "8.6": [
       "ch08.html"
     ],
+    "8.7": [
+      "ch08.html"
+    ],
     "9.1": [
       "ch09.html",
-      "ch11.html"
+      "ch12.html"
     ],
     "9.2": [
       "ch09.html",
-      "ch11.html",
-      "ch12.html"
+      "ch12.html",
+      "ch14.html"
     ],
     "9.3": [
-      "ch09.html"
+      "ch09.html",
+      "ch12.html"
     ],
     "9.4": [
-      "ch09.html"
+      "ch09.html",
+      "ch12.html"
     ],
     "9.5": [
-      "ch09.html"
+      "ch09.html",
+      "ch12.html"
     ],
     "9.6": [
-      "ch09.html",
-      "ch11.html"
+      "ch09.html"
     ],
     "9.7": [
       "ch09.html"
     ],
-    "9.8": [
-      "ch09.html"
-    ],
     "9750.995": [
-      "ch09.html"
+      "ch12.html"
     ]
   },
   "A6_cited": {
@@ -1832,20 +1964,19 @@
     ],
     "Foundations": [
       "2013"
+    ],
+    "Program": [
+      "2013"
     ]
   },
   "A6_defined": {
     "Abramsky": [
       "1994"
     ],
-    "Adler": [
-      "2010"
-    ],
     "Almeida": [
       "2004"
     ],
     "Amari": [
-      "1998",
       "2016"
     ],
     "Ando": [
@@ -1853,9 +1984,6 @@
     ],
     "Arnold": [
       "1989"
-    ],
-    "Arora": [
-      "2009"
     ],
     "Atiyah": [
       "1968"
@@ -1908,9 +2036,6 @@
       "1994",
       "2008"
     ],
-    "Cook": [
-      "1971"
-    ],
     "Cover": [
       "2006"
     ],
@@ -1950,11 +2075,17 @@
     "Goldblatt": [
       "1998"
     ],
+    "Grothendieck": [
+      "1957"
+    ],
     "Halmos": [
       "1950"
     ],
     "Hamming": [
       "1986"
+    ],
+    "Hartshorne": [
+      "1977"
     ],
     "Hirsch": [
       "2012"
@@ -1980,6 +2111,9 @@
     "Klein": [
       "1872"
     ],
+    "Kline": [
+      "1973"
+    ],
     "Lakatos": [
       "1976"
     ],
@@ -1999,9 +2133,6 @@
       "1992",
       "1998"
     ],
-    "Maldacena": [
-      "1998"
-    ],
     "Martin-L": [
       "1984"
     ],
@@ -2013,6 +2144,9 @@
     ],
     "Mesbahi": [
       "2010"
+    ],
+    "Milnor": [
+      "1974"
     ],
     "Mohar": [
       "1991"
@@ -2026,17 +2160,8 @@
     "Nosek": [
       "2018"
     ],
-    "Pascanu": [
-      "2014"
-    ],
     "Pazy": [
       "1983"
-    ],
-    "Penrose": [
-      "1984",
-      "1989",
-      "2004",
-      "2010"
     ],
     "Polya": [
       "1945"
@@ -2056,10 +2181,6 @@
     "Robinson": [
       "1966"
     ],
-    "Rovelli": [
-      "2004",
-      "2014"
-    ],
     "Rudin": [
       "1991"
     ],
@@ -2067,7 +2188,8 @@
       "1956"
     ],
     "Scholze": [
-      "2018"
+      "2018",
+      "2019"
     ],
     "Sornette": [
       "2009"
@@ -2075,15 +2197,15 @@
     "Spivak": [
       "1965"
     ],
+    "Univalent": [
+      "2013"
+    ],
     "Voevodsky": [
       "2013",
       "2015"
     ],
     "Volterra": [
       "1931"
-    ],
-    "Wei": [
-      "2022"
     ],
     "Wigner": [
       "1960"
@@ -2095,8 +2217,28 @@
       "2017"
     ]
   },
-  "A6_cited_not_defined": [],
+  "A6_cited_not_defined": [
+    "Program"
+  ],
   "A7_images_missing": [],
   "A8_eq_malformed": [],
-  "A9_debug_strings": []
+  "A9_debug_strings": [],
+  "A10_version_labels": [],
+  "A11_fatalism": [
+    {
+      "chapter": "ch11.html",
+      "word": "必然",
+      "snippet": "率论里\"两个事件在所有检验下分布相同当且仅当几乎必然相等\"。\n\n为什么对偶重要\n一个统一框架最容易犯"
+    },
+    {
+      "chapter": "ch15.html",
+      "word": "必然",
+      "snippet": "上\"一般初值\"的限定；数值验证使用随机初值，几乎必然满足。\n\n15.6　这个定理的地位\n\n必须把话说"
+    },
+    {
+      "chapter": "ch17.html",
+      "word": "必然",
+      "snippet": "p→∞ 时 λn/n→p 且 λ2/n→p（几乎必然）。故 β₁≈β₂≈α/(np)：稠密随机图没有"
+    }
+  ]
 }
