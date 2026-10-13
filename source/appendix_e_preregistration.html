@@ -82,5 +82,35 @@
 <li><b>版本控制。</b>本登记簿的"只追加"由 Git 历史强制：核销以新行追加到 <code>docs/preregistration/checkups.csv</code>，旧行不修改；任何修改旧行的提交都能从历史中被检出。脚本 <code>analysis/preregistration_checkup.py</code> 另行校验结构与日期顺序。</li>
 </ol>
 
-<div class="warning"><span class="bt">本登记簿的现状</span>
+<div class="warning"><span class="bt">
+<div class="define"><span class="bt">E.5.1　维护协议（强制执行）</span>
+<b>1. 登记。</b>任何新的假说或开放问题，必须在提出之日添加到相应小节，包含五项：陈述、证据等级、证伪条件、提出日期、提出者。<br>
+<b>2. 只追加。</b>一旦登记，只能追加新条目，不能修改或删除旧条目——即使它已被推翻。<br>
+<b>3. 证伪标记。</b>若假说被证伪，以<b>新行</b>标记为"★ 已证伪（日期、证伪者、证伪依据）"，旧行原样保留。<br>
+<b>4. 双写。</b>核销追加到 <code>docs/preregistration/checkups.csv</code>，本附录同步追加一行。<br>
+<b>5. 机器强制。</b>"只追加"由 Git 历史强制：旧行的任何修改都能从 commit history 检出；<code>analysis/preregistration_checkup.py</code> 校验结构与日期顺序。</div>
+
+<h2>E.6　开放问题的首步指导</h2>
+
+<p>登记一个问题不等于能动手。本节给三个最可操作的问题按"当前卡点 / 第一步 / 预期收益 / 参考文献"展开。所有首步都只依赖公开工具，不需要本书特有的装置。</p>
+
+<div class="define"><span class="bt">O12　同伦升维（前沿一）</span>
+<b>当前卡点：</b>尚无"有限图区分系统的同伦分类空间"的定义。<br>
+<b>第一步：</b>对最简单的两阶段实例（Petersen 图，<span class="s">β</span> 介于 <span class="s">β₁</span> 与 <span class="s">β₂</span> 之间）显式写下区分模式构成的群胚，计算其低维同伦群，看是否出现"临界维数跳跃"。<br>
+<b>预期收益：</b>若成功，硬核从"谱定理应用"升级为"同伦不变量计算"（覆盖代数拓扑）。<br>
+<b>参考文献：</b>Lurie, <i>Higher Topos Theory</i>（第 1 章准范畴）；本书第 16 章。</div>
+
+<div class="define"><span class="bt">O13　连续区分系统（前沿三）</span>
+<b>当前卡点：</b>区分框架没有 Grothendieck 拓扑，无法表达"粘合"。<br>
+<b>第一步：</b>在凝聚集范畴中对单个投射有限集 <span class="s">S</span> 定义"区分序列"，验证它是否满足凝聚层的有限联合满射条件。<br>
+<b>预期收益：</b>若成功，框架跨过连续—离散鸿沟。<br>
+<b>参考文献：</b>Clausen–Scholze, <i>Condensed Mathematics</i>（Lect. 1–2）；本书第 4 章。</div>
+
+<div class="define"><span class="bt">G7　1/3 的代数根源（前沿二）</span>
+<b>当前卡点：</b>三处 <span class="s">1/3</span> 现象（热核归一化、椭圆曲线 3-挠子群、模曲线 <span class="s">X(3)</span> 分支）是否同源尚未计算。<br>
+<b>第一步：</b>分别计算三者的 <span class="s">1/3</span> 系数并列表对比；若至少两者的数值机制相同，则"同源"获得一半证据。<br>
+<b>预期收益：</b>若一致，缺口获得统一解释；若不一致，"同源"被证伪——<b>两种结果都是成果。</b><br>
+<b>参考文献：</b>本书第 21 章及其文献。</div>
+
+本登记簿的现状</span>
 截至本书完成日期，登记簿中的 <b>H1—H8 已被本书自身的脚本验证</b>；其中 <b>G4 已被证伪</b>（附录 J.6）；F1—F5、G1—G3、G5—G6、A1—A4 <b>尚未核验</b>。它们的价值在于为未来的检查提供了明确的靶子。任何读者都可以按上述纪律追加核销。</div>

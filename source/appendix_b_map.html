@@ -63,3 +63,27 @@
 <tr><td class="l">逻辑×正×连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>空缺表。等级 C（纲领）。<b>完整论证见第 24 章。</b></div>
+
+<h2>B.4　编码保结构的四级定义与评级</h2>
+
+<p>表 B.1 的“等级”列是<b>证据等级</b>（A/B/C），不是<b>结构保持程度</b>。二者不同：一个 B 级工具对应可能完全保结构，也可能只是类比。为回应“如何判断编码是否保持结构”的追问，本附录给出四级精确定义与已检验领域的评级。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 B.4　编码保结构的四级定义</b></caption>
+<tr><th class="l">等级</th><th class="l">名称</th><th class="l">定义（φ: 领域 M → EDS）</th></tr>
+<tr><td class="l">1</td><td class="l">强</td><td class="l">φ 单射，且 M 的每条定理对应 EDS 中的真定理</td></tr>
+<tr><td class="l">2</td><td class="l">中</td><td class="l">φ 单射；EDS 中的定理可能多于 M（是推广而非错误）</td></tr>
+<tr><td class="l">3</td><td class="l">弱</td><td class="l">φ 保部分关键结构（如测度、拓扑），但不单射</td></tr>
+<tr><td class="l">0</td><td class="l">失败</td><td class="l">φ 不单射，或由 φ 产生错定理</td></tr>
+</table>
+
+<table class="nat">
+<caption class="cap"><b>表 B.5　已检验领域的保结构评级</b></caption>
+<tr><th class="l">领域</th><th class="l">是否已检验</th><th class="l">保结构等级</th><th class="l">依据</th></tr>
+<tr><td class="l">图论</td><td class="l">是</td><td class="l"><b>1 强</b></td><td class="l">硬核定理（第 15—18 章）</td></tr>
+<tr><td class="l">线性代数</td><td class="l">是</td><td class="l"><b>1 强</b></td><td class="l"><code>analysis/encoding_preservation.py</code> 通过</td></tr>
+<tr><td class="l">概率论</td><td class="l">是</td><td class="l"><b>2 中</b></td><td class="l"><code>encoding_preservation.py</code> 通过</td></tr>
+<tr><td class="l">生成拓扑</td><td class="l">是</td><td class="l"><b>3 弱</b></td><td class="l">三元素集合上 8/29 保持结构（反例）</td></tr>
+<tr><td class="l">其余 21 个领域</td><td class="l">否</td><td class="l">未验证</td><td class="l">表 B.1 标记为 B（工具对应）或 C（方向性）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>保结构评级。<b>等级 A（对已检验者）/ 未验证（其余）。</b>阈值：强/中 ≥ 70% 视为“编码保结构”通过；<b>目前只有 4 个领域被检验，其中 3 个达强/中、1 个弱——远不足以判定通过，结论为“未决”。</b>这正是第 27 章表 27.4 把该项难度标为 ★★★ 的原因。</div>
