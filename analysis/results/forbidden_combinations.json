@@ -1,0 +1,53 @@
+{
+  "target_cell": "拓扑 × 正 × 连续",
+  "rows": [
+    {
+      "example": "C3（三角）",
+      "has_topology": false,
+      "kappa": 1.0,
+      "kappa_sign": "正",
+      "continuous_evolution": true,
+      "occupies_topo_pos_cont": false
+    },
+    {
+      "example": "C4（四环）",
+      "has_topology": true,
+      "kappa": 1.0,
+      "kappa_sign": "正",
+      "continuous_evolution": true,
+      "occupies_topo_pos_cont": true
+    },
+    {
+      "example": "C5（五环）",
+      "has_topology": true,
+      "kappa": 1.0,
+      "kappa_sign": "正",
+      "continuous_evolution": true,
+      "occupies_topo_pos_cont": true
+    },
+    {
+      "example": "K4（完全图）",
+      "has_topology": false,
+      "kappa": 1.5,
+      "kappa_sign": "正",
+      "continuous_evolution": true,
+      "occupies_topo_pos_cont": false
+    },
+    {
+      "example": "P4（路径）",
+      "has_topology": true,
+      "kappa": 0.875,
+      "kappa_sign": "正",
+      "continuous_evolution": true,
+      "occupies_topo_pos_cont": true
+    }
+  ],
+  "realizing_instances": [
+    "C4（四环）",
+    "C5（五环）",
+    "P4（路径）"
+  ],
+  "verdict": "NOT_forbidden",
+  "conclusion": "该格子并非数学禁戒：有限实例（如 C3 三角）同时具备拓扑式区分、κ>0、连续热演化。它在表 B.3 中显示为空缺，更可能是轴 1 的标签假象（我们把这些例子归到了'图论'/'组合'而不是'拓扑'），而不是数学上不可能。",
+  "caveat": "有界可达性探测，不是禁戒证明。它只能否证'禁戒'，不能证明'禁戒'。"
+}

@@ -1,0 +1,55 @@
+{
+  "checks": [
+    {
+      "domain": "优化（梯度流）",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "解 x(t)=e^{-At}x0；收敛 True",
+      "status": "成立"
+    },
+    {
+      "domain": "马尔可夫链",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "平稳分布 π≈[0.571 0.429]；l1 非扩张",
+      "status": "成立"
+    },
+    {
+      "domain": "微分方程（Picard）",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "Picard 迭代收敛到 e^t，误差 1.64e-06",
+      "status": "成立"
+    },
+    {
+      "domain": "动力系统（logistic）",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "ρ=3.3 存在周期 2 轨：True",
+      "status": "成立"
+    },
+    {
+      "domain": "数值分析（牛顿法）",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "二次收敛 True",
+      "status": "成立"
+    },
+    {
+      "domain": "算子代数（C*-动力系统代理）",
+      "E": true,
+      "U": true,
+      "C": true,
+      "note": "群同态 True，范数保持 True，强连续 True",
+      "status": "成立"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "caveat": "微型实例；通过只说明该领域可构造一个满足 A4 的实例，不等于整个领域的演化适定已被证明。"
+}

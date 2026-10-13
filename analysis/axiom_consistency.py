@@ -58,6 +58,9 @@ D = [
 
 AXIOMS = ["A1 观测完备", "A2 精度连续", "A3 曲率有界", "A4 演化适定", "A5 分离完备", "A6 标准化"]
 
+# 已通过 A4 小实例检验的领域（a4_wellposedness.py）
+A4_MINI = {"优化", "马尔可夫链", "微分方程", "动力系统", "数值分析", "算子代数"}
+
 
 def status(ax, finite, evo, kappa, name):
     graph = (name == "图论")
@@ -74,7 +77,8 @@ def status(ax, finite, evo, kappa, name):
     if ax == "A4 演化适定":
         if evo is None:
             return "不适用（无演化流）"
-        return "成立(硬核)" if graph else "未验证"
+        if graph: return "成立(硬核)"
+        return "成立(小实例)" if name in A4_MINI else "未验证"
     if ax == "A5 分离完备":
         return "成立(部分)" if graph else "未验证"
     if ax == "A6 标准化":

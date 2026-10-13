@@ -138,15 +138,36 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">A1 观测完备</td><td class="l">0</td><td class="l">1</td><td class="l">0</td><td class="l">26</td></tr>
 <tr><td class="l">A2 精度连续</td><td class="l">0</td><td class="l">11</td><td class="l">0</td><td class="l">16</td></tr>
 <tr><td class="l">A3 曲率有界</td><td class="l">1</td><td class="l">0</td><td class="l">11</td><td class="l">15</td></tr>
-<tr><td class="l">A4 演化适定</td><td class="l">1</td><td class="l">0</td><td class="l">15</td><td class="l">11</td></tr>
+<tr><td class="l">A4 演化适定</td><td class="l">7</td><td class="l">0</td><td class="l">15</td><td class="l">5</td></tr>
 <tr><td class="l">A5 分离完备</td><td class="l">1</td><td class="l">0</td><td class="l">0</td><td class="l">26</td></tr>
 <tr><td class="l">A6 标准化</td><td class="l">0</td><td class="l">0</td><td class="l">26</td><td class="l">1</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>公理自检。<b>等级 B／乙（元数据机械推导；脚本可复算）。</b>规则见脚本注释：只有图论列是已核算的，其余为按"是否有限、演化流类型"的机械推导。总计 162 个格子：<b>成立 3、平凡 12、不适用 52、未验证 95。</b></div>
+<div class="datasrc"><b>性质：</b>公理自检。<b>等级 B／乙（元数据机械推导；脚本可复算）。</b>规则见脚本注释：只有图论列是已核算的，其余为按"是否有限、演化流类型"的机械推导。总计 162 个格子：<b>成立 9、平凡 12、不适用 52、未验证 89。</b></div>
 
 <div class="warning"><span class="bt">这张表说了什么（诚实结论）</span>
-六个公理里，"成立"的格子总共只有 <b>3 个，全部在图论</b>；而"未验证"有 <b>95 个</b>、"不适用"有 <b>52 个</b>。也就是说：<b>EDS 作为"框架"的严格内容，几乎全部来自图论这一个实例；在其余 26 个领域里，六条公理的地位是"待验证"或"不适用"，不是"默认成立"。</b><br>
+六个公理里，"成立"的格子总共只有 <b>9 个</b>——其中 3 个在图论，6 个来自第 14.6.1.1 节的公理 4 小实例；而"未验证"仍有 <b>89 个</b>、"不适用"有 <b>52 个</b>。也就是说：<b>EDS 作为"框架"的严格内容，几乎全部来自图论这一个实例；在其余 26 个领域里，六条公理的地位是"待验证"或"不适用"，不是"默认成立"。</b><br>
 这把前言里"框架（B）"的说法精确化：<b>B 指的是"有论证的组织方式"，不是"27 个领域都满足的公理系统"。</b>把这层说清楚，比让读者以为六条公理已被普遍验证要诚实得多——这也是本章最该记住的一句。</div>
+
+<h4>14.6.1.1　公理 4 的六领域小实例检验（把 6 个"未验证"变成真结果）</h4>
+
+<p>表 14.4 的 A4 行原本是"成立 1（图论）、未验证 11"。对其中<b>演化流非空</b>的六个领域，本书做了可计算的小实例检验（脚本 <code>analysis/a4_wellposedness.py</code>）：把 A4 分为存在性（E）、唯一性（U）、连续依赖（C）三条，逐条核算。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 14.5　公理 4 的六领域小实例检验</b></caption>
+<tr><th class="l">领域</th><th class="l">实例</th><th class="l">E</th><th class="l">U</th><th class="l">C</th><th class="l">结果</th></tr>
+<tr><td class="l">优化</td><td class="l">凸二次的梯度流 dx/dt=−Ax</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+<tr><td class="l">马尔可夫链</td><td class="l">2 状态随机矩阵迭代</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+<tr><td class="l">微分方程</td><td class="l">Picard–Lindelöf（y′=y）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+<tr><td class="l">动力系统</td><td class="l">logistic 映射（周期 2 轨）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+<tr><td class="l">数值分析</td><td class="l">牛顿法解 x²−2（二次收敛）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+<tr><td class="l">算子代数</td><td class="l">有限维 C*-动力系统代理 α_t(A)=U(t)AU(t)*</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>A4 小实例检验。<b>等级 A／甲（可复算）。</b>结果 6/6 成立。因此表 14.4 的 A4 行由"成立 1、未验证 11"变为"成立 7、未验证 5"。<b>诚实边界：</b>每个只是一个微型实例（例如"某个凸二次的梯度流"），<b>不等于整个领域的演化适定已被证明</b>——它证明的是"该领域可构造至少一个满足 A4 的实例"。</div>
+
+<div class="warning"><span class="bt">表 14.4 与表 14.5 合起来说的两件事（不要混淆）</span>
+<b>（一）"方法有效"：</b>第 22 章证明的是，本书设计的<b>编码方法</b>能保存 27 个领域中 15 个的关键性质（表 B.5）。<br>
+<b>（二）"公理有效"：</b>表 14.4 核算的是，<b>六条公理</b>在 27 个领域中是否真的成立。答案：只有 9 个"成立"格子，89 个"未验证"。<br>
+<b>这两件事完全不同。</b>第一件说"我有一把能用的尺子"；第二件说"这把尺子的刻度在 27 个领域都校准过"——后者<b>没有</b>做到。表 14.5 把 A4 的校准从 1 推进到 7，是补洞的第一步，但洞里仍剩 89 格。</div>
 
 <h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
 

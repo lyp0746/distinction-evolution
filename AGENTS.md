@@ -29,7 +29,9 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/orbifold_gap.py       # 附录 I.2 轨形缺口
 "$PY" analysis/encoding_preservation.py # 附录 I.3 / 表 B.5 编码保结构（15 个对象）
 "$PY" analysis/independent_features.py  # O17 独立特征复核（削弱猜想 D2）
-"$PY" analysis/axiom_consistency.py    # 第 14.6.1 六公理在 27 领域的自洽核算
+"$PY" analysis/axiom_consistency.py    # 第 14.6.1 六公理自洽核算
+"$PY" analysis/a4_wellposedness.py     # 表 14.5 A4 六领域小实例
+"$PY" analysis/forbidden_combinations.py # 第 23.5.2 禁戒可达性探测
 "$PY" analysis/weighted_directed_transition.py # 附录 J 加权/有向相变
 "$PY" analysis/discrete_curvature.py # 附录 J 离散分离曲率
 "$PY" analysis/higher_dim_gap.py     # 附录 J 高维缺口（证伪 G4）
