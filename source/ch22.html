@@ -208,7 +208,27 @@
 <tr><td class="l">模型论的可判定片段</td><td class="l">可判定理论</td><td class="l">逻辑的可判定片段是否都可编码</td></tr>
 <tr><td class="l">形式化证明生态（Lean/Mathlib）</td><td class="l">有限可验证</td><td class="l">"可机器验证"是否蕴含"可编码"</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>研究计划。<b>等级 C／丙（作者规划）。</b>读法：<b>通过 → 支持 D1；失败且不可计算 → 强化边界定义；失败但可计算 → 指出 EDS 需改进。</b>三种结果都有意义，这正是"定义域刻画"优于"覆盖率统计"的地方。设计逻辑与附录 I 表 I.6 的难度评估配合使用。</div>
+<div class="datasrc"><b>性质：</b>研究计划。<b>等级 C／丙（作者规划）。</b>读法：<b>通过 → 支持 D1；失败且不可计算 → 强化边界定义；失败但可计算 → 指出 EDS 需改进。</b>三种结果都有意义，这正是"定义域刻画"优于"覆盖率统计"的地方。设计逻辑与附录 I 表 I.6 的难度评估配合使用。其中“可判定 vs 不可判定”与“有限维 vs 无限维表示论”两项已在第 22.5.8 节执行。</div>
+
+<h3>22.5.8　边界探测：两次执行（检验 O16）</h3>
+
+<p>按表 22.7，对两对"边界"各做一个可计算探测，并按三层协议记录（脚本 <code>analysis/boundary_probe.py</code>）。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 22.8　两次边界探测的三层结果</b></caption>
+<tr><th class="l">边界对</th><th class="l">侧</th><th class="l">层1 可计算性</th><th class="l">层2 编码可行</th><th class="l">层3 保结构</th><th class="l">判定</th></tr>
+<tr><td class="l">可判定 vs 不可判定</td><td class="l">命题 SAT（可判定）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>可编码</b></td></tr>
+<tr><td class="l"></td><td class="l">停机问题（不可判定）</td><td class="l">✗</td><td class="l">✗</td><td class="l">✗</td><td class="l"><b>不可编码</b>（图灵 1936）</td></tr>
+<tr><td class="l">有限群 vs 无限群</td><td class="l">S3（有限）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>有限表足够</b>（3 个不可约表示）</td></tr>
+<tr><td class="l"></td><td class="l">Z（无限）</td><td class="l">✗</td><td class="l">✗</td><td class="l">✗</td><td class="l"><b>有限表失败</b>：ξ=0 与 ξ=2π/K 在前 K 个元素上取值相同</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>边界探测。<b>等级 B／乙（标准定理 + 可计算构造）。</b>两组边界对都显示边界落在"可计算／有限"一侧：停机问题在第一层即失败；无限群 Z 的不可约表示无限多，任何有限特征标表都无法分离在前 K 个群元素上取值相同的两个特征标（层 3 失败）。</div>
+
+<div class="warning"><span class="bt">O16 与 O18 的分道扬镳（诚实对比）</span>
+这两次探测<b>支持</b> O16（有限可计算性边界）：边界清楚，且失败发生在<em>可计算性那一层</em>。<br>
+但它与第 23.5.2 节的 B 探测形成对比：B 发现"拓扑×正×连续"格子<b>不是</b>禁戒，只是轴标签假象。<b>也就是说：O16 得到初步支持，O18（空缺=禁戒）被削弱。</b><br>
+这正是一个真实纲领该有的样子——<b>有的假说活下来，有的死掉</b>。<br>
+<b>边界（必须说）：</b>这只是两个微型实例 + 标准不可判定定理，<b>不是 O16 的证明</b>；O16 仍是猜想。它证明的是"存在清晰的边界实例"，不是"边界就是有限可计算性"。</div>
 
 <h3>22.6　本章小结</h3>
 

@@ -18,6 +18,7 @@ run "附录 I：O17 独立特征复核"            analysis/independent_features
 run "第 14.6.1：六公理自洽核算"        analysis/axiom_consistency.py
 run "表 14.5：A4 六领域小实例"           analysis/a4_wellposedness.py
 run "第 23.5.2：禁戒可达性探测"          analysis/forbidden_combinations.py
+run "表 22.8：边界探测"                  analysis/boundary_probe.py
 run "附录 J：加权/有向相变（定理 B1 + 反例 B2）" analysis/weighted_directed_transition.py
 run "附录 J：离散分离曲率（定理 C）"        analysis/discrete_curvature.py
 run "附录 J：高维缺口（证伪 G4）"          analysis/higher_dim_gap.py

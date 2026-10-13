@@ -1,0 +1,41 @@
+{
+  "probes": [
+    {
+      "side": "可判定（命题 SAT）",
+      "layer1_decidable": true,
+      "layer2_encoding": true,
+      "layer3_preserved": true,
+      "sat": true,
+      "note": "有限真值表判定；EDS 编码恢复可满足性"
+    },
+    {
+      "side": "不可判定（停机问题）",
+      "layer1_decidable": false,
+      "layer2_encoding": false,
+      "layer3_preserved": false,
+      "undecided_under_budgets": true,
+      "note": "任一有限预算 K < L 都不能决定 M 是否停机（图灵 1936：停机不可判定）；EDS 的观测泛函要求可判定区分族，故该侧不可编码"
+    },
+    {
+      "side": "有限群（S3）",
+      "layer1_decidable": true,
+      "layer2_encoding": true,
+      "layer3_preserved": true,
+      "n_irreps": 3,
+      "note": "3 个不可约表示；特征标正交性成立；有限表足够"
+    },
+    {
+      "side": "无限群（Z）",
+      "layer1_decidable": false,
+      "layer2_encoding": false,
+      "layer3_preserved": false,
+      "finite_table_separates": true,
+      "note": "Z 的不可约表示无限多；取 ξ=0 与 ξ=2π/8，二者在前 8 个群元素上取值完全相同 => 任何有限特征标表都无法分离它们（层 3 失败）"
+    }
+  ],
+  "conclusion": "两组边界对都显示：可计算/有限一侧三层通过，不可计算/无限一侧第一层即失败，且给出了有限分离失败的具体构造（停机预算依赖、前 K 元素不可分离）。这与 O16（有限可计算性边界）**相容**，但只是两个微型实例，不是证明。",
+  "caveat": [
+    "可判定性/不可判定性使用标准定理；本脚本计算的是",
+    "有限分离失败与预算依赖的具体证据。"
+  ]
+}
