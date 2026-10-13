@@ -18,6 +18,7 @@ run "附录 I：O17 独立特征复核"            analysis/independent_features
 run "第 14.6.1：六公理自洽核算"        analysis/axiom_consistency.py
 run "表 14.5：A4 六领域小实例"           analysis/a4_wellposedness.py
 run "表 14.6：公理独立性预检"            analysis/axiom_independence.py
+run "表 28.1：四机制覆盖率"             analysis/mechanisms.py
 run "第 23.5.2：禁戒可达性探测"          analysis/forbidden_combinations.py
 run "表 22.8：边界探测"                  analysis/boundary_probe.py
 run "表 23.6：从六元组重导分类"        analysis/reclassify.py
