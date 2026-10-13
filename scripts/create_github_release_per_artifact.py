@@ -32,6 +32,7 @@ GIT = os.environ.get("GIT_BIN", r"D:\Git\cmd\git.exe")
 REPO = "lyp0746/distinction-evolution"
 BASE = "distinction-evolution"
 BOOK = "区分的演化"
+DOI = "10.5281/zenodo.23345013"
 
 # (kind, 源文件, GitHub 资产名, release 名称, 说明)
 ARTIFACTS = [
@@ -145,7 +146,8 @@ def main():
             continue
         tag = f"{args.tag_prefix}-{args.date}-{kind}"
         rel_name = f"{BOOK} · {name}（{args.date}）"
-        body = (f"{desc}\n\n本 release 仅承载一个产物（一个产物一个 tag）。")
+        body = (f"{desc}\n\n本 release 仅承载一个产物（一个产物一个 tag）。\n\n"
+                f"全书 DOI：{DOI} · https://doi.org/{DOI}\n引用请同时注明本产物对应的 tag：`{tag}`。")
         rel = ensure_release(tok, args.repo, tag, rel_name, body,
                              args.draft, args.prerelease)
         upload(tok, args.repo, rel, src, dst, refresh=args.refresh)
