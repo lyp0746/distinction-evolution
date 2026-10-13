@@ -20,7 +20,7 @@
 </table>
 <div class="datasrc"><b>性质：</b>合成网络实验。等级 A（可复算）／但外部效度 C。<b>运行末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>失败记录：</b>层 S2 的同号率（0.27）<b>低于随机</b>，是对"激活—秩耦合普遍成立"的一个直接反例。</div>
 
-<p><b>这个结果怎么读：</b>它<b>既不</b>支持"假说普遍成立"，<b>也不</b>简单地推翻它。它显示机制是<b>按层分裂</b>的：一层的激活增长伴随表示扩张，另一层则不。这与第 4.3 节的分析一致——朴素的全局阈值本就不成立，正确的陈述依赖每层的有效探针数。</p>
+<p><b>这个结果怎么读：</b>它<b>既不</b>支持"假说普遍成立"，<b>也不</b>简单地推翻它。它显示机制是<b>按层分裂</b>的：一层的激活增长伴随表示扩张，另一层则不。这与第 15.3 节的分析一致——朴素的全局阈值本就不成立，正确的陈述依赖每层的有效探针数。</p>
 
 <div class="warning"><span class="bt">为什么模型没有泛化</span>
 train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验的是"激活—秩"机制，而非泛化，因此记忆相下的结果仍有意义；但它<b>不能</b>回答"泛化时机制是否相同"。这个缺口已登记在附录 F。</div>
@@ -61,7 +61,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 
 <p>开放问题 O7 此前只有类比。本附录给出一个<b>可写的候选</b>，作为猜想（C 级）。</p>
 
-<div class="define"><span class="bt">候选函子 F（猜想，C／丙）</span>
+<div class="define"><span class="bt">候选函子 F（猜想，C）</span>
 设 <span class="s">G=(V,E)</span> 连通有限图。构造度量图 <span class="s">X<sub>ε</sub>(G)</span>：每条边替换为长度 <span class="s">ε</span> 的区间。<span class="s">X<sub>ε</sub>(G)</span> 上的拉普拉斯算子谱 <span class="s">{μ<sub>k</sub>(ε)}</span> 在 <span class="s">ε→0</span>、并同时把图细化（subdivision）时，其前几个谱量收敛到某个二维流形的拉普拉斯谱前几项。<br>
 <b>猜想 O7'：</b>存在一列图 <span class="s">G<sub>n</sub></span> 与尺度 <span class="s">ε<sub>n</sub>→0</span>，使临界耦合 <span class="s">(β₁,β₂)</span> 收敛，且极限等于某黎曼流形的分离曲率阈值。</div>
 

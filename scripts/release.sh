@@ -67,7 +67,7 @@ $BASE-markdown/    分文件 Markdown（含 assets/ 图片）
 $BASE-markdown.zip 分文件 Markdown 打包（便于一次性下载）
 cover.svg          封面矢量图
 README.md          读者说明
-修订说明.md        版次与主要变化
+修订说明.md        内容构成与阅读路径
 数据缺口清单.md    数据可得性登记与获取路径
 欢迎补充数据.md    开放贡献指南
 

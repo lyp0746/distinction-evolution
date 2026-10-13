@@ -12,7 +12,7 @@ EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值�
 <div class="define"><span class="bt">定义 11.1　演化区分系统（EDS）</span>
 一个演化区分系统是一个六元组
 <div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
-其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 14 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
+其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 6 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
 
 <h3>11.2　六条公理</h3>
 
@@ -56,7 +56,7 @@ EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值�
 任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
 
 <div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
-EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 1 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
+EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 12 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
 
 <h3>11.4　公理的独立性与边界</h3>
 
@@ -87,7 +87,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
 </ul>
 
-<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 15.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
+<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 7.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
 
 <h3>11.6　公理在图论情形的精确状态</h3>
 
@@ -99,7 +99,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
 <tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
 <tr><td class="l">3 曲率有界</td><td class="l">有定理</td><td class="l"><span class="s">κ_info=Var(λ)/2</span>（第 9.6 节）</td></tr>
-<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 1—4 章）</td></tr>
+<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 12—15 章）</td></tr>
 <tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 11.1，本节）</td></tr>
 <tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
 </table>
@@ -108,7 +108,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <div class="warning"><span class="bt">一个诚实的反结论：公理 1 在图上没有非平凡定理</span>
 一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
 
-<div class="define"><span class="bt">定理 11.1　原子分解的唯一性 ［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 11.1　原子分解的唯一性 ［定理，A］</span>
 在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
 <b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
 <b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
@@ -132,7 +132,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 
 <p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
 
-<div class="define"><span class="bt">推论 11.1　乘积图的相变结构 ［推论，A／甲］</span>
+<div class="define"><span class="bt">推论 11.1　乘积图的相变结构 ［推论，A］</span>
 <div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
 故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
 

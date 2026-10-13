@@ -1,11 +1,11 @@
-<h2 class="chapter">第 1 章　图上演化区分系统与临界耦合定理</h2>
+<h2 class="chapter">第 12 章　图上演化区分系统与临界耦合定理</h2>
 
 <p class="lead">本章是全书唯一完全严格的部分。它在有限图上定义演化区分系统，证明临界耦合由拉普拉斯谱决定。<b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
 在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的硬核，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
 
-<h3>1.1　导论：为什么从图开始</h3>
+<h3>12.1　导论：为什么从图开始</h3>
 
 <p>一个统一框架若只在语言上成立，就只是修辞。要让纲领可信，必须至少在一个领域给出完整、严格、可复现的结果。图论是理想的首发地，原因有三：</p>
 
@@ -17,9 +17,9 @@
 
 <p>更重要的原因是：图论中的"区分"有明确的对应物。<b>一个顶点能否与另一个顶点区分，取决于拉普拉斯扩散模式是否落在它上面。</b>这正是第 8—9 章的抽象概念在离散情形的具体实现。</p>
 
-<h3>1.2　构造与演化方程</h3>
+<h3>12.2　构造与演化方程</h3>
 
-<div class="define"><span class="bt">定义 1.1　图上演化区分系统</span>
+<div class="define"><span class="bt">定义 12.1　图上演化区分系统</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
 <div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>)</span><span class="num">(12.1)</span></div>
 其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度。用拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span> 写成矩阵形式：
@@ -27,38 +27,38 @@
 
 <p>这个方程的物理含义：每个顶点的区分强度以速率 <span class="s">α</span> 衰减（不维护就会丢失），同时通过邻接边以速率 <span class="s">β</span> 促进区分向相邻顶点传播。<b>当传播速率足够高时，区分不再衰减，反而增长。</b>这个转变就是相变。</p>
 
-<p>对应第 8—9 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；分离曲率由演化方程 (12.2) 定义（见式 (1.4)）；演化流是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。公理 1—4 在有限图情形下都成立。</p>
+<p>对应第 8—9 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；分离曲率由演化方程 (12.2) 定义（见式 (12.4)）；演化流是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。公理 1—4 在有限图情形下都成立。</p>
 
-<h3>1.3　谱分解</h3>
+<h3>12.3　谱分解</h3>
 
-<div class="define"><span class="bt">定义 1.2　拉普拉斯谱</span>
+<div class="define"><span class="bt">定义 12.2　拉普拉斯谱</span>
 图拉普拉斯矩阵 <span class="s">L</span> 是实对称半正定矩阵。记其正交归一特征向量为 <span class="s">v<sub>1</sub>,…,v<sub>n</sub></span>，特征值按序排列
 <div class="eq"><span class="body">0 = λ<sub>1</sub> &lt; λ<sub>2</sub> ≤ ⋯ ≤ λ<sub>n</sub></span></div>
 其中 <span class="s">λ<sub>1</sub>=0</span> 对应常向量 <span class="s">v<sub>1</sub>=𝟙/√n</span>（因为 <span class="s">G</span> 连通，零特征值重数为 1）。<span class="s">λ<sub>2</sub></span> 称<b>代数连通度</b>（Fiedler 值），<span class="s">λ<sub>n</sub></span> 是最大特征值。</div>
 
 <p>把初值 <span class="s">D(0)</span> 在特征基下展开：<span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span>，<span class="s">c<sub>k</sub>=⟨D(0),v<sub>k</sub>⟩</span>。由于 <span class="s">L</span> 与 <span class="s">−αI</span> 交换，演化方程在特征基下解耦。</p>
 
-<h3>1.4　临界耦合定理</h3>
+<h3>12.4　临界耦合定理</h3>
 
 <img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="两阶段相变">
 
-<div class="cap"><b>图 1.1　临界耦合与两阶段相变</b>。横轴为耦合强度 <span class="s">β</span>，纵轴为各模式的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。每条直线对应一个拉普拉斯特征值。最先越过零的是最高频模式（<span class="s">λ<sub>n</sub></span>），在 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 处；Fiedler 模式（<span class="s">λ<sub>2</sub></span>）在 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 处越零。两者之间是"局部增长相"。</div>
+<div class="cap"><b>图 12.1　临界耦合与两阶段相变</b>。横轴为耦合强度 <span class="s">β</span>，纵轴为各模式的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。每条直线对应一个拉普拉斯特征值。最先越过零的是最高频模式（<span class="s">λ<sub>n</sub></span>），在 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 处；Fiedler 模式（<span class="s">λ<sub>2</sub></span>）在 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 处越零。两者之间是"局部增长相"。</div>
 
 <img class="fig" src="assets/svg/fig12b-potential-landscape.svg" alt="临界耦合的势能景观">
 
-<div class="cap"><b>图 1.2　临界耦合的势能景观</b>。同一个 <span class="s">β</span> 下，各模式以不同斜率越过 <span class="s">κ=0</span>。斜率由 <span class="s">λ<sub>k</sub></span> 决定：<span class="s">λ</span> 越大，越早解锁。这张图是图 1.1 的“全景版”：把三相位展开为完整的阈值序列。</div>
+<div class="cap"><b>图 12.2　临界耦合的势能景观</b>。同一个 <span class="s">β</span> 下，各模式以不同斜率越过 <span class="s">κ=0</span>。斜率由 <span class="s">λ<sub>k</sub></span> 决定：<span class="s">λ</span> 越大，越早解锁。这张图是图 12.1 的“全景版”：把三相位展开为完整的阈值序列。</div>
 
-<div class="define"><span class="bt">定理 1.1（临界耦合定理）［定理，A／甲］</span>
-设 <span class="s">G</span> 是连通有限图，<span class="s">L</span> 的谱为 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>。考虑式 (1.2) 的演化。定义
+<div class="define"><span class="bt">定理 12.1（临界耦合定理）［定理，A］</span>
+设 <span class="s">G</span> 是连通有限图，<span class="s">L</span> 的谱为 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>。考虑式 (12.2) 的演化。定义
 <div class="eq"><span class="body">β<sub>1</sub> := α/λ<sub>n</sub>,  β<sub>2</sub> := α/λ<sub>2</sub></span><span class="num">(12.3)</span></div>
 则对一般的初值 <span class="s">D(0)</span>（即投影 <span class="s">c<sub>n</sub>≠0</span>）：<br>
 <b>（i）衰减相</b>（<span class="s">β&lt;β<sub>1</sub></span>）：<span class="s">‖D(t)‖→0</span> 指数快，主导衰减率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>；<br>
 <b>（ii）局部增长相</b>（<span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>）：<span class="s">D(t)</span> 沿所有满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的<b>高频模式</b>指数增长（特别包括最高频模式 <span class="s">v<sub>n</sub></span>），沿所有满足 <span class="s">λ<sub>k</sub>&lt;α/β</span> 的<b>低频模式</b>衰减（特别包括 Fiedler 模式 <span class="s">v<sub>2</sub></span>）；<br>
 <b>（iii）全局增长相</b>（<span class="s">β&gt;β<sub>2</sub></span>）：至少沿 <span class="s">v<sub>n</sub></span> 与 <span class="s">v<sub>2</sub></span> 两个独立方向指数增长。</div>
 
-<h3>1.5　完整证明</h3>
+<h3>12.5　完整证明</h3>
 
-<p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (1.2) 变为
+<p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (12.2) 变为
 <div class="eq"><span class="body">ẏ<sub>k</sub> = (−α+βλ<sub>k</sub>)y<sub>k</sub>,  k=1,…,n</span></div>
 这是 <span class="s">n</span> 个独立的一阶线性 ODE。</p>
 
@@ -81,19 +81,19 @@
 <div class="note"><b>关于"一般情况下 <span class="s">c<sub>n</sub>≠0</span>"</b>
 若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎必然满足。</div>
 
-<h3>1.6　这个定理的地位</h3>
+<h3>12.6　这个定理的地位</h3>
 
 <p>必须把话说清楚：这个定理<b>不是什么</b>。</p>
 
 <ul>
 <li>它<b>不</b>是"图上的数学大一统"。它只是线性稳定性分析应用在图的拉普拉斯上。</li>
-<li>它<b>不</b>声称对非线性和演化图普遍成立（第 4 章给出一个非线性版本及它的边界）。</li>
+<li>它<b>不</b>声称对非线性和演化图普遍成立（第 15 章给出一个非线性版本及它的边界）。</li>
 <li>它<b>不</b>直接推广到连续流形（第 16—18 章说明推广的困难）。</li>
 </ul>
 
 <p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"分离曲率"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
 
-<h3>1.7　本章小结</h3>
+<h3>12.7　本章小结</h3>
 
 <p>在有限图上，演化区分系统的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
 

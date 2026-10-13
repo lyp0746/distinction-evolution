@@ -31,15 +31,12 @@ CSS_DIR = os.path.join(HERE, "assets", "css")
 OUTPUT = os.path.join(HERE, "output")
 DATA_DIR = os.path.join(HERE, "data")
 
-FRONT = [("硬核先行：三个可独立验证的定理", "front_hardcore.html", "hardcore"),
-         ("本次新增了什么", "front_whatsnew.html", "whatsnew"),
-         ("执行摘要", "front_executive_summary.html", "execsummary"),
-         ("前言　为什么把“统一”降级为“纲领”", "front_preface.html", "preface"),
+FRONT = [("先读这一页　三个可复算的定理", "front_hardcore.html", "hardcore"),
+         ("前言　为什么把“统一”降级为“可检验的操作”", "front_preface.html", "preface"),
          ("十分钟读懂本书", "front_quickstart.html", "quickstart"),
          ("阅读地图　一份给读者的路线图", "front_theorymap.html", "theorymap"),
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
 BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
-        ("后记　方法论的自我限定与伦理立场", "back_postscript.html", "postscript"),
         ("附录 A　定理 1.1–1.5 的完整证明与数值验证", "appendix_a_math.html", "apxA"),
         ("附录 B　十五领域编码总表", "appendix_b_map.html", "apxB"),
         ("附录 C　参考文献", "appendix_c_references.html", "apxC"),
@@ -49,7 +46,8 @@ BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("附录 G　研究纲领与可复现工具包", "appendix_g_toolkit.html", "apxG"),
         ("附录 H　形式化路线图：从 sorry 到编译", "appendix_h_formalization.html", "apxH"),
         ("附录 I　工程验证记录：可运行的实验与失败", "appendix_i_engineering.html", "apxI"),
-        ("附录 J　硬核扩展：加权、有向与离散曲率（含证明）", "appendix_j_hardcore.html", "apxJ")]
+        ("附录 J　硬核扩展：加权、有向与离散曲率（含证明）", "appendix_j_hardcore.html", "apxJ"),
+        ("附录 K　登记但未展开的猜想：计算与学习", "appendix_k_conjectures.html", "apxK")]
 
 
 def load_json(p, default=None):

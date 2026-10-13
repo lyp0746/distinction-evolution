@@ -9,7 +9,7 @@
 
 <p>要避免一个常见的误读：编码表不是"这些领域本质上是一个东西"的证明。它证明的是更强也更弱的事：<b>存在一套词汇，可以同时描述它们。</b>这比"它们本质上相同"弱得多，但比"它们毫无关系"强得多。</p>
 
-<p>判断编码表是否有价值，回到第 6 章的四判据：压缩比（P1）、统一度（P2）、问题解决力（P3）、可迁移性（P4）。本章在 P1/P2 上给出证据，P3 只在图论上通过。</p>
+<p>判断编码表是否有价值，回到第 2 章的四判据：压缩比（P1）、统一度（P2）、问题解决力（P3）、可迁移性（P4）。本章在 P1/P2 上给出证据，P3 只在图论上通过。</p>
 
 <h3>19.2　静态领域：线性、拓扑、度量、序、逻辑</h3>
 
@@ -18,17 +18,17 @@
 <table class="nat">
 <caption class="cap"><b>表 19.1　静态领域的 EDS 编码</b></caption>
 <tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">κ</th><th class="l">严格度</th></tr>
-<tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">0</td><td class="l">B／乙</td></tr>
-<tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构表示</td><td class="l">0</td><td class="l">B／乙</td></tr>
-<tr><td class="l">调和分析</td><td class="l">特征标</td><td class="l">傅里叶系数</td><td class="l">同谱类</td><td class="l">0</td><td class="l">B／乙</td></tr>
-<tr><td class="l">点集拓扑</td><td class="l">开集／邻域</td><td class="l">连续函数</td><td class="l">同胚局部</td><td class="l">负</td><td class="l">B／乙</td></tr>
-<tr><td class="l">代数拓扑</td><td class="l">单纯形</td><td class="l">同调类</td><td class="l">同伦</td><td class="l">负</td><td class="l">B／乙</td></tr>
-<tr><td class="l">测度论</td><td class="l">可测区分</td><td class="l">测度</td><td class="l">几乎处处</td><td class="l">正</td><td class="l">B／乙</td></tr>
-<tr><td class="l">组合数学</td><td class="l">子结构</td><td class="l">计数</td><td class="l">等价结构</td><td class="l">正</td><td class="l">B／乙</td></tr>
-<tr><td class="l">数论</td><td class="l">因子分解</td><td class="l">可整除性</td><td class="l">同余</td><td class="l">正</td><td class="l">C／丙</td></tr>
-<tr><td class="l">数理逻辑</td><td class="l">可证公式</td><td class="l">真值</td><td class="l">可互推</td><td class="l">0</td><td class="l">B／乙</td></tr>
+<tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">0</td><td class="l">B</td></tr>
+<tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构表示</td><td class="l">0</td><td class="l">B</td></tr>
+<tr><td class="l">调和分析</td><td class="l">特征标</td><td class="l">傅里叶系数</td><td class="l">同谱类</td><td class="l">0</td><td class="l">B</td></tr>
+<tr><td class="l">点集拓扑</td><td class="l">开集／邻域</td><td class="l">连续函数</td><td class="l">同胚局部</td><td class="l">负</td><td class="l">B</td></tr>
+<tr><td class="l">代数拓扑</td><td class="l">单纯形</td><td class="l">同调类</td><td class="l">同伦</td><td class="l">负</td><td class="l">B</td></tr>
+<tr><td class="l">测度论</td><td class="l">可测区分</td><td class="l">测度</td><td class="l">几乎处处</td><td class="l">正</td><td class="l">B</td></tr>
+<tr><td class="l">组合数学</td><td class="l">子结构</td><td class="l">计数</td><td class="l">等价结构</td><td class="l">正</td><td class="l">B</td></tr>
+<tr><td class="l">数论</td><td class="l">因子分解</td><td class="l">可整除性</td><td class="l">同余</td><td class="l">正</td><td class="l">C</td></tr>
+<tr><td class="l">数理逻辑</td><td class="l">可证公式</td><td class="l">真值</td><td class="l">可互推</td><td class="l">0</td><td class="l">B</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>静态领域编码表。<b>严格度列：</b>B／乙 表示"可写出映射，但未证明保持全部结构"；C／丙 表示"仅方向性"。注意：本表只有图论（下一节）达到 A。</div>
+<div class="datasrc"><b>性质：</b>静态领域编码表。<b>严格度列：</b>B 表示"可写出映射，但未证明保持全部结构"；C 表示"仅方向性"。注意：本表只有图论（下一节）达到 A。</div>
 
 <h3>19.3　动态领域：微分方程、动力系统、概率、量子</h3>
 
@@ -37,16 +37,16 @@
 <table class="nat">
 <caption class="cap"><b>表 19.2　动态领域的 EDS 编码</b></caption>
 <tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">演化流 Φ</th><th class="l">κ</th><th class="l">严格度</th></tr>
-<tr><td class="l">微分方程</td><td class="l">解的水平集</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">L 的特征增长率</td><td class="l">B／乙</td></tr>
-<tr><td class="l">动力系统</td><td class="l">轨道区分</td><td class="l">迭代／流</td><td class="l">Lyapunov 指数</td><td class="l">B／乙</td></tr>
-<tr><td class="l">概率论</td><td class="l">条件区分</td><td class="l">条件期望</td><td class="l">信息率</td><td class="l">B／乙</td></tr>
-<tr><td class="l">信息论</td><td class="l">信息分割</td><td class="l">Boltzmann 分布</td><td class="l">−β</td><td class="l">B／乙</td></tr>
-<tr><td class="l">算子代数</td><td class="l">投影</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">模谱</td><td class="l">C／丙</td></tr>
-<tr><td class="l">量子数学</td><td class="l">POVM</td><td class="l">薛定谔算子</td><td class="l">纠缠熵增长</td><td class="l">C／丙</td></tr>
-<tr><td class="l">博弈论</td><td class="l">策略区分</td><td class="l">策略更新</td><td class="l">收益梯度</td><td class="l">C／丙</td></tr>
-<tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l"><span class="s">e^{(−αI+βL)t}</span></td><td class="l"><span class="s">βλ<sub>k</sub>−α</span></td><td class="l"><b>A／甲</b></td></tr>
+<tr><td class="l">微分方程</td><td class="l">解的水平集</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">L 的特征增长率</td><td class="l">B</td></tr>
+<tr><td class="l">动力系统</td><td class="l">轨道区分</td><td class="l">迭代／流</td><td class="l">Lyapunov 指数</td><td class="l">B</td></tr>
+<tr><td class="l">概率论</td><td class="l">条件区分</td><td class="l">条件期望</td><td class="l">信息率</td><td class="l">B</td></tr>
+<tr><td class="l">信息论</td><td class="l">信息分割</td><td class="l">Boltzmann 分布</td><td class="l">−β</td><td class="l">B</td></tr>
+<tr><td class="l">算子代数</td><td class="l">投影</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">模谱</td><td class="l">C</td></tr>
+<tr><td class="l">量子数学</td><td class="l">POVM</td><td class="l">薛定谔算子</td><td class="l">纠缠熵增长</td><td class="l">C</td></tr>
+<tr><td class="l">博弈论</td><td class="l">策略区分</td><td class="l">策略更新</td><td class="l">收益梯度</td><td class="l">C</td></tr>
+<tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l"><span class="s">e^{(−αI+βL)t}</span></td><td class="l"><span class="s">βλ<sub>k</sub>−α</span></td><td class="l"><b>A</b></td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>动态领域编码表。<b>只有最后一行（图论）达到 A／甲</b>，它是第四部分的硬核。</div>
+<div class="datasrc"><b>性质：</b>动态领域编码表。<b>只有最后一行（图论）达到 A</b>，它是第四部分的硬核。</div>
 
 <h3>19.4　统一图景</h3>
 
@@ -65,7 +65,7 @@
 </ul>
 
 <div class="warning"><span class="bt">警告 19.1　P3 是唯一硬门槛</span>
-如果本书只提供编码表，它就是一种新的记号系统，价值有限。<b>本书的价值来自第四部分的 P3（图论硬核）与第五部分的 P3 尝试（1/3 缺口）。</b>读者应当这样评价本书：不是看它编码了多少领域，而是看它是否产生了原领域难以表达的新命题。目前答案：图论是（第 1—4 章），其余否。</div>
+如果本书只提供编码表，它就是一种新的记号系统，价值有限。<b>本书的价值来自第四部分的 P3（图论硬核）与第五部分的 P3 尝试（1/3 缺口）。</b>读者应当这样评价本书：不是看它编码了多少领域，而是看它是否产生了原领域难以表达的新命题。目前答案：图论是（第 12—15 章），其余否。</div>
 
 <h4>19.5.1　一个可复算的反省：编码矩阵真的多维吗</h4>
 

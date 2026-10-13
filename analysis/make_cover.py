@@ -56,10 +56,10 @@ text{{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}}
 <text x="80" y="176" class="eng">THE EVOLUTION OF DISTINCTION</text>
 <text x="80" y="300" class="ttl">区分的演化</text>
 <line x1="84" y1="344" x2="660" y2="344" class="rule"/>
-<text x="84" y="396" class="sub">从图论硬核到统一纲领：公理框架、可复现结果与限度宣言</text>
-<text x="84" y="440" class="sub">从生成拓扑到分离曲率</text>
+<text x="84" y="396" class="sub">统一值不值：一套压缩方法、一个可复算的硬核、一堵没绕开的墙</text>
+<text x="84" y="440" class="sub">从压缩方法到分离曲率</text>
 <text x="80" y="1180" class="au">李毅芃　著</text>
-<text x="80" y="1232" class="eng">The Evolution of Distinction: From a Graph-Theoretic Hard Core to a Program for Unification</text>
+<text x="80" y="1232" class="eng">Is Unification Worth It? A Compression Method, a Hard Core, and a Wall Left Standing</text>
 <text x="80" y="1274" class="eng">数学理论专著 · 2026</text>
 </svg>
 '''

@@ -1,6 +1,6 @@
 <h1 class="chapter">附录 J　硬核扩展：加权、有向与离散曲率（含证明）</h1>
 
-<p class="lead">本附录汇总本版新增的硬核结果，给出完整证明与数值。它们是"硬核先行"策略的兑现：在扩展框架之前，先让定理存在。四个结果——对称加权不可反转（定理 B1）、有向图反转反例（B2）、离散分离曲率恒等式（C）、高维缺口猜想的证伪——全部可复算。</p>
+<p class="lead">本附录汇总硬核扩展的结果，给出完整证明与数值。它们是硬核扩展的一次兑现：在扩展框架之前，先让定理存在。四个结果——对称加权不可反转（定理 B1）、有向图反转反例（B2）、离散分离曲率恒等式（C）、高维缺口猜想的证伪——全部可复算。</p>
 
 <h2>J.1　统一的数学内核</h2>
 
@@ -15,12 +15,12 @@
 
 <h2>J.2　定理 B1：对称加权不可反转</h2>
 
-<div class="define"><span class="bt">定理 J.1 ［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 J.1 ［定理，A］</span>
 设 <span class="s">G</span> 连通，边权 <span class="s">w<sub>uv</sub>&gt;0</span> 对称。加权拉普拉斯 <span class="s">L<sub>w</sub></span> 满足：
 <div class="eq"><span class="body">x<sup>T</sup>L<sub>w</sub>x = Σ<sub>{u,v}∈E</sub> w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)² ≥ 0</span></div>
 故 <span class="s">L<sub>w</sub></span> 实对称半正定，谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>。于是 <span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立。</div>
 
-<p><b>证明。</b>对称性、半正定性、谱定理均如第 2.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
+<p><b>证明。</b>对称性、半正定性、谱定理均如第 13.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
 
 <table class="nat">
 <caption class="cap"><b>表 J.1　对称加权扫描（400 个随机加权连通图，α=1）</b></caption>
@@ -58,14 +58,14 @@
 <p><b>这就是顺序反转：全局先于局部。</b>根因是生成元的<b>非正规性</b>——对称情形下谱定理把"大特征值"与"高振荡"捆绑，非对称情形下这个捆绑断裂。［A］</p>
 
 <div class="warning"><span class="bt">反例划出的边界</span>
-定理 1.1 的"局部先于全局"：
+定理 12.1 的"局部先于全局"：
 <b>（i）</b>在任意对称加权下稳健（J.2）；
 <b>（ii）</b>在有向耦合下失效（J.3）。
 这条边界是本书框架的第一条<b>明确适用边界</b>——它比任何正面例子都更有信息量。</div>
 
 <h2>J.4　定理 C：离散分离曲率的完整推导</h2>
 
-<div class="define"><span class="bt">定理 J.2 ［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 J.2 ［定理，A］</span>
 设 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>，<span class="s">S(t)=−tr(ρ log ρ)</span>。则 <span class="s">κ_info(G):=−(1/2)S″(0⁺)=Var(λ)/2</span>。</div>
 
 <p><b>证明。</b><span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，故
@@ -111,10 +111,10 @@
 
 <p>“局部先于全局”背后是一句需要精确化的话：“大特征值 = 高振荡”。本节把它写成 Rayleigh 判据，并报告两个候选判别的失败。</p>
 
-<div class="define"><span class="bt">定理 J.3（Rayleigh 判据）［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 J.3（Rayleigh 判据）［定理，A］</span>
 对对称拉普拉斯 <span class="s">L</span>，定义局部性 <span class="s">R(v)=v<sup>T</sup>Lv/v<sup>T</sup>v=Σ<sub>e</sub>(v<sub>u</sub>−v<sub>v</sub>)²/Σv²</span>。则 <span class="s">max<sub>v</sub>R(v)=λ<sub>n</sub></span>，且最大特征值模式最大化 <span class="s">R</span>。<b>故“最局部模式最先增长”对对称 L 是 Rayleigh 极小极大的直接推论。</b>数值：500/500。</div>
 
-<div class="define"><span class="bt">定理 J.4（对称—非对称分界）［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 J.4（对称—非对称分界）［定理，A］</span>
 实矩阵 <span class="s">L</span> 是正规矩阵且具有实谱，当且仅当 <span class="s">L</span> 对称。因此“由谱定理保证顺序保持”的精确分界线就是<b>对称性</b>：对称 ⇒ 顺序必保持；非对称 ⇒ 可能反转。</div>
 
 <div class="warning"><span class="bt">两个候选判别的失败（负面结果）</span>
@@ -125,11 +125,11 @@
 
 <h2>J.8　公理 5 的图论定理与一个生成性推论</h2>
 
-<div class="define"><span class="bt">定理 J.5（原子分解唯一性）［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 J.5（原子分解唯一性）［定理，A］</span>
 原子区分动作 = 谱投影 <span class="s">P<sub>k</sub></span>。则原子分解唯一 <span class="s">⟺</span> 谱为单谱（所有特征值互异）。
 计算：测试图中仅路径 <span class="s">P₈</span> 单谱；Petersen、K₅、K₄,₄、星图、环均退化。</div>
 
-<div class="define"><span class="bt">推论 J.1（乘积图的相变结构）［推论，A／甲］</span>
+<div class="define"><span class="bt">推论 J.1（乘积图的相变结构）［推论，A］</span>
 <span class="s">λ<sub>i</sub>(G□H)=λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>，故
 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。
 数值：Petersen<span class="s">□K₂</span> 得 <span class="s">(0.143,0.500)</span>，预测与直接对角化一致。</div>
@@ -147,4 +147,4 @@ python analysis/higher_dim_gap.py                 # 证伪 J.6
 python analysis/graph_phase_transition.py         # 定理 A（协议 V1）</pre>
 
 <div class="note"><b>本附录的意义</b>
-它把"硬核先行"从口号变成实物：<b>一个推广定理（B1）、一个反例（B2）、一个恒等式（C）、一个证伪（J.6）。</b>其中两个是正面结果，两个是负面结果——而负面结果同样有价值，因为它们划出了理论的边界。这正是本书承诺的"记录失败"的具体兑现。</div>
+它把"先兑现"从口号变成实物：<b>一个推广定理（B1）、一个反例（B2）、一个恒等式（C）、一个证伪（J.6）。</b>其中两个是正面结果，两个是负面结果——而负面结果同样有价值，因为它们划出了理论的边界。这正是本书承诺的"记录失败"的具体兑现。</div>

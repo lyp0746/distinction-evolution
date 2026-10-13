@@ -122,7 +122,9 @@ cgrade = []
 for c in CHAPTERS:
     if c not in texts:
         continue
-    for m in re.finditer(r"[^。；\n]{0,40}(质量等级[：:]\s*C|指示性|质量 C|示意)[^。；\n]{0,40}", texts[c]):
+    for m in re.finditer(
+            r"［[^］]{0,20}，\s*C[^］]{0,6}］|（C\s*级）|质量等级[：:]\s*C|指示性|质量 C",
+            texts[c]):
         cgrade.append({"chapter": c, "snippet": m.group(0).strip()[:90]})
 R["A4_c_grade"] = cgrade
 
@@ -208,6 +210,31 @@ for c in CHAPTERS:
                                "snippet": texts[c][s:m.end() + 22].strip()})
 R["A9_debug_strings"] = debug_hits
 
+# ------------------------------------------------ A10 面向读者的版本字样（应为空）
+# skill 非协商规则：reader-facing 文本不得含版本号 / 版本对比 / 变更日志。
+ALL_SRC = sorted(f for f in os.listdir(CONTENT) if f.endswith(".html"))
+VER_PAT = re.compile(r"上一版|本版|版本对比|本次新增|第[一二三四五六七八九十]+版|v\d+\.\d+")
+ver_hits = []
+for fn in ALL_SRC:
+    with open(os.path.join(CONTENT, fn), encoding="utf-8") as f:
+        t = f.read()
+    for m in VER_PAT.finditer(t):
+        s = max(0, m.start() - 18)
+        ver_hits.append({"file": fn, "snippet": t[s:m.end() + 18].strip()})
+R["A10_version_labels"] = ver_hits
+
+# ------------------------------------------------ A11 宿命词（仅允许出现在定理/交易句）
+FATE_PAT = re.compile(r"必然|不可避免|无法消除|注定|死路")
+fate_hits = []
+for c in CHAPTERS:
+    if c not in texts:
+        continue
+    for m in FATE_PAT.finditer(texts[c]):
+        s = max(0, m.start() - 24)
+        ctx = texts[c][s:m.end() + 24]
+        fate_hits.append({"chapter": c, "word": m.group(0), "snippet": ctx.strip()})
+R["A11_fatalism"] = fate_hits
+
 os.makedirs(OUT, exist_ok=True)
 with open(os.path.join(OUT, "audit.json"), "w", encoding="utf-8") as f:
     json.dump(R, f, ensure_ascii=False, indent=2)
@@ -270,6 +297,16 @@ L.append(f"缺少 body/num 的公式块：{R['A8_eq_malformed'] or '无'}")
 L.append("\n## 表 A9　内部／调试字串扫描\n")
 L.append(f"检出的内部或调试字串（应为空）：{R['A9_debug_strings'] or '无'}")
 
+L.append("\n## 表 A10　面向读者的版本字样（应为空）\n")
+L.append(f"检出 {len(R['A10_version_labels'])} 处。")
+for d in R["A10_version_labels"][:20]:
+    L.append(f"- `{d['file']}`：{d['snippet']}")
+
+L.append("\n## 表 A11　宿命词扫描（应仅出现在定理或交易句）\n")
+L.append(f"检出 {len(R['A11_fatalism'])} 处。")
+for d in R["A11_fatalism"][:20]:
+    L.append(f"- `{d['chapter']}`：{d['snippet']}")
+
 with open(os.path.join(BOOK, "校对清单.md"), "w", encoding="utf-8") as f:
     f.write("\n".join(L))
 
@@ -286,4 +323,6 @@ print("引用未列文献：", R["A6_cited_not_defined"])
 print("缺失插图文件：", R["A7_images_missing"])
 print("异常公式块：", R["A8_eq_malformed"])
 print("内部／调试字串：", R["A9_debug_strings"])
+print("版本字样（应为空）：", R["A10_version_labels"])
+print("宿命词（应仅为定理/交易）：", len(R["A11_fatalism"]), "处")
 print("wrote 校对清单.md")

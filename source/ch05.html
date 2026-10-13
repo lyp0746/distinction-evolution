@@ -1,41 +1,41 @@
-<h2 class="chapter">第 13 章　从区分生成空间：生成拓扑与可测区分</h2>
+<h2 class="chapter">第 5 章　从区分生成空间：生成拓扑与可测区分</h2>
 
 <p class="lead">本章演示方法的第二步：<b>把"空间"当作导出概念，而不是预设公理。</b>传统拓扑学从开集公理出发，传统测度论从 σ-代数公理出发。本章展示，如果从更原始的"区分动作"出发，开集与可测集可以被<b>生成</b>出来，而不是被假设。这是本书全部框架的原始动作。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
 开集公理与 σ-代数公理不是必需的第一原理。从一个"区分动作"与一个"精度阈值"出发，可以生成一个拓扑结构或一个可测结构，经典公理成为生成规则的推论。<b>本案例通过了 P1/P2，并在 P3 上给出可检验的重述（如连通=区分不可切割），但尚未证明新定理。</b></div>
 
-<h3>13.1　导论：拆掉开集公理</h3>
+<h3>5.1　导论：拆掉开集公理</h3>
 
 <p>点集拓扑被公认为最难教的数学课程之一：它把距离、大小、形状、方向全部抽走，只剩下一族满足三条公理的"开集"。学生学完后常常问：这些公理为什么长这样？为什么并封闭是任意的、交封闭是有限的？教材的标准回答是"因为它能导出我们想要的结论"——这是一个圆滑但空洞的回答。</p>
 
 <p>生成拓扑的做法是把这个回答变成操作：<b>不预设开集，只预设"什么被区分出来"。</b>开集成为区分动作的稳定区域，公理成为生成规则的自动产物。</p>
 
-<h3>13.2　生成拓扑：P[x]=w/θ</h3>
+<h3>5.2　生成拓扑：P[x]=w/θ</h3>
 
 <p>最简版本由 Mazin 提出（生成拓扑学），其核心是一个比值：</p>
 
-<div class="define"><span class="bt">定义 13.1　本体论内容（生成拓扑）［已知，B］</span>
+<div class="define"><span class="bt">定义 5.1　本体论内容（生成拓扑）［已知，B］</span>
 设 <span class="s">x</span> 是候选对象，<span class="s">w(x)≥0</span> 是它的区分权重，<span class="s">θ>0</span> 是阈值。定义<b>本体论内容</b>
 <div class="eq"><span class="body">P[x] = w(x) / θ</span></div>
 则 <span class="s">P[x]>1</span> 称 <span class="s">x</span> 属于<b>内部</b>，<span class="s">P[x]=1</span> 称 <span class="s">x</span> 处于<b>边界</b>，<span class="s">P[x]<1</span> 称 <span class="s">x</span> 属于<b>外部</b>。</div>
 
 <img class="fig" src="assets/svg/fig05-generative-topology.svg" alt="生成拓扑的三区域结构">
 
-<div class="cap"><b>图 13.1　生成拓扑的三区域</b>。一个比值把对象空间分成内部（稳定可区分）、边界（临界）与外部（未区分）。开集、闭集、边界这些概念由此生成。选择不同的遍历规则 <span class="s">R</span>、权重 <span class="s">w</span> 与阈值 <span class="s">θ</span>，可以得到度量拓扑、Alexandrov 拓扑、Zariski 拓扑等经典理论。</div>
+<div class="cap"><b>图 5.1　生成拓扑的三区域</b>。一个比值把对象空间分成内部（稳定可区分）、边界（临界）与外部（未区分）。开集、闭集、边界这些概念由此生成。选择不同的遍历规则 <span class="s">R</span>、权重 <span class="s">w</span> 与阈值 <span class="s">θ</span>，可以得到度量拓扑、Alexandrov 拓扑、Zariski 拓扑等经典理论。</div>
 
 <img class="fig" src="assets/svg/fig05b-reconstruction-topology.svg" alt="生成拓扑的重建对比">
 
-<div class="cap"><b>图 13.2　生成拓扑的重建前后对比</b>。左侧为传统拓扑的独立概念（开集、闭集、邻域、连续…）；右侧为生成视角下它们共同的来源——区分动作与阈值。<b>注意底部：P3（新定理）仍待检验。</b>这正是第 6 章警告 6.1 的具体体现。</div>
+<div class="cap"><b>图 5.2　生成拓扑的重建前后对比</b>。左侧为传统拓扑的独立概念（开集、闭集、邻域、连续…）；右侧为生成视角下它们共同的来源——区分动作与阈值。<b>注意底部：P3（新定理）仍待检验。</b>这正是第 2 章警告 2.1 的具体体现。</div>
 
 <p>这个构造的要点在于：<b>它把"开集"从公理降级为导出概念。</b>内部区域自动满足开集的性质，因为"稳定可区分"对并封闭、对有限交封闭，这些不再需要假设，而是从权重的比较中推出来。［已知］</p>
 
-<h3>13.3　三元素集合上的区分结构</h3>
+<h3>5.3　三元素集合上的区分结构</h3>
 
 <p>为了看清机制，考虑最朴素的例子：<span class="s">X={a,b,c}</span>。给每个点一个区分动作 <span class="s">D: X → {1, *, 0}</span>，其中 <span class="s">1</span> 表示稳定区分，<span class="s">*</span> 表示临界，<span class="s">0</span> 表示未区分。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 13.1　三种区分方案生成的拓扑</b></caption>
+<caption class="cap"><b>表 5.1　三种区分方案生成的拓扑</b></caption>
 <tr><th class="l">区分方案</th><th class="l">(D(a),D(b),D(c))</th><th class="l">生成的开集</th><th class="l">性质</th></tr>
 <tr><td class="l">方案 1</td><td class="l">(1,1,1)</td><td class="l">∅,{a},{b},{c},{a,b},{a,c},{b,c},X</td><td class="l">离散拓扑（Hausdorff）</td></tr>
 <tr><td class="l">方案 2</td><td class="l">(1,*,0)</td><td class="l">∅,{a},{a,b},X</td><td class="l">非 Hausdorff：b,c 不可分离</td></tr>
@@ -43,12 +43,12 @@
 </table>
 <div class="datasrc"><b>性质：</b>离散实例。等级 A（可直接验证）。<b>关键：</b>同一个集合上不同的区分动作生成不同的拓扑——拓扑是区分动作的自动产物，不是硬塞的公理。</div>
 
-<h3>13.4　连续、紧致、连通的区分重述</h3>
+<h3>5.4　连续、紧致、连通的区分重述</h3>
 
 <p>生成视角的真正价值，是把经典概念重述为可操作的区分条件。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 13.2　拓扑概念的区分重述</b></caption>
+<caption class="cap"><b>表 5.2　拓扑概念的区分重述</b></caption>
 <tr><th class="l">传统定义</th><th class="l">区分重述</th></tr>
 <tr><td class="l">连续：开集的原像是开集</td><td class="l">连续 = 保持区分结构（若 <span class="s">D<sub>X</sub>(x)=1</span>，则 <span class="s">D<sub>Y</sub>(f(x))=1</span>）</td></tr>
 <tr><td class="l">紧致：任何开覆盖有有限子覆盖</td><td class="l">紧致 = 任何区分衰减序列在有限步到达稳定区分点</td></tr>
@@ -59,31 +59,31 @@
 
 <p>这些重述的吸引力在于它们<b>可直觉化、可计算</b>。紧致性不再是"任意开覆盖"，而是"你无法无限地越来越模糊下去而不碰到一个被稳定识别出来的东西"。连通性不再是抽象的"两个非空开集"，而是"区分动作切不开它"。</p>
 
-<h3>13.5　可测区分与 σ-代数的生成</h3>
+<h3>5.5　可测区分与 σ-代数的生成</h3>
 
 <p>同一个动作可以用在测度论上。拆掉 σ-代数公理，只预设一个"可测区分" <span class="s">D: X → {0,1,*}</span>：<span class="s">1</span> 表示稳定识别为"可测"，<span class="s">0</span> 表示落在不可测背景，<span class="s">*</span> 表示临界（零测集候选）。</p>
 
-<div class="define"><span class="bt">定义 13.2　可测集（区分生成版）</span>
+<div class="define"><span class="bt">定义 5.2　可测集（区分生成版）</span>
 集合 <span class="s">A⊆X</span> 是<b>可测的</b>，当且仅当 <span class="s">A</span> 中每一点的区分状态不依赖于 <span class="s">A</span> 之外的任何点。这个条件自动迫使可测集族对补集封闭（若 <span class="s">A</span> 的可测性不依赖外部，则 <span class="s">A<sup>c</sup></span> 也不依赖），并对可数并封闭（外部已被每个 <span class="s">A<sub>n</sub></span> 排除干净）。</div>
 
 <p>因此，σ-代数公理不再是公理，而是"可测区分"这个动作的自动产物。类似地，可测函数 <span class="s">f</span> 可被重述为"保持区分结构"的函数，勒贝格积分可被重述为"区分动作的加权读数"。［论证］</p>
 
-<div class="warning"><span class="bt">警告 13.1　"自动"需要小心</span>
-"补集封闭与可数并封闭自动成立"这句话的严格版本需要一个技术前提：区分状态对可数并的稳定性。这个前提在朴素形式下成立，但在病态集合上可能失效（例如需要依赖选择公理的 Vitali 集）。因此本节的结论是<b>生成直觉</b>（B／乙），不是"σ-代数公理可以删除"的定理（那需要更仔细的基础工作）。</div>
+<div class="warning"><span class="bt">警告 5.1　"自动"需要小心</span>
+"补集封闭与可数并封闭自动成立"这句话的严格版本需要一个技术前提：区分状态对可数并的稳定性。这个前提在朴素形式下成立，但在病态集合上可能失效（例如需要依赖选择公理的 Vitali 集）。因此本节的结论是<b>生成直觉</b>（B），不是"σ-代数公理可以删除"的定理（那需要更仔细的基础工作）。</div>
 
-<h3>13.6　有效性检验与边界</h3>
+<h3>5.6　有效性检验与边界</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 13.3　生成拓扑／可测区分的四判据评分</b></caption>
+<caption class="cap"><b>表 5.3　生成拓扑／可测区分的四判据评分</b></caption>
 <tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
 <tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">开集公理、σ-代数公理被一个区分动作取代</td></tr>
 <tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">度量拓扑、序拓扑、Zariski 拓扑、Borel 结构被同一机制覆盖</td></tr>
 <tr><td class="l">P3 问题解决力</td><td class="l">待检验</td><td class="l">尚未用此框架证明经典拓扑无法证明的新定理</td></tr>
-<tr><td class="l">P4 可迁移性</td><td class="l">部分通过</td><td class="l">与序列收敛生成拓扑、超有限测度有自然联系（第 14 章）</td></tr>
+<tr><td class="l">P4 可迁移性</td><td class="l">部分通过</td><td class="l">与序列收敛生成拓扑、超有限测度有自然联系（第 6 章）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>方法论评分。等级 B（作者的判断）。<b>边界：</b>P3 未通过，故本案例是"方法论成功、问题解决力待验证"的典型，与第 6 章的警告 6.1 一致。</div>
+<div class="datasrc"><b>性质：</b>方法论评分。等级 B（作者的判断）。<b>边界：</b>P3 未通过，故本案例是"方法论成功、问题解决力待验证"的典型，与第 2 章的警告 2.1 一致。</div>
 
-<h3>13.7　本章小结</h3>
+<h3>5.7　本章小结</h3>
 
 <p>生成拓扑与可测区分展示了本书的原始动作：<b>不预设空间结构，从区分行为反向生成空间。</b>这个动作在压缩比与统一度上成功，在问题解决力上尚待检验。它也是本书框架的起点——第 8 章把"区分动作"正式定义为演化区分系统的第一个分量。下一章引入关键的降级工具：非标准分析。</p>
 

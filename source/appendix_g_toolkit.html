@@ -4,7 +4,7 @@
 
 <h2>G.1　压缩操作法清单（可直接使用）</h2>
 
-<p>把第 6 章的五步操作法写成可勾选的清单。用于评估任何"统一尝试"。</p>
+<p>把第 2 章的五步操作法写成可勾选的清单。用于评估任何"统一尝试"。</p>
 
 <div class="scenario"><span class="bt">压缩操作清单</span>
 <b>步骤 1　识别冗余：</b>用五个判据（同构证明骨架、重复定义模式、平行语言、条件性技术堆叠、特例枚举）列出目标领域的重复层次。<br>
@@ -22,7 +22,7 @@
 
 <p>脚本将计算 Petersen 图、C₁₀、K₅、K₄,₄、Q₅ 的谱与临界耦合，做数值演化，验证斜率预测，并输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。</p>
 
-<p><b>推广。</b>定理 1.1 的推广方向：</p>
+<p><b>推广。</b>定理 12.1 的推广方向：</p>
 
 <ul>
 <li><b>有向图：</b>拉普拉斯非对称，需用 Perron–Frobenius 与奇异值分解。</li>
@@ -36,7 +36,7 @@
 <table class="nat">
 <caption class="cap"><b>表 G.1　按 P3 排序的任务表</b></caption>
 <tr><th class="l">优先级</th><th class="l">任务</th><th class="l">所需工具</th><th class="l">预期产出</th></tr>
-<tr><td class="l">1</td><td class="l">Lean 4 形式化定理 1.1</td><td class="l">Lean 4 + Mathlib</td><td class="l">机器验证的相变定理</td></tr>
+<tr><td class="l">1</td><td class="l">Lean 4 形式化定理 12.1</td><td class="l">Lean 4 + Mathlib</td><td class="l">机器验证的相变定理</td></tr>
 <tr><td class="l">2</td><td class="l">四维缺口因子计算（G4）</td><td class="l">符号计算（SageMath）</td><td class="l">检验 <span class="s">f(n)=1/(2n+1)</span></td></tr>
 <tr><td class="l">3</td><td class="l">公开训练数据的激活阈值分析（A1/A2）</td><td class="l">PyTorch + 公开检查点</td><td class="l">区分机器学习的第一个经验结果</td></tr>
 <tr><td class="l">4</td><td class="l">分离曲率定义的统一（F1）</td><td class="l">泛函分析 + 谱理论</td><td class="l">框架从语言升级为理论</td></tr>
@@ -63,7 +63,7 @@
 <h2>G.5　给接手者的三条建议</h2>
 
 <ol>
-<li><b>先复现，再推广。</b>在尝试推广定理 1.1 之前，先运行协议 V1，确认你得到的数字与本书一致。若不一致，先弄清是谁错了。</li>
+<li><b>先复现，再推广。</b>在尝试推广定理 12.1 之前，先运行协议 V1，确认你得到的数字与本书一致。若不一致，先弄清是谁错了。</li>
 <li><b>先攻击缺口，再增加内容。</b>本书最大的价值在 <span class="s">1/3</span> 缺口。解决它（或推翻它）比再编码十个领域更有意义。</li>
 <li><b>保持分级纪律。</b>若你产生了新结果，请同时标注它的证据等级与证伪条件，并追加到附录 E 的登记簿。一个只增加内容、不增加可证伪性的纲领，会迅速退化为口号。</li>
 </ol>
