@@ -57,9 +57,9 @@
 
 <p><b>加权图。</b>给边赋电导 <span class="s">w<sub>uv</sub>&gt;0</span>，用加权拉普拉斯 <span class="s">(L<sub>w</sub>D)<sub>v</sub>=(1/m<sub>v</sub>)Σ<sub>u∼v</sub>w<sub>uv</sub>(D<sub>u</sub>−D<sub>v</sub>)</span>。定理 15.1 照常成立，只需用 <span class="s">L<sub>w</sub></span> 的谱。例：环 <span class="s">C₄</span> 若把 <span class="s">w₁₂=w₃₄=10</span>，<span class="s">w₂₃=w₄₁=1</span>，则谱变为 <span class="s">{0, 2, 12, 20}</span>，<span class="s">β₁=0.05</span>，<span class="s">β₂=0.5</span>。<b>加权降低了局部阈值，却几乎不影响全局阈值。</b></p>
 
-<p><b>时变图。</b>若图在有限个图 <span class="s">G₁,…,G<sub>m</sub></span> 间切换，<span class="s">Ḋ=(−αI+βL<sub>σ(t)</sub>)D</span>。稳定性由是否存在公共李雅普诺夫函数决定：若存在正定 <span class="s">P</span> 使所有 <span class="s">k</span> 满足 <span class="s">(−αI+βL<sub>k</sub>)<sup>T</sup>P+P(−αI+βL<sub>k</sub>)≺0</span>，则 <span class="s">D→0</span> 对所有切换成立。<b>切换系统比单个系统更易失稳——这是一个可检验的预言。</b>［论证，B］</p>
+<p><b>时变图。</b>若图在有限个图 <span class="s">G₁,…,G<sub>m</sub></span> 间切换，<span class="s">Ḋ=(−αI+βL<sub>σ(t)</sub>)D</span>。稳定性由是否存在公共李雅普诺夫函数决定：若存在正定 <span class="s">P</span> 使所有 <span class="s">k</span> 满足 <span class="s">(−αI+βL<sub>k</sub>)<sup>T</sup>P+P(−αI+βL<sub>k</sub>)≺0</span>，则 <span class="s">D→0</span> 对所有切换成立。<b>切换系统比单个系统更易失稳——这是一个可检验的预言。</b>［论证，B／乙］</p>
 
-<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎必然）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B］</p>
+<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎必然）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B／乙］</p>
 
 <h3>17.7　数值验证协议与结果</h3>
 
@@ -83,7 +83,7 @@
 <tr><td class="l">Petersen</td><td class="l">0.60</td><td class="l">全局增长</td><td class="l">μ<sub>n</sub>=+2.00；μ<sub>2</sub>=+0.20</td></tr>
 <tr><td class="l">C<sub>10</sub></td><td class="l">1.00</td><td class="l">局部增长</td><td class="l">μ<sub>n</sub>=+3.00；Fiedler 衰减</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可复现预测。等级 A。<b>注意：</b>表中"预期主导速率"可由 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 手算，脚本验证其与数值积分一致。</div>
+<div class="datasrc"><b>性质：</b>可复现预测。等级 A／甲。<b>注意：</b>表中"预期主导速率"可由 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 手算，脚本验证其与数值积分一致。</div>
 
 <div class="note"><b>复现方法</b>
 在仓库根目录运行 <code>python analysis/graph_phase_transition.py</code>。脚本会计算上述所有图的谱与临界耦合，做数值演化，把结果写入 <code>data/injected.json</code> 与 <code>analysis/results/</code>，并生成图 17.1、14.2。不需要任何特殊库，只需要 numpy 与 scipy。</div>

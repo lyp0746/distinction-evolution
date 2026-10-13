@@ -28,7 +28,7 @@
 <tr><td class="l">局部增长相</td><td class="l">α/λ<sub>n</sub> &lt; β &lt; α/λ<sub>2</sub></td><td class="l">高频（局部）模式</td><td class="l">局部区分生长，全局仍均匀</td></tr>
 <tr><td class="l">全局增长相</td><td class="l">β &gt; α/λ<sub>2</sub></td><td class="l">高频 + Fiedler 模式</td><td class="l">全局切割也开始生长</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>相图。等级 A（定理 15.1 的直接推论）。</div>
+<div class="datasrc"><b>性质：</b>相图。等级 A／甲（定理 15.1 的直接推论）。</div>
 
 <h3>16.3　中间相的存在性与宽度</h3>
 
@@ -46,7 +46,7 @@
 <tr><td class="l">环 C<sub>10</sub></td><td class="l">0.382</td><td class="l">4</td><td class="l">0.250</td><td class="l">2.618</td><td class="l">2.368</td></tr>
 <tr><td class="l">路径 P<sub>n</sub>（大 n）</td><td class="l">≈π²/n²</td><td class="l">≈4</td><td class="l">≈0.25</td><td class="l">≈n²/π²</td><td class="l">≈n²/π²</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>数值表（部分渐近）。等级 A（可由谱定理直接计算）。精确值见附录 A 与 <code>analysis/graph_phase_transition.py</code> 的输出。</div>
+<div class="datasrc"><b>性质：</b>数值表（部分渐近）。等级 A／甲（可由谱定理直接计算）。精确值见附录 A 与 <code>analysis/graph_phase_transition.py</code> 的输出。</div>
 
 <div class="scenario"><span class="bt">一个可检验的结构性预言</span>
 表 16.2 给出一个可检验预言：<b>在路径图这类"长而窄"的图上，中间相宽度随顶点数二次增长。</b>这意味着大图上"局部区分"与"全局区分"之间存在一个巨大的滞后区。这个预言来自纯谱论，可以被任何数值实验直接检验（第 17.7 节）。</div>
@@ -76,20 +76,20 @@
 <tr><td class="l">共识协议</td><td class="l">ẋ=−Lx</td><td class="l">λ<sub>2</sub></td><td class="l">收敛到共识</td></tr>
 <tr><td class="l">演化区分系统</td><td class="l">Ḋ=(−αI+βL)D</td><td class="l">βλ<sub>n</sub>−α</td><td class="l">三相位，含两阶段相变</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>对照表。等级 A（可直接由谱分析验证）。</div>
+<div class="datasrc"><b>性质：</b>对照表。等级 A／甲（可直接由谱分析验证）。</div>
 
 <h3>16.6　加权图：顺序为何不可反转</h3>
 
 <p>定理 15.1 是针对无权图的。一个自然的推广问题是：<b>如果给每条边赋一个正权重，相变顺序会不会改变？</b>直觉上，不均匀的权重可能让某个“全局”模式提前解锁。本节证明这种直觉是错的。</p>
 
-<div class="define"><span class="bt">定理 16.1　对称加权不可反转 ［定理，A］</span>
+<div class="define"><span class="bt">定理 16.1　对称加权不可反转 ［定理，A／甲］</span>
 设 <span class="s">G</span> 连通，每条边赋正权 <span class="s">w<sub>uv</sub>&gt;0</span>，加权拉普拉斯为 <span class="s">(L<sub>w</sub>)<sub>uv</sub>=−w<sub>uv</sub></span>（<span class="s">u≠v</span>），<span class="s">(L<sub>w</sub>)<sub>uu</sub>=Σ<sub>v</sub>w<sub>uv</sub></span>。则 <span class="s">L<sub>w</sub></span> 实对称半正定，谱满足 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>，故
 <div class="eq"><span class="body">β₁ = α/λ<sub>n</sub> ≤ α/λ₂ = β₂</span><span class="num">(13.4)</span></div>
 恒成立。</div>
 
 <p><b>证明。</b><span class="s">L<sub>w</sub></span> 对称性由 <span class="s">w<sub>uv</sub>=w<sub>vu</sub></span> 直接得。半正定性：对任意 <span class="s">x</span>，<span class="s">x<sup>T</sup>L<sub>w</sub>x=Σ<sub>{u,v}∈E</sub>w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)²≥0</span>。由谱定理，特征值实且可排序；连通性给 <span class="s">λ₂&gt;0</span>。于是 <span class="s">λ₂≤λ<sub>n</sub></span>，而 <span class="s">α&gt;0</span>，故 <span class="s">α/λ<sub>n</sub>≤α/λ₂</span>。<span class="s">∎</span></p>
 
-<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。［A］</p>
+<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。［A／甲］</p>
 
 <h3>16.7　有向图：反转的反例</h3>
 
@@ -98,12 +98,12 @@
 <div class="define"><span class="bt">定义 16.2　局部性的度量（总变差）</span>
 对特征向量 <span class="s">v</span> 与有向弧集 <span class="s">E</span>，定义 <span class="s">TV(v)=Σ<sub>(u,w)∈E</sub>|v<sub>u</sub>−v<sub>w</sub>| / (‖v‖·|E|)</span>。<span class="s">TV</span> 高 = 相邻顶点取值差异大 = 局部振荡；<span class="s">TV</span> 低 = 平滑 = 全局。</div>
 
-<div class="define"><span class="bt">反例 16.1　有向图上的顺序反转 ［反例，A］</span>
+<div class="define"><span class="bt">反例 16.1　有向图上的顺序反转 ［反例，A／甲］</span>
 6 顶点有向图，弧集
 <div class="eq"><span class="body">(0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2)</span><span class="num">(13.5)</span></div>
 则：首个增长模式 <span class="s">Re(λ)=2.0</span>，<span class="s">TV=0.25</span>（全局/平滑），临界 <span class="s">β=α/2</span>；较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），临界 <span class="s">β=α</span>。<b>全局模式先增长，局部模式后增长——顺序与对称情形相反。</b></div>
 
-<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>［A］</p>
+<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>［A／甲］</p>
 
 <div class="scenario"><span class="bt">这个反例的价值</span>
 它给出了一个明确的**适用边界**：定理 15.1 的“局部先于全局”在任意对称加权下稳健（定理 16.1），但在有向耦合下会失效（反例 16.1）。<b>这正是第二层战略想要的“失效条件”——一个能把理论划出边界的反例，比十个正面例子更有价值。</b>完整数据见附录 J。</div>
@@ -117,12 +117,12 @@
 <div class="eq"><span class="body">R(v) := (Σ<sub>(u,w)∈E</sub>(v<sub>u</sub>−v<sub>w</sub>)²) / (Σ<sub>v</sub>v²) = v<sup>T</sup>Lv / v<sup>T</sup>v</span><span class="num">(2.7)</span></div>
 <span class="s">R</span> 度量向量的“归一化局部变化”：<span class="s">R</span> 越大，相邻顶点差异越大，越局部。</div>
 
-<div class="define"><span class="bt">定理 16.2　Rayleigh 判据 ［定理，A］</span>
+<div class="define"><span class="bt">定理 16.2　Rayleigh 判据 ［定理，A／甲］</span>
 对对称拉普拉斯 <span class="s">L</span>，最大特征值 <span class="s">λ<sub>n</sub></span> 的特征向量最大化 Rayleigh 商 <span class="s">R</span>；且 <span class="s">max<sub>v</sub>R(v)=λ<sub>n</sub></span>。<b>因此“最局部的模式最先增长”对对称 L 是严格成立的</b>——它不是直觉，而是 Rayleigh 极小极大定理的推论。</div>
 
 <p><b>证明。</b>对称实矩阵的 Rayleigh 商在特征向量处取驻值，且 <span class="s">v<sup>T</sup>Lv/v<sup>T</sup>v = Σ<sub>k</sub>λ<sub>k</sub>y<sub>k</sub>²/Σ<sub>k</sub>y<sub>k</sub>²</span>（<span class="s">y<sub>k</sub></span> 为特征基系数），其最大值在 <span class="s">y</span> 集中于 <span class="s">λ<sub>n</sub></span> 处取得。∎</p>
 
-<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。［A］</p>
+<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。［A／甲］</p>
 
 <h3>16.9　反转的判别：一个负面结果与一个开放问题</h3>
 
@@ -137,7 +137,7 @@
 <tr><td class="l">反对称部分范数 <span class="s">‖(L−L<sup>T</sup>)/2‖</span></td><td class="l">+0.13</td><td class="l">✗（太弱）</td></tr>
 <tr><td class="l">Rayleigh 间隙</td><td class="l">+0.09</td><td class="l">✗（太弱）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>否定性数值检验。等级 A。脚本：<code>analysis/reversal_criterion.py</code>。<b>总反转率：</b>8.4%。<b>五个“显然”的判别法全部失败。</b></div>
+<div class="datasrc"><b>性质：</b>否定性数值检验。等级 A／甲。脚本：<code>analysis/reversal_criterion.py</code>。<b>总反转率：</b>8.4%。<b>五个“显然”的判别法全部失败。</b></div>
 
 <div class="warning"><span class="bt">一个负面结果的价值</span>
 我们依次猜测了非正规性、强连通性、Jordan 缺陷、反对称范数、Rayleigh 间隙五个候选。数据说：<b>一个都不行</b>（最强的也仅 +0.13）。这一连串否定防止了五个错的“定理 B1'”被写出。现在能说的只有两件确凿的事：对称 ⇒ 不反转（定理 B1）；非对称 ⇒ 可能反转（B2）。</div>

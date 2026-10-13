@@ -20,9 +20,9 @@
 <p>推导如下（全部为已知数学）：</p>
 
 <ol>
-<li><b>热核展开的局部系数：</b>对拉普拉斯–贝尔特拉米算子，短时渐近展开的第一个非平凡系数为 <span class="s">a₁(x)=R(x)/6</span>，其中 <span class="s">R</span> 是标量曲率。［已知，B］</li>
-<li><b>二维的曲率关系：</b>在二维，<span class="s">R=2K</span>，其中 <span class="s">K</span> 是高斯曲率。［已知，A］</li>
-<li><b>Gauss–Bonnet：</b>对紧致可定向二维曲面，<span class="s">∫<sub>M</sub>K dA=2πχ(M)</span>。［已知，A］</li>
+<li><b>热核展开的局部系数：</b>对拉普拉斯–贝尔特拉米算子，短时渐近展开的第一个非平凡系数为 <span class="s">a₁(x)=R(x)/6</span>，其中 <span class="s">R</span> 是标量曲率。［已知，B／乙］</li>
+<li><b>二维的曲率关系：</b>在二维，<span class="s">R=2K</span>，其中 <span class="s">K</span> 是高斯曲率。［已知，A／甲］</li>
+<li><b>Gauss–Bonnet：</b>对紧致可定向二维曲面，<span class="s">∫<sub>M</sub>K dA=2πχ(M)</span>。［已知，A／甲］</li>
 <li><b>代入：</b>若取 <span class="s">κ=R/6=K/3</span>，则 <span class="s">∫κ dA=(1/3)∫K dA=(2π/3)χ(M)</span>。<b>比标准 Gauss–Bonnet 小 3 倍。</b></li>
 </ol>
 
@@ -46,7 +46,7 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 
 <p>E2 最自然的严格化是：<b>区分结构给流形一个 <span class="s">Z/3Z</span> 轨形结构。</b>轨形允许有理欧拉示性数：对一个带 <span class="s">Z/3Z</span> 稳定子的轨形，<span class="s">χ<sub>orb</sub>=χ(M)/3</span>。</p>
 
-<div class="define"><span class="bt">期望 17.1　轨形解释［纲领，C］</span>
+<div class="define"><span class="bt">期望 17.1　轨形解释［纲领，C／丙］</span>
 分离结构自然地给 <span class="s">M</span> 一个 <span class="s">Z/3Z</span> 轨形结构，区分欧拉示性数就是这个轨形的欧拉示性数：
 <div class="eq"><span class="body">χ(D) = χ<sub>orb</sub>(M) = χ(M)/3</span></div>
 在这条解释下，式 (19.3) 成为轨形 Gauss–Bonnet 定理的特例，框架与指标定理理论相容。</div>
@@ -61,7 +61,7 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 
 <p>带三个 3 阶锥点时更明显：<span class="s">χ<sub>orb</sub>=2−3·(2/3)=0</span>，于是 <span class="s">χ(D)=0</span>，与朴素猜想的 <span class="s">2/3</span> 相差更远。</p>
 
-<p>这个精确化把一个模糊的“矛盾”变成了一个明确的判定：<b>朴素猜想 <span class="s">χ(D)=χ<sub>geom</sub>/3</span> 仅对无奇异点的曲面成立；每一个锥点都是一个反例。</b>完整的 9 例数值对比（4 例匹配、5 例反例）见附录 I.2 与脚本 <code>analysis/orbifold_gap.py</code>。［定理（数值），A］</p>
+<p>这个精确化把一个模糊的“矛盾”变成了一个明确的判定：<b>朴素猜想 <span class="s">χ(D)=χ<sub>geom</sub>/3</span> 仅对无奇异点的曲面成立；每一个锥点都是一个反例。</b>完整的 9 例数值对比（4 例匹配、5 例反例）见附录 I.2 与脚本 <code>analysis/orbifold_gap.py</code>。［定理（数值），A／甲］</p>
 
 <div class="scenario"><span class="bt">矛盾的价值</span>
 这个球面矛盾是本书最有价值的负面结果之一。它把“轨形解释”从一句漂亮的话，变成了一个<b>有明确反例条件</b>的命题：要么存在一类特殊的轨形结构使公式成立，要么 <span class="s">χ(D)</span> 不是轨形欧拉示性数。<b>无论哪种，都是一个可攻击的具体问题。</b>附录 I.2 把这个条件算清楚了：<b>成立当且仅当轨形无奇异点。</b></div>
@@ -78,7 +78,7 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 </table>
 <div class="datasrc"><b>性质：</b>现状清单。等级见末列。<b>本表是附录 E 可证伪登记的核心内容之一。</b></div>
 
-<p><b>高维推广的证伪。</b>第 20 章原本猜想高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 计算后，这个猜想<b>被证伪</b>：<span class="s">n=1</span>（二维）时 ratio 为 <span class="s">1/3</span>，但 <span class="s">n=2</span> 时为 <span class="s">4π/3≈4.19</span>，<span class="s">n=3</span> 时为 <span class="s">4π²/3≈13.16</span>，均不等于 <span class="s">1/(2n+1)</span>。<b>结论：不存在一个普适常数 <span class="s">f(n)</span>；因子 <span class="s">1/3</span> 是二维特有的</b>（因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑定）。正确的推广必须使用陈–高斯–博内的<b>欧拉形式</b>，而不是标量曲率。完整计算见附录 J.6。［定理（计算），A］</p>
+<p><b>高维推广的证伪。</b>第 20 章原本猜想高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 计算后，这个猜想<b>被证伪</b>：<span class="s">n=1</span>（二维）时 ratio 为 <span class="s">1/3</span>，但 <span class="s">n=2</span> 时为 <span class="s">4π/3≈4.19</span>，<span class="s">n=3</span> 时为 <span class="s">4π²/3≈13.16</span>，均不等于 <span class="s">1/(2n+1)</span>。<b>结论：不存在一个普适常数 <span class="s">f(n)</span>；因子 <span class="s">1/3</span> 是二维特有的</b>（因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑定）。正确的推广必须使用陈–高斯–博内的<b>欧拉形式</b>，而不是标量曲率。完整计算见附录 J.6。［定理（计算），A／甲］</p>
 
 <h3>20.7　本章小结</h3>
 

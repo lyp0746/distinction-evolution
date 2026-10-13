@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430"><rect width="1000" height="430" fill="#fff"/><style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}</style><text x="40" y="46" font-size="24" font-weight="700">四场统一：区分视角的判定</text>
+<rect x="60" y="110" width="215" height="200" rx="12" fill="#f7f9fc" stroke="#666" stroke-width="2"/>
+<text x="167.5" y="175" text-anchor="middle" font-size="22" font-weight="700">概型论</text>
+<rect x="100" y="210" width="135" height="52" rx="10" fill="#666"/>
+<text x="167.5" y="245" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">换词</text>
+<rect x="290" y="110" width="215" height="200" rx="12" fill="#f7f9fc" stroke="#009E73" stroke-width="2"/>
+<text x="397.5" y="175" text-anchor="middle" font-size="22" font-weight="700">凝聚数学</text>
+<rect x="330" y="210" width="135" height="52" rx="10" fill="#009E73"/>
+<text x="397.5" y="245" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">补充</text>
+<rect x="520" y="110" width="215" height="200" rx="12" fill="#f7f9fc" stroke="#009E73" stroke-width="2"/>
+<text x="627.5" y="175" text-anchor="middle" font-size="22" font-weight="700">单价公理</text>
+<rect x="560" y="210" width="135" height="52" rx="10" fill="#009E73"/>
+<text x="627.5" y="245" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">补充</text>
+<rect x="750" y="110" width="215" height="200" rx="12" fill="#f7f9fc" stroke="#c94f4f" stroke-width="2"/>
+<text x="857.5" y="175" text-anchor="middle" font-size="22" font-weight="700">∞-范畴</text>
+<rect x="790" y="210" width="135" height="52" rx="10" fill="#c94f4f"/>
+<text x="857.5" y="245" text-anchor="middle" font-size="22" font-weight="700" fill="#fff">未兑现</text>
+<text x="60" y="360" font-size="16" fill="#666">判定只允许三值：换词（已被覆盖）/ 补充（待检验）/ 未兑现（尚无贡献）。</text>
+<text x="60" y="392" font-size="16" fill="#1a1a1a">这不是排行榜：区分演化在这四场里至多是配角，价值靠两个未证猜想（O12/O13）兑现。</text></svg>

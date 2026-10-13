@@ -15,7 +15,7 @@
 
 <p>在依赖类型论中，"类型"取代"集合"，"项"取代"元素"，但关键的新东西是<b>依赖类型</b>：一个类型可以依赖另一个类型的项。例如，"长度为 <span class="s">n</span> 的向量"是一个依赖于 <span class="s">n</span> 的类型，而不是一个固定的集合。</p>
 
-<div class="define"><span class="bt">定义 10.1　依赖类型与命题即类型［已知，A］</span>
+<div class="define"><span class="bt">定义 10.1　依赖类型与命题即类型［已知，A／甲］</span>
 依赖类型族 <span class="s">B: A → Type</span> 给每个 <span class="s">a: A</span> 指定一个类型 <span class="s">B(a)</span>。在"命题即类型"对应下，命题被解释为类型，命题的证明被解释为该项。于是"证明"成为可被机器检查的对象——这是 Lean、Coq 等形式化工具的基础。</div>
 
 <p>这个设计的直接后果是：<b>结构不再是被附加到集合上的东西，而是类型系统的内在性质。</b>"群结构"不是"集合 + 附加数据"，而是一个依赖类型的记录；"同构的群"在这个系统里可以自然地被视为相等。</p>
@@ -30,14 +30,14 @@
 
 <div class="cap"><b>图 10.2　结构语言的重建前后对比</b>。集合论把结构当作集合的附加物；类型论把结构当作派生的内在性质。“同构即相等”是这一转变的核心收益，形式化成本是它的代价。</div>
 
-<div class="define"><span class="bt">定义 10.2　同伦类型论（HoTT）［已知，A］</span>
+<div class="define"><span class="bt">定义 10.2　同伦类型论（HoTT）［已知，A／甲］</span>
 HoTT 把类型解释为空间（同伦类型），项解释为点，类型 <span class="s">a=b</span> 解释为从 <span class="s">a</span> 到 <span class="s">b</span> 的路径空间。相等关系满足：自反性（常路径）、对称性（逆路径）、传递性（路径拼接），且这些操作本身之间还有高阶同伦。**高阶路径**（路径的路径）自然编码了"两个证明也可以被证明等价"。</div>
 
 <p>在这个框架里，"把两个对象视为相等"不再是一个粗暴的断言，而是一个<b>可审计的操作</b>：你必须给出路径。这个约束在很多场合下恰恰是我们想要的——它强制作者说清"相等"到底在哪一层成立。</p>
 
 <h3>10.4　单价公理与结构主义</h3>
 
-<div class="define"><span class="bt">公理 15.1　单价公理（Univalence）［已知，B］</span>
+<div class="define"><span class="bt">公理 15.1　单价公理（Univalence）［已知，B／乙］</span>
 对类型 <span class="s">A,B</span>，类型等价 <span class="s">A ≃ B</span> 与相等类型 <span class="s">A = B</span> 之间存在等价：<span class="s">(A = B) ≃ (A ≃ B)</span>。换言之：<b>同构即相等。</b></div>
 
 <p>单价公理是结构主义的严格实现。它断言：如果两个结构同构，那么在类型系统中它们必须被视为完全等价。这个公理直接减少了"因底层表示不同而带来的冗余抽象"——你不再需要为每个同构的结构分别建立一套理论。［已知］</p>
@@ -56,7 +56,7 @@ EDS 框架的一个潜在优势是它天然适合"结构主义"：分离曲率�
 <tr><td class="l">范畴论</td><td class="l">对象与态射</td><td class="l">结构保持映射、泛性质</td><td class="l">抽象层可无限叠加；不易形式化</td></tr>
 <tr><td class="l">类型论/HoTT</td><td class="l">类型与项</td><td class="l">构造性、可机器验证、相等分层</td><td class="l">形式化冗长、几何直觉薄弱</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>语言对照表。等级 B（公开共识）。</div>
+<div class="datasrc"><b>性质：</b>语言对照表。等级 B／乙（公开共识）。</div>
 
 <h3>10.6　三种语言与本书框架的关系</h3>
 

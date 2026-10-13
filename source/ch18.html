@@ -22,7 +22,7 @@
 
 <div class="eq"><span class="body">ḋ = −αd + β(k−1)d²</span><span class="num">(15.2)</span></div>
 
-<div class="define"><span class="bt">命题 18.1　对称情形的精确解［定理，A］</span>
+<div class="define"><span class="bt">命题 18.1　对称情形的精确解［定理，A／甲］</span>
 式 (18.2) 以 <span class="s">d(0)=d<sub>0</sub>&gt;0</span> 为初值的解为
 <div class="eq"><span class="body">d(t) = αd<sub>0</sub>e<sup>−αt</sup> / [α − β(k−1)d<sub>0</sub>(1−e<sup>−αt</sup>)]</span><span class="num">(15.3)</span></div>
 若 <span class="s">d<sub>0</sub> &lt; α/(β(k−1))</span>，则 <span class="s">d(t)→0</span>；若 <span class="s">d<sub>0</sub> &gt; α/(β(k−1))</span>，则 <span class="s">d(t)</span> 在有限时间
@@ -39,7 +39,7 @@
 
 <p>对称解只是特例。对一般的 <span class="s">D<sub>i</sub></span>，不能用单个 <span class="s">d</span> 描述。但可以用总激活 <span class="s">S=Σ<sub>i</sub>D<sub>i</sub></span> 得到一个严格的、尽管更弱的定理。</p>
 
-<div class="define"><span class="bt">定理 18.1（保证衰减阈值）［定理，A］</span>
+<div class="define"><span class="bt">定理 18.1（保证衰减阈值）［定理，A／甲］</span>
 设 <span class="s">S(t)=Σ<sub>i</sub>D<sub>i</sub>(t)</span>。若
 <div class="eq"><span class="body">S(0) &lt; α / [β(1−1/k)]</span><span class="num">(15.5)</span></div>
 则 <span class="s">S(t)→0</span>，且所有 <span class="s">D<sub>i</sub>(t)→0</span>，无论各 <span class="s">D<sub>i</sub></span> 如何分布。</div>
@@ -70,7 +70,7 @@
 
 <p>把上面的分析搬到神经网络上，可以得到一个关于"激活范数"的假说。若把某一层的激活看作区分动作 <span class="s">D<sub>i</sub></span>，把权重衰减看作 <span class="s">α</span>，把层内耦合看作 <span class="s">β</span>，则式 (18.5) 给出一个阈值行为。</p>
 
-<div class="define"><span class="bt">假说 10.1　激活范数的阈值［假说，C］</span>
+<div class="define"><span class="bt">假说 10.1　激活范数的阈值［假说，C／丙］</span>
 在简化模型下，若某层的总激活 <span class="s">S</span> 长期低于 <span class="s">α/[β(1−1/k<sub>eff</sub>)]</span>，则其特征塌缩（梯度消失、欠拟合）；若长期显著高于，则特征放大（梯度爆炸、过拟合）。<b>最优训练被推测为使 <span class="s">S</span> 保持在阈值附近。</b></div>
 
 <div class="warning"><span class="bt">边界（必须同时读）</span>
@@ -86,7 +86,7 @@
 <tr><td class="l">2.0</td><td class="l">{{D:mc_S2_pos}}</td><td class="l">{{D:mc_S2_flip}}</td><td class="l">序关系 + 窄区间</td></tr>
 <tr><td class="l">5.0</td><td class="l">1.000</td><td class="l">0.000</td><td class="l">序关系 + 窄区间</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>敏感性分析。等级 C（regime 参数是规定性的）。<b>诚实的读法：</b>在阈值 <span class="s">S∼1</span> 附近，方向本身就不稳定——这与"相变"的预期一致；远离阈值时方向才是稳健的。因此这个假说<b>不能</b>被用来对处于临界区的层做具体预测，只能给出远离临界区时的方向判断。</div>
+<div class="datasrc"><b>性质：</b>敏感性分析。等级 C／丙（regime 参数是规定性的）。<b>诚实的读法：</b>在阈值 <span class="s">S∼1</span> 附近，方向本身就不稳定——这与"相变"的预期一致；远离阈值时方向才是稳健的。因此这个假说<b>不能</b>被用来对处于临界区的层做具体预测，只能给出远离临界区时的方向判断。</div>
 
 <div class="note"><b>一条方法论示范</b>
 把式 (18.1) 的分析搬到 LLM 上，是全书最接近"过拟合类比"的地方。本书的处理方式——<b>先给出可证的弱定理，再明确标注迁移到 LLM 是 C 级假说，并列出四条边界</b>——是第 2 章"有效性判据"与第 3 章"分级制度"的联合应用。读者若要攻击本书，这里是成本最低的入口。

@@ -72,7 +72,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">5 分离完备</td><td class="l">部分</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
 <tr><td class="l">6 标准化</td><td class="l">不需要</td><td class="l">未证</td><td class="l">未证</td><td class="l">可选工具</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>验证状态表。等级 B（作者判断，可核查）。<b>这是读第四部分最该记住的表。</b></div>
+<div class="datasrc"><b>性质：</b>验证状态表。等级 B／乙（作者判断，可核查）。<b>这是读第四部分最该记住的表。</b></div>
 
 <div class="scenario"><span class="bt">唯一的星号</span>
 表中只有一个星号：公理 4（演化适定性）。它之所以特殊，是因为它在第五部分有一个完整证明——而这正好说明框架不是一座悬空的楼：<b>它至少有一根柱子在岩石上。</b>其余柱子是否也能落地，是后面各部分要回答的问题。</div>
@@ -103,12 +103,12 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 14.1，本节）</td></tr>
 <tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>公理状态核算。等级 A（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
+<div class="datasrc"><b>性质：</b>公理状态核算。等级 A／甲（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
 
 <div class="warning"><span class="bt">一个诚实的反结论：公理 1 在图上没有非平凡定理</span>
 一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
 
-<div class="define"><span class="bt">定理 14.1　原子分解的唯一性 ［定理，A］</span>
+<div class="define"><span class="bt">定理 14.1　原子分解的唯一性 ［定理，A／甲］</span>
 在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
 <b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
 <b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
@@ -126,17 +126,17 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <tr><td class="l">星图 S₈</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
 <tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
+<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A／甲。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
 
 <h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
 
 <p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
 
-<div class="define"><span class="bt">推论 14.1　乘积图的相变结构 ［推论，A］</span>
+<div class="define"><span class="bt">推论 14.1　乘积图的相变结构 ［推论，A／甲］</span>
 <div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
 故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
 
-<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A］</p>
+<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A／甲］</p>
 
 <h3>14.8　本章小结</h3>
 

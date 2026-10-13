@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520"><rect width="1000" height="520" fill="#ffffff"/><style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',Georgia,serif;}</style><defs><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#c94f4f"/></marker></defs><text x="40" y="46" font-size="24" font-weight="700">分层可信度与依赖关系</text>
+<rect x="70" y="80" width="560" height="100" rx="10" fill="#ffffff" stroke="#009E73" stroke-width="2"/><text x="350.0" y="124.0" text-anchor="middle" font-size="22" font-weight="600" fill="#009E73">硬核层 A</text><text x="350.0" y="152.0" text-anchor="middle" font-size="15" fill="#666">有限图定理（谱定理 + ODE）</text>
+<text x="660" y="122" font-size="16" fill="#666">证伪方式：</text>
+<text x="660" y="148" font-size="16" fill="#1a1a1a">复现 / 漏洞 / 反例</text>
+<rect x="70" y="215" width="560" height="100" rx="10" fill="#ffffff" stroke="#3a6ea5" stroke-width="2"/><text x="350.0" y="259.0" text-anchor="middle" font-size="22" font-weight="600" fill="#3a6ea5">框架层 B</text><text x="350.0" y="287.0" text-anchor="middle" font-size="15" fill="#666">六元组 + 六公理 + 曲率分类</text>
+<text x="660" y="257" font-size="16" fill="#666">证伪方式：</text>
+<text x="660" y="283" font-size="16" fill="#1a1a1a">公理矛盾 / 公理失效</text>
+<rect x="70" y="350" width="560" height="100" rx="10" fill="#ffffff" stroke="#b8862f" stroke-width="2"/><text x="350.0" y="394.0" text-anchor="middle" font-size="22" font-weight="600" fill="#b8862f">候选统一层 C</text><text x="350.0" y="422.0" text-anchor="middle" font-size="15" fill="#666">连续 · 同伦 · 1/3 缺口 · 四场互补</text>
+<text x="660" y="392" font-size="16" fill="#666">证伪方式：</text>
+<text x="660" y="418" font-size="16" fill="#1a1a1a">O12/O13/G7 被证伪</text>
+<line x1="350" y1="315" x2="350" y2="350" stroke="#c94f4f" stroke-width="3" marker-end="url(#ar)"/>
+<text x="360" y="340" font-size="15" fill="#c94f4f">仅此一条依赖（B → C）</text>
+<text x="70" y="480" font-size="15" fill="#666">A 与 B 相互独立；A 与 C 相互独立。攻击 B 层（公理自洽）是推翻整个框架最经济的路径。</text></svg>

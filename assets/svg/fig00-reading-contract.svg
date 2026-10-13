@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520"><rect width="1000" height="520" fill="#ffffff"/><style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',Georgia,serif;}</style><text x="40" y="46" font-size="24" font-weight="700">阅读合约：期望 → 章节 → 严格度</text>
+<text x="90" y="76" font-size="16" font-weight="700" fill="#1a1a1a">你的期望</text>
+<text x="420" y="76" font-size="16" font-weight="700" fill="#1a1a1a">读这些章</text>
+<text x="760" y="76" font-size="16" font-weight="700" fill="#1a1a1a">严格度</text>
+<rect x="70" y="90" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#009E73" stroke-width="1.5"/>
+<text x="86" y="119" font-size="17">一个可复算的定理</text>
+<text x="420" y="119" font-size="17" fill="#666">第五部分（15—18）</text>
+<text x="770" y="119" font-size="20" font-weight="700" fill="#009E73">A</text>
+<rect x="70" y="152" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="86" y="181" font-size="17">框架如何工作</text>
+<text x="420" y="181" font-size="17" fill="#666">第四部分（11—14）</text>
+<text x="770" y="181" font-size="20" font-weight="700" fill="#3a6ea5">B</text>
+<rect x="70" y="214" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#b8862f" stroke-width="1.5"/>
+<text x="86" y="243" font-size="17">现代统一中的位置</text>
+<text x="420" y="243" font-size="17" fill="#666">第二部分（4—6）</text>
+<text x="770" y="243" font-size="20" font-weight="700" fill="#b8862f">B—C</text>
+<rect x="70" y="276" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="86" y="305" font-size="17">样板：抽象如何压缩</text>
+<text x="420" y="305" font-size="17" fill="#666">第三部分（7—10）</text>
+<text x="770" y="305" font-size="20" font-weight="700" fill="#3a6ea5">B</text>
+<rect x="70" y="338" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#666" stroke-width="1.5"/>
+<text x="86" y="367" font-size="17">扩展到其他领域</text>
+<text x="420" y="367" font-size="17" fill="#666">第六部分（19—25）</text>
+<text x="770" y="367" font-size="20" font-weight="700" fill="#666">C</text>
+<rect x="70" y="400" width="300" height="46" rx="8" fill="#f7f9fc" stroke="#c94f4f" stroke-width="1.5"/>
+<text x="86" y="429" font-size="17">统一候选的陈述</text>
+<text x="420" y="429" font-size="17" fill="#666">第七部分（26—27）</text>
+<text x="770" y="429" font-size="20" font-weight="700" fill="#c94f4f">B—C</text>
+<text x="70" y="500" font-size="15" fill="#666">严格度 A=可机器复算；B=有论证；C=方向性。只有第五部分承诺 A。</text></svg>

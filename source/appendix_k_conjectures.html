@@ -9,7 +9,7 @@
 
 <h3>K.1　区分复杂度：一个候选定义</h3>
 
-<div class="define"><span class="bt">定义 K.1　区分复杂度 ［定义，C］</span>
+<div class="define"><span class="bt">定义 K.1　区分复杂度 ［定义，C／丙］</span>
 对一个判定问题 <span class="s">P</span>，定义其<b>区分复杂度</b> <span class="s">DC(P)</span> 为：能区分"<span class="s">x∈P</span>"与"<span class="s">x∉P</span>"所需的区分动作族的最小基数（作为输入长度的函数）。</div>
 
 <div class="warning"><span class="bt">这个定义目前是空的</span>
@@ -19,7 +19,7 @@
 
 <p>一个诱人的猜想是："可计算 ⟺ 分离曲率局部常值"。这个猜想如果成立，就能从纯几何推出非计算物理的存在——这正好呼应彭罗斯的立场。</p>
 
-<div class="define"><span class="bt">猜想 K.1　计算性—曲率对应 ［猜想，C］</span>
+<div class="define"><span class="bt">猜想 K.1　计算性—曲率对应 ［猜想，C／丙］</span>
 <b>猜想：</b>一个演化系统是图灵可计算的，当且仅当其分离曲率张量满足 <span class="s">∇κ=0</span>（局部常值）。<br>
 <b>证伪条件：</b>构造一个可计算系统但 <span class="s">∇κ≠0</span>，或一个不可计算系统但 <span class="s">∇κ=0</span>。</div>
 
@@ -43,11 +43,11 @@
 
 <p>把 K.3 的警告反过来，可以得到一个<b>有内容</b>的方向：不是"用区分论陈述难题"，而是"证明区分动作族的最小基数给出一个已知的复杂度下界"。例如：</p>
 
-<div class="define"><span class="bt">猜想 K.2　可操作的复杂度下界 ［猜想，C］</span>
+<div class="define"><span class="bt">猜想 K.2　可操作的复杂度下界 ［猜想，C／丙］</span>
 对某个具体问题类（例如图的 <span class="s">k</span>-染色判定），构造一个显式 EDS，证明其区分动作族的最小基数随输入规模至少按某个已知函数增长，从而<b>复现</b>（而非改进）一个已知下界。<br>
 <b>证伪条件：</b>构造的 EDS 的最小基数不随规模增长，或与已知下界矛盾。</div>
 
-<p>这个猜想是<b>可操作的</b>：它有具体对象（图染色）、具体量（区分动作基数）、具体目标（复现已知下界）。即使只复现一个已知结果，它也能证明"区分复杂度"不是空话。［猜想，C］</p>
+<p>这个猜想是<b>可操作的</b>：它有具体对象（图染色）、具体量（区分动作基数）、具体目标（复现已知下界）。即使只复现一个已知结果，它也能证明"区分复杂度"不是空话。［猜想，C／丙］</p>
 
 <table class="nat">
 <caption class="cap"><b>表 K.1　计算方向的三条登记</b></caption>
@@ -76,7 +76,7 @@
 <li><b>选一个可计算的"曲率量"。</b>本附录用两个：Fisher 信息迹 <span class="s">F=E[‖∇<sub>θ</sub>log p(y|x)‖²]</span>（Gauss–Newton 曲率的迹），以及 Hessian 顶特征值 <span class="s">λ<sub>max</sub></span>（幂迭代估计）。</li>
 </ol>
 
-<div class="define"><span class="bt">假说 K.1　曲率—涌现同步 ［假说，C］</span>
+<div class="define"><span class="bt">假说 K.1　曲率—涌现同步 ［假说，C／丙］</span>
 能力跃迁发生的 epoch，与 Fisher 迹或 Hessian 顶特征值的<b>峰值</b> epoch 相同（或接近）。<br>
 <b>证伪条件：</b>曲率峰值与能力跃迁显著不同步（相差超过若干个记录间隔）。</div>
 
@@ -91,7 +91,7 @@
 <tr><td class="l">Fisher 信息迹 <span class="s">F</span></td><td class="l">0（训练初期）</td><td class="l">✗ <b>不同步</b></td></tr>
 <tr><td class="l">Hessian 顶特征值 <span class="s">λ<sub>max</sub></span></td><td class="l">200</td><td class="l">✓ 同步</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>合成网络实验。等级 B（可复算）／但外部效度 C。<b>末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>判定：</b>弱支持——两个曲率量一个同步、一个不同步。</div>
+<div class="datasrc"><b>性质：</b>合成网络实验。等级 B／乙（可复算）／但外部效度 C。<b>末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>判定：</b>弱支持——两个曲率量一个同步、一个不同步。</div>
 
 <div class="warning"><span class="bt">这个结果怎么读（不要过读）</span>
 <b>可以说：</b>在本次运行中，Hessian 顶特征值在能力跃迁处出现峰值，与假说一致。<br>
@@ -101,7 +101,7 @@
 
 <p>按第 1 章的分级纪律，本实验的结论应当写成：</p>
 
-<div class="define"><span class="bt">结论 K.1　（降级版）［论证，C］</span>
+<div class="define"><span class="bt">结论 K.1　（降级版）［论证，C／丙］</span>
 曲率—涌现同步假说<b>在本次合成实验中未被否定，也未被有力支持</b>。Hessian 顶特征值与记忆化跃迁落在同一记录点，但时间分辨率不足；Fisher 迹不同步。<b>要把这个方向变成可检验的科学，至少需要：</b>（i）更细的时间分辨率；（ii）多个网络与任务；（iii）一个<b>真正的泛化跃迁</b>（grokking），而非记忆化。</div>
 
 <h3>K.9　如果要继续，应该怎么做</h3>
@@ -114,7 +114,7 @@
 <tr><td class="l">3</td><td class="l">在多个任务（模加法、模乘法、置换群）上重复，检验稳健性</td><td class="l">中</td></tr>
 <tr><td class="l">4</td><td class="l">用公开 LLM 检查点，计算 Fisher/Hessian 代理量，与已知涌现阈值对照</td><td class="l">高（需 torch + HF）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>路线图。等级 C。<b>注意：</b>步骤 1 是本书作者在普通计算机上就能完成的；步骤 4 需要本书构建环境所没有的资源。</div>
+<div class="datasrc"><b>性质：</b>路线图。等级 C／丙。<b>注意：</b>步骤 1 是本书作者在普通计算机上就能完成的；步骤 4 需要本书构建环境所没有的资源。</div>
 
 <h3>K.10　学习方向小结</h3>
 

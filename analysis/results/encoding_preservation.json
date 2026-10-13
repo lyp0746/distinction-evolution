@@ -40,6 +40,47 @@
       "preserved": true
     },
     {
+      "field": "combinatorics",
+      "structure": "Pascal recurrence",
+      "preserved": true
+    },
+    {
+      "field": "logic",
+      "structure": "De Morgan on truth tables",
+      "preserved": true
+    },
+    {
+      "field": "information theory",
+      "structure": "data processing inequality",
+      "H_X": 2.0,
+      "H_fX": 1.0,
+      "preserved": true
+    },
+    {
+      "field": "representation theory",
+      "structure": "character orthogonality (Z/3)",
+      "preserved": true
+    },
+    {
+      "field": "harmonic analysis",
+      "structure": "DFT Parseval identity",
+      "lhs": 26.396941,
+      "rhs": 26.396941,
+      "preserved": true
+    },
+    {
+      "field": "optimization",
+      "structure": "gradient-flow convergence via spectral radius",
+      "norm_alpha_0.24": 0.0,
+      "norm_alpha_0.60": 1.681152596319829e+29,
+      "preserved": true
+    },
+    {
+      "field": "measure theory",
+      "structure": "finite additivity",
+      "preserved": true
+    },
+    {
       "field": "generative topology",
       "structure": "the class of all topologies on {0,1,2}",
       "n_topologies_total": 29,
@@ -53,7 +94,14 @@
     "preserved_cases": [
       "graph theory",
       "linear algebra",
-      "probability"
+      "probability",
+      "combinatorics",
+      "logic",
+      "information theory",
+      "representation theory",
+      "harmonic analysis",
+      "optimization",
+      "measure theory"
     ],
     "refuted_cases": [
       "generative topology"

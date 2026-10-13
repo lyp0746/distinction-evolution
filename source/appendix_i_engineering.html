@@ -18,7 +18,7 @@
 <tr><td class="l">Spearman ρ</td><td class="l">0.71</td><td class="l">0.54</td><td class="l">方向不一致</td></tr>
 <tr><td class="l">结论</td><td class="l"><b>支持耦合</b></td><td class="l"><b>不支持</b></td><td class="l"><b>混合</b></td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>合成网络实验。等级 A（可复算）／但外部效度 C。<b>运行末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>失败记录：</b>层 S2 的同号率（0.27）<b>低于随机</b>，是对"激活—秩耦合普遍成立"的一个直接反例。</div>
+<div class="datasrc"><b>性质：</b>合成网络实验。等级 A／甲（可复算）／但外部效度 C。<b>运行末态：</b>train=1.000，test=0.000（记忆而非泛化）。<b>失败记录：</b>层 S2 的同号率（0.27）<b>低于随机</b>，是对"激活—秩耦合普遍成立"的一个直接反例。</div>
 
 <p><b>这个结果怎么读：</b>它<b>既不</b>支持"假说普遍成立"，<b>也不</b>简单地推翻它。它显示机制是<b>按层分裂</b>的：一层的激活增长伴随表示扩张，另一层则不。这与第 18.3 节的分析一致——朴素的全局阈值本就不成立，正确的陈述依赖每层的有效探针数。</p>
 
@@ -41,7 +41,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l">S²，三个 3 阶锥点</td><td class="l">2</td><td class="l">0</td><td class="l">0</td><td class="l">2/3</td><td class="l">✗</td></tr>
 <tr><td class="l">T²，三个 3 阶锥点</td><td class="l">0</td><td class="l">−2</td><td class="l">−2/3</td><td class="l">0</td><td class="l">✗</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>精确计算。等级 A。<b>总结果：</b>9 个案例中 4 个匹配、5 个反例。<b>这精确刻画了第 20.5 节的球面矛盾，并把"缺口是否是错误"变成"缺口只在有奇异点时出现"。</b></div>
+<div class="datasrc"><b>性质：</b>精确计算。等级 A／甲。<b>总结果：</b>9 个案例中 4 个匹配、5 个反例。<b>这精确刻画了第 20.5 节的球面矛盾，并把"缺口是否是错误"变成"缺口只在有奇异点时出现"。</b></div>
 
 <h2>I.3　领域编码的结构保持：一个反例</h2>
 
@@ -55,17 +55,17 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l">概率论</td><td class="l">条件期望作为 L² 投影（幂等 + 自伴 + 方差分解）</td><td class="l">✓ 保持</td></tr>
 <tr><td class="l">生成拓扑</td><td class="l">{0,1,2} 上的全部 29 个拓扑</td><td class="l"><b>✗ 反例：点权重+单阈值只生成 8/29（27.6%）</b></td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可复算检验。等级 A。<b>结论：</b>编码可以保持被显式检验的结构，但不能覆盖全部结构。这坐实了第 22.5 节"编码 ≠ 等价"的边界，并给出一个具体反例。</div>
+<div class="datasrc"><b>性质：</b>可复算检验。等级 A／甲。<b>结论：</b>编码可以保持被显式检验的结构，但不能覆盖全部结构。这坐实了第 22.5 节"编码 ≠ 等价"的边界，并给出一个具体反例。</div>
 
 <h2>I.4　离散—连续桥接：一个候选函子（猜想）</h2>
 
-<p>开放问题 O7 此前只有类比。本附录给出一个<b>可写的候选</b>，作为猜想（C 级）。</p>
+<p>开放问题 O7 此前只有类比。本附录给出一个<b>可写的候选</b>，作为猜想（C／丙 级）。</p>
 
 <div class="define"><span class="bt">候选函子 F（猜想，C）</span>
 设 <span class="s">G=(V,E)</span> 连通有限图。构造度量图 <span class="s">X<sub>ε</sub>(G)</span>：每条边替换为长度 <span class="s">ε</span> 的区间。<span class="s">X<sub>ε</sub>(G)</span> 上的拉普拉斯算子谱 <span class="s">{μ<sub>k</sub>(ε)}</span> 在 <span class="s">ε→0</span>、并同时把图细化（subdivision）时，其前几个谱量收敛到某个二维流形的拉普拉斯谱前几项。<br>
 <b>猜想 O7'：</b>存在一列图 <span class="s">G<sub>n</sub></span> 与尺度 <span class="s">ε<sub>n</sub>→0</span>，使临界耦合 <span class="s">(β₁,β₂)</span> 收敛，且极限等于某黎曼流形的分离曲率阈值。</div>
 
-<p><b>为什么这是"可写的"而不是空话：</b>它把 O7 从"存在一个函子"收窄为"存在一列图的 GH 极限，使两个阈值收敛"。这是一条可以开始计算的路（先做规则格点，比较离散与连续阈值），而不是一句愿望。［猜想，C］</p>
+<p><b>为什么这是"可写的"而不是空话：</b>它把 O7 从"存在一个函子"收窄为"存在一列图的 GH 极限，使两个阈值收敛"。这是一条可以开始计算的路（先做规则格点，比较离散与连续阈值），而不是一句愿望。［猜想，C／丙］</p>
 
 <h2>I.5　超有限李理论：降级与一个可证伪命题</h2>
 
@@ -89,7 +89,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l">O7 离散—连续桥接</td><td class="l">仅类比</td><td class="l">C 级，<b>有候选函子</b>（可写、可算）</td></tr>
 <tr><td class="l">超有限李理论</td><td class="l">仅列名</td><td class="l">C 级，<b>有定义与可证伪命题</b>，但有空壳风险</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>状态变更表。等级 A（自评，可核查）。<b>核心转变：</b>三条 C 级主张从"无数据"变为"有可复算的实验结果（含反例）"。这正是"把可证伪从承诺变成事实"的最小达成。</div>
+<div class="datasrc"><b>性质：</b>状态变更表。等级 A／甲（自评，可核查）。<b>核心转变：</b>三条 C 级主张从"无数据"变为"有可复算的实验结果（含反例）"。这正是"把可证伪从承诺变成事实"的最小达成。</div>
 
 <h2>I.7　复现</h2>
 
@@ -98,13 +98,29 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><th class="l">脚本</th><th class="l">检验对象</th><th class="l">结果</th></tr>
 <tr><td class="l"><code>analysis/llm_activation_probe.py</code></td><td class="l">层间激活—有效秩耦合（假说 A1/A2）</td><td class="l"><b>混合</b>（一层支持、一层反例）</td></tr>
 <tr><td class="l"><code>analysis/orbifold_gap.py</code></td><td class="l">轨形解释 χ(D)=χ(M)/3</td><td class="l">收窄为<b>当且仅当无奇异点</b>（4 匹配 / 5 反例）</td></tr>
-<tr><td class="l"><code>analysis/encoding_preservation.py</code></td><td class="l">领域编码是否保结构</td><td class="l">图论/线代/概率保持；生成拓扑<b>反例</b>（8/29）</td></tr>
+<tr><td class="l"><code>analysis/encoding_preservation.py</code></td><td class="l">领域编码是否保结构</td><td class="l">10/11 保持结构（含组合、逻辑、信息论、表示论、调和、优化、测度）；生成拓扑<b>反例</b>（8/29）</td></tr>
 <tr><td class="l"><code>analysis/graph_phase_transition.py</code></td><td class="l">硬核相变与临界耦合</td><td class="l"><b>支持</b>（与谱公式一致）</td></tr>
 <tr><td class="l"><code>analysis/pca_fields.py</code></td><td class="l">编码矩阵的有效维度</td><td class="l">≈ 6.14 / 11（把“统一”限定在语言层）</td></tr>
 <tr><td class="l"><code>analysis/monte_carlo_sensitivity.py</code></td><td class="l">阈值假说的方向翻转概率</td><td class="l">报告区间与方向翻转率，不升格为结论</td></tr>
 <tr><td class="l"><code>analysis/fisher_curvature.py</code></td><td class="l">曲率—涌现同步（附录 K）</td><td class="l">弱支持、<b>混合</b>（记录间隔不足）</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>脚本清单。<b>等级 A（可运行）/ 结论等级见各行。</b>每个脚本只依赖 NumPy/SciPy，无需 GPU。</div>
+<div class="datasrc"><b>性质：</b>脚本清单。<b>等级 A／甲（可运行）/ 结论等级见各行。</b>每个脚本只依赖 NumPy/SciPy，无需 GPU。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 I.6　编码保结构验证的难度评估</b></caption>
+<tr><th class="l">领域</th><th class="l">形式化难度</th><th class="l">预计工作量</th><th class="l">状态</th><th class="l">优先级</th></tr>
+<tr><td class="l">组合 / 逻辑 / 信息论 / 测度论</td><td class="l">低</td><td class="l">1—2 小时</td><td class="l">已检验</td><td class="l">★★★ 已完成</td></tr>
+<tr><td class="l">表示论 / 调和分析 / 优化</td><td class="l">低—中</td><td class="l">数小时</td><td class="l">已检验</td><td class="l">★★★ 已完成</td></tr>
+<tr><td class="l">代数拓扑（同调）</td><td class="l">中</td><td class="l">2—4 周</td><td class="l">未验证</td><td class="l">★★☆ 可做</td></tr>
+<tr><td class="l">动力系统（吸引子 / 稳定性）</td><td class="l">中</td><td class="l">2—4 周</td><td class="l">未验证</td><td class="l">★★☆ 可做</td></tr>
+<tr><td class="l">泛函分析（超有限）</td><td class="l">中—高</td><td class="l">1—2 月</td><td class="l">未验证</td><td class="l">★☆☆ 需非标准分析</td></tr>
+<tr><td class="l">复分析（解析延拓 / 边界行为）</td><td class="l">高</td><td class="l">1—2 月</td><td class="l">未验证</td><td class="l">★☆☆ 风险大</td></tr>
+<tr><td class="l">微分几何（联络 / 曲率）</td><td class="l">高</td><td class="l">2—4 月</td><td class="l">未验证</td><td class="l">★☆☆ 与 1/3 缺口绑定</td></tr>
+<tr><td class="l">LLM 潜在空间</td><td class="l">高（需实验）</td><td class="l">依赖算力</td><td class="l">未验证</td><td class="l">★☆☆ 需外部资源</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>验证难度评估。<b>等级 C／丙（作者判断）。</b>结论：可低成本验证的领域<b>基本已经验证</b>；剩下的都是高成本领域。这正是“编码保结构”难以从“未决”推进到“通过”的结构性原因——<b>不是不想验证，而是剩余领域的单域验证成本骤升。</b></div>
+
+
 
 <pre class="code">python analysis/llm_activation_probe.py
 python analysis/orbifold_gap.py

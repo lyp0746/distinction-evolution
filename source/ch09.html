@@ -21,7 +21,7 @@
 
 <div class="cap"><b>图 9.2　非标准分析的降级对比</b>。左侧的多个 ε-δ 定义被右侧的一个“取标准部分”操作覆盖。这与图 9.1 互补：6.1 讲机制，6.2 讲收益与代价。注意它是四个案例中唯一在全部四判据上通过的。</div>
 
-<div class="define"><span class="bt">定义 9.1　超实数系与转移原理［已知，A］</span>
+<div class="define"><span class="bt">定义 9.1　超实数系与转移原理［已知，A／甲］</span>
 超实数系 <span class="s">*ℝ</span> 是实数系经模型论方法扩张得到的域，包含所有标准实数，并含无穷小量（绝对值小于任何正标准实数的非零元素）与无穷大量。**转移原理**：任何在 <span class="s">ℝ</span> 中为真的一阶逻辑命题，在 <span class="s">*ℝ</span> 中同样为真。</div>
 
 <h3>9.3　极限、导数、积分的非标准定义</h3>
@@ -34,7 +34,7 @@
 <tr><td class="l">导数</td><td class="l"><span class="s">lim<sub>h→0</sub>[f(a+h)−f(a)]/h</span></td><td class="l"><span class="s">f′(a)=st([f(a+dx)−f(a)]/dx)</span></td></tr>
 <tr><td class="l">积分</td><td class="l">黎曼和的极限</td><td class="l">超有限和 <span class="s">st(Σ f(x<sub>i</sub>)Δx)</span> 的标准部分</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>定义对照。等级 A（非标准分析的标准结果）。</div>
+<div class="datasrc"><b>性质：</b>定义对照。等级 A／甲（非标准分析的标准结果）。</div>
 
 <p>以微积分基本定理为例。在 ε-δ 框架下，证明需要构造黎曼和、利用一致连续性、进行不等式估计。在超实数框架下，证明骨架变成：取无穷自然数 <span class="s">N</span>，<span class="s">Δx=(b−a)/N</span>；则 <span class="s">[F(x+Δx)−F(x)]/Δx = ∫<sub>x</sub><sup>x+Δx</sup>f/Δx ≈ f(x)</span>，因为无穷小区间上的平均值与 <span class="s">f(x)</span> 相差无穷小；取标准部分即得 <span class="s">F′(x)=f(x)</span>。<b>没有不等式拼接，没有一致连续性的技术引用。</b></p>
 
@@ -42,7 +42,7 @@
 
 <p>超有限方法更进一步。它把可分无穷维希尔伯特空间 <span class="s">H</span> 嵌入非标准希尔伯特空间 <span class="s">*H</span>，后者有一个<b>内部正交基</b> <span class="s">{e<sub>n</sub>}<sub>n=1..γ</sub></span>，其中 <span class="s">γ</span> 是非标准自然数（无穷大但在内部视角下是"有限"的）。［已知］</p>
 
-<div class="define"><span class="bt">定义 9.2　超有限维希尔伯特空间［已知，B］</span>
+<div class="define"><span class="bt">定义 9.2　超有限维希尔伯特空间［已知，B／乙］</span>
 一个超有限维希尔伯特空间是一个内积空间，其维数 <span class="s">γ</span> 是非标准自然数。它满足：<br>
 （1）可以进行有限维线性代数的全部运算（求和、内积、线性算子）；<br>
 （2）位置、动量、哈密顿量等算子在 <span class="s">*H</span> 上处处有界；<br>
@@ -62,7 +62,7 @@
 <tr><td class="l">广义函数（δ 函数）独立理论</td><td class="l">δ 是普通非标准函数，奇异性来自标准部分</td></tr>
 <tr><td class="l">谱定理的复杂证明</td><td class="l">有限维特征分解 + 取标准部分</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>层次折叠对照。等级 B（公开结果的整理）；<b>参考：</b>Almeida &amp; Teixeira (2004) 的超有限量子力学重构。</div>
+<div class="datasrc"><b>性质：</b>层次折叠对照。等级 B／乙（公开结果的整理）；<b>参考：</b>Almeida &amp; Teixeira (2004) 的超有限量子力学重构。</div>
 
 <div class="scenario"><span class="bt">降级的本质</span>
 超有限方法的威力来自一句话：<b>把"无穷维"重新定义为"维数是无穷大的有限维"。</b>一旦采用内部视角，泛函分析中为处理无穷而引入的技术层次（无界、稠密、连续谱、广义函数）全部变成冗余。这不是"消除无穷"，而是把无穷折叠进一个更大的离散结构，再用标准部分取回连续图景。</div>
@@ -77,7 +77,7 @@
 <tr><td class="l">P3 问题解决力</td><td class="l">通过</td><td class="l">已在组合数论（Jin 的 sumset 定理）、近似群论、拓扑动力学中产生新证明</td></tr>
 <tr><td class="l">P4 可迁移性</td><td class="l">通过</td><td class="l">已迁移至测度论（Loeb 测度）、概率论（超有限概率）、动力系统</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>方法论评分。等级 B（依据公开文献）。<b>这是四个案例中唯一在全部四判据上通过的。</b></div>
+<div class="datasrc"><b>性质：</b>方法论评分。等级 B／乙（依据公开文献）。<b>这是四个案例中唯一在全部四判据上通过的。</b></div>
 
 <div class="warning"><span class="bt">边界（诚实清单）</span>
 非标准分析有三个代价：<b>（1）模型论依赖</b>——需要超滤子、饱和模型等工具，入门门槛高；<b>（2）非构造性</b>——它告诉你"存在一个超有限维空间"，但通常不给出显式构造；<b>（3）互译成本</b>——把结果翻译回标准语言有时需要额外技术。因此它是<b>可选工具</b>，不是框架的必要基础（见第 3.4 节）。</div>
