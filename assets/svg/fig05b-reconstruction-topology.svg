@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<rect x="0" y="0" width="800" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">重建前后：生成拓扑的压缩</text>
+<rect x="40" y="66" width="250" height="32" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="165" y="87" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">开集公理（起点）</text>
+<line x1="290" y1="82" x2="440" y2="140" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="106" width="250" height="32" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="165" y="127" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">闭集／内部／闭包</text>
+<line x1="290" y1="122" x2="440" y2="140" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="146" width="250" height="32" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="165" y="167" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">邻域／基／子基</text>
+<line x1="290" y1="162" x2="440" y2="140" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="186" width="250" height="32" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="165" y="207" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">连续／紧致／连通</text>
+<line x1="290" y1="202" x2="440" y2="140" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="440" y="92" width="320" height="96" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="2"/>
+<text x="600" y="124" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="14px">区分动作 D + 阈值 θ</text>
+<text x="600" y="150" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">P[x]=w/θ 生成内部／边界／外部</text>
+<text x="600" y="174" class="l" text-anchor="middle" fill="#666" font-weight="normal">公理变为推论</text>
+<text x="400" y="240" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">同一机制生成度量／序／Zariski 拓扑</text>
+<text x="400" y="268" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">P3（新定理）仍待检验</text>
+</svg>

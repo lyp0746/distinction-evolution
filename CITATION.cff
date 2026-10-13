@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below. 若使用本作，请按下述格式引用。"
 type: book
-title: "区分的演化：演化区分系统——公理化、图上硬核与统一纲领 / The Evolution of Distinction: Evolutionary Distinction Systems"
+title: "区分的演化：从图论硬核到统一纲领——公理框架、可复现结果与限度宣言 / The Evolution of Distinction: From a Graph-Theoretic Hard Core to a Program for Unification"
 abstract: >-
   本书把"抽象统摄具体"写成可操作的方法（压缩），把它实现为一个形式框架——
   演化区分系统（EDS），并在有限图上给出一个完整、可复现的相变定理：区分耦合越过

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<rect x="0" y="0" width="800" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">重建前后：非标准分析的降级</text>
+<rect x="40" y="66" width="230" height="30" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="155" y="86" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">极限（∀ε∃δ）</text>
+<rect x="40" y="104" width="230" height="30" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="155" y="124" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">连续（不等式）</text>
+<rect x="40" y="142" width="230" height="30" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="155" y="162" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">导数（极限）</text>
+<rect x="40" y="180" width="230" height="30" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="155" y="200" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">积分（黎曼和极限）</text>
+<text x="155" y="235" class="l" text-anchor="middle" fill="#666" font-weight="normal">标准框架：多个独立定义</text>
+<rect x="440" y="66" width="320" height="150" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="2"/>
+<text x="600" y="98" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="14px">超实数 *ℝ + 标准部分 st</text>
+<text x="600" y="128" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">极限 = x≈a ⇒ f(x)≈L</text>
+<text x="600" y="154" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">导数 = st(差分比)</text>
+<text x="600" y="180" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">积分 = st(超有限和)</text>
+<text x="600" y="204" class="l" text-anchor="middle" fill="#666" font-weight="normal">一个操作覆盖全部</text>
+<text x="400" y="250" class="l" text-anchor="middle" fill="#009E73" font-weight="700">P3 通过：已在组合数论／拓扑动力学产生新证明</text>
+<text x="400" y="278" class="l" text-anchor="middle" fill="#c94f4f" font-weight="normal">代价：模型论依赖、非构造性、互译成本</text>
+</svg>

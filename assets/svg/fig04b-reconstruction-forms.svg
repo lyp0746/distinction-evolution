@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<rect x="0" y="0" width="800" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">重建前后：微分形式的压缩</text>
+<rect x="30" y="66" width="170" height="48" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="115" y="96" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">牛顿–莱布尼茨</text>
+<line x1="115" y1="114" x2="400" y2="164" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="220" y="66" width="170" height="48" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="305" y="96" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">格林公式</text>
+<line x1="305" y1="114" x2="400" y2="164" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="410" y="66" width="170" height="48" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="495" y="96" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">高斯公式</text>
+<line x1="495" y1="114" x2="400" y2="164" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="600" y="66" width="170" height="48" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="685" y="96" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">斯托克斯公式</text>
+<line x1="685" y1="114" x2="400" y2="164" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="400" y="138" class="l" text-anchor="middle" fill="#666" font-weight="normal">识别冗余：四个定理共享同一骨架</text>
+<rect x="255" y="164" width="290" height="66" rx="6" fill="#eef4fa" stroke="#3a6ea5" stroke-width="2"/>
+<text x="400" y="194" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="14px">广义斯托克斯定理</text>
+<text x="400" y="216" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">∫_M dω = ∫_∂M ω</text>
+<text x="400" y="268" class="l" text-anchor="middle" fill="#009E73" font-weight="700">新结果：德拉姆上同调、指标定理</text>
+</svg>

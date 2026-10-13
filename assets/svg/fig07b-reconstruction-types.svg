@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" width="800" height="300">
+<rect x="0" y="0" width="800" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">重建前后：类型论的结构语言</text>
+<rect x="40" y="70" width="300" height="150" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.4"/>
+<text x="190" y="98" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">集合论语言</text>
+<text x="190" y="128" class="l" text-anchor="middle" fill="#666" font-weight="normal">群 = 集合 + 附加结构</text>
+<text x="190" y="152" class="l" text-anchor="middle" fill="#666" font-weight="normal">相等 = 布尔判断</text>
+<text x="190" y="176" class="l" text-anchor="middle" fill="#666" font-weight="normal">同构 ≠ 相等</text>
+<text x="190" y="200" class="l" text-anchor="middle" fill="#666" font-weight="normal">结构是附加的</text>
+<rect x="460" y="70" width="300" height="150" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.4"/>
+<text x="610" y="98" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="13px">类型论 / HoTT</text>
+<text x="610" y="128" class="l" text-anchor="middle" fill="#666" font-weight="normal">群 = 依赖类型记录</text>
+<text x="610" y="152" class="l" text-anchor="middle" fill="#666" font-weight="normal">相等 = 路径空间</text>
+<text x="610" y="176" class="l" text-anchor="middle" fill="#666" font-weight="normal">同构即相等（单价）</text>
+<text x="610" y="200" class="l" text-anchor="middle" fill="#666" font-weight="normal">结构是派生的</text>
+<line x1="340" y1="145" x2="460" y2="145" stroke="#009E73" stroke-width="2" marker-end="url(#b)"/>
+<defs><marker id="b" markerWidth="10" markerHeight="10" refX="5" refY="7" orient="auto"><path d="M0,0 L5,7 L10,0" fill="none" stroke="#009E73" stroke-width="1.4"/></marker></defs>
+<text x="400" y="135" class="l" text-anchor="middle" fill="#009E73" font-weight="700">结构化</text>
+<text x="400" y="255" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">同构不变的性质自动被尊重；形式化可机器验证</text>
+<text x="400" y="282" class="l" text-anchor="middle" fill="#c94f4f" font-weight="normal">代价：形式化冗长、几何直觉薄弱</text>
+</svg>

@@ -1,7 +1,7 @@
 # 区分的演化
-### 演化区分系统：公理化、图上硬核与统一纲领
+### 从图论硬核到统一纲领：公理框架、可复现结果与限度宣言
 
-> **The Evolution of Distinction** — Evolutionary Distinction Systems: Axiomatization, the Graph-Theoretic Hard Core, and a Program for Unification
+> **The Evolution of Distinction** — From a Graph-Theoretic Hard Core to a Program for Unification: Axioms, Reproducible Results, and a Declaration of Limits
 
 李毅芃　著　·　2026　·　CC BY 4.0
 

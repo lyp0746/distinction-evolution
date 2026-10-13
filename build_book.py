@@ -38,13 +38,13 @@ FRONT = [("执行摘要", "front_executive_summary.html", "execsummary"),
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
 BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
         ("后记　方法论的自我限定与伦理立场", "back_postscript.html", "postscript"),
-        ("附录 A　数学补充：谱、线性方程与相变", "appendix_a_math.html", "apxA"),
-        ("附录 B　领域编码总表", "appendix_b_map.html", "apxB"),
+        ("附录 A　定理 12.1–12.5 的完整证明与数值验证", "appendix_a_math.html", "apxA"),
+        ("附录 B　十五领域编码总表", "appendix_b_map.html", "apxB"),
         ("附录 C　参考文献", "appendix_c_references.html", "apxC"),
-        ("附录 D　术语表", "appendix_d_glossary.html", "apxD"),
+        ("附录 D　术语表与符号索引", "appendix_d_glossary.html", "apxD"),
         ("附录 E　可证伪登记簿", "appendix_e_preregistration.html", "apxE"),
         ("附录 F　证据与数据缺口清单", "appendix_f_datagaps.html", "apxF"),
-        ("附录 G　研究纲领与工具包", "appendix_g_toolkit.html", "apxG")]
+        ("附录 G　研究纲领与可复现工具包", "appendix_g_toolkit.html", "apxG")]
 
 
 def load_json(p, default=None):

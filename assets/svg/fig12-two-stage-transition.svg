@@ -20,5 +20,5 @@
 <text x="157.7948717948718" y="78" class="l" text-anchor="start" fill="#009E73" font-weight="700">β₁=α/λ_n</text>
 <line x1="547" y1="60" x2="547" y2="280" stroke="#c94f4f" stroke-width="1" stroke-dasharray="4,3"/>
 <text x="552.6666666666667" y="98" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">β₂=α/λ₂</text>
-<text x="360" y="322" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">β₁<β<β₂：局部（高频）增长，全局（Fiedler）衰减</text>
+<text x="360" y="322" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">β₁&lt;β&lt;β₂：局部（高频）增长，全局（Fiedler）衰减</text>
 </svg>

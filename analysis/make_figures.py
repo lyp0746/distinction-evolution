@@ -73,30 +73,43 @@ def save(name, content):
     print("wrote", name)
 
 
-# ---------------------------------------------------------------- fig 0.1 理论地图
+# ---------------------------------------------------------------- fig 0.1 理论地图（修订：依赖箭头 + 图例）
 def fig00():
-    w, h = 860, 460
-    b = [txt(20, 28, "《区分的演化》概念地图", "start", "t")]
-    # three layers
-    for i, (name, y, col, sub) in enumerate([
-            ("第一层　硬核", 70, BLUE, "图上的相变定理（严格、可复现）"),
-            ("第二层　统一框架", 190, GOLD, "六条公理 + 分离曲率 + 符号分类"),
-            ("第三层　可选工具", 310, GREEN, "非标准分析 / 生成拓扑 / 类型论")]):
-        b.append(rect(240, y, 380, 80, "#fafafa", col, 1.8))
-        b.append(txt(430, y + 34, name, "middle", "l", col, "700", 14))
-        b.append(txt(430, y + 60, sub, "middle", "l", GREY))
-    # side fields
-    left = [("微分形式", 90), ("生成拓扑", 130), ("非标准分析", 170), ("类型论", 210)]
-    right = [("微分方程", 90), ("概率论", 130), ("量子数学", 170), ("微分几何", 210)]
+    w, h = 880, 520
+    b = [txt(20, 28, "《区分的演化》概念地图（含依赖方向）", "start", "t")]
+    layers = [
+        ("第一层　硬核", 70, BLUE, "图上的相变定理（严格、可复现）"),
+        ("第二层　统一框架", 200, GOLD, "六条公理 + 分离曲率 + 符号分类"),
+        ("第三层　可选工具", 330, GREEN, "非标准分析 / 生成拓扑 / 类型论"),
+    ]
+    for name, y, col, sub in layers:
+        b.append(rect(255, y, 370, 82, "#fafafa", col, 2.0))
+        b.append(txt(440, y + 34, name, "middle", "l", col, "700", 14))
+        b.append(txt(440, y + 60, sub, "middle", "l", GREY))
+    b.append('<defs><marker id="dep" markerWidth="10" markerHeight="10" refX="5" refY="7" orient="auto">'
+             f'<path d="M0,0 L5,7 L10,0" fill="none" stroke="{INK}" stroke-width="1.4"/></marker></defs>')
+    for y0 in (152, 282):
+        b.append(f'<line x1="440" y1="{y0}" x2="440" y2="{y0+48}" stroke="{INK}" stroke-width="2" marker-end="url(#dep)"/>')
+    b.append(txt(452, 182, "依赖", "start", "l", INK, "700"))
+    b.append(txt(452, 312, "依赖", "start", "l", INK, "700"))
+    left = [("微分形式", 100), ("生成拓扑", 150), ("非标准分析", 200), ("类型论", 250)]
     for name, y in left:
-        b.append(rect(40, y, 150, 30, "#fff", GREY, 1))
-        b.append(txt(115, y + 20, name, "middle", "l"))
-        b.append(f'<line x1="190" y1="{y+15}" x2="235" y2="{y+15}" stroke="{GREY}" stroke-width="1" stroke-dasharray="4,3"/>')
+        b.append(rect(30, y, 170, 34, "#fff", GREY, 1))
+        b.append(txt(115, y + 22, name, "middle", "l"))
+        b.append(f'<line x1="200" y1="{y+17}" x2="250" y2="{y+17}" stroke="{GREY}" stroke-width="1.2" stroke-dasharray="5,4"/>')
+    right = [("微分方程", 100), ("概率论", 150), ("量子数学", 200), ("微分几何", 250)]
     for name, y in right:
-        b.append(rect(670, y, 150, 30, "#fff", GREY, 1))
-        b.append(txt(745, y + 20, name, "middle", "l"))
-        b.append(f'<line x1="665" y1="{y+15}" x2="620" y2="{y+15}" stroke="{GREY}" stroke-width="1" stroke-dasharray="4,3"/>')
-    b.append(txt(430, 430, "实线 = 严格/半严格编码；虚线 = 仅工具对应。地图只定性，不含统计。", "middle", "l", GREY))
+        b.append(rect(680, y, 170, 34, "#fff", GREY, 1))
+        b.append(txt(765, y + 22, name, "middle", "l"))
+        b.append(f'<line x1="675" y1="{y+17}" x2="630" y2="{y+17}" stroke="{GREY}" stroke-width="1.2" stroke-dasharray="5,4"/>')
+    b.append(rect(255, 440, 370, 44, "#eef4fa", BLUE, 1.8))
+    b.append(txt(440, 468, "图论 / 线性代数 / 组合数学 —— A 级，可数值复现", "middle", "l", BLUE, "700"))
+    b.append(rect(30, 430, 200, 74, "#ffffff", GREY, 1))
+    b.append(txt(44, 452, "图例", "start", "l", INK, "700"))
+    b.append(f'<line x1="44" y1="470" x2="84" y2="470" stroke="{INK}" stroke-width="2"/>')
+    b.append(txt(92, 474, "依赖（实线箭头）", "start", "l", GREY))
+    b.append(f'<line x1="44" y1="490" x2="84" y2="490" stroke="{GREY}" stroke-width="1.2" stroke-dasharray="5,4"/>')
+    b.append(txt(92, 494, "工具对应（虚线）", "start", "l", GREY))
     save("fig00-theory-map.svg", svg(w, h, "\n".join(b)))
 
 
@@ -206,7 +219,7 @@ def fig05():
     b.append(polyline(pts, BLUE, 2.4))
     b.append(txt(220, 100, "内部 P>1", "middle", "l", GREEN, "700"))
     b.append(txt(560, 100, "内部 P>1", "middle", "l", GREEN, "700"))
-    b.append(txt(430, 210, "外部 P<1", "middle", "l", GREY))
+    b.append(txt(430, 210, "外部 P&lt;1", "middle", "l", GREY))
     b.append(txt(380, 285, "开集、闭集、边界由此生成；不同 (R,w,θ) 给出度量/序/Zariski 拓扑", "middle", "l", GREY))
     save("fig05-generative-topology.svg", svg(w, h, "\n".join(b)))
 
@@ -286,7 +299,7 @@ def fig09():
         b.append(polyline(pts, col, 2.6))
     b.append(txt(540, 90, "κ>0", "start", "l", GREEN, "700"))
     b.append(txt(540, 150, "κ=0", "start", "l", GOLD, "700"))
-    b.append(txt(540, 220, "κ<0", "start", "l", RED, "700"))
+    b.append(txt(540, 220, "κ&lt;0", "start", "l", RED, "700"))
     b.append(txt(360, 300, "符号决定长期行为：塌缩 / 平衡 / 精细化", "middle", "l", INK, "700"))
     save("fig09-curvature-signs.svg", svg(w, h, "\n".join(b)))
 
@@ -354,7 +367,7 @@ def fig12():
     b.append(txt(80 + (alpha / lams[-1]) / 3.0 * 560 + 6, 78, "β₁=α/λ_n", "start", "l", GREEN, "700"))
     b.append(f'<line x1="{80+(alpha/lams[0])/3.0*560:.0f}" y1="60" x2="{80+(alpha/lams[0])/3.0*560:.0f}" y2="280" stroke="{RED}" stroke-width="1" stroke-dasharray="4,3"/>')
     b.append(txt(80 + (alpha / lams[0]) / 3.0 * 560 + 6, 98, "β₂=α/λ₂", "start", "l", RED, "700"))
-    b.append(txt(360, 322, "β₁<β<β₂：局部（高频）增长，全局（Fiedler）衰减", "middle", "l", INK, "700"))
+    b.append(txt(360, 322, "β₁&lt;β&lt;β₂：局部（高频）增长，全局（Fiedler）衰减", "middle", "l", INK, "700"))
     save("fig12-two-stage-transition.svg", svg(w, h, "\n".join(b)))
 
 
@@ -407,7 +420,7 @@ def fig14b():
     b = [txt(20, 28, "数值验证：模式投影的指数斜率", "start", "t")]
     b.append(axes(60, 260, 720, 60, "时间 t", "log|投影|"))
     # beta=0.3 (middle phase): top grows, others decay
-    for slope, col, nm in [(0.5, GREEN, "最高频 μ=0.5"), (-0.4, GREY, "其他 μ<0")]:
+    for slope, col, nm in [(0.5, GREEN, "最高频 μ=0.5"), (-0.4, GREY, "其他 μ&lt;0")]:
         pts = [(70 + i / 100 * 620, 180 - slope * i / 100 * 120) for i in range(101)]
         b.append(polyline(pts, col, 2.4))
     # beta=0.6 offset
@@ -416,7 +429,7 @@ def fig14b():
         b.append(polyline(pts, col, 1.8, "6,4"))
     b.append(txt(500, 90, "β=0.6：最高频 + Fiedler", "start", "l", RED, "700"))
     b.append(txt(500, 120, "β=0.3：仅最高频", "start", "l", GREEN, "700"))
-    b.append(txt(400, 300, "斜率与 μ_k=βλ_k−α 的预测一致（误差 <10⁻³）", "middle", "l", INK, "700"))
+    b.append(txt(400, 300, "斜率与 μ_k=βλ_k−α 的预测一致（误差 &lt;10⁻³）", "middle", "l", INK, "700"))
     save("fig14b-numerical-verification.svg", svg(w, h, "\n".join(b)))
 
 
@@ -593,8 +606,204 @@ def fig23():
     save("fig23-roadmap-matrix.svg", svg(w, h, "\n".join(b)))
 
 
+
+# ---------------------------------------------------------------- fig 4.2 微分形式重建对比
+def fig04b():
+    w, h = 800, 300
+    b = [txt(20, 28, "重建前后：微分形式的压缩", "start", "t")]
+    before = ["牛顿–莱布尼茨", "格林公式", "高斯公式", "斯托克斯公式"]
+    for i, name in enumerate(before):
+        x = 30 + i * 190
+        b.append(rect(x, 66, 170, 48, "#fafafa", GREY, 1.2))
+        b.append(txt(x + 85, 96, name, "middle", "l"))
+        b.append(f'<line x1="{x+85}" y1="114" x2="400" y2="164" stroke="{BLUE}" stroke-width="1" stroke-dasharray="4,3"/>')
+    b.append(txt(400, 138, "识别冗余：四个定理共享同一骨架", "middle", "l", GREY))
+    b.append(rect(255, 164, 290, 66, "#eef4fa", BLUE, 2))
+    b.append(txt(400, 194, "广义斯托克斯定理", "middle", "l", BLUE, "700", 14))
+    b.append(txt(400, 216, "∫_M dω = ∫_∂M ω", "middle", "l", INK))
+    b.append(txt(400, 268, "新结果：德拉姆上同调、指标定理", "middle", "l", GREEN, "700"))
+    save("fig04b-reconstruction-forms.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 5.2 生成拓扑重建对比
+def fig05b():
+    w, h = 800, 300
+    b = [txt(20, 28, "重建前后：生成拓扑的压缩", "start", "t")]
+    left = ["开集公理（起点）", "闭集／内部／闭包", "邻域／基／子基", "连续／紧致／连通"]
+    for i, name in enumerate(left):
+        y = 66 + i * 40
+        b.append(rect(40, y, 250, 32, "#fafafa", GREY, 1.2))
+        b.append(txt(165, y + 21, name, "middle", "l"))
+        b.append(f'<line x1="290" y1="{y+16}" x2="440" y2="140" stroke="{GREEN}" stroke-width="1" stroke-dasharray="4,3"/>')
+    b.append(rect(440, 92, 320, 96, "#f3f9f5", GREEN, 2))
+    b.append(txt(600, 124, "区分动作 D + 阈值 θ", "middle", "l", GREEN, "700", 14))
+    b.append(txt(600, 150, "P[x]=w/θ 生成内部／边界／外部", "middle", "l", INK))
+    b.append(txt(600, 174, "公理变为推论", "middle", "l", GREY))
+    b.append(txt(400, 240, "同一机制生成度量／序／Zariski 拓扑", "middle", "l", INK, "700"))
+    b.append(txt(400, 268, "P3（新定理）仍待检验", "middle", "l", RED, "700"))
+    save("fig05b-reconstruction-topology.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 6.2 非标准分析重建对比
+def fig06b():
+    w, h = 800, 300
+    b = [txt(20, 28, "重建前后：非标准分析的降级", "start", "t")]
+    a = ["极限（∀ε∃δ）", "连续（不等式）", "导数（极限）", "积分（黎曼和极限）"]
+    for i, name in enumerate(a):
+        y = 66 + i * 38
+        b.append(rect(40, y, 230, 30, "#fafafa", GREY, 1.2))
+        b.append(txt(155, y + 20, name, "middle", "l"))
+    b.append(txt(155, 235, "标准框架：多个独立定义", "middle", "l", GREY))
+    b.append(rect(440, 66, 320, 150, "#f3f9f5", GREEN, 2))
+    b.append(txt(600, 98, "超实数 *ℝ + 标准部分 st", "middle", "l", GREEN, "700", 14))
+    b.append(txt(600, 128, "极限 = x≈a ⇒ f(x)≈L", "middle", "l", INK))
+    b.append(txt(600, 154, "导数 = st(差分比)", "middle", "l", INK))
+    b.append(txt(600, 180, "积分 = st(超有限和)", "middle", "l", INK))
+    b.append(txt(600, 204, "一个操作覆盖全部", "middle", "l", GREY))
+    b.append(txt(400, 250, "P3 通过：已在组合数论／拓扑动力学产生新证明", "middle", "l", GREEN, "700"))
+    b.append(txt(400, 278, "代价：模型论依赖、非构造性、互译成本", "middle", "l", RED))
+    save("fig06b-reconstruction-nonstandard.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 7.2 类型论重建对比
+def fig07b():
+    w, h = 800, 300
+    b = [txt(20, 28, "重建前后：类型论的结构语言", "start", "t")]
+    b.append(rect(40, 70, 300, 150, "#fafafa", GREY, 1.4))
+    b.append(txt(190, 98, "集合论语言", "middle", "l", INK, "700", 13))
+    for i, t in enumerate(["群 = 集合 + 附加结构", "相等 = 布尔判断", "同构 ≠ 相等", "结构是附加的"]):
+        b.append(txt(190, 128 + i * 24, t, "middle", "l", GREY))
+    b.append(rect(460, 70, 300, 150, "#f3f9f5", GREEN, 1.4))
+    b.append(txt(610, 98, "类型论 / HoTT", "middle", "l", GREEN, "700", 13))
+    for i, t in enumerate(["群 = 依赖类型记录", "相等 = 路径空间", "同构即相等（单价）", "结构是派生的"]):
+        b.append(txt(610, 128 + i * 24, t, "middle", "l", GREY))
+    b.append(f'<line x1="340" y1="145" x2="460" y2="145" stroke="{GREEN}" stroke-width="2" marker-end="url(#b)"/>')
+    b.append('<defs><marker id="b" markerWidth="10" markerHeight="10" refX="5" refY="7" orient="auto">'
+             f'<path d="M0,0 L5,7 L10,0" fill="none" stroke="{GREEN}" stroke-width="1.4"/></marker></defs>')
+    b.append(txt(400, 135, "结构化", "middle", "l", GREEN, "700"))
+    b.append(txt(400, 255, "同构不变的性质自动被尊重；形式化可机器验证", "middle", "l", INK, "700"))
+    b.append(txt(400, 282, "代价：形式化冗长、几何直觉薄弱", "middle", "l", RED))
+    save("fig07b-reconstruction-types.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 12.2 临界耦合的势能景观
+def fig12b():
+    w, h = 760, 340
+    b = [txt(20, 28, "临界耦合的势能景观 κ(β)", "start", "t")]
+    b.append(axes(70, 285, 650, 60, "耦合强度 β", "分离曲率 κ"))
+    alpha = 1.0
+    lams = [0.382, 1.0, 2.0, 3.0, 4.0]
+    cols = [RED, GOLD, GREY, BLUE, GREEN]
+    b.append(f'<line x1="70" y1="180" x2="650" y2="180" stroke="{INK}" stroke-width="1"/>')
+    for lam, col in zip(lams, cols):
+        pts = [(70 + t / 100 * 560, 180 - (t / 100 * 3.0 * lam - alpha) * 40) for t in range(101)]
+        pts = [(x, max(60, min(285, y))) for x, y in pts]
+        b.append('<polyline points="' + " ".join(f"{x:.0f},{y:.0f}" for x, y in pts) + f'" fill="none" stroke="{col}" stroke-width="1.8" opacity="0.9"/>')
+    b.append(txt(600, 78, "λ=4（局部）", "start", "l", GREEN, "700"))
+    b.append(txt(600, 150, "λ=2", "start", "l", BLUE, "700"))
+    b.append(txt(600, 200, "λ=0.382（全局）", "start", "l", RED, "700"))
+    b.append(f'<line x1="{70+1.0/4.0*560:.0f}" y1="60" x2="{70+1.0/4.0*560:.0f}" y2="285" stroke="{GREEN}" stroke-width="1" stroke-dasharray="4,3"/>')
+    b.append(txt(70 + 1.0 / 4.0 * 560 + 4, 74, "β₁=α/λₙ", "start", "l", GREEN))
+    b.append(f'<line x1="{70+1.0/0.382*560:.0f}" y1="60" x2="{70+1.0/0.382*560:.0f}" y2="285" stroke="{RED}" stroke-width="1" stroke-dasharray="4,3"/>')
+    b.append(txt(70 + 1.0 / 0.382 * 560 - 4, 74, "β₂=α/λ₂", "end", "l", RED))
+    b.append(txt(360, 320, "每条直线是一个模式的增长率；同一 β 下，斜率越大越快越零", "middle", "l", GREY))
+    save("fig12b-potential-landscape.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 13.2 两阶段演化示意
+def fig13b():
+    import math as _m
+    w, h = 880, 260
+    b = [txt(20, 28, "局部先于全局：两阶段的区分结构演化", "start", "t")]
+    panels = [("β &lt; β₁", "均匀衰减", GREY, 0),
+              ("β₁ &lt; β &lt; β₂", "局部（高频）生长", GREEN, 1),
+              ("β &gt; β₂", "局部 + 全局生长", BLUE, 2)]
+    for gi, (rng, name, col, mode) in enumerate(panels):
+        x0 = 30 + gi * 285
+        b.append(rect(x0, 60, 260, 160, "#fafafa", col, 1.6))
+        b.append(txt(x0 + 130, 86, rng, "middle", "l", col, "700", 13))
+        b.append(txt(x0 + 130, 108, name, "middle", "l", GREY))
+        cx, cy, R = x0 + 130, 158, 46
+        for i in range(8):
+            a1 = i / 8 * 2 * _m.pi
+            a2 = ((i + 1) % 8) / 8 * 2 * _m.pi
+            b.append(f'<line x1="{cx+R*_m.cos(a1):.0f}" y1="{cy+R*_m.sin(a1):.0f}" x2="{cx+R*_m.cos(a2):.0f}" y2="{cy+R*_m.sin(a2):.0f}" stroke="#bbb" stroke-width="1"/>')
+            px, py = cx + R * _m.cos(a1), cy + R * _m.sin(a1)
+            if mode == 0:
+                fill = "#dddddd"
+            elif mode == 1:
+                fill = GREEN if i % 2 == 0 else "#ffffff"
+            else:
+                fill = BLUE if _m.cos(a1) >= 0 else "#ffffff"
+            b.append(f'<circle cx="{px:.0f}" cy="{py:.0f}" r="6" fill="{fill}" stroke="{col}" stroke-width="1.2"/>')
+    b.append(txt(440, 250, "灰 = 衰减；绿 = 相邻反相的局部模式；蓝 = 左右分裂的全局模式", "middle", "l", GREY))
+    save("fig13b-two-stage-evolution.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 16.2 分离度量 vs 欧氏度量
+def fig16b():
+    w, h = 800, 320
+    b = [txt(20, 28, "分离度量与欧氏度量的差别", "start", "t")]
+    b.append(axes(60, 280, 380, 60, "x", "y"))
+    b.append(f'<circle cx="150" cy="150" r="6" fill="{BLUE}"/>')
+    b.append(f'<circle cx="290" cy="150" r="6" fill="{BLUE}"/>')
+    b.append(f'<line x1="150" y1="150" x2="290" y2="150" stroke="{GREY}" stroke-width="1.4" stroke-dasharray="5,4"/>')
+    b.append(txt(220, 140, "欧氏距离", "middle", "l", GREY))
+    for i in range(6):
+        r = 20 + i * 22
+        b.append(f'<ellipse cx="220" cy="150" rx="{r}" ry="{r*0.5:.0f}" fill="none" stroke="{GOLD}" stroke-width="1" opacity="{0.5-0.06*i:.2f}"/>')
+    b.append(txt(220, 100, "分离难度等值线", "middle", "l", GOLD, "700"))
+    b.append(txt(220, 300, "欧氏：两点越远越不同", "middle", "l", GREY))
+    b.append(rect(440, 70, 320, 190, "#fff6ee", GOLD, 1.6))
+    b.append(txt(600, 98, "分离度量 d_D(x,y)", "middle", "l", GOLD, "700", 13))
+    for i, t in enumerate([
+            "inf{ α : x ∼_α y }",
+            "= 把两点变得不可区分所需的最小精度",
+            "在信息几何中 ≈ KL 散度的二阶展开",
+            "在流形上通过热核与曲率相联系",
+            "全局含义可能与欧氏不同（→ 1/3 缺口）"]):
+        b.append(txt(470, 128 + i * 26, t, "start", "l", INK if i == 1 else GREY))
+    save("fig16b-separation-vs-euclidean.svg", svg(w, h, "\n".join(b)))
+
+
+# ---------------------------------------------------------------- fig 19.2 编码矩阵热力图
+def fig19b():
+    fields = ["图论", "线性代数", "表示论", "调和分析", "点集拓扑", "代数拓扑",
+              "测度论", "实分析", "泛函分析", "复分析", "组合数学", "数论",
+              "数理逻辑", "类型论", "微分方程", "动力系统", "概率论", "信息论",
+              "算子代数", "量子数学", "博弈论", "优化", "数值分析", "微分几何", "LLM"]
+    feats = ["线性", "拓扑", "度量", "序", "逻辑", "κ−", "κ0", "κ+", "无演化", "离散", "连续"]
+    DATA = [
+        [0,0,0,1,0,0,0,1,0,0,1],[1,0,0,0,0,0,1,0,1,0,0],[1,0,0,0,0,0,1,0,1,0,0],
+        [1,0,0,0,0,0,1,0,0,0,1],[0,1,0,0,0,1,0,0,1,0,0],[0,1,0,0,0,1,0,0,1,0,0],
+        [0,0,1,0,0,0,0,1,1,0,0],[0,0,1,0,0,0,0,1,1,0,0],[1,0,1,0,0,0,0,1,1,0,0],
+        [0,0,0,0,0,0,1,0,1,0,0],[0,0,0,1,0,0,0,1,1,0,0],[0,0,0,1,0,0,0,1,1,0,0],
+        [0,0,0,0,1,0,1,0,1,0,0],[0,0,0,0,1,1,0,0,1,0,0],[0,0,1,0,0,0,0,1,0,0,1],
+        [0,0,1,0,0,0,0,1,0,1,0],[0,0,1,0,0,0,1,0,0,1,0],[0,0,1,0,0,1,0,0,1,0,0],
+        [1,0,0,0,0,0,1,0,0,0,1],[1,0,0,0,0,0,0,1,0,0,1],[0,0,0,1,0,0,0,1,0,1,0],
+        [0,0,0,1,0,1,0,0,1,0,0],[0,0,1,0,0,0,1,0,0,1,0],[0,1,0,0,0,1,0,0,0,0,1],
+        [1,0,0,0,0,0,0,1,0,0,1]]
+    cw, ch, x0, y0 = 24, 15, 120, 70
+    w, h = 900, 520
+    b = [txt(20, 28, "十五领域编码矩阵（按特征）", "start", "t")]
+    for j, fn in enumerate(feats):
+        b.append(txt(x0 + j * cw + cw / 2, y0 - 8, fn, "middle", "l", GREY, size=9))
+    for i, nm in enumerate(fields):
+        b.append(txt(x0 - 6, y0 + i * ch + 11, nm, "end", "l", INK, size=9))
+        for j in range(len(feats)):
+            v = DATA[i][j]
+            fill = "#3a6ea5" if v else "#ffffff"
+            b.append(f'<rect x="{x0+j*cw}" y="{y0+i*ch}" width="{cw-1}" height="{ch-1}" fill="{fill}" stroke="#eee" stroke-width="0.5"/>')
+    b.append(rect(700, 70, 140, 60, "#ffffff", GREY, 1))
+    b.append('<rect x="710" y="84" width="16" height="14" fill="#3a6ea5"/>')
+    b.append(txt(732, 95, "特征存在", "start", "l", GREY))
+    b.append('<rect x="710" y="106" width="16" height="14" fill="#ffffff" stroke="#ccc"/>')
+    b.append(txt(732, 117, "不存在", "start", "l", GREY))
+    b.append(txt(440, y0 + len(fields) * ch + 30, "PCA 有效维度 ≈ 6.14 / 11 → 统一是语言层，不是同义反复", "middle", "l", GOLD, "700"))
+    save("fig19b-encoding-heatmap.svg", svg(w, h, "\n".join(b)))
 if __name__ == "__main__":
-    fig00(); fig01(); fig02(); fig03(); fig04(); fig05(); fig06(); fig07()
-    fig08(); fig09(); fig10(); fig11(); fig12(); fig13(); fig14(); fig14b()
-    fig15(); fig17(); fig18(); fig19(); fig20(); fig21(); fig22(); fig23()
+    fig00(); fig01(); fig02(); fig03(); fig04(); fig04b(); fig05(); fig05b()
+    fig06(); fig06b(); fig07(); fig07b(); fig08(); fig09(); fig10(); fig11()
+    fig12(); fig12b(); fig13(); fig13b(); fig14(); fig14b(); fig15(); fig16b()
+    fig17(); fig18(); fig19(); fig19b(); fig20(); fig21(); fig22(); fig23()
     print("done")
