@@ -39,7 +39,7 @@
       "first": "ch05.html"
     },
     "区分动作": {
-      "total": 73,
+      "total": 74,
       "by_chapter": [
         [
           "ch02.html",
@@ -63,7 +63,7 @@
         ],
         [
           "ch11.html",
-          4
+          5
         ],
         [
           "ch12.html",
@@ -297,8 +297,12 @@
       "first": "ch12.html"
     },
     "两阶段相变": {
-      "total": 9,
+      "total": 10,
       "by_chapter": [
+        [
+          "ch11.html",
+          1
+        ],
         [
           "ch12.html",
           2
@@ -312,10 +316,10 @@
           2
         ]
       ],
-      "first": "ch12.html"
+      "first": "ch11.html"
     },
     "相变": {
-      "total": 41,
+      "total": 47,
       "by_chapter": [
         [
           "ch02.html",
@@ -335,7 +339,7 @@
         ],
         [
           "ch11.html",
-          2
+          8
         ],
         [
           "ch12.html",
@@ -373,11 +377,15 @@
       "first": "ch02.html"
     },
     "拉普拉斯": {
-      "total": 23,
+      "total": 24,
       "by_chapter": [
         [
           "ch09.html",
           3
+        ],
+        [
+          "ch11.html",
+          1
         ],
         [
           "ch12.html",
@@ -459,7 +467,7 @@
       "first": "ch03.html"
     },
     "超有限": {
-      "total": 33,
+      "total": 34,
       "by_chapter": [
         [
           "ch05.html",
@@ -475,7 +483,7 @@
         ],
         [
           "ch11.html",
-          2
+          3
         ],
         [
           "ch21.html",
@@ -738,6 +746,7 @@
   },
   "A2_formulas_defined": [
     "11.1",
+    "11.2",
     "12.1",
     "12.2",
     "12.3",
@@ -779,7 +788,8 @@
     },
     "ch11.html": {
       "numbers": [
-        1
+        1,
+        2
       ],
       "continuous": true
     },
@@ -837,6 +847,7 @@
   "A3_tables_defined": [
     "10.1",
     "11.1",
+    "11.2",
     "12.1",
     "12.2",
     "13.1",
@@ -1062,6 +1073,9 @@
     "0.13": [
       "ch13.html"
     ],
+    "0.143": [
+      "ch11.html"
+    ],
     "0.15": [
       "ch14.html"
     ],
@@ -1107,6 +1121,9 @@
     "0.50": [
       "ch14.html",
       "ch15.html"
+    ],
+    "0.500": [
+      "ch11.html"
     ],
     "0.6": [
       "ch14.html"
@@ -1235,6 +1252,12 @@
       "ch11.html"
     ],
     "11.6": [
+      "ch11.html"
+    ],
+    "11.7": [
+      "ch11.html"
+    ],
+    "11.8": [
       "ch11.html"
     ],
     "12.1": [
@@ -1787,7 +1810,8 @@
       "ch09.html"
     ],
     "9.6": [
-      "ch09.html"
+      "ch09.html",
+      "ch11.html"
     ],
     "9.7": [
       "ch09.html"

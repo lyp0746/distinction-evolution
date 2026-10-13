@@ -89,7 +89,56 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 
 <p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 15.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
 
-<h3>11.6　本章小结</h3>
+<h3>11.6　公理在图论情形的精确状态</h3>
+
+<p>前面几章反复声明“只有公理 4 在图上被完整验证”。本节把这个状态<b>逐条核算清楚</b>，并给出一个此前的遗漏：<b>公理 5 在图论中有一条真正的定理</b>。同时本节诚实报告：<b>公理 1 与公理 2 在图上可证为平凡——找不到非平凡的定理。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 11.1　六条公理在图论情形的精确状态（可核算）</b></caption>
+<tr><th class="l">公理</th><th class="l">图论状态</th><th class="l">依据</th></tr>
+<tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
+<tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
+<tr><td class="l">3 曲率有界</td><td class="l">有定理</td><td class="l"><span class="s">κ_info=Var(λ)/2</span>（第 9.6 节）</td></tr>
+<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 1—4 章）</td></tr>
+<tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 11.1，本节）</td></tr>
+<tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>公理状态核算。等级 A（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
+
+<div class="warning"><span class="bt">一个诚实的反结论：公理 1 在图上没有非平凡定理</span>
+一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
+
+<div class="define"><span class="bt">定理 11.1　原子分解的唯一性 ［定理，A／甲］</span>
+在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
+<b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
+<b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
+<b>（iii）</b>因此，<b>原子分解唯一 ⟺ 谱是单谱（所有特征值互异）</b>。</div>
+
+<p><b>证明。</b>（i）谱投影是特征空间的止交投影，由 <span class="s">L</span> 唯一确定。（ii）若 <span class="s">dim E<sub>k</sub>=1</span>，则 <span class="s">E<sub>k</sub></span> 内只有一个单位向量（差符号），故 rank-1 原子唯一；若 <span class="s">dim E<sub>k</sub>&gt;1</span>，则可在 <span class="s">E<sub>k</sub></span> 内任意旋转正交基，得到不同的 rank-1 分解。（iii）拼接所有 <span class="s">k</span>。∎</p>
+
+<table class="nat">
+<caption class="cap"><b>表 11.2　测试图的光谱多重度（公理 5）</b></caption>
+<tr><th class="l">图</th><th class="l">单谱？</th><th class="l">重数分布</th><th class="l">原子分解</th></tr>
+<tr><td class="l">P₈（路径）</td><td class="l"><b>是</b></td><td class="l">[1,1,1,1,1,1,1,1]</td><td class="l"><b>唯一</b></td></tr>
+<tr><td class="l">Petersen</td><td class="l">否</td><td class="l">[1,5,4]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">K₅</td><td class="l">否</td><td class="l">[1,4]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">K₄,₄</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">星图 S₈</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
+<tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
+
+<h3>11.7　生成性推论：笛卡尔积图的相变结构</h3>
+
+<p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
+
+<div class="define"><span class="bt">推论 11.1　乘积图的相变结构 ［推论，A／甲］</span>
+<div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
+故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
+
+<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A］</p>
+
+<h3>11.8　本章小结</h3>
 
 <p>EDS 是一个六元组加六条公理。其中只有公理 4 在图上被完整验证；其余是组织性框架公理。这一诚实的分级是本书全部可信度的基础。第四部分现在给出那个唯一的星号：图上的相变定理。</p>
 

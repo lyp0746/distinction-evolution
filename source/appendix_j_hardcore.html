@@ -123,7 +123,23 @@
 <b>强连通性：</b>强连通反转率 7.1%，非强连通 8.4%，无显著差异。<br>
 <b>结论：反转的充要条件仍是开放问题（O8）。</b>这防止了一个错的“定理 B1'”被写出。</div>
 
-<h2>J.8　复现</h2>
+<h2>J.8　公理 5 的图论定理与一个生成性推论</h2>
+
+<div class="define"><span class="bt">定理 J.5（原子分解唯一性）［定理，A／甲］</span>
+原子区分动作 = 谱投影 <span class="s">P<sub>k</sub></span>。则原子分解唯一 <span class="s">⟺</span> 谱为单谱（所有特征值互异）。
+计算：测试图中仅路径 <span class="s">P₈</span> 单谱；Petersen、K₅、K₄,₄、星图、环均退化。</div>
+
+<div class="define"><span class="bt">推论 J.1（乘积图的相变结构）［推论，A／甲］</span>
+<span class="s">λ<sub>i</sub>(G□H)=λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>，故
+<span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。
+数值：Petersen<span class="s">□K₂</span> 得 <span class="s">(0.143,0.500)</span>，预测与直接对角化一致。</div>
+
+<div class="warning"><span class="bt">同时报告的平凡与否定结果</span>
+<b>公理 1（观测完备）在图上平凡：</b>完整谱嵌入的行是正交矩阵的行，必单射（7 图 min row distance 全正）。<b>不存在非平凡的“观测完备定理”。</b><br>
+<b>公理 2（精度连续）在图上平凡</b>；公理 6 不适用。<br>
+所以“为六条公理各编一个定理”是不可能的——六条中两条平凡、一条不适用。这是对“框架生成性”问题最诚实的回答。</div>
+
+<h2>J.9　复现</h2>
 
 <pre class="code">python analysis/weighted_directed_transition.py   # 定理 B1 + 反例 B2
 python analysis/discrete_curvature.py             # 定理 C + 负结果 J.5

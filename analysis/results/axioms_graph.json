@@ -1,0 +1,191 @@
+{
+  "axiom_status": {
+    "axiom_1_observational_completeness": {
+      "status": "平凡（trivial）",
+      "reason": "完整谱嵌入的行是正交矩阵的行，必互相正交，故必单射；不存在非平凡定理。",
+      "min_row_distance_all_positive": true
+    },
+    "axiom_2_precision_continuity": {
+      "status": "平凡",
+      "reason": "有限图上精度是离散的；连续版本需在 β 上讨论（见公理4）。"
+    },
+    "axiom_3_bounded_curvature": {
+      "status": "有定理",
+      "theorem": "κ_info(G) = Var(λ)/2（discrete_curvature.py）"
+    },
+    "axiom_4_wellposedness": {
+      "status": "硬核",
+      "theorem": "两阶段相变，β₁=α/λₙ、β₂=α/λ₂（graph_phase_transition.py）"
+    },
+    "axiom_5_separation_completeness": {
+      "status": "有定理（本脚本）",
+      "theorem": "原子区分动作 = 谱投影 P_k；P_k 由谱唯一决定。每个 P_k 可唯一分解为 rank-1 原子 ⟺ 该特征值单重。故：原子分解唯一 ⟺ 谱为单谱（所有特征值互异）。"
+    },
+    "axiom_6_standardization": {
+      "status": "不适用",
+      "reason": "有限图无超有限结构。"
+    }
+  },
+  "spectrum_profiles": {
+    "Petersen": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        5,
+        4
+      ]
+    },
+    "C10": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    "C11": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "K5": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        4
+      ]
+    },
+    "K4,4": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        6,
+        1
+      ]
+    },
+    "P8": {
+      "simple_spectrum": true,
+      "multiplicities": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "Star8": {
+      "simple_spectrum": false,
+      "multiplicities": [
+        1,
+        6,
+        1
+      ]
+    }
+  },
+  "spectral_injectivity": {
+    "Petersen": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "C10": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "C11": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "K5": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "K4,4": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "P8": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    },
+    "Star8": {
+      "min_row_distance": 1.414214,
+      "injective": true
+    }
+  },
+  "phase_structures": {
+    "Petersen": {
+      "lambda_2": 2.0,
+      "lambda_n": 5.0,
+      "beta_1": 0.2,
+      "beta_2": 0.5,
+      "width": 0.3
+    },
+    "C10": {
+      "lambda_2": 0.381966,
+      "lambda_n": 4.0,
+      "beta_1": 0.25,
+      "beta_2": 2.618034,
+      "width": 2.368034
+    },
+    "C11": {
+      "lambda_2": 0.317493,
+      "lambda_n": 3.918986,
+      "beta_1": 0.255168,
+      "beta_2": 3.149676,
+      "width": 2.894508
+    },
+    "K5": {
+      "lambda_2": 5.0,
+      "lambda_n": 5.0,
+      "beta_1": 0.2,
+      "beta_2": 0.2,
+      "width": 0.0
+    },
+    "K4,4": {
+      "lambda_2": 4.0,
+      "lambda_n": 8.0,
+      "beta_1": 0.125,
+      "beta_2": 0.25,
+      "width": 0.125
+    },
+    "P8": {
+      "lambda_2": 0.152241,
+      "lambda_n": 3.847759,
+      "beta_1": 0.259892,
+      "beta_2": 6.568536,
+      "width": 6.308644
+    },
+    "Star8": {
+      "lambda_2": 1.0,
+      "lambda_n": 8.0,
+      "beta_1": 0.125,
+      "beta_2": 1.0,
+      "width": 0.875
+    }
+  },
+  "generative_corollary": {
+    "name": "笛卡尔积 G□H 的相变结构",
+    "predicted_from_factors": true,
+    "product_spectrum_matches": true,
+    "Petersen_square_K2": {
+      "lambda_2": 2.0,
+      "lambda_n": 7.0,
+      "beta_1": 0.142857,
+      "beta_2": 0.5,
+      "width": 0.357143
+    },
+    "note": "λ(G□H)=λ_i(G)+λ_j(H)（标准谱事实）；相变结构由此可直接计算。"
+  }
+}
