@@ -1,0 +1,79 @@
+<h2 class="chapter">第 18 章　1/3 的三条线索：轨形、模形式、椭圆上同调</h2>
+
+<p class="lead">第 17 章留下一个因子 <span class="s">1/3</span>。本章追踪这个数字在数学其他地方的出现：轨形欧拉示性数、模曲线 <span class="s">X(3)</span>、椭圆上同调的系数环 <span class="s">Z[1/3]</span>、三次域的单位根。<b>这些线索可能是同源的，也可能只是数字巧合。</b>本章的纪律是：列出它们，标注等级，不宣布联系已经建立。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+数字 <span class="s">1/3</span> 在至少四个数学领域反复出现，且都与"三阶对称性"有关。<b>这提示分离结构的 <span class="s">1/3</span> 可能不是孤立现象，而是某个三元结构的投影。</b>但"提示"不等于"证明"；本章给出的是一个可攻击的研究纲领。</div>
+
+<h3>18.1　导论：一个数字为何值得追踪</h3>
+
+<p>在数学中，一个特定的数字反复出现，通常意味着一个共同的结构。因子 2 与"对合"有关，因子 <span class="s">π</span> 与圆有关，因子 <span class="s">ζ(2)</span> 与二次数域有关。因子 3 反复出现，往往指向<b>三阶对称性</b>——<span class="s">Z/3Z</span> 作用、三次扩张、3-挠子群。</p>
+
+<p>本章追踪 <span class="s">1/3</span> 的四条线索，并把它们与第 17 章的缺口并置。<b>如果这些线索同源，则分离几何的缺口就有了一个候选解释；如果它们只是巧合，则第 17 章的缺口就更可能只是错误。</b>无论哪种，这个追踪都是有价值的。</p>
+
+<h3>18.2　轨形欧拉示性数</h3>
+
+<p>轨形是局部同构于 <span class="s">ℝ<sup>n</sup>/G</span>（<span class="s">G</span> 有限群）的空间。它的欧拉示性数是<b>有理数</b>：</p>
+
+<div class="eq"><span class="body">χ<sub>orb</sub>(M) = Σ<sub>strata</sub> χ(stratum)/|G<sub>stratum</sub>|</span><span class="num">(18.1)</span></div>
+
+<p>若 <span class="s">M</span> 有一个 <span class="s">Z/3Z</span> 的轨形结构，则 <span class="s">χ<sub>orb</sub>=χ(M)/3</span>。这与第 17 章的 <span class="s">χ(D)=χ(M)/3</span> 形式一致。例：<span class="s">χ<sub>orb</sub>(S²/(Z/3Z))=2/3</span>。［已知，B］</p>
+
+<p>但第 17.5 节的球面反例说明：一般 <span class="s">Z/3Z</span> 轨形未必给出 <span class="s">χ(M)/3</span>，还要看奇异点结构。因此这条线索是"形式相符，机制未定"。</p>
+
+<h3>18.3　模曲线 X(3)</h3>
+
+<p>模曲线 <span class="s">X(3)</span> 是完全 3-级结构（full level-3 structure）的模空间。它的欧拉示性数满足</p>
+
+<div class="eq"><span class="body">χ(X(3)) = (1/3) χ(X(1)) = −1/3</span><span class="num">(18.2)</span></div>
+
+<p>这个 <span class="s">1/3</span> 来自覆盖 <span class="s">X(3)→X(1)</span> 的分支修正：覆盖次数是 <span class="s">|PSL(2,Z/3Z)|=12</span>，但因为分支点，欧拉示性数之比是 <span class="s">1/3</span> 而非 <span class="s">1/12</span>。<b>这是一个精确的、可验证的 <span class="s">1/3</span>，且它明确来自三阶结构。</b>［已知，A］</p>
+
+<div class="note"><b>为什么 X(3) 特别重要</b>
+椭圆曲线有 3-挠子群 <span class="s">E[3]≅(Z/3Z)²</span>，而 <span class="s">X(3)</span> 正是参数化"带完全 3-级结构的椭圆曲线"的模空间。因此 <span class="s">1/3</span> 在这里不是偶然数字，而是三阶算术结构的直接产物。若第 17 章的缺口与它同源，则分离几何应当自然地与椭圆曲线耦合——这是一个具体、可攻击的猜测。</div>
+
+<h3>18.4　椭圆上同调与 Z[1/3]</h3>
+
+<p>椭圆上同调（elliptic cohomology）是连接代数拓扑与椭圆曲线的现代理论。它的系数环自然地包含 <span class="s">1/3</span>（即系数环是 <span class="s">Z[1/3]</span> 上的某个环），因为椭圆曲线的 3-挠子群在其中扮演核心角色。相关的拓扑模形式（TMF）理论与椭圆曲线的模空间（带上 3-级结构）密切相关。［已知，B］</p>
+
+<div class="define"><span class="bt">线索 18.1　椭圆上同调中的 1/3［已知，B］</span>
+椭圆上同调的系数环包含 <span class="s">1/3</span>，来自 3-挠子群。若分离结构的 <span class="s">1/3</span> 与它同源，则分离几何应当与拓扑模形式（TMF）有自然联系。<b>这是本书提出的最"前沿"也最不确定的一条线索。</b></div>
+
+<h3>18.5　三次域与单位根</h3>
+
+<p>在代数数论中，三次域有自然的三阶现象。类数公式中含有 <span class="s">1/w</span> 因子，其中 <span class="s">w</span> 是单位根个数。对某些三次域 <span class="s">w=3</span>，给出因子 <span class="s">1/3</span>。这与三次单位根 <span class="s">ω=e^{2πi/3}</span> 直接相关。［已知，B］</p>
+
+<img class="fig" src="assets/svg/fig19-one-third-clues.svg" alt="1/3 的四条线索">
+
+<div class="cap"><b>图 18.1　1/3 的四条线索</b>。中央是第 17 章的缺口（分离曲率与 Gauss–Bonnet）。四条线索分别来自轨形（Z/3Z 结构）、模曲线 X(3)、椭圆上同调（Z[1/3]）、三次域（单位根 ω）。实线表示"该领域内的 <span class="s">1/3</span> 已被证明"，虚线表示"与分离缺口的联系是猜测"。</div>
+
+<h3>18.6　可攻击的研究纲领</h3>
+
+<p>把上面的线索转成可攻击的命题。这些命题构成附录 E 的一部分。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 18.1　1/3 纲领的可攻击命题</b></caption>
+<tr><th class="l">编号</th><th class="l">命题</th><th class="l">证伪条件</th><th class="l">等级</th></tr>
+<tr><td class="l">G1</td><td class="l">分离结构自然产生 <span class="s">Z/3Z</span> 轨形对称性</td><td class="l">找到无 <span class="s">Z/3Z</span> 对称性的分离结构</td><td class="l">C</td></tr>
+<tr><td class="l">G2</td><td class="l">区分欧拉示性数等于某个轨形欧拉示性数</td><td class="l">球面反例若无法被特殊结构解释</td><td class="l">C</td></tr>
+<tr><td class="l">G3</td><td class="l">分离 Gauss–Bonnet 是轨形指标定理的特例</td><td class="l">若指标定理的有理指标与 <span class="s">χ(D)</span> 不符</td><td class="l">C</td></tr>
+<tr><td class="l">G4</td><td class="l">高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>（猜想）</td><td class="l">计算 <span class="s">n=2</span>（四维）情形</td><td class="l">C</td></tr>
+<tr><td class="l">G5</td><td class="l">分离结构与椭圆上同调/TMF 自然耦合</td><td class="l">若 <span class="s">1/3</span> 可由其他机制解释</td><td class="l">C</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>研究纲领命题表。<b>全部为 C 级（假说）。</b>这是本书最需要被攻击的部分，也是最可能产生新数学的部分。</div>
+
+<div class="warning"><span class="bt">警告 18.1　不要把这些线索读成一个理论</span>
+本章的四条线索可以拼成一幅漂亮的图，但这幅图<b>不是理论</b>。它是四个各自独立的数学事实（或猜测），加上一个把它们与分离缺口联系起来的<b>愿望</b>。在 G1—G5 中，只有 G4 有明确的证伪路线（计算四维情形）；其余需要新的数学构造。读者若引用本章，请引用"存在四条 <span class="s">1/3</span> 线索"这一事实，而<b>不要</b>引用"它们同源"这一结论——后者尚未被建立。</div>
+
+<h3>18.7　本章小结</h3>
+
+<p>数字 <span class="s">1/3</span> 在轨形、模曲线 <span class="s">X(3)</span>、椭圆上同调、三次域中反复出现，且都与三阶对称性有关。这提示分离几何的缺口可能不是孤立现象。但四条线索的联系目前全是猜测（C 级）。本章的价值在于把"一个数字"变成"一组可攻击的命题"。第六部分把这些命题与更大的统一图景放在一起，并给出全书最后的状态清单。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Thurston, W. P. (1976–1981). Notes on orbifolds. Princeton lecture notes.</p>
+<p>Diamond, F., &amp; Shurman, J. (2005). <i>A First Course in Modular Forms</i>. Springer.</p>
+<p>Ando, M., Hopkins, M. J., &amp; Rezk, C. (2001). Multiplicative orientations of KO-theory and of the spectrum of topological modular forms. Preprint.</p>
+<p>Hopkins, M. J. (2002). Algebraic topology and modular forms. <i>Proceedings of the ICM</i>.</p>
+<p>Cohen, H. (1993). <i>A Course in Computational Algebraic Number Theory</i>. Springer.</p>
+</div>

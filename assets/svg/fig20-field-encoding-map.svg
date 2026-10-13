@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 440" width="860" height="440">
+<rect x="0" y="0" width="860" height="440" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">领域编码地图</text>
+<circle cx="430" cy="215" r="52" fill="#fff6ee" stroke="#b8862f" stroke-width="2"/>
+<text x="430" y="210" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="14px">EDS</text>
+<text x="430" y="230" class="l" text-anchor="middle" fill="#666" font-weight="normal">六元组</text>
+<circle cx="430" cy="215" r="100" fill="none" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+<circle cx="505" cy="281" r="5" fill="#3a6ea5"/>
+<text x="504.8510748171101" y="272.31226582407953" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="10px">图论</text>
+<circle cx="426" cy="315" r="5" fill="#3a6ea5"/>
+<text x="425.9734059890585" y="305.91889981715696" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="10px">线性代数</text>
+<circle cx="345" cy="268" r="5" fill="#3a6ea5"/>
+<text x="345.48099144562053" y="259.4465826127801" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="10px">表示论</text>
+<circle cx="338" cy="176" r="5" fill="#3a6ea5"/>
+<text x="338.0020556341176" y="166.8033390139925" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="10px">调和分析</text>
+<circle cx="410" cy="117" r="5" fill="#3a6ea5"/>
+<text x="409.99743062239554" y="108.02093479577323" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="10px">组合</text>
+<circle cx="430" cy="215" r="170" fill="none" stroke="#b8862f" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+<circle cx="591" cy="269" r="5" fill="#b8862f"/>
+<text x="591.2511951310147" y="259.8335589462503" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">拓扑</text>
+<circle cx="477" cy="378" r="5" fill="#b8862f"/>
+<text x="477.296968865797" y="369.28807897733327" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">代数拓扑</text>
+<circle cx="312" cy="338" r="5" fill="#b8862f"/>
+<text x="312.2368599033681" y="328.60441604844846" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">测度论</text>
+<circle cx="262" cy="188" r="5" fill="#b8862f"/>
+<text x="262.20145535155484" y="178.73008225418076" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">概率</text>
+<circle cx="345" cy="68" r="5" fill="#b8862f"/>
+<text x="344.99999999999994" y="58.775681356645464" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">信息论</text>
+<circle cx="477" cy="52" r="5" fill="#b8862f"/>
+<text x="477.2969688657969" y="42.71192102266667" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">微分方程</text>
+<circle cx="591" cy="161" r="5" fill="#b8862f"/>
+<text x="591.2511951310147" y="152.1664410537496" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="10px">复分析</text>
+<circle cx="430" cy="215" r="250" fill="none" stroke="#666" stroke-width="1" stroke-dasharray="4,4" opacity="0.5"/>
+<circle cx="651" cy="331" r="5" fill="#666"/>
+<text x="651.3640064133025" y="322.1807930109421" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">数论</text>
+<circle cx="420" cy="465" r="5" fill="#666"/>
+<text x="419.93351497264626" y="455.7972495428924" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">算子代数</text>
+<circle cx="200" cy="313" r="5" fill="#666"/>
+<text x="200.00513908529393" y="303.9916524650188" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">量子</text>
+<circle cx="230" cy="65" r="5" fill="#666"/>
+<text x="230.13930914912464" y="55.81443394050535" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">博弈</text>
+<circle cx="460" cy="-33" r="5" fill="#666"/>
+<text x="460.1341700638308" y="-42.177218524513506" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">LLM</text>
+<circle cx="660" cy="117" r="5" fill="#666"/>
+<text x="659.994860914706" y="108.00834753498118" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="10px">微分几何</text>
+<text x="430" y="425" class="l" text-anchor="middle" fill="#666" font-weight="normal">内圈=严格/半严格；中圈=工具对应；外圈=方向性。距离中心越远越不确定。</text>
+</svg>

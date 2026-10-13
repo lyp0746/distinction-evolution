@@ -1,0 +1,65 @@
+/* ============================================================
+ * 电子阅读专用样式（叠加在 paper.css + book.css 之后）
+ * 目标：B5、12pt、1.8 倍行距、宽边距、单栏、纯白底、斑马纹表格。
+ * 用法：python build_book.py --ereader  -> book-ereader.html
+ *      bash make_pdf.sh . book-ereader.pdf   （Chrome 会读取 @page size）
+ * ============================================================ */
+@page {
+  size: B5;                 /* 176mm × 250mm，接近平板/B5 */
+  margin: 20mm 18mm 20mm 18mm;
+}
+
+body {
+  font-size: 12pt;
+  line-height: 1.8;
+  color: #1a1a1a;
+  max-width: none;          /* 不再限制行宽，由页面边距控制 */
+  background: #ffffff;
+}
+
+p { margin: 0 0 12pt; }     /* 段间距 12pt */
+p.lead { font-size: 12.5pt; }
+
+/* 标题层级（电子书更宽松） */
+h1.entitle { font-size: 22pt; }
+h1.zhtitle, h1 { font-size: 19pt; margin-bottom: 14pt; }
+h2 { font-size: 16pt; margin: 26pt 0 12pt; }
+h2.chapter { font-size: 22pt; margin: 0 0 18pt; }
+h3 { font-size: 14pt; margin: 20pt 0 10pt; }
+h3.respart { font-size: 14pt; margin: 20pt 0 10pt; }
+h4 { font-size: 12.5pt; margin: 16pt 0 8pt; }
+h4.arg { font-size: 12pt; margin: 14pt 0 6pt; }
+h5 { font-size: 12pt; margin: 12pt 0 6pt; }
+
+/* 表格：字号略小、行高宽松、斑马纹 */
+table.nat {
+  font-size: 10pt;
+  line-height: 1.5;
+  margin: 12pt 0 6pt;
+}
+table.nat th, table.nat td { padding: 6pt 7pt; border-bottom: 0.5pt solid #e6e6e6; }
+table.nat tr:first-child th, table.nat tr:first-child td { background: #eeeeee; }
+table.nat tr:nth-child(even) td { background: #f7f7f7; }   /* 斑马纹 */
+caption.cap { font-size: 10.5pt; padding: 6pt 0 8pt; }
+.datasrc { font-size: 9.5pt; line-height: 1.6; padding: 7pt 11pt; margin: 4pt 0 16pt; }
+
+/* 图与公式 */
+img.fig { margin: 14pt 0 6pt; }
+.cap { font-size: 10.5pt; line-height: 1.55; margin: 4pt 0 16pt; }
+.mblock, .eq { font-size: 12.5pt; margin: 14pt 0; }
+
+/* 框 */
+.define, .scenario, .warning, .case, .note, .box {
+  font-size: 11pt; line-height: 1.65; padding: 12pt 16pt; margin: 14pt 0;
+}
+
+/* 列表与链接 */
+li { margin: 6pt 0; }
+a { color: #0066cc; text-decoration: none; }
+
+/* 目录更宽松，便于跳转 */
+.toc { font-size: 11.5pt; line-height: 2.0; }
+.toc .l3 { font-size: 10.5pt; }
+
+/* 参考文献 */
+.refs p { font-size: 10pt; line-height: 1.6; }

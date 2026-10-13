@@ -1,0 +1,22 @@
+name: 报告错误 / Report an error
+description: 报告书中的数学错误、笔误、编号问题或复现失败
+title: "[错误] "
+labels: ["bug"]
+body:
+  - type: input
+    id: location
+    attributes:
+      label: 位置
+      description: 章/节/定理编号，或文件与行号
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题描述
+      description: 你发现了什么错误？请尽量具体。
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: 复现（如适用）
+      description: 若为数值复现失败，请粘贴命令与输出。

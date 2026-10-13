@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" width="760" height="300">
+<rect x="0" y="0" width="760" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">非标准分析的降级机制</text>
+<rect x="60" y="110" width="160" height="80" rx="6" fill="#eef4fa" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="140" y="145" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">标准 ℝ</text>
+<text x="140" y="168" class="l" text-anchor="middle" fill="#666" font-weight="normal">ε-δ 不等式机器</text>
+<rect x="300" y="110" width="160" height="80" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.8"/>
+<text x="380" y="145" class="l" text-anchor="middle" fill="#009E73" font-weight="700">超实数 *ℝ</text>
+<text x="380" y="168" class="l" text-anchor="middle" fill="#666" font-weight="normal">无穷小量合法</text>
+<rect x="540" y="110" width="160" height="80" rx="6" fill="#fff6ee" stroke="#b8862f" stroke-width="1.8"/>
+<text x="620" y="145" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">标准部分 st</text>
+<text x="620" y="168" class="l" text-anchor="middle" fill="#666" font-weight="normal">取回标准对象</text>
+<line x1="220" y1="150" x2="300" y2="150" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<line x1="460" y1="150" x2="540" y2="150" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="5" refY="6" orient="auto"><path d="M0,0 L5,6 L10,0" fill="none" stroke="#666"/></marker></defs>
+<text x="260" y="140" class="l" text-anchor="middle" fill="#666" font-weight="normal">扩张</text>
+<text x="500" y="140" class="l" text-anchor="middle" fill="#666" font-weight="normal">翻译</text>
+<text x="380" y="250" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">转移原理保证一阶命题真值不变</text>
+<text x="380" y="275" class="l" text-anchor="middle" fill="#666" font-weight="normal">超有限维希尔伯特空间把无穷维压成『维数无穷大的有限维』</text>
+</svg>

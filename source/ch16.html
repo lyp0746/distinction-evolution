@@ -1,0 +1,90 @@
+<h2 class="chapter">第 16 章　分离几何学：从流形到区分流形</h2>
+
+<p class="lead">第四部分把框架实现于离散图。本章尝试把它推到连续情形：用一个"区分流形"取代黎曼流形，用"分离度量"取代距离，用"分离曲率"取代标量曲率。<b>这个尝试目前给出的是工具对应，不是定理。</b>本章把能说的与不能说的一并列出。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+分离几何学是黎曼几何的"区分版"：把基本对象从"距离"换成"区分难度"，把核心不变量从"曲率张量"换成"分离曲率"。<b>热核展开给出分离曲率的一个自然候选 <span class="s">κ=R/6</span>，但把它与全局拓扑联系起来时会撞上一个因子 1/3 的缺口（第 17 章）。</b></div>
+
+<h3>16.1　导论：以"区分"取代"距离"</h3>
+
+<p>黎曼几何的全部结构从一个度量张量 <span class="s">g</span> 生长出来：距离、测地线、联络、曲率、体积。分离几何学问：如果基本对象不是"两点有多远"，而是"两点有多难被分开"，会长出什么样的几何？</p>
+
+<p>这个替换并非任意。在信息几何中，统计流形上的"距离"由 Fisher 度量给出，而 Fisher 度量的本质就是"两个分布有多难被区分"（KL 散度的二阶展开）。因此分离几何学与信息几何共享同一个直觉：<b>几何的基本量可以是可区分性，而不是空间距离。</b>［已知］</p>
+
+<h3>16.2　分离流形与分离度量</h3>
+
+<div class="define"><span class="bt">定义 16.1　分离流形与分离度量</span>
+一个<b>分离流形</b>是三元组 <span class="s">(M, D, O)</span>，其中 <span class="s">M</span> 是紧致 Hausdorff 空间，<span class="s">D</span> 是区分动作族，<span class="s">O</span> 是 Hölder 连续的观测泛函。<b>分离度量</b>定义为
+<div class="eq"><span class="body">d<sub>D</sub>(x,y) := inf{ α : x ∼<sub>α</sub> y }</span><span class="num">(16.1)</span></div>
+即把两点变得不可区分所需的最小精度。</div>
+
+<p>与黎曼度量的差别在于：黎曼度量给出"两点有多远"，分离度量给出"两点有多难分开"。在局部，这两个量通过二阶展开相联系；在整体，它们的拓扑含义可能不同——这正是第 17 章缺口的技术根源。</p>
+
+<h3>16.3　分离曲率张量</h3>
+
+<div class="define"><span class="bt">定义 16.2　分离曲率</span>
+在分离流形上，定义<b>分离曲率</b>为观测泛函在演化下的对数增长率的二阶变分：
+<div class="eq"><span class="body">κ(D,x) = lim<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span></div>
+在光滑情形，其二阶变分给出<b>分离曲率张量</b>
+<div class="eq"><span class="body">R<sup>D</sup><sub>ijkl</sub> := ∂²κ<sub>ij</sub> / ∂x<sup>k</sup>∂x<sup>l</sup></span><span class="num">(16.2)</span></div></div>
+
+<p>这个定义的形式与黎曼曲率张量相似，但含义不同：黎曼曲率来自联络的交换子，分离曲率来自观测增长的二阶变分。二者的桥接是本纲领的核心技术问题。</p>
+
+<h3>16.4　分离 Gauss–Bonnet 的期望形式</h3>
+
+<p>在黎曼几何中，Gauss–Bonnet 定理把局部曲率的积分与整体拓扑联系起来：对二维紧致可定向曲面，<span class="s">∫<sub>M</sub>K dA = 2πχ(M)</span>。分离几何学的自然期望是：</p>
+
+<div class="define"><span class="bt">期望 16.1　分离 Gauss–Bonnet（待定形式）</span>
+对紧致可定向分离流形，存在一个<b>区分欧拉示性数</b> <span class="s">χ(D)</span>，使得
+<div class="eq"><span class="body">∫<sub>M</sub> κ dμ = 2π χ(D)</span><span class="num">(16.3)</span></div>
+其中 <span class="s">χ(D)</span> 是分离结构的某种拓扑不变量。</div>
+
+<p>这个期望的形式是自然的，问题在于 <span class="s">χ(D)</span> 是什么，以及它与 <span class="s">χ(M)</span> 的关系。第 17 章会说明：如果取 <span class="s">κ=R/6</span>（热核展开的自然系数），则 <span class="s">χ(D)=χ(M)/3</span>，这带来一个因子 1/3 的缺口。</p>
+
+<h3>16.5　与黎曼几何的类比表</h3>
+
+<img class="fig" src="assets/svg/fig17-riemann-vs-distinction.svg" alt="黎曼几何与分离几何的类比">
+
+<div class="cap"><b>图 16.1　黎曼几何与分离几何的类比</b>。左列为黎曼几何的对象，右列为分离几何的对应物。实线表示"有严格对应"，虚线表示"仅形式类比"。核心的差别在于：黎曼曲率来自联络的交换子，而分离曲率来自观测增长，其与全局拓扑的关系尚未建立。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 16.1　黎曼几何与分离几何的类比</b></caption>
+<tr><th class="l">黎曼几何</th><th class="l">分离几何</th><th class="l">严格程度</th></tr>
+<tr><td class="l">度量张量 <span class="s">g<sub>ij</sub></span></td><td class="l">区分动作 <span class="s">D<sub>i</sub></span></td><td class="l">形式类比（乙）</td></tr>
+<tr><td class="l">曲率张量 <span class="s">R<sub>ijkl</sub></span></td><td class="l">分离曲率 <span class="s">κ</span></td><td class="l">形式类比（乙）</td></tr>
+<tr><td class="l">测地线</td><td class="l">区分稳定路径</td><td class="l">定义清晰，定理待证</td></tr>
+<tr><td class="l">和乐群</td><td class="l">区分和乐群</td><td class="l">尚未定义</td></tr>
+<tr><td class="l">Gauss–Bonnet</td><td class="l">分离曲率积分</td><td class="l">有 1/3 缺口（第 17 章）</td></tr>
+<tr><td class="l">热核展开 <span class="s">a₁=R/6</span></td><td class="l"><span class="s">κ=R/6</span></td><td class="l">B（局部展开，接口未证）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>类比对照表。<b>关键：</b>本表的大部分行标注为"形式类比"，意味着它们只是概念对应，不是等价定理。</div>
+
+<h3>16.6　当前状态：工具对应而非定理</h3>
+
+<p>必须直说：分离几何学目前<b>没有</b>一个完整定理。它的状态是：</p>
+
+<ul>
+<li><b>定义清晰：</b>分离度量、分离曲率、分离流形都有明确的形式定义（甲级概念）。</li>
+<li><b>局部对应：</b>热核展开给出 <span class="s">κ=R/6</span>，这是有公开来源的（B级证据）。</li>
+<li><b>整体对应缺失：</b><span class="s">∫κ</span> 与拓扑不变量的关系尚未建立（缺口）。</li>
+<li><b>无新定理：</b>尚未用分离几何证明黎曼几何无法证明的结果（P3 未通过）。</li>
+</ul>
+
+<div class="warning"><span class="bt">警告 16.1　不要把"类比"读成"对应"</span>
+分离几何学的类比表看起来很完整，容易让人以为它已经建立了黎曼几何的平行理论。<b>它没有。</b>类比表的作用是指出"哪些概念应当有对应物"，而不是声称"这些对应物已经满足同样的定理"。断言"分离几何学的 Gauss–Bonnet 定理"存在，是本书明确不做的过度宣称之一。</div>
+
+<div class="scenario"><span class="bt">诚实的价值</span>
+一个纲领最有价值的时刻，往往不是它成功的时候，而是它<b>撞上一堵具体的墙</b>的时候。分离几何学撞上的墙，就是第 17 章的 <span class="s">1/3</span> 因子。这堵墙是具体的、可计算的、可讨论的——它比十句"前景广阔"更能推动研究。</div>
+
+<h3>16.7　本章小结</h3>
+
+<p>分离几何学以"区分"取代"距离"，给出一个形式完整的类比框架。它的局部对应（<span class="s">κ=R/6</span>）有公开来源，整体对应（<span class="s">∫κ</span> 与拓扑）尚未建立。这个缺口是下一章的主题。本章的全部价值在于把"连续情形怎么办"从空想变成了一个具体的技术问题。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>do Carmo, M. P. (1992). <i>Riemannian Geometry</i>. Birkhäuser.</p>
+<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i>. CRC Press.</p>
+<p>Amari, S. (2016). <i>Information Geometry and Its Applications</i>. Springer.</p>
+<p>Cheeger, J., &amp; Ebin, D. G. (1975). <i>Comparison Theorems in Riemannian Geometry</i>. North-Holland.</p>
+<p>Berger, M. (2003). <i>A Panoramic View of Riemannian Geometry</i>. Springer.</p>
+</div>

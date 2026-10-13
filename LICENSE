@@ -1,0 +1,32 @@
+# License
+
+本仓库包含两类内容，分别适用不同许可：
+
+## 1) 书稿与文档（内容）
+
+《错位的时间：社会系统的熵增螺旋、制度错配与可控性边界》的正文、图表、附录与文档
+（即 `source/`、`docs/`、`assets/`、`versions/` 中的文本与插图）采用
+**知识共享署名 4.0 国际（CC BY 4.0）** 许可。
+
+你可以自由地共享与改编这些内容，用于任何目的（包括商业用途），但须：
+
+- **署名**——注明原作者（李毅芃）与出处（本书完整引文）；
+- **标注修改**——若作出改动，须说明。
+
+许可证全文见 <https://creativecommons.org/licenses/by/4.0/legalcode>，
+中文摘要见 <https://creativecommons.org/licenses/by/4.0/deed.zh>。
+
+推荐引用格式：
+
+> 李毅芃. 《错位的时间：社会系统的熵增螺旋、制度错配与可控性边界》. 初版, 2026-10-09. CC BY 4.0.
+
+## 2) 代码（构建与分析脚本）
+
+`analysis/`、`scripts/`、`build_book.py`、`build_epub.py` 等**软件代码**采用
+**MIT 许可**，见 `LICENSE-MIT`。
+
+## 第三方数据
+
+`data/` 下的第三方数据（World Bank WDI、IMF、WID.world、UN Comtrade、Eurostat、FRED、
+WGI、Seshat 等）各有其原始许可，**不适用上述许可**；使用与再分发时请遵守各来源条款，
+详见 `docs/DATA-SOURCES.md` 与书内附录 C。

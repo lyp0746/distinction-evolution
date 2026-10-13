@@ -1,0 +1,80 @@
+<h1 class="chapter">附录 A　数学补充：谱、线性方程与相变</h1>
+
+<p class="lead">本附录给出第四部分硬核的完整数学细节，使读者无需回到正文即可检查每一步。所有记号与正文一致。</p>
+
+<h2>A.1　拉普拉斯矩阵与谱定理</h2>
+
+<div class="define"><span class="bt">定义 A.1　图拉普拉斯矩阵</span>
+设 <span class="s">G=(V,E)</span>，<span class="s">|V|=n</span>。度矩阵 <span class="s">D<sub>adj</sub>=diag(deg(v))</span>，邻接矩阵 <span class="s">A</span>（<span class="s">A<sub>uv</sub>=1</span> 当 <span class="s">u∼v</span>，否则 0）。<b>拉普拉斯矩阵</b> <span class="s">L=D<sub>adj</sub>−A</span>。</div>
+
+<p>性质：（i）<span class="s">L</span> 实对称半正定，故所有特征值 <span class="s">λ≥0</span>，特征向量可取为正交归一；（ii）<span class="s">L𝟙=0</span>，故 <span class="s">λ₁=0</span>，特征向量为常向量；（iii）<span class="s">G</span> 连通 <span class="s">⇔ λ₂&gt;0</span>（零特征值重数为 1）。</p>
+
+<div class="define"><span class="bt">定理 A.1（谱定理，实对称情形）</span>
+实对称矩阵 <span class="s">L</span> 可正交对角化：存在正交矩阵 <span class="s">Q</span>（<span class="s">Q<sup>T</sup>Q=I</span>）使 <span class="s">Q<sup>T</sup>LQ=diag(λ₁,…,λ<sub>n</sub>)</span>。等价地，<span class="s">L=Σ<sub>k</sub>λ<sub>k</sub>v<sub>k</sub>v<sub>k</sub><sup>T</sup></span>。</div>
+
+<h2>A.2　线性演化方程</h2>
+
+<div class="define"><span class="bt">定理 A.2（线性 ODE 的解）</span>
+方程 <span class="s">Ḋ=(−αI+βL)D</span> 以 <span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span> 为初值的解为
+<div class="eq"><span class="body">D(t) = Σ<sub>k=1</sub><sup>n</sup> c<sub>k</sub> e^{(−α+βλ<sub>k</sub>)t} v<sub>k</sub></span><span class="num">(A.1)</span></div></div>
+
+<p><b>证明。</b>令 <span class="s">y=Q<sup>T</sup>D</span>，则 <span class="s">ẏ<sub>k</sub>=(−α+βλ<sub>k</sub>)y<sub>k</sub></span>，解为 <span class="s">y<sub>k</sub>(t)=y<sub>k</sub>(0)e^{(−α+βλ<sub>k</sub>)t}</span>。代回 <span class="s">D=Qy</span> 即得。∎</p>
+
+<div class="note"><b>与热方程的区别</b>
+若 <span class="s">α=0</span>，则 <span class="s">Ḋ=βLD</span> 是热方程，所有 <span class="s">λ<sub>k</sub>≥0</span>，所有模式衰减或守恒，无增长相。衰减项 <span class="s">−αI</span> 是相变的来源。</div>
+
+<h2>A.3　临界耦合与两阶段相变的完整推导</h2>
+
+<p>定义 <span class="s">μ<sub>k</sub>:=−α+βλ<sub>k</sub></span>。因为 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>，有 <span class="s">μ₁=−α&lt;0</span> 且 <span class="s">μ<sub>k</sub></span> 随 <span class="s">k</span> 递增。令 <span class="s">β<sub>k</sub>:=α/λ<sub>k</sub></span>，则 <span class="s">μ<sub>k</sub>&gt;0 ⇔ β&gt;β<sub>k</sub></span>。由于 <span class="s">λ<sub>k</sub></span> 递增，<span class="s">β<sub>k</sub></span> 递减：</p>
+
+<div class="eq"><span class="body">β<sub>1</sub> = α/λ<sub>n</sub> ≤ α/λ<sub>n−1</sub> ≤ ⋯ ≤ β<sub>2</sub> = α/λ<sub>2</sub></span><span class="num">(A.2)</span></div>
+
+<p>因此存在一个阈值序列。特别地：</p>
+
+<ul>
+<li><span class="s">β&lt;β<sub>1</sub></span>：所有 <span class="s">μ<sub>k</sub>&lt;0</span>，全部衰减。</li>
+<li><span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>：<span class="s">μ<sub>n</sub>&gt;0</span>（及若干高频），<span class="s">μ<sub>2</sub>&lt;0</span>（低频谱衰减）。</li>
+<li><span class="s">β&gt;β<sub>2</sub></span>：<span class="s">μ₂&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>。</li>
+</ul>
+
+<p>主导增长率 <span class="s">μ<sub>max</sub>=μ<sub>n</sub>=βλ<sub>n</sub>−α</span>。当 <span class="s">β=β<sub>1</sub></span> 时 <span class="s">μ<sub>max</sub>=0</span>，对应 Lyapunov 指数穿零——这是一个连续相变（导数不连续）。</p>
+
+<h2>A.4　具体图的谱表</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 A.1　具体图的拉普拉斯谱与临界耦合（α=1）</b></caption>
+<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λ<sub>n</sub></th><th class="l">β₁</th><th class="l">β₂</th><th class="l">W</th></tr>
+<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.500</td><td class="l">0.300</td></tr>
+<tr><td class="l">C₁₀</td><td class="l">10</td><td class="l">0.382</td><td class="l">4</td><td class="l">0.250</td><td class="l">2.618</td><td class="l">2.368</td></tr>
+<tr><td class="l">K₅</td><td class="l">5</td><td class="l">5</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.200</td><td class="l">0</td></tr>
+<tr><td class="l">K₄,₄</td><td class="l">8</td><td class="l">4</td><td class="l">8</td><td class="l">0.125</td><td class="l">0.250</td><td class="l">0.125</td></tr>
+<tr><td class="l">Q₅</td><td class="l">32</td><td class="l">2</td><td class="l">10</td><td class="l">0.100</td><td class="l">0.500</td><td class="l">0.400</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>精确谱表。等级 A。<b>注：</b>C₁₀ 的 λ₂=2−2cos(36°)≈0.38197，β₂≈2.61803。</div>
+
+<h2>A.5　数值验证协议（完整版）</h2>
+
+<p><b>协议 V1。</b>复现 §12—14 的全部结果：</p>
+
+<ol>
+<li>对目标图构造 <span class="s">L=D<sub>adj</sub>−A</span>（<code>numpy</code>）。</li>
+<li>计算特征值 <code>numpy.linalg.eigvalsh(L)</code>，排序得 <span class="s">λ₁,…,λ<sub>n</sub></span>。</li>
+<li>计算 <span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ₂</span>，<span class="s">W=β₂−β₁</span>。</li>
+<li>取随机初值 <span class="s">D(0)</span>，用 <code>scipy.integrate.solve_ivp</code> 积分 <span class="s">Ḋ=(−αI+βL)D</span> 到 <span class="s">t=10</span>。</li>
+<li>把 <span class="s">D(t)</span> 投影到各 <span class="s">v<sub>k</sub></span>，计算 <span class="s">log|⟨D(t),v<sub>k</sub>⟩|</span> 的斜率。</li>
+<li>验证斜率与 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 的差 <span class="s">&lt;10⁻³</span>（数值误差）。</li>
+<li>对 <span class="s">β∈{0.5β₁, (β₁+β₂)/2, 2β₂}</span> 重复，覆盖三相位。</li>
+</ol>
+
+<div class="note"><b>实现</b>
+随书脚本 <code>analysis/graph_phase_transition.py</code> 实现协议 V1，输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。运行命令：<code>python analysis/graph_phase_transition.py</code>。依赖：numpy、scipy。</div>
+
+<h2>A.6　非线性结果的技术细节</h2>
+
+<p><b>对称解。</b>式 (15.3) 的推导：把 <span class="s">u=e^{−αt}</span> 代入验证。爆破时间式 (15.4) 由分母为零得到。</p>
+
+<p><b>保证衰减阈值。</b>式 (15.5) 的推导：<span class="s">Ṡ=−αS+βS²−βΣ<sub>i</sub>D<sub>i</sub>²</span>，而由 Cauchy–Schwarz <span class="s">Σ<sub>i</sub>D<sub>i</sub>²≥S²/k</span>，故 <span class="s">Ṡ≤S(−α+βS(1−1/k))</span>。</p>
+
+<p><b>有效探针数。</b><span class="s">k<sub>eff</sub>=1/Σp<sub>i</sub>²</span>，其中 <span class="s">p<sub>i</sub>=D<sub>i</sub>/S</span>。由 <span class="s">Σp<sub>i</sub>²≥1/k</span> 得 <span class="s">1≤k<sub>eff</sub>≤k</span>。均匀分布时 <span class="s">k<sub>eff</sub>=k</span>；集中分布时 <span class="s">k<sub>eff</sub>→1</span>。</p>
+
+<p><b>四维缺口猜想的检验。</b>猜想 <span class="s">f(n)=1/(2n+1)</span>。二维 <span class="s">f(1)=1/3</span> 与已知一致。四维情形的检验需要：计算热核展开的相应系数，与四维欧拉形式比较，提取比例。这是附录 E 中登记的可执行任务之一。</p>

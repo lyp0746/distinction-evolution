@@ -1,0 +1,90 @@
+/* ============================================================
+ * 书稿专用样式（叠加在 paper.css 之上）
+ * 仅放书籍结构相关：部分扉页、章标题、目录、参考文献。
+ * 字体体系与 paper.css 保持一致（宋体正文 / 黑体标题）。
+ * ============================================================ */
+
+/* 部分（Part）扉页 —— 作为 h1，进入 PDF 书签第一级 */
+h1.part-title {
+  break-before: page;
+  text-align: center;
+  font-family: "Microsoft YaHei", "Heiti SC", "SimHei", sans-serif;
+  font-size: 20pt;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: #1a1a1a;
+  border: 0;
+  padding: 46mm 0 0;
+  margin: 0;
+}
+
+/* 目录标题（非标题标签，避免进入书签） */
+.toc-title {
+  text-align: center;
+  font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  font-size: 18pt; font-weight: 700; letter-spacing: 6px;
+  margin: 6mm 0 10mm;
+}
+
+/* 章标题 */
+h2.chapter {
+  font-size: 18pt; font-weight: 700; border: 0;
+  border-left: 6px solid #222; padding: 0 0 0 12px;
+  margin: 0 0 14px; break-before: page;
+}
+h2.chapter + p.lead { margin-top: 6px; }
+
+/* 本章参考文献 */
+h3 + .refs, .refs { margin-top: 4px; }
+.refs p {
+  font-size: 8.8pt; line-height: 1.45; margin: 3px 0;
+  text-indent: -1.5em; padding-left: 1.5em;
+}
+
+/* ---------------- 目录：三级（部分 / 章 / 节），均可点击 ---------------- */
+.toc { font-size: 10pt; line-height: 1.7; }
+.toc .l1 {
+  font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  font-weight: 700; margin-top: 12px;
+}
+.toc .l2 { margin-left: 1.6em; }
+.toc .l3 { margin-left: 3.2em; color: #555; font-size: 9.2pt; }
+.toc .l4 { margin-left: 4.8em; color: #666; font-size: 8.8pt; }
+.toc .l3 a { color: #555; }
+.toc .l4 a { color: #666; }
+.toc .done { color: #1a1a1a; }
+.toc .todo { color: #aaa; }
+.toc a { color: #1a1a1a; text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* 封面：满版（覆盖整页 A4，无白边） */
+.cover-page {
+  break-after: page;
+  width: 210mm; height: 297mm;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* body 有 max-width 居中，用反向偏移抵消，使封面真正铺满整页 */
+  margin-left: calc(50% - 105mm);
+}
+.cover-page svg {
+  width: 210mm; height: 297mm;
+  display: block; margin: 0; padding: 0;
+}
+
+/* 版权与数据来源页 */
+.copyright-page { break-after: page; font-size: 9pt; line-height: 1.6; color: #333; padding-top: 8mm; }
+.copyright-page .cr-title { font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  font-size: 14pt; font-weight: 700; color: #1a1a1a; margin: 0 0 4px; }
+.copyright-page .cr-sub { font-size: 10.5pt; color: #555; margin: 0 0 18px; }
+.copyright-page .cr-author { font-size: 11pt; margin: 0 0 10px; }
+.copyright-page .cr-rule { border-top: 1px solid #999; margin: 14px 0 16px; }
+.copyright-page .cr-meta { font-size: 9pt; color: #555; margin: 0 0 4px; }
+.copyright-page .cr-h { font-family: "Microsoft YaHei", "SimHei", sans-serif;
+  font-weight: 700; font-size: 9.6pt; color: #1a1a1a; margin: 16px 0 4px; }
+.copyright-page p { margin: 0 0 6px; }
+.copyright-page ul { margin: 4px 0 8px; padding-left: 18px; }
+.copyright-page li { margin: 2px 0; }
+
+/* SVG 插图 */
+img.fig[src$=".svg"], .fig-svg { width: 100%; display: block; margin: 12pt 0 4pt; }

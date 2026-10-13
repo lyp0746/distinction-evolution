@@ -1,0 +1,76 @@
+<h2 class="chapter">第 8 章　区分动作、观测与不可区分关系</h2>
+
+<p class="lead">从这里开始构造框架。演化区分系统（EDS）由六个分量组成，本章定义其中三个与"静态"有关的分量：<b>区分动作族、观测泛函、不可区分关系。</b>它们的关系是<b>对偶</b>的——任何两个都可以在给定第三个时确定另一个。这一对偶是框架严格性的来源。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+"区分"不是一个模糊的直觉，而是可以被形式化的对象：一族把对象映射到观测值的函数。<b>三个分量（动作、观测、不可区分）互为对偶；公理化的关键，是要求观测完备性与精度连续性。</b>本部分是框架层（B／乙），不是定理层。</div>
+
+<h3>8.1　导论：三个基本对象</h3>
+
+<p>传统数学的起点是"对象"（集合、空间、群）。EDS 的起点是"操作"：<b>一个把对象分辨开的最小操作</b>。这个操作被称为区分动作。它像一个探针、一把尺子、一个开集、一个观测量——任何能回答"这两个东西在这里是否不同"的东西。</p>
+
+<p>把区分动作当作基本对象，会立刻带来一个问题：如果只有动作，那么"区分"的是什么？答案是：区分动作通过对对象赋值来工作，而赋值就是观测。观测值相同，则对象在当前动作下不可区分。三个概念互相定义。</p>
+
+<h3>8.2　区分动作族</h3>
+
+<div class="define"><span class="bt">定义 8.1　区分动作族</span>
+设 <span class="s">X</span> 是一个对象集合。一个<b>区分动作族</b> <span class="s">D</span> 是 <span class="s">X</span> 的一族子集（或 <span class="s">X</span> 上的一族函数），满足：<br>
+<b>（D1）边界条件：</b><span class="s">∅, X ∈ D</span>；<br>
+<b>（D2）交封闭：</b>若 <span class="s">{D<sub>i</sub>}<sub>i∈I</sub> ⊆ D</span>，则 <span class="s">⋂<sub>i</sub> D<sub>i</sub> ∈ D</span>；<br>
+<b>（D3）精化存在：</b>对任意 <span class="s">D₁,D₂∈D</span>，存在 <span class="s">D′∈D</span> 使得 <span class="s">∅≠D′⊆D₁∩D₂</span>。<br>
+<span class="s">D</span> 中的元素称为<b>区分动作</b>。</div>
+
+<p>与拓扑的并封闭不同，这里要求交封闭与精化存在。直觉上：区分动作是"缩小的透镜"，你可以把它们叠在一起看得更细（交），但不能指望任意并仍在族内（把两个不同透镜的视野直接相加没有意义）。</p>
+
+<div class="note"><b>例子</b>
+图论：<span class="s">D<sub>G</sub>={V<sub>S</sub>: S⊆V}</span>（顶点子集族）。<br>
+拓扑：任何拓扑的子基。<br>
+代数：某个群的全部子群。<br>
+信息论：一族检验函数。<br>
+不同领域的"区分"差别很大，但都满足 D1—D3。</div>
+
+<h3>8.3　观测泛函</h3>
+
+<div class="define"><span class="bt">定义 8.2　观测泛函</span>
+<b>观测泛函</b> <span class="s">O: D → [0,1]<sup>X</sup></span> 把每个区分动作映为一族观测值，满足：<br>
+<b>（O1）单调性：</b><span class="s">D₁⊆D₂ ⇒ O(D₁)(x) ≤ O(D₂)(x)</span>；<br>
+<b>（O2）边界条件：</b><span class="s">O(∅)(x)=0</span>，<span class="s">O(X)(x)=1</span>；<br>
+<b>（O3）右连续性：</b><span class="s">O(·)(x)</span> 关于包含偏序右连续。</div>
+
+<p>观测值 <span class="s">O(D)(x)∈[0,1]</span> 表示"在区分动作 <span class="s">D</span> 下，点 <span class="s">x</span> 的可区分／可观测程度"。单调性说的是：更大的区分动作（更粗的透镜）给出更确定的观测。这是一个自然的约定：如果你已经知道整条曲线，你对某个点的观测不会少于只知道一个小区间时。</p>
+
+<h3>8.4　不可区分关系与精度层级</h3>
+
+<div class="define"><span class="bt">定义 8.3　精度等价关系族</span>
+对每个精度参数 <span class="s">α∈(0,∞)</span>，定义等价关系 <span class="s">∼<sub>α</sub></span>，满足：<br>
+<b>（E1）精度单调：</b><span class="s">α₁&lt;α₂</span> 且 <span class="s">x∼<sub>α₂</sub>y ⇒ x∼<sub>α₁</sub>y</span>（精度越高，区分越细）；<br>
+<b>（E2）完备性：</b><span class="s">x∼<sub>0</sub>y ⇔ O(D)(x)=O(D)(y)</span> 对所有 <span class="s">D</span> 成立；<br>
+<b>（E3）分离能力：</b><span class="s">α(x,y) := inf{α : x≁<sub>α</sub>y}</span> 度量 <span class="s">x,y</span> 的区分难度。</div>
+
+<p>这套关系把"不可区分"变成一个有刻度的概念。两个对象不是简单地"一样"或"不一样"，而是在多大精度下才能被分开。<b>这正是后续"分离曲率"要度量的东西的静态版本。</b></p>
+
+<h3>8.5　三个基本对象如何互为对偶</h3>
+
+<img class="fig" src="assets/svg/fig08-eds-sextuple.svg" alt="演化区分系统的六元组">
+
+<div class="cap"><b>图 8.2　演化区分系统的六元组</b>。左侧三个分量（区分动作、观测、不可区分）构成静态骨架；中间一个分量（分离曲率）是核心不变量；右侧两个分量（演化流、标准部分）提供动力学与降级能力。三个静态分量互为对偶，使得框架可以用任意一个作为入口。</div>
+
+<div class="define"><span class="bt">公理 8.1　观测完备性</span>
+<span class="s">∀x,y∈X: O(D)(x)=O(D)(y)</span> 对所有 <span class="s">D∈D</span> 成立 <span class="s">⇔ x∼<sub>0</sub>y</span>。<br>
+即：若两点在所有区分动作下观测相同，则它们在精度 0 下不可区分；反之亦然。</div>
+
+<p>这条对偶公理是框架的关键。它保证三个静态分量不是各自独立定义的，而是同一结构的三种投影。在不同领域，它表现为不同的熟悉事实：拓扑学里"两点有相同的邻域当且仅当局部不可分"；代数里"两个元素所有特征值相同当且仅当相似"；概率论里"两个事件在所有检验下分布相同当且仅当几乎必然相等"。</p>
+
+<div class="scenario"><span class="bt">为什么对偶重要</span>
+一个统一框架最容易犯的错误，是让不同领域的"基本对象"互不兼容。EDS 通过公理 8.1 强制三者对偶，使得无论从哪个领域的哪个概念切入，都能落到同一个三元结构上。<b>这是"统一语言"能被真正使用（而不只是被宣告）的技术原因。</b></div>
+
+<h3>8.6　本章小结</h3>
+
+<p>三个静态分量——区分动作、观测、不可区分——构成了 EDS 的骨架，且互为对偶。它们的公理（交封闭、单调、精度单调、观测完备）刻画了"区分"这个操作的最一般性质。下一章定义核心不变量：分离曲率，它度量这三个分量随精度或时间的变化率。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p>
+<p>Gierz, G., et al. (2003). <i>Continuous Lattices and Domains</i>. Cambridge University Press.</p>
+<p>Engelking, R. (1989). <i>General Topology</i>. Heldermann.</p>
+</div>

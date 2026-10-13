@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.env.build
+.env.comtrade
+
+# 构建产物（可由 scripts/build.sh 重新生成）
+/output/
+/release/
+
+# 临时文件
+.tmp/
+*.tmp
+*.meta
+analysis/results/_tmp*
+*.aux
+*.log
+*.out
+analysis.zip
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 发布用临时凭据（绝不提交）
+.release_token
+.head_sha

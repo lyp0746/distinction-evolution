@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300">
+<rect x="0" y="0" width="780" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">时间区分：时间是预设还是生成</text>
+<rect x="60" y="90" width="200" height="140" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.4"/>
+<text x="160" y="120" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">预设时间观</text>
+<text x="160" y="155" class="l" text-anchor="middle" fill="#666" font-weight="normal">t ∈ ℝ 外部给定</text>
+<text x="160" y="185" class="l" text-anchor="middle" fill="#666" font-weight="normal">演化 = 在时间上滑动</text>
+<rect x="520" y="90" width="200" height="140" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.4"/>
+<text x="620" y="120" class="l" text-anchor="middle" fill="#009E73" font-weight="700">生成时间观（本书）</text>
+<text x="620" y="155" class="l" text-anchor="middle" fill="#666" font-weight="normal">D_t = Φ_t(D₀)</text>
+<text x="620" y="185" class="l" text-anchor="middle" fill="#666" font-weight="normal">时间 = 区分演化的参数</text>
+<line x1="260" y1="160" x2="520" y2="160" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="5" refY="6" orient="auto"><path d="M0,0 L5,6 L10,0" fill="none" stroke="#666"/></marker></defs>
+<text x="390" y="150" class="l" text-anchor="middle" fill="#666" font-weight="normal">重新理解</text>
+<text x="390" y="275" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">图论中时间=迭代次数（平凡）；连续情形待证（命题 10.1）</text>
+</svg>

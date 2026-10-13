@@ -1,0 +1,5 @@
+test_id,check_date,checker,status,indicator,value,unit,source,vintage,triggered,note
+G4,2026-10-13,author,baseline,四维缺口因子,,,registry.json,2026-10,no,尚未计算；登记待核销
+A1,2026-10-13,author,baseline,各层总激活与有效秩,,,registry.json,2026-10,no,尚未获取公开训练数据
+F1,2026-10-13,author,baseline,三定义一致性,,,registry.json,2026-10,no,仅有并列定义
+G2,2026-10-13,author,baseline,轨形结构对照,,,registry.json,2026-10,no,球面矛盾已记录

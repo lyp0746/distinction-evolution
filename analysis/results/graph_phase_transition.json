@@ -1,0 +1,73 @@
+{
+  "alpha": 1.0,
+  "graphs": {
+    "petersen": {
+      "name": "Petersen",
+      "n": 10,
+      "lambda_2": 2.0,
+      "lambda_n": 5.0,
+      "beta_1": 0.2,
+      "beta_2": 0.5,
+      "width": 0.3,
+      "mu_pred_mid": 0.75,
+      "mu_num_mid": 0.75
+    },
+    "c10": {
+      "name": "C10",
+      "n": 10,
+      "lambda_2": 0.381966,
+      "lambda_n": 4.0,
+      "beta_1": 0.25,
+      "beta_2": 2.618034,
+      "width": 2.368034,
+      "mu_pred_mid": 4.7361,
+      "mu_num_mid": 4.7361
+    },
+    "k5": {
+      "name": "K5",
+      "n": 5,
+      "lambda_2": 5.0,
+      "lambda_n": 5.0,
+      "beta_1": 0.2,
+      "beta_2": 0.2,
+      "width": 0.0,
+      "mu_pred_mid": 0.0,
+      "mu_num_mid": 0.0
+    },
+    "k44": {
+      "name": "K4,4",
+      "n": 8,
+      "lambda_2": 4.0,
+      "lambda_n": 8.0,
+      "beta_1": 0.125,
+      "beta_2": 0.25,
+      "width": 0.125,
+      "mu_pred_mid": 0.5,
+      "mu_num_mid": 0.5
+    },
+    "q5": {
+      "name": "Q5",
+      "n": 32,
+      "lambda_2": 2.0,
+      "lambda_n": 10.0,
+      "beta_1": 0.1,
+      "beta_2": 0.5,
+      "width": 0.4,
+      "mu_pred_mid": 2.0,
+      "mu_num_mid": 2.0
+    },
+    "p20": {
+      "name": "P20",
+      "n": 20,
+      "lambda_2": 0.024623,
+      "lambda_n": 3.975377,
+      "beta_1": 0.251548,
+      "beta_2": 40.61191,
+      "width": 40.360361,
+      "mu_pred_mid": 80.2238,
+      "mu_num_mid": 80.2238
+    }
+  },
+  "protocol": "V1",
+  "note": "数值由脚本确定性生成，可复现"
+}

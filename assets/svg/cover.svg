@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" width="1000" height="1414">
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#0e1117"/><stop offset="0.55" stop-color="#151a23"/>
+<stop offset="1" stop-color="#0b0e14"/>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="1000" height="1414" fill="url(#bg)"/>
+<rect x="0" y="0" width="1000" height="8" fill="#b8862f" opacity="0.85"/>
+<ellipse cx="500" cy="560" rx="90" ry="31" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.300"/>
+<ellipse cx="500" cy="560" rx="132" ry="45" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.272"/>
+<ellipse cx="500" cy="560" rx="174" ry="59" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.244"/>
+<ellipse cx="500" cy="560" rx="216" ry="73" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.216"/>
+<ellipse cx="500" cy="560" rx="258" ry="88" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.188"/>
+<ellipse cx="500" cy="560" rx="300" ry="102" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.160"/>
+<ellipse cx="500" cy="560" rx="342" ry="116" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.132"/>
+<ellipse cx="500" cy="560" rx="384" ry="131" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.104"/>
+<ellipse cx="500" cy="560" rx="426" ry="145" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.076"/>
+<line x1="80" y1="980" x2="920" y2="980" stroke="#009E73" stroke-width="1.6" opacity="0.55" stroke-dasharray="8,6"/>
+<line x1="80" y1="1060" x2="920" y2="1060" stroke="#c94f4f" stroke-width="1.6" opacity="0.55" stroke-dasharray="8,6"/>
+<line x1="150" y1="1120" x2="850" y2="1120" stroke="#9aa0a6" stroke-width="1" opacity="0.42"/>
+<line x1="195" y1="1146" x2="805" y2="1146" stroke="#9aa0a6" stroke-width="1" opacity="0.37"/>
+<line x1="240" y1="1172" x2="760" y2="1172" stroke="#9aa0a6" stroke-width="1" opacity="0.32"/>
+<line x1="285" y1="1198" x2="715" y2="1198" stroke="#9aa0a6" stroke-width="1" opacity="0.27"/>
+<line x1="330" y1="1224" x2="670" y2="1224" stroke="#9aa0a6" stroke-width="1" opacity="0.22"/>
+<line x1="375" y1="1250" x2="625" y2="1250" stroke="#9aa0a6" stroke-width="1" opacity="0.17"/>
+<line x1="420" y1="1276" x2="580" y2="1276" stroke="#9aa0a6" stroke-width="1" opacity="0.12"/>
+<style>
+text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}
+.ttl{font-size:108px;font-weight:700;letter-spacing:12px;fill:#e8e6df;}
+.sub{font-size:29px;fill:#9aa0a6;letter-spacing:2px;}
+.eng{font-size:21px;fill:#9aa0a6;letter-spacing:1px;}
+.au{font-size:30px;fill:#e8e6df;letter-spacing:2px;}
+.rule{stroke:#9aa0a6;stroke-width:1;opacity:0.6;}
+</style>
+<text x="80" y="176" class="eng">THE EVOLUTION OF DISTINCTION</text>
+<text x="80" y="300" class="ttl">区分的演化</text>
+<line x1="84" y1="344" x2="660" y2="344" class="rule"/>
+<text x="84" y="396" class="sub">演化区分系统：公理化、图上硬核与统一纲领</text>
+<text x="84" y="440" class="sub">从生成拓扑到分离曲率</text>
+<text x="80" y="1180" class="au">李毅芃　著</text>
+<text x="80" y="1232" class="eng">Evolutionary Distinction Systems — Axiomatization, the Graph-Theoretic Hard Core, and a Program for Unification</text>
+<text x="80" y="1274" class="eng">数学理论专著 · 2026</text>
+</svg>

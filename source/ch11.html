@@ -1,0 +1,102 @@
+<h2 class="chapter">第 11 章　六条公理与元理论</h2>
+
+<p class="lead">本章把前几章的分量组织成一个公理系统，并给出三条元理论陈述。它同时是全书最需要诚实的地方：<b>六条公理中，只有一条在图上被完整验证；其余五条是"框架公理"，其作用是组织语言，不是产生定理。</b>本章明确区分这两类公理。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值是让不同领域共享同一组概念；它的局限是部分公理（尤其是曲率演化与标准化）目前只在特定实现中被验证。把它们当作"已证基础"是误读。</b></div>
+
+<h3>11.1　导论：从定义到公理</h3>
+
+<p>一个数学框架要能被使用，必须先说清哪些是定义、哪些是公理、哪些是定理。定义是约定；公理是假设；定理是被证明的命题。混用三者，是"统一理论"最常见的病。本节把 EDS 的三层分清。</p>
+
+<div class="define"><span class="bt">定义 11.1　演化区分系统（EDS）</span>
+一个演化区分系统是一个六元组
+<div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
+其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 6 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
+
+<h3>11.2　六条公理</h3>
+
+<img class="fig" src="assets/svg/fig11-axiom-dependency.svg" alt="六条公理的依赖关系">
+
+<div class="cap"><b>图 11.1　六条公理的依赖关系</b>。公理 1（观测完备）与公理 5（分离完备）是结构性的；公理 2（精度连续）与公理 3（曲率有界）是技术性的；公理 4（演化适定）与公理 6（标准化）提供动力学与降级。带星号者为在图论实现中已验证。</div>
+
+<div class="define"><span class="bt">公理 1　观测完备性</span>
+对所有 <span class="s">D∈D</span>，<span class="s">O(D)(x)=O(D)(y) ⇔ x∼<sub>0</sub>y</span>。观测与不可区分互为对偶。〔图论：✓ 已验证〕</div>
+
+<div class="define"><span class="bt">公理 2　精度连续性</span>
+对任意 <span class="s">D∈D</span> 与 <span class="s">ε&gt;0</span>，存在 <span class="s">δ&gt;0</span>，使得精度参数变化不超过 <span class="s">δ</span> 时，等价关系的细化程度变化不超过 <span class="s">ε</span>。〔图论：✓ 离散情形平凡〕</div>
+
+<div class="define"><span class="bt">公理 3　曲率有界性</span>
+对任意紧子族 <span class="s">K⊆D</span> 与任意 <span class="s">T&gt;0</span>，<span class="s">sup{|κ(Φ<sub>t</sub>(D),x)| : D∈K, t∈[0,T], x∈X} &lt; ∞</span>。有限范围内曲率不发散。〔图论：✓（有限矩阵，谱有界）〕</div>
+
+<div class="define"><span class="bt">公理 4　演化适定性★</span>
+对任意初始 <span class="s">D<sub>0</sub>∈D</span>，存在唯一演化 <span class="s">Φ<sub>t</sub>(D<sub>0</sub>)</span> 定义在最大时间区间上，满足
+<div class="eq"><span class="body">(d/dt)O(Φ<sub>t</sub>(D<sub>0</sub>))(x) = κ(Φ<sub>t</sub>(D<sub>0</sub>),x)·O(Φ<sub>t</sub>(D<sub>0</sub>))(x)</span></div>
+即演化由分离曲率唯一决定。〔图论：✓ 已验证——这是第四部分的核心〕</div>
+
+<div class="define"><span class="bt">公理 5　分离完备性</span>
+每个 <span class="s">D∈D</span> 可写成有限个原子区分动作的精化交。<span class="s">D = D₁ ⊓ … ⊓ D<sub>n</sub></span>，每个 <span class="s">D<sub>i</sub></span> 在某精度下不可再分。〔图论：部分（谱分解给出有限原子）〕</div>
+
+<div class="define"><span class="bt">公理 6　标准化存在性（可选）</span>
+对任意超有限区分动作族 <span class="s">*D</span>，其标准部分 <span class="s">st(*D)</span> 满足
+<div class="eq"><span class="body">O(st(*D))(x) = st( (1/|*D|) Σ<sub>d∈*D</sub> O(d)(x) )</span></div>
+〔图论：不需要（有限图无超有限）〕</div>
+
+<div class="warning"><span class="bt">警告 11.1　务必分清"框架公理"与"已验证公理"</span>
+公理 4 在第四部分有一个完整、严格的验证（图上的相变定理）。公理 6 只在非标准分析中独立成立，与框架的接口未证。公理 5 在图论中部分成立。其余公理是<b>组织性假设</b>：它们的用途是让不同领域的描述共享词汇，而不是产生新定理。<b>本书从不把它们当作已证基础来推导其他结论。</b></div>
+
+<h3>11.3　元理论定理</h3>
+
+<p>元理论陈述是关于框架本身的命题。它们大多属于"论证"级别。</p>
+
+<div class="define"><span class="bt">元理论 11.1　普遍编码（论证／纲领）</span>
+任何满足下列条件的数学对象 <span class="s">M</span> 都可被编码为某个 EDS：（i）具有离散化结构（子集族、子结构、等价类族）；（ii）具有观测或测量机制（范数、测度、迹、期望）；（iii）具有参数化的演化或变形。编码在"<span class="s">M</span> 的已知定理翻译为 EDS 定理"的意义下是自然的。［论证，乙］</div>
+
+<div class="define"><span class="bt">元理论 11.2　精度不变性（论证）</span>
+任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
+
+<div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
+EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 12 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
+
+<h3>11.4　公理的独立性与边界</h3>
+
+<p>一个公理系统必须面对两个问题：公理之间是否一致？是否独立？本书对这两个问题的回答是诚实的：<b>未知，且不声称已解决。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 11.1　六条公理的验证状态</b></caption>
+<tr><th class="l">公理</th><th class="l">图论</th><th class="l">连续（流形）</th><th class="l">信息论</th><th class="l">状态</th></tr>
+<tr><td class="l">1 观测完备</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">框架</td></tr>
+<tr><td class="l">2 精度连续</td><td class="l">✓</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">3 曲率有界</td><td class="l">✓</td><td class="l">部分</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">4 演化适定 ★</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">定理（图）</td></tr>
+<tr><td class="l">5 分离完备</td><td class="l">部分</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
+<tr><td class="l">6 标准化</td><td class="l">不需要</td><td class="l">未证</td><td class="l">未证</td><td class="l">可选工具</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>验证状态表。等级 B（作者判断，可核查）。<b>这是读第三部分最该记住的表。</b></div>
+
+<div class="scenario"><span class="bt">唯一的星号</span>
+表中只有一个星号：公理 4（演化适定性）。它之所以特殊，是因为它在第四部分有一个完整证明——而这正好说明框架不是一座悬空的楼：<b>它至少有一根柱子在岩石上。</b>其余柱子是否也能落地，是后面各部分要回答的问题。</div>
+
+<h3>11.5　与范畴论、类型论的关系</h3>
+
+<p>EDS 可以被放进不同的基础语言，各有得失。</p>
+
+<ul>
+<li><b>在集合论中：</b>六元组是集合与映射，公理是集合论命题。这是本书硬核使用的语言，最易检验。</li>
+<li><b>在范畴论中：</b>EDS 可被表述为一个函子 <span class="s">D: X → Type</span>，分离曲率是它的"增长速率"。这更符合"态射优先"，但增加了抽象层。</li>
+<li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
+</ul>
+
+<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 7.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
+
+<h3>11.6　本章小结</h3>
+
+<p>EDS 是一个六元组加六条公理。其中只有公理 4 在图上被完整验证；其余是组织性框架公理。这一诚实的分级是本书全部可信度的基础。第四部分现在给出那个唯一的星号：图上的相变定理。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Mac Lane, S., &amp; Moerdijk, I. (1992). <i>Sheaves in Geometry and Logic</i>. Springer.</p>
+<p>Johnstone, P. T. (2002). <i>Sketches of an Elephant: A Topos Theory Compendium</i>. Oxford University Press.</p>
+<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
+<p>Voevodsky, V., et al. (2013). <i>Homotopy Type Theory</i>. IAS.</p>
+</div>

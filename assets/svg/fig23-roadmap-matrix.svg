@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" width="780" height="360">
+<rect x="0" y="0" width="780" height="360" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">研究路线图矩阵</text>
+<line x1="90" y1="290" x2="720" y2="290" class="ax"/>
+<line x1="90" y1="290" x2="90" y2="60" class="ax"/>
+<text x="405.0" y="324" class="l" text-anchor="middle">时间 →（短期 / 中期 / 长期）</text>
+<text x="80" y="175.0" class="l" text-anchor="middle" transform="rotate(-90 80 175.0)">难度 →</text>
+<rect x="190.0" y="190.0" width="110" height="30" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.4"/>
+<text x="245.0" y="211.0" class="l" text-anchor="middle" fill="#009E73" font-weight="700">Lean4 形式化</text>
+<rect x="221.0" y="179.5" width="110" height="30" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.4"/>
+<text x="276.0" y="200.5" class="l" text-anchor="middle" fill="#009E73" font-weight="700">四维缺口 G4</text>
+<rect x="252.0" y="169.0" width="110" height="30" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.4"/>
+<text x="307.0" y="190.0" class="l" text-anchor="middle" fill="#009E73" font-weight="700">LLM 激活分析</text>
+<rect x="407.0" y="106.0" width="110" height="30" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.4"/>
+<text x="462.0" y="127.0" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">曲率统一 F1</text>
+<rect x="500.0" y="95.5" width="110" height="30" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.4"/>
+<text x="555.0" y="116.5" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">连续时间涌现</text>
+<rect x="593.0" y="74.5" width="110" height="30" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.4"/>
+<text x="648.0" y="95.5" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">离散—连续函子</text>
+<text x="400" y="340" class="l" text-anchor="middle" fill="#666" font-weight="normal">右上=高价值低难度，优先；右下=高难度，长期目标</text>
+</svg>

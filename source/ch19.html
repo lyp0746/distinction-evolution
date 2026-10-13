@@ -1,0 +1,97 @@
+<h2 class="chapter">第 19 章　十五个领域的统一编码</h2>
+
+<p class="lead">本章把前文零散出现的领域集中起来，给出它们在同一套语言下的编码。这不是"证明它们统一"，而是"证明它们可以用同一套词描述"。<b>本章的核心纪律是：编码表标注每个领域的每一条对应是严格的、工具性的还是仅仅可疑的。</b></p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+十余个数学领域可以被写成 EDS 语言：区分动作、观测、不可区分、分离曲率、演化流。<b>编码是真实的（可以写出映射），但编码不等于等价（映射不一定保持所有结构）。</b>本章给出编码，第 20 章给出分类，第 22 章给出状态清单。</div>
+
+<h3>19.1　导论：一张编码表意味着什么</h3>
+
+<p>要避免一个常见的误读：编码表不是"这些领域本质上是一个东西"的证明。它证明的是更强也更弱的事：<b>存在一套词汇，可以同时描述它们。</b>这比"它们本质上相同"弱得多，但比"它们毫无关系"强得多。</p>
+
+<p>判断编码表是否有价值，回到第 2 章的四判据：压缩比（P1）、统一度（P2）、问题解决力（P3）、可迁移性（P4）。本章在 P1/P2 上给出证据，P3 只在图论上通过。</p>
+
+<h3>19.2　静态领域：线性、拓扑、度量、序、逻辑</h3>
+
+<p>按"区分动作的代数结构"分组，静态领域分五类。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 19.1　静态领域的 EDS 编码</b></caption>
+<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">κ</th><th class="l">严格度</th></tr>
+<tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">0</td><td class="l">B／乙</td></tr>
+<tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构表示</td><td class="l">0</td><td class="l">B／乙</td></tr>
+<tr><td class="l">调和分析</td><td class="l">特征标</td><td class="l">傅里叶系数</td><td class="l">同谱类</td><td class="l">0</td><td class="l">B／乙</td></tr>
+<tr><td class="l">点集拓扑</td><td class="l">开集／邻域</td><td class="l">连续函数</td><td class="l">同胚局部</td><td class="l">负</td><td class="l">B／乙</td></tr>
+<tr><td class="l">代数拓扑</td><td class="l">单纯形</td><td class="l">同调类</td><td class="l">同伦</td><td class="l">负</td><td class="l">B／乙</td></tr>
+<tr><td class="l">测度论</td><td class="l">可测区分</td><td class="l">测度</td><td class="l">几乎处处</td><td class="l">正</td><td class="l">B／乙</td></tr>
+<tr><td class="l">组合数学</td><td class="l">子结构</td><td class="l">计数</td><td class="l">等价结构</td><td class="l">正</td><td class="l">B／乙</td></tr>
+<tr><td class="l">数论</td><td class="l">因子分解</td><td class="l">可整除性</td><td class="l">同余</td><td class="l">正</td><td class="l">C／丙</td></tr>
+<tr><td class="l">数理逻辑</td><td class="l">可证公式</td><td class="l">真值</td><td class="l">可互推</td><td class="l">0</td><td class="l">B／乙</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>静态领域编码表。<b>严格度列：</b>B／乙 表示"可写出映射，但未证明保持全部结构"；C／丙 表示"仅方向性"。注意：本表只有图论（下一节）达到 A。</div>
+
+<h3>19.3　动态领域：微分方程、动力系统、概率、量子</h3>
+
+<p>动态领域需要时间区分 <span class="s">D<sub>t</sub></span>。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 19.2　动态领域的 EDS 编码</b></caption>
+<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">演化流 Φ</th><th class="l">κ</th><th class="l">严格度</th></tr>
+<tr><td class="l">微分方程</td><td class="l">解的水平集</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">L 的特征增长率</td><td class="l">B／乙</td></tr>
+<tr><td class="l">动力系统</td><td class="l">轨道区分</td><td class="l">迭代／流</td><td class="l">Lyapunov 指数</td><td class="l">B／乙</td></tr>
+<tr><td class="l">概率论</td><td class="l">条件区分</td><td class="l">条件期望</td><td class="l">信息率</td><td class="l">B／乙</td></tr>
+<tr><td class="l">信息论</td><td class="l">信息分割</td><td class="l">Boltzmann 分布</td><td class="l">−β</td><td class="l">B／乙</td></tr>
+<tr><td class="l">算子代数</td><td class="l">投影</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">模谱</td><td class="l">C／丙</td></tr>
+<tr><td class="l">量子数学</td><td class="l">POVM</td><td class="l">薛定谔算子</td><td class="l">纠缠熵增长</td><td class="l">C／丙</td></tr>
+<tr><td class="l">博弈论</td><td class="l">策略区分</td><td class="l">策略更新</td><td class="l">收益梯度</td><td class="l">C／丙</td></tr>
+<tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l"><span class="s">e^{(−αI+βL)t}</span></td><td class="l"><span class="s">βλ<sub>k</sub>−α</span></td><td class="l"><b>A／甲</b></td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>动态领域编码表。<b>只有最后一行（图论）达到 A／甲</b>，它是第四部分的硬核。</div>
+
+<h3>19.4　统一图景</h3>
+
+<img class="fig" src="assets/svg/fig20-field-encoding-map.svg" alt="领域编码地图">
+
+<div class="cap"><b>图 19.1　领域编码地图</b>。中央是 EDS 六元组；外围是各领域。距离中心的远近表示编码的严格程度：内圈（图论、线性代数）为严格或半严格编码；中圈（拓扑、测度、概率、信息）为工具对应；外圈（数论、量子、博弈）为方向性对应。虚线表示联系仅为猜测。</div>
+
+<h3>19.5　编码的诚实边界</h3>
+
+<p>编码表最容易产生的三个误读，必须逐一排除。</p>
+
+<ul>
+<li><b>误读一：编码 = 等价。</b>事实：编码给出的是"可以用 EDS 词描述"，不是"EDS 定理自动适用于该领域"。要得到后者，必须证明编码保持结构（一个单射且保定理的映射）。</li>
+<li><b>误读二：所有领域同等严格。</b>事实：表中严格度从 A 到 C 分布，只有图论是 A。把 C 级编码当作 A 级使用，是本书最担心的误用。</li>
+<li><b>误读三：编码表本身就是统一理论。</b>事实：编码表是<b>语言成就</b>（P1/P2），不是<b>问题解决成就</b>（P3）。一个语言可以描述一切，却不解决任何问题。</li>
+</ul>
+
+<div class="warning"><span class="bt">警告 19.1　P3 是唯一硬门槛</span>
+如果本书只提供编码表，它就是一种新的记号系统，价值有限。<b>本书的价值来自第四部分的 P3（图论硬核）与第五部分的 P3 尝试（1/3 缺口）。</b>读者应当这样评价本书：不是看它编码了多少领域，而是看它是否产生了原领域难以表达的新命题。目前答案：图论是（第 12—15 章），其余否。</div>
+
+<h4>19.5.1　一个可复算的反省：编码矩阵真的多维吗</h4>
+
+<p>编码表最容易受到的质疑是：<b>如果所有领域只是同一列特征的排列组合，那么"统一"不过是同义反复。</b>这个质疑可以被量化为一个 PCA 问题。把每个领域的编码写成 11 维特征向量（区分动作代数、曲率符号、演化流、严格度），对 25 个领域组成的矩阵做主成分分析，并做平行分析。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 19.3　编码矩阵的 PCA 结果</b></caption>
+<tr><th class="l">统计量</th><th class="l">数值</th><th class="l">解读</th></tr>
+<tr><td class="l">特征数 K</td><td class="l">{{D:pca_k}}</td><td class="l">编码使用的特征维度</td></tr>
+<tr><td class="l">有效维度 N<sub>eff</sub></td><td class="l">{{D:pca_neff}}</td><td class="l">远离 1，接近但仍小于 K</td></tr>
+<tr><td class="l">PC1 方差解释</td><td class="l">{{D:pca_pc1}}</td><td class="l">第一主成分不占主导</td></tr>
+<tr><td class="l">平行分析保留成分数</td><td class="l">{{D:pca_retained}}</td><td class="l">真实结构确实多维</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>PCA／审稿人问答。等级 A（可复算）。脚本：<code>analysis/pca_fields.py</code>。<b>结论（诚实版）：</b>编码矩阵的有效维度约为 {{D:pca_neff}}（K={{D:pca_k}}），既不是 1（否则"统一"是同义反复），也不是 11（否则各领域完全独立）。这支持"一个主导过程加若干次要维度"的读法，而不支持"所有领域完全同一"的强主张。</div>
+
+<p>这个结果对本书的定位有一处直接影响：它把"统一"限定在<b>语言层</b>。编码矩阵多维意味着不同领域在框架中<b>仍然不同</b>；框架提供的是共享坐标，而不是同一坐标。</p>
+
+<h3>19.6　本章小结</h3>
+
+<p>十余个领域可以被写成 EDS 语言，但严格程度从 A 到 C 不等。编码表实现了 P1（压缩比）与 P2（统一度），但 P3（问题解决力）只在图论上通过。下一章把这些编码组织成三条分类轴，并指出框架暴露出的空缺。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Mac Lane, S. (1998). <i>Categories for the Working Mathematician</i>. Springer.</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i>. Wiley.</p>
+<p>Kallenberg, O. (2002). <i>Foundations of Modern Probability</i> (2nd ed.). Springer.</p>
+<p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p>
+<p>Rudin, W. (1991). <i>Functional Analysis</i> (2nd ed.). McGraw-Hill.</p>
+</div>

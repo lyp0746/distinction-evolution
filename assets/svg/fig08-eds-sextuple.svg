@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 320" width="820" height="320">
+<rect x="0" y="0" width="820" height="320" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">演化区分系统（EDS）的六元组</text>
+<circle cx="410" cy="170" r="62" fill="#fff6ee" stroke="#b8862f" stroke-width="2.2"/>
+<text x="410" y="164" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="15px">EDS</text>
+<text x="410" y="186" class="l" text-anchor="middle" fill="#666" font-weight="normal">六元组</text>
+<rect x="20" y="80" width="160" height="40" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="100" y="105" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">D 区分动作</text>
+<line x1="170" y1="100" x2="348" y2="170" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="20" y="200" width="160" height="40" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="100" y="225" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">O 观测泛函</text>
+<line x1="170" y1="220" x2="348" y2="170" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="20" y="260" width="160" height="40" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="100" y="285" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">∼ 不可区分</text>
+<line x1="170" y1="280" x2="348" y2="170" stroke="#3a6ea5" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="630" y="90" width="160" height="40" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.5"/>
+<text x="710" y="115" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">κ 分离曲率</text>
+<line x1="630" y1="110" x2="472" y2="170" stroke="#c94f4f" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="630" y="170" width="160" height="40" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.5"/>
+<text x="710" y="195" class="l" text-anchor="middle" fill="#009E73" font-weight="700">Φ 演化流</text>
+<line x1="630" y1="190" x2="472" y2="170" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="630" y="250" width="160" height="40" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.5"/>
+<text x="710" y="275" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">st 标准部分</text>
+<line x1="630" y1="270" x2="472" y2="170" stroke="#b8862f" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="410" y="308" class="l" text-anchor="middle" fill="#666" font-weight="normal">静态三分量互为对偶；κ 是核心不变量；Φ、st 提供动力学与降级</text>
+</svg>

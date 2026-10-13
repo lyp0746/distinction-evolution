@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below. 若使用本作，请按下述格式引用。"
+type: book
+title: "区分的演化：演化区分系统——公理化、图上硬核与统一纲领 / The Evolution of Distinction: Evolutionary Distinction Systems"
+abstract: >-
+  本书把"抽象统摄具体"写成可操作的方法（压缩），把它实现为一个形式框架——
+  演化区分系统（EDS），并在有限图上给出一个完整、可复现的相变定理：区分耦合越过
+  两个由拉普拉斯谱决定的临界值时，系统经历"局部先于全局"的两阶段相变。它同时
+  公开挂出一个未解决的缺口——分离曲率与 Gauss–Bonnet 定理之间的因子 1/3——作为
+  可攻击的研究目标。English: This monograph formalizes "abstraction subsuming the
+  concrete" as compression, realizes it as the Evolutionary Distinction System (EDS),
+  and proves a fully rigorous, reproducible two-stage phase transition on finite
+  graphs — while openly exposing an unsolved factor-of-1/3 gap between separation
+  curvature and the Gauss–Bonnet theorem as an attackable research target.
+authors:
+  - family-names: "李"
+    given-names: "毅芃"
+    alias: "Li Yipeng"
+    email: "1610369302@qq.com"
+date-released: "2026-10-13"
+license: CC-BY-4.0
+repository-code: "https://github.com/lyp0746/distinction-evolution"
+url: "https://github.com/lyp0746/distinction-evolution"
+keywords:
+  - 演化区分系统
+  - 区分
+  - 分离曲率
+  - 生成拓扑
+  - 非标准分析
+  - 同伦类型论
+  - 拉普拉斯谱
+  - 相变
+  - 临界耦合
+  - Gauss-Bonnet
+  - 轨形
+  - 椭圆上同调
+  - 数学统一
+  - 可证伪性
+  - Evolutionary Distinction System
+  - separation curvature
+  - generative topology
+  - nonstandard analysis
+  - homotopy type theory
+  - spectral graph theory
+  - phase transition
+  - critical coupling
+  - Gauss-Bonnet
+  - orbifold
+  - elliptic cohomology
+  - unification
+  - falsifiability

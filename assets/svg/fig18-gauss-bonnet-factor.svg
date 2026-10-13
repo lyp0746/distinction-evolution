@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 300" width="820" height="300">
+<rect x="0" y="0" width="820" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">因子 1/3 的来源</text>
+<rect x="40" y="100" width="170" height="100" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="125.0" y="140" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">热核展开</text>
+<text x="125.0" y="172" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">a₁ = R/6</text>
+<line x1="210" y1="150" x2="235" y2="150" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="235" y="100" width="170" height="100" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.8"/>
+<text x="320.0" y="140" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">二维关系</text>
+<text x="320.0" y="172" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">R = 2K</text>
+<line x1="405" y1="150" x2="430" y2="150" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="430" y="100" width="170" height="100" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.8"/>
+<text x="515.0" y="140" class="l" text-anchor="middle" fill="#009E73" font-weight="700">Gauss–Bonnet</text>
+<text x="515.0" y="172" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">∫K = 2πχ</text>
+<line x1="600" y1="150" x2="625" y2="150" stroke="#666" stroke-width="1.6" marker-end="url(#a)"/>
+<rect x="625" y="100" width="170" height="100" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.8"/>
+<text x="710.0" y="140" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">代入</text>
+<text x="710.0" y="172" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">∫κ = (1/3)∫K = (2π/3)χ</text>
+<defs><marker id="a" markerWidth="9" markerHeight="9" refX="5" refY="6" orient="auto"><path d="M0,0 L5,6 L10,0" fill="none" stroke="#666"/></marker></defs>
+<text x="410" y="250" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700" font-size="13px">缺口 = 3（精确）；二维特有</text>
+<text x="410" y="280" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">问题：这是错误、修正项，还是新不变量？</text>
+</svg>

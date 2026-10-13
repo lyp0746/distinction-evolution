@@ -1,0 +1,16 @@
+name: 提出反驳或新方向
+description: 反驳某条命题，或提出新的研究方向
+title: "[讨论] "
+labels: ["discussion"]
+body:
+  - type: input
+    id: target
+    attributes:
+      label: 目标命题
+      description: 附录 E 的编号（如 F1、G4、A1）或章节位置
+  - type: textarea
+    id: argument
+    attributes:
+      label: 你的论证或反例
+    validations:
+      required: true

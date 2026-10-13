@@ -1,0 +1,27 @@
+name: 贡献数据 / 复现结果
+description: 复现了数值、填补了缺口，或提供了新证据
+title: "[贡献] "
+labels: ["data"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型
+      options:
+        - 数值复现（第四部分）
+        - PCA / 敏感性分析
+        - 缺口填补（如 G4 四维因子）
+        - 经验数据（如 LLM 激活）
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 结果
+    validations:
+      required: true
+  - type: textarea
+    id: registry
+    attributes:
+      label: 登记
+      description: 是否已在 docs/preregistration/checkups.csv 追加一行？

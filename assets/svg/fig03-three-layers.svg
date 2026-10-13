@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+<rect x="0" y="0" width="760" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">三级证据与三层结构</text>
+<text x="180" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">证据等级</text>
+<rect x="80" y="90" width="200" height="48" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.6"/>
+<text x="110" y="120" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="18px">A</text>
+<text x="160" y="120" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">可独立复现</text>
+<rect x="80" y="152" width="200" height="48" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.6"/>
+<text x="110" y="182" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="18px">B</text>
+<text x="160" y="182" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">公开来源，部分约束</text>
+<rect x="80" y="214" width="200" height="48" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.6"/>
+<text x="110" y="244" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700" font-size="18px">C</text>
+<text x="160" y="244" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">概念推理</text>
+<text x="560" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">框架三层</text>
+<rect x="440" y="90" width="240" height="48" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="480" y="120" class="l" text-anchor="start" fill="#3a6ea5" font-weight="700">硬核</text>
+<text x="650" y="120" class="l" text-anchor="end" fill="#666" font-weight="normal">证据≈A</text>
+<rect x="440" y="152" width="240" height="48" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.6"/>
+<text x="480" y="182" class="l" text-anchor="start" fill="#b8862f" font-weight="700">统一框架</text>
+<text x="650" y="182" class="l" text-anchor="end" fill="#666" font-weight="normal">证据≈B</text>
+<rect x="440" y="214" width="240" height="48" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.6"/>
+<text x="480" y="244" class="l" text-anchor="start" fill="#009E73" font-weight="700">可选工具</text>
+<text x="650" y="244" class="l" text-anchor="end" fill="#666" font-weight="normal">证据≈A/C</text>
+<line x1="400" y1="70" x2="400" y2="290" class="g"/>
+<text x="380" y="325" class="l" text-anchor="middle" fill="#666" font-weight="normal">证据等级描述支持强度；框架三层描述逻辑位置。二者独立。</text>
+</svg>

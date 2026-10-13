@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 340" width="760" height="340">
+<rect x="0" y="0" width="760" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">1/3 的四条线索</text>
+<circle cx="380" cy="175" r="58" fill="#fff6ee" stroke="#c94f4f" stroke-width="2.2"/>
+<text x="380" y="170" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700" font-size="13px">分离缺口</text>
+<text x="380" y="190" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700" font-size="15px">1/3</text>
+<rect x="50" y="54" width="170" height="52" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.5"/>
+<text x="135" y="76" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">轨形</text>
+<text x="135" y="96" class="l" text-anchor="middle" fill="#666" font-weight="normal">Z/3Z 结构</text>
+<line x1="205" y1="80" x2="438" y2="175" stroke="#3a6ea5" stroke-width="1.2" stroke-dasharray="5,4"/>
+<rect x="550" y="54" width="170" height="52" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.5"/>
+<text x="635" y="76" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">模曲线 X(3)</text>
+<text x="635" y="96" class="l" text-anchor="middle" fill="#666" font-weight="normal">χ=χ(X(1))/3</text>
+<line x1="550" y1="80" x2="322" y2="175" stroke="#b8862f" stroke-width="1.2" stroke-dasharray="5,4"/>
+<rect x="50" y="244" width="170" height="52" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.5"/>
+<text x="135" y="266" class="l" text-anchor="middle" fill="#009E73" font-weight="700">椭圆上同调</text>
+<text x="135" y="286" class="l" text-anchor="middle" fill="#666" font-weight="normal">系数环 Z[1/3]</text>
+<line x1="205" y1="270" x2="438" y2="175" stroke="#009E73" stroke-width="1.2" stroke-dasharray="5,4"/>
+<rect x="550" y="244" width="170" height="52" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.5"/>
+<text x="635" y="266" class="l" text-anchor="middle" fill="#666" font-weight="700">三次域</text>
+<text x="635" y="286" class="l" text-anchor="middle" fill="#666" font-weight="normal">单位根 ω</text>
+<line x1="550" y1="270" x2="322" y2="175" stroke="#666" stroke-width="1.2" stroke-dasharray="5,4"/>
+<text x="380" y="325" class="l" text-anchor="middle" fill="#666" font-weight="normal">实心=领域内已证；虚线=与缺口的联系是猜测（C 级）</text>
+</svg>

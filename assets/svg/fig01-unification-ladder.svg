@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
+<rect x="0" y="0" width="760" height="360" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">统一的四级阶梯与本书的位置</text>
+<rect x="60" y="60" width="640" height="46" rx="6" fill="#f7f7f5" stroke="#666" stroke-width="1.6"/>
+<text x="84" y="89" class="l" text-anchor="start" fill="#666" font-weight="700" font-size="14px">U4 同一</text>
+<text x="210" y="89" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">本体上的同一（最强）</text>
+<text x="680" y="89" class="l" text-anchor="end" fill="#666" font-weight="normal">难检验</text>
+<rect x="60" y="122" width="640" height="46" rx="6" fill="#f7f7f5" stroke="#666" stroke-width="1.6"/>
+<text x="84" y="151" class="l" text-anchor="start" fill="#666" font-weight="700" font-size="14px">U3 可模拟</text>
+<text x="210" y="151" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">一方可在另一方机制上实现</text>
+<text x="680" y="151" class="l" text-anchor="end" fill="#666" font-weight="normal">难检验</text>
+<rect x="60" y="184" width="640" height="46" rx="6" fill="#f7f7f5" stroke="#666" stroke-width="1.6"/>
+<text x="84" y="213" class="l" text-anchor="start" fill="#666" font-weight="700" font-size="14px">U2 同律</text>
+<text x="210" y="213" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">粗化后遵循同一组方程</text>
+<text x="680" y="213" class="l" text-anchor="end" fill="#666" font-weight="normal">难检验</text>
+<rect x="60" y="246" width="640" height="46" rx="6" fill="#f7f7f5" stroke="#009E73" stroke-width="1.6"/>
+<text x="84" y="275" class="l" text-anchor="start" fill="#009E73" font-weight="700" font-size="14px">U1 同约束</text>
+<text x="210" y="275" class="l" text-anchor="start" fill="#1a1a1a" font-weight="normal">受同一组不等式约束（本书承诺线）</text>
+<text x="680" y="275" class="l" text-anchor="end" fill="#666" font-weight="normal">易检验</text>
+<line x1="60" y1="60" x2="60" y2="60" stroke="#009E73"/>
+<line x1="40" y1="292" x2="720" y2="292" stroke="#009E73" stroke-width="1.6" stroke-dasharray="6,4"/>
+<text x="380" y="348" class="l" text-anchor="middle" fill="#009E73" font-weight="700">强度递减，可检验性递增；本书只承诺 U1</text>
+</svg>

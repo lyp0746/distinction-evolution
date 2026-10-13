@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 360" width="760" height="360">
+<rect x="0" y="0" width="760" height="360" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">候选新领域的优先级</text>
+<line x1="80" y1="290" x2="700" y2="290" class="ax"/>
+<line x1="80" y1="290" x2="80" y2="60" class="ax"/>
+<text x="390.0" y="324" class="l" text-anchor="middle">概念清晰度 →</text>
+<text x="70" y="175.0" class="l" text-anchor="middle" transform="rotate(-90 70 175.0)">P3 可行性 →</text>
+<circle cx="590" cy="112" r="17.0" fill="#009E73" opacity="0.7"/>
+<text x="590.0" y="88.5" class="l" text-anchor="middle" fill="#009E73" font-weight="700">区分几何</text>
+<circle cx="440" cy="164" r="14.0" fill="#009E73" opacity="0.7"/>
+<text x="440.0" y="144.0" class="l" text-anchor="middle" fill="#009E73" font-weight="700">时间区分</text>
+<circle cx="440" cy="122" r="15.0" fill="#009E73" opacity="0.7"/>
+<text x="440.0" y="101.0" class="l" text-anchor="middle" fill="#009E73" font-weight="700">区分ML</text>
+<circle cx="410" cy="185" r="11.0" fill="#b8862f" opacity="0.7"/>
+<text x="410.0" y="168.0" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">超有限李</text>
+<circle cx="410" cy="216" r="11.0" fill="#b8862f" opacity="0.7"/>
+<text x="410.0" y="199.5" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">量子区分</text>
+<circle cx="260" cy="227" r="9.0" fill="#666" opacity="0.7"/>
+<text x="260.0" y="212.0" class="l" text-anchor="middle" fill="#666" font-weight="700">演化数论</text>
+<circle cx="260" cy="238" r="8.0" fill="#666" opacity="0.7"/>
+<text x="260.0" y="223.5" class="l" text-anchor="middle" fill="#666" font-weight="700">凝聚区分</text>
+<rect x="560" y="70" width="130" height="60" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="625" y="92" class="l" text-anchor="middle" fill="#009E73" font-weight="700">第一梯队</text>
+<text x="625" y="112" class="l" text-anchor="middle" fill="#666" font-weight="normal">值得投入</text>
+<text x="390" y="340" class="l" text-anchor="middle" fill="#666" font-weight="normal">圆大小=与已有领域的联系强度</text>
+</svg>

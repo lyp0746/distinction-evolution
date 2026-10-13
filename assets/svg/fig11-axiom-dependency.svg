@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 340" width="820" height="340">
+<rect x="0" y="0" width="820" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">六条公理的依赖关系</text>
+<rect x="10" y="70" width="230" height="46" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="125" y="99" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">公理1 观测完备</text>
+<text x="220" y="99" class="l" text-anchor="middle" fill="#666" font-weight="700">✓</text>
+<rect x="10" y="170" width="230" height="46" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="125" y="199" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">公理2 精度连续</text>
+<text x="220" y="199" class="l" text-anchor="middle" fill="#666" font-weight="700">*</text>
+<rect x="10" y="270" width="230" height="46" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.6"/>
+<text x="125" y="299" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700">公理5 分离完备</text>
+<text x="220" y="299" class="l" text-anchor="middle" fill="#666" font-weight="700">~</text>
+<rect x="340" y="70" width="230" height="46" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.6"/>
+<text x="455" y="99" class="l" text-anchor="middle" fill="#666" font-weight="700">公理3 曲率有界</text>
+<text x="550" y="99" class="l" text-anchor="middle" fill="#666" font-weight="700">*</text>
+<rect x="340" y="170" width="230" height="46" rx="6" fill="#fafafa" stroke="#c94f4f" stroke-width="1.6"/>
+<text x="455" y="199" class="l" text-anchor="middle" fill="#c94f4f" font-weight="700">公理4 演化适定 ★</text>
+<text x="550" y="199" class="l" text-anchor="middle" fill="#666" font-weight="700">✓</text>
+<rect x="340" y="270" width="230" height="46" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.6"/>
+<text x="455" y="299" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">公理6 标准化</text>
+<text x="550" y="299" class="l" text-anchor="middle" fill="#666" font-weight="700">—</text>
+<text x="205" y="55" class="l" text-anchor="middle" fill="#666" font-weight="normal">结构性</text>
+<text x="535" y="55" class="l" text-anchor="middle" fill="#666" font-weight="normal">技术性/动力学</text>
+<text x="410" y="322" class="l" text-anchor="middle" fill="#666" font-weight="normal">★ = 第四部分完整验证；✓ = 图论验证；* = 部分；~ = 有限情形</text>
+</svg>

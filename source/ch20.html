@@ -1,0 +1,83 @@
+<h2 class="chapter">第 20 章　统一分类：三条轴</h2>
+
+<p class="lead">编码表告诉我们每个领域长什么样，分类表告诉我们它们之间的关系。本章用三条轴把所有领域重新分类：<b>区分动作的代数结构、分离曲率的符号、演化流的类型。</b>三条轴张成一个空间，这个空间里已经出现的位置与空缺的位置，就构成了新领域的地图。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+所有领域可以按三条轴分类：<b>（1）区分动作的代数（线性／拓扑／度量／序／逻辑）；（2）分离曲率的符号（负／零／正）；（3）演化流的类型（无／离散／连续）。</b>三条轴的乘积给出 <span class="s">5×3×3=45</span> 个格子，其中约 25 个已被占据，空缺的格子是新领域的候选。</div>
+
+<h3>20.1　导论：分类即理论</h3>
+
+<p>分类不是装饰。一个好的分类本身就携带理论信息：它告诉你哪些组合是自然的，哪些是矛盾的，哪些是尚未探索的。门捷列夫的元素周期表之所以强大，正是因为它留下空格并预言了填充物。</p>
+
+<p>本章的三条轴来自前面的分析，而非任意选择。第一条轴（区分动作的代数）来自第 8.2 节：不同领域的区分动作有不同的封闭性质。第二条轴（曲率符号）来自第 9 章：符号决定长期行为。第三条轴（演化流）来自第 10 章：时间类型决定动力学的形式。</p>
+
+<h3>20.2　第一轴：区分动作的代数结构</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 20.1　第一轴：区分动作的代数</b></caption>
+<tr><th class="l">类型</th><th class="l">区分动作</th><th class="l">稳定区域</th><th class="l">领域</th></tr>
+<tr><td class="l">线性</td><td class="l">线性泛函</td><td class="l">向量空间</td><td class="l">线性代数、表示论、调和分析、算子代数、量子数学</td></tr>
+<tr><td class="l">拓扑</td><td class="l">开集／单纯形</td><td class="l">拓扑空间</td><td class="l">点集拓扑、代数拓扑</td></tr>
+<tr><td class="l">度量</td><td class="l">可测区分</td><td class="l">测度空间</td><td class="l">测度论、概率论、实分析</td></tr>
+<tr><td class="l">序</td><td class="l">子结构</td><td class="l">格／偏序集</td><td class="l">格论、组合数学、图论</td></tr>
+<tr><td class="l">逻辑</td><td class="l">可证公式</td><td class="l">类型／模型</td><td class="l">数理逻辑、类型论、可计算性</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>分类轴一。等级 B（论证）。</div>
+
+<h3>20.3　第二轴：分离曲率的符号</h3>
+
+<p>第二条轴来自第 9 章。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 20.2　第二轴：曲率符号</b></caption>
+<tr><th class="l">符号</th><th class="l">行为</th><th class="l">领域表现</th></tr>
+<tr><td class="l">κ&lt;0</td><td class="l">区分器稀缺，塌缩</td><td class="l">双曲几何、负曲率流形、强干扰信道</td></tr>
+<tr><td class="l">κ=0</td><td class="l">平衡</td><td class="l">线性代数、平坦几何、无噪信道</td></tr>
+<tr><td class="l">κ&gt;0</td><td class="l">区分器过剩，精细化／爆炸</td><td class="l">组合爆炸、正曲率流形、LLM 表示</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>分类轴二。等级 B（论证）；图论部分为 A（定理）。</div>
+
+<h3>20.4　第三轴：演化流的类型</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 20.3　第三轴：演化流</b></caption>
+<tr><th class="l">类型</th><th class="l">时间 𝒯</th><th class="l">领域</th></tr>
+<tr><td class="l">无演化</td><td class="l">—</td><td class="l">线性代数、拓扑、数论、逻辑、组合</td></tr>
+<tr><td class="l">离散演化</td><td class="l">ℕ</td><td class="l">动力系统（迭代）、博弈论、马尔可夫链、算法</td></tr>
+<tr><td class="l">连续演化</td><td class="l">ℝ</td><td class="l">微分方程、微分几何、算子代数、量子、图上的热流</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>分类轴三。等级 B（论证）。</div>
+
+<h3>20.5　空缺的组合</h3>
+
+<img class="fig" src="assets/svg/fig21-classification-axes.svg" alt="三条分类轴">
+
+<div class="cap"><b>图 20.1　三条分类轴与空缺</b>。三条轴张成一个 <span class="s">5×3×3</span> 的空间。实心点表示已有领域占据的组合，空心点表示空缺。空缺的组合提示可能的新领域（第 21 章）。</div>
+
+<p>三条轴张成 45 个格子。已占据的约 25 个（如"线性×零×无"=线性代数，"序×正×无"=组合数学）。剩下的空缺中，有几个特别有前景：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 20.4　有前景的空缺组合</b></caption>
+<tr><th class="l">组合</th><th class="l">候选新领域</th><th class="l">对应现象</th></tr>
+<tr><td class="l">线性 × 正 × 连续</td><td class="l">演化线性代数</td><td class="l">LLM 层间表示演化</td></tr>
+<tr><td class="l">拓扑 × 正 × 离散</td><td class="l">离散同伦论</td><td class="l">图神经网络的消息传递</td></tr>
+<tr><td class="l">度量 × 负 × 连续</td><td class="l">刚性测度论</td><td class="l">高维测度集中、双曲群随机游走</td></tr>
+<tr><td class="l">序 × 正 × 连续</td><td class="l">连续组合学</td><td class="l">随机图过程的相变动力学</td></tr>
+<tr><td class="l">逻辑 × 正 × 连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>空缺表。等级 C（纲领）。</div>
+
+<div class="note"><b>分类的用途</b>
+这张表的用途不是预言"这些领域一定存在"，而是给出<b>搜索方向</b>。当你在两个已有领域之间发现一个未被命名的结构时，可以查表看它是否落在一个空缺格子上。若落在空缺格子上，说明它可能是一个新领域；若落在已占据格子上，说明它可能已经被某个领域以别的名字研究过。</div>
+
+<h3>20.6　本章小结</h3>
+
+<p>三条轴（区分动作代数、曲率符号、演化流）把所有领域组织成一个 45 格空间，其中约 25 格已被占据。空缺的格子是新领域的候选。下一章评估其中哪些最值得投入。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Gierz, G., et al. (2003). <i>Continuous Lattices and Domains</i>. Cambridge University Press.</p>
+<p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i>. Cambridge University Press.</p>
+<p>Abramsky, S., &amp; Jung, A. (1994). Domain theory. In <i>Handbook of Logic in Computer Science</i>. Oxford University Press.</p>
+<p>Bridson, M. R., &amp; Haefliger, A. (1999). <i>Metric Spaces of Non-Positive Curvature</i>. Springer.</p>
+</div>

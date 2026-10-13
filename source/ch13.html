@@ -1,0 +1,87 @@
+<h2 class="chapter">第 13 章　两阶段相变：局部先于全局</h2>
+
+<p class="lead">第 12 章的定理有一个不平凡的结构：<b>临界耦合不是一个，而是两个。</b>最先解锁的是最高频（局部）模式，最后解锁的是 Fiedler（全局切割）模式。这意味着一个系统可以先获得"局部区分能力"，再获得"全局区分能力"。本章把这个结构讲透，并说明它与谱间隙的关系。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+两阶段相变是图上演化区分系统的新现象：当 <span class="s">λ<sub>n</sub>&gt;λ<sub>2</sub></span> 时，<b>存在一个中间相，其中局部区分已经解锁而全局区分尚未</b>。这个结构把"局部 vs 全局"这个模糊的区分变成了一个精确的谱条件。</div>
+
+<h3>13.1　导论：一个非平凡的结构</h3>
+
+<p>大多数相变理论只有一个临界点。第 12 章的定理却给出两个，而且它们有明确的几何含义。这不是技术细节，而是框架关于"区分如何生长"的第一个结构性发现。</p>
+
+<p>直觉如下：拉普拉斯矩阵的高频特征向量在局部剧烈振荡（相邻顶点取值相反），低频特征向量则在全局缓慢变化（把图切成两半）。<b>耦合 <span class="s">β</span> 从零增大时，先能让"局部差分"生长（高频），再能让"全局切割"生长（低频）。</b></p>
+
+<h3>13.2　两个临界点</h3>
+
+<img class="fig" src="assets/svg/fig13-spectrum-thresholds.svg" alt="谱与临界阈值">
+
+<div class="cap"><b>图 13.1　谱与临界阈值</b>。左：一个典型图的拉普拉斯谱（从 <span class="s">λ<sub>1</sub>=0</span> 到 <span class="s">λ<sub>n</sub></span>）。右：对应的临界耦合 <span class="s">α/λ<sub>k</sub></span>，随 <span class="s">λ<sub>k</sub></span> 增大而减小。最高频模式对应最小的临界耦合 <span class="s">β<sub>1</sub></span>，Fiedler 模式对应最大的 <span class="s">β<sub>2</sub></span>。两者之间是"局部增益相"。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 13.1　三个相及其含义</b></caption>
+<tr><th class="l">相</th><th class="l">条件</th><th class="l">增长的模式</th><th class="l">解释</th></tr>
+<tr><td class="l">衰减相</td><td class="l">β &lt; α/λ<sub>n</sub></td><td class="l">无</td><td class="l">区分无法维持，结构均匀化</td></tr>
+<tr><td class="l">局部增长相</td><td class="l">α/λ<sub>n</sub> &lt; β &lt; α/λ<sub>2</sub></td><td class="l">高频（局部）模式</td><td class="l">局部区分生长，全局仍均匀</td></tr>
+<tr><td class="l">全局增长相</td><td class="l">β &gt; α/λ<sub>2</sub></td><td class="l">高频 + Fiedler 模式</td><td class="l">全局切割也开始生长</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>相图。等级 A（定理 12.1 的直接推论）。</div>
+
+<h3>13.3　中间相的存在性与宽度</h3>
+
+<p>中间相存在的充要条件是 <span class="s">λ<sub>n</sub>&gt;λ<sub>2</sub></span>，即最高特征值严格大于代数连通度。它的宽度为</p>
+
+<div class="eq"><span class="body">W := β<sub>2</sub> − β<sub>1</sub> = α(1/λ<sub>2</sub> − 1/λ<sub>n</sub>) = α(λ<sub>n</sub>−λ<sub>2</sub>)/(λ<sub>2</sub>λ<sub>n</sub>)</span><span class="num">(13.1)</span></div>
+
+<p>这个宽度是一个可计算的量。它告诉我们"局部先于全局"这个现象有多显著。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 13.2　不同图的中间相宽度（取 α=1）</b></caption>
+<tr><th class="l">图</th><th class="l">λ<sub>2</sub></th><th class="l">λ<sub>n</sub></th><th class="l">β<sub>1</sub></th><th class="l">β<sub>2</sub></th><th class="l">宽度 W</th></tr>
+<tr><td class="l">完全图 K<sub>n</sub></td><td class="l">n</td><td class="l">n</td><td class="l">1/n</td><td class="l">1/n</td><td class="l">0（无中间相）</td></tr>
+<tr><td class="l">Petersen</td><td class="l">2</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.500</td><td class="l">0.300</td></tr>
+<tr><td class="l">环 C<sub>10</sub></td><td class="l">0.382</td><td class="l">4</td><td class="l">0.250</td><td class="l">2.618</td><td class="l">2.368</td></tr>
+<tr><td class="l">路径 P<sub>n</sub>（大 n）</td><td class="l">≈π²/n²</td><td class="l">≈4</td><td class="l">≈0.25</td><td class="l">≈n²/π²</td><td class="l">≈n²/π²</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>数值表（部分渐近）。等级 A（可由谱定理直接计算）。精确值见附录 A 与 <code>analysis/graph_phase_transition.py</code> 的输出。</div>
+
+<div class="scenario"><span class="bt">一个可检验的结构性预言</span>
+表 13.2 给出一个可检验预言：<b>在路径图这类"长而窄"的图上，中间相宽度随顶点数二次增长。</b>这意味着大图上"局部区分"与"全局区分"之间存在一个巨大的滞后区。这个预言来自纯谱论，可以被任何数值实验直接检验（第 14.7 节）。</div>
+
+<h3>13.4　与谱间隙、代数连通度的关系</h3>
+
+<p><span class="s">λ<sub>2</sub></span>（代数连通度）在图论中有明确含义：它度量图的"连通紧密程度"——<span class="s">λ<sub>2</sub></span> 越大，图越难被切成两半。<span class="s">λ<sub>n</sub></span> 度量"局部振荡的强度"。</p>
+
+<p>两阶段相变把这两个量放进同一个框架：<b>全局区分能力解锁的阈值 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 直接由代数连通度决定。</b>这与共识协议里的一个著名事实相呼应：共识时间由 <span class="s">1/λ<sub>2</sub></span> 决定。但注意差别：</p>
+
+<ul>
+<li><b>共识协议</b> <span class="s">ẋ=−Lx</span>：<span class="s">λ<sub>2</sub></span> 决定收敛速度（所有模式都在衰减）。</li>
+<li><b>演化区分系统</b> <span class="s">Ḋ=(−αI+βL)D</span>：<span class="s">λ<sub>n</sub></span> 决定第一个增长阈值，<span class="s">λ<sub>2</sub></span> 决定第二个。</li>
+</ul>
+
+<p>差别来自衰减项 <span class="s">−αI</span> 的存在：在共识协议中，<span class="s">λ<sub>1</sub>=0</span> 模式守恒（总质量不变）；在这里，它衰减。这使"最不稳定"的模式从 Fiedler 变成最高频，从而产生了中间相。</p>
+
+<div class="note"><b>为什么这个差别重要</b>
+如果演化方程里没有衰减项（<span class="s">α=0</span>），则 <span class="s">Ḋ=βLD</span> 是热方程，所有模式都衰减（<span class="s">λ<sub>k</sub>≥0</span>），没有增长相。有衰减项才有相变。这提示：<b>区分系统的相变来自"维持成本"与"传播收益"之间的竞争，而不是来自扩散本身。</b></div>
+
+<h3>13.5　与热方程、共识协议的对照</h3>
+
+<table class="nat">
+<caption class="cap"><b>表 13.3　演化区分系统与相关动力学的对照</b></caption>
+<tr><th class="l">系统</th><th class="l">方程</th><th class="l">主导速率</th><th class="l">行为</th></tr>
+<tr><td class="l">热方程</td><td class="l">Ḋ=βLD</td><td class="l">βλ<sub>2</sub></td><td class="l">始终衰减（均匀化）</td></tr>
+<tr><td class="l">共识协议</td><td class="l">ẋ=−Lx</td><td class="l">λ<sub>2</sub></td><td class="l">收敛到共识</td></tr>
+<tr><td class="l">演化区分系统</td><td class="l">Ḋ=(−αI+βL)D</td><td class="l">βλ<sub>n</sub>−α</td><td class="l">三相位，含两阶段相变</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>对照表。等级 A（可直接由谱分析验证）。</div>
+
+<h3>13.6　本章小结</h3>
+
+<p>两阶段相变是硬核的第一个结构性结果：局部区分先于全局区分解锁，中间相宽度由 <span class="s">α(1/λ<sub>2</sub>−1/λ<sub>n</sub>)</span> 给出。这个结果把"局部 vs 全局"变成一个可计算的谱量。下一章给出具体图的数字与数值验证协议。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Fiedler, M. (1973). Algebraic connectivity of graphs. <i>Czechoslovak Mathematical Journal</i> 23.</p>
+<p>Mesbahi, M., &amp; Egerstedt, M. (2010). <i>Graph Theoretic Methods in Multiagent Networks</i>. Princeton University Press.</p>
+<p>Boyd, S., et al. (2004). Fastest mixing Markov chain on a graph. <i>SIAM Review</i> 46(4).</p>
+<p>Biggs, N. (1993). <i>Algebraic Graph Theory</i> (2nd ed.). Cambridge University Press.</p>
+</div>

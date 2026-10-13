@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+<rect x="0" y="0" width="800" height="400" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">三条分类轴与空缺</text>
+<text x="80" y="100" class="l" text-anchor="end" fill="#1a1a1a" font-weight="700">无</text>
+<text x="80" y="180" class="l" text-anchor="end" fill="#1a1a1a" font-weight="700">离散</text>
+<text x="80" y="260" class="l" text-anchor="end" fill="#1a1a1a" font-weight="700">连续</text>
+<text x="180" y="66" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">线性</text>
+<text x="310" y="66" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">拓扑</text>
+<text x="440" y="66" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">度量</text>
+<text x="570" y="66" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">序</text>
+<text x="700" y="66" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">逻辑</text>
+<circle cx="180" cy="100" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="310" cy="100" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="440" cy="100" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="570" cy="100" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="700" cy="100" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="180" cy="180" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="180" y="184" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<circle cx="310" cy="180" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="310" y="184" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<circle cx="440" cy="180" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="570" cy="180" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="570" y="184" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<circle cx="700" cy="180" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="700" y="184" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<circle cx="180" cy="260" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="310" cy="260" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="440" cy="260" r="14" fill="#3a6ea5" stroke="#3a6ea5" stroke-width="1.6"/>
+<circle cx="570" cy="260" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="570" y="264" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<circle cx="700" cy="260" r="14" fill="none" stroke="#ddd" stroke-width="1.6"/>
+<text x="700" y="264" class="l" text-anchor="middle" fill="#666" font-weight="700" font-size="12px">?</text>
+<text x="540" y="370" class="l" text-anchor="middle" fill="#666" font-weight="normal">实心=已占据；空心=空缺（候选新领域）</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 300" width="780" height="300">
+<rect x="0" y="0" width="780" height="300" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">广义斯托克斯定理统摄四个经典定理</text>
+<rect x="300" y="55" width="180" height="70" rx="6" fill="#eef4fa" stroke="#3a6ea5" stroke-width="2"/>
+<text x="390" y="86" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="14px">广义斯托克斯</text>
+<text x="390" y="108" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="12">∫_M dω = ∫_∂M ω</text>
+<rect x="40" y="190" width="160" height="60" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="120" y="216" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">牛顿–莱布尼茨</text>
+<text x="120" y="238" class="l" text-anchor="middle" fill="#666" font-weight="normal">M=[a,b]，0-形式</text>
+<line x1="120" y1="190" x2="330.0" y2="125" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="220" y="190" width="160" height="60" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="300" y="216" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">格林</text>
+<text x="300" y="238" class="l" text-anchor="middle" fill="#666" font-weight="normal">平面区域，1-形式</text>
+<line x1="300" y1="190" x2="370.0" y2="125" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="400" y="190" width="160" height="60" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="480" y="216" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">高斯</text>
+<text x="480" y="238" class="l" text-anchor="middle" fill="#666" font-weight="normal">空间区域，2-形式</text>
+<line x1="480" y1="190" x2="410.0" y2="125" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="580" y="190" width="160" height="60" rx="6" fill="#fafafa" stroke="#666" stroke-width="1.2"/>
+<text x="660" y="216" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">斯托克斯</text>
+<text x="660" y="238" class="l" text-anchor="middle" fill="#666" font-weight="normal">曲面，1-形式</text>
+<line x1="660" y1="190" x2="450.0" y2="125" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="390" y="285" class="l" text-anchor="middle" fill="#666" font-weight="normal">四个定理 = 同一个定理在不同 n 与流形上的取值</text>
+</svg>

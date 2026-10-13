@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 460" width="860" height="460">
+<rect x="0" y="0" width="860" height="460" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">《区分的演化》概念地图</text>
+<rect x="240" y="70" width="380" height="80" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.8"/>
+<text x="430" y="104" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="14px">第一层　硬核</text>
+<text x="430" y="130" class="l" text-anchor="middle" fill="#666" font-weight="normal">图上的相变定理（严格、可复现）</text>
+<rect x="240" y="190" width="380" height="80" rx="6" fill="#fafafa" stroke="#b8862f" stroke-width="1.8"/>
+<text x="430" y="224" class="l" text-anchor="middle" fill="#b8862f" font-weight="700" font-size="14px">第二层　统一框架</text>
+<text x="430" y="250" class="l" text-anchor="middle" fill="#666" font-weight="normal">六条公理 + 分离曲率 + 符号分类</text>
+<rect x="240" y="310" width="380" height="80" rx="6" fill="#fafafa" stroke="#009E73" stroke-width="1.8"/>
+<text x="430" y="344" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="14px">第三层　可选工具</text>
+<text x="430" y="370" class="l" text-anchor="middle" fill="#666" font-weight="normal">非标准分析 / 生成拓扑 / 类型论</text>
+<rect x="40" y="90" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="115" y="110" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">微分形式</text>
+<line x1="190" y1="105" x2="235" y2="105" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="130" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="115" y="150" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">生成拓扑</text>
+<line x1="190" y1="145" x2="235" y2="145" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="170" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="115" y="190" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">非标准分析</text>
+<line x1="190" y1="185" x2="235" y2="185" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="40" y="210" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="115" y="230" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">类型论</text>
+<line x1="190" y1="225" x2="235" y2="225" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="670" y="90" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="745" y="110" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">微分方程</text>
+<line x1="665" y1="105" x2="620" y2="105" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="670" y="130" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="745" y="150" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">概率论</text>
+<line x1="665" y1="145" x2="620" y2="145" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="670" y="170" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="745" y="190" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">量子数学</text>
+<line x1="665" y1="185" x2="620" y2="185" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<rect x="670" y="210" width="150" height="30" rx="6" fill="#fff" stroke="#666" stroke-width="1"/>
+<text x="745" y="230" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">微分几何</text>
+<line x1="665" y1="225" x2="620" y2="225" stroke="#666" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="430" y="430" class="l" text-anchor="middle" fill="#666" font-weight="normal">实线 = 严格/半严格编码；虚线 = 仅工具对应。地图只定性，不含统计。</text>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340">
+<rect x="0" y="0" width="720" height="340" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">两阶段相变：增长率 μ_k = βλ_k − α</text>
+<line x1="80" y1="280" x2="660" y2="280" class="ax"/>
+<line x1="80" y1="280" x2="80" y2="60" class="ax"/>
+<text x="370.0" y="314" class="l" text-anchor="middle">耦合强度 β</text>
+<text x="70" y="170.0" class="l" text-anchor="middle" transform="rotate(-90 70 170.0)">增长率 μ</text>
+<line x1="80" y1="170" x2="660" y2="170" stroke="#1a1a1a" stroke-width="1"/>
+<text x="668" y="174" class="l" text-anchor="start" fill="#1a1a1a" font-weight="700">μ=0</text>
+<polyline points="80.0,210.0 660.0,162.0" fill="none" stroke="#666" stroke-width="2.2"/>
+<circle cx="547" cy="170" r="4" fill="#666"/>
+<polyline points="80.0,210.0 660.0,90.0" fill="none" stroke="#c94f4f" stroke-width="2.2"/>
+<circle cx="267" cy="170" r="4" fill="#c94f4f"/>
+<polyline points="80.0,210.0 660.0,-6.0" fill="none" stroke="#3a6ea5" stroke-width="2.2"/>
+<circle cx="184" cy="170" r="4" fill="#3a6ea5"/>
+<polyline points="80.0,210.0 660.0,-102.0" fill="none" stroke="#009E73" stroke-width="2.2"/>
+<circle cx="152" cy="170" r="4" fill="#009E73"/>
+<line x1="152" y1="60" x2="152" y2="280" stroke="#009E73" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="157.7948717948718" y="78" class="l" text-anchor="start" fill="#009E73" font-weight="700">β₁=α/λ_n</text>
+<line x1="547" y1="60" x2="547" y2="280" stroke="#c94f4f" stroke-width="1" stroke-dasharray="4,3"/>
+<text x="552.6666666666667" y="98" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">β₂=α/λ₂</text>
+<text x="360" y="322" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">β₁<β<β₂：局部（高频）增长，全局（Fiedler）衰减</text>
+</svg>

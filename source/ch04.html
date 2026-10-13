@@ -1,0 +1,96 @@
+<h2 class="chapter">第 4 章　微分形式：一个公式统摄四个积分定理</h2>
+
+<p class="lead">本章是方法演示的第一个案例。它刻意选择一个<b>已经成功、且被广泛接受</b>的压缩：外微分把牛顿–莱布尼茨、格林、高斯、斯托克斯四个积分定理统一为广义斯托克斯定理的一个特例。选择已知案例，是为了让读者先看清"压缩"长什么样，再判断它在别处是否可信。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+四个经典积分定理的"冗余"是真实的：它们共享同一个"边界积分"骨架。<b>外微分把这个骨架变成基本对象，使四个定理成为同一个定理在不同维数下的实例。</b>这个案例通过了第 2 章的全部四判据，是压缩有效性的标准样本。</div>
+
+<h3>4.1　导论：四个定理，四套符号</h3>
+
+<p>微积分教材里，四个积分定理各占一章，各有一套符号：牛顿–莱布尼茨公式把定积分化为原函数在端点的差；格林公式把平面区域的二重积分化为边界曲线积分；高斯公式把空间区域的体积分化为边界曲面积分；斯托克斯公式把曲面上的曲面积分化为边界曲线积分。学生必须分别记忆它们，并分别处理各自的技术条件（区域的形状、边界的光滑性、定向的约定）。［已知］</p>
+
+<p>这种重复不是内容的重复，而是<b>表述冗余</b>。四个定理的数学内容各不相同，但它们的证明结构与表述形式被同一件事支配：一个微分形式在区域上的积分，等于它的某种"导数"在区域上的积分。</p>
+
+<h3>4.2　冗余层次分析</h3>
+
+<p>用第 2 章的判据扫描，四个定理的冗余层次如下：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 4.1　四个积分定理的冗余层次</b></caption>
+<tr><th class="l">定理</th><th class="l">左边</th><th class="l">右边</th><th class="l">冗余所在</th></tr>
+<tr><td class="l">牛顿–莱布尼茨</td><td class="l">区间上的 1-形式积分</td><td class="l">0-形式在端点差</td><td class="l">C1 同构证明骨架</td></tr>
+<tr><td class="l">格林</td><td class="l">平面区域上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3 平行语言</td></tr>
+<tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
+<tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>冗余分析表。等级 B（标准数学史共识）。</div>
+
+<h3>4.3　外微分：把被积表达式当成主角</h3>
+
+<p>压缩的关键动作是<b>改变基本对象</b>。传统微积分把"函数"当作主角，把"微分表达式"当作配角。外微分反过来：把<b>微分形式</b>当作基本对象，函数只是 0-形式。</p>
+
+<div class="define"><span class="bt">定义 4.1　微分形式与外微分</span>
+在光滑流形 <span class="s">M</span> 上，一个 <span class="s">k</span>-形式 <span class="s">ω</span> 是一个反对称的余切张量场。外微分 <span class="s">d</span> 把 <span class="s">k</span>-形式映为 <span class="s">(k+1)</span>-形式，满足：<br>
+（1）<span class="s">d</span> 是线性的；<br>
+（2）对函数 <span class="s">f</span>，<span class="s">df</span> 是普通微分；<br>
+（3）<span class="s">d(ω∧η) = dω∧η + (−1)<sup>k</sup>ω∧dη</span>（分次莱布尼茨律）；<br>
+（4）<span class="s">d² = 0</span>。<br>
+条件（2）—（4）唯一确定 <span class="s">d</span>。</div>
+
+<p>这个定义有两个非凡之处。<b>第一，它把梯度、旋度、散度三个算子统一为同一个 <span class="s">d</span> 在不同维数下的表现。</b>对 0-形式，<span class="s">d</span> 就是梯度；对 1-形式，<span class="s">d</span> 在线性情形给出旋度；对 2-形式，<span class="s">d</span> 给出散度。<b>第二，<span class="s">d²=0</span> 是自动的，不需要单独证明</b>——它是外代数反对称性的直接结果，而传统矢量微积分里 <span class="s">∇×∇f=0</span> 与 <span class="s">∇·(∇×v)=0</span> 是两个需要分别验证的恒等式。［已知］</p>
+
+<h3>4.4　广义斯托克斯定理</h3>
+
+<div class="define"><span class="bt">定理 4.1（广义斯托克斯定理）［已知，A］</span>
+设 <span class="s">M</span> 是带边界 <span class="s">∂M</span> 的紧致可定向光滑 <span class="s">n</span> 维流形，<span class="s">ω</span> 是 <span class="s">M</span> 上的光滑 <span class="s">(n−1)</span>-形式，则
+<div class="eq"><span class="body">∫<sub>M</sub> dω = ∫<sub>∂M</sub> ω</span></div>
+其中 <span class="s">∂M</span> 取诱导定向。</div>
+
+<p>一个公式。所有四个定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。</p>
+
+<h3>4.5　四定理如何变成特例</h3>
+
+<img class="fig" src="assets/svg/fig04-stokes-unification.svg" alt="广义斯托克斯定理统摄四个定理">
+
+<div class="cap"><b>图 4.1　一个公式，四个特例</b>。横轴为流形的维数与类型，纵轴为对应的经典定理。它们都是广义斯托克斯定理在特定 <span class="s">M</span> 与 <span class="s">ω</span> 下的取值。</div>
+
+<p>把四个定理逐一化为特例：</p>
+
+<ul>
+<li><b>牛顿–莱布尼茨：</b>取 <span class="s">M=[a,b]</span>（一维），<span class="s">ω=f</span>（0-形式）。则 <span class="s">dω=f′dx</span>，边界 <span class="s">∂M={a,b}</span> 带符号。<span class="s">∫<sub>[a,b]</sub> f′dx = f(b)−f(a)</span>。</li>
+<li><b>格林：</b>取 <span class="s">M⊂ℝ²</span> 为平面区域，<span class="s">ω=P dx+Q dy</span>。则 <span class="s">dω=(∂Q/∂x−∂P/∂y)dx∧dy</span>，得到格林公式。</li>
+<li><b>高斯：</b>取 <span class="s">M⊂ℝ³</span> 为空间区域，<span class="s">ω</span> 为 2-形式。则 <span class="s">dω</span> 给出散度，边界积分给出通量。</li>
+<li><b>斯托克斯：</b>取 <span class="s">M</span> 为 ℝ³ 中的曲面，<span class="s">ω</span> 为 1-形式。则 <span class="s">dω</span> 给出旋度，边界积分给出环量。</li>
+</ul>
+
+<div class="note"><b>注意"特例"的确切含义</b>
+这里说的是：经典定理的<b>陈述</b>是广义斯托克斯定理的实例，且经典定理的<b>证明骨架</b>（分割区域、取极限、边界相消）是同一个。这属于 U2（同律）级别的统一，不是 U4（同一）：四个经典定理讨论的是不同的几何对象，不能互相替换。</div>
+
+<h3>4.6　有效性检验：压缩比与可迁移性</h3>
+
+<p>用第 2 章的四判据打分：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 4.2　微分形式压缩的四判据检验</b></caption>
+<tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
+<tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">4 个定理 + 3 个矢量微分算子 → 1 个定理 + 1 个算子 <span class="s">d</span></td></tr>
+<tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">微积分、矢量分析、复分析（Cauchy 定理）被同一语言覆盖</td></tr>
+<tr><td class="l">P3 问题解决力</td><td class="l">通过</td><td class="l">德拉姆上同调、de Rham 定理、Atiyah–Singer 指标定理均以此为基础</td></tr>
+<tr><td class="l">P4 可迁移性</td><td class="l">通过</td><td class="l">被物理（电磁学、广义相对论）、复几何、辛几何广泛借用</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>方法论评分。等级 B（作者的判断，依据为公开数学史）。</div>
+
+<div class="scenario"><span class="bt">从案例学到什么</span>
+微分形式的成功有三条可迁移的经验：<b>（1）改变基本对象</b>（从函数改到形式）；<b>（2）让新对象自动携带恒等式</b>（<span class="s">d²=0</span> 免除了两个独立恒等式的证明）；<b>（3）让原定理成为新定理的特例</b>，而非被废弃。第 5—7 章的三个案例将重复这三个动作。</div>
+
+<h3>4.7　本章小结</h3>
+
+<p>微分形式是"压缩"的标准样本：它通过改变基本对象，把四个积分定理折叠为一个，并在此过程中产生了新的数学（上同调、指标定理）。本案例说明压缩不只是重新命名——它可以产生原框架无法表达的新结构。下一章把这个动作放到更原始的位置：从"区分"生成拓扑结构。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Spivak, M. (1965). <i>Calculus on Manifolds</i>. Benjamin.</p>
+<p>do Carmo, M. P. (1994). <i>Differential Forms and Applications</i>. Springer.</p>
+<p>Bott, R., &amp; Tu, L. W. (1982). <i>Differential Forms in Algebraic Topology</i>. Springer.</p>
+<p>Arnold, V. I. (1989). <i>Mathematical Methods of Classical Mechanics</i> (2nd ed.). Springer.</p>
+</div>

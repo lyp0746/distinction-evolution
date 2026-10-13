@@ -1,0 +1,84 @@
+<h2 class="chapter">第 9 章　分离曲率：核心不变量</h2>
+
+<p class="lead">如果 EDS 只有一个核心不变量，那就是<b>分离曲率</b> <span class="s">κ</span>。它度量"区分能力随精度或时间的指数增长率"，其符号把系统分成三类。本章定义它、解释它、并诚实说明它在不同领域形式不同这一事实。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+分离曲率是本书的核心不变量：它把"区分能力是增长、平衡还是衰减"变成一个可计算的量。<b>三者（负、零、正）覆盖了从结构塌缩到结构爆炸的全部行为。但它在不同领域的具体公式不同，它们的统一目前是纲领，不是定理。</b></div>
+
+<h3>9.1　导论：为什么曲率是核心</h3>
+
+<p>统一工作需要一个不变量，正如几何需要曲率、群论需要特征标。区分结构的最自然不变量是"随精度移动时，区分动作增加得有多快"：如果每提高一点精度，可用的区分动作就指数增长，那么系统是"区分器过剩"的；如果它们迅速枯竭，系统是"区分器稀缺"的。</p>
+
+<p>这个量之所以叫"曲率"，是因为它与几何曲率共享同一个本质：<b>它衡量一个结构相对于平坦参照的偏离速率。</b>平坦意味着区分能力随精度线性增长（<span class="s">κ=0</span>）；正曲率意味着指数增长（像球面上测地线汇聚）；负曲率意味着迅速枯竭（像双曲空间里测地线发散）。这个类比不是修辞，它在图论中有一个精确的对应（第 12—15 章）。</p>
+
+<h3>9.2　分离曲率的定义</h3>
+
+<div class="define"><span class="bt">定义 9.1　分离曲率（精度型）</span>
+设区分动作族带有一个精度过滤 <span class="s">D<sub>0</sub>⊆D<sub>1</sub>⊆D<sub>2</sub>⊆…</span>，其中 <span class="s">D<sub>n</sub></span> 是精度 <span class="s">n</span> 下的区分动作集。定义
+<div class="eq"><span class="body">κ := lim<sub>n→∞</sub> (1/n) log( |D<sub>n</sub>| / |D<sub>n−1</sub>| )</span><span class="num">(9.1)</span></div>
+即区分动作数目随精度层级的指数增长率。</div>
+
+<div class="define"><span class="bt">定义 9.2　分离曲率（演化型）</span>
+若系统带有演化流 <span class="s">Φ<sub>t</sub></span>，定义
+<div class="eq"><span class="body">κ(D,x) := lim sup<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span><span class="num">(9.2)</span></div>
+即观测值在演化下的相对增长速率。在光滑情形下，<span class="s">κ = (1/O)·∂<sub>t</sub>O</span>。</div>
+
+<p>两个定义的关系是：精度型度量静态的"区分复杂度增长"，演化型度量动态的"观测增长"。在图上（第四部分），它们重合为一个可计算的量。</p>
+
+<h3>9.3　曲率符号分类：负、零、正</h3>
+
+<img class="fig" src="assets/svg/fig09-curvature-signs.svg" alt="分离曲率的符号分类">
+
+<div class="cap"><b>图 9.1　曲率符号分类</b>。横轴为精度或时间，纵轴为区分能力。三条曲线对应三种符号：<span class="s">κ<0</span>（区分器稀缺，结构塌缩）、<span class="s">κ=0</span>（平衡，区分能力线性增长）、<span class="s">κ>0</span>（区分器过剩，指数增长）。</div>
+
+<table class="nat">
+<caption class="cap"><b>表 9.1　曲率符号分类及其领域表现</b></caption>
+<tr><th class="l">κ 符号</th><th class="l">含义</th><th class="l">图论表现</th><th class="l">几何直觉</th><th class="l">信息论表现</th></tr>
+<tr><td class="l">κ&lt;0</td><td class="l">区分器稀缺</td><td class="l">β&lt;α/λ<sub>n</sub>，衰减</td><td class="l">双曲（发散）</td><td class="l">信息快速丢失</td></tr>
+<tr><td class="l">κ=0</td><td class="l">平衡</td><td class="l">β=α/λ<sub>n</sub>，临界</td><td class="l">平坦（欧氏）</td><td class="l">信息守恒</td></tr>
+<tr><td class="l">κ&gt;0</td><td class="l">区分器过剩</td><td class="l">β&gt;α/λ<sub>n</sub>，增长</td><td class="l">球面（汇聚）</td><td class="l">相关性放大</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>分类表。图论列为 A（定理），几何与信息论列为 B（工具对应）。</div>
+
+<h3>9.4　曲率与已知几何量的对应</h3>
+
+<p>分离曲率在不同领域取不同形式。这一节列出最常用的对应，并标注严格程度。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 9.2　分离曲率的领域对应</b></caption>
+<tr><th class="l">领域</th><th class="l">κ 的表达</th><th class="l">来源</th><th class="l">严格程度</th></tr>
+<tr><td class="l">有限图</td><td class="l">κ = βλ<sub>k</sub> − α</td><td class="l">拉普拉斯谱</td><td class="l">A（定理）</td></tr>
+<tr><td class="l">黎曼流形</td><td class="l">κ = R/6</td><td class="l">热核展开 <span class="s">a₁</span></td><td class="l">B（局部展开，接口未证）</td></tr>
+<tr><td class="l">信息论</td><td class="l">κ = −β（逆温度）</td><td class="l">Boltzmann 分布</td><td class="l">B（重述）</td></tr>
+<tr><td class="l">线性代数</td><td class="l">κ = 0</td><td class="l">谱分解的不变性</td><td class="l">B（重述）</td></tr>
+<tr><td class="l">LLM 潜在空间</td><td class="l">κ = βS − α</td><td class="l">总激活的线性化</td><td class="l">C（假说）</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>对应表。这是全书最关键也最脆弱的一处：<b>五个公式形式不同，它们的统一是纲领（第 11.4 节），不是定理。</b>读者若只记住一句话，请记住这句。</div>
+
+<div class="warning"><span class="bt">警告 9.1　不要假装这些公式是同一个</span>
+图上 <span class="s">κ=βλ−α</span> 是精确的线性增长率；流形上 <span class="s">κ=R/6</span> 是热核展开的局部系数，其与全局拓扑的关系正是第 17 章的缺口；LLM 上 <span class="s">κ=βS−α</span> 是线性化近似。把它们写成"都是分离曲率"是一种<b>组织</b>，不是一种<b>证明</b>。声称它们已被统一，是本书最需要避免的过度宣称。</div>
+
+<h3>9.5　曲率的三条性质</h3>
+
+<p>尽管定义形式不同，分离曲率在所有已知实现中共享三条性质。它们属于框架层（乙），可作为进一步研究的起点。</p>
+
+<p><b>性质一（符号决定长期行为）：</b><span class="s">κ<0</span> 时区分能力在有限步／有限时间内塌缩；<span class="s">κ=0</span> 时线性增长；<span class="s">κ>0</span> 时指数增长。这在图论中是定理（第 12 章），在其他领域是待证命题。</p>
+
+<p><b>性质二（不可逆性）：</b>若区分动作被粗化（信息被丢弃），在没有独立通道的情况下不能恢复。这是数据处理不等式在区分语言中的重述：<b>被压缩掉的信息不会自己回来。</b>（注意：这是定理级的陈述，但它同时也是设计原则的来源——外部记忆、检索、睡眠重放都是"另开一条通道"。）</p>
+
+<p><b>性质三（与拓扑量挂钩的潜力）：</b>曲率的积分可能对应于某个拓扑不变量。这是第 16—18 章的纲领：<span class="s">∫κ</span> 与欧拉示性数的关系，以及那个著名的 <span class="s">1/3</span> 因子。</p>
+
+<div class="scenario"><span class="bt">曲率的双重角色</span>
+分离曲率在本书里扮演两个角色：<b>描述性的</b>（刻画一个系统的行为，如图上的三相位）与<b>生成性的</b>（解释为什么不同领域呈现相似的相变结构）。第一个角色在图论中完全实现；第二个角色是纲领。清楚地区分二者，是读第五、六部分的前提。</div>
+
+<h3>9.6　本章小结</h3>
+
+<p>分离曲率是本书的核心不变量，其符号把系统分为塌缩、平衡、精细三类。它在图论中有一个精确定义与完整定理；在其他领域是工具对应或假说。它的"统一性"目前是纲领。下一章引入动力学分量：演化流与时间区分，它们让"曲率"从静态分类变成动态过程。</p>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. American Mathematical Society.</p>
+<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i> (2nd ed.). CRC Press.</p>
+<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p>
+<p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
+</div>

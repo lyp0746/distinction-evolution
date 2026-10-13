@@ -1,0 +1,71 @@
+{
+  "project": "区分的演化 / The Evolution of Distinction",
+  "schema_version": "1.0",
+  "registered_at": "2026-10-13",
+  "repo": "https://github.com/lyp0746/distinction-evolution",
+  "migration": {
+    "status": "in-repo (public git history provides the timestamp)",
+    "target_platforms": ["GitHub Issues", "OSF"],
+    "note": "Promoting to Issues/OSF updates this field; the original commit is never deleted."
+  },
+  "rules": {
+    "committed_before": "All predictions written before the event; no edits after observation.",
+    "judgement": "Judge by direction, not by point value.",
+    "reporting": "On settlement report, separately: (i) original prediction; (ii) observation; (iii) whether the success criterion was met; (iv) possible reasons for any difference.",
+    "calibration": "Any post-hoc calibration follows the pre-declared transfer rules (analog set, estimator, transfer adjustment, bias declaration, pre-registration)."
+  },
+  "tests": [
+    {
+      "id": "G4",
+      "title": "高维 Gauss–Bonnet 缺口因子",
+      "registered_at": "2026-10-13",
+      "observation_due": "2027",
+      "prediction": "四维流形上的分离缺口因子 f(2) 与猜想 1/(2n+1) 一致，即在 n=2 时约为 1/5；若不一致，则缺口是二维特有现象。",
+      "indicators": [
+        {"name": "四维热核系数与欧拉形式的比例", "source": "符号计算 (SageMath/SymPy)", "endpoint": ""}
+      ],
+      "success_criterion": "计算得到的因子在数值上等于 1/(2n+1)（n=2）",
+      "negation": "计算得到的因子与 1/5 显著不同，或在四维该比例不存在",
+      "baseline": {"triggered": false, "as_of": "2026-10-13", "note": "尚未计算"}
+    },
+    {
+      "id": "A1",
+      "title": "神经网络激活阈值假说",
+      "registered_at": "2026-10-13",
+      "observation_due": "2027",
+      "prediction": "在公开训练记录中，某层总激活 S 长期低于阈值 α/[β(1−1/k_eff)] 时，其特征维度不增长（塌缩相）。",
+      "indicators": [
+        {"name": "各层总激活与有效秩", "source": "公开模型检查点 + 前向钩子", "endpoint": ""}
+      ],
+      "success_criterion": "低激活层在训练中有效秩不增长，高激活层增长",
+      "negation": "观察到低激活层有效秩持续增长，或高激活层塌缩",
+      "baseline": {"triggered": false, "as_of": "2026-10-13", "note": "尚未获取数据"}
+    },
+    {
+      "id": "F1",
+      "title": "分离曲率定义的统一",
+      "registered_at": "2026-10-13",
+      "observation_due": "2028",
+      "prediction": "存在一个统一定义，使图论 κ=βλ−α、流形 κ=R/6、信息论 κ=−β 都是它在相应粗化极限下的特例。",
+      "indicators": [
+        {"name": "三定义在共同极限下的一致性证明", "source": "数学证明", "endpoint": ""}
+      ],
+      "success_criterion": "给出统一定义并证明三个退化情形",
+      "negation": "证明三个定义在共同粗化极限下不自洽",
+      "baseline": {"triggered": false, "as_of": "2026-10-13", "note": "仅有并列定义"}
+    },
+    {
+      "id": "G2",
+      "title": "区分欧拉示性数的轨形解释",
+      "registered_at": "2026-10-13",
+      "observation_due": "2027",
+      "prediction": "区分欧拉示性数等于某个具有特定奇异点结构的 Z/3Z 轨形欧拉示性数；球面例子中的矛盾可由该结构消解。",
+      "indicators": [
+        {"name": "轨形欧拉示性数与分离曲率积分的对照", "source": "数学构造", "endpoint": ""}
+      ],
+      "success_criterion": "构造出使 χ(D)=χ_orb 的轨形结构",
+      "negation": "证明不存在这样的轨形结构，或球面矛盾无法消解",
+      "baseline": {"triggered": false, "as_of": "2026-10-13", "note": "球面例子已给出矛盾"}
+    }
+  ]
+}

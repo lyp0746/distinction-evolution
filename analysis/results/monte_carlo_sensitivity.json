@@ -1,0 +1,63 @@
+{
+  "N": 400000,
+  "note": "regime params (CV, k range) are stipulative (quality C); they answer sensitivity, not truth.",
+  "scale_warning": "输出是 κ 符号的稳定性，不是任何时间/容量量的精度。",
+  "scenarios": {
+    "S=0.5": {
+      "S_obs": 0.5,
+      "frac_kappa_positive": 0.0384,
+      "direction_flip_vs_naive": 0.0092,
+      "kappa_p10_p90": [
+        -0.991,
+        -0.136
+      ],
+      "licensed_claim": "sign only"
+    },
+    "S=1.0": {
+      "S_obs": 1.0,
+      "frac_kappa_positive": 0.4572,
+      "direction_flip_vs_naive": 0.0425,
+      "kappa_p10_p90": [
+        -0.584,
+        0.492
+      ],
+      "licensed_claim": "direction unstable; conditional branches only"
+    },
+    "S=2.0": {
+      "S_obs": 2.0,
+      "frac_kappa_positive": 0.9392,
+      "direction_flip_vs_naive": 0.0133,
+      "kappa_p10_p90": [
+        0.15,
+        1.832
+      ],
+      "licensed_claim": "ordinal + narrow interval"
+    },
+    "S=5.0": {
+      "S_obs": 5.0,
+      "frac_kappa_positive": 0.9998,
+      "direction_flip_vs_naive": 0.0001,
+      "kappa_p10_p90": [
+        2.175,
+        5.982
+      ],
+      "licensed_claim": "ordinal + narrow interval"
+    },
+    "S=10.0": {
+      "S_obs": 10.0,
+      "frac_kappa_positive": 1.0,
+      "direction_flip_vs_naive": 0.0,
+      "kappa_p10_p90": [
+        5.471,
+        12.965
+      ],
+      "licensed_claim": "ordinal + narrow interval"
+    }
+  },
+  "single_factor_check": {
+    "S": 2.0,
+    "P_kappa_pos_cv0.3": 0.9397,
+    "P_kappa_pos_cv0.1": 0.999,
+    "note": "降低参数不确定性不改变方向结论，只收窄区间。"
+  }
+}

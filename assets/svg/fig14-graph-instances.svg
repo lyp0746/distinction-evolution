@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" width="800" height="360">
+<rect x="0" y="0" width="800" height="360" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">具体图的谱与临界耦合（α=1）</text>
+<text x="110" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">Petersen</text>
+<line x1="40" y1="260" x2="200" y2="260" class="ax"/>
+<line x1="40" y1="260" x2="40" y2="90" class="ax"/>
+<rect x="50" y="260" width="8" height="0" fill="#3a6ea5" opacity="0.8"/>
+<rect x="65" y="220" width="8" height="40" fill="#3a6ea5" opacity="0.8"/>
+<rect x="80" y="220" width="8" height="40" fill="#3a6ea5" opacity="0.8"/>
+<rect x="95" y="220" width="8" height="40" fill="#3a6ea5" opacity="0.8"/>
+<rect x="110" y="220" width="8" height="40" fill="#3a6ea5" opacity="0.8"/>
+<rect x="125" y="220" width="8" height="40" fill="#3a6ea5" opacity="0.8"/>
+<rect x="140" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="155" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="170" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="185" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<text x="120" y="285" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">β₁=0.2  β₂=0.5</text>
+<text x="305" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">C₁₀</text>
+<line x1="235" y1="260" x2="395" y2="260" class="ax"/>
+<line x1="235" y1="260" x2="235" y2="90" class="ax"/>
+<rect x="245" y="260" width="8" height="0" fill="#3a6ea5" opacity="0.8"/>
+<rect x="260" y="252" width="8" height="8" fill="#3a6ea5" opacity="0.8"/>
+<rect x="275" y="232" width="8" height="28" fill="#3a6ea5" opacity="0.8"/>
+<rect x="290" y="208" width="8" height="52" fill="#3a6ea5" opacity="0.8"/>
+<rect x="305" y="188" width="8" height="72" fill="#3a6ea5" opacity="0.8"/>
+<rect x="320" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="335" y="188" width="8" height="72" fill="#3a6ea5" opacity="0.8"/>
+<rect x="350" y="208" width="8" height="52" fill="#3a6ea5" opacity="0.8"/>
+<rect x="365" y="232" width="8" height="28" fill="#3a6ea5" opacity="0.8"/>
+<rect x="380" y="252" width="8" height="8" fill="#3a6ea5" opacity="0.8"/>
+<text x="315" y="285" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">β₁=0.25  β₂=2.618</text>
+<text x="500" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">K₅</text>
+<line x1="430" y1="260" x2="590" y2="260" class="ax"/>
+<line x1="430" y1="260" x2="430" y2="90" class="ax"/>
+<rect x="440" y="260" width="8" height="0" fill="#3a6ea5" opacity="0.8"/>
+<rect x="470" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="500" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="530" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<rect x="560" y="160" width="8" height="100" fill="#3a6ea5" opacity="0.8"/>
+<text x="510" y="285" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">β₁=0.2  β₂=0.2</text>
+<text x="695" y="62" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">K₄,₄</text>
+<line x1="625" y1="260" x2="785" y2="260" class="ax"/>
+<line x1="625" y1="260" x2="625" y2="90" class="ax"/>
+<rect x="635" y="260" width="8" height="0" fill="#3a6ea5" opacity="0.8"/>
+<rect x="654" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="672" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="691" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="710" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="729" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="748" y="180" width="8" height="80" fill="#3a6ea5" opacity="0.8"/>
+<rect x="766" y="100" width="8" height="160" fill="#3a6ea5" opacity="0.8"/>
+<text x="705" y="285" class="l" text-anchor="middle" fill="#b8862f" font-weight="700">β₁=0.125  β₂=0.25</text>
+<text x="400" y="340" class="l" text-anchor="middle" fill="#666" font-weight="normal">中间相宽度 W=β₂−β₁：完全图为 0，C₁₀ 最大</text>
+</svg>

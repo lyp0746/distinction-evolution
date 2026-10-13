@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 320" width="760" height="320">
+<rect x="0" y="0" width="760" height="320" fill="#ffffff"/>
+<style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">黎曼几何与分离几何的类比</text>
+<text x="190" y="62" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="13px">黎曼几何</text>
+<text x="570" y="62" class="l" text-anchor="middle" fill="#009E73" font-weight="700" font-size="13px">分离几何</text>
+<rect x="70" y="90" width="240" height="34" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="190" y="112" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">度量 g_ij</text>
+<rect x="450" y="90" width="240" height="34" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="570" y="112" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">区分动作 D_i</text>
+<line x1="310" y1="107" x2="450" y2="107" stroke="#1a1a1a" stroke-width="1.4"/>
+<rect x="70" y="134" width="240" height="34" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="190" y="156" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">曲率 R_ijkl</text>
+<rect x="450" y="134" width="240" height="34" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="570" y="156" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">分离曲率 κ</text>
+<line x1="310" y1="151" x2="450" y2="151" stroke="#1a1a1a" stroke-width="1.4"/>
+<rect x="70" y="178" width="240" height="34" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="190" y="200" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">测地线</text>
+<rect x="450" y="178" width="240" height="34" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="570" y="200" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">区分稳定路径</text>
+<line x1="310" y1="195" x2="450" y2="195" stroke="#1a1a1a" stroke-width="1.4"/>
+<rect x="70" y="222" width="240" height="34" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="190" y="244" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">和乐群</text>
+<rect x="450" y="222" width="240" height="34" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="570" y="244" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">区分和乐群</text>
+<line x1="310" y1="239" x2="450" y2="239" stroke="#666" stroke-width="1.4" stroke-dasharray="4,3"/>
+<rect x="70" y="266" width="240" height="34" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="1.2"/>
+<text x="190" y="288" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">Gauss–Bonnet</text>
+<rect x="450" y="266" width="240" height="34" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
+<text x="570" y="288" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="normal">分离曲率积分（1/3 缺口）</text>
+<line x1="310" y1="283" x2="450" y2="283" stroke="#666" stroke-width="1.4" stroke-dasharray="4,3"/>
+<text x="380" y="310" class="l" text-anchor="middle" fill="#666" font-weight="normal">实线=严格对应；虚线=仅形式类比</text>
+</svg>
