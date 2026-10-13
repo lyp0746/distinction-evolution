@@ -14,12 +14,12 @@
 <table class="nat">
 <caption class="cap"><b>表 22.1　已严格证明的结果（A 级）</b></caption>
 <tr><th class="l">结果</th><th class="l">内容</th><th class="l">证明工具</th><th class="l">位置</th></tr>
-<tr><td class="l">临界耦合定理</td><td class="l"><span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">谱定理 + 线性 ODE</td><td class="l">定理 12.1</td></tr>
-<tr><td class="l">两阶段相变</td><td class="l">局部区分先于全局区分解锁</td><td class="l">谱分析</td><td class="l">第 13 章</td></tr>
+<tr><td class="l">临界耦合定理</td><td class="l"><span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">谱定理 + 线性 ODE</td><td class="l">定理 1.1</td></tr>
+<tr><td class="l">两阶段相变</td><td class="l">局部区分先于全局区分解锁</td><td class="l">谱分析</td><td class="l">第 2 章</td></tr>
 <tr><td class="l">中间相宽度</td><td class="l"><span class="s">W=α(1/λ<sub>2</sub>−1/λ<sub>n</sub>)</span></td><td class="l">代数</td><td class="l">式 13.1</td></tr>
-<tr><td class="l">对称爆破时间</td><td class="l"><span class="s">t*=(1/α)ln[β(k−1)d<sub>0</sub>/(β(k−1)d<sub>0</sub>−α)]</span></td><td class="l">分离变量</td><td class="l">命题 15.1</td></tr>
-<tr><td class="l">保证衰减阈值</td><td class="l"><span class="s">S(0)&lt;α/[β(1−1/k)]⇒S→0</span></td><td class="l">Cauchy–Schwarz</td><td class="l">定理 15.1</td></tr>
-<tr><td class="l">具体图临界值</td><td class="l">Petersen (0.2, 0.5)、C₁₀ (0.25, 2.618) 等</td><td class="l">谱计算</td><td class="l">第 14 章</td></tr>
+<tr><td class="l">对称爆破时间</td><td class="l"><span class="s">t*=(1/α)ln[β(k−1)d<sub>0</sub>/(β(k−1)d<sub>0</sub>−α)]</span></td><td class="l">分离变量</td><td class="l">命题 4.1</td></tr>
+<tr><td class="l">保证衰减阈值</td><td class="l"><span class="s">S(0)&lt;α/[β(1−1/k)]⇒S→0</span></td><td class="l">Cauchy–Schwarz</td><td class="l">定理 4.1</td></tr>
+<tr><td class="l">具体图临界值</td><td class="l">Petersen (0.2, 0.5)、C₁₀ (0.25, 2.618) 等</td><td class="l">谱计算</td><td class="l">第 3 章</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>已证结果清单。全部可复现（协议 V1）。<b>这是本书可以被放心引用的部分。</b></div>
 
@@ -83,7 +83,7 @@ Gauss–Bonnet 缺口是错误、修正项，还是新不变量？<b>可攻击�
 <table class="nat">
 <caption class="cap"><b>表 22.4　研究路线图（含本版实际交付状态）</b></caption>
 <tr><th class="l">阶段</th><th class="l">任务</th><th class="l">产出</th><th class="l">本版状态</th></tr>
-<tr><td class="l">短期</td><td class="l">用 Lean 4 形式化定理 12.1</td><td class="l">机器验证的相变定理</td><td class="l"><b>骨架已交付</b>（附录 H，5 引理分解 + 4 瓶颈；未编译）</td></tr>
+<tr><td class="l">短期</td><td class="l">用 Lean 4 形式化定理 1.1</td><td class="l">机器验证的相变定理</td><td class="l"><b>骨架已交付</b>（附录 H，5 引理分解 + 4 瓶颈；未编译）</td></tr>
 <tr><td class="l">短期</td><td class="l">检验 LLM 激活阈值假说</td><td class="l">可复算的实验结果</td><td class="l"><b>已执行</b>（附录 I.1；合成 MLP，结果混合，含反例）</td></tr>
 <tr><td class="l">短期</td><td class="l">确定 1/3 缺口的成立条件</td><td class="l">猜想的精确边界</td><td class="l"><b>已完成</b>（附录 I.2；当且仅当无奇异点）</td></tr>
 <tr><td class="l">中期</td><td class="l">统一分离曲率定义（O1）</td><td class="l">框架从“语言”升级为“理论”</td><td class="l">未开始</td></tr>
@@ -92,7 +92,7 @@ Gauss–Bonnet 缺口是错误、修正项，还是新不变量？<b>可攻击�
 </table>
 <div class="datasrc"><b>性质：</b>路线图（含交付状态）。等级 C（作者规划）。<b>本版的转变：</b>短期任务从“列名”变为“有实物”——Lean 骨架、三个可运行实验、一个精确化的猜想边界。这些实物多数是<b>负结果或收窄结果</b>，但它们把“可证伪”从承诺变成了事实。详见附录 H—I。</div>
 
-<p><b>本版交付的硬核扩展（附录 J）。</b>四个结果全部可复算：定理 B1（对称加权不可反转）、反例 B2（有向图可反转）、定理 C（<span class="s">κ_info=Var(λ)/2</span>）、以及证伪 G4（<span class="s">f(n)=1/(2n+1)</span> 不成立）。其中两个是正面结果，两个是负面结果。<b>它们把"硬核先行"从口号变成实物：读者可以先读第 12—15 章与附录 J，获得四个可独立验证的结果，再把框架（第三部分）读作对这些结果共同结构的诠释。</b></p>
+<p><b>本版交付的硬核扩展（附录 J）。</b>四个结果全部可复算：定理 B1（对称加权不可反转）、反例 B2（有向图可反转）、定理 C（<span class="s">κ_info=Var(λ)/2</span>）、以及证伪 G4（<span class="s">f(n)=1/(2n+1)</span> 不成立）。其中两个是正面结果，两个是负面结果。<b>它们把"硬核先行"从口号变成实物：读者可以先读第 1—4 章与附录 J，获得四个可独立验证的结果，再把框架（第三部分）读作对这些结果共同结构的诠释。</b></p>
 
 <div class="warning"><span class="bt">不要承诺超过能力的成果</span>
 本书不承诺"解决黎曼假设""证明质量间隙"之类的结果。第 17 章曾经的"黎曼假设曲率表述"（在早期草稿中）已被降级为不可证伪的隐喻，并从正式主张中移除。<b>一个纲领的可信度，取决于它承诺的与它能交付的之间的比例。</b>本书宁愿承诺少而交付真。</div>

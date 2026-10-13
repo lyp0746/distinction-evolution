@@ -12,7 +12,7 @@ EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值�
 <div class="define"><span class="bt">定义 11.1　演化区分系统（EDS）</span>
 一个演化区分系统是一个六元组
 <div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
-其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 6 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
+其中：<span class="s">D</span> 是区分动作族（定义 8.1）；<span class="s">O</span> 是观测泛函（定义 8.2）；<span class="s">∼</span> 是精度等价关系族（定义 8.3）；<span class="s">κ</span> 是分离曲率（定义 9.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 10.1）；<span class="s">st</span> 是标准部分映射（第 14 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
 
 <h3>11.2　六条公理</h3>
 
@@ -56,7 +56,7 @@ EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值�
 任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
 
 <div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
-EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 12 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
+EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 1 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
 
 <h3>11.4　公理的独立性与边界</h3>
 
@@ -87,7 +87,7 @@ EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;
 <li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
 </ul>
 
-<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 7.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
+<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 15.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
 
 <h3>11.6　本章小结</h3>
 
