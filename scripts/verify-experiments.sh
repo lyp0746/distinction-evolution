@@ -29,6 +29,7 @@ run "附录 J：高维缺口（证伪 G4）"          analysis/higher_dim_gap.py
 run "附录 J：顺序判据 B1'（Rayleigh + 否定）" analysis/reversal_criterion.py
 run "第 20.2.1：三个 κ 的类型诊断"            analysis/kappa_type_mismatch.py
 run "第 16.9.1：等型模式选择 / 反转良性问题"  analysis/isotypic_selection.py
+run "第 20.2.2：笛卡尔积下的乘积行为（G10–G14）" analysis/product_types.py
 run "第六部分：Fisher 曲率与能力涌现"      analysis/fisher_curvature.py
 run "附录 J：公理在图论情形的精确状态"    analysis/axioms_graph.py
 

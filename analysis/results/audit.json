@@ -437,7 +437,7 @@
       "first": "ch02.html"
     },
     "拉普拉斯": {
-      "total": 31,
+      "total": 32,
       "by_chapter": [
         [
           "ch06.html",
@@ -465,7 +465,7 @@
         ],
         [
           "ch20.html",
-          2
+          3
         ],
         [
           "ch26.html",
@@ -1338,7 +1338,8 @@
       "ch04.html"
     ],
     "5": [
-      "ch05.html"
+      "ch05.html",
+      "ch20.html"
     ],
     "6": [
       "ch06.html",

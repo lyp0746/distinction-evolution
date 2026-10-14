@@ -1,0 +1,180 @@
+{
+  "tests": {
+    "G10_G11_G12": [
+      {
+        "t": 0.1,
+        "G10_d0_trace_multiplicative": "15/15",
+        "G11_d1_trace_multiplicative": "0/15",
+        "G12_supertrace_multiplicative": "0/15"
+      },
+      {
+        "t": 1.0,
+        "G10_d0_trace_multiplicative": "15/15",
+        "G11_d1_trace_multiplicative": "0/15",
+        "G12_supertrace_multiplicative": "0/15"
+      },
+      {
+        "t": 3.0,
+        "G10_d0_trace_multiplicative": "15/15",
+        "G11_d1_trace_multiplicative": "0/15",
+        "G12_supertrace_multiplicative": "0/15"
+      }
+    ],
+    "G13": {
+      "holds": true,
+      "statement": "chi(G□H) = chi(G)chi(H) - |EG||EH|"
+    },
+    "2cell_deficit": {
+      "holds": true,
+      "statement": "亏项 |EG||EH| = 产品复形的 2-胞腔数 F；V-E+F = chi(G)chi(H)",
+      "detail": [
+        {
+          "pair": "K3xP2",
+          "V": 6,
+          "E": 9,
+          "F_2cells": 3,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -3
+        },
+        {
+          "pair": "K3xP3",
+          "V": 9,
+          "E": 15,
+          "F_2cells": 6,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -6
+        },
+        {
+          "pair": "K3xC4",
+          "V": 12,
+          "E": 24,
+          "F_2cells": 12,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -12
+        },
+        {
+          "pair": "K3xK4",
+          "V": 12,
+          "E": 30,
+          "F_2cells": 18,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -18
+        },
+        {
+          "pair": "K3xC5",
+          "V": 15,
+          "E": 30,
+          "F_2cells": 15,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -15
+        },
+        {
+          "pair": "P2xP3",
+          "V": 6,
+          "E": 7,
+          "F_2cells": 2,
+          "V-E+F": 1,
+          "chi_G_chi_H": 1,
+          "chi_1skeleton": -1
+        },
+        {
+          "pair": "P2xC4",
+          "V": 8,
+          "E": 12,
+          "F_2cells": 4,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -4
+        },
+        {
+          "pair": "P2xK4",
+          "V": 8,
+          "E": 16,
+          "F_2cells": 6,
+          "V-E+F": -2,
+          "chi_G_chi_H": -2,
+          "chi_1skeleton": -8
+        },
+        {
+          "pair": "P2xC5",
+          "V": 10,
+          "E": 15,
+          "F_2cells": 5,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -5
+        },
+        {
+          "pair": "P3xC4",
+          "V": 12,
+          "E": 20,
+          "F_2cells": 8,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -8
+        },
+        {
+          "pair": "P3xK4",
+          "V": 12,
+          "E": 26,
+          "F_2cells": 12,
+          "V-E+F": -2,
+          "chi_G_chi_H": -2,
+          "chi_1skeleton": -14
+        },
+        {
+          "pair": "P3xC5",
+          "V": 15,
+          "E": 25,
+          "F_2cells": 10,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -10
+        },
+        {
+          "pair": "C4xK4",
+          "V": 16,
+          "E": 40,
+          "F_2cells": 24,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -24
+        },
+        {
+          "pair": "C4xC5",
+          "V": 20,
+          "E": 40,
+          "F_2cells": 20,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -20
+        },
+        {
+          "pair": "K4xC5",
+          "V": 20,
+          "E": 50,
+          "F_2cells": 30,
+          "V-E+F": 0,
+          "chi_G_chi_H": 0,
+          "chi_1skeleton": -30
+        }
+      ]
+    },
+    "G14": {
+      "holds": true,
+      "statement": "spec Δ0(G□H) = {λ_i + μ_j} ⇒ μ_{G□H} = μ_G * μ_H"
+    }
+  },
+  "pairs": 15,
+  "diagnosis": {
+    "type_matched_object": "谱测度 μ_G / 热核迹 Tr(e^{-tΔ0})（Kronecker 和 ⇒ 乘法性/卷积）",
+    "not_multiplicative": "χ 在 1-骨架上：χ(G□H)=χ(G)χ(H)-|EG||EH|；亏项 = 产品复形的 2-胞腔数",
+    "accurate_statement": "所谓“加法 vs 乘法”的准确表述是维度问题：图是 1-维复形，两个 1-复形之积是 2-维的，χ 只在完整产品复形上乘法；EDS 定义在 1-骨架上，看不见 2-胞腔（同第 5 章“缺少粘合”）。",
+    "does_not_explain": "这一分析不解释 1/3 缺口——后者是固定二维曲面上“密度归一化 vs 欧拉密度”的另一个轴。G10-G14 是标准事实，不是新定理。"
+  }
+}

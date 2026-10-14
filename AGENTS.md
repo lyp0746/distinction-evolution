@@ -42,6 +42,7 @@ GIT="/mnt/d/Git/cmd/git.exe"
 "$PY" analysis/higher_dim_gap.py     # 附录 J 高维缺口（证伪 G4）
 "$PY" analysis/kappa_type_mismatch.py # 第 12/20 章类型诊断：三个 κ 不是同一个量
 "$PY" analysis/isotypic_selection.py  # 第 16.9.1 等型模式选择 / 反转良性问题
+"$PY" analysis/product_types.py       # 第 20.2.2 笛卡尔积乘积行为（G10–G14）
 bash scripts/verify-experiments.sh   # 一键复现全部数值实验
 "$PY" analysis/audit.py              # 校对 → 刷新 校对清单.md
 bash scripts/build.sh                # audit→印刷PDF→电子阅读PDF→EPUB→Markdown
