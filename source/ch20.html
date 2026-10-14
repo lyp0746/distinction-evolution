@@ -53,6 +53,15 @@
 <div class="warning"><span class="bt">警告 20.2　不要把乘积行为当成 1/3 的根源</span>
 上述分析精确、可复算，但它<b>不解释</b> 1/3 缺口：缺口是在<b>固定的二维曲面</b>上，"密度归一化 <span class="s">R/6</span>"与"欧拉密度"之间的一个轴，与"乘积下加/乘"是<b>两个不同的轴</b>。把两者混为一谈，正是本章要避免的那种"漂亮口号"。<b>G10—G14 是标准事实，不是本书的新定理；它们的价值在于把口号钉成可复算的语句，并指出它不是缺口的根源。</b>它们对 EDS 的真正含义只有一条：EDS 的连续对应物应当是<b>谱测度/热核</b>（类型匹配），而不是 <span class="s">χ</span>（类型不匹配、且需要 2-胞腔）。</div>
 
+<h3>20.2.3　谱三元组：正确的数学家园，但不是 1/3 的解药</h3>
+
+<p>一个自然的下一步是：把 EDS 放进 Connes 的<b>谱三元组</b> <span class="s">(A, ℋ, D)</span>。在图上这非常具体：取 <span class="s">A=ℂ<sup>V</sup></span>、<span class="s">ℋ=ℂ<sup>V</sup>⊕ℂ<sup>E</sup></span>、<span class="s">D=(0, B<sup>T</sup>; B, 0)</span>（<span class="s">B</span> 为关联矩阵），则 <span class="s">D²=diag(B<sup>T</sup>B, BB<sup>T</sup>)=diag(Δ₀, Δ₁)</span>，超迹 <span class="s">Tr<sub>s</sub>(e<sup>−tD²</sup>)=Tr(e<sup>−tΔ₀</sup>)−Tr(e<sup>−tΔ₁</sup>)</span> 正是 20.2.2 的 <span class="s">X(t)</span>。这确实把离散与连续放进同一个语言：离散对象是有限谱三元组，连续对象是 <span class="s">(C<sup>∞</sup>(M), L²(M,S), D<sub>M</sub>)</span>。［已知，B／乙］</p>
+
+<p>但它<b>不是 1/3 的解药</b>，理由很硬。<span class="s">B<sup>T</sup>B</span> 与 <span class="s">BB<sup>T</sup></span> 只在核上不同（非零谱完全一致），因此由 <b>McKean–Singer</b>，<span class="s">X(t)=dim ker Δ₀−dim ker Δ₁=b₀−b₁=χ(G)</span> <b>对一切 <span class="s">t</span> 精确成立</b>（<code>analysis/dirac_mckean_singer.py</code>：K3/C4/C5 给 0、P3 给 1、K4 给 −2、Petersen 给 −5，全部与 <span class="s">χ</span> 一致）。超迹<b>没有短时发散、没有渐近展开、更没有 1/3</b>。</p>
+
+<div class="warning"><span class="bt">警告 20.3　“换 Dirac 算子能消掉 1/3”是同义反复</span>
+常见说法是“改用狄拉克算子后归一化不同，1/3 不再出现”。这是真的，但是空的：<b>超迹里本来就没有 1/3</b>。1/3 出现在<b>标量</b>拉普拉斯（非超迹）热核的常数项 <span class="s">a₁=R/6</span> 中；把标量谱与超迹混为一谈，正是 20.2.1 类型混淆的又一次重演。另需精确：图上给出 χ 的是 <b>de Rham 算子</b>（<span class="s">B</span> 的度数 ±1 部分），不是旋量 Dirac 算子——后者的指标是 <span class="s">Â</span>-亏格，是另一个不变量。<b>谱三元组给 EDS 一个正确的数学家园（有限谱三元组 / 离散 de Rham 复形），但它是标准工具，不产生新定理，也不填 1/3。</b>离散→连续的桥是<b>谱收敛</b>——一个真实但独立的研究问题，本书不做。</div>
+
 <h3>20.3　三种出路</h3>
 
 <table class="nat">
@@ -140,7 +149,7 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 <li><b>⊗ 可引用（A）：</b>本章无 A 级结果（边界章）。</li>
 <li><b>⊕ 有论证（B）：</b>因子 1/3 的来源分析；三种出路；轨形解释的收窄。</li>
 <li><b>○ 启发／描述（C）：</b>球面反例（χ(S²)=2，2/3 非整数）；轨形解释“当且仅当无奇异点”。</li>
-<li><b>？ 未解决：</b>G7（1/3 的代数根源）；缺口是否为真结构信号；等变指标解释已失败（20.5.1）；类型诊断（20.2.1）把缺口收窄为 κ_info 与 R/6 之间是否存在非平凡换算；乘积行为（20.2.2）表明 EDS 的连续对应物应是谱测度而非 χ。</li>
+<li><b>？ 未解决：</b>G7（1/3 的代数根源）；缺口是否为真结构信号；等变指标解释已失败（20.5.1）；类型诊断（20.2.1）把缺口收窄为 κ_info 与 R/6 之间是否存在非平凡换算；乘积行为（20.2.2）表明 EDS 的连续对应物应是谱测度而非 χ；谱三元组（20.2.3）是正确的数学家园，但超迹由 McKean–Singer 恒等于 χ，不含 1/3。</li>
 <li><b>↔ 连接：</b>承接第 19 章分离几何；引向第 21 章三条线索。</li>
 </ul></div>
 

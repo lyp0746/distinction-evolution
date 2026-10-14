@@ -1,0 +1,197 @@
+{
+  "statement": "X(t)=Tr(e^{-tΔ0})-Tr(e^{-tΔ1}) 恒等于 χ(G)（McKean–Singer），对一切 t 精确成立；无短时发散，无 1/3。",
+  "checks": {
+    "isospectral_off_kernel": true,
+    "X_t_const_equal_chi": true,
+    "scalar_trace_varies": true
+  },
+  "verdict": "'改用 Dirac 算子使 1/3 消失' 属同义反复——超迹中本无 1/3。1/3 在标量拉普拉斯热核常数项 a1=R/6 中，与超迹是不同对象。图上的算子是 de Rham 算子（给出 χ），不是旋量 Dirac 算子（给出 Â-亏格）。",
+  "rows": [
+    {
+      "graph": "K3",
+      "chi": 0,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    },
+    {
+      "graph": "C4",
+      "chi": 0,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        0.0,
+        0.0,
+        -0.0,
+        0.0,
+        -0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    },
+    {
+      "graph": "K4",
+      "chi": -2,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0,
+        -2.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    },
+    {
+      "graph": "P3",
+      "chi": 1,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    },
+    {
+      "graph": "C5",
+      "chi": 0,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0,
+        -0.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    },
+    {
+      "graph": "Petersen",
+      "chi": -5,
+      "isospectral_off_kernel": true,
+      "X_t_const_equal_chi": true,
+      "X_t_values": [
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0,
+        -5.0
+      ],
+      "scalar_trace_varies": true,
+      "t_grid": [
+        0.005,
+        0.01,
+        0.05,
+        0.1,
+        0.5,
+        1.0,
+        2.0,
+        5.0,
+        20.0,
+        100.0
+      ]
+    }
+  ]
+}
