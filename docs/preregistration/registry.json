@@ -66,6 +66,32 @@
       "success_criterion": "构造出使 χ(D)=χ_orb 的轨形结构",
       "negation": "证明不存在这样的轨形结构，或球面矛盾无法消解",
       "baseline": {"triggered": false, "as_of": "2026-10-13", "note": "球面例子已给出矛盾"}
+    },
+    {
+      "id": "G8",
+      "title": "三个 κ 的统一（类型诊断）",
+      "registered_at": "2026-10-14",
+      "observation_due": "2027",
+      "prediction": "动态 κ=βλ−α、离散 κ_info=Var(λ)/2、连续 κ=R/6 可统一为一个分离曲率定义，且 κ_info 是 R/6 的离散化。",
+      "indicators": [
+        {"name": "κ_info 在连续曲率为零的空间上的极限", "source": "平坦环面/环的网格离散", "endpoint": ""}
+      ],
+      "success_criterion": "在共同粗化极限下证明 κ_info 与 R/6 一致（或给出统一定义）",
+      "negation": "连续曲率为零的平坦空间上 κ_info 不趋于 0（与 R/6 不一致）",
+      "baseline": {"triggered": true, "as_of": "2026-10-14", "note": "已由 analysis/kappa_type_mismatch.py 反证：平坦环面 R=0 而 κ_info=2"}
+    },
+    {
+      "id": "G9",
+      "title": "等变指标解释 1/3 缺口",
+      "registered_at": "2026-10-14",
+      "observation_due": "2027",
+      "prediction": "存在紧致李群 G 的等距作用，使分离曲率升级为等变欧拉形式后给出区分欧拉示性数 χ(D)=χ(M)/3。",
+      "indicators": [
+        {"name": "群平均 (1/3)Σ_g χ_g 是否等于 χ/3", "source": "有限 G-集核算", "endpoint": ""}
+      ],
+      "success_criterion": "构造出使群平均等于 χ/3 的非自由群作用",
+      "negation": "群平均 = χ(X/G)，只在自由作用下等于 χ/3；带不动点即失败",
+      "baseline": {"triggered": true, "as_of": "2026-10-14", "note": "已失败：与轨形解释同一失败点（第 20.5.1 节）"}
     }
   ]
 }

@@ -75,7 +75,7 @@
 
 <p>第 19 章会把分离曲率定义为“观测熵的变分”。这是一个连续情形的定义。但它能不能精确落到离散情形？可以——而且得到一个完全可证的恒等式。</p>
 
-<div class="define"><span class="bt">定义 12.3　离散分离曲率 κ_info</span>
+<div class="define"><span class="bt">定义 12.3　离散分离曲率 κ_info（一个谱不变量）</span>
 设 <span class="s">G</span> 是 <span class="s">n</span> 顶点图，<span class="s">L</span> 为拉普拉斯矩阵。取热核的密度矩阵
 <div class="eq"><span class="body">ρ(t) = e<sup>−tL</sup> / Z(t),　Z(t) = tr(e<sup>−tL</sup>)</span><span class="num">(9.3)</span></div>
 与 von Neumann 熵 <span class="s">S(t)=−tr(ρ(t) log ρ(t))</span>。定义
@@ -102,6 +102,10 @@
 </table>
 <div class="datasrc"><b>性质：</b>精确恒等式 + 数值。等级 A／甲。脚本：<code>analysis/discrete_curvature.py</code>。<b>这是本书提出的一个图不变量</b>（它与 λ₂、λₙ 有关但不等同于任何单一谱量）。</div>
 
+<div class="warning"><span class="bt">限定 12.2　κ_info 不是 R/6 的离散化</span>
+定理 12.1 的恒等式精确成立，但必须限定它的身份：<b>κ_info 是拉普拉斯谱分布的一个不变量（热核熵的变分），不是黎曼曲率 R/6 的离散版本。</b>一个决定性的数值对照：平坦二维环面 T² 的连续曲率 <span class="s">R=0</span>，故 <span class="s">∫R/6=0</span>；但它的 m×m 网格离散的谱方差恒为 <span class="s">κ_info=Var(λ)/2=2.000</span>（任意 m），并不趋于 0。环 C_n 同理给出 <span class="s">κ_info=1.000</span>。脚本：<code>analysis/kappa_type_mismatch.py</code>。［定理（计算），A／甲］<br>
+所以，动态 <span class="s">κ=βλ−α</span>、离散 <span class="s">κ_info=Var(λ)/2</span>、连续 <span class="s">κ=R/6</span> 三者被写成"同一个分离曲率"，是一种<b>组织</b>；它们的形式统一是纲领（F1），<b>不是已证的等式</b>。这条限定是第 20.2.1 节类型诊断的依据。</div>
+
 <h3>12.7　κ_info 与中间相宽度的关系</h3>
 
 <p>一个自然的问题是：<span class="s">κ_info</span> 是不是中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理？<b>答案是否定的。</b>在表 12.3 的 8 个图上，二者的 Spearman 秩相关为 <b>−0.357</b>：星图的 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低（0.9），路径图的 <span class="s">κ_info</span> 低（0.995）但 <span class="s">W</span> 极大（40.36）。</p>
@@ -118,7 +122,7 @@
 <li><b>⊗ 可引用（A）：</b>定理 12.1（离散分离曲率 κ_info = Var(λ)/2，精确恒等式）。</li>
 <li><b>⊕ 有论证（B）：</b>定义 12.1（分离曲率）、12.2（静态型）、12.3（演化型）；曲率符号分类。</li>
 <li><b>○ 启发／描述（C）：</b>热核熵变分给出离散曲率。</li>
-<li><b>？ 未解决：</b>三个领域的分离曲率定义能否统一为一个（登记为 F1）；κ_info 不是相变宽度的代理（负结果）。</li>
+<li><b>？ 未解决：</b>三个领域的分离曲率定义能否统一为一个（登记为 F1）；κ_info 不是相变宽度的代理（负结果）；κ_info 也不是 R/6 的离散化（12.6 限定 12.2）。</li>
 <li><b>↔ 连接：</b>第 19—21 章的连续对应；第 15—18 章的动力学。</li>
 </ul></div>
 

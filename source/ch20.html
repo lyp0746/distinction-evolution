@@ -3,7 +3,7 @@
 <p class="lead">本章处理全书最重要的一个"不一致"。把热核展开给出的分离曲率 <span class="s">κ=R/6</span> 代入二维 Gauss–Bonnet 定理，会得到一个因子 <span class="s">1/3</span> 的缺口。这个缺口可以是错误，也可以是一个结构性信号。<b>本章不假装填上它；本章把它变成一个精确的、可攻击的问题。</b></p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-分离曲率 <span class="s">κ=R/6</span> 与 Gauss–Bonnet 定理之间存在因子 <span class="s">1/3</span>。<b>这个缺口不是计算错误，而是"局部曲率密度"与"整体拓扑荷"之间存在非平凡换算的信号。</b>本章给出三种可能的出路，并说明它们目前都未被证明。</div>
+分离曲率 <span class="s">κ=R/6</span> 与 Gauss–Bonnet 定理之间存在因子 <span class="s">1/3</span>。<b>本章先做类型诊断（20.2.1）：缺口至少有一部分来自把谱不变量 κ_info 与局部分析量 R/6 并置比较，而不是来自一个深层不变量。</b>在此基础上给出三条出路（20.3—20.5.1），并说明它们目前都未被证明，且其中的轨形解释与等变指标解释是两次已失败的尝试。</div>
 
 <h3>20.1　导论：一个不是错误的不一致</h3>
 
@@ -27,6 +27,15 @@
 </ol>
 
 <p>所以缺口的来源可以精确定位：<b>热核系数 <span class="s">1/6</span> 与二维曲率关系 <span class="s">R=2K</span> 合起来给出 <span class="s">1/3</span>。</b>问题不是"为什么是 3"，而是"这个 <span class="s">1/3</span> 应当被解释为错误、修正项，还是新的不变量"。</p>
+
+<h3>20.2.1　类型诊断：三个 κ 不是同一个量</h3>
+
+<p>在继续之前，必须先做一个诊断。第 12 章出现过三个都叫"分离曲率"的对象：动态 <span class="s">κ=βλ−α</span>（图上演化增长率）、离散 <span class="s">κ_info=Var(λ)/2</span>（热核熵变分）、连续 <span class="s">κ=R/6</span>（热核展开系数）。上面的推导用的是第三个，而第 12.6 节的离散恒等式讲的是第二个。</p>
+
+<p>一个决定性的数值对照可以说明它们不是同一个量。<b>平坦二维环面</b> <span class="s">T²</span> 的连续曲率 <span class="s">R=0</span>，故 <span class="s">∫R/6=0</span>；但把 <span class="s">T²</span> 网格离散后，其拉普拉斯谱方差恒为 <span class="s">κ_info=Var(λ)/2=2.000</span>（从 4×4 到 20×20 任意网格相同），并不趋于 0。环 <span class="s">C_n</span> 同理给出 <span class="s">κ_info=1.000</span>，而 <span class="s">∫R/6=0</span>。脚本：<code>analysis/kappa_type_mismatch.py</code>。［定理（计算），A／甲］</p>
+
+<div class="warning"><span class="bt">诊断 20.1　缺口的一部分是类型混淆</span>
+<span class="s">κ_info</span> 是<b>谱分布的不变量</b>（热核熵的变分），<span class="s">R/6</span> 是<b>局部分析量</b>（热核展开系数），二者不是同一个对象的离散/连续两版。把它们写成"都是分离曲率"是一种<b>命名上的组织</b>；把前者的积分拿去和 Gauss–Bonnet 比较，是苹果对橘子。<b>因此"精确的 3 倍关系"至少有一部分来自这次并置，而不是来自一个深层不变量。</b>下面仍然保留三条出路，但读者应带着这个诊断去读：它们的一部分动机已经因此减弱。</div>
 
 <h3>20.3　三种出路</h3>
 
@@ -66,6 +75,30 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 <div class="scenario"><span class="bt">矛盾的价值</span>
 这个球面矛盾是本书最有价值的负面结果之一。它把“轨形解释”从一句漂亮的话，变成了一个<b>有明确反例条件</b>的命题：要么存在一类特殊的轨形结构使公式成立，要么 <span class="s">χ(D)</span> 不是轨形欧拉示性数。<b>无论哪种，都是一个可攻击的具体问题。</b>附录 I.2 把这个条件算清楚了：<b>成立当且仅当轨形无奇异点。</b></div>
 
+<h3>20.5.1　第二次尝试：等变指标解释及其失败</h3>
+
+<p>一个自然的补救是：既然缺口的根源据说在于“局部分析量 vs 整体拓扑量”，那就引入对称群 <span class="s">G</span> 与等变指标定理，用一个带群作用的曲率形式取代 <span class="s">κ=R/6</span>。具体主张是：<b>紧致李群 <span class="s">G</span> 等距作用于 <span class="s">M</span>，分离曲率升级为等变欧拉形式，其积分由等变 Gauss–Bonnet 精确给出 <span class="s">χ_G(M)</span>；当 <span class="s">G=Z/3Z</span> 时，因子 1/3 成为群作用的自然产物。</b></p>
+
+<p>这个尝试在三个地方失败。［论证，B／乙］</p>
+
+<ol>
+<li><b>同义反复。</b>用欧拉形式 <span class="s">e(F)=K/(2π)dA</span> 取代 <span class="s">R/6</span>，则 <span class="s">∫e(F)=χ(M)</span> 恰是 Gauss–Bonnet 定理本身。这不是从区分公理推出了欧拉形式，而是假设了那个积分恰为答案的量——缺口没有变窄，只是被改名掩去。</li>
+<li><b>群平均公式只在自由作用下成立。</b>所谓的“<span class="s">Z/3</span> 群平均”是投影到不变子空间：<span class="s">(1/3)Σ<sub>g∈Z/3</sub>χ_g(M)=χ(M/G)</span>。它等于 <span class="s">χ(M)/3</span> 当且仅当作用自由（无不动点）。一旦有不动点就失败——恰是 20.5 节球面反例的同一失败。表 20.3 为有限 <span class="s">G</span>-集的直接核算（<span class="s">χ_g=#Fix(g)</span>）。</li>
+<li><b>群作用是外加的。</b>EDS 不产生任何自然的 <span class="s">G</span>；假定“存在等距的 <span class="s">G</span> 作用、与演化对易、保曲率”，等于假设了整套等变指标理论。此时 <span class="s">𝒟,𝒪,∼</span> 在所有定理里都不出现——被统一的是等变指标定理，不是“区分”。</li>
+</ol>
+
+<table class="nat">
+<caption class="cap"><b>表 20.3　“Z/3 群平均 = χ(M)/3”的核算（有限 G-集）</b></caption>
+<tr><th class="l">Z/3 作用</th><th class="l">avg<sub>g</sub> χ<sub>g</sub></th><th class="l">χ(X)/3</th><th class="l">χ(X/G)</th><th class="l">相等？</th></tr>
+<tr><td class="l">自由（无不动点）</td><td class="l">1.000</td><td class="l">1.000</td><td class="l">1.000</td><td class="l">✓</td></tr>
+<tr><td class="l">1 个不动点</td><td class="l">1.000</td><td class="l">0.333</td><td class="l">1.000</td><td class="l">✗</td></tr>
+<tr><td class="l">2 个不动点</td><td class="l">2.000</td><td class="l">0.667</td><td class="l">2.000</td><td class="l">✗</td></tr>
+<tr><td class="l">1 个不动点 + 1 自由轨道</td><td class="l">2.000</td><td class="l">1.333</td><td class="l">2.000</td><td class="l">✗</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>有限群作用核算。<b>结论：</b>群平均 = <span class="s">χ(X/G)</span>，只在自由作用时等于 <span class="s">χ(X)/3</span>；带不动点时与轨形解释同命运。</div>
+
+<p><b>结论：这是第二次失败。</b>它与轨形解释（20.4—20.5）失败在同一个点上：一旦有不动点，<span class="s">χ/3</span> 就不再成立。等变指标理论确实是正确的工具，但它不能被“接到” EDS 上而不假设 EDS 本来没有的对称性；而且它解释的那个 <span class="s">1/3</span> 与这里的缺口并不是同一个 <span class="s">1/3</span>。［论证，B／乙］</p>
+
 <h3>20.6　现状：缺口依旧</h3>
 
 <table class="nat">
@@ -75,6 +108,8 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 <tr><td class="l">缺口是否为 3？</td><td class="l">在二维精确</td><td class="l">若 <span class="s">R≠2K</span>（高维）则缺口改变</td><td class="l">A（二维）</td></tr>
 <tr><td class="l">轨形解释是否成立？</td><td class="l">球面例子矛盾</td><td class="l">若找到反例结构，解释被推翻</td><td class="l">C</td></tr>
 <tr><td class="l">是否存在新拓扑不变量？</td><td class="l">未知</td><td class="l">若 <span class="s">χ(D)</span> 可由已知不变量表示</td><td class="l">C</td></tr>
+<tr><td class="l"><span class="s">κ_info</span> 是否等于 <span class="s">R/6</span> 的离散化？</td><td class="l"><b>否</b></td><td class="l">平坦环面 <span class="s">R=0</span> 而 <span class="s">κ_info=2</span>（20.2.1）</td><td class="l">A（反例）</td></tr>
+<tr><td class="l">等变指标解释能否给出 <span class="s">χ(D)=χ(M)/3</span>？</td><td class="l"><b>否</b>（不动点处失败）</td><td class="l">找到使群平均仍等于 <span class="s">χ/3</span> 的非自由作用</td><td class="l">B</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>现状清单。等级见末列。<b>本表是附录 E 可证伪登记的核心内容之一。</b></div>
 
@@ -82,14 +117,14 @@ E2 是最诱人的出路——它把缺口变成发现。但它的直接后果�
 
 <h3>20.7　本章小结</h3>
 
-<p>因子 <span class="s">1/3</span> 的缺口是一个精确的、可计算的、未被解决的结构信号。本书给出三种出路，全部标注为 C，并展示轨形解释在球面例子上的矛盾。这个缺口不是本书的弱点——它是本书最有价值的部分：<b>一个承认自己没有解决的问题，比十个伪装成解决的口号更有研究价值。</b>下一章追踪 <span class="s">1/3</span> 这个数字在其他数学领域的出现。</p>
+<p>因子 <span class="s">1/3</span> 的缺口是精确的、可计算的、未被完全解决的结构信号——但它比初看时<b>弱一层</b>。20.2.1 节的类型诊断表明，缺口至少有一部分来自把两类不同的量（谱不变量 <span class="s">κ_info</span> 与局部分析量 <span class="s">R/6</span>）并置比较；轨形解释（20.4—20.5）与等变指标解释（20.5.1）是两次尝试，二者败在同一个点：一旦有不动点，<span class="s">χ/3</span> 就不再成立。<b>剩下的真正问题被收窄为：<span class="s">κ_info</span> 与 <span class="s">R/6</span> 之间（如果有的话）的非平凡换算是什。</b>这个缺口仍未被填上——它只是从一个模糊的“神秘 3 倍”变成了一个更窄的、可攻击的问题。下一章追踪 <span class="s">1/3</span> 这个数字在其他数学领域的出现，并须带着本节的诊断重估那些线索。</p>
 
 <div class="note"><b>本章清单</b>
 <ul>
 <li><b>⊗ 可引用（A）：</b>本章无 A 级结果（边界章）。</li>
 <li><b>⊕ 有论证（B）：</b>因子 1/3 的来源分析；三种出路；轨形解释的收窄。</li>
 <li><b>○ 启发／描述（C）：</b>球面反例（χ(S²)=2，2/3 非整数）；轨形解释“当且仅当无奇异点”。</li>
-<li><b>？ 未解决：</b>G7（1/3 的代数根源）；缺口是否为真结构信号。</li>
+<li><b>？ 未解决：</b>G7（1/3 的代数根源）；缺口是否为真结构信号；等变指标解释已失败（20.5.1）；类型诊断（20.2.1）把缺口收窄为 κ_info 与 R/6 之间是否存在非平凡换算。</li>
 <li><b>↔ 连接：</b>承接第 19 章分离几何；引向第 21 章三条线索。</li>
 </ul></div>
 

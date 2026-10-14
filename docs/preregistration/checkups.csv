@@ -3,3 +3,5 @@ G4,2026-10-13,author,baseline,四维缺口因子,,,registry.json,2026-10,no,尚�
 A1,2026-10-13,author,baseline,各层总激活与有效秩,,,registry.json,2026-10,no,尚未获取公开训练数据
 F1,2026-10-13,author,baseline,三定义一致性,,,registry.json,2026-10,no,仅有并列定义
 G2,2026-10-13,author,baseline,轨形结构对照,,,registry.json,2026-10,no,球面矛盾已记录
+G8,2026-10-14,author,checkup,平坦环面上的 κ_info（连续 R=0）,2,kappa_info,kappa_type_mismatch.py,2026-10-14,yes,与 R/6=0 不一致；G8 的预测被反证
+G9,2026-10-14,author,checkup,Z/3 群平均与 χ/3 的关系,inconsistent,ratio,finite-G-set check,2026-10-14,yes,群平均=χ(X/G) 仅在自由作用时等于 χ/3；带不动点即失败

@@ -1,0 +1,8089 @@
+{
+  "experiment": "isotypic mode selection / reversal (open problem O8)",
+  "part1_selection_rule": {
+    "statement": "Cayley（顶点传递、G-不变）有向图上，平凡等型块 = span{1} 在核中（特征值 0）；故任何增长模式都落在非平凡不可约表示中。",
+    "trivial_leads_count": 0,
+    "n_sets": 448,
+    "holds": true
+  },
+  "part2_abelian_characterization": {
+    "statement": "阿贝尔 Cayley 图上每个模式是特征标 χ_k，增长率 Re λ_k = |S| − Σ_s cos(2πks/n) 与局部性 TV_k 都由 k 解析决定，故 O8 在该类上可判定（Fourier 分析）。",
+    "note": "解析刻画与全谱分解一致（在无退化的实例上）。"
+  },
+  "part3_wellposedness": {
+    "statement": "对称类上最大 Re 特征值经常退化（重数≥2），'最大特征向量'依赖基底，ch16.9 的反转判定因此不唯一。",
+    "degenerate_lead": 366,
+    "n_sets": 448,
+    "verdict_flips": 75,
+    "flip_rate": 0.1674,
+    "flips_among_degenerate": 75,
+    "flips_among_simple": 0,
+    "simple_lead_agreement": 82,
+    "simple_lead_total": 82,
+    "demo": {
+      "n": 8,
+      "S": [
+        1,
+        2
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "numpy_leading_eigvec_tv": 0.5,
+      "lead_block_tv_range": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "interpretation": "同一矩阵、同一'前导模式'：numpy 任意选基给出 TV=0.500 → 判为反转；在前导块内取最大局部性 TV=0.559 → 判为不反转。ch16.9 的判定不唯一。"
+    }
+  },
+  "part4_transfer": {
+    "n_trials": 4000,
+    "reversal_rate_raw": 0.084,
+    "reversal_rate_invariant": 0.1517,
+    "leading_degenerate_rate": 0.0315,
+    "note": "一般随机有向图上反转率远低于对称类；把'等型/退化'判据搬过来不能预测反转——与 ch16.9 五个被否定的候选一致。"
+  },
+  "cayley_rows": [
+    {
+      "n": 6,
+      "S": [
+        1
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2
+      ],
+      "max_re": 1.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2114,
+        "max": 0.5928,
+        "mean": 0.4795
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        3
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.8162,
+        "mean": 0.7049
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        4
+      ],
+      "max_re": 1.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2981,
+        "max": 0.6654,
+        "mean": 0.5436
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        5
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        2
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        4
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        3
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.6667,
+        "max": 0.6939,
+        "mean": 0.6859
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        4
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.6664,
+        "mean": 0.5997
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        5
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        3,
+        4
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.6667,
+        "max": 0.6939,
+        "mean": 0.6859
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        4,
+        5
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4386,
+        "max": 0.5877,
+        "mean": 0.5282
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        2,
+        4
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        2,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        3,
+        4
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5879,
+        "mean": 0.5683
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        3,
+        5
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.8165,
+        "max": 0.8165,
+        "mean": 0.8165
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        1,
+        4,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        3,
+        4
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.6415,
+        "max": 0.6789,
+        "mean": 0.6697
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5879,
+        "mean": 0.567
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        2,
+        4,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.6667,
+        "mean": 0.6373
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 6,
+      "S": [
+        3,
+        4,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4149,
+        "max": 0.5877,
+        "mean": 0.5374
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.7071,
+        "mean": 0.6368
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3536,
+        "max": 0.7049,
+        "mean": 0.5995
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        5
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        6
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.7071,
+        "mean": 0.6368
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        7
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        4
+      ],
+      "max_re": 3.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        6
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        3
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        4
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3105,
+        "max": 0.5454,
+        "mean": 0.4893
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        5
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.7071,
+        "mean": 0.6368
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        7
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        4
+      ],
+      "max_re": 3.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        6
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        5
+      ],
+      "max_re": 3.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        6
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2872,
+        "max": 0.5445,
+        "mean": 0.4875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        7
+      ],
+      "max_re": 3.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        5,
+        6
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        6,
+        7
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.559,
+        "mean": 0.543
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.527,
+        "mean": 0.4997
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2,
+        4
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3954,
+        "max": 0.5262,
+        "mean": 0.4712
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.6009,
+        "mean": 0.5743
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        2,
+        7
+      ],
+      "max_re": 4.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        3,
+        4
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3243,
+        "max": 0.52,
+        "mean": 0.4395
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        3,
+        5
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        3,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5269,
+        "mean": 0.4996
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        3,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        4,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.395,
+        "max": 0.524,
+        "mean": 0.4832
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        4,
+        6
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        4,
+        7
+      ],
+      "max_re": 5.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        5,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4289,
+        "max": 0.5262,
+        "mean": 0.487
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        1,
+        6,
+        7
+      ],
+      "max_re": 4.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        3,
+        4
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        3,
+        5
+      ],
+      "max_re": 4.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        3,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.6009,
+        "mean": 0.5743
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        3,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4384,
+        "max": 0.5262,
+        "mean": 0.4861
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        4,
+        5
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        4,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.5255,
+        "mean": 0.4794
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        4,
+        7
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        5,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.6009,
+        "mean": 0.5743
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.527,
+        "mean": 0.4998
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        2,
+        6,
+        7
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5,
+        "max": 0.6009,
+        "mean": 0.5743
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        4,
+        5
+      ],
+      "max_re": 5.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        4,
+        6
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        4,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4011,
+        "max": 0.5258,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        5,
+        6
+      ],
+      "max_re": 4.4142,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.7071,
+        "max": 0.7071,
+        "mean": 0.7071
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        3,
+        6,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4328,
+        "max": 0.5262,
+        "mean": 0.4837
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        5,
+        6
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3527,
+        "max": 0.5181,
+        "mean": 0.452
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        4,
+        6,
+        7
+      ],
+      "max_re": 4.7071,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 8,
+      "S": [
+        5,
+        6,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5269,
+        "mean": 0.5001
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2
+      ],
+      "max_re": 1.809,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.5502,
+        "mean": 0.4964
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4
+      ],
+      "max_re": 1.809,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.5558,
+        "mean": 0.5079
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2828,
+        "max": 0.6294,
+        "mean": 0.5291
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6
+      ],
+      "max_re": 1.809,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.5494,
+        "mean": 0.5001
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        7
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        8
+      ],
+      "max_re": 1.809,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.5517,
+        "mean": 0.5076
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        9
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        6
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        8
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4
+      ],
+      "max_re": 2.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2399,
+        "max": 0.4406,
+        "mean": 0.37
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        5
+      ],
+      "max_re": 3.809,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5506,
+        "max": 0.5578,
+        "mean": 0.5554
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        6
+      ],
+      "max_re": 2.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2806,
+        "max": 0.4373,
+        "mean": 0.3875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        7
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        8
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.5503,
+        "mean": 0.5121
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        9
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        6
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        8
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        5
+      ],
+      "max_re": 3.809,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5506,
+        "max": 0.5578,
+        "mean": 0.5554
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        6
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3702,
+        "max": 0.55,
+        "mean": 0.5124
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        7
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        8
+      ],
+      "max_re": 2.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.274,
+        "max": 0.4409,
+        "mean": 0.3824
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        9
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        6
+      ],
+      "max_re": 3.809,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5506,
+        "max": 0.5578,
+        "mean": 0.5554
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        8
+      ],
+      "max_re": 3.809,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5506,
+        "max": 0.5578,
+        "mean": 0.5554
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        7
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        8
+      ],
+      "max_re": 2.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2518,
+        "max": 0.4419,
+        "mean": 0.3779
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        9
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        7,
+        8
+      ],
+      "max_re": 3.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        7,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        8,
+        9
+      ],
+      "max_re": 3.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.496,
+        "max": 0.5032,
+        "mean": 0.5011
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        4
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        5
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        6
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        7
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        8
+      ],
+      "max_re": 4.9271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5052,
+        "max": 0.5178,
+        "mean": 0.5147
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        2,
+        9
+      ],
+      "max_re": 4.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4805,
+        "max": 0.49,
+        "mean": 0.4875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        4
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        5
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        6
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        3,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.281,
+        "max": 0.4569,
+        "mean": 0.3996
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4,
+        6
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4,
+        7
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        4,
+        9
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        5,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2828,
+        "max": 0.4608,
+        "mean": 0.4271
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        5,
+        8
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        5,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        6,
+        7
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        6,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        6,
+        9
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        7,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        1,
+        8,
+        9
+      ],
+      "max_re": 4.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4805,
+        "max": 0.49,
+        "mean": 0.4875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        4
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.314,
+        "max": 0.4577,
+        "mean": 0.4006
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        6
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        7
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        8
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        3,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3753,
+        "max": 0.4864,
+        "mean": 0.451
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4,
+        6
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3231,
+        "max": 0.4794,
+        "mean": 0.4404
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4,
+        7
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3058,
+        "max": 0.4794,
+        "mean": 0.4305
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        4,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        5,
+        6
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3409,
+        "max": 0.4872,
+        "mean": 0.4388
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2828,
+        "max": 0.4607,
+        "mean": 0.4261
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        5,
+        8
+      ],
+      "max_re": 5.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.542,
+        "max": 0.5538,
+        "mean": 0.5509
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        5,
+        9
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        6,
+        7
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        6,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3231,
+        "max": 0.4799,
+        "mean": 0.4332
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        6,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        7,
+        8
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        7,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        2,
+        8,
+        9
+      ],
+      "max_re": 4.9271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5052,
+        "max": 0.5178,
+        "mean": 0.5147
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4,
+        5
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4,
+        6
+      ],
+      "max_re": 4.9271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5052,
+        "max": 0.5178,
+        "mean": 0.5147
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4,
+        7
+      ],
+      "max_re": 4.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4805,
+        "max": 0.49,
+        "mean": 0.4875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        4,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        5,
+        6
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        5,
+        8
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2828,
+        "max": 0.4611,
+        "mean": 0.4265
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        5,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        6,
+        7
+      ],
+      "max_re": 4.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4805,
+        "max": 0.49,
+        "mean": 0.4875
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        6,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        6,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        7,
+        8
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        3,
+        8,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        5,
+        6
+      ],
+      "max_re": 5.618,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.542,
+        "max": 0.5538,
+        "mean": 0.5509
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        5,
+        7
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        5,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3729,
+        "max": 0.4878,
+        "mean": 0.4474
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        5,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2828,
+        "max": 0.4613,
+        "mean": 0.4272
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        6,
+        7
+      ],
+      "max_re": 4.9271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5052,
+        "max": 0.5178,
+        "mean": 0.5147
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        6,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3115,
+        "max": 0.4794,
+        "mean": 0.4308
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        6,
+        9
+      ],
+      "max_re": 5.4271,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5236,
+        "max": 0.5506,
+        "mean": 0.5418
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        7,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        7,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        4,
+        8,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        6,
+        7
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        6,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3617,
+        "max": 0.4869,
+        "mean": 0.4372
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        6,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3066,
+        "max": 0.4569,
+        "mean": 0.4075
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        7,
+        8
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3358,
+        "max": 0.4569,
+        "mean": 0.4025
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.6325,
+        "max": 0.6325,
+        "mean": 0.6325
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        5,
+        8,
+        9
+      ],
+      "max_re": 5.118,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.5155,
+        "max": 0.5267,
+        "mean": 0.5237
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        7,
+        8
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        7,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        6,
+        8,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 10,
+      "S": [
+        7,
+        8,
+        9
+      ],
+      "max_re": 4.309,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4569,
+        "max": 0.4805,
+        "mean": 0.4729
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3333,
+        "max": 0.5771,
+        "mean": 0.4984
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4
+      ],
+      "max_re": 1.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.1179,
+        "max": 0.401,
+        "mean": 0.3138
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2357,
+        "max": 0.5708,
+        "mean": 0.479
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8
+      ],
+      "max_re": 1.5,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.1491,
+        "max": 0.3992,
+        "mean": 0.3135
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        9
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3333,
+        "max": 0.5771,
+        "mean": 0.4984
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        10
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        11
+      ],
+      "max_re": 2.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3791,
+        "max": 0.4573,
+        "mean": 0.4157
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6
+      ],
+      "max_re": 3.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        8
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        10
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.361,
+        "max": 0.4714,
+        "mean": 0.4151
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.4705,
+        "mean": 0.4247
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3511,
+        "max": 0.4714,
+        "mean": 0.4094
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        7
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3672,
+        "max": 0.4571,
+        "mean": 0.4102
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        8
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2357,
+        "max": 0.469,
+        "mean": 0.4095
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        9
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        11
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3721,
+        "max": 0.4714,
+        "mean": 0.4115
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2357,
+        "max": 0.4437,
+        "mean": 0.3787
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        8
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 3,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3333,
+        "max": 0.5771,
+        "mean": 0.4984
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        10
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3175,
+        "max": 0.4852,
+        "mean": 0.4387
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        7
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        8
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 8,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2041,
+        "max": 0.4624,
+        "mean": 0.4094
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        9
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        10
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.469,
+        "mean": 0.4145
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        11
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6
+      ],
+      "max_re": 3.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        8
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        10
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3392,
+        "max": 0.4535,
+        "mean": 0.4037
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        7
+      ],
+      "max_re": 3.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        8
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.302,
+        "max": 0.4831,
+        "mean": 0.4387
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        9
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2016,
+        "max": 0.4219,
+        "mean": 0.3458
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        11
+      ],
+      "max_re": 3.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        8
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        10
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3836,
+        "max": 0.4714,
+        "mean": 0.4164
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        9
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        10
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.4702,
+        "mean": 0.4258
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        11
+      ],
+      "max_re": 3.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        9,
+        10
+      ],
+      "max_re": 3.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.4907,
+        "mean": 0.485
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        9,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        10,
+        11
+      ],
+      "max_re": 3.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3659,
+        "max": 0.4535,
+        "mean": 0.4107
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        3
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.328,
+        "max": 0.4125,
+        "mean": 0.3817
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        4
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        7
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3081,
+        "max": 0.4211,
+        "mean": 0.3765
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        2,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        4
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        5
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        6
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        8
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3603,
+        "max": 0.4248,
+        "mean": 0.3929
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        3,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        6
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        7
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        8
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        4,
+        11
+      ],
+      "max_re": 5.2321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 7,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.273,
+        "max": 0.4123,
+        "mean": 0.3628
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        5,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 7,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2803,
+        "max": 0.4278,
+        "mean": 0.3874
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6,
+        8
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6,
+        9
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        6,
+        11
+      ],
+      "max_re": 5.7321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        7,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        7,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        7,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        8,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        8,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        8,
+        11
+      ],
+      "max_re": 5.2321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        9,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3174,
+        "max": 0.4211,
+        "mean": 0.382
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        9,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        1,
+        10,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        4
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        5
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3621,
+        "max": 0.4237,
+        "mean": 0.3938
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        7
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.304,
+        "max": 0.4211,
+        "mean": 0.3778
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        8
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        9
+      ],
+      "max_re": 5.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5051,
+        "mean": 0.4965
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3526,
+        "max": 0.4888,
+        "mean": 0.4294
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        3,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3023,
+        "max": 0.4216,
+        "mean": 0.3825
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        5
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        6
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2639,
+        "max": 0.4055,
+        "mean": 0.3674
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        7
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.4713,
+        "mean": 0.4123
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        9
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2999,
+        "max": 0.4706,
+        "mean": 0.4125
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        4,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        6
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        7
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.332,
+        "max": 0.4211,
+        "mean": 0.3815
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        5,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6,
+        7
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6,
+        8
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2357,
+        "max": 0.4141,
+        "mean": 0.386
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6,
+        9
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6,
+        10
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.5773,
+        "mean": 0.5199
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        6,
+        11
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        7,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        7,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3335,
+        "max": 0.4127,
+        "mean": 0.3847
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        7,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        7,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        8,
+        9
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        8,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.4713,
+        "mean": 0.4115
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        8,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        9,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3802,
+        "max": 0.4888,
+        "mean": 0.4302
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        9,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3641,
+        "max": 0.4287,
+        "mean": 0.3946
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        2,
+        10,
+        11
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        5
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        6
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3533,
+        "max": 0.448,
+        "mean": 0.4092
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        7
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        8
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        9
+      ],
+      "max_re": 5.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5051,
+        "mean": 0.4965
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        4,
+        11
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        6
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        7
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        8
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3244,
+        "max": 0.4189,
+        "mean": 0.3841
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        5,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6,
+        7
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6,
+        8
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.323,
+        "max": 0.4477,
+        "mean": 0.4092
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6,
+        9
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 9,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.1925,
+        "max": 0.4271,
+        "mean": 0.3847
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        6,
+        11
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        7,
+        8
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        7,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3152,
+        "max": 0.4211,
+        "mean": 0.3779
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        7,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        8,
+        9
+      ],
+      "max_re": 5.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5051,
+        "mean": 0.4965
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        8,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        8,
+        11
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        9,
+        10
+      ],
+      "max_re": 5.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4714,
+        "max": 0.5051,
+        "mean": 0.4965
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        9,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        3,
+        10,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.307,
+        "max": 0.4211,
+        "mean": 0.3748
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        6
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        7
+      ],
+      "max_re": 5.2321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        8
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        5,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6,
+        7
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6,
+        8
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3208,
+        "max": 0.4798,
+        "mean": 0.4474
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6,
+        9
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3466,
+        "max": 0.4481,
+        "mean": 0.4109
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2939,
+        "max": 0.4128,
+        "mean": 0.3842
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        6,
+        11
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        7,
+        8
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        7,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        7,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        7,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        8,
+        9
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        8,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2887,
+        "max": 0.469,
+        "mean": 0.4206
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        8,
+        11
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        9,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        9,
+        11
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        4,
+        10,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6,
+        7
+      ],
+      "max_re": 5.7321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6,
+        8
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6,
+        9
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        6,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 7,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3113,
+        "max": 0.4206,
+        "mean": 0.3868
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        7,
+        8
+      ],
+      "max_re": 5.2321,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        7,
+        9
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        7,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        7,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        8,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        8,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        8,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        9,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3197,
+        "max": 0.4211,
+        "mean": 0.374
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        9,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        5,
+        10,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        7,
+        8
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        7,
+        9
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        7,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        7,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 7,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2408,
+        "max": 0.4122,
+        "mean": 0.3505
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        8,
+        9
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 4,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3513,
+        "max": 0.449,
+        "mean": 0.4101
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        8,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 6,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.2766,
+        "max": 0.4071,
+        "mean": 0.3658
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        8,
+        11
+      ],
+      "max_re": 5.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        9,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        9,
+        11
+      ],
+      "max_re": 4.866,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        6,
+        10,
+        11
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4907,
+        "mean": 0.4689
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        8,
+        9
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        8,
+        10
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        8,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        9,
+        10
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3144,
+        "max": 0.4167,
+        "mean": 0.3799
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        9,
+        11
+      ],
+      "max_re": 6.0,
+      "lead_multiplicity": 1,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": false,
+      "lead_tv": {
+        "min": 0.5774,
+        "max": 0.5774,
+        "mean": 0.5774
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        7,
+        10,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": true,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        9,
+        10
+      ],
+      "max_re": 5.0,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4536,
+        "max": 0.4801,
+        "mean": 0.4736
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        9,
+        11
+      ],
+      "max_re": 4.366,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": null,
+      "leading_degenerate": false,
+      "lead_tv": null,
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        8,
+        10,
+        11
+      ],
+      "max_re": 4.5,
+      "lead_multiplicity": 2,
+      "raw_reversal_basis_dependent": false,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.4082,
+        "max": 0.4714,
+        "mean": 0.4506
+      },
+      "trivial_lead": false
+    },
+    {
+      "n": 12,
+      "S": [
+        9,
+        10,
+        11
+      ],
+      "max_re": 4.0,
+      "lead_multiplicity": 5,
+      "raw_reversal_basis_dependent": true,
+      "invariant_definite_reversal": false,
+      "leading_degenerate": true,
+      "lead_tv": {
+        "min": 0.3189,
+        "max": 0.4122,
+        "mean": 0.3759
+      },
+      "trivial_lead": false
+    }
+  ]
+}
