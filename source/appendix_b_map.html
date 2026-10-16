@@ -5,8 +5,8 @@
 <h2>B.1　编码总表</h2>
 
 <table class="nat">
-<caption class="cap"><b>表 B.1　领域 EDS 编码总表</b></caption>
-<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">演化流</th><th class="l">κ</th><th class="l">等级</th><th class="l">验证状态</th></tr>
+<caption class="cap"><b>表 B.1　领域 本语言编码总表</b></caption>
+<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">演化</th><th class="l">κ</th><th class="l">等级</th><th class="l">验证状态</th></tr>
 <tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l">区分强度</td><td class="l">谱等价</td><td class="l">e^{(−αI+βL)t}</td><td class="l">βλ<sub>k</sub>−α</td><td class="l">A</td><td class="l">已检验</td></tr>
 <tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
 <tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
@@ -35,11 +35,11 @@
 <tr><td class="l">编码论</td><td class="l">码字区分</td><td class="l">校验子</td><td class="l">最小距离</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">已检验</td></tr>
 <tr><td class="l">LLM 潜在空间</td><td class="l">注意力头</td><td class="l">激活</td><td class="l">语义等价</td><td class="l">层间传播</td><td class="l">βS−α</td><td class="l">C</td><td class="l">未检验</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>保结构评级。<b>等级 A／甲（对已检验者）/ 未验证（其余）。</b>阈值：强/中 ≥ 70% 视为“编码保结构”通过。<b>目前脚本检验 15 个对象（均为微型实例）：14 个达强/中（≈93%），1 个弱；覆盖 27 个领域中的 15 个（≈56%）。结论：在已检验的微型实例上成立，但覆盖率仍低，故仍为“初步通过”而非“全领域通过”。</b>每个检验只证明“该领域的一条定义性性质可被 EDS 编码恢复”，不等于整个领域已被严格编码。</div>
+<div class="datasrc"><b>性质：</b>保结构评级。<b>等级 A／甲（对已检验者）/ 未验证（其余）。</b>阈值：强/中 ≥ 70% 视为“编码保结构”通过。<b>目前脚本检验 15 个对象（均为微型实例）：14 个达强/中（≈93%），1 个弱；覆盖 27 个领域中的 15 个（≈56%）。结论：在已检验的微型实例上成立，但覆盖率仍低，故仍为“初步通过”而非“全领域通过”。</b>每个检验只证明“该领域的一条定义性性质可被 本语言编码恢复”，不等于整个领域已被严格编码。</div>
 
 <h2>B.2　五坐标分类总表</h2>
 
-<p>旧的"三轴分类"存在轴 1 把 <span class="s">X</span> 的量级与 <span class="s">𝒟</span> 的代数混在一起的问题（见第 23.5.1—23.5.3 节）。下表改用从六元组重导的五个坐标。</p>
+<p>旧的"三轴分类"存在轴 1 把 <span class="s">X</span> 的量级与 <span class="s">𝒟</span> 的代数混在一起的问题（见第 23.5.1—23.5.3 节）。下表改用从词表重导的五个坐标。</p>
 
 <table class="nat">
 <caption class="cap"><b>表 B.2　五坐标分类（A 分层 + B/C/D/E）</b></caption>
@@ -80,11 +80,11 @@
 <table class="nat">
 <caption class="cap"><b>表 B.3　有待探索的组合（三轴空间中的空缺）</b></caption>
 <tr><th class="l">组合</th><th class="l">候选领域</th><th class="l">现象</th><th class="l">判断方法（可证伪）</th></tr>
-<tr><td class="l">线性×正×连续</td><td class="l">演化线性代数</td><td class="l">LLM 层间表示演化</td><td class="l">在该格子的假想领域上检验六公理：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">拓扑×正×离散</td><td class="l">离散同伦论</td><td class="l">图神经网络消息传递</td><td class="l">在该格子的假想领域上检验六公理：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">度量×负×连续</td><td class="l">刚性测度论</td><td class="l">测度集中、双曲随机游走</td><td class="l">在该格子的假想领域上检验六公理：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">序×正×连续</td><td class="l">连续组合学</td><td class="l">随机图过程相变</td><td class="l">在该格子的假想领域上检验六公理：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">逻辑×正×连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td><td class="l">在该格子的假想领域上检验六公理：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
+<tr><td class="l">线性×正×连续</td><td class="l">演化线性代数</td><td class="l">LLM 层间表示演化</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
+<tr><td class="l">拓扑×正×离散</td><td class="l">离散同伦论</td><td class="l">图神经网络消息传递</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
+<tr><td class="l">度量×负×连续</td><td class="l">刚性测度论</td><td class="l">测度集中、双曲随机游走</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
+<tr><td class="l">序×正×连续</td><td class="l">连续组合学</td><td class="l">随机图过程相变</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
+<tr><td class="l">逻辑×正×连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>空缺表。等级 C／丙（纲领）。<b>完整论证见第 24 章。</b></div>
 
@@ -94,9 +94,9 @@
 
 <table class="nat">
 <caption class="cap"><b>表 B.4　编码保结构的四级定义</b></caption>
-<tr><th class="l">等级</th><th class="l">名称</th><th class="l">定义（φ: 领域 M → EDS）</th></tr>
-<tr><td class="l">1</td><td class="l">强</td><td class="l">φ 单射，且 M 的每条定理对应 EDS 中的真定理</td></tr>
-<tr><td class="l">2</td><td class="l">中</td><td class="l">φ 单射；EDS 中的定理可能多于 M（是推广而非错误）</td></tr>
+<tr><th class="l">等级</th><th class="l">名称</th><th class="l">定义（φ: 领域 M → 区分语言）</th></tr>
+<tr><td class="l">1</td><td class="l">强</td><td class="l">φ 单射，且 M 的每条定理对应 本语言中的真定理</td></tr>
+<tr><td class="l">2</td><td class="l">中</td><td class="l">φ 单射；本语言中的定理可能多于 M（是推广而非错误）</td></tr>
 <tr><td class="l">3</td><td class="l">弱</td><td class="l">φ 保部分关键结构（如测度、拓扑），但不单射</td></tr>
 <tr><td class="l">0</td><td class="l">失败</td><td class="l">φ 不单射，或由 φ 产生错定理</td></tr>
 </table>

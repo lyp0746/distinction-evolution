@@ -1,0 +1,89 @@
+<h2 class="chapter">第 13 章　演化流与时间区分</h2>
+
+<p class="lead">静态框架能描述"什么和什么可区分"，但不能描述"区分结构如何变化"。本章补上动力学分量：<b>演化流</b>与<b>时间区分族</b>。关键的技术主张是：时间不必预设，它可以被理解为区分精度的参数化——即由区分结构的演化自动生成。这个主张一部分可证（图的迭代），一部分是纲领（连续情形）。</p>
+
+<div class="scenario"><span class="bt">本章主张</span>
+动态领域（微分方程、概率、量子、算子代数、博弈）之所以曾难以纳入静态框架，唯一障碍是"时间"。<b>引入时间区分族 <span class="s">D<sub>t</sub></span> 后，它们共享同一底层结构：演化流作用在区分动作上。时间本身从区分演化中生成，而不是外部预设。</b></div>
+
+<h3>13.1　导论：时间是预设还是生成</h3>
+
+<p>在多数数学分支里，时间是外部参数：微分方程里是自变量 <span class="s">t</span>，概率论里是滤子指标，量子力学里是演化参数。它们共享一个假设——时间是给定的。EDS 提出的问题是：<b>时间能不能从区分结构的演化中被构造出来？</b></p>
+
+<p>如果答案是"能"，那么"动态领域"就不需要一个新的框架，只需要在 EDS 上增加"时间区分"这一个分量。这正是第 3 部分的结构。</p>
+
+<h3>13.2　演化流半群</h3>
+
+<div class="define"><span class="bt">定义 13.1　演化流</span>
+<b>演化流</b>是一族映射 <span class="s">Φ<sub>t</sub>: D → D</span>（<span class="s">t∈[0,∞)</span>），满足：<br>
+<b>（F1）恒等性：</b><span class="s">Φ<sub>0</sub>(D)=D</span>；<br>
+<b>（F2）半群性：</b><span class="s">Φ<sub>t+s</sub>(D)=Φ<sub>t</sub>(Φ<sub>s</sub>(D))</span>；<br>
+<b>（F3）强连续：</b><span class="s">t↦Φ<sub>t</sub>(D)</span> 右连续；<br>
+<b>（F4）生成元：</b>存在算子 <span class="s">𝓛</span> 使得 <span class="s">(d/dt)Φ<sub>t</sub>(D)=𝓛(Φ<sub>t</sub>(D))</span>；<br>
+<b>（F5）区分相容：</b>若 <span class="s">x∼<sub>α</sub>y</span>，则 <span class="s">Φ<sub>t</sub>(D)</span> 下仍保持某种等价。</div>
+
+<p>半群性是"时间方向"的代数表达：先演化 <span class="s">s</span> 再演化 <span class="s">t</span>，等于一次演化 <span class="s">s+t</span>。生成元 <span class="s">𝓛</span> 是"无穷小时间"的算子，在图上它就是 <span class="s">−αI+βL</span>（第 15 章）。</p>
+
+<h3>13.3　时间区分族</h3>
+
+<img class="fig" src="assets/svg/fig10-time-distinction.svg" alt="时间区分族与时间生成">
+
+<div class="cap"><b>图 13.1　时间区分族</b>。区分动作随"时间"参数变化，形成一族 <span class="s">{D<sub>t</sub>}</span>。时间类型可以是离散的（<span class="s">ℕ</span>）、连续的（<span class="s">ℝ</span>）或超有限的（<span class="s">*ℕ</span>）。关键断言：时间 = 区分动作演化的参数，而不是外部给定的连续统。</div>
+
+<div class="define"><span class="bt">定义 13.2　时间区分族</span>
+设 <span class="s">𝒯</span> 是时间类型（<span class="s">ℕ</span>、<span class="s">ℝ</span> 或 <span class="s">*ℕ</span>）。<b>时间区分族</b>是一族 <span class="s">{D<sub>t</sub>}<sub>t∈𝒯</sub></span>，满足：<br>
+<b>（T1）因果性：</b>若 <span class="s">s&lt;t</span>，则 <span class="s">D<sub>s</sub></span> 比 <span class="s">D<sub>t</sub></span> 更粗糙（区分能力随时间递增）；<br>
+<b>（T2）时间生成：</b><span class="s">(∂/∂t)O<sub>t</sub> = κ(D<sub>t</sub>)·O<sub>t</sub></span>（观测的时间导数由分离曲率决定）；<br>
+<b>（T3）因果完备：</b>任意两个时刻的状态都因果可比。</div>
+
+<p>三条性质中，T2 是核心：它把时间演化的"速率"精确地交给分离曲率。这与公理 4（演化的适定性，第 14.2 节）一致。</p>
+
+<h3>13.4　时间涌现：一个条件性命题</h3>
+
+<div class="define"><span class="bt">命题 13.1　时间涌现［论证／假说，C／丙］</span>
+定义净曲率 <span class="s">κ<sub>net</sub>(t) := ∫<sub>X</sub> κ(D<sub>t</sub>,x) dμ(x)</span>。若 <span class="s">κ<sub>net</sub>&gt;0</span>，则存在唯一的演化参数 <span class="s">τ := ∫<sub>0</sub><sup>t</sup>κ<sub>net</sub>(s)ds</span>，使得 <span class="s">D<sub>t</sub>=Φ<sub>τ</sub>(D<sub>0</sub>)</span>。<b>时间由分离的演化自动生成，无需外部参数。</b></div>
+
+<p>这个命题在图的迭代情形下是平凡的：若 <span class="s">D<sub>n+1</sub>=Φ(D<sub>n</sub>)</span>，则迭代次数天然就是时间。它在连续情形下是实质性的：需要证明 <span class="s">κ<sub>net</sub></span> 的单调性，并建立 <span class="s">τ</span> 与物理时间的对应。目前只有图论情形严格。［论证］</p>
+
+<div class="warning"><span class="bt">警告 13.1　时间涌现不是已证定理</span>
+"时间从区分演化中涌现"这句话听起来深刻，但它的现状是<b>一个条件性命题（C）</b>：<span class="s">κ<sub>net</sub>&gt;0</span> 的单调性只对图论成立；测度 <span class="s">μ</span> 的选择影响 <span class="s">τ</span>；与热力学第二定律的严格关联尚未建立。读者不应当把它当作关于时间本质的结论。<b>它是一个组织动态领域的技术工具，不是一个物理理论。</b></div>
+
+<h3>13.5　动态领域如何被统摄</h3>
+
+<p>时间区分一旦引入，原先"不适用"的动态领域就共享同一结构。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 13.1　动态领域的统一编码</b></caption>
+<tr><th class="l">领域</th><th class="l">时间类型 𝒯</th><th class="l">区分流 Φ</th><th class="l">曲率演化</th></tr>
+<tr><td class="l">微分方程</td><td class="l">ℝ</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">动态</td></tr>
+<tr><td class="l">动力系统</td><td class="l">ℕ 或 ℝ</td><td class="l">迭代／流映射</td><td class="l">动态</td></tr>
+<tr><td class="l">概率论</td><td class="l">ℕ 或 ℝ</td><td class="l">条件期望</td><td class="l">动态</td></tr>
+<tr><td class="l">算子代数</td><td class="l">ℝ</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">动态</td></tr>
+<tr><td class="l">博弈论</td><td class="l">ℕ</td><td class="l">策略更新</td><td class="l">动态</td></tr>
+<tr><td class="l">量子数学</td><td class="l">ℝ</td><td class="l">薛定谔算子</td><td class="l">动态</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>统一编码表。等级 B／乙（语言层对应）；<b>注意：</b>本表证明的是"可以这样描述"，不是"这些领域服从同一定理"。</div>
+
+<div class="scenario"><span class="bt">从"不适用"到"同语言"</span>
+在引入时间区分之前，动态领域被排除在框架之外。引入之后，它们与静态领域共享同一底层结构。<b>这个转变不是通过增加新公理完成的，而是通过承认"时间也是区分的一个维度"完成的。</b>这是本书最简洁的一次压缩：一个分量，覆盖了一半领域。</div>
+
+<h3>13.6　本章小结</h3>
+
+<p>演化流与时间区分把 EDS 从静态框架升级为动态框架。时间被重新理解为区分精度的参数化，动态领域由此共享同一语言。时间涌现是一个条件性命题：图的迭代下平凡成立，连续情形下待证。下一章把全部分量组织成六条公理，并给出元理论。</p>
+
+<div class="note"><b>本章清单</b>
+<ul>
+<li><b>⊗ 可引用（A）：</b>本章无 A 级结果（框架章）。</li>
+<li><b>⊕ 有论证（B）：</b>定义 13.1（演化流半群）、13.2（时间区分族）。</li>
+<li><b>○ 启发／描述（C）：</b>时间涌现（条件性命题，C 级）；动态领域如何被统摄。</li>
+<li><b>？ 未解决：</b>时间涌现定理尚未严格表述（登记为框架层命题）。</li>
+<li><b>↔ 连接：</b>第 16 章相变的动力学背景；第 24 章时间区分理论。</li>
+</ul></div>
+
+<h3>本章参考文献</h3>
+<div class="refs">
+<p>Pazy, A. (1983). <i>Semigroups of Linear Operators and Applications to PDEs</i>. Springer.</p>
+<p>Doob, J. L. (1953). <i>Stochastic Processes</i>. Wiley.</p>
+<p>Bratteli, O., &amp; Robinson, D. W. (1987). <i>Operator Algebras and Quantum Statistical Mechanics</i>. Springer.</p>
+<p>Connes, A. (1994). <i>Noncommutative Geometry</i>. Academic Press.</p>
+<p>Barbour, J. (1999). <i>The End of Time</i>. Oxford University Press.</p>
+</div>

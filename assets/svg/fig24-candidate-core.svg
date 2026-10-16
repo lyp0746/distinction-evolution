@@ -1,7 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560"><rect width="1000" height="560" fill="#ffffff"/><style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',Georgia,serif;}</style><text x="40" y="46" font-size="24" font-weight="700">区分演化候选：四个要素与一个硬核</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560"><rect width="1000" height="560" fill="#ffffff"/><style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',Georgia,serif;}</style><text x="40" y="46" font-size="24" font-weight="700">区分演化（语言规范）：四个要素与一个硬核</text>
 <circle cx="500" cy="250" r="78" fill="#eef3f8" stroke="#3a6ea5" stroke-width="2.5"/>
 <text x="500" y="246" text-anchor="middle" font-size="20" font-weight="700" fill="#3a6ea5">区分演化</text>
-<text x="500" y="272" text-anchor="middle" font-size="16" fill="#666">候选（B—C）</text>
+<text x="500" y="272" text-anchor="middle" font-size="16" fill="#666">语言规范（B—C）</text>
 <rect x="110" y="110" width="230" height="80" rx="10" fill="#ffffff" stroke="#3a6ea5" stroke-width="2"/><text x="225.0" y="144.0" text-anchor="middle" font-size="22" font-weight="600" fill="#3a6ea5">基本对象</text><text x="225.0" y="172.0" text-anchor="middle" font-size="15" fill="#666">区分动作 𝒟</text>
 <line x1="225" y1="150" x2="500" y2="250" stroke="#3a6ea5" stroke-width="1.4" stroke-dasharray="5 4" opacity="0.6"/>
 <rect x="660" y="110" width="230" height="80" rx="10" fill="#ffffff" stroke="#b8862f" stroke-width="2"/><text x="775.0" y="144.0" text-anchor="middle" font-size="22" font-weight="600" fill="#b8862f">核心不变量</text><text x="775.0" y="172.0" text-anchor="middle" font-size="15" fill="#666">分离曲率 κ</text>

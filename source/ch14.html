@@ -1,250 +1,115 @@
-<h2 class="chapter">第 14 章　六条公理与元理论</h2>
+<h2 class="chapter">第 14 章　形式决定群：辛、酉、正交，与两次推广</h2>
 
-<p class="lead">本章把前几章的分量组织成一个公理系统，并给出三条元理论陈述。它同时是全书最需要交待清楚的地方：<b>六条公理中，只有一条在图上被完整验证；其余五条是"框架公理"，其作用是组织语言，不是产生定理。</b>本章明确区分这两类公理。</p>
+<p class="lead">对称双线性形式（上一章）只是「形式」家族的一员。它的两个近邻——<b>反对称</b>（辛）与<b>埃尔米特</b>（酉）——各自决定一个李群，也各自带来一套不同的谱与动力学。这一章把它们并排写出，并把「区分语言」向它们各推广一次，然后诚实说明：能做什么，不能做什么。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-EDS 可以被组织为一个六元组加六条公理。<b>这套公理的价值是让不同领域共享同一组概念；它的局限是部分公理（尤其是曲率演化与标准化）目前只在特定实现中被验证。把它们当作"已证基础"是误读。</b></div>
+辛、酉、正交的本质区别，来自所保持的<b>形式的对称性</b>：对称 → 正交，反对称 → 辛，埃尔米特 → 酉。<b>把区分语言推广到辛形式能产出一个可计算的结果；推广到酉形式新意有限。两次推广都只是「换形式」，不是新数学。</b>［已知，B；辛推广的相变为 A］</div>
 
-<h3>14.1　导论：从定义到公理</h3>
+<h3>14.1　统一图景：形式决定群</h3>
 
-<p>一个数学框架要能被使用，必须先说清哪些是定义、哪些是公理、哪些是定理。定义是约定；公理是假设；定理是被证明的命题。混用三者，是"统一理论"最常见的病。本节把 EDS 的三层分清。</p>
-
-<div class="define"><span class="bt">定义 14.1　演化区分系统（EDS）</span>
-一个演化区分系统是一个六元组
-<div class="eq"><span class="body">𝓔 = (D, O, ∼, κ, Φ, st)</span><span class="num">(11.1)</span></div>
-其中：<span class="s">D</span> 是区分动作族（定义 11.1）；<span class="s">O</span> 是观测泛函（定义 11.2）；<span class="s">∼</span> 是精度等价关系族（定义 11.3）；<span class="s">κ</span> 是分离曲率（定义 12.1 或 9.2）；<span class="s">Φ</span> 是演化流（定义 13.1）；<span class="s">st</span> 是标准部分映射（第 9 章）。若加入时间区分族 <span class="s">D<sub>t</sub></span>，得到扩展六元组 <span class="s">𝓔<sup>+</sup>=(D,O,∼,κ,Φ,st,D<sub>t</sub>)</span>。</div>
-
-<h3>14.2　六条公理</h3>
-
-<img class="fig" src="assets/svg/fig11-axiom-dependency.svg" alt="六条公理的依赖关系">
-
-<div class="cap"><b>图 14.1　六条公理的依赖关系</b>。公理 1（观测完备）与公理 5（分离完备）是结构性的；公理 2（精度连续）与公理 3（曲率有界）是技术性的；公理 4（演化适定）与公理 6（标准化）提供动力学与降级。带星号者为在图论实现中已验证。</div>
-
-<div class="define"><span class="bt">公理 1　观测完备性</span>
-对所有 <span class="s">D∈D</span>，<span class="s">O(D)(x)=O(D)(y) ⇔ x∼<sub>0</sub>y</span>。观测与不可区分互为对偶。〔图论：✓ 已验证〕</div>
-
-<div class="define"><span class="bt">公理 2　精度连续性</span>
-对任意 <span class="s">D∈D</span> 与 <span class="s">ε&gt;0</span>，存在 <span class="s">δ&gt;0</span>，使得精度参数变化不超过 <span class="s">δ</span> 时，等价关系的细化程度变化不超过 <span class="s">ε</span>。〔图论：✓ 离散情形平凡〕</div>
-
-<div class="define"><span class="bt">公理 3　曲率有界性</span>
-对任意紧子族 <span class="s">K⊆D</span> 与任意 <span class="s">T&gt;0</span>，<span class="s">sup{|κ(Φ<sub>t</sub>(D),x)| : D∈K, t∈[0,T], x∈X} &lt; ∞</span>。有限范围内曲率不发散。〔图论：✓（有限矩阵，谱有界）〕</div>
-
-<div class="define"><span class="bt">公理 4　演化适定性★</span>
-对任意初始 <span class="s">D<sub>0</sub>∈D</span>，存在唯一演化 <span class="s">Φ<sub>t</sub>(D<sub>0</sub>)</span> 定义在最大时间区间上，满足
-<div class="eq"><span class="body">(d/dt)O(Φ<sub>t</sub>(D<sub>0</sub>))(x) = κ(Φ<sub>t</sub>(D<sub>0</sub>),x)·O(Φ<sub>t</sub>(D<sub>0</sub>))(x)</span></div>
-即演化由分离曲率唯一决定。〔图论：✓ 已验证——这是第五部分的核心〕</div>
-
-<div class="define"><span class="bt">公理 5　分离完备性</span>
-每个 <span class="s">D∈D</span> 可写成有限个原子区分动作的精化交。<span class="s">D = D₁ ⊓ … ⊓ D<sub>n</sub></span>，每个 <span class="s">D<sub>i</sub></span> 在某精度下不可再分。〔图论：部分（谱分解给出有限原子）〕</div>
-
-<div class="define"><span class="bt">公理 6　标准化存在性（可选）</span>
-对任意超有限区分动作族 <span class="s">*D</span>，其标准部分 <span class="s">st(*D)</span> 满足
-<div class="eq"><span class="body">O(st(*D))(x) = st( (1/|*D|) Σ<sub>d∈*D</sub> O(d)(x) )</span></div>
-〔图论：不需要（有限图无超有限）〕</div>
-
-<div class="warning"><span class="bt">警告 14.1　务必分清"框架公理"与"已验证公理"</span>
-公理 4 在第五部分有一个完整、严格的验证（图上的相变定理）。公理 6 只在非标准分析中独立成立，与框架的接口未证。公理 5 在图论中部分成立。其余公理是<b>组织性假设</b>：它们的用途是让不同领域的描述共享词汇，而不是产生新定理。<b>本书从不把它们当作已证基础来推导其他结论。</b></div>
-
-<h3>14.3　元理论定理</h3>
-
-<p>元理论陈述是关于框架本身的命题。它们大多属于"论证"级别。</p>
-
-<div class="define"><span class="bt">元理论 11.1　普遍编码（论证／纲领）</span>
-任何满足下列条件的数学对象 <span class="s">M</span> 都可被编码为某个 EDS：（i）具有离散化结构（子集族、子结构、等价类族）；（ii）具有观测或测量机制（范数、测度、迹、期望）；（iii）具有参数化的演化或变形。编码在"<span class="s">M</span> 的已知定理翻译为 EDS 定理"的意义下是自然的。［论证，乙］</div>
-
-<div class="define"><span class="bt">元理论 11.2　精度不变性（论证）</span>
-任何不依赖于具体精度值 <span class="s">α</span> 的 EDS 陈述，对所有 <span class="s">α</span> 同时成立。<b>推论：</b>关于观测、曲率、演化的定性结论对精度选择不变。［论证，乙］</div>
-
-<div class="define"><span class="bt">元理论 11.3　曲率符号分类（部分定理）</span>
-EDS 按 <span class="s">κ</span> 的符号分为三类：<span class="s">κ&lt;0</span>（有限步塌缩）、<span class="s">κ=0</span>（线性增长）、<span class="s">κ&gt;0</span>（指数增长）。<b>图论情形为定理</b>（第 15 章）；一般情形为框架陈述。［部分定理／部分论证］</div>
-
-<h3>14.4　公理的独立性与边界</h3>
-
-<p>一个公理系统必须面对两个问题：公理之间是否一致？是否独立？本书对这两个问题的回答是：<b>未知，且不声称已解决。</b></p>
+<p>给定向量空间 <span class="s">V</span> 上的一个非退化形式 <span class="s">B</span>，保持它的变换群就是对应的李群：<span class="s">B(gx,gy)=B(x,y)</span> 对所有 <span class="s">g∈G</span> 成立。对李代数，无穷小版本是 <span class="s">B(Xx,y)+B(x,Xy)=0</span>。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.1　六条公理的验证状态</b></caption>
-<tr><th class="l">公理</th><th class="l">图论</th><th class="l">连续（流形）</th><th class="l">信息论</th><th class="l">状态</th></tr>
-<tr><td class="l">1 观测完备</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">框架</td></tr>
-<tr><td class="l">2 精度连续</td><td class="l">✓</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">3 曲率有界</td><td class="l">✓</td><td class="l">部分</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">4 演化适定 ★</td><td class="l">✓</td><td class="l">部分</td><td class="l">部分</td><td class="l">定理（图）</td></tr>
-<tr><td class="l">5 分离完备</td><td class="l">部分</td><td class="l">未知</td><td class="l">未知</td><td class="l">框架</td></tr>
-<tr><td class="l">6 标准化</td><td class="l">不需要</td><td class="l">未证</td><td class="l">未证</td><td class="l">可选工具</td></tr>
+<caption class="cap"><b>表 14.1　形式决定群</b></caption>
+<tr><th class="l">形式类型</th><th class="l">代数条件</th><th class="l">李群</th><th class="l">李代数</th><th class="l">几何</th></tr>
+<tr><td class="l">实对称双线性</td><td class="l">B(x,y)=B(y,x)</td><td class="l">正交群 O(n)</td><td class="l">so(n)</td><td class="l">欧氏几何</td></tr>
+<tr><td class="l">实反对称双线性</td><td class="l">B(x,y)=−B(y,x)</td><td class="l">辛群 Sp(2n,R)</td><td class="l">sp(2n,R)</td><td class="l">辛几何</td></tr>
+<tr><td class="l">复埃尔米特</td><td class="l">h(x,y)=conj(h(y,x))</td><td class="l">酉群 U(n)</td><td class="l">u(n)</td><td class="l">酉几何</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>验证状态表。等级 B／乙（作者判断，可核查）。<b>这是读第四部分最该记住的表。</b></div>
+<div class="datasrc"><b>性质：</b>形式—群对应表。<b>等级 B（已知数学）。</b>附录 O 给出速查。</div>
 
-<div class="scenario"><span class="bt">唯一的星号</span>
-表中只有一个星号：公理 4（演化适定性）。它之所以特殊，是因为它在第五部分有一个完整证明——而这正好说明框架不是一座悬空的楼：<b>它至少有一根柱子在岩石上。</b>其余柱子是否也能落地，是后面各部分要回答的问题。</div>
+<h3>14.2　三种形式的本质区别</h3>
 
-<h3>14.5　与范畴论、类型论的关系</h3>
+<p><b>正交：对称性。</b><span class="s">B(x,y)=B(y,x)</span>，二次型 <span class="s">q(x)=B(x,x)</span> 可正、可负、可零。几何含义是长度与角度；保持它的是旋转与反射。李代数 <span class="s">so(n)</span> 是反对称矩阵 <span class="s">X<sup>T</sup>=−X</span>，维数 <span class="s">n(n−1)/2</span>。</p>
 
-<p>EDS 可以被放进不同的基础语言，各有得失。</p>
+<p><b>辛：反对称性。</b><span class="s">ω(x,y)=−ω(y,x)</span>，特别地 <span class="s">ω(x,x)=0</span> 对所有 <span class="s">x</span> 成立。几何含义是面积。李代数 <span class="s">sp(2n,R)</span> 满足 <span class="s">X<sup>T</sup>J+JX=0</span>（<span class="s">J</span> 为标准辛矩阵），维数 <span class="s">n(2n+1)</span>。<b>关键：辛形式只能存在于偶数维空间</b>（反对称矩阵的秩必须是偶数）。</p>
 
-<ul>
-<li><b>在集合论中：</b>六元组是集合与映射，公理是集合论命题。这是本书硬核使用的语言，最易检验。</li>
-<li><b>在范畴论中：</b>EDS 可被表述为一个函子 <span class="s">D: X → Type</span>，分离曲率是它的"增长速率"。这更符合"态射优先"，但增加了抽象层。</li>
-<li><b>在类型论/HoTT 中：</b>区分动作是依赖类型，不可区分关系是等价类型，同位结构自动获得。这为形式化（Lean 4）铺路，但形式化成本高。</li>
-</ul>
+<p><b>酉：复对称性。</b><span class="s">h(x,y)=conj(h(y,x))</span>，特别地 <span class="s">h(x,x)</span> 是实数，可以正定。几何含义是复长度与复角度。李代数 <span class="s">u(n)</span> 是反埃尔米特矩阵 <span class="s">X*=−X</span>，维数 <span class="s">n²</span>。</p>
 
-<p>本书的选择是：<b>硬核用集合论，框架用半形式化，结构语言作为可选。</b>理由与第 10.6 节相同——不要用更复杂的抽象换取更少的公理。</p>
+<h3>14.3　为什么恰好是这三种</h3>
 
-<h3>14.6　公理在图论情形的精确状态</h3>
-
-<p>前面几章反复声明“只有公理 4 在图上被完整验证”。本节把这个状态<b>逐条核算清楚</b>，并给出一个此前的遗漏：<b>公理 5 在图论中有一条真正的定理</b>。同时本节报告：<b>公理 1 与公理 2 在图上可证为平凡——找不到非平凡的定理。</b></p>
+<p>在实向量空间上，非退化双线性形式只有两种对称类型：<b>对称</b>与<b>反对称</b>。在复向量空间上，埃尔米特形式最自然（因为它给出实值范数）。<b>这三种形式穷尽了「有限维向量空间上非退化形式」的基本类型。</b>这不是巧合——它来自对合（involution）的分类：</p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.2　六条公理在图论情形的精确状态（可核算）</b></caption>
-<tr><th class="l">公理</th><th class="l">图论状态</th><th class="l">依据</th></tr>
-<tr><td class="l">1 观测完备</td><td class="l"><b>平凡</b></td><td class="l">完整谱嵌入的行是正交矩阵的行，必互相正交 ⇒ 必单射，无非平凡定理</td></tr>
-<tr><td class="l">2 精度连续</td><td class="l"><b>平凡</b></td><td class="l">有限图上精度是离散的；连续版本需在 β 上讨论（公理 4）</td></tr>
-<tr><td class="l">3 曲率有界</td><td class="l">有定理</td><td class="l"><span class="s">κ_info=Var(λ)/2</span>（第 12.6 节）</td></tr>
-<tr><td class="l">4 演化适定</td><td class="l"><b>硬核</b></td><td class="l">两阶段相变（第 15—18 章）</td></tr>
-<tr><td class="l">5 分离完备</td><td class="l"><b>有定理</b></td><td class="l">原子分解唯一 ⟺ 单谱（定理 14.1，本节）</td></tr>
-<tr><td class="l">6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
+<caption class="cap"><b>表 14.2　对合的分类</b></caption>
+<tr><th class="l">对合</th><th class="l">形式</th><th class="l">群</th></tr>
+<tr><td class="l">σ²=+1</td><td class="l">对称</td><td class="l">正交</td></tr>
+<tr><td class="l">σ²=−1</td><td class="l">反对称</td><td class="l">辛</td></tr>
+<tr><td class="l">σ²=+1（复共轭）</td><td class="l">埃尔米特</td><td class="l">酉</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>公理状态核算。等级 A／甲（可复算）。脚本：<code>analysis/axioms_graph.py</code>。<b>结果：六条公理中两条平凡、一条不适用、三条有内容。</b></div>
+<div class="datasrc"><b>性质：</b>分类表。<b>等级 B（已知数学）。</b></div>
 
-<div class="warning"><span class="bt">一个反结论：公理 1 在图上没有非平凡定理</span>
-一个诱人的目标是“为公理 1 找一个图论定理”。<b>不可能：</b>完整谱嵌入（用全部特征向量）的行是正交矩阵的行，任何两行距离恒为 <span class="s">√2</span>，故必单射。数值上 7 个测试图的 min row distance 全为正。<b>这意味着公理 1 在图论中是真但平凡的。</b>硬要把它“证成一个定理”，只会写出一个同义反复。［A，否定性结论］</div>
+<h3>14.4　李代数的统一解释</h3>
 
-<div class="define"><span class="bt">定理 14.1　原子分解的唯一性 ［定理，A／甲］</span>
-在图上，原子区分动作是谱投影 <span class="s">P<sub>k</sub>=Σ<sub>j∈E<sub>k</sub></sub>φ<sub>j</sub>φ<sub>j</sub><sup>T</sup></span>（<span class="s">E<sub>k</sub></span> 为特征值 <span class="s">λ<sub>k</sub></span> 的特征空间）。则：<br>
-<b>（i）</b>每个谱投影 <span class="s">P<sub>k</sub></span> 由谱唯一确定；<br>
-<b>（ii）</b><span class="s">P<sub>k</sub></span> 可唯一分解为 rank-1 原子，当且仅当 <span class="s">λ<sub>k</sub></span> 单重；<br>
-<b>（iii）</b>因此，<b>原子分解唯一 ⟺ 谱是单谱（所有特征值互异）</b>。</div>
+<p>三种李代数都是<b>导子</b>的特例。给定结合代数 <span class="s">A</span> 与形式 <span class="s">B</span>，定义 <span class="s">g={X∈A : B(Xx,y)+B(x,Xy)=0}</span>——保持 <span class="s">B</span> 的元素的李代数。三种情形的区别只在 <span class="s">B</span> 的对称性：正交是「关于对称形式的反对称」，辛是「关于反对称形式的反对称」，酉是「关于埃尔米特形式的反对称」。<b>三者都是「反对称」在各自形式下的表现。</b></p>
 
-<p><b>证明。</b>（i）谱投影是特征空间的止交投影，由 <span class="s">L</span> 唯一确定。（ii）若 <span class="s">dim E<sub>k</sub>=1</span>，则 <span class="s">E<sub>k</sub></span> 内只有一个单位向量（差符号），故 rank-1 原子唯一；若 <span class="s">dim E<sub>k</sub>&gt;1</span>，则可在 <span class="s">E<sub>k</sub></span> 内任意旋转正交基，得到不同的 rank-1 分解。（iii）拼接所有 <span class="s">k</span>。∎</p>
+<h3>14.5　谱定理的形式取决于形式的对称性</h3>
+
+<p>这是本章与本书主线最相关的一点：<b>谱的形状决定了可能的动力学。</b></p>
 
 <table class="nat">
-<caption class="cap"><b>表 14.3　测试图的光谱多重度（公理 5）</b></caption>
-<tr><th class="l">图</th><th class="l">单谱？</th><th class="l">重数分布</th><th class="l">原子分解</th></tr>
-<tr><td class="l">P₈（路径）</td><td class="l"><b>是</b></td><td class="l">[1,1,1,1,1,1,1,1]</td><td class="l"><b>唯一</b></td></tr>
-<tr><td class="l">Petersen</td><td class="l">否</td><td class="l">[1,5,4]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">K₅</td><td class="l">否</td><td class="l">[1,4]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">K₄,₄</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">星图 S₈</td><td class="l">否</td><td class="l">[1,6,1]</td><td class="l">不唯一</td></tr>
-<tr><td class="l">环 C₁₀/C₁₁</td><td class="l">否</td><td class="l">含重数 2</td><td class="l">不唯一</td></tr>
+<caption class="cap"><b>表 14.3　三种形式的谱与动力学</b></caption>
+<tr><th class="l">形式</th><th class="l">谱定理</th><th class="l">特征值</th><th class="l">群</th><th class="l">动力学</th></tr>
+<tr><td class="l">对称</td><td class="l">正交对角化</td><td class="l">实</td><td class="l">O(n)</td><td class="l">衰减／增长</td></tr>
+<tr><td class="l">反对称</td><td class="l">辛对角化</td><td class="l">纯虚（成对）</td><td class="l">Sp(2n)</td><td class="l">振荡</td></tr>
+<tr><td class="l">埃尔米特</td><td class="l">酉对角化</td><td class="l">实</td><td class="l">U(n)</td><td class="l">衰减／增长</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>定理 + 计算。等级 A／甲。<b>结论：多数常见图（完全图、完全二分图、Petersen、环、星图）的谱是退化的，其原子分解不唯一；只有单谱图（如路径）例外。</b></div>
+<div class="datasrc"><b>性质：</b>谱—动力学对应。<b>等级 B（已知数学）。</b>这就是为什么：拉普拉斯矩阵（对称）有实谱，故第五部分的临界耦合是实数；哈密顿矩阵（反对称）有纯虚谱，故哈密顿系统的频率是实数；埃尔米特矩阵有实谱，故量子力学的可观测量是实数。</div>
 
-<h3>14.6.1　六条公理在 27 个领域中的核算：一次"空框架"自检</h3>
+<p><b>本书第五部分（图上样本）是正交情形的谱定理。</b>如果换成辛或酉形式，相变结构会完全不同。</p>
 
-<p>表 14.1 只对比了三个领域。用脚本 <code>analysis/axiom_consistency.py</code> 把核算推广到全部 27 个编码领域，得到一张不太好看、但必须公开的表（未验证／不适用占绝大多数）：</p>
+<h3>14.6　推广到辛、酉：能做什么，不能做什么</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 14.4　六条公理在 27 个领域中的状态汇总</b></caption>
-<tr><th class="l">公理</th><th class="l">成立</th><th class="l">平凡</th><th class="l">不适用</th><th class="l">未验证</th></tr>
-<tr><td class="l">A1 观测完备</td><td class="l">0</td><td class="l">1</td><td class="l">0</td><td class="l">26</td></tr>
-<tr><td class="l">A2 精度连续</td><td class="l">0</td><td class="l">11</td><td class="l">0</td><td class="l">16</td></tr>
-<tr><td class="l">A3 曲率有界</td><td class="l">1</td><td class="l">0</td><td class="l">11</td><td class="l">15</td></tr>
-<tr><td class="l">A4 演化适定</td><td class="l">7</td><td class="l">0</td><td class="l">15</td><td class="l">5</td></tr>
-<tr><td class="l">A5 分离完备</td><td class="l">1</td><td class="l">0</td><td class="l">0</td><td class="l">26</td></tr>
-<tr><td class="l">A6 标准化</td><td class="l">0</td><td class="l">0</td><td class="l">26</td><td class="l">1</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>公理自检。<b>等级 B／乙（元数据机械推导；脚本可复算）。</b>规则见脚本注释：只有图论列是已核算的，其余为按"是否有限、演化流类型"的机械推导。总计 162 个格子：<b>成立 9、平凡 12、不适用 52、未验证 89。</b></div>
+<p>把「对称形式 + 线性 ODE → 实谱 → 两阶段相变」这套样本推广到辛／酉，意味着把「对称形式」换成「反对称形式」或「埃尔米特形式」，看谱结构与相变如何变化。</p>
 
-<div class="warning"><span class="bt">这张表说了什么（结论）</span>
-六个公理里，"成立"的格子总共只有 <b>9 个</b>——其中 3 个在图论，6 个来自第 14.6.1.1 节的公理 4 小实例；而"未验证"仍有 <b>89 个</b>、"不适用"有 <b>52 个</b>。也就是说：<b>EDS 作为"框架"的严格内容，几乎全部来自图论这一个实例；在其余 26 个领域里，六条公理的地位是"待验证"或"不适用"，不是"默认成立"。</b><br>
-这把前言里"框架（B）"的说法精确化：<b>B 指的是"有论证的组织方式"，不是"27 个领域都满足的公理系统"。</b>把这层说清楚，比让读者以为六条公理已被普遍验证要重要重要得多——这也是本章最该记住的一句。</div>
+<h3>14.6.1　辛推广：有真实内容</h3>
 
-<h4>14.6.1.1　公理 4 的六领域小实例检验（把 6 个"未验证"变成真结果）</h4>
+<p>给定图 <span class="s">G=(V,E)</span>，构造相空间 <span class="s">T*V ≅ R<sup>2|V|</sup></span>，取哈密顿量</p>
+<div class="eq"><span class="body">H(q,p) = (1/2)Σ<sub>v</sub> p<sub>v</sub>² + (1/2)Σ<sub>(u,v)</sub>(q<sub>u</sub>−q<sub>v</sub>)²</span><span class="num">(14.1)</span></div>
+<p>哈密顿方程 <span class="s">q̇<sub>v</sub>=p<sub>v</sub></span>、<span class="s">ṗ<sub>v</sub>=−(Lq)<sub>v</sub></span> 给出 <span class="s">q̈=−Lq</span>——<b>图上的波动方程</b>。线性化 <span class="s">ẋ=Mx</span>，其中 <span class="s">M=[[0,I],[−L,0]]</span>，其特征值为 <span class="s">±i√λ<sub>k</sub></span>。因为 <span class="s">L</span> 半正定，所有特征值都是纯虚的——<b>无阻尼系统总是稳定的</b>。</p>
 
-<p>表 14.4 的 A4 行原本是"成立 1（图论）、未验证 11"。对其中<b>演化流非空</b>的六个领域，本书做了可计算的小实例检验（脚本 <code>analysis/a4_wellposedness.py</code>）：把 A4 分为存在性（E）、唯一性（U）、连续依赖（C）三条，逐条核算。</p>
+<p>加入阻尼 <span class="s">q̈+γq̇+Lq=0</span>（阻尼波动方程）。模式 <span class="s">k</span> 从振荡变为过阻尼的临界值由拉普拉斯谱决定：</p>
+<div class="eq"><span class="body">γ<sub>k</sub> = 2√λ<sub>k</sub>,　k=1,…,n</span><span class="num">(14.2)</span></div>
 
-<table class="nat">
-<caption class="cap"><b>表 14.5　公理 4 的六领域小实例检验</b></caption>
-<tr><th class="l">领域</th><th class="l">实例</th><th class="l">E</th><th class="l">U</th><th class="l">C</th><th class="l">结果</th></tr>
-<tr><td class="l">优化</td><td class="l">凸二次的梯度流 dx/dt=−Ax</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-<tr><td class="l">马尔可夫链</td><td class="l">2 状态随机矩阵迭代</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-<tr><td class="l">微分方程</td><td class="l">Picard–Lindelöf（y′=y）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-<tr><td class="l">动力系统</td><td class="l">logistic 映射（周期 2 轨）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-<tr><td class="l">数值分析</td><td class="l">牛顿法解 x²−2（二次收敛）</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-<tr><td class="l">算子代数</td><td class="l">有限维 C*-动力系统代理 α_t(A)=U(t)AU(t)*</td><td class="l">✓</td><td class="l">✓</td><td class="l">✓</td><td class="l"><b>成立</b></td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>A4 小实例检验。<b>等级 A／甲（可复算）。</b>结果 6/6 成立。因此表 14.4 的 A4 行由"成立 1、未验证 11"变为"成立 7、未验证 5"。<b>边界：</b>每个只是一个微型实例（例如"某个凸二次的梯度流"），<b>不等于整个领域的演化适定已被证明</b>——它证明的是"该领域可构造至少一个满足 A4 的实例"。</div>
+<div class="define"><span class="bt">辛推广的相变 ［可计算，A／甲］</span>
+随 <span class="s">γ</span> 从 0 增大，模式<b>从低频到高频依次过阻尼</b>：<span class="s">γ&lt;2√λ<sub>k</sub></span> 欠阻尼振荡，<span class="s">γ=2√λ<sub>k</sub></span> 临界阻尼，<span class="s">γ&gt;2√λ<sub>k</sub></span> 过阻尼。这是一个 <span class="s">n</span> 阶段相变。例：超立方体 <span class="s">λ<sub>k</sub>=2k</span>，故 <span class="s">γ<sub>k</sub>=2√(2k)</span>。脚本：<code>analysis/symplectic_probe.py</code>。</div>
 
-<div class="warning"><span class="bt">表 14.4 与表 14.5 合起来说的两件事（不要混淆）</span>
-<b>（一）"方法有效"：</b>第 22 章证明的是，本书设计的<b>编码方法</b>能保存 27 个领域中 15 个的关键性质（表 B.5）。<br>
-<b>（二）"公理有效"：</b>表 14.4 核算的是，<b>六条公理</b>在 27 个领域中是否真的成立。答案：只有 9 个"成立"格子，89 个"未验证"。<br>
-<b>这两件事完全不同。</b>第一件说"我有一把能用的尺子"；第二件说"这把尺子的刻度在 27 个领域都校准过"——后者<b>没有</b>做到。表 14.5 把 A4 的校准从 1 推进到 7，是补洞的第一步，但洞里仍剩 89 格。</div>
+<p>它与第五部分的样本是<b>不同动力学</b>的相变：原样本是「区分能力的衰减／增长」，辛版是「振荡模式的稳定性」。<b>这是真正的推广，不是换词。</b></p>
 
+<h3>14.6.2　酉推广：新意有限</h3>
 
-<h4>14.6.2　公理独立性预检：一个不利于"六条公理"的结果</h4>
+<p>在复向量空间上取埃尔米特形式 <span class="s">h(f,g)=Σ<sub>v</sub>conj(f(v))g(v)</span>。无向图的拉普拉斯是实对称的，因此也是埃尔米特的；酉情形的算子仍是 <span class="s">L</span>，谱定理仍给出实谱。<b>结构上与正交情形相同。</b></p>
 
-<p>要判断"定理 14.6（六条公理相互独立）"是否值得投入证明，先做一次预检（脚本 <code>analysis/axiom_independence.py</code>）。对每条公理，判断它在有限图上是<b>托词</b>（对所有图成立、因而不构成约束）、<b>有内容</b>（有满足者也有违反者）还是<b>不适用</b>。</p>
+<p>唯一的新东西来自<b>磁拉普拉斯</b> <span class="s">(L<sub>θ</sub>f)(v)=Σ<sub>u∼v</sub>(f(v)−e<sup>iθ<sub>uv</sub></sup>f(u))</span>，它产生 Aharonov–Bohm 型效应（谱依赖于相位）。但这是「加了额外结构」，不是酉推广的自然结果。<b>诚实判断：酉推广本质上是正交情形的复化，不产生本质新东西。</b></p>
 
-<table class="nat">
-<caption class="cap"><b>表 14.6　六条公理在有限图上的类型</b></caption>
-<tr><th class="l">公理</th><th class="l">图上类型</th><th class="l">说明</th></tr>
-<tr><td class="l">A1 观测完备</td><td class="l">托词</td><td class="l">完整谱嵌入必单射，对所有图成立</td></tr>
-<tr><td class="l">A2 精度连续</td><td class="l">托词</td><td class="l">有限图精度离散，对所有图成立</td></tr>
-<tr><td class="l">A3 曲率有界</td><td class="l">托词</td><td class="l"><span class="s">κ_info=Var(λ)/2</span> 有限，对所有图成立</td></tr>
-<tr><td class="l">A4 演化适定</td><td class="l">托词</td><td class="l">线性 ODE 必有解，对所有图成立</td></tr>
-<tr><td class="l">A5 分离完备</td><td class="l">有内容</td><td class="l">原子分解唯一 ⟺ 单谱；重谱图（K₅、C₆、星图…）违反</td></tr>
-<tr><td class="l">A6 标准化</td><td class="l">不适用</td><td class="l">有限图无超有限结构</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>独立性预检。<b>等级 A／甲（可复算）。</b>结论：<b>六条公理中只有 A5 有内容；四条是托词，一条不适用。</b></div>
+<h3>14.7　诚实结论：换形式，不是新数学</h3>
 
-<div class="warning"><span class="bt">结论：独立性不是正确的问题</span>
-四条公理在图上对所有情形成立（托词），一条不适用。托词之间"无所谓独立"——它们不是相互独立的约束，而是<b>同一个平凡事实的不同说法</b>。因此<b>"定理 14.6：六条公理相互独立"不必证</b>，因为它问错了问题。<br>
-真正有约束力的是后面的<b>定理</b>：<span class="s">κ_info=Var(λ)/2</span>（第 12 章）、原子分解唯一 ⟺ 单谱（定理 14.1）、两阶段相变（定理 15.1）。<b>这条预检支持一个对六元组不利、但更准确的定位：六元组是一套词汇表，内容在下游的定理里，不在公理组里。</b>［结论，A／甲（图论情形）］</div>
+<ol>
+<li><b>辛推广有真实内容：</b>它给出图上阻尼波动方程的稳定性相变，临界阻尼由拉普拉斯谱决定，可计算、可复现。</li>
+<li><b>酉推广新意有限：</b>埃尔米特与实对称的谱定理形式相同，复化不产生本质新东西（除非引入磁拉普拉斯）。</li>
+<li><b>两者都不解决 1/3 缺口：</b>后者是「把不同类型的量当成同一个」的产物，与形式选择无关（见第六部分）。</li>
+<li><b>这仍然是「换形式」，不是「新数学」：</b>哈密顿力学、辛几何、酉表示都是已有工具；把它们用到图上是有趣的练习，但不构成新理论。</li>
+</ol>
 
-
-<div class="define"><span class="bt">表 14.4 的 89 个"未验证"格子：原理性的还是技术性的？</span>
-把 89 格按原因分开：<br>
-<b>原理性未验证（69 格）：</b>公理在该领域的 EDS 编码里<b>根本没有对应的结构可供陈述</b>——A1（观测完备）与 A5（分离完备）在 26 个非图论领域全部属于此类（26+26=52），A2（精度连续）在 16 个连续域（16），A6 在泛函分析（1）。这 69 格不是"还没算"，而是<b>公理在那里的指称是空的</b>。<br>
-<b>技术性未验证（20 格）：</b>结构存在、公理可陈述、但尚未计算——A3（15 格）与 A4（5 格）。<br>
-<b>含义：</b>"未验证 95→89"这个数字里，<b>只有约 20 格是"可以算但没算"，其余 69 格是"公理在那里无效"</b>。这把"框架在非图论领域未被检验"进一步精确为"框架的公理多数在非图论领域<b>无法被陈述</b>"。</div>
-
-
-<h4>14.6.3　反向工程：定理 15.1 强迫了六元组中的哪几项？</h4>
-
-<p>独立性预检问的是"公理之间是否独立"。一个更根本的问题：<b>六元组的六个项，哪几项是定理 15.1 真正用到的？</b>逐项移除、看定理能否仍被陈述与证明（脚本 <code>analysis/reverse_engineer.py</code>）：</p>
-
-<table class="nat">
-<caption class="cap"><b>表 14.7　定理 15.1 与六元组各项的关系</b></caption>
-<tr><th class="l">项</th><th class="l">被定理 15.1 使用？</th><th class="l">在何处出现</th></tr>
-<tr><td class="l">X　对象集</td><td class="l">是</td><td class="l">L 定义在顶点集 X 上</td></tr>
-<tr><td class="l">𝒟　区分动作族</td><td class="l">是</td><td class="l">L（邻接/边）即区分结构；谱由 𝒟 决定</td></tr>
-<tr><td class="l">O　观测泛函</td><td class="l">是</td><td class="l">状态向量 D 即观测；ODE 描述 D 的演化</td></tr>
-<tr><td class="l">∼　不可区分关系</td><td class="l"><b>否</b></td><td class="l">定理纯谱，未出现任何等价关系</td></tr>
-<tr><td class="l">κ　分离曲率</td><td class="l"><b>否（下游导出）</b></td><td class="l"><span class="s">κ=Var(λ)/2</span> 是定理 12.1 的导出量，不是 15.1 的输入</td></tr>
-<tr><td class="l">Φ　演化流</td><td class="l">是</td><td class="l"><span class="s">Ḋ=(−αI+βL)D</span> 及其解即 Φ</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>反向工程。<b>等级 B／乙（概念核查，非机器证明）。</b>判据：该项是否出现在定理的陈述或证明里。</div>
-
-<div class="warning"><span class="bt">结论：六元组在图上不是最小的</span>
-定理 15.1 只强迫 <b>(X, 𝒟, O, Φ)</b> 四项；<b>∼ 未被使用，κ 是下游导出</b>。也就是说，在图上，六元组是"<b>四项 + 一个导出量 + 一个未用项</b>"。<br>
-这与 14.6.2 的独立性预检一致：六元组不是被定理逼出来的最小结构，而是一套<b>词汇表</b>——它把相关概念组织在一起，但内容只用到其中四项。<b>把这个结果写出来，比维护"六元组对称美观"更有用。</b>［结论，B／乙（图论情形）］</div>
-
-<h3>14.7　生成性推论：笛卡尔积图的相变结构</h3>
-
-<p>“框架能否生成新结果”的一个真实例子：笛卡尔积 <span class="s">G□H</span> 的拉普拉斯谱为 <span class="s">λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>（标准谱事实）。因此其相变结构可由因子图<b>直接计算</b>：</p>
-
-<div class="define"><span class="bt">推论 14.1　乘积图的相变结构 ［推论，A／甲］</span>
-<div class="eq"><span class="body">λ₂(G□H)=min(λ₂(G),λ₂(H)),　λ<sub>n</sub>(G□H)=λ<sub>n</sub>(G)+λ<sub>n</sub>(H)</span><span class="num">(11.2)</span></div>
-故 <span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。</div>
-
-<p>数值：Petersen<span class="s">□K₂</span>（20 顶点）的相变结构 <span class="s">(β₁,β₂)=(0.143,0.500)</span>，由因子谱预测并与直接对角化一致。<b>这是一个真实的“从已知图生成新图的相变结构”的例子——不是类比，是可计算的推论。</b>［A／甲］</p>
+<div class="warning"><span class="bt">不要把「推广」读成「统一」</span>
+本部分到此为止的全部内容，都可以用一句话概括：<b>把已知的二阶结构语言，依次套到几个领域上。</b>它成立、它有用、它可迁移——但它不宣布任何新的数学对象。本书把它称为「一套语言」，而不是「一个理论」，原因就在这里。</div>
 
 <h3>14.8　本章小结</h3>
 
-<p>EDS 是一个六元组加六条公理。其中只有公理 4 在图上被完整验证；其余是组织性框架公理。这一分级是本书全部可信度的基础。第五部分现在给出那个唯一的星号：图上的相变定理。</p>
+<p>形式决定群：对称 → 正交，反对称 → 辛，埃尔米特 → 酉。谱定理的形状取决于形式的对称性，从而决定动力学的类型。区分语言向辛形式推广给出可计算的阻尼波动方程相变（A／甲），向酉形式推广新意有限。<b>本部分至此完成：区分被定量化为对称双线性形式，并被放进形式家族。下一部分给出唯一的完全兑现样本。</b></p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>定理 14.1（原子分解唯一 ⟺ 单谱，公理 5 的图论版）；笛卡尔积图相变结构推论。</li>
-<li><b>⊕ 有论证（B）：</b>定义 14.1（EDS 六元组）；六条公理；表 14.1、14.2（公理的跨域与图论状态）；表 14.4（27 领域自检）、表 14.6（独立性预检：四条托词、一条有内容）。</li>
-<li><b>○ 启发／描述（C）：</b>公理 1、2 在图上平凡（否定性结论）；“为每条公理编一个定理”不可能。</li>
-<li><b>？ 未解决：</b>公理 3、4 之外的公理在连续情形的状态。</li>
-<li><b>↔ 连接：</b>从第 15 章定理反推而来；面向第 19—25 章的边界。</li>
+<li><b>⊗ 可引用（A）：</b>辛推广的临界阻尼谱 <span class="s">γ<sub>k</sub>=2√λ<sub>k</sub></span>（可计算）。</li>
+<li><b>⊕ 有论证（B）：</b>表 14.1—14.3（形式—群—谱对应）；李代数的导子解释。</li>
+<li><b>○ 描述（C）：</b>「三种形式穷尽非退化形式的基本类型」。</li>
+<li><b>？ 未解决：</b>辛推广的完整定理与数值验证（附录 I 新增脚本）；酉推广是否有非平凡的复结构。</li>
+<li><b>↔ 连接：</b>第 13 章（对称形式）、第五部分（正交样本）、附录 O（形式速查）。</li>
 </ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Mac Lane, S., &amp; Moerdijk, I. (1992). <i>Sheaves in Geometry and Logic</i>. Springer.</p>
-<p>Johnstone, P. T. (2002). <i>Sketches of an Elephant: A Topos Theory Compendium</i>. Oxford University Press.</p>
-<p>Lurie, J. (2009). <i>Higher Topos Theory</i>. Princeton University Press.</p>
-<p>Voevodsky, V., et al. (2013). <i>Homotopy Type Theory</i>. IAS.</p>
+<p>Arnold, V. I. (1989). <i>Mathematical Methods of Classical Mechanics</i> (2nd ed.). Springer.</p>
+<p>Hall, B. C. (2015). <i>Lie Groups, Lie Algebras, and Representations</i> (2nd ed.). Springer.</p>
+<p>McDuff, D., &amp; Salamon, D. (2017). <i>Introduction to Symplectic Topology</i> (3rd ed.). Oxford University Press.</p>
 </div>

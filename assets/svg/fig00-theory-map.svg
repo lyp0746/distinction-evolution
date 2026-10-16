@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 520" width="880" height="520">
 <rect x="0" y="0" width="880" height="520" fill="#ffffff"/>
 <style>text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;fill:#1a1a1a;}.s{font-family:'Times New Roman',SimSun,serif;}.t{font-size:15px;font-weight:700;}.l{font-size:11px;}.ax{stroke:#666;stroke-width:1;}.g{stroke:#cfcfcf;stroke-width:1;}</style>
-<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">《区分的演化》概念地图（含依赖方向）</text>
+<text x="20" y="28" class="t" text-anchor="start" fill="#1a1a1a" font-weight="normal">《区分的语法》概念地图（含依赖方向）</text>
 <rect x="255" y="70" width="370" height="82" rx="6" fill="#fafafa" stroke="#3a6ea5" stroke-width="2.0"/>
 <text x="440" y="104" class="l" text-anchor="middle" fill="#3a6ea5" font-weight="700" font-size="14px">第一层　硬核</text>
 <text x="440" y="130" class="l" text-anchor="middle" fill="#666" font-weight="normal">图上的相变定理（严格、可复现）</text>

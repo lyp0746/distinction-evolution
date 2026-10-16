@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""补充插图：候选核心图、分层可信度图、阅读合约图。
+"""补充插图：语言规范核心图、分层可信度图、阅读合约图。
 
 风格沿用 make_figures.py 的 house palette，输出到 assets/svg/。
 """
@@ -36,11 +36,11 @@ def box(x, y, w, h, label, sub="", color=BLUE, fc="#ffffff"):
 def fig_candidate_core():
     W, H = 1000, 560
     b = []
-    b.append(f'<text x="40" y="46" font-size="24" font-weight="700">区分演化候选：四个要素与一个硬核</text>')
+    b.append(f'<text x="40" y="46" font-size="24" font-weight="700">区分演化（语言规范）：四个要素与一个硬核</text>')
     cx, cy = 500, 250
     b.append(f'<circle cx="{cx}" cy="{cy}" r="78" fill="#eef3f8" stroke="{BLUE}" stroke-width="2.5"/>')
     b.append(f'<text x="{cx}" y="{cy-4}" text-anchor="middle" font-size="20" font-weight="700" fill="{BLUE}">区分演化</text>')
-    b.append(f'<text x="{cx}" y="{cy+22}" text-anchor="middle" font-size="16" fill="{GREY}">候选（B—C）</text>')
+    b.append(f'<text x="{cx}" y="{cy+22}" text-anchor="middle" font-size="16" fill="{GREY}">语言规范（B—C）</text>')
     items = [
         (110, 110, "基本对象", "区分动作 𝒟", BLUE),
         (660, 110, "核心不变量", "分离曲率 κ", GOLD),
@@ -63,7 +63,7 @@ def fig_trust_layers():
     layers = [
         (80, "硬核层 A", "有限图定理（谱定理 + ODE）", GREEN, "复现 / 漏洞 / 反例"),
         (215, "框架层 B", "六元组 + 六公理 + 曲率分类", BLUE, "公理矛盾 / 公理失效"),
-        (350, "候选统一层 C", "连续 · 同伦 · 1/3 缺口 · 四场互补", GOLD, "O12/O13/G7 被证伪"),
+        (350, "外延层 C", "连续 · 同伦 · 1/3 缺口 · 四场互补", GOLD, "O12/O13/G7 被证伪"),
     ]
     for y, name, sub, col, how in layers:
         b.append(box(70, y, 560, 100, name, sub, col))
@@ -87,7 +87,7 @@ def fig_reading_contract():
         ("现代统一中的位置", "第二部分（4—6）", "B—C", GOLD),
         ("样板：抽象如何压缩", "第三部分（7—10）", "B", BLUE),
         ("扩展到其他领域", "第六部分（19—25）", "C", GREY),
-        ("统一候选的陈述", "第七部分（26—27）", "B—C", RED),
+        ("语言规范的陈述", "第七部分（26—27）", "B—C", RED),
     ]
     y = 90
     b.append(f'<text x="90" y="{y-14}" font-size="16" font-weight="700" fill="{INK}">你的期望</text>')

@@ -1,214 +1,71 @@
-<h2 class="chapter">第 23 章　统一分类：三条轴（⊕ 框架）</h2>
+<h2 class="chapter">第 23 章　重画坐标：区分代数 × 形式的对称型（○ 提案）</h2>
 
-<p class="lead">编码表告诉我们每个领域长什么样，分类表告诉我们它们之间的关系。本章用三条轴把所有领域重新分类：<b>区分动作的代数结构、分离曲率的符号、演化流的类型。</b>三条轴张成一个空间，这个空间里已经出现的位置与空缺的位置，就构成了新领域的地图。</p>
+<p class="lead">初稿把领域按三条轴分类：<b>区分动作的代数、谱方差的符号、演化的类型</b>。后两条轴依赖「曲率」与「演化」两个原语，而它们已被归并（R1、R2）；因此本章把坐标重画为两条轴——<b>区分动作的代数</b>、<b>形式的对称型</b>。<b>分类仍是一个提案（C），不是理论。</b></p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-所有领域可以按三条轴分类：<b>（1）区分动作的代数（线性／拓扑／度量／序／逻辑）；（2）分离曲率的符号（负／零／正）；（3）演化流的类型（无／离散／连续）。</b>三条轴的乘积给出 <span class="s">5×3×3=45</span> 个格子，其中约 25 个已被占据，空缺的格子是新领域的候选。</div>
+用两条轴描述一个领域：<b>（1）区分动作的代数（线性／拓扑／度量／序／逻辑）；（2）区分结构的对称型（对称双线性／反对称／埃尔米特）。</b>第一条轴决定「怎么区分」，第二条轴决定「区分被写成一个什么样的形式」，以及它的谱落在实轴还是虚轴。［提案，C／丙］</div>
 
-<h3>23.1　导论：分类即理论</h3>
+<h3>23.1　为什么要重画</h3>
 
-<p>分类不是装饰。一个好的分类本身就携带理论信息：它告诉你哪些组合是自然的，哪些是矛盾的，哪些是尚未探索的。门捷列夫的元素周期表之所以强大，正是因为它留下空格并预言了填充物。</p>
+<p>分类不是装饰：它决定你看见哪些组合、忽略哪些组合。初稿的三轴分类有一个具体缺陷——它的第二、第三轴分别建立在「谱方差的符号」与「演化的类型」上，而这两者正是本书归并的两个原语。把它们留在坐标里，等于把一个已被否定的框架偷偷保留在分类法中。<b>本语言的一项纪律是：归并一个原语，就要归并依附于它的分类轴。</b></p>
 
-<p>本章的三条轴来自前面的分析，而非任意选择。第一条轴（区分动作的代数）来自第 11.2 节：不同领域的区分动作有不同的封闭性质。第二条轴（曲率符号）来自第 12 章：符号决定长期行为。第三条轴（演化流）来自第 13 章：时间类型决定动力学的形式。</p>
+<h3>23.2　第一轴：区分动作的代数</h3>
 
-<h3>23.2　第一轴：区分动作的代数结构</h3>
+<p>这一轴来自第 11.2 节（区分动作族）与第 13 章（形式在不同领域的化身）。它不依赖被归并的原语，因此保留。</p>
 
 <table class="nat">
 <caption class="cap"><b>表 23.1　第一轴：区分动作的代数</b></caption>
-<tr><th class="l">类型</th><th class="l">区分动作</th><th class="l">稳定区域</th><th class="l">领域</th></tr>
-<tr><td class="l">线性</td><td class="l">线性泛函</td><td class="l">向量空间</td><td class="l">线性代数、表示论、调和分析、算子代数、量子数学</td></tr>
+<tr><th class="l">类型</th><th class="l">区分动作</th><th class="l">稳定区域</th><th class="l">领域举例</th></tr>
+<tr><td class="l">线性</td><td class="l">线性泛函</td><td class="l">向量空间</td><td class="l">线性代数、表示论、调和分析、算子代数</td></tr>
 <tr><td class="l">拓扑</td><td class="l">开集／单纯形</td><td class="l">拓扑空间</td><td class="l">点集拓扑、代数拓扑</td></tr>
 <tr><td class="l">度量</td><td class="l">可测区分</td><td class="l">测度空间</td><td class="l">测度论、概率论、实分析</td></tr>
 <tr><td class="l">序</td><td class="l">子结构</td><td class="l">格／偏序集</td><td class="l">格论、组合数学、图论</td></tr>
 <tr><td class="l">逻辑</td><td class="l">可证公式</td><td class="l">类型／模型</td><td class="l">数理逻辑、类型论、可计算性</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>分类轴一。等级 B／乙（论证）。</div>
+<div class="datasrc"><b>性质：</b>分类轴一。<b>等级 C／丙（作者判断）。</b>这是一个样本观察（27 个领域落在五类上），不是定理。</div>
 
-<h3>23.3　第二轴：分离曲率的符号</h3>
+<h3>23.3　第二轴：形式的对称型</h3>
 
-<p>第二条轴来自第 12 章。</p>
-
-<table class="nat">
-<caption class="cap"><b>表 23.2　第二轴：曲率符号</b></caption>
-<tr><th class="l">符号</th><th class="l">行为</th><th class="l">领域表现</th></tr>
-<tr><td class="l">κ&lt;0</td><td class="l">区分器稀缺，塌缩</td><td class="l">双曲几何、负曲率流形、强干扰信道</td></tr>
-<tr><td class="l">κ=0</td><td class="l">平衡</td><td class="l">线性代数、平坦几何、无噪信道</td></tr>
-<tr><td class="l">κ&gt;0</td><td class="l">区分器过剩，精细化／爆炸</td><td class="l">组合爆炸、正曲率流形、LLM 表示</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>分类轴二。等级 B／乙（论证）；图论部分为 A（定理）。</div>
-
-<h3>23.4　第三轴：演化流的类型</h3>
+<p>第二轴来自第 13—14 章：一个领域的区分结构被写成一个形式，而<b>形式决定谱与动力学</b>。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 23.3　第三轴：演化流</b></caption>
-<tr><th class="l">类型</th><th class="l">时间 𝒯</th><th class="l">领域</th></tr>
-<tr><td class="l">无演化</td><td class="l">—</td><td class="l">线性代数、拓扑、数论、逻辑、组合</td></tr>
-<tr><td class="l">离散演化</td><td class="l">ℕ</td><td class="l">动力系统（迭代）、博弈论、马尔可夫链、算法</td></tr>
-<tr><td class="l">连续演化</td><td class="l">ℝ</td><td class="l">微分方程、微分几何、算子代数、量子、图上的热流</td></tr>
+<caption class="cap"><b>表 23.2　第二轴：形式的对称型</b></caption>
+<tr><th class="l">对称型</th><th class="l">条件</th><th class="l">谱</th><th class="l">领域举例</th></tr>
+<tr><td class="l">对称（正交）</td><td class="l">B(x,y)=B(y,x)</td><td class="l">实</td><td class="l">图拉普拉斯、协方差、Hessian、黎曼度量</td></tr>
+<tr><td class="l">反对称（辛）</td><td class="l">ω(x,y)=−ω(y,x)</td><td class="l">纯虚（成对）</td><td class="l">哈密顿力学、辛几何</td></tr>
+<tr><td class="l">埃尔米特（酉）</td><td class="l">h(x,y)=conj(h(y,x))</td><td class="l">实</td><td class="l">量子力学、复内积</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>分类轴三。等级 B／乙（论证）。</div>
+<div class="datasrc"><b>性质：</b>分类轴二。<b>等级 B（已知数学）。</b>多数领域使用对称情形；辛与酉给出不同的谱与动力学（第 14 章）。</div>
 
-<h3>23.5　空缺的组合</h3>
+<h3>23.4　两轴与领域：指向附录 B</h3>
 
-<img class="fig" src="assets/svg/fig21-classification-axes.svg" alt="三条分类轴">
+<p>把两轴相乘，得到一个粗粒度的描述空间。本书对 27 个领域逐个给出坐标，完整表在<b>附录 B</b>。这里只说明读法：<b>第一轴告诉你「怎么区分」，第二轴告诉你「区分被写成一个什么形式、它的谱在哪里」。</b></p>
 
-<div class="cap"><b>图 23.1　三条分类轴与空缺</b>。三条轴张成一个 <span class="s">5×3×3</span> 的空间。实心点表示已有领域占据的组合，空心点表示空缺。空缺的组合提示可能的新领域（第 24 章）。</div>
+<p>必须强调：这张表是<b>描述</b>，不是理论。它不预言某个组合一定存在或不存在；它只是把已经用这套语言描述过的领域摆在一起，供读者比较。</p>
 
-<p>三条轴张成 45 个格子。已占据的约 25 个（如"线性×零×无"=线性代数，"序×正×无"=组合数学）。剩下的空缺中，有几个特别有前景：</p>
+<h3>23.5　一个教训：坐标会制造假象</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 23.4　有前景的空缺组合</b></caption>
-<tr><th class="l">组合</th><th class="l">候选新领域</th><th class="l">对应现象</th></tr>
-<tr><td class="l">线性 × 正 × 连续</td><td class="l">演化线性代数</td><td class="l">LLM 层间表示演化</td></tr>
-<tr><td class="l">拓扑 × 正 × 离散</td><td class="l">离散同伦论</td><td class="l">图神经网络的消息传递</td></tr>
-<tr><td class="l">度量 × 负 × 连续</td><td class="l">刚性测度论</td><td class="l">高维测度集中、双曲群随机游走</td></tr>
-<tr><td class="l">序 × 正 × 连续</td><td class="l">连续组合学</td><td class="l">随机图过程的相变动力学</td></tr>
-<tr><td class="l">逻辑 × 正 × 连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>空缺表。等级 C／丙（纲领）。</div>
+<p>旧三轴分类曾产生一个具体错误，值得保留作为教训。旧表里有一个空格「拓扑 × 正 × 连续」，看起来像「一个尚未发现的新领域」。实际检验（脚本 <code>analysis/forbidden_combinations.py</code>）发现：C4、C5、P4 等实例<b>同时满足三者</b>（用 Alexandrov 开集作拓扑式区分、拉普拉斯谱方差作符号、热半群作连续演化）。<b>所以那个空格不是数学事实，而是坐标设计制造的假象</b>——旧轴 1 把「X 有限 + 𝒟 格 + 热半群」这些实例错误地归到了「拓扑」标签下。</p>
 
-<div class="note"><b>分类的用途</b>
-这张表的用途不是预言"这些领域一定存在"，而是给出<b>搜索方向</b>。当你在两个已有领域之间发现一个未被命名的结构时，可以查表看它是否落在一个空缺格子上。若落在空缺格子上，说明它可能是一个新领域；若落在已占据格子上，说明它可能已经被某个领域以别的名字研究过。</div>
-
-<h3>23.5.1　三轴是否独立？</h3>
-
-<p>把分类建立在三条轴上，隐含一个假设：三轴彼此独立。这个假设必须被检验，而不是默认。</p>
-
-<div class="warning"><span class="bt">三处不独立的地方</span>
-<b>（1）轴 1 与轴 2 相关。</b>区分动作的代数类型部分决定了曲率符号：拓扑型（开集）多对应 <span class="s">κ&lt;0</span>，度量／几何型多对应 <span class="s">κ&gt;0</span>。这意味着两条轴不是正交的。<br>
-<b>（2）一个领域可同时占据多个轴 1 值。</b>微分几何既有"度量"（距离）又有"线性"（联络），本表按"最显著者"归类，因此分类带有人为选择。<br>
-<b>（3）轴 3（演化流）与前两轴耦合。</b>"连续演化"几乎总伴随正或零曲率，"无演化"几乎总伴随零曲率。</div>
-
-<p>因此更准确的说法是：<b>三轴是一个有用的坐标系，但不是一组正交基。</b>把它当作正交分解来数格子，会高估组合的独立性。</p>
-
-<div class="warning"><span class="bt">空缺的 20 个格子：不存在还是没找到？</span>
-5×3×3=45 个格子中约 25 个被占据，20 个空缺。每个空缺有两种解释：<b>（a）</b>该组合在数学中不存在（内在结构限制）；<b>（b）</b>它存在，但本书还没有找到或编码。<b>本书的回答是：我们不知道是 (a) 还是 (b)。</b>把空缺一律读成"有待发现的新领域"，是一个未经证实的乐观假设（登记为 O14）。</div>
-
-<h3>23.5.2　禁戒检验协议（已给出方法，尚未执行）</h3>
-
-<p>把每个空缺判定为"数学禁戒"还是"尚未发现"，需要真正的论证，而不是猜测。下面是可执行的协议——<b>本书只给出协议与一个启发式例子，没有给出结论</b>（估计 3—4 周工作量，属第 22.5.7 节边界探测的一部分）。</p>
-
-<ol>
-<li><b>假设一个抽象领域</b> <span class="s">M</span>，使其区分代数 = 轴 1 值、<span class="s">κ</span> 符号 = 轴 2 值、演化流 = 轴 3 值。</li>
-<li><b>由六条公理推出强制条件</b>：例如 <span class="s">κ&gt;0</span> 要求区分动作族无界；"连续演化"要求存在无穷维演化半群。</li>
-<li><b>检查强制条件是否互相矛盾</b>：矛盾 ⇒ 数学禁戒；不矛盾 ⇒ 至少抽象层面可能存在，需要去找真实例子。</li>
-<li><b>登记结果</b>：禁戒记 O18；可能存在但未发现则记为"开放"。</li>
-</ol>
-
-<div class="define"><span class="bt">启发式示例（非证明）：拓扑 × 正 × 连续</span>
-拓扑型区分动作（开集）在<b>有限生成</b>下通常对应 <span class="s">κ≤0</span>；<span class="s">κ&gt;0</span>（区分器过剩）要求无穷自由度；连续演化流也要求无穷维。<b>两个"无穷"是否是同一类，决定了这个组合是禁戒还是仅未被发现。</b>本书不在此下结论——它登记为 O18 的第一个待检验格子。</div>
-
-<div class="warning"><span class="bt">首次尝试（已执行）："拓扑 × 正 × 连续"并非禁戒</span>
-用一次<b>有界可计算探测</b>（脚本 <code>analysis/forbidden_combinations.py</code>）：对小的有限图，用 Alexandrov 开集（下集）作为"拓扑式区分"、用 <span class="s">κ_info=Var(λ)/2</span> 的符号作为轴 2、用热半群 <span class="s">e<sup>−tL</sup></span> 作为连续演化，看是否存在实例同时满足三者。结果：<b>C4（κ=1.0）、C5（κ=1.0）、P4（κ=0.875）三个实例同时落在该格子</b>（均存在热半群）。<br>
-<b>结论：该格子不是数学禁戒。</b>它在表 B.3 中显示为空缺，更可能是<b>轴 1 的标签假象</b>——这些例子被归到了"图论／组合"而不是"拓扑"。这与第 23.5.1 节"轴 1 与轴 2 相关、轴标签带人为选择"完全一致。<br>
-<b>边界：</b>这是有界可达性探测，<b>只能否证"禁戒"，不能证明"禁戒"</b>；其余 19 个空缺仍待逐一检验。</div>
-
-<div class="warning"><span class="bt">为什么只给协议，不给结论</span>
-一个看起来协调的组合（如上面的拓扑×正×连续）很容易被"论证"成禁戒，只要在推理中悄悄假定一个未经证明的前提。这正是第 22.5.5 节警告的过度拟合。本书选择<b>把方法写清楚，把结论留空</b>——这也是第 27 章"表 27.4 中'编码保结构'难度 ★★★"的具体体现。</div>
-
-<h3>23.5.3　从六元组重导分类：把"X 的量级"与"𝒟 的代数"分开</h3>
-
-<p>第 23.5.2 节的 B 探测暴露了现行轴 1 的设计缺陷：它把两件不同的事混在一起——<b>对象集 <span class="s">X</span> 的量级</b>（有限／可数／稠密／无限自由）与<b>区分动作族 <span class="s">𝒟</span> 的代数闭包</b>（线性／格／拓扑／度量／逻辑）。C4、C5、P4 之所以"逃出"了"拓扑×正×连续"格子，正是因为它们其实是 <span class="s">(X 有限, 𝒟 格)</span> 的实例，只是被贴上了"图论"的标签。</p>
-
-<p>修正的办法不是修补轴 1，而是<b>按六元组的结构重新分解</b>——五个坐标都直接来自六元组的某一项，而不是从"传统领域"反向猜测：</p>
-
-<table class="nat">
-<caption class="cap"><b>表 23.5　五个坐标：从六元组导出</b></caption>
-<tr><th class="l">坐标</th><th class="l">来自六元组</th><th class="l">取值</th></tr>
-<tr><td class="l">A　X 的量级</td><td class="l">第一项 <span class="s">X</span></td><td class="l">0 有限 / 1 可数 / 2 稠密 / 3 无限自由</td></tr>
-<tr><td class="l">B　𝒟 的代数闭包</td><td class="l">第二项 <span class="s">𝒟</span></td><td class="l">线性 / 格 / 拓扑 / 度量 / 逻辑</td></tr>
-<tr><td class="l">C　O 的分辨率</td><td class="l">第三项 <span class="s">O</span></td><td class="l">稀疏 / 中 / 精细 / 完全</td></tr>
-<tr><td class="l">D　κ 符号</td><td class="l">第五项 <span class="s">κ</span></td><td class="l">负 / 零 / 正</td></tr>
-<tr><td class="l">E　演化型</td><td class="l">第六项 <span class="s">Φ</span></td><td class="l">无 / 离散可逆 / 离散不可逆 / 连续可积 / 连续耗散</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>坐标设计。<b>等级 C／丙（作者判断）。</b>与旧三轴的关键差别：<b>A 与 B 被分开</b>——旧轴 1 的"标签假象"正是二者混淆的产物。</div>
-
-<p>分类不再是全局笛卡尔积（那会得到 <span class="s">5×5×4×3×5</span> 个格子），而是<b>按 A 分层的嵌套树</b>。理由是：<span class="s">A</span> 的量级决定了编码是否可能（A=3 无限自由 = 无有限描述 = O16 的禁区），因此它应当是<b>第一分岔</b>，而不是与其他坐标并列。</p>
-
-
-<img class="fig" src="assets/svg/fig28-five-coordinate-tree.svg" alt="五坐标嵌套分类">
-<div class="cap"><b>图 23.2　五坐标嵌套分类</b>　A（X 的量级）为第一分岔；每个 A 层之下才是 B（𝒟 代数）× D（κ）× E（演化）的子空间。A=3 无限自由是 O16 禁区。</div>
-
-
-<h4>23.5.3.1　为什么是五坐标（而不是三、四、六）</h4>
-
-<p>"五"这个数字需要一个理由。下面把候选方案摆出来比较。</p>
-
-<table class="nat">
-<caption class="cap"><b>表 23.8　分类方案比较</b></caption>
-<tr><th class="l">方案</th><th class="l">坐标</th><th class="l">问题</th></tr>
-<tr><td class="l">三坐标（旧）</td><td class="l">区分代数 / κ / 演化</td><td class="l">把 A（X 量级）与 B（𝒟 代数）混在一起 → 标签假象</td></tr>
-<tr><td class="l">四坐标</td><td class="l">A / B / D / E（合并 C 与 B）</td><td class="l">失去 O 的分辨率信息（如代数拓扑"稀疏" vs 微分几何"精细"无处安放）</td></tr>
-<tr><td class="l"><b>五坐标（本书）</b></td><td class="l">A / B / C / D / E</td><td class="l">C 目前最强弱（多数领域标注粗糙），保留以待细化</td></tr>
-<tr><td class="l">六坐标及以上</td><td class="l">拆 C 为两轴，或加"对象语义"轴</td><td class="l">格数膨胀到 2000+，而 27 个领域不足以约束</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>设计比较。<b>等级 C／丙（作者判断）。</b>选择理由：A 必须作第一分岔（它决定可编码性）；B 与 D 是六元组中两个独立的核心项；E 是动态性的唯一来源；C 最弱，但删掉它会使"分辨率"这一差别失去位置。<b>本书不声称五坐标最优或唯一——它是一个当前够用、且可被反驳的设计。</b></div>
-
-<table class="nat">
-<caption class="cap"><b>表 23.6　27 个领域的新坐标</b></caption>
-<tr><th class="l">领域</th><th class="l">A（X 量级）</th><th class="l">B（𝒟 代数）</th><th class="l">C（O 分辨率）</th><th class="l">D（κ）</th><th class="l">E（演化）</th></tr>
-<tr><td class="l">图论</td><td class="l">0 有限</td><td class="l">格／线性</td><td class="l">精细</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">线性代数</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">表示论</td><td class="l">1 可数</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">调和分析</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">点集拓扑</td><td class="l">2 稠密</td><td class="l">拓扑／格</td><td class="l">精细</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">代数拓扑</td><td class="l">1 可数</td><td class="l">线性／拓扑</td><td class="l">稀疏</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">测度论</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">实分析</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">泛函分析</td><td class="l">2 稠密</td><td class="l">线性／度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">复分析</td><td class="l">2 稠密</td><td class="l">度量／拓扑</td><td class="l">精细</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">组合数学</td><td class="l">0 有限</td><td class="l">格／逻辑</td><td class="l">精细</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">数论</td><td class="l">1 可数</td><td class="l">格／逻辑</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">数理逻辑</td><td class="l">1 可数</td><td class="l">逻辑</td><td class="l">精细</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">类型论</td><td class="l">1 可数</td><td class="l">逻辑／拓扑</td><td class="l">精细</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">微分方程</td><td class="l">2 稠密</td><td class="l">度量／线性</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">动力系统</td><td class="l">2 稠密</td><td class="l">度量／格</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">概率论</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">无</td></tr>
-<tr><td class="l">信息论</td><td class="l">0 有限</td><td class="l">度量／逻辑</td><td class="l">中</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">算子代数</td><td class="l">2 稠密</td><td class="l">线性／拓扑</td><td class="l">稀疏</td><td class="l">负／零／正</td><td class="l">连续可积</td></tr>
-<tr><td class="l">量子数学</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">稀疏</td><td class="l">正</td><td class="l">连续可积</td></tr>
-<tr><td class="l">博弈论</td><td class="l">0 有限</td><td class="l">格／逻辑</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">优化</td><td class="l">2 稠密</td><td class="l">度量／线性</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">数值分析</td><td class="l">0 有限</td><td class="l">线性／度量</td><td class="l">中</td><td class="l">正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">微分几何</td><td class="l">2 稠密</td><td class="l">度量／拓扑／线性</td><td class="l">精细</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">LLM 潜在空间</td><td class="l">2 稠密</td><td class="l">线性／度量</td><td class="l">稀疏</td><td class="l">正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">马尔可夫链</td><td class="l">0 有限</td><td class="l">格／度量</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">编码论</td><td class="l">0 有限</td><td class="l">逻辑／格</td><td class="l">精细</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">生成拓扑</td><td class="l">3 无限自由</td><td class="l">拓扑</td><td class="l">完全</td><td class="l">正</td><td class="l">无</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>重新分类。<b>等级 C／丙（作者判断）。</b>同一领域可有多个 B（如微分几何 = 度量／拓扑／线性）——这正是不再制造"标签假象"的关键。</div>
-
-<table class="nat">
-<caption class="cap"><b>表 23.7　按 A 分层的占据（子空间 B×D×E，每层 75 格）</b></caption>
-<tr><th class="l">A 层</th><th class="l">领域数</th><th class="l">占据</th><th class="l">空缺</th><th class="l">含义</th></tr>
-<tr><td class="l">0 有限</td><td class="l">7</td><td class="l">20</td><td class="l">55</td><td class="l">编码最可靠的一层（图论、组合、逻辑、信息论…）</td></tr>
-<tr><td class="l">1 可数</td><td class="l">5</td><td class="l">7</td><td class="l">68</td><td class="l">结构丰富但占据稀疏（表示论、数论、类型论…）</td></tr>
-<tr><td class="l">2 稠密</td><td class="l">15</td><td class="l">30</td><td class="l">45</td><td class="l">占据最多的一层（分析、几何、概率…）</td></tr>
-<tr><td class="l">3 无限自由</td><td class="l">1</td><td class="l">1</td><td class="l">74</td><td class="l"><b>O16 禁区</b>：生成拓扑在此，EDS 理论上不适用</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>分层占据表。<b>等级 C／丙（作者判断）。</b>脚本 <code>analysis/reclassify.py</code>。读法：A=3 层不是"尚未发现的领域"，而是<b>理论上被排除的层</b>——这正是旧表 B.3 无法表达的东西。</div>
-
-<div class="warning"><span class="bt">重读"拓扑×正×连续"：一个标签假象的完整解释</span>
-在新坐标下，C4/C5/P4 的真实位置是 <b>(A=0 有限, B=格, D=正, E=连续耗散)</b>，而不是旧标签所说的"拓扑"。旧格子之所以为空，是因为旧轴 1 把"<span class="s">X</span> 有限 + <span class="s">𝒟</span> 格 + 热半群"这些实例归到了"图论"，而"图论"在轴 1 里被记为"序"。<b>把 A 与 B 分开后，这个格子根本不存在——它是坐标设计制造的假象，不是数学事实。</b><br>
-<b>连带结论：</b>旧表 B.3 的"20 个空缺"中，凡是"轴 1 = 拓扑"造成的，都很可能是同一类假象；真正值得追问的空缺，应当出现在<b>同一 A 层内</b>（同量级、不同 <span class="s">𝒟</span>／κ／演化）。</div>
+<div class="warning"><span class="bt">教训</span>
+<b>一个空格可能有三种来源：数学禁戒、尚未发现、坐标设计制造的假象。</b>初稿倾向于把空格读成第二种（新领域），这是一个乐观的假设。本语言的做法是：先把坐标本身的解释检查一遍，再谈空格。<b>这正是为什么本书把 27 个领域的坐标表降级为「描述」，而不叫「分类理论」。</b></div>
 
 <h3>23.6　本章小结</h3>
 
-<p>三条轴（区分动作代数、曲率符号、演化流）把所有领域组织成一个 45 格空间，其中约 25 格已被占据。空缺的格子是新领域的候选。下一章评估其中哪些最值得投入。</p>
+<p>本语言用两条轴描述领域：区分动作的代数、形式的对称型。第二轴取代了初稿中依赖「曲率」与「演化」的两条轴；完整的领域坐标见附录 B。分类是一个提案，不是理论；它最容易犯的错误是<b>把坐标设计制造的假象读成数学发现</b>。</p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>本章无 A 级结果（纲领章）。</li>
-<li><b>⊕ 有论证（B）：</b>三条分类轴：区分动作的代数结构、分离曲率的符号、演化流的类型。</li>
-<li><b>○ 启发／描述（C）：</b>“空缺组合”提示尚不存在的领域。</li>
-<li><b>？ 未解决：</b>空缺格子是否真的可填。</li>
-<li><b>↔ 连接：</b>第 22 章编码的总览；23.5.3 的五坐标嵌套分类；第 24 章新领域的来源。</li>
+<li><b>⊗ 可引用（A）：</b>无（本章是分类提案）。</li>
+<li><b>⊕ 有论证（B）：</b>表 23.2（形式—谱对应）。</li>
+<li><b>○ 提案（C）：</b>两轴分类；27 个领域的坐标（附录 B）。</li>
+<li><b>？ 未解决：</b>两轴是否穷尽；空缺是禁戒、未发现还是坐标假象。</li>
+<li><b>↔ 连接：</b>第 11.2 节（区分动作族）、第 13—14 章（形式）、第 22 章（编码）、附录 B（领域表）。</li>
 </ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
 <p>Gierz, G., et al. (2003). <i>Continuous Lattices and Domains</i>. Cambridge University Press.</p>
 <p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i>. Cambridge University Press.</p>
-<p>Abramsky, S., &amp; Jung, A. (1994). Domain theory. In <i>Handbook of Logic in Computer Science</i>. Oxford University Press.</p>
-<p>Bridson, M. R., &amp; Haefliger, A. (1999). <i>Metric Spaces of Non-Positive Curvature</i>. Springer.</p>
+<p>Hall, B. C. (2015). <i>Lie Groups, Lie Algebras, and Representations</i> (2nd ed.). Springer.</p>
 </div>

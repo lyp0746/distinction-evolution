@@ -8,7 +8,7 @@
 <h2>E.1　已证结果（登记其"可复现性"）</h2>
 
 <table class="nat">
-<caption class="cap"><b>表 E.1　硬核结果的可复现登记</b></caption>
+<caption class="cap"><b>表 E.1　样本结果的可复现登记</b></caption>
 <tr><th class="l">编号</th><th class="l">命题</th><th class="l">证据</th><th class="l">核验方式</th></tr>
 <tr><td class="l">H1</td><td class="l">连通图的临界耦合为 <span class="s">β₁=α/λ<sub>n</sub></span>、<span class="s">β₂=α/λ<sub>2</sub></span></td><td class="l">定理 15.1（完整证明）</td><td class="l">运行复现协议（附录 A.5）</td></tr>
 <tr><td class="l">H2</td><td class="l">Petersen 图临界值为 (0.2, 0.5)（α=1）</td><td class="l">谱计算</td><td class="l"><code>numpy.linalg.eigvalsh</code></td></tr>
@@ -17,10 +17,10 @@
 <tr><td class="l">H5</td><td class="l">保证衰减阈值 <span class="s">α/[β(1−1/k)]</span> 对所有分布成立</td><td class="l">定理 18.1</td><td class="l">随机分布数值检验</td></tr>
 <tr><td class="l">H6</td><td class="l">对称加权图：<span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立（顺序不可反转）</td><td class="l">定理 16.1 / J.1</td><td class="l">400 随机加权图扫描</td></tr>
 <tr><td class="l">H7</td><td class="l">有向图弧集 (0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2) 上顺序反转</td><td class="l">反例 16.1 / J.3</td><td class="l">特征值 + 总变差计算</td></tr>
-<tr><td class="l">H8</td><td class="l">离散分离曲率 <span class="s">κ_info=Var(λ)/2</span></td><td class="l">定理 12.1 / J.2</td><td class="l">有限差分验证（误差 &lt;10⁻⁶）</td></tr>
+<tr><td class="l">H8</td><td class="l">拉普拉斯谱方差 <span class="s">κ_info=Var(λ)/2</span></td><td class="l">定理 12.1 / J.2</td><td class="l">有限差分验证（误差 &lt;10⁻⁶）</td></tr>
 <tr><td class="l">H9</td><td class="l">对称 L：最大特征值模式最大化 Rayleigh 商</td><td class="l">定理 16.2 / J.3</td><td class="l">500/500 数值验证</td></tr>
-<tr><td class="l">H11</td><td class="l">原子分解唯一 ⟺ 单谱（公理 5 的图论定理）</td><td class="l">定理 14.1 / J.5</td><td class="l">7 图光谱多重度计算</td></tr>
-<tr><td class="l">H12</td><td class="l">公理 1 在图上平凡（谱嵌入必单射）</td><td class="l">表 14.2 / J.8（否定性）</td><td class="l">min row distance 全正</td></tr>
+<tr><td class="l">H11</td><td class="l">原子分解唯一 ⟺ 单谱（约定 5 的图论定理）</td><td class="l">定理 J.5</td><td class="l">7 图光谱多重度计算</td></tr>
+<tr><td class="l">H12</td><td class="l">约定 1 在图上平凡（谱嵌入必单射）</td><td class="l">表 14.2 / J.8（否定性）</td><td class="l">min row distance 全正</td></tr>
 <tr><td class="l">H10</td><td class="l">非正规性与强连通性<b>不能</b>预测反转（负结果）</td><td class="l">表 16.5 / J.7</td><td class="l">4000 随机有向图；相关系数 −0.13</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>已证结果登记。等级 A／甲。<b>这些不是"待证伪"的假说，而是"待复现"的结论；若复现失败，说明本书有误。</b></div>
@@ -31,8 +31,8 @@
 <caption class="cap"><b>表 E.2　框架层可证伪命题</b></caption>
 <tr><th class="l">编号</th><th class="l">命题</th><th class="l">证据等级</th><th class="l">证伪条件</th><th class="l">核验日期</th></tr>
 <tr><td class="l">F1</td><td class="l">分离曲率的三个领域定义（<span class="s">βλ−α</span>、<span class="s">R/6</span>、<span class="s">−β</span>）可统一为一个定义</td><td class="l">C</td><td class="l">找到两个定义在共同粗化极限下不自洽的反例</td><td class="l">长期（2028）</td></tr>
-<tr><td class="l">F2</td><td class="l">六条公理相互一致（无矛盾）</td><td class="l">C</td><td class="l">由公理推出矛盾命题</td><td class="l">中期（2027）</td></tr>
-<tr><td class="l">F3</td><td class="l">公理 4 在连续流形上成立</td><td class="l">C</td><td class="l">构造初值使演化不唯一或不存在</td><td class="l">中期（2027）</td></tr>
+<tr><td class="l">F2</td><td class="l">描述约定相互一致（无矛盾）</td><td class="l">C</td><td class="l">由约定推出矛盾命题</td><td class="l">中期（2027）</td></tr>
+<tr><td class="l">F3</td><td class="l">约定 4 在连续流形上成立</td><td class="l">C</td><td class="l">构造初值使演化不唯一或不存在</td><td class="l">中期（2027）</td></tr>
 <tr><td class="l">F4</td><td class="l">时间涌现：连续情形下 <span class="s">κ<sub>net</sub></span> 单调</td><td class="l">C</td><td class="l">构造反例使 <span class="s">κ<sub>net</sub></span> 非单调</td><td class="l">中期（2027）</td></tr>
 <tr><td class="l">F5</td><td class="l">15 领域编码可由同一套映射生成（元算法存在）</td><td class="l">C</td><td class="l">某领域无法写出编码映射</td><td class="l">长期（2029）</td></tr>
 <tr><td class="l">O8</td><td class="l">相变顺序反转的充要条件（可判定的结构判据）</td><td class="l">C</td><td class="l">已有五个候选（非正规性/强连通/Jordan 缺陷/反对称范数/Rayleigh 间隙）<b>全部失败</b>。<b>16.9.1 分层：</b>G-不变（Cayley）类可判定（Fourier 解析），一般类仍开放；且判定须先改为基底无关——前导特征值退化时 17%（75/448）判定随基底翻转。</td><td class="l">中期（2028）</td></tr>
@@ -41,10 +41,10 @@
 <tr><td class="l">O12</td><td class="l">同伦升维：有限图的区分相变可表示为某同伦群的临界维数跳跃（第 6.4 节前沿一）</td><td class="l">C</td><td class="l">构造显式同伦分类空间失败，或相变处的同伦群无维数变化</td><td class="l">长期（2030）</td></tr>
 <tr><td class="l">O13</td><td class="l">连续区分系统的存在性：可为凝聚集/层赋予"区分序列"并重现 Scholze 定理（第 6.4 节前沿三）</td><td class="l">C</td><td class="l">证明该结构在凝聚条件下退化，或无法定义保结构的分离族</td><td class="l">长期（2030）</td></tr>
 <tr><td class="l">O14</td><td class="l">覆盖完整性：框架能否自然扩展到所有数学领域（而非仅入选的 25 个）</td><td class="l">C</td><td class="l">给出一个主流领域并证明其无法编码，或给出扩展的一般构造</td><td class="l">长期（2030）</td></tr>
-<tr><td class="l">O15</td><td class="l">PCA 有效维度（≈6.14）与六元组六项是否同构（第 22.5.3 节）</td><td class="l">C</td><td class="l">证明前 6 个主成分与六元组一一对应，或给出反例</td><td class="l">中期（2028）</td></tr>
+<tr><td class="l">O15</td><td class="l">PCA 有效维度（≈6.14）与词表六项是否同构（第 22.5.3 节）</td><td class="l">C</td><td class="l">证明前 6 个主成分与词表一一对应，或给出反例</td><td class="l">中期（2028）</td></tr>
 <tr><td class="l">O16</td><td class="l">有限描述条件：可保结构编码 ⟺ 存在有限描述长度的公理系统（猜想 D1）</td><td class="l">C</td><td class="l">给出无限描述长度却保结构的领域，或有限描述长度却失败的领域</td><td class="l"><b>初步支持</b>：两组边界探测支持边界在"可计算/有限"一侧（第 22.5.8 节）。<b>未决：</b>应取 O16a（图灵可计算）/ O16b（有限表示）/ O16c（有限记忆）中的哪一个（第 22.5.5.1 节）——O16b 与探测最吻合</td></tr>
-<tr><td class="l">O17</td><td class="l">六元组维数上界：用与六元组无关的独立特征，可编码领域有效维度 ≤ 6（猜想 D2）</td><td class="l">C</td><td class="l">用非六元组导出的特征找到有效维度 &gt; 6 的领域</td><td class="l"><b>已被本实验削弱</b>：作者估计的独立特征给出 N<sub>eff</sub>≈2.9（附录 I）</td></tr>
-<tr><td class="l">O18</td><td class="l">空缺可判定：三轴空间的每个空缺组合可用六公理检验其禁戒性（猜想 D3）</td><td class="l">C</td><td class="l">找到某格子既不自相矛盾又长期无真实对应，或反之</td><td class="l"><b>大幅削弱</b>：首个格子是标签假象；重导分类（23.5.3）表明旧“空缺”多由 A 与 B 混淆造成。真正的空缺问题已重新定位到“同一 A 层内”</td></tr>
+<tr><td class="l">O17</td><td class="l">词表维数上界：用与词表无关的独立特征，可编码领域有效维度 ≤ 6（猜想 D2）</td><td class="l">C</td><td class="l">用非词表导出的特征找到有效维度 &gt; 6 的领域</td><td class="l"><b>已被本实验精化</b>：作者估计的独立特征给出 N<sub>eff</sub>≈2.9（附录 I）</td></tr>
+<tr><td class="l">O18</td><td class="l">空缺可判定：三轴空间的每个空缺组合可用描述约定检验其禁戒性（猜想 D3）</td><td class="l">C</td><td class="l">找到某格子既不自相矛盾又长期无真实对应，或反之</td><td class="l"><b>被重新定位</b>：首个格子是标签假象；重导分类（23.5.3）表明旧“空缺”多由 A 与 B 混淆造成。真正的空缺问题已重新定位到“同一 A 层内”</td></tr>
 <tr><td class="l">O19</td><td class="l">五种区分代数（线性/拓扑/度量/序/逻辑）是否穷尽且必然（第 0 页"两个框架"）</td><td class="l">C</td><td class="l">给出一个区分代数不属于这五类的领域（第六种）</td><td class="l"><b>未证</b>；一次"六框架论证"被驳（附录 M）；缺三条引理、反例条件见附录 N</td></tr>
 <tr><td class="l">O9</td><td class="l">曲率—涌现同步（Hessian 峰值先于能力跃迁）</td><td class="l">C</td><td class="l">高分辨率下峰值与跃迁不同步</td><td class="l">短期（2027）</td></tr>
 </table>
@@ -70,7 +70,7 @@
 <tr><td class="l">G13</td><td class="l">χ(G□H)=χ(G)·χ(H)−|E<sub>G</sub>|·|E<sub>H</sub>|；亏项 = 产品复形的 2-胞腔数（V−E+F=χ(G)χ(H)）</td><td class="l"><b>已证</b>（A／甲）</td><td class="l">找到图对使公式不成立</td><td class="l"><b>已核销</b>（2026-10-14）</td></tr>
 <tr><td class="l">G14</td><td class="l">乘积行为<b>不解释</b> 1/3 缺口（后者是固定二维曲面上密度归一化的另一个轴）</td><td class="l"><b>边界声明</b></td><td class="l">若证明 1/3 可由产品行为推出</td><td class="l"><b>登记</b>（2026-10-14）</td></tr>
 <tr><td class="l">G15</td><td class="l">McKean–Singer：<span class="s">X(t)=Tr(e<sup>−tΔ₀</sup>)−Tr(e<sup>−tΔ₁</sup>)≡χ(G)</span>（对一切 t 精确）</td><td class="l"><b>已证</b>（A／甲）</td><td class="l">找到图使 X(t)≠χ（在某个 t）</td><td class="l"><b>已核销</b>（2026-10-14，<code>dirac_mckean_singer.py</code>）</td></tr>
-<tr><td class="l">G16</td><td class="l">谱三元组是 EDS 的正确数学家园；“换 Dirac 算子消 1/3”为空（超迹中本无 1/3）；离散→连续桥是谱收敛（未解决）</td><td class="l"><b>边界声明</b></td><td class="l">若在其中找到超迹携带 1/3 的算子</td><td class="l"><b>登记</b>（2026-10-14）</td></tr>
+<tr><td class="l">G16</td><td class="l">谱三元组是 本语言的正确数学家园；“换 Dirac 算子消 1/3”为空（超迹中本无 1/3）；离散→连续桥是谱收敛（未解决）</td><td class="l"><b>边界声明</b></td><td class="l">若在其中找到超迹携带 1/3 的算子</td><td class="l"><b>登记</b>（2026-10-14）</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>缺口登记。<b>G4 是最高优先级可执行任务</b>（见附录 G）。</div>
 
@@ -79,7 +79,7 @@
 <table class="nat">
 <caption class="cap"><b>表 E.4　应用层可证伪命题</b></caption>
 <tr><th class="l">编号</th><th class="l">命题</th><th class="l">证据等级</th><th class="l">证伪条件</th><th class="l">核验日期</th></tr>
-<tr><td class="l">A1</td><td class="l">神经网络某层总激活长期低于阈值时特征塌缩</td><td class="l">C</td><td class="l">观察到低激活层仍保持/增长特征数</td><td class="l">短期（2027）</td></tr>
+<tr><td class="l">A1</td><td class="l">神经网络某层总激活长期低于阈值时特征归并</td><td class="l">C</td><td class="l">观察到低激活层仍保持/增长特征数</td><td class="l">短期（2027）</td></tr>
 <tr><td class="l">A2</td><td class="l">最优训练使总激活接近阈值</td><td class="l">C</td><td class="l">公开训练数据显示最优激活远离阈值</td><td class="l">短期（2027）</td></tr>
 <tr><td class="l">A3</td><td class="l">时变图的失稳区域大于单个图失稳区域的并</td><td class="l">B</td><td class="l">构造反例：切换提高了稳定性</td><td class="l">中期（2027）</td></tr>
 <tr><td class="l">A4</td><td class="l">加权图局部阈值下降而全局阈值不变</td><td class="l">B</td><td class="l">构造权重使全局阈值显著改变</td><td class="l">短期（2026）</td></tr>
@@ -112,7 +112,7 @@
 <div class="define"><span class="bt">O12　同伦升维（前沿一）</span>
 <b>当前卡点：</b>尚无"有限图区分系统的同伦分类空间"的定义。<br>
 <b>第一步：</b>对最简单的两阶段实例（Petersen 图，<span class="s">β</span> 介于 <span class="s">β₁</span> 与 <span class="s">β₂</span> 之间）显式写下区分模式构成的群胚，计算其低维同伦群，看是否出现"临界维数跳跃"。<br>
-<b>预期收益：</b>若成功，硬核从"谱定理应用"升级为"同伦不变量计算"（覆盖代数拓扑）。<br>
+<b>预期收益：</b>若成功，样本从"谱定理应用"升级为"同伦不变量计算"（覆盖代数拓扑）。<br>
 <b>参考文献：</b>Lurie, <i>Higher Topos Theory</i>（第 1 章准范畴）；本书第 16 章。</div>
 
 <div class="define"><span class="bt">O13　连续区分系统（前沿三）</span>
@@ -122,9 +122,9 @@
 <b>参考文献：</b>Clausen–Scholze, <i>Condensed Mathematics</i>（Lect. 1–2）；本书第 4 章。</div>
 
 <div class="define"><span class="bt">O17　独立特征复核（已执行，负面结果）</span>
-<b>当前卡点：</b>原 6.14 的 PCA 由六元组导出的特征算出，存在循环风险。<br>
-<b>第一步（已做）：</b>用 8 个与六元组无关的特征对 27 个领域重做 PCA（<code>analysis/independent_features.py</code>）。<br>
-<b>结果：</b>有效维度 <span class="s">N<sub>eff</sub> ≈ 2.9</span>，与猜想 D2 不相容。<b>该实验已于本书完成时执行；本节保留脚本与数据供重复验证。D2 因此被下调为“已被削弱的假设”。</b><br>
+<b>当前卡点：</b>原 6.14 的 PCA 由词表导出的特征算出，存在循环风险。<br>
+<b>第一步（已做）：</b>用 8 个与词表无关的特征对 27 个领域重做 PCA（<code>analysis/independent_features.py</code>）。<br>
+<b>结果：</b>有效维度 <span class="s">N<sub>eff</sub> ≈ 2.9</span>，与猜想 D2 不相容。<b>该实验已于本书完成时执行；本节保留脚本与数据供重复验证。D2 因此被定位为“已被精化的假设”。</b><br>
 <b>救回路径：</b>用真实书目计量数据（nLab/zbMATH/MSC 条目计数、Mathlib 覆盖率）重跑；数据缺口见附录 F。</div>
 
 <div class="define"><span class="bt">G7　1/3 的代数根源（前沿二）</span>
@@ -135,3 +135,17 @@
 
 本登记簿的现状</span>
 截至本书完成日期，登记簿中的 <b>H1—H8 已被本书自身的脚本验证</b>；其中 <b>G4 已被证伪</b>（附录 J.6），<b>G8（κ_info 是 R/6 的离散化）与 G9（等变指标解释）已在本书完成时被反证</b>（第 20.2.1、20.5.1 节，核销见 checkups.csv）；<b>G10—G13、G15 已被证明为标准事实</b>（第 20.2.2、20.2.3 节，<code>product_types.py</code>、<code>dirac_mckean_singer.py</code>）；<b>G14、G16 是边界声明</b>——乘积行为与“换 Dirac 算子”都不解释 1/3；F1—F5、G1—G3、G5—G6、A1—A4 <b>尚未核验</b>。它们的价值在于为未来的检查提供了明确的靶子。任何读者都可以按上述纪律追加核销。</div>
+
+<h2>E.7　原语的归并：R1—R4（append-only）</h2>
+
+<p>本节记录本书对初稿四处的归并——每一处都把两个或多个词收敛为更基本的一个。按登记纪律（E.5.1），旧行原样保留在正文与 Git 历史中，这里只追加归并后的读法、依据与日期。</p>
+
+<table class="nat">
+<caption class="cap"><b>表 E.7　原语的归并</b></caption>
+<tr><th class="l">编号</th><th class="l">初稿表述</th><th class="l">归并后</th><th class="l">依据</th></tr>
+<tr><td class="l">R1</td><td class="l">分离曲率 κ 是跨领域的统一不变量</td><td class="l"><b>曲率是形式谱的一个侧写</b></td><td class="l">离散 κ_info=Var(λ)/2 与连续 a₁=R/6 类型不同；平坦环面 R=0 而 κ_info=2.000（第 12.6 节；<code>kappa_type_mismatch.py</code>）</td></tr>
+<tr><td class="l">R2</td><td class="l">演化 Φ 是独立原语</td><td class="l"><b>演化是形式谱上的线性 ODE</b>，归并入形式</td><td class="l">图上的「演化」＝对称双线性形式谱上的线性 ODE（第 11.1 节）</td></tr>
+<tr><td class="l">R3</td><td class="l">1/3 缺口是深刻的结构信号</td><td class="l"><b>定位为可继续检验的量</b>（四条各自成立的线索）</td><td class="l">随 R1 归并；四处 1/3 现象未证明同源（第 21 章）</td></tr>
+<tr><td class="l">R4</td><td class="l">词表＋描述约定是普遍框架</td><td class="l"><b>归并为两个基本词（区分、形式）</b></td><td class="l">14.6.1 自检：162 格中「成立」仅 3 格；28.5 自承认「内容在下游定理里」</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>归并登记。<b>等级 A／甲（归并本身可核查）。</b>日期：2026-10-16。保留的刚性结果：定理 12.1（拉普拉斯谱方差恒等式，改名后仍成立）与定理 15.1（图上两阶段相变，作为「图拉普拉斯二次型谱分析」的样本）。</div>

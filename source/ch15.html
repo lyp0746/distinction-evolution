@@ -1,9 +1,9 @@
-<h2 class="chapter">第 15 章　图上演化区分系统与临界耦合定理</h2>
+<h2 class="chapter">第 15 章　图拉普拉斯二次型与临界耦合定理</h2>
 
-<p class="lead">本章是全书唯一完全严格的部分。它在有限图上定义演化区分系统，证明临界耦合由拉普拉斯谱决定。<b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
+<p class="lead">本章是全书唯一完全严格的部分。它在有限图上写出拉普拉斯二次型，并证明临界耦合由它的谱决定。<b>这是标准数学（换形式），不是新理论。</b><b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的硬核，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
+在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的样本，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
 
 <h3>15.1　导论：为什么从图开始</h3>
 
@@ -19,7 +19,7 @@
 
 <h3>15.2　构造与演化方程</h3>
 
-<div class="define"><span class="bt">定义 15.1　图上演化区分系统</span>
+<div class="define"><span class="bt">定义 15.1　图上区分语言</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
 <div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>)</span><span class="num">(12.1)</span></div>
 其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度。用拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span> 写成矩阵形式：
@@ -27,7 +27,7 @@
 
 <p>这个方程的物理含义：每个顶点的区分强度以速率 <span class="s">α</span> 衰减（不维护就会丢失），同时通过邻接边以速率 <span class="s">β</span> 促进区分向相邻顶点传播。<b>当传播速率足够高时，区分不再衰减，反而增长。</b>这个转变就是相变。</p>
 
-<p>对应第 11—12 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；分离曲率由演化方程 (12.2) 定义（见式 (15.4)）；演化流是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。公理 1—4 在有限图情形下都成立。</p>
+<p>对应第 11—12 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；谱方差由演化方程 (12.2) 定义（见式 (15.4)）；演化是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。约定 1—4 在有限图情形下都成立。</p>
 
 <h3>15.3　谱分解</h3>
 
@@ -64,7 +64,7 @@
 
 <p><b>第二步（求解）。</b>每个方程的解为
 <div class="eq"><span class="body">y<sub>k</sub>(t) = y<sub>k</sub>(0)e^{μ<sub>k</sub>t},  μ<sub>k</sub> := −α + βλ<sub>k</sub></span><span class="num">(12.4)</span></div>
-因此 <span class="s">D(t)=Σ<sub>k</sub>y<sub>k</sub>(0)e^{μ<sub>k</sub>t}v<sub>k</sub></span>。分离曲率（演化型定义 12.2）正是 <span class="s">κ<sub>k</sub>=μ<sub>k</sub></span>。</p>
+因此 <span class="s">D(t)=Σ<sub>k</sub>y<sub>k</sub>(0)e^{μ<sub>k</sub>t}v<sub>k</sub></span>。谱方差（演化型定义 12.2）正是 <span class="s">κ<sub>k</sub>=μ<sub>k</sub></span>。</p>
 
 <p><b>第三步（符号分析）。</b><span class="s">μ<sub>1</sub>=−α&lt;0</span>（常向量分量衰减）。对 <span class="s">k≥2</span>，<span class="s">λ<sub>k</sub>&gt;0</span>，故
 <div class="eq"><span class="body">μ<sub>k</sub>&gt;0 ⇔ β &gt; α/λ<sub>k</sub></span></div>
@@ -91,7 +91,7 @@
 <li>它<b>不</b>直接推广到连续流形（第 19—21 章说明推广的困难）。</li>
 </ul>
 
-<p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"分离曲率"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
+<p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"谱方差"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
 
 
 <h3>15.6.1　这个定理的适用范围：为什么它不会在 26 个领域复制成 26 个定理</h3>
@@ -110,18 +110,18 @@
 </table>
 <div class="datasrc"><b>性质：</b>适用范围核算。<b>等级 A／甲（可复算的代数事实）。</b>结论：<b>领域给出的是"实例"，不是"新定理"。</b></div>
 
-<p>因此，把定理 15.1 在每个领域重述一遍，不会产生 26 个硬核；它产生<b>一个硬核加 26 个实例</b>。要得到真正的新定理，必须在<b>自伴性失效</b>或<b>非线性</b>的地方下手——这正是本书已经找到反例的两处（有向图反转 B2、非线性阈值第 18 章）。</p>
+<p>因此，把定理 15.1 在每个领域重述一遍，不会产生 26 个样本；它产生<b>一个样本加 26 个实例</b>。要得到真正的新定理，必须在<b>自伴性失效</b>或<b>非线性</b>的地方下手——这正是本书已经找到反例的两处（有向图反转 B2、非线性阈值第 18 章）。</p>
 
-<div class="warning"><span class="bt">"下一个硬核在哪里"</span>
-答案不是"换一个领域重述相变"，而是 <b>O8：为非正规生成元的顺序反转给出充要判据</b>。这是本书唯一还有一个硬核空位的地方（第 16.9 节已报告：非正规性、强连通性等五个候选预测量全部失败）。<b>把它证出来，才配得上第二个 A／甲 定理。</b></div>
+<div class="warning"><span class="bt">"下一个样本在哪里"</span>
+答案不是"换一个领域重述相变"，而是 <b>O8：为非正规生成元的顺序反转给出充要判据</b>。这是本书唯一还有一个样本空位的地方（第 16.9 节已报告：非正规性、强连通性等五个候选预测量全部失败）。<b>把它证出来，才配得上第二个 A／甲 定理。</b></div>
 
 <h3>15.7　本章小结</h3>
 
-<p>在有限图上，演化区分系统的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
+<p>在有限图上，区分语言的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>定理 15.1（临界耦合定理：<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span>，含完整证明）；定义 15.1（图上演化区分系统）；定义 15.2（拉普拉斯谱）。</li>
+<li><b>⊗ 可引用（A）：</b>定理 15.1（临界耦合定理：<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span>，含完整证明）；定义 15.1（图上区分语言）；定义 15.2（拉普拉斯谱）。</li>
 <li><b>⊕ 有论证（B）：</b>临界值的谱—模式解释（高频先解锁、Fiedler 后解锁）。</li>
 <li><b>？ 未解决：</b>有向与非线性情形（第 16、18 章）。</li>
 <li><b>↔ 连接：</b>第 16 章由此证明两阶段相变；第 22 章用其结论建立"图→信息论"编码。</li>

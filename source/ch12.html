@@ -1,135 +1,100 @@
-<h2 class="chapter">第 12 章　分离曲率：核心不变量</h2>
+<h2 class="chapter">第 12 章　二次型：双线性形式的「对角线」</h2>
 
-<p class="lead">如果 EDS 只有一个核心不变量，那就是<b>分离曲率</b> <span class="s">κ</span>。它度量"区分能力随精度或时间的指数增长率"，其符号把系统分成三类。本章定义它、解释它、并说明它在不同领域形式不同这一事实。</p>
+<p class="lead">上一章把「区分」写成语言的基本词。这一章给出它的定量内容：<b>二次型</b>——一个向量与自身之「区分」的度量。二次型背后是一个双线性形式，它是双线性形式在对角线上的取值；反过来，知道「自关联」，就能用极化恒等式恢复「互关联」。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-分离曲率是本书的核心不变量：它把"区分能力是增长、平衡还是衰减"变成一个可计算的量。<b>三者（负、零、正）覆盖了从结构塌缩到结构爆炸的全部行为。但它在不同领域的具体公式不同，它们的统一目前是纲领，不是定理。</b></div>
+二次型、双线性形式、协方差、Hessian、图拉普拉斯、内积——这些名字背后是<b>同一个代数结构</b>：向量空间上的对称双线性形式。<b>本章不证明新定理，只把这套语言写清楚；唯一保留的刚性结果是一个精确恒等式（定理 12.1）。</b>［已知，B；定理 12.1 为 A］</div>
 
-<h3>12.1　导论：为什么曲率是核心</h3>
+<h3>12.1　二次型的定义</h3>
 
-<p>统一工作需要一个不变量，正如几何需要曲率、群论需要特征标。区分结构的最自然不变量是"随精度移动时，区分动作增加得有多快"：如果每提高一点精度，可用的区分动作就指数增长，那么系统是"区分器过剩"的；如果它们迅速枯竭，系统是"区分器稀缺"的。</p>
+<p>一个<b>二次型</b>是形如</p>
+<div class="eq"><span class="body">Q(x) = Σ<sub>i,j</sub> a<sub>ij</sub> x<sub>i</sub> x<sub>j</sub> = x<sup>T</sup>A x</span><span class="num">(12.1)</span></div>
+<p>的齐次二次多项式，其中 <span class="s">A</span> 是对称矩阵。它只含平方项与交叉项，不含一次项与常数项。</p>
 
-<p>这个量之所以叫"曲率"，是因为它与几何曲率共享同一个本质：<b>它衡量一个结构相对于平坦参照的偏离速率。</b>平坦意味着区分能力随精度线性增长（<span class="s">κ=0</span>）；正曲率意味着指数增长（像球面上测地线汇聚）；负曲率意味着迅速枯竭（像双曲空间里测地线发散）。这个类比不是修辞，它在图论中有一个精确的对应（第 15—18 章）。</p>
+<p>关键：二次型是<b>一个向量</b> <span class="s">x</span> 的函数，但它背后藏着一个<b>双线性形式</b></p>
+<div class="eq"><span class="body">B(x,y) = x<sup>T</sup>A y</span><span class="num">(12.2)</span></div>
+<p>对两个向量 <span class="s">x,y</span> 分别线性。二次型是双线性形式在「对角线」上的取值：<span class="s">Q(x)=B(x,x)</span>。</p>
 
-<h3>12.2　分离曲率的定义</h3>
+<h3>12.2　极化恒等式：知道自关联，就能恢复互关联</h3>
 
-<div class="define"><span class="bt">定义 12.1　分离曲率（精度型）</span>
-设区分动作族带有一个精度过滤 <span class="s">D<sub>0</sub>⊆D<sub>1</sub>⊆D<sub>2</sub>⊆…</span>，其中 <span class="s">D<sub>n</sub></span> 是精度 <span class="s">n</span> 下的区分动作集。定义
-<div class="eq"><span class="body">κ := lim<sub>n→∞</sub> (1/n) log( |D<sub>n</sub>| / |D<sub>n−1</sub>| )</span><span class="num">(9.1)</span></div>
-即区分动作数目随精度层级的指数增长率。</div>
+<p>在实数域上，对称双线性形式与二次型<b>一一对应</b>。给定 <span class="s">B</span>，定义 <span class="s">Q(x)=B(x,x)</span>；反过来，给定 <span class="s">Q</span>，可以用<b>极化恒等式</b>恢复 <span class="s">B</span>：</p>
+<div class="eq"><span class="body">B(x,y) = (1/2)[ Q(x+y) − Q(x) − Q(y) ]</span><span class="num">(12.3)</span></div>
 
-<div class="define"><span class="bt">定义 12.2　分离曲率（演化型）</span>
-若系统带有演化流 <span class="s">Φ<sub>t</sub></span>，定义
-<div class="eq"><span class="body">κ(D,x) := lim sup<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span><span class="num">(9.2)</span></div>
-即观测值在演化下的相对增长速率。在光滑情形下，<span class="s">κ = (1/O)·∂<sub>t</sub>O</span>。</div>
+<div class="define"><span class="bt">一句话</span>
+双线性形式是「两个变量的交互」，二次型是「一个变量自身的波动」。<b>两者是同一数学对象的两种呈现</b>：全矩阵与对角线。［已知，B］</div>
 
-<p>两个定义的关系是：精度型度量静态的"区分复杂度增长"，演化型度量动态的"观测增长"。在图上（第五部分），它们重合为一个可计算的量。</p>
+<h3>12.3　协方差：概率论中的双线性形式</h3>
 
-<h3>12.3　曲率符号分类：负、零、正</h3>
+<p>协方差是双线性形式：<span class="s">Cov(X,Y)=E[(X−EX)(Y−EY)]</span>；方差是二次型：<span class="s">Var(X)=Cov(X,X)</span>。对随机向量 <span class="s">X=(X₁,…,Xₙ)</span>，协方差矩阵 <span class="s">Σ</span> 定义二次型</p>
+<div class="eq"><span class="body">Q(a) = a<sup>T</sup>Σa = Var(a<sup>T</sup>X)</span><span class="num">(12.4)</span></div>
+<p><b>协方差矩阵就是二次型的矩阵。</b>方差是二次型在坐标轴上的对角值，协方差是交叉项。几个直接推论：</p>
+<ul>
+<li><b>马氏距离：</b><span class="s">d²(x,μ)=(x−μ)<sup>T</sup>Σ<sup>−1</sup>(x−μ)</span> 是二次型。</li>
+<li><b>高斯分布：</b>密度 <span class="s">∝ exp(−(1/2)(x−μ)<sup>T</sup>Σ<sup>−1</sup>(x−μ))</span>，指数部分是二次型。</li>
+<li><b>PCA：</b>对 <span class="s">Σ</span> 做特征值分解，就是把二次型化为标准型（主轴化）。</li>
+</ul>
 
-<img class="fig" src="assets/svg/fig09-curvature-signs.svg" alt="分离曲率的符号分类">
+<h3>12.4　Hessian：优化中的双线性形式</h3>
 
-<div class="cap"><b>图 12.1　曲率符号分类</b>。横轴为精度或时间，纵轴为区分能力。三条曲线对应三种符号：<span class="s">κ<0</span>（区分器稀缺，结构塌缩）、<span class="s">κ=0</span>（平衡，区分能力线性增长）、<span class="s">κ>0</span>（区分器过剩，指数增长）。</div>
+<p>对多元函数 <span class="s">f: R<sup>n</sup>→R</span>，二阶泰勒展开</p>
+<div class="eq"><span class="body">f(x₀+h) ≈ f(x₀) + ∇f(x₀)<sup>T</sup>h + (1/2) h<sup>T</sup>H<sub>f</sub>(x₀) h</span><span class="num">(12.5)</span></div>
+<p>二阶项 <span class="s">h<sup>T</sup>H<sub>f</sub>h</span> 是<b>二次型</b>，矩阵是 Hessian。Hessian 本身是双线性形式 <span class="s">H<sub>f</sub>(v,w)=v<sup>T</sup>H<sub>f</sub>w</span>。正定 ⇔ 局部极小；负定 ⇔ 局部极大；不定 ⇔ 鞍点。<b>优化中的曲率，就是二次型的正定性。</b></p>
 
-<table class="nat">
-<caption class="cap"><b>表 12.1　曲率符号分类及其领域表现</b></caption>
-<tr><th class="l">κ 符号</th><th class="l">含义</th><th class="l">图论表现</th><th class="l">几何直觉</th><th class="l">信息论表现</th></tr>
-<tr><td class="l">κ&lt;0</td><td class="l">区分器稀缺</td><td class="l">β&lt;α/λ<sub>n</sub>，衰减</td><td class="l">双曲（发散）</td><td class="l">信息快速丢失</td></tr>
-<tr><td class="l">κ=0</td><td class="l">平衡</td><td class="l">β=α/λ<sub>n</sub>，临界</td><td class="l">平坦（欧氏）</td><td class="l">信息守恒</td></tr>
-<tr><td class="l">κ&gt;0</td><td class="l">区分器过剩</td><td class="l">β&gt;α/λ<sub>n</sub>，增长</td><td class="l">球面（汇聚）</td><td class="l">相关性放大</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>分类表。图论列为 A（定理），几何与信息论列为 B（工具对应）。</div>
+<h3>12.5　矩、累积量与高次型</h3>
 
-<h3>12.4　曲率与已知几何量的对应</h3>
+<p>二阶导数是双线性形式，二阶泰勒项是二次型。推广：<span class="s">n</span> 阶导数是 <b><span class="s">n</span> 线性形式</b>，限制到对角线得到 <b><span class="s">n</span> 次型</b>；泰勒系数 <span class="s">f<sup>(n)</sup>(a)/n!</span> 对应 <span class="s">n</span> 次型，矩 <span class="s">E[X<sup>n</sup>]</span> 对应 <span class="s">n</span> 次型的系数。</p>
 
-<p>分离曲率在不同领域取不同形式。这一节列出最常用的对应，并标注严格程度。</p>
+<p>矩生成函数 <span class="s">M(t)=E[e<sup>tX</sup>]=Σ E[X<sup>n</sup>]t<sup>n</sup>/n!</span> 的二阶项 <span class="s">E[X²]t²/2</span> 对应二次型，方差是它的中心化版本。累积量生成函数 <span class="s">log M(t)</span> 的二阶项直接是方差，混合二阶项是协方差——<b>累积量的二阶部分就是二次型。</b></p>
 
-<table class="nat">
-<caption class="cap"><b>表 12.2　分离曲率的领域对应</b></caption>
-<tr><th class="l">领域</th><th class="l">κ 的表达</th><th class="l">来源</th><th class="l">严格程度</th></tr>
-<tr><td class="l">有限图</td><td class="l">κ = βλ<sub>k</sub> − α</td><td class="l">拉普拉斯谱</td><td class="l">A（定理）</td></tr>
-<tr><td class="l">黎曼流形</td><td class="l">κ = R/6</td><td class="l">热核展开 <span class="s">a₁</span></td><td class="l">B（局部展开，接口未证）</td></tr>
-<tr><td class="l">信息论</td><td class="l">κ = −β（逆温度）</td><td class="l">Boltzmann 分布</td><td class="l">B（重述）</td></tr>
-<tr><td class="l">线性代数</td><td class="l">κ = 0</td><td class="l">谱分解的不变性</td><td class="l">B（重述）</td></tr>
-<tr><td class="l">LLM 潜在空间</td><td class="l">κ = βS − α</td><td class="l">总激活的线性化</td><td class="l">C（假说）</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>对应表。这是全书最关键也最脆弱的一处：<b>五个公式形式不同，它们的统一是纲领（第 14.4 节），不是定理。</b>读者若只记住一句话，请记住这句。</div>
+<h3>12.6　图拉普拉斯二次型与拉普拉斯谱方差</h3>
 
-<div class="warning"><span class="bt">警告 12.1　不要假装这些公式是同一个</span>
-图上 <span class="s">κ=βλ−α</span> 是精确的线性增长率；流形上 <span class="s">κ=R/6</span> 是热核展开的局部系数，其与全局拓扑的关系正是第 20 章的缺口；LLM 上 <span class="s">κ=βS−α</span> 是线性化近似。把它们写成"都是分离曲率"是一种<b>组织</b>，不是一种<b>证明</b>。声称它们已被统一，是本书最需要避免的过度宣称。</div>
+<p>图拉普拉斯矩阵 <span class="s">L</span> 定义二次型</p>
+<div class="eq"><span class="body">x<sup>T</sup>L x = Σ<sub>(u,v)∈E</sub> (x<sub>u</sub> − x<sub>v</sub>)²</span><span class="num">(12.6)</span></div>
+<p>这是图上的<b>能量</b>，度量相邻顶点取值的差异。它是半正定二次型；谱分解后特征值是二次型在单位球上的驻值；Rayleigh 商 <span class="s">R(x)=x<sup>T</sup>Lx / x<sup>T</sup>x</span> 是二次型与范数之比；第五部分的临界耦合 <span class="s">β₁=α/λ<sub>n</sub></span>、<span class="s">β₂=α/λ₂</span> 完全由这个二次型的谱决定。<b>本书唯一的完全兑现样本，本质上就是这个二次型的谱分析。</b></p>
 
-<h3>12.5　曲率的三条性质</h3>
+<div class="define"><span class="bt">定义 12.1　拉普拉斯谱方差（旧称「拉普拉斯谱方差 κ_info」）</span>
+设 <span class="s">G</span> 是 <span class="s">n</span> 顶点图，<span class="s">L</span> 为拉普拉斯矩阵。取热核的密度矩阵 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>、<span class="s">Z(t)=tr(e<sup>−tL</sup>)</span> 与 von Neumann 熵 <span class="s">S(t)=−tr(ρ(t) log ρ(t))</span>。定义 <span class="s">κ_info(G) := −(1/2) S″(0⁺)</span>。</div>
 
-<p>尽管定义形式不同，分离曲率在所有已知实现中共享三条性质。它们属于框架层（乙），可作为进一步研究的起点。</p>
-
-<p><b>性质一（符号决定长期行为）：</b><span class="s">κ<0</span> 时区分能力在有限步／有限时间内塌缩；<span class="s">κ=0</span> 时线性增长；<span class="s">κ>0</span> 时指数增长。这在图论中是定理（第 15 章），在其他领域是待证命题。</p>
-
-<p><b>性质二（不可逆性）：</b>若区分动作被粗化（信息被丢弃），在没有独立通道的情况下不能恢复。这是数据处理不等式在区分语言中的重述：<b>被压缩掉的信息不会自己回来。</b>（注意：这是定理级的陈述，但它同时也是设计原则的来源——外部记忆、检索、睡眠重放都是"另开一条通道"。）</p>
-
-<p><b>性质三（与拓扑量挂钩的潜力）：</b>曲率的积分可能对应于某个拓扑不变量。这是第 19—21 章的纲领：<span class="s">∫κ</span> 与欧拉示性数的关系，以及那个著名的 <span class="s">1/3</span> 因子。</p>
-
-<div class="scenario"><span class="bt">曲率的双重角色</span>
-分离曲率在本书里扮演两个角色：<b>描述性的</b>（刻画一个系统的行为，如图上的三相位）与<b>生成性的</b>（解释为什么不同领域呈现相似的相变结构）。第一个角色在图论中完全实现；第二个角色是纲领。清楚地区分二者，是读第五、六部分的前提。</div>
-
-<h3>12.6　离散分离曲率：κ_info = Var(λ)/2</h3>
-
-<p>第 19 章会把分离曲率定义为“观测熵的变分”。这是一个连续情形的定义。但它能不能精确落到离散情形？可以——而且得到一个完全可证的恒等式。</p>
-
-<div class="define"><span class="bt">定义 12.3　离散分离曲率 κ_info（一个谱不变量）</span>
-设 <span class="s">G</span> 是 <span class="s">n</span> 顶点图，<span class="s">L</span> 为拉普拉斯矩阵。取热核的密度矩阵
-<div class="eq"><span class="body">ρ(t) = e<sup>−tL</sup> / Z(t),　Z(t) = tr(e<sup>−tL</sup>)</span><span class="num">(9.3)</span></div>
-与 von Neumann 熵 <span class="s">S(t)=−tr(ρ(t) log ρ(t))</span>。定义
-<div class="eq"><span class="body">κ_info(G) := −(1/2) S″(0⁺)</span><span class="num">(9.4)</span></div></div>
-
-<div class="define"><span class="bt">定理 12.1　离散分离曲率恒等式 ［定理，A／甲］</span>
+<div class="define"><span class="bt">定理 12.1　拉普拉斯谱方差恒等式 ［定理，A／甲］</span>
 对任意有限图，
-<div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>) = (1/2)[ (1/n)Σ<sub>k</sub>λ<sub>k</sub>² − ((1/n)Σ<sub>k</sub>λ<sub>k</sub>)² ]</span><span class="num">(9.5)</span></div>
-即离散分离曲率等于拉普拉斯谱方差的一半，且对 <span class="s">n≥2</span> 恒有 <span class="s">κ_info&gt;0</span>。</div>
+<div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>) = (1/2)[ (1/n)Σ<sub>k</sub>λ<sub>k</sub>² − ((1/n)Σ<sub>k</sub>λ<sub>k</sub>)² ]</span><span class="num">(12.7)</span></div>
+即热核熵的二阶变分等于拉普拉斯谱方差的一半，且对 <span class="s">n≥2</span> 恒有 <span class="s">κ_info&gt;0</span>。</div>
 
-<p><b>推导。</b>由 <span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，得
-<span class="s">S(t)=log Z + tA/Z</span>，其中 <span class="s">A(t)=Σ<sub>k</sub>λ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。直接求导：<span class="s">S′(t)=t(A/Z)′</span>，故 <span class="s">S′(0)=0</span>，且
-<div class="eq"><span class="body">S″(0) = (A′Z−AZ′)/Z²|<sub>0</sub> = (−nΣλ² + (Σλ)²)/n² = −Var(λ)</span></div>
-故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
+<p><b>推导。</b>由 <span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，得 <span class="s">S(t)=log Z + tA/Z</span>，其中 <span class="s">A(t)=Σ<sub>k</sub>λ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。直接求导：<span class="s">S′(t)=t(A/Z)′</span>，故 <span class="s">S′(0)=0</span>，且 <span class="s">S″(0)=(A′Z−AZ′)/Z²|<sub>0</sub>=(−nΣλ²+(Σλ)²)/n²=−Var(λ)</span>，故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
 
 <table class="nat">
-<caption class="cap"><b>表 12.3　κ_info 的计算（α 无关；数值验证误差 &lt;10⁻⁶）</b></caption>
-<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">κ_info</th></tr>
+<caption class="cap"><b>表 12.1　谱方差的计算（与 α 无关；数值验证误差 &lt;10⁻⁶）</b></caption>
+<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">κ_info = Var(λ)/2</th></tr>
 <tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2.0</td><td class="l">5.0</td><td class="l">1.50</td></tr>
 <tr><td class="l">C₁₀</td><td class="l">10</td><td class="l">0.382</td><td class="l">4.0</td><td class="l">1.00</td></tr>
 <tr><td class="l">K₅</td><td class="l">5</td><td class="l">5.0</td><td class="l">5.0</td><td class="l">2.00</td></tr>
 <tr><td class="l">P₂₀</td><td class="l">20</td><td class="l">0.025</td><td class="l">3.975</td><td class="l">0.995</td></tr>
 <tr><td class="l">星图 S₁₀</td><td class="l">10</td><td class="l">1.0</td><td class="l">10.0</td><td class="l">3.78</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>精确恒等式 + 数值。等级 A／甲。脚本：<code>analysis/discrete_curvature.py</code>。<b>这是本书提出的一个图不变量</b>（它与 λ₂、λₙ 有关但不等同于任何单一谱量）。</div>
+<div class="datasrc"><b>性质：</b>精确恒等式 + 数值。<b>等级 A／甲。</b>脚本：<code>analysis/discrete_curvature.py</code>。</div>
 
-<div class="warning"><span class="bt">限定 12.2　κ_info 不是 R/6 的离散化</span>
-定理 12.1 的恒等式精确成立，但必须限定它的身份：<b>κ_info 是拉普拉斯谱分布的一个不变量（热核熵的变分），不是黎曼曲率 R/6 的离散版本。</b>一个决定性的数值对照：平坦二维环面 T² 的连续曲率 <span class="s">R=0</span>，故 <span class="s">∫R/6=0</span>；但它的 m×m 网格离散的谱方差恒为 <span class="s">κ_info=Var(λ)/2=2.000</span>（任意 m），并不趋于 0。环 C_n 同理给出 <span class="s">κ_info=1.000</span>。脚本：<code>analysis/kappa_type_mismatch.py</code>。［定理（计算），A／甲］<br>
-所以，动态 <span class="s">κ=βλ−α</span>、离散 <span class="s">κ_info=Var(λ)/2</span>、连续 <span class="s">κ=R/6</span> 三者被写成"同一个分离曲率"，是一种<b>组织</b>；它们的形式统一是纲领（F1），<b>不是已证的等式</b>。这条限定是第 20.2.1 节类型诊断的依据。</div>
+<div class="warning"><span class="bt">归并 R1　它不叫「分离曲率」，也不是 R/6 的离散化</span>
+定理 12.1 的恒等式精确成立，但它的身份必须写清楚：<b><span class="s">Var(λ)/2</span> 是拉普拉斯谱分布的一个不变量，不是黎曼曲率 <span class="s">R/6</span> 的离散版本。</b>决定性对照：平坦二维环面 <span class="s">R=0</span>，而它的任意 <span class="s">m×m</span> 网格离散的谱方差恒为 <span class="s">2.000</span>，并不趋于 0。初稿把离散谱方差、连续系数 <span class="s">R/6</span>、线性增长率 <span class="s">βλ−α</span> 三者写成「同一个谱方差」，是一种<b>组织</b>，而组织不是等式。该命名与随之而来的「曲率统一」计划登记为<b>归并 R1</b>（附录 E）。［定理（计算），A／甲］</div>
 
-<h3>12.7　κ_info 与中间相宽度的关系</h3>
+<p>另一个负结果同样保留：<span class="s">κ_info</span> <b>不是</b>第五部分中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理。在 8 个测试图上，二者 Spearman 秩相关为 <b>−0.357</b>：星图 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低，路径图相反。<b>这个负结果防止了一个过强的声称。</b></p>
 
-<p>一个自然的问题是：<span class="s">κ_info</span> 是不是中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理？<b>答案是否定的。</b>在表 12.3 的 8 个图上，二者的 Spearman 秩相关为 <b>−0.357</b>：星图的 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低（0.9），路径图的 <span class="s">κ_info</span> 低（0.995）但 <span class="s">W</span> 极大（40.36）。</p>
+<h3>12.7　本章小结</h3>
 
-<div class="warning"><span class="bt">一个负结果</span>
-我们原本希望 <span class="s">κ_info</span> 能预测相变宽度。数据说不能。<span class="s">κ_info</span> 度量的是谱的“总方差”，而 <span class="s">W</span> 度量的是“两端比值 <span class="s">λₙ/λ₂</span>”。两个图可以有相同的谱方差却不同的两端比值。<b>这个负结果被写进正文而不是删掉，因为它防止了一个过强的声称。</b></div>
-
-<h3>12.8　本章小结</h3>
-
-<p>分离曲率是本书的核心不变量，其符号把系统分为塌缩、平衡、精细三类。在离散情形，它可以被精确定义为热核熵的变分，并满足恒等式 <span class="s">κ_info=Var(λ)/2</span>。但它<b>不</b>是相变宽度的代理（秩相关 −0.36）。下一章引入动力学分量：演化流与时间区分。</p>
+<p>二次型是双线性形式在对角线上的取值；极化恒等式让它与双线性形式一一对应。协方差、Hessian、图拉普拉斯都是它的实例。在图上，热核熵的二阶变分给出一个精确的谱方差恒等式（定理 12.1）——它是本书最坚硬的结果之一，但<b>不是</b>几何曲率。下一章把这个结构抽象为一般对象：向量空间上的对称双线性形式。</p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>定理 12.1（离散分离曲率 κ_info = Var(λ)/2，精确恒等式）。</li>
-<li><b>⊕ 有论证（B）：</b>定义 12.1（分离曲率）、12.2（静态型）、12.3（演化型）；曲率符号分类。</li>
-<li><b>○ 启发／描述（C）：</b>热核熵变分给出离散曲率。</li>
-<li><b>？ 未解决：</b>三个领域的分离曲率定义能否统一为一个（登记为 F1）；κ_info 不是相变宽度的代理（负结果）；κ_info 也不是 R/6 的离散化（12.6 限定 12.2）。</li>
-<li><b>↔ 连接：</b>第 19—21 章的连续对应；第 15—18 章的动力学。</li>
+<li><b>⊗ 可引用（A）：</b>定理 12.1（热核熵二阶变分 = 拉普拉斯谱方差的一半，精确恒等式）。</li>
+<li><b>⊕ 有论证（B）：</b>极化恒等式（式 12.3）；协方差／Hessian／矩的二次型表述。</li>
+<li><b>○ 描述（C）：</b>「二次型与双线性形式一一对应」。</li>
+<li><b>？ 未解决：</b>谱方差与相变宽度的关系（已有负结果：秩相关 −0.357）。</li>
+<li><b>↔ 连接：</b>第 13 章的一般结构；第五部分的谱分析样本；附录 E 的归并 R1。</li>
 </ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
+<p>Horn, R. A., &amp; Johnson, C. R. (2012). <i>Matrix Analysis</i> (2nd ed.). Cambridge University Press.</p>
 <p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. American Mathematical Society.</p>
-<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i> (2nd ed.). CRC Press.</p>
 <p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p>
 <p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
 </div>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-graph_phase_transition.py — 复现《区分的演化》第四部分的全部数值（协议 V1）。
+graph_phase_transition.py — 复现《区分的语法》第四部分的全部数值（协议 V1）。
 
 对每个图：
   1) 构造拉普拉斯矩阵 L = D_adj - A；

@@ -13,7 +13,7 @@
 
 <h3>18.2　逻辑斯蒂精确解与爆破时间</h3>
 
-<div class="define"><span class="bt">定义 18.1　非线性演化区分系统</span>
+<div class="define"><span class="bt">定义 18.1　非线性区分语言</span>
 设 <span class="s">X</span> 是有限集，<span class="s">D<sub>1</sub>,…,D<sub>k</sub>:X→[0,∞)</span> 是区分动作。演化方程
 <div class="eq"><span class="body">Ḋ<sub>i</sub>(x) = D<sub>i</sub>(x)(−α + β Σ<sub>j≠i</sub> D<sub>j</sub>(x))</span><span class="num">(15.1)</span></div>
 其中 <span class="s">α,β&gt;0</span>。</div>
@@ -64,14 +64,14 @@
 
 <p>则 <span class="s">Ṡ = S(−α + βS(1−1/k<sub>eff</sub>))</span>，增长条件为 <span class="s">S &gt; α/[β(1−1/k<sub>eff</sub>)]</span>。<span class="s">k<sub>eff</sub></span> 在均匀分布时等于 <span class="s">k</span>，在集中分布时趋近 1（此时 <span class="s">1−1/k<sub>eff</sub>→0</span>，增长极难）。</p>
 
-<p>用分离曲率解释：<span class="s">κ := βS(1−1/k<sub>eff</sub>) − α</span>。<span class="s">κ&lt;0</span> 时塌缩，<span class="s">κ=0</span> 时临界，<span class="s">κ&gt;0</span> 时增长。<b>曲率的符号再次决定一切——但这次它依赖于一个由分布决定的量 <span class="s">k<sub>eff</sub></span>，而不是一个固定的常数。</b>［论证，乙］</p>
+<p>用谱方差解释：<span class="s">κ := βS(1−1/k<sub>eff</sub>) − α</span>。<span class="s">κ&lt;0</span> 时归并，<span class="s">κ=0</span> 时临界，<span class="s">κ&gt;0</span> 时增长。<b>曲率的符号再次决定一切——但这次它依赖于一个由分布决定的量 <span class="s">k<sub>eff</sub></span>，而不是一个固定的常数。</b>［论证，乙］</p>
 
 <h3>18.5　一个可证伪的预测及其边界</h3>
 
 <p>把上面的分析搬到神经网络上，可以得到一个关于"激活范数"的假说。若把某一层的激活看作区分动作 <span class="s">D<sub>i</sub></span>，把权重衰减看作 <span class="s">α</span>，把层内耦合看作 <span class="s">β</span>，则式 (18.5) 给出一个阈值行为。</p>
 
 <div class="define"><span class="bt">假说 10.1　激活范数的阈值［假说，C／丙］</span>
-在简化模型下，若某层的总激活 <span class="s">S</span> 长期低于 <span class="s">α/[β(1−1/k<sub>eff</sub>)]</span>，则其特征塌缩（梯度消失、欠拟合）；若长期显著高于，则特征放大（梯度爆炸、过拟合）。<b>最优训练被推测为使 <span class="s">S</span> 保持在阈值附近。</b></div>
+在简化模型下，若某层的总激活 <span class="s">S</span> 长期低于 <span class="s">α/[β(1−1/k<sub>eff</sub>)]</span>，则其特征归并（梯度消失、欠拟合）；若长期显著高于，则特征放大（梯度爆炸、过拟合）。<b>最优训练被推测为使 <span class="s">S</span> 保持在阈值附近。</b></div>
 
 <div class="warning"><span class="bt">边界（必须同时读）</span>
 这个假说有四个明显的边界：<b>（1）玩具模型</b>——真实网络有非线性激活、层间耦合、注意力机制，远复杂于式 (18.1)；<b>（2）<span class="s">k<sub>eff</sub></span> 难以测量</b>——它在训练中变化；<b>（3）<span class="s">α,β</span> 不是从架构直接读出的</b>；<b>（4）没有实验数据</b>——本书不主张它已被验证。它是<b>一个标注为 C 的假说</b>，其价值是给出一个可被独立检验的方向（监测总激活与阈值的关系），而不是一个结论。</p></div>
@@ -81,7 +81,7 @@
 <table class="nat">
 <caption class="cap"><b>表 18.2　阈值假说的敏感性（脚本 <code>analysis/monte_carlo_sensitivity.py</code>）</b></caption>
 <tr><th class="l">观测总激活 S</th><th class="l">P(κ&gt;0)</th><th class="l">与朴素判据的方向翻转率</th><th class="l">可给出的结论</th></tr>
-<tr><td class="l">0.5</td><td class="l">0.038</td><td class="l">0.009</td><td class="l">仅符号（大概率塌缩）</td></tr>
+<tr><td class="l">0.5</td><td class="l">0.038</td><td class="l">0.009</td><td class="l">仅符号（大概率归并）</td></tr>
 <tr><td class="l">1.0</td><td class="l">{{D:mc_S1_pos}}</td><td class="l">0.043</td><td class="l"><b>方向不稳定</b>（阈值附近）</td></tr>
 <tr><td class="l">2.0</td><td class="l">{{D:mc_S2_pos}}</td><td class="l">{{D:mc_S2_flip}}</td><td class="l">序关系 + 窄区间</td></tr>
 <tr><td class="l">5.0</td><td class="l">1.000</td><td class="l">0.000</td><td class="l">序关系 + 窄区间</td></tr>
@@ -94,11 +94,11 @@
 
 <h3>18.6　本章小结</h3>
 
-<p>非线性情形仍然可解：对称时给出精确解与有限时间爆破公式；一般情形给出一个可证的"保证衰减"阈值。<b>关键之处在于：朴素的 <span class="s">S<sub>c</sub>=α/β</span> 被证明为错，正确的定理用 <span class="s">k<sub>eff</sub></span> 修正。</b>至此，硬核部分结束——它是本书唯一完全严格、可复现的部分。第六部分转向连续与几何，在那里会遇到一个尚未填合的缺口。</p>
+<p>非线性情形仍然可解：对称时给出精确解与有限时间爆破公式；一般情形给出一个可证的"保证衰减"阈值。<b>关键之处在于：朴素的 <span class="s">S<sub>c</sub>=α/β</span> 被证明为错，正确的定理用 <span class="s">k<sub>eff</sub></span> 修正。</b>至此，样本部分结束——它是本书唯一完全严格、可复现的部分。第六部分转向连续与几何，在那里会遇到一个尚未填合的缺口。</p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>定义 18.1（非线性演化区分系统）、命题 18.1（对称精确解与有限时间爆破）、定理 18.1（保证衰减阈值）。</li>
+<li><b>⊗ 可引用（A）：</b>定义 18.1（非线性区分语言）、命题 18.1（对称精确解与有限时间爆破）、定理 18.1（保证衰减阈值）。</li>
 <li><b>✗ 负面结果：</b>朴素阈值 <span class="s">S_c=α/β</span> 被证明不成立。</li>
 <li><b>？ 未解决：</b>临界重叠数与曲率解释的精确关系。</li>
 <li><b>↔ 连接：</b>第 20 章的 1/3 缺口在此首次以"局部分析量 vs 整体拓扑量"的形式出现。</li>

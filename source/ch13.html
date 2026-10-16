@@ -1,89 +1,90 @@
-<h2 class="chapter">第 13 章　演化流与时间区分</h2>
+<h2 class="chapter">第 13 章　对称双线性形式：五个领域，同一结构</h2>
 
-<p class="lead">静态框架能描述"什么和什么可区分"，但不能描述"区分结构如何变化"。本章补上动力学分量：<b>演化流</b>与<b>时间区分族</b>。关键的技术主张是：时间不必预设，它可以被理解为区分精度的参数化——即由区分结构的演化自动生成。这个主张一部分可证（图的迭代），一部分是纲领（连续情形）。</p>
+<p class="lead">协方差、Hessian、图拉普拉斯、内积、黎曼度量——它们共享同一个代数结构：<b>向量空间上的对称双线性形式</b>。这一章给它一个名字，列出它的五个化身，并说明它为什么是「最弱却适用最广」的二阶结构，以及它自动携带的三套工具。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
-动态领域（微分方程、概率、量子、算子代数、博弈）之所以曾难以纳入静态框架，唯一障碍是"时间"。<b>引入时间区分族 <span class="s">D<sub>t</sub></span> 后，它们共享同一底层结构：演化流作用在区分动作上。时间本身从区分演化中生成，而不是外部预设。</b></div>
+「对称双线性形式」不是一个新的数学对象，而是<b>一个已经被反复发现的结构的名字</b>。本书的价值不在于发现它，而在于把它当作一套<b>语言</b>使用：一旦看清五个领域说的是同一句话，跨领域的迁移就有了统一的语法。［已知，B］</div>
 
-<h3>13.1　导论：时间是预设还是生成</h3>
+<h3>13.1　给它一个名字</h3>
 
-<p>在多数数学分支里，时间是外部参数：微分方程里是自变量 <span class="s">t</span>，概率论里是滤子指标，量子力学里是演化参数。它们共享一个假设——时间是给定的。EDS 提出的问题是：<b>时间能不能从区分结构的演化中被构造出来？</b></p>
+<div class="define"><span class="bt">定义 13.1　对称双线性形式</span>
+一个<b>对称双线性形式</b>是一个三元组 <span class="s">(V,B)</span>，其中 <span class="s">V</span> 是实向量空间，<span class="s">B: V×V→R</span> 是双线性映射（<span class="s">B(ax+by,z)=aB(x,z)+bB(y,z)</span>，同理对第二个变量），且<b>对称</b>：<span class="s">B(x,y)=B(y,x)</span>。<br>
+等价地，它是一个<b>二次空间</b> <span class="s">(V,q)</span>，其中 <span class="s">q(x)=B(x,x)</span> 是二次型。两者通过极化恒等式（式 12.3）一一对应。</div>
 
-<p>如果答案是"能"，那么"动态领域"就不需要一个新的框架，只需要在 EDS 上增加"时间区分"这一个分量。这正是第 3 部分的结构。</p>
-
-<h3>13.2　演化流半群</h3>
-
-<div class="define"><span class="bt">定义 13.1　演化流</span>
-<b>演化流</b>是一族映射 <span class="s">Φ<sub>t</sub>: D → D</span>（<span class="s">t∈[0,∞)</span>），满足：<br>
-<b>（F1）恒等性：</b><span class="s">Φ<sub>0</sub>(D)=D</span>；<br>
-<b>（F2）半群性：</b><span class="s">Φ<sub>t+s</sub>(D)=Φ<sub>t</sub>(Φ<sub>s</sub>(D))</span>；<br>
-<b>（F3）强连续：</b><span class="s">t↦Φ<sub>t</sub>(D)</span> 右连续；<br>
-<b>（F4）生成元：</b>存在算子 <span class="s">𝓛</span> 使得 <span class="s">(d/dt)Φ<sub>t</sub>(D)=𝓛(Φ<sub>t</sub>(D))</span>；<br>
-<b>（F5）区分相容：</b>若 <span class="s">x∼<sub>α</sub>y</span>，则 <span class="s">Φ<sub>t</sub>(D)</span> 下仍保持某种等价。</div>
-
-<p>半群性是"时间方向"的代数表达：先演化 <span class="s">s</span> 再演化 <span class="s">t</span>，等于一次演化 <span class="s">s+t</span>。生成元 <span class="s">𝓛</span> 是"无穷小时间"的算子，在图上它就是 <span class="s">−αI+βL</span>（第 15 章）。</p>
-
-<h3>13.3　时间区分族</h3>
-
-<img class="fig" src="assets/svg/fig10-time-distinction.svg" alt="时间区分族与时间生成">
-
-<div class="cap"><b>图 13.1　时间区分族</b>。区分动作随"时间"参数变化，形成一族 <span class="s">{D<sub>t</sub>}</span>。时间类型可以是离散的（<span class="s">ℕ</span>）、连续的（<span class="s">ℝ</span>）或超有限的（<span class="s">*ℕ</span>）。关键断言：时间 = 区分动作演化的参数，而不是外部给定的连续统。</div>
-
-<div class="define"><span class="bt">定义 13.2　时间区分族</span>
-设 <span class="s">𝒯</span> 是时间类型（<span class="s">ℕ</span>、<span class="s">ℝ</span> 或 <span class="s">*ℕ</span>）。<b>时间区分族</b>是一族 <span class="s">{D<sub>t</sub>}<sub>t∈𝒯</sub></span>，满足：<br>
-<b>（T1）因果性：</b>若 <span class="s">s&lt;t</span>，则 <span class="s">D<sub>s</sub></span> 比 <span class="s">D<sub>t</sub></span> 更粗糙（区分能力随时间递增）；<br>
-<b>（T2）时间生成：</b><span class="s">(∂/∂t)O<sub>t</sub> = κ(D<sub>t</sub>)·O<sub>t</sub></span>（观测的时间导数由分离曲率决定）；<br>
-<b>（T3）因果完备：</b>任意两个时刻的状态都因果可比。</div>
-
-<p>三条性质中，T2 是核心：它把时间演化的"速率"精确地交给分离曲率。这与公理 4（演化的适定性，第 14.2 节）一致。</p>
-
-<h3>13.4　时间涌现：一个条件性命题</h3>
-
-<div class="define"><span class="bt">命题 13.1　时间涌现［论证／假说，C／丙］</span>
-定义净曲率 <span class="s">κ<sub>net</sub>(t) := ∫<sub>X</sub> κ(D<sub>t</sub>,x) dμ(x)</span>。若 <span class="s">κ<sub>net</sub>&gt;0</span>，则存在唯一的演化参数 <span class="s">τ := ∫<sub>0</sub><sup>t</sup>κ<sub>net</sub>(s)ds</span>，使得 <span class="s">D<sub>t</sub>=Φ<sub>τ</sub>(D<sub>0</sub>)</span>。<b>时间由分离的演化自动生成，无需外部参数。</b></div>
-
-<p>这个命题在图的迭代情形下是平凡的：若 <span class="s">D<sub>n+1</sub>=Φ(D<sub>n</sub>)</span>，则迭代次数天然就是时间。它在连续情形下是实质性的：需要证明 <span class="s">κ<sub>net</sub></span> 的单调性，并建立 <span class="s">τ</span> 与物理时间的对应。目前只有图论情形严格。［论证］</p>
-
-<div class="warning"><span class="bt">警告 13.1　时间涌现不是已证定理</span>
-"时间从区分演化中涌现"这句话听起来深刻，但它的现状是<b>一个条件性命题（C）</b>：<span class="s">κ<sub>net</sub>&gt;0</span> 的单调性只对图论成立；测度 <span class="s">μ</span> 的选择影响 <span class="s">τ</span>；与热力学第二定律的严格关联尚未建立。读者不应当把它当作关于时间本质的结论。<b>它是一个组织动态领域的技术工具，不是一个物理理论。</b></div>
-
-<h3>13.5　动态领域如何被统摄</h3>
-
-<p>时间区分一旦引入，原先"不适用"的动态领域就共享同一结构。</p>
+<h3>13.2　五个领域，同一个结构</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 13.1　动态领域的统一编码</b></caption>
-<tr><th class="l">领域</th><th class="l">时间类型 𝒯</th><th class="l">区分流 Φ</th><th class="l">曲率演化</th></tr>
-<tr><td class="l">微分方程</td><td class="l">ℝ</td><td class="l">解算子 <span class="s">e^{tL}</span></td><td class="l">动态</td></tr>
-<tr><td class="l">动力系统</td><td class="l">ℕ 或 ℝ</td><td class="l">迭代／流映射</td><td class="l">动态</td></tr>
-<tr><td class="l">概率论</td><td class="l">ℕ 或 ℝ</td><td class="l">条件期望</td><td class="l">动态</td></tr>
-<tr><td class="l">算子代数</td><td class="l">ℝ</td><td class="l">模流 <span class="s">σ<sub>t</sub></span></td><td class="l">动态</td></tr>
-<tr><td class="l">博弈论</td><td class="l">ℕ</td><td class="l">策略更新</td><td class="l">动态</td></tr>
-<tr><td class="l">量子数学</td><td class="l">ℝ</td><td class="l">薛定谔算子</td><td class="l">动态</td></tr>
+<caption class="cap"><b>表 13.1　五个领域，同一个对称双线性形式</b></caption>
+<tr><th class="l">领域</th><th class="l">V</th><th class="l">B(x,y)</th><th class="l">二次型 q(x)</th><th class="l">正定性</th></tr>
+<tr><td class="l">线性代数</td><td class="l">欧氏空间</td><td class="l">内积 ⟨x,y⟩</td><td class="l">‖x‖²</td><td class="l">正定</td></tr>
+<tr><td class="l">概率论</td><td class="l">随机变量空间</td><td class="l">Cov(X,Y)</td><td class="l">Var(X)</td><td class="l">半正定</td></tr>
+<tr><td class="l">优化</td><td class="l">切空间</td><td class="l">v<sup>T</sup>H<sub>f</sub>w</td><td class="l">v<sup>T</sup>H<sub>f</sub>v</td><td class="l">不定（鞍点）</td></tr>
+<tr><td class="l">图论</td><td class="l">顶点空间 R<sup>V</sup></td><td class="l">x<sup>T</sup>Ly</td><td class="l">Σ<sub>(u,v)</sub>(x<sub>u</sub>−x<sub>v</sub>)²</td><td class="l">半正定</td></tr>
+<tr><td class="l">微分几何</td><td class="l">切空间</td><td class="l">黎曼度量 g<sub>ij</sub>v<sup>i</sup>w<sup>j</sup></td><td class="l">g(v,v)</td><td class="l">正定</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>统一编码表。等级 B／乙（语言层对应）；<b>注意：</b>本表证明的是"可以这样描述"，不是"这些领域服从同一定理"。</div>
+<div class="datasrc"><b>性质：</b>结构对应表。<b>等级 B（已知数学）。</b>「同一个代数结构，五件不同的外衣。」</div>
 
-<div class="scenario"><span class="bt">从"不适用"到"同语言"</span>
-在引入时间区分之前，动态领域被排除在框架之外。引入之后，它们与静态领域共享同一底层结构。<b>这个转变不是通过增加新公理完成的，而是通过承认"时间也是区分的一个维度"完成的。</b>这是本书最简洁的一次压缩：一个分量，覆盖了一半领域。</div>
+<h3>13.3　为什么是「对称双线性形式」而不是别的</h3>
+
+<p><b>它只有一个「乘法结构」。</b>双线性形式对两个变量分别线性——这是最弱的要求。它不要求结合律（不是代数乘法），不要求反对称（不是辛形式），只要求对称。<b>这是「两个向量如何相互作用」的最简代数表达。</b></p>
+
+<p><b>对称性是「无方向性」的代数表达。</b><span class="s">B(x,y)=B(y,x)</span> 意味着「<span class="s">x</span> 与 <span class="s">y</span> 的关联」和「<span class="s">y</span> 与 <span class="s">x</span> 的关联」相同。协方差、Hessian、图拉普拉斯度量的都是<b>无方向的二阶关联</b>。</p>
+
+<p><b>二次型是「自关联」。</b><span class="s">q(x)=B(x,x)</span> 是「<span class="s">x</span> 与自身的关联」：方差是随机变量与自身的协方差，图能量是顶点函数与自身的拉普拉斯配对，<span class="s">‖x‖²</span> 是向量与自身的内积。正如第 12 章所说：<b>二次型是对角线，双线性形式是全矩阵。</b></p>
+
+<h3>13.4　在这个结构上能做什么：三套自带的工具</h3>
+
+<p>对称双线性形式之所以强大，是因为它自动携带三套工具。本书此后的全部技术工作，几乎都是这三套工具的应用。</p>
+
+<div class="define"><span class="bt">工具一　谱定理</span>
+若 <span class="s">B</span> 半正定，可正交对角化：<span class="s">B(x,y)=Σ<sub>k</sub>λ<sub>k</sub>⟨x,e<sub>k</sub>⟩⟨y,e<sub>k</sub>⟩</span>。在图上这就是拉普拉斯谱分解；在概率论中就是协方差矩阵的特征值分解（PCA）。［已知，B］</div>
+
+<div class="define"><span class="bt">工具二　变分原理</span>
+二次型 <span class="s">q(x)=B(x,x)</span> 在单位球上的驻值由特征值决定：<span class="s">λ<sub>k</sub> = min{q(x) : x⊥e₁,…,e<sub>k−1</sub>, ‖x‖=1}</span>。Rayleigh 商、Courant–Fischer 极小极大，全部来自这个原理。［已知，B］</div>
+
+<div class="define"><span class="bt">工具三　极化与恢复</span>
+若知道二次型 <span class="s">q(x)</span>，可以恢复双线性形式：<span class="s">B(x,y)=(1/2)[q(x+y)−q(x)−q(y)]</span>。<b>知道「自关联」，就能恢复「互关联」。</b>［已知，B］</div>
+
+<table class="nat">
+<caption class="cap"><b>表 13.2　三套工具与它们的领域实例</b></caption>
+<tr><th class="l">工具</th><th class="l">线性代数</th><th class="l">概率论</th><th class="l">图论</th></tr>
+<tr><td class="l">谱定理</td><td class="l">正交对角化</td><td class="l">PCA</td><td class="l">拉普拉斯谱分解</td></tr>
+<tr><td class="l">变分原理</td><td class="l">Rayleigh 商</td><td class="l">主成分方差最大化</td><td class="l">Fiedler 向量</td></tr>
+<tr><td class="l">极化</td><td class="l">内积由范数恢复</td><td class="l">协方差由方差恢复</td><td class="l">边权由能量恢复</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>工具对应表。<b>等级 B（已知数学）。</b></div>
+
+<h3>13.5　更深的代数定位</h3>
+
+<p>在抽象代数中，对称双线性形式是若干「形式」中的一种。把它与近邻对比，可以看出它的位置：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 13.3　形式的分类（对称双线性形式的位置）</b></caption>
+<tr><th class="l">结构</th><th class="l">额外要求</th><th class="l">例子</th></tr>
+<tr><td class="l">双线性形式</td><td class="l">无</td><td class="l">一般 B(x,y)</td></tr>
+<tr><td class="l"><b>对称双线性形式</b></td><td class="l">B(x,y)=B(y,x)</td><td class="l">协方差、Hessian、拉普拉斯、内积</td></tr>
+<tr><td class="l">交错形式</td><td class="l">B(x,x)=0</td><td class="l">辛形式、行列式</td></tr>
+<tr><td class="l">埃尔米特形式</td><td class="l">复共轭对称</td><td class="l">复内积</td></tr>
+<tr><td class="l">结合代数</td><td class="l">有乘法结合律</td><td class="l">矩阵代数、群代数</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>结构分类。<b>等级 B（已知数学）。</b>对称双线性形式是「最弱的对称二阶结构」，但正因为最弱，它适用最广。下一章把它的两个近邻——反对称（辛）与埃尔米特（酉）——展开。</div>
 
 <h3>13.6　本章小结</h3>
 
-<p>演化流与时间区分把 EDS 从静态框架升级为动态框架。时间被重新理解为区分精度的参数化，动态领域由此共享同一语言。时间涌现是一个条件性命题：图的迭代下平凡成立，连续情形下待证。下一章把全部分量组织成六条公理，并给出元理论。</p>
+<p>对称双线性形式是协方差、Hessian、图拉普拉斯、内积与黎曼度量的共同结构；谱定理、变分原理与极化恒等式是它自带的三套工具。本书不再为这个结构发明新名字，也不再声称「发现」了它——它是已知数学。<b>本书的赌注只是：把它当作一套语言来使用，比当作一个待发明的理论更有用。</b></p>
 
 <div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>本章无 A 级结果（框架章）。</li>
-<li><b>⊕ 有论证（B）：</b>定义 13.1（演化流半群）、13.2（时间区分族）。</li>
-<li><b>○ 启发／描述（C）：</b>时间涌现（条件性命题，C 级）；动态领域如何被统摄。</li>
-<li><b>？ 未解决：</b>时间涌现定理尚未严格表述（登记为框架层命题）。</li>
-<li><b>↔ 连接：</b>第 16 章相变的动力学背景；第 24 章时间区分理论。</li>
+<li><b>⊗ 可引用（A）：</b>无（本章整理已知结构）。</li>
+<li><b>⊕ 有论证（B）：</b>定义 13.1（对称双线性形式）；表 13.1（五领域对应）；三套工具。</li>
+<li><b>○ 描述（C）：</b>把五个领域读成「同一个结构的五件外衣」。</li>
+<li><b>？ 未解决：</b>这套语言能否被作者之外的著作采用（见第 26.4.1 节）。</li>
+<li><b>↔ 连接：</b>第 12 章（二次型）、第 14 章（辛／酉／正交）、第五部分（图上样本）。</li>
 </ul></div>
 
 <h3>本章参考文献</h3>
 <div class="refs">
-<p>Pazy, A. (1983). <i>Semigroups of Linear Operators and Applications to PDEs</i>. Springer.</p>
-<p>Doob, J. L. (1953). <i>Stochastic Processes</i>. Wiley.</p>
-<p>Bratteli, O., &amp; Robinson, D. W. (1987). <i>Operator Algebras and Quantum Statistical Mechanics</i>. Springer.</p>
-<p>Connes, A. (1994). <i>Noncommutative Geometry</i>. Academic Press.</p>
-<p>Barbour, J. (1999). <i>The End of Time</i>. Oxford University Press.</p>
+<p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p>
+<p>Horn, R. A., &amp; Johnson, C. R. (2012). <i>Matrix Analysis</i> (2nd ed.). Cambridge University Press.</p>
+<p>Do Carmo, M. P. (1992). <i>Riemannian Geometry</i>. Birkhäuser.</p>
 </div>

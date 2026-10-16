@@ -34,8 +34,8 @@ GIT = os.environ.get("GIT_BIN", r"D:\Git\cmd\git.exe")
 
 REPO = "lyp0746/distinction-evolution"
 BASE = "distinction-evolution"
-BOOK = "区分的演化"
-DOI = "10.5281/zenodo.23345013"
+BOOK = "区分的语法"
+DOI = "10.5281/zenodo.23412033"
 
 # (kind, 源文件, GitHub 资产名, release 名称, 说明)
 ARTIFACTS = [

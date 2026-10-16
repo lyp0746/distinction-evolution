@@ -63,7 +63,7 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 
 <div class="define"><span class="bt">候选函子 F（猜想，C）</span>
 设 <span class="s">G=(V,E)</span> 连通有限图。构造度量图 <span class="s">X<sub>ε</sub>(G)</span>：每条边替换为长度 <span class="s">ε</span> 的区间。<span class="s">X<sub>ε</sub>(G)</span> 上的拉普拉斯算子谱 <span class="s">{μ<sub>k</sub>(ε)}</span> 在 <span class="s">ε→0</span>、并同时把图细化（subdivision）时，其前几个谱量收敛到某个二维流形的拉普拉斯谱前几项。<br>
-<b>猜想 O7'：</b>存在一列图 <span class="s">G<sub>n</sub></span> 与尺度 <span class="s">ε<sub>n</sub>→0</span>，使临界耦合 <span class="s">(β₁,β₂)</span> 收敛，且极限等于某黎曼流形的分离曲率阈值。</div>
+<b>猜想 O7'：</b>存在一列图 <span class="s">G<sub>n</sub></span> 与尺度 <span class="s">ε<sub>n</sub>→0</span>，使临界耦合 <span class="s">(β₁,β₂)</span> 收敛，且极限等于某黎曼流形的谱方差阈值。</div>
 
 <p><b>为什么这是"可写的"而不是空话：</b>它把 O7 从"存在一个函子"收窄为"存在一列图的 GH 极限，使两个阈值收敛"。这是一条可以开始计算的路（先做规则格点，比较离散与连续阈值），而不是一句愿望。［猜想，C／丙］</p>
 
@@ -99,19 +99,19 @@ train=1.0 / test=0.0 说明这是<b>记忆</b>而非 grokking。本实验检验�
 <tr><td class="l"><code>analysis/llm_activation_probe.py</code></td><td class="l">层间激活—有效秩耦合（假说 A1/A2）</td><td class="l"><b>混合</b>（一层支持、一层反例）</td></tr>
 <tr><td class="l"><code>analysis/orbifold_gap.py</code></td><td class="l">轨形解释 χ(D)=χ(M)/3</td><td class="l">收窄为<b>当且仅当无奇异点</b>（4 匹配 / 5 反例）</td></tr>
 <tr><td class="l"><code>analysis/encoding_preservation.py</code></td><td class="l">领域编码是否保结构</td><td class="l">14/15 保持结构（含组合、逻辑、信息论、表示论、调和、优化、测度）；生成拓扑<b>反例</b>（8/29）</td></tr>
-<tr><td class="l"><code>analysis/graph_phase_transition.py</code></td><td class="l">硬核相变与临界耦合</td><td class="l"><b>支持</b>（与谱公式一致）</td></tr>
+<tr><td class="l"><code>analysis/graph_phase_transition.py</code></td><td class="l">样本相变与临界耦合</td><td class="l"><b>支持</b>（与谱公式一致）</td></tr>
 <tr><td class="l"><code>analysis/pca_fields.py</code></td><td class="l">编码矩阵的有效维度</td><td class="l">≈ 6.14 / 11（把“统一”限定在语言层）</td></tr>
 <tr><td class="l"><code>analysis/monte_carlo_sensitivity.py</code></td><td class="l">阈值假说的方向翻转概率</td><td class="l">报告区间与方向翻转率，不升格为结论</td></tr>
 <tr><td class="l"><code>analysis/fisher_curvature.py</code></td><td class="l">曲率—涌现同步（附录 K）</td><td class="l">弱支持、<b>混合</b>（记录间隔不足）</td></tr>
-<tr><td class="l"><code>analysis/independent_features.py</code></td><td class="l">O17：独立特征的 PCA（猜想 D2）</td><td class="l"><b>负面</b>：N<sub>eff</sub>≈2.9 ≠ 6，D2 被削弱</td></tr>
-<tr><td class="l"><code>analysis/axiom_consistency.py</code></td><td class="l">六条公理在 27 个领域中的自洽核算</td><td class="l"><b>成立仅 3 格（全在图论）</b>；未验证 95、不适用 52</td></tr>
-<tr><td class="l"><code>analysis/a4_wellposedness.py</code></td><td class="l">公理 4（演化适定）六领域小实例</td><td class="l"><b>6/6 成立</b>（表 14.5）</td></tr>
+<tr><td class="l"><code>analysis/independent_features.py</code></td><td class="l">O17：独立特征的 PCA（猜想 D2）</td><td class="l"><b>负面</b>：N<sub>eff</sub>≈2.9 ≠ 6，D2 被精化</td></tr>
+<tr><td class="l"><code>analysis/axiom_consistency.py</code></td><td class="l">描述约定在 27 个领域中的自洽核算</td><td class="l"><b>成立仅 3 格（全在图论）</b>；未验证 95、不适用 52</td></tr>
+<tr><td class="l"><code>analysis/a4_wellposedness.py</code></td><td class="l">约定 4（演化适定）六领域小实例</td><td class="l"><b>6/6 成立</b>（表 14.5）</td></tr>
 <tr><td class="l"><code>analysis/forbidden_combinations.py</code></td><td class="l">禁戒检验："拓扑×正×连续"格子</td><td class="l"><b>非禁戒</b>（C4/C5/P4 实现）</td></tr>
 <tr><td class="l"><code>analysis/boundary_probe.py</code></td><td class="l">边界探测：可判定/不可判定、有限群/无限群</td><td class="l"><b>支持 O16</b>（边界在可计算/有限一侧；表 22.8）</td></tr>
-<tr><td class="l"><code>analysis/reclassify.py</code></td><td class="l">从六元组重导分类（A 分层 + B/D/E）</td><td class="l">旧“空缺”多为标签假象；A=3 划为 O16 禁区（表 23.6/23.7）</td></tr>
-<tr><td class="l"><code>analysis/axiom_independence.py</code></td><td class="l">公理独立性预检（定理 14.6 是否值得证）</td><td class="l"><b>6 条中仅 A5 有内容</b>；4 托词 1 不适用</td></tr>
+<tr><td class="l"><code>analysis/reclassify.py</code></td><td class="l">从词表重导分类（A 分层 + B/D/E）</td><td class="l">旧“空缺”多为标签假象；A=3 划为 O16 禁区（表 23.6/23.7）</td></tr>
+<tr><td class="l"><code>analysis/axiom_independence.py</code></td><td class="l">约定独立性预检</td><td class="l"><b>6 条中仅 A5 有内容</b>；4 托词 1 不适用</td></tr>
 <tr><td class="l"><code>analysis/mechanisms.py</code></td><td class="l">四机制在 27 个领域上的覆盖率（第 28 章）</td><td class="l">B 19/27、C 14/27、D 6/27、A 5/27；16 领域多机制</td></tr>
-<tr><td class="l"><code>analysis/reverse_engineer.py</code></td><td class="l">定理 15.1 强迫了六元组的哪几项（第 14.6.3 节）</td><td class="l">仅 X/D/O/Phi 四项；~ 未用、k 为下游导出</td></tr>
+<tr><td class="l"><code>analysis/reverse_engineer.py</code></td><td class="l">定理 15.1 强迫了词表的哪几项（第 14.6.3 节）</td><td class="l">仅 X/D/O/Phi 四项；~ 未用、k 为下游导出</td></tr>
 </table>
 <div class="datasrc"><b>性质：</b>脚本清单。<b>等级 A／甲（可运行）/ 结论等级见各行。</b>每个脚本只依赖 NumPy/SciPy，无需 GPU。</div>
 
