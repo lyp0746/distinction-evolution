@@ -87,6 +87,11 @@
       "identifier": "https://doi.org/10.5281/zenodo.23388629",
       "relation": "isPartOf",
       "resource_type": "publication"
+    },
+    {
+      "identifier": "https://github.com/lyp0746/knowledge-tradeoffs",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
     }
   ],
   "notes": "定位：语言规范／探索性研究纲领（Language Specification / Exploratory Framework）。本记录保留研究演化史（含三个原语到两个基本词的归并），不因传播指标低而删除。本次为同一 DOI 的新版本（新版本 DOI 由 Zenodo 自动生成，概念 DOI 不变）。"
