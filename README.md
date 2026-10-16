@@ -174,3 +174,12 @@ bash scripts/verify-experiments.sh
 - **通俗读本《只能选两样》**：从来不及、会忘记到说不清——五个核心，看懂复杂世界的取舍。
   面向所有人（小朋友 / 学生 / 成年人 / 专家），含 12 幅图解与 5 分钟小实验。
 - **系列入口与外部登记库**：[github.com/lyp0746/knowledge-tradeoffs](https://github.com/lyp0746/knowledge-tradeoffs) —— 最小可验证单元、跨域盲测登记（append-only）、合并术语表、五核关系图。
+
+---
+
+## 归档 DOI（最新）
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23412033.svg)](https://doi.org/10.5281/zenodo.23412033)
+
+本书的**最新版本**以该 DOI 为准（Zenodo 自动指向最新版本）；引用格式见 `CITATION.cff`。
+本系列的通俗读本《只能选两样》与外部登记库见 [lyp0746/knowledge-tradeoffs](https://github.com/lyp0746/knowledge-tradeoffs)。

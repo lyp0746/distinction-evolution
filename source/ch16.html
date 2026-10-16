@@ -89,7 +89,7 @@
 
 <p><b>证明。</b><span class="s">L<sub>w</sub></span> 对称性由 <span class="s">w<sub>uv</sub>=w<sub>vu</sub></span> 直接得。半正定性：对任意 <span class="s">x</span>，<span class="s">x<sup>T</sup>L<sub>w</sub>x=Σ<sub>{u,v}∈E</sub>w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)²≥0</span>。由谱定理，特征值实且可排序；连通性给 <span class="s">λ₂&gt;0</span>。于是 <span class="s">λ₂≤λ<sub>n</sub></span>，而 <span class="s">α&gt;0</span>，故 <span class="s">α/λ<sub>n</sub>≤α/λ₂</span>。<span class="s">∎</span></p>
 
-<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。［A／甲］</p>
+<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。A／甲</p>
 
 <h3>16.7　有向图：反转的反例</h3>
 
@@ -103,7 +103,7 @@
 <div class="eq"><span class="body">(0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2)</span><span class="num">(13.5)</span></div>
 则：首个增长模式 <span class="s">Re(λ)=2.0</span>，<span class="s">TV=0.25</span>（全局/平滑），临界 <span class="s">β=α/2</span>；较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），临界 <span class="s">β=α</span>。<b>全局模式先增长，局部模式后增长——顺序与对称情形相反。</b></div>
 
-<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>［A／甲］</p>
+<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>A／甲</p>
 
 <div class="scenario"><span class="bt">这个反例的价值</span>
 它给出了一个明确的**适用边界**：定理 15.1 的“局部先于全局”在任意对称加权下稳健（定理 16.1），但在有向耦合下会失效（反例 16.1）。<b>这正是第二层战略想要的“失效条件”——一个能把理论划出边界的反例，比十个正面例子更有价值。</b>完整数据见附录 J。</div>
@@ -122,7 +122,7 @@
 
 <p><b>证明。</b>对称实矩阵的 Rayleigh 商在特征向量处取驻值，且 <span class="s">v<sup>T</sup>Lv/v<sup>T</sup>v = Σ<sub>k</sub>λ<sub>k</sub>y<sub>k</sub>²/Σ<sub>k</sub>y<sub>k</sub>²</span>（<span class="s">y<sub>k</sub></span> 为特征基系数），其最大值在 <span class="s">y</span> 集中于 <span class="s">λ<sub>n</sub></span> 处取得。∎</p>
 
-<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。［A／甲］</p>
+<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。A／甲</p>
 
 <h3>16.9　反转的判别：一个负面结果与一个开放问题</h3>
 
