@@ -1,7 +1,7 @@
 # 区分的语法
-### 为什么统一值不值：对称双线性形式与一个可复算的样本
+### 五个领域，同一个二次型
 
-> **The Grammar of Distinction** — Is Unification Worth It? Symmetric Bilinear Forms and One Computable Sample
+> **The Grammar of Distinction** — Five Domains, One Quadratic Form
 
 李毅芃　著　·　2026　·　CC BY 4.0　·　DOI: [10.5281/zenodo.23412033](https://doi.org/10.5281/zenodo.23412033)
 
@@ -144,7 +144,7 @@ bash scripts/verify-experiments.sh
 |---|---|---|
 | 错位的时间 | 为什么我们总是来不及：社会系统的时间错配与可控性边界 | [10.5281/zenodo.23286403](https://doi.org/10.5281/zenodo.23286403) |
 | 遗忘的边界 | 有限容量下的记忆、智能与自我 | [10.5281/zenodo.23323277](https://doi.org/10.5281/zenodo.23323277) |
-| 区分的语法 | 为什么统一值不值：对称双线性形式与一个可复算的样本（本书） | [10.5281/zenodo.23412033](https://doi.org/10.5281/zenodo.23412033) |
+| 区分的语法 | 五个领域，同一个二次型（本书） | [10.5281/zenodo.23412033](https://doi.org/10.5281/zenodo.23412033) |
 | 选择的代价 | 完备、可组合与可传递的三维权衡——复杂知识系统如何形成、演化与更新 | [10.5281/zenodo.23388629](https://doi.org/10.5281/zenodo.23388629) |
 
 在系列中，本书提供的是**描述“区分结构”的语言**；它不要求其他三本接受它的结论，只提供一组可被沿用或拒绝的记号。
@@ -153,7 +153,7 @@ bash scripts/verify-experiments.sh
 
 ```bibtex
 @book{li2026distinction,
-  title     = {区分的语法——为什么统一值不值：对称双线性形式与一个可复算的样本},
+  title     = {区分的语法——五个领域，同一个二次型},
   author    = {李毅芃},
   year      = {2026},
   publisher = {GitHub},
