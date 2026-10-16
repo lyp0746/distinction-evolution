@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Microsoft YaHei, PingFang SC, SimHei, sans-serif">
+<rect width="1000" height="640" fill="#ffffff"/>
+<text x="500" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">五个核心：同一笔账单的五个项目</text>
+<text x="500" y="62" text-anchor="middle" font-size="14" fill="#666666">看见 · 记住 · 跟上 → 选择（至多取二）→ 讲述 → 元学习</text>
+<defs><marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 z" fill="#666666"/></marker><marker id="ahg" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L8,3 L0,6 z" fill="#b8862f"/></marker></defs>
+<rect x="90" y="100" width="240" height="110" rx="8" fill="#f5f7fa" stroke="#2f6db0" stroke-width="1.4"/>
+<text x="210" y="140" text-anchor="middle" font-size="20" fill="#2f6db0" font-weight="bold">看见（对象）</text>
+<text x="210" y="172" text-anchor="middle" font-size="14" fill="#666666" font-weight="normal">区分 / 二次型</text>
+<line x1="210" y1="212" x2="210" y2="268" stroke="#2f6db0" stroke-width="2.0" marker-end="url(#ah)"/>
+<rect x="380" y="100" width="240" height="110" rx="8" fill="#f5f7fa" stroke="#2e7d32" stroke-width="1.4"/>
+<text x="500" y="140" text-anchor="middle" font-size="20" fill="#2e7d32" font-weight="bold">记住（预算）</text>
+<text x="500" y="172" text-anchor="middle" font-size="14" fill="#666666" font-weight="normal">容量 / 压缩</text>
+<line x1="500" y1="212" x2="500" y2="268" stroke="#2e7d32" stroke-width="2.0" marker-end="url(#ah)"/>
+<rect x="670" y="100" width="240" height="110" rx="8" fill="#f5f7fa" stroke="#ef6c00" stroke-width="1.4"/>
+<text x="790" y="140" text-anchor="middle" font-size="20" fill="#ef6c00" font-weight="bold">跟上（时钟）</text>
+<text x="790" y="172" text-anchor="middle" font-size="14" fill="#666666" font-weight="normal">多尺度 / τ</text>
+<line x1="790" y1="212" x2="790" y2="268" stroke="#ef6c00" stroke-width="2.0" marker-end="url(#ah)"/>
+<rect x="250" y="270" width="500" height="120" rx="8" fill="#fff8e1" stroke="#b8862f" stroke-width="1.4"/>
+<text x="500" y="312" text-anchor="middle" font-size="22" fill="#b8862f" font-weight="bold">选择：C-A-T 不可能三角</text>
+<text x="500" y="342" text-anchor="middle" font-size="15" fill="#1a1a1a" font-weight="normal">看得准（C）· 拼得上（A）· 传得下去（T）</text>
+<text x="500" y="372" text-anchor="middle" font-size="14" fill="#666666" font-weight="normal">有限复杂度下，至多同时满足两个</text>
+<line x1="500" y1="392" x2="500" y2="446" stroke="#b8862f" stroke-width="2.0" marker-end="url(#ah)"/>
+<rect x="250" y="450" width="500" height="80" rx="8" fill="#f3e9f7" stroke="#8e5a9c" stroke-width="1.4"/>
+<text x="500" y="484" text-anchor="middle" font-size="19" fill="#8e5a9c" font-weight="bold">讲述：诠释 ＝ 给竞争命题分配置信度</text>
+<text x="500" y="512" text-anchor="middle" font-size="13" fill="#666666" font-weight="normal">把坐标系反过来，用在“我们如何讲述”上</text>
+<line x1="500" y1="532" x2="500" y2="580" stroke="#666666" stroke-width="2.0" marker-end="url(#ah)"/>
+<rect x="150" y="584" width="700" height="46" rx="8" fill="#eef2f6" stroke="#2f6db0" stroke-width="1.4"/>
+<text x="500" y="614" text-anchor="middle" font-size="15" fill="#2f6db0" font-weight="normal">元学习：观察 → 抽象 → 建模 → 应用 → 反馈 → 更新</text>
+</svg>

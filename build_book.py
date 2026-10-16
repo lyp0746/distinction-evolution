@@ -38,6 +38,7 @@ FRONT = [("先读这一页　三个可复算的定理", "front_hardcore.html", "
          ("阅读合约　本书向你承诺什么，又不承诺什么", "front_theorymap.html", "theorymap"),
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
 BACK = [("结语　一份开放的邀请", "back_epilogue.html", "epilogue"),
+        ("附　通俗读本《只能选两样》导引", "back_popular_guide.html", "popguide"),
         ("附录 A　数学补充：谱、线性方程与相变", "appendix_a_math.html", "apxA"),
         ("附录 B　领域编码总表", "appendix_b_map.html", "apxB"),
         ("附录 C　参考文献", "appendix_c_references.html", "apxC"),
