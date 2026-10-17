@@ -1,11 +1,13 @@
 <h2 class="chapter">第 15 章　图拉普拉斯二次型与临界耦合定理</h2>
+<p class="lead" data-story="1">一张关系网，拉一下某个角，看哪里先动。动得最早的那个地方，往往不是最弱的，是最“边”的。<b>图的谱，会把这句话变成数。</b></p>
+
 
 <p class="lead">本章是全书唯一完全严格的部分。它在有限图上写出拉普拉斯二次型，并证明临界耦合由它的谱决定。<b>这是标准数学（换形式），不是新理论。</b><b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
 在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的样本，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
 
-<h3>15.1　导论：为什么从图开始</h3>
+<h3 id="sec15-1">15.1　导论：为什么从图开始</h3>
 
 <p>一个统一框架若只在语言上成立，就只是修辞。要让纲领可信，必须至少在一个领域给出完整、严格、可复现的结果。图论是理想的首发地，原因有三：</p>
 
@@ -17,7 +19,7 @@
 
 <p>更重要的原因是：图论中的"区分"有明确的对应物。<b>一个顶点能否与另一个顶点区分，取决于拉普拉斯扩散模式是否落在它上面。</b>这正是第 11—12 章的抽象概念在离散情形的具体实现。</p>
 
-<h3>15.2　构造与演化方程</h3>
+<h3 id="sec15-2">15.2　构造与演化方程</h3>
 
 <div class="define"><span class="bt">定义 15.1　图上区分语言</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
@@ -29,7 +31,7 @@
 
 <p>对应第 11—12 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；谱方差由演化方程 (12.2) 定义（见式 (15.4)）；演化是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。约定 1—4 在有限图情形下都成立。</p>
 
-<h3>15.3　谱分解</h3>
+<h3 id="sec15-3">15.3　谱分解</h3>
 
 <div class="define"><span class="bt">定义 15.2　拉普拉斯谱</span>
 图拉普拉斯矩阵 <span class="s">L</span> 是实对称半正定矩阵。记其正交归一特征向量为 <span class="s">v<sub>1</sub>,…,v<sub>n</sub></span>，特征值按序排列
@@ -38,7 +40,7 @@
 
 <p>把初值 <span class="s">D(0)</span> 在特征基下展开：<span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span>，<span class="s">c<sub>k</sub>=⟨D(0),v<sub>k</sub>⟩</span>。由于 <span class="s">L</span> 与 <span class="s">−αI</span> 交换，演化方程在特征基下解耦。</p>
 
-<h3>15.4　临界耦合定理</h3>
+<h3 id="sec15-4">15.4　临界耦合定理</h3>
 
 <img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="两阶段相变">
 
@@ -56,7 +58,7 @@
 <b>（ii）局部增长相</b>（<span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>）：<span class="s">D(t)</span> 沿所有满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的<b>高频模式</b>指数增长（特别包括最高频模式 <span class="s">v<sub>n</sub></span>），沿所有满足 <span class="s">λ<sub>k</sub>&lt;α/β</span> 的<b>低频模式</b>衰减（特别包括 Fiedler 模式 <span class="s">v<sub>2</sub></span>）；<br>
 <b>（iii）全局增长相</b>（<span class="s">β&gt;β<sub>2</sub></span>）：至少沿 <span class="s">v<sub>n</sub></span> 与 <span class="s">v<sub>2</sub></span> 两个独立方向指数增长。</div>
 
-<h3>15.5　完整证明</h3>
+<h3 id="sec15-5">15.5　完整证明</h3>
 
 <p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (15.2) 变为
 <div class="eq"><span class="body">ẏ<sub>k</sub> = (−α+βλ<sub>k</sub>)y<sub>k</sub>,  k=1,…,n</span></div>
@@ -79,9 +81,9 @@
 <p>（iii）若 <span class="s">β&gt;β<sub>2</sub>=α/λ<sub>2</sub></span>，则 <span class="s">μ<sub>2</sub>=−α+βλ<sub>2</sub>&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>，至少两个独立方向增长。<span class="s">∎</span></p>
 
 <div class="note"><b>关于"一般情况下 <span class="s">c<sub>n</sub>≠0</span>"</b>
-若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎必然满足。</div>
+若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎总会满足。</div>
 
-<h3>15.6　这个定理的地位</h3>
+<h3 id="sec15-6">15.6　这个定理的地位</h3>
 
 <p>必须把话说清楚：这个定理<b>不是什么</b>。</p>
 
@@ -94,7 +96,7 @@
 <p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"谱方差"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
 
 
-<h3>15.6.1　这个定理的适用范围：为什么它不会在 26 个领域复制成 26 个定理</h3>
+<h3 id="sec15-7">15.7　.1　这个定理的适用范围：为什么它不会在 26 个领域复制成 26 个定理</h3>
 
 <p>定理 15.1 的证明只用到一件事：生成元 <span class="s">M=−αI+βL</span> <b>自伴</b>，于是谱为 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>，两个阈值是 <span class="s">α/λ<sub>max</sub></span> 与 <span class="s">α/λ<sub>2</sub></span>；而 <span class="s">λ<sub>max</sub>≥λ<sub>2</sub></span> 使"高频／局部先解锁"成为<b>谱序的自动结果</b>。</p>
 
@@ -115,7 +117,8 @@
 <div class="warning"><span class="bt">"下一个样本在哪里"</span>
 答案不是"换一个领域重述相变"，而是 <b>O8：为非正规生成元的顺序反转给出充要判据</b>。这是本书唯一还有一个样本空位的地方（第 16.9 节已报告：非正规性、强连通性等五个候选预测量全部失败）。<b>把它证出来，才配得上第二个 A／甲 定理。</b></div>
 
-<h3>15.7　本章小结</h3>
+<div class="case"><span class="ct">人的尺度</span><p>一个研究网络的人算出一个班级的 Fiedler 值，然后说：“这个班会裂。”半年后班级真的分成两拨。他不觉得自己有预言能力，他说：“我只是算了一个班有多难连起来。”<b>数学不解释人心，它只告诉你，桥有几座。</b></p></div>
+<h3 id="sec15-8">15.8　本章小结</h3>
 
 <p>在有限图上，区分语言的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
 

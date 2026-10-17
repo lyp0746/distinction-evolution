@@ -78,6 +78,21 @@ README.md          读者说明
   source/ assets/ scripts/   源文件与构建工具
 EOF
 
+
+# 清单自检：把目录中未列出的文件补进 MANIFEST（避免清单与实物不一致）
+"$PY" - "$REL" <<'PY'
+import os, sys
+rel = sys.argv[1]
+mf = os.path.join(rel, "MANIFEST.txt")
+text = open(mf, encoding="utf-8").read()
+missing = [f for f in sorted(os.listdir(rel)) if f != "MANIFEST.txt" and f not in text]
+if missing:
+    with open(mf, "a", encoding="utf-8") as f:
+        f.write("\n（自动补充：以下文件亦在本包内）\n")
+        for m in missing:
+            f.write("%-30s %s\n" % (m, "见文件本身"))
+PY
+
 # 守门：发布包中不得出现非发布内容
 BAD=$(find "$REL" -type f \( -name '*.xlsx' -o -name '*.csv' -o -name '*.json' \
       -o -name '*.py' -o -name '*.ipynb' -o -name 'requirements.txt' \) || true)

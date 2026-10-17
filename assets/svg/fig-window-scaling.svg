@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 500" width="880" height="500" font-family="Microsoft YaHei, PingFang SC, SimHei, sans-serif">
+<rect width="880" height="500" fill="#ffffff"/>
+<text x="440.0" y="38" text-anchor="middle" font-size="22" font-weight="bold" fill="#1a1a1a">局部先行的窗口，随系统变大而变宽</text>
+<text x="440.0" y="62" text-anchor="middle" font-size="14" fill="#666666">纵轴：两个临界值之比 R=λmax/λ₂（对数）；横轴：系统规模 N（对数）</text>
+<line x1="100" y1="390" x2="740" y2="390" stroke="#333" stroke-width="1.8"/>
+<line x1="100" y1="390" x2="100" y2="110" stroke="#333" stroke-width="1.8"/>
+<text x="420.0" y="430" text-anchor="middle" font-size="13" fill="#666666">N（对数轴）</text>
+<text x="48" y="250.0" text-anchor="middle" font-size="13" fill="#666666" transform="rotate(-90 48 250.0)">R=λmax/λ₂（对数轴）</text>
+<path d="M125.0,354.7 L200.2,318.0 L299.5,268.8 L374.7,231.4 L449.9,194.1 L525.1,156.7 L600.3,119.3" fill="none" stroke="#2f6db0" stroke-width="2.6"/>
+<circle cx="125.0" cy="354.7" r="3.2" fill="#2f6db0"/>
+<circle cx="200.2" cy="318.0" r="3.2" fill="#2f6db0"/>
+<circle cx="299.5" cy="268.8" r="3.2" fill="#2f6db0"/>
+<circle cx="374.7" cy="231.4" r="3.2" fill="#2f6db0"/>
+<circle cx="449.9" cy="194.1" r="3.2" fill="#2f6db0"/>
+<circle cx="525.1" cy="156.7" r="3.2" fill="#2f6db0"/>
+<circle cx="600.3" cy="119.3" r="3.2" fill="#2f6db0"/>
+<text x="608.3" y="113.3" font-size="12" fill="#2f6db0" font-weight="bold">一维环 C_n</text>
+<path d="M176.0,380.7 L263.9,362.0 L326.3,347.6 L414.3,326.5 L476.7,311.2 L564.7,289.6 L627.1,274.1 L715.0,252.3" fill="none" stroke="#ef6c00" stroke-width="2.6"/>
+<circle cx="176.0" cy="380.7" r="3.2" fill="#ef6c00"/>
+<circle cx="263.9" cy="362.0" r="3.2" fill="#ef6c00"/>
+<circle cx="326.3" cy="347.6" r="3.2" fill="#ef6c00"/>
+<circle cx="414.3" cy="326.5" r="3.2" fill="#ef6c00"/>
+<circle cx="476.7" cy="311.2" r="3.2" fill="#ef6c00"/>
+<circle cx="564.7" cy="289.6" r="3.2" fill="#ef6c00"/>
+<circle cx="627.1" cy="274.1" r="3.2" fill="#ef6c00"/>
+<circle cx="715.0" cy="252.3" r="3.2" fill="#ef6c00"/>
+<text x="723.0" y="246.3" font-size="12" fill="#ef6c00" font-weight="bold">二维环面 L×L</text>
+<line x1="174.9" y1="352.7" x2="424.7" y2="228.6" stroke="#2f6db0" stroke-width="1.4" stroke-dasharray="7,5" opacity="0.7"/>
+<line x1="174.9" y1="352.7" x2="424.7" y2="290.7" stroke="#ef6c00" stroke-width="1.4" stroke-dasharray="7,5" opacity="0.7"/>
+<text x="187.4" y="368.3" font-size="12" fill="#666666">虚线：斜率 2（一维）与 1（二维）</text>
+<text x="440.0" y="484" text-anchor="middle" font-size="12" fill="#666666">实测拟合指数：一维 2.00，二维 1.00——与 N^(2/d) 的预测一致。</text>
+</svg>

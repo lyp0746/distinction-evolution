@@ -1,15 +1,17 @@
 <h2 class="chapter">第 17 章　可计算的实例</h2>
+<p class="lead" data-story="1">十个人围成一圈，每人只跟左右两人说话。这样一张图，两个临界值是可以手算出来的。<b>能算，是这套语言最硬的底气。</b></p>
+
 
 <p class="lead">一个定理只有在能被算出来时才真正可信。本章给出五类图的精确临界耦合，并给出一个可复现的数值验证协议。<b>本节的每个数字都可以用十几行代码独立复算；随书脚本 <code>analysis/graph_phase_transition.py</code> 生成它们。</b></p>
 
 <div class="scenario"><span class="bt">本章主张</span>
 临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 对任何具体图都是可精确计算的。<b>本章给出的数字构成样本的可复现证据：任何读者都能在几分钟内验证它们。</b></div>
 
-<h3>17.1　导论：可复现的数字</h3>
+<h3 id="sec17-1">17.1　导论：可复现的数字</h3>
 
 <p>数学论文里的"经计算可得"常常是空头支票。本章把它兑现：每个图给出拉普拉斯谱、两个临界耦合、以及中间相宽度。约定 <span class="s">α=1</span>；其他 <span class="s">α</span> 只需按比例缩放。</p>
 
-<h3>17.2　Petersen 图</h3>
+<h3 id="sec17-2">17.2　Petersen 图</h3>
 
 <p>Petersen 图：10 个顶点，3-正则，强正则参数 (10,3,0,1)。它是图论中最著名的反例来源之一，也是本书样本的最小非平凡实例。</p>
 
@@ -19,7 +21,7 @@
 
 <p>取 <span class="s">α=1</span>：<span class="s">β&lt;0.2</span> 全部衰减；<span class="s">0.2&lt;β&lt;0.5</span> 沿高频模式增长；<span class="s">β&gt;0.5</span> 沿高频与 Fiedler 模式增长。</p>
 
-<h3>17.3　环与路径图</h3>
+<h3 id="sec17-3">17.3　环与路径图</h3>
 
 <p>环 <span class="s">C<sub>n</sub></span> 的拉普拉斯特征值为 <span class="s">λ<sub>k</sub>=2−2cos(2πk/n)</span>，<span class="s">k=0,…,n−1</span>。</p>
 
@@ -29,7 +31,7 @@
 
 <p>路径图 <span class="s">P<sub>n</sub></span> 的特征值为 <span class="s">λ<sub>k</sub>=2−2cos(π(k−1)/n)</span>。对大 <span class="s">n</span>：<span class="s">λ<sub>2</sub>≈π²/n²</span>，<span class="s">λ<sub>n</sub>≈4</span>，故 <span class="s">β<sub>1</sub>≈0.25α</span>，<span class="s">β<sub>2</sub>≈αn²/π²</span>。<b>中间相宽度随 <span class="s">n²</span> 增长——这是"局部先于全局"最戏剧化的表现。</b></p>
 
-<h3>17.4　完全图与完全二分图</h3>
+<h3 id="sec17-4">17.4　完全图与完全二分图</h3>
 
 <div class="define"><span class="bt">例 17.3　完全图 K<sub>n</sub></span>
 谱：<span class="s">0</span>（重数 1），<span class="s">n</span>（重数 <span class="s">n−1</span>）。故 <span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>。<b>没有中间相</b>——所有非零模式同时解锁。</div>
@@ -39,7 +41,7 @@
 <div class="eq"><span class="body">β<sub>1</sub>=α/(2n),  β<sub>2</sub>=α/n,  W=α/(2n)</span></div>
 中间相宽度随 <span class="s">n</span> 减小。</div>
 
-<h3>17.5　超立方体：多阶段相变</h3>
+<h3 id="sec17-5">17.5　超立方体：多阶段相变</h3>
 
 <img class="fig" src="assets/svg/fig14-graph-instances.svg" alt="具体图的临界耦合">
 
@@ -53,15 +55,15 @@
 
 <p>取 <span class="s">α=1, n=5</span>：<span class="s">β₁=0.1</span>（激活最高频），<span class="s">β₂=0.2</span>，<span class="s">β₃≈0.333</span>，<span class="s">β₄=0.5</span>，<span class="s">β₅=1.0</span>（激活 Fiedler）。</p>
 
-<h3>17.6　加权图、时变图与随机图</h3>
+<h3 id="sec17-6">17.6　加权图、时变图与随机图</h3>
 
 <p><b>加权图。</b>给边赋电导 <span class="s">w<sub>uv</sub>&gt;0</span>，用加权拉普拉斯 <span class="s">(L<sub>w</sub>D)<sub>v</sub>=(1/m<sub>v</sub>)Σ<sub>u∼v</sub>w<sub>uv</sub>(D<sub>u</sub>−D<sub>v</sub>)</span>。定理 15.1 照常成立，只需用 <span class="s">L<sub>w</sub></span> 的谱。例：环 <span class="s">C₄</span> 若把 <span class="s">w₁₂=w₃₄=10</span>，<span class="s">w₂₃=w₄₁=1</span>，则谱变为 <span class="s">{0, 2, 12, 20}</span>，<span class="s">β₁=0.05</span>，<span class="s">β₂=0.5</span>。<b>加权降低了局部阈值，却几乎不影响全局阈值。</b></p>
 
 <p><b>时变图。</b>若图在有限个图 <span class="s">G₁,…,G<sub>m</sub></span> 间切换，<span class="s">Ḋ=(−αI+βL<sub>σ(t)</sub>)D</span>。稳定性由是否存在公共李雅普诺夫函数决定：若存在正定 <span class="s">P</span> 使所有 <span class="s">k</span> 满足 <span class="s">(−αI+βL<sub>k</sub>)<sup>T</sup>P+P(−αI+βL<sub>k</sub>)≺0</span>，则 <span class="s">D→0</span> 对所有切换成立。<b>切换系统比单个系统更易失稳——这是一个可检验的预言。</b>［论证，B／乙］</p>
 
-<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎必然）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B／乙］</p>
+<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎总会）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B／乙］</p>
 
-<h3>17.7　数值验证协议与结果</h3>
+<h3 id="sec17-7">17.7　数值验证协议与结果</h3>
 
 <img class="fig" src="assets/svg/fig14b-numerical-verification.svg" alt="数值验证">
 
@@ -88,7 +90,8 @@
 <div class="note"><b>复现方法</b>
 在仓库根目录运行 <code>python analysis/graph_phase_transition.py</code>。脚本会计算上述所有图的谱与临界耦合，做数值演化，把结果写入 <code>data/injected.json</code> 与 <code>analysis/results/</code>，并生成图 17.1、14.2。不需要任何特殊库，只需要 numpy 与 scipy。</div>
 
-<h3>17.8　本章小结</h3>
+<div class="case"><span class="ct">人的尺度</span><p>一位本科生照论文跑了 400 次实验，结果和论文一致。他给作者写信，作者回了六个字：“谢谢，麻烦你了。”他说，那六个字让他第一次觉得<b>数学是有人在做的事，不是从天上掉下来的。</b></p></div>
+<h3 id="sec17-8">17.8　本章小结</h3>
 
 <p>样本的临界耦合对具体图是可精确计算的：Petersen 图 <span class="s">(0.2, 0.5)</span>，环 <span class="s">C₁₀</span> <span class="s">(0.25, 2.618)</span>，完全图无中间相，超立方体有 <span class="s">n</span> 个阶段。数值验证协议给出了可复现的检验步骤。下一章把线性情形推广到非线性，并给出一个精确可解的爆破时间。</p>
 

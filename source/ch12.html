@@ -1,11 +1,13 @@
 <h2 class="chapter">第 12 章　二次型：双线性形式的「对角线」</h2>
+<p class="lead" data-story="1">一个碗的形状，决定了球往哪里滚、滚多快。<b>二次型就是那只碗——它不说话，但它规定了所有的运动。</b></p>
+
 
 <p class="lead">上一章把「区分」写成语言的基本词。这一章给出它的定量内容：<b>二次型</b>——一个向量与自身之「区分」的度量。二次型背后是一个双线性形式，它是双线性形式在对角线上的取值；反过来，知道「自关联」，就能用极化恒等式恢复「互关联」。</p>
 
 <div class="scenario"><span class="bt">本章主张</span>
 二次型、双线性形式、协方差、Hessian、图拉普拉斯、内积——这些名字背后是<b>同一个代数结构</b>：向量空间上的对称双线性形式。<b>本章不证明新定理，只把这套语言写清楚；唯一保留的刚性结果是一个精确恒等式（定理 12.1）。</b>［已知，B；定理 12.1 为 A］</div>
 
-<h3>12.1　二次型的定义</h3>
+<h3 id="sec12-1">12.1　二次型的定义</h3>
 
 <p>一个<b>二次型</b>是形如</p>
 <div class="eq"><span class="body">Q(x) = Σ<sub>i,j</sub> a<sub>ij</sub> x<sub>i</sub> x<sub>j</sub> = x<sup>T</sup>A x</span><span class="num">(12.1)</span></div>
@@ -15,7 +17,7 @@
 <div class="eq"><span class="body">B(x,y) = x<sup>T</sup>A y</span><span class="num">(12.2)</span></div>
 <p>对两个向量 <span class="s">x,y</span> 分别线性。二次型是双线性形式在「对角线」上的取值：<span class="s">Q(x)=B(x,x)</span>。</p>
 
-<h3>12.2　极化恒等式：知道自关联，就能恢复互关联</h3>
+<h3 id="sec12-2">12.2　极化恒等式：知道自关联，就能恢复互关联</h3>
 
 <p>在实数域上，对称双线性形式与二次型<b>一一对应</b>。给定 <span class="s">B</span>，定义 <span class="s">Q(x)=B(x,x)</span>；反过来，给定 <span class="s">Q</span>，可以用<b>极化恒等式</b>恢复 <span class="s">B</span>：</p>
 <div class="eq"><span class="body">B(x,y) = (1/2)[ Q(x+y) − Q(x) − Q(y) ]</span><span class="num">(12.3)</span></div>
@@ -23,7 +25,7 @@
 <div class="define"><span class="bt">一句话</span>
 双线性形式是「两个变量的交互」，二次型是「一个变量自身的波动」。<b>两者是同一数学对象的两种呈现</b>：全矩阵与对角线。［已知，B］</div>
 
-<h3>12.3　协方差：概率论中的双线性形式</h3>
+<h3 id="sec12-3">12.3　协方差：概率论中的双线性形式</h3>
 
 <p>协方差是双线性形式：<span class="s">Cov(X,Y)=E[(X−EX)(Y−EY)]</span>；方差是二次型：<span class="s">Var(X)=Cov(X,X)</span>。对随机向量 <span class="s">X=(X₁,…,Xₙ)</span>，协方差矩阵 <span class="s">Σ</span> 定义二次型</p>
 <div class="eq"><span class="body">Q(a) = a<sup>T</sup>Σa = Var(a<sup>T</sup>X)</span><span class="num">(12.4)</span></div>
@@ -34,19 +36,19 @@
 <li><b>PCA：</b>对 <span class="s">Σ</span> 做特征值分解，就是把二次型化为标准型（主轴化）。</li>
 </ul>
 
-<h3>12.4　Hessian：优化中的双线性形式</h3>
+<h3 id="sec12-4">12.4　Hessian：优化中的双线性形式</h3>
 
 <p>对多元函数 <span class="s">f: R<sup>n</sup>→R</span>，二阶泰勒展开</p>
 <div class="eq"><span class="body">f(x₀+h) ≈ f(x₀) + ∇f(x₀)<sup>T</sup>h + (1/2) h<sup>T</sup>H<sub>f</sub>(x₀) h</span><span class="num">(12.5)</span></div>
 <p>二阶项 <span class="s">h<sup>T</sup>H<sub>f</sub>h</span> 是<b>二次型</b>，矩阵是 Hessian。Hessian 本身是双线性形式 <span class="s">H<sub>f</sub>(v,w)=v<sup>T</sup>H<sub>f</sub>w</span>。正定 ⇔ 局部极小；负定 ⇔ 局部极大；不定 ⇔ 鞍点。<b>优化中的曲率，就是二次型的正定性。</b></p>
 
-<h3>12.5　矩、累积量与高次型</h3>
+<h3 id="sec12-5">12.5　矩、累积量与高次型</h3>
 
 <p>二阶导数是双线性形式，二阶泰勒项是二次型。推广：<span class="s">n</span> 阶导数是 <b><span class="s">n</span> 线性形式</b>，限制到对角线得到 <b><span class="s">n</span> 次型</b>；泰勒系数 <span class="s">f<sup>(n)</sup>(a)/n!</span> 对应 <span class="s">n</span> 次型，矩 <span class="s">E[X<sup>n</sup>]</span> 对应 <span class="s">n</span> 次型的系数。</p>
 
 <p>矩生成函数 <span class="s">M(t)=E[e<sup>tX</sup>]=Σ E[X<sup>n</sup>]t<sup>n</sup>/n!</span> 的二阶项 <span class="s">E[X²]t²/2</span> 对应二次型，方差是它的中心化版本。累积量生成函数 <span class="s">log M(t)</span> 的二阶项直接是方差，混合二阶项是协方差——<b>累积量的二阶部分就是二次型。</b></p>
 
-<h3>12.6　图拉普拉斯二次型与拉普拉斯谱方差</h3>
+<h3 id="sec12-6">12.6　图拉普拉斯二次型与拉普拉斯谱方差</h3>
 
 <p>图拉普拉斯矩阵 <span class="s">L</span> 定义二次型</p>
 <div class="eq"><span class="body">x<sup>T</sup>L x = Σ<sub>(u,v)∈E</sub> (x<sub>u</sub> − x<sub>v</sub>)²</span><span class="num">(12.6)</span></div>
@@ -78,7 +80,8 @@
 
 <p>另一个负结果同样保留：<span class="s">κ_info</span> <b>不是</b>第五部分中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理。在 8 个测试图上，二者 Spearman 秩相关为 <b>−0.357</b>：星图 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低，路径图相反。<b>这个负结果防止了一个过强的声称。</b></p>
 
-<h3>12.7　本章小结</h3>
+<div class="case"><span class="ct">人的尺度</span><p>一位统计学家说，他最常做的事是“把一件事写成一个二次型”。这不是炫技，是因为写成二次型之后，他才知道该问哪个方向最陡。<b>换一种写法，问题就从“怎么回事”变成了“往哪走”。</b></p></div>
+<h3 id="sec12-7">12.7　本章小结</h3>
 
 <p>二次型是双线性形式在对角线上的取值；极化恒等式让它与双线性形式一一对应。协方差、Hessian、图拉普拉斯都是它的实例。在图上，热核熵的二阶变分给出一个精确的谱方差恒等式（定理 12.1）——它是本书最坚硬的结果之一，但<b>不是</b>几何曲率。下一章把这个结构抽象为一般对象：向量空间上的对称双线性形式。</p>
 
