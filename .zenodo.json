@@ -113,5 +113,6 @@
       "relation": "isVersionOf",
       "scheme": "doi"
     }
-  ]
+  ],
+  "version": "2026-10-19"
 }
