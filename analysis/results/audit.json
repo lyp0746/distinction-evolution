@@ -255,7 +255,7 @@
       "first": "ch02.html"
     },
     "拉普拉斯": {
-      "total": 64,
+      "total": 65,
       "by_chapter": [
         [
           "ch06.html",
@@ -271,7 +271,7 @@
         ],
         [
           "ch13.html",
-          7
+          8
         ],
         [
           "ch14.html",
@@ -447,7 +447,7 @@
       "first": "ch01.html"
     },
     "压缩": {
-      "total": 71,
+      "total": 74,
       "by_chapter": [
         [
           "ch01.html",
@@ -483,6 +483,10 @@
         ],
         [
           "ch10.html",
+          3
+        ],
+        [
+          "ch13.html",
           3
         ],
         [
@@ -1037,6 +1041,7 @@
     "20": [
       "ch05.html",
       "ch06.html",
+      "ch13.html",
       "ch18.html",
       "ch19.html",
       "ch20.html",

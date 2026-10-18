@@ -80,7 +80,9 @@ EOF
 
 
 # 清单自检：把目录中未列出的文件补进 MANIFEST（避免清单与实物不一致）
-"$PY" - "$REL" <<'PY'
+REL_PY="$REL"
+if command -v wslpath >/dev/null 2>&1; then REL_PY="$(wslpath -w "$REL")"; fi
+"$PY" - "$REL_PY" <<'PY'
 import os, sys
 rel = sys.argv[1]
 mf = os.path.join(rel, "MANIFEST.txt")
