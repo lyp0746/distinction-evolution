@@ -53,7 +53,7 @@
           1
         ],
         [
-          "ch26.html",
+          "ch25.html",
           2
         ]
       ],
@@ -74,7 +74,7 @@
       "first": "ch11.html"
     },
     "不可区分": {
-      "total": 16,
+      "total": 19,
       "by_chapter": [
         [
           "ch04.html",
@@ -82,6 +82,10 @@
         ],
         [
           "ch05.html",
+          3
+        ],
+        [
+          "ch10.html",
           3
         ],
         [
@@ -137,7 +141,7 @@
       "first": "ch09.html"
     },
     "临界耦合": {
-      "total": 23,
+      "total": 24,
       "by_chapter": [
         [
           "ch12.html",
@@ -149,7 +153,7 @@
         ],
         [
           "ch15.html",
-          9
+          10
         ],
         [
           "ch16.html",
@@ -167,7 +171,7 @@
       "first": "ch12.html"
     },
     "两阶段相变": {
-      "total": 17,
+      "total": 20,
       "by_chapter": [
         [
           "ch05.html",
@@ -175,6 +179,10 @@
         ],
         [
           "ch06.html",
+          1
+        ],
+        [
+          "ch13.html",
           1
         ],
         [
@@ -187,17 +195,25 @@
         ],
         [
           "ch16.html",
-          5
+          6
+        ],
+        [
+          "ch17.html",
+          1
+        ],
+        [
+          "ch25.html",
+          4
         ],
         [
           "ch26.html",
-          6
+          2
         ]
       ],
       "first": "ch05.html"
     },
     "相变": {
-      "total": 57,
+      "total": 60,
       "by_chapter": [
         [
           "ch02.html",
@@ -224,6 +240,10 @@
           1
         ],
         [
+          "ch13.html",
+          1
+        ],
+        [
           "ch14.html",
           9
         ],
@@ -233,11 +253,11 @@
         ],
         [
           "ch16.html",
-          9
+          10
         ],
         [
           "ch17.html",
-          2
+          3
         ],
         [
           "ch18.html",
@@ -248,14 +268,18 @@
           1
         ],
         [
+          "ch25.html",
+          6
+        ],
+        [
           "ch26.html",
-          11
+          5
         ]
       ],
       "first": "ch02.html"
     },
     "拉普拉斯": {
-      "total": 65,
+      "total": 67,
       "by_chapter": [
         [
           "ch06.html",
@@ -287,7 +311,7 @@
         ],
         [
           "ch17.html",
-          5
+          7
         ],
         [
           "ch20.html",
@@ -298,14 +322,18 @@
           2
         ],
         [
+          "ch25.html",
+          3
+        ],
+        [
           "ch26.html",
-          4
+          1
         ]
       ],
       "first": "ch06.html"
     },
     "生成拓扑": {
-      "total": 35,
+      "total": 37,
       "by_chapter": [
         [
           "ch02.html",
@@ -329,17 +357,29 @@
         ],
         [
           "ch22.html",
-          11
+          13
+        ],
+        [
+          "ch25.html",
+          3
         ],
         [
           "ch26.html",
-          8
+          1
+        ],
+        [
+          "ch27.html",
+          2
+        ],
+        [
+          "ch28.html",
+          2
         ]
       ],
       "first": "ch02.html"
     },
     "非标准分析": {
-      "total": 21,
+      "total": 23,
       "by_chapter": [
         [
           "ch03.html",
@@ -351,7 +391,7 @@
         ],
         [
           "ch09.html",
-          11
+          13
         ],
         [
           "ch15.html",
@@ -367,7 +407,11 @@
         ],
         [
           "ch26.html",
-          2
+          1
+        ],
+        [
+          "ch27.html",
+          1
         ]
       ],
       "first": "ch03.html"
@@ -418,7 +462,7 @@
           4
         ],
         [
-          "ch26.html",
+          "ch27.html",
           1
         ]
       ],
@@ -447,7 +491,7 @@
       "first": "ch01.html"
     },
     "压缩": {
-      "total": 74,
+      "total": 81,
       "by_chapter": [
         [
           "ch01.html",
@@ -455,7 +499,7 @@
         ],
         [
           "ch02.html",
-          31
+          33
         ],
         [
           "ch03.html",
@@ -463,7 +507,7 @@
         ],
         [
           "ch04.html",
-          4
+          5
         ],
         [
           "ch06.html",
@@ -471,7 +515,7 @@
         ],
         [
           "ch07.html",
-          12
+          16
         ],
         [
           "ch08.html",
@@ -494,14 +538,18 @@
           2
         ],
         [
-          "ch26.html",
-          6
+          "ch25.html",
+          5
+        ],
+        [
+          "ch28.html",
+          1
         ]
       ],
       "first": "ch01.html"
     },
     "同约束": {
-      "total": 5,
+      "total": 6,
       "by_chapter": [
         [
           "ch01.html",
@@ -513,6 +561,10 @@
         ],
         [
           "ch04.html",
+          1
+        ],
+        [
+          "ch13.html",
           1
         ]
       ],
@@ -591,15 +643,15 @@
       "first": "ch03.html"
     },
     "可证伪": {
-      "total": 27,
+      "total": 53,
       "by_chapter": [
         [
           "ch01.html",
-          1
+          2
         ],
         [
           "ch03.html",
-          11
+          17
         ],
         [
           "ch04.html",
@@ -607,6 +659,18 @@
         ],
         [
           "ch06.html",
+          4
+        ],
+        [
+          "ch11.html",
+          1
+        ],
+        [
+          "ch12.html",
+          2
+        ],
+        [
+          "ch16.html",
           1
         ],
         [
@@ -614,19 +678,35 @@
           1
         ],
         [
-          "ch20.html",
+          "ch19.html",
           1
         ],
         [
+          "ch20.html",
+          2
+        ],
+        [
+          "ch21.html",
+          3
+        ],
+        [
           "ch22.html",
-          1
+          2
         ],
         [
           "ch24.html",
           3
         ],
         [
+          "ch25.html",
+          1
+        ],
+        [
           "ch26.html",
+          5
+        ],
+        [
+          "ch28.html",
           7
         ]
       ],
@@ -643,14 +723,14 @@
       "first": "ch03.html"
     },
     "有效维度": {
-      "total": 13,
+      "total": 14,
       "by_chapter": [
         [
           "ch22.html",
-          12
+          13
         ],
         [
-          "ch26.html",
+          "ch25.html",
           1
         ]
       ],
@@ -682,7 +762,7 @@
     "18.1": "ch18.html",
     "19.1": "ch19.html",
     "19.2": "ch19.html",
-    "26.1": "ch26.html"
+    "26.1": "ch25.html"
   },
   "A2_formulas_defined": [
     "12.1",
@@ -916,6 +996,10 @@
       "snippet": "［描述，C／丙］"
     },
     {
+      "chapter": "ch13.html",
+      "snippet": "（C 级）"
+    },
+    {
       "chapter": "ch18.html",
       "snippet": "［假说，C／丙］"
     },
@@ -956,7 +1040,11 @@
       "snippet": "［第一梯队，C／丙］"
     },
     {
-      "chapter": "ch26.html",
+      "chapter": "ch24.html",
+      "snippet": "（C 级）"
+    },
+    {
+      "chapter": "ch25.html",
       "snippet": "［假说，C／丙］"
     },
     {
@@ -982,9 +1070,11 @@
       "ch12.html",
       "ch13.html",
       "ch19.html",
-      "ch20.html"
+      "ch20.html",
+      "ch22.html"
     ],
     "13": [
+      "ch05.html",
       "ch09.html",
       "ch12.html",
       "ch13.html",
@@ -1001,20 +1091,25 @@
       "ch23.html"
     ],
     "15": [
+      "ch13.html",
       "ch15.html",
       "ch16.html",
       "ch18.html",
-      "ch26.html"
+      "ch22.html",
+      "ch25.html"
     ],
     "16": [
       "ch06.html",
+      "ch13.html",
       "ch15.html",
       "ch16.html",
+      "ch25.html",
       "ch26.html"
     ],
     "17": [
       "ch16.html",
       "ch17.html",
+      "ch22.html",
       "ch26.html"
     ],
     "18": [
@@ -1036,7 +1131,7 @@
       "ch18.html",
       "ch22.html",
       "ch24.html",
-      "ch26.html"
+      "ch27.html"
     ],
     "20": [
       "ch05.html",
@@ -1055,10 +1150,12 @@
     "22": [
       "ch02.html",
       "ch11.html",
+      "ch13.html",
       "ch15.html",
       "ch22.html",
       "ch23.html",
-      "ch26.html"
+      "ch25.html",
+      "ch28.html"
     ],
     "23": [
       "ch22.html",
@@ -1073,35 +1170,52 @@
     ],
     "25": [
       "ch03.html",
+      "ch13.html",
       "ch21.html",
       "ch22.html",
       "ch24.html",
+      "ch25.html",
+      "ch28.html"
+    ],
+    "26": [
       "ch26.html"
+    ],
+    "27": [
+      "ch27.html"
+    ],
+    "28": [
+      "ch22.html",
+      "ch24.html",
+      "ch28.html"
     ],
     "3": [
       "ch01.html",
       "ch02.html",
       "ch03.html",
       "ch18.html",
-      "ch26.html"
+      "ch28.html"
     ],
     "4": [
       "ch04.html"
     ],
     "5": [
       "ch05.html",
-      "ch20.html"
+      "ch13.html",
+      "ch20.html",
+      "ch22.html"
     ],
     "6": [
       "ch06.html",
       "ch22.html",
-      "ch26.html"
+      "ch25.html",
+      "ch28.html"
     ],
     "7": [
       "ch07.html"
     ],
     "8": [
-      "ch08.html"
+      "ch08.html",
+      "ch22.html"
     ],
     "9": [
       "ch08.html",
@@ -1269,6 +1383,9 @@
     "10.7": [
       "ch10.html"
     ],
+    "10.8": [
+      "ch10.html"
+    ],
     "100.3824": [
       "ch12.html"
     ],
@@ -1312,7 +1429,7 @@
     "12.1": [
       "ch12.html",
       "ch15.html",
-      "ch26.html"
+      "ch27.html"
     ],
     "12.2": [
       "ch12.html",
@@ -1336,9 +1453,12 @@
       "ch12.html",
       "ch19.html",
       "ch20.html",
-      "ch26.html"
+      "ch25.html"
     ],
     "12.7": [
+      "ch12.html"
+    ],
+    "12.8": [
       "ch12.html"
     ],
     "13.1": [
@@ -1366,6 +1486,12 @@
     "13.6": [
       "ch13.html"
     ],
+    "13.7": [
+      "ch13.html"
+    ],
+    "13.8": [
+      "ch13.html"
+    ],
     "14.1": [
       "ch14.html"
     ],
@@ -1388,7 +1514,8 @@
     ],
     "14.6": [
       "ch14.html",
-      "ch26.html"
+      "ch27.html",
+      "ch28.html"
     ],
     "14.7": [
       "ch14.html"
@@ -1405,7 +1532,9 @@
       "ch16.html",
       "ch17.html",
       "ch18.html",
-      "ch26.html"
+      "ch26.html",
+      "ch27.html",
+      "ch28.html"
     ],
     "15.2": [
       "ch15.html",
@@ -1437,7 +1566,7 @@
     "16.1": [
       "ch16.html",
       "ch19.html",
-      "ch26.html"
+      "ch28.html"
     ],
     "16.10": [
       "ch16.html"
@@ -1499,6 +1628,9 @@
       "ch17.html"
     ],
     "17.8": [
+      "ch17.html"
+    ],
+    "17.9": [
       "ch17.html"
     ],
     "18.1": [
@@ -1600,6 +1732,7 @@
     ],
     "2.9": [
       "ch22.html",
+      "ch25.html",
       "ch26.html"
     ],
     "20.1": [
@@ -1692,6 +1825,15 @@
     "22.16": [
       "ch22.html"
     ],
+    "22.17": [
+      "ch22.html"
+    ],
+    "22.18": [
+      "ch22.html"
+    ],
+    "22.19": [
+      "ch22.html"
+    ],
     "22.2": [
       "ch22.html"
     ],
@@ -1703,7 +1845,8 @@
     ],
     "22.5": [
       "ch22.html",
-      "ch26.html"
+      "ch25.html",
+      "ch28.html"
     ],
     "22.6": [
       "ch22.html"
@@ -1718,7 +1861,8 @@
       "ch22.html"
     ],
     "2201.02177": [
-      "ch24.html"
+      "ch24.html",
+      "ch28.html"
     ],
     "2212.11082": [
       "ch10.html"
@@ -1742,7 +1886,13 @@
     "23.6": [
       "ch23.html"
     ],
+    "23.7": [
+      "ch23.html"
+    ],
     "24.1": [
+      "ch24.html"
+    ],
+    "24.10": [
       "ch24.html"
     ],
     "24.2": [
@@ -1766,101 +1916,35 @@
     "24.8": [
       "ch24.html"
     ],
+    "24.9": [
+      "ch24.html"
+    ],
     "25.1": [
-      "ch26.html"
-    ],
-    "25.10": [
-      "ch26.html"
-    ],
-    "25.11": [
-      "ch26.html"
-    ],
-    "25.12": [
-      "ch26.html"
-    ],
-    "25.13": [
-      "ch26.html"
-    ],
-    "25.14": [
-      "ch26.html"
-    ],
-    "25.15": [
-      "ch26.html"
-    ],
-    "25.16": [
-      "ch26.html"
-    ],
-    "25.17": [
-      "ch26.html"
-    ],
-    "25.18": [
-      "ch26.html"
-    ],
-    "25.19": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.2": [
-      "ch26.html"
-    ],
-    "25.20": [
-      "ch26.html"
-    ],
-    "25.21": [
-      "ch26.html"
-    ],
-    "25.22": [
-      "ch26.html"
-    ],
-    "25.23": [
-      "ch26.html"
-    ],
-    "25.24": [
-      "ch26.html"
-    ],
-    "25.25": [
-      "ch26.html"
-    ],
-    "25.26": [
-      "ch26.html"
-    ],
-    "25.27": [
-      "ch26.html"
-    ],
-    "25.28": [
-      "ch26.html"
-    ],
-    "25.29": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.3": [
-      "ch26.html"
-    ],
-    "25.30": [
-      "ch26.html"
-    ],
-    "25.31": [
-      "ch26.html"
-    ],
-    "25.32": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.4": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.5": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.6": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.7": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.8": [
-      "ch26.html"
+      "ch25.html"
     ],
     "25.9": [
-      "ch26.html"
+      "ch25.html"
     ],
     "250.2000": [
       "ch16.html"
@@ -1869,9 +1953,10 @@
       "ch16.html"
     ],
     "26.0": [
-      "ch26.html"
+      "ch25.html"
     ],
     "26.1": [
+      "ch25.html",
       "ch26.html"
     ],
     "26.10": [
@@ -1884,13 +1969,25 @@
       "ch26.html"
     ],
     "26.2": [
+      "ch25.html",
       "ch26.html"
     ],
     "26.3": [
+      "ch25.html",
       "ch26.html"
     ],
     "26.4": [
       "ch13.html",
+      "ch25.html",
+      "ch26.html"
+    ],
+    "26.5": [
+      "ch26.html"
+    ],
+    "26.6": [
+      "ch26.html"
+    ],
+    "26.7": [
       "ch26.html"
     ],
     "26.8": [
@@ -1899,32 +1996,63 @@
     "26.9": [
       "ch26.html"
     ],
+    "27.1": [
+      "ch27.html"
+    ],
+    "27.2": [
+      "ch27.html"
+    ],
+    "27.3": [
+      "ch27.html"
+    ],
+    "27.4": [
+      "ch27.html"
+    ],
+    "27.5": [
+      "ch27.html"
+    ],
+    "27.6": [
+      "ch27.html"
+    ],
+    "27.7": [
+      "ch27.html"
+    ],
     "28.0": [
-      "ch26.html"
+      "ch27.html"
     ],
     "28.1": [
-      "ch26.html"
+      "ch27.html",
+      "ch28.html"
     ],
     "28.10": [
-      "ch26.html"
+      "ch28.html"
     ],
     "28.2": [
-      "ch26.html"
+      "ch27.html",
+      "ch28.html"
     ],
     "28.3": [
-      "ch26.html"
+      "ch27.html",
+      "ch28.html"
     ],
     "28.4": [
-      "ch26.html"
+      "ch27.html",
+      "ch28.html"
+    ],
+    "28.5": [
+      "ch28.html"
+    ],
+    "28.6": [
+      "ch28.html"
     ],
     "28.7": [
-      "ch26.html"
+      "ch28.html"
     ],
     "28.8": [
-      "ch26.html"
+      "ch28.html"
     ],
     "28.9": [
-      "ch26.html"
+      "ch28.html"
     ],
     "3.00": [
       "ch17.html"
@@ -1985,13 +2113,16 @@
     "4.6": [
       "ch04.html"
     ],
+    "4.7": [
+      "ch04.html"
+    ],
     "5.01": [
       "ch18.html"
     ],
     "5.1": [
       "ch05.html",
       "ch22.html",
-      "ch26.html"
+      "ch28.html"
     ],
     "5.2": [
       "ch05.html"
@@ -2008,6 +2139,9 @@
     "5.6": [
       "ch05.html"
     ],
+    "5.7": [
+      "ch05.html"
+    ],
     "5000.300": [
       "ch16.html"
     ],
@@ -2020,7 +2154,7 @@
     ],
     "6.14": [
       "ch22.html",
-      "ch26.html"
+      "ch25.html"
     ],
     "6.2": [
       "ch06.html",
@@ -2386,6 +2520,12 @@
   "A8_eq_malformed": [],
   "A9_debug_strings": [],
   "A10_version_labels": [],
-  "A11_fatalism": [],
+  "A11_fatalism": [
+    {
+      "chapter": "ch15.html",
+      "word": "必然",
+      "snippet": "带走：临界耦合有闭式解；能算的东西，才有资格谈“必然”。\n\n本章参考文献\n\nChung, F. R."
+    }
+  ],
   "A12_duplicate_headings": []
 }
