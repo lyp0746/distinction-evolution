@@ -88,3 +88,42 @@ h3 + .refs, .refs { margin-top: 4px; }
 
 /* SVG 插图 */
 img.fig[src$=".svg"], .fig-svg { width: 100%; display: block; margin: 12pt 0 4pt; }
+
+/* ---- 部分扉页 / 部分小结（spec v2 §1） ---- */
+.part-page { break-before: page; }
+.part-intro {
+  max-width: 132mm; margin: 7mm auto 0;
+  font-size: 10.5pt; line-height: 1.9; color: #2b2b2b; text-align: justify;
+}
+.part-intro p { margin: 0 0 .55em; text-indent: 2em; }
+.part-summary {
+  max-width: 132mm; margin: 8mm auto 2mm; padding: 4.5mm 6mm;
+  border-top: 1px solid #d8cbb0; border-bottom: 1px solid #d8cbb0;
+  background: #fbf9f4; font-size: 10pt; line-height: 1.8;
+}
+.part-summary .bt {
+  display: block; font-weight: 700; letter-spacing: 1px;
+  margin-bottom: .35em; color: #8a6d2f;
+}
+.part-summary p { margin: 0 0 .45em; text-indent: 2em; }
+
+/* ---- 部分扉页：满栏插图页（spec v2 §1·视觉 v3） ---- */
+.part-page{
+  position: relative; width: 100%; height: 243mm;
+  margin: 0; padding: 0; overflow: hidden;
+  break-before: page; break-after: page; background: #0e1117;
+}
+.part-art{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit: cover; display:block; }
+.part-body{ position:absolute; left:16mm; right:16mm; bottom:20mm; }
+.part-kicker{
+  font-family:"Helvetica Neue",Arial,sans-serif; font-size:8.5pt; letter-spacing:3.2px;
+  color:#b8862f; text-transform:uppercase; margin:0 0 5mm;
+}
+h1.part-title{
+  break-before: auto; text-align: left; padding: 0; border: 0;
+  font-family:"Microsoft YaHei","Heiti SC","SimHei",sans-serif;
+  font-size: 22pt; font-weight: 600; letter-spacing: 2.5px;
+  color: #f6f2e8; margin: 0 0 5mm;
+}
+.part-intro{ color:#c2c7d0; font-size:9.8pt; line-height:1.9; }
+.part-intro p{ margin:0 0 .45em; text-indent:2em; }

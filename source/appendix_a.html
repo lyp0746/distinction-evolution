@@ -1,0 +1,366 @@
+<h2 class="chapter">附录 A　形式化与证明</h2>
+<h1 class="chapter">附录 形式化与证明　数学补充：谱、线性方程与相变</h1>
+
+<p class="lead">本附录给出第五部分样本的完整数学细节，使读者无需回到正文即可检查每一步。所有记号与正文一致。</p>
+
+<h2>A.1　拉普拉斯矩阵与谱定理</h2>
+
+<div class="define"><span class="bt">定义 A.1　图拉普拉斯矩阵</span>
+设 <span class="s">G=(V,E)</span>，<span class="s">|V|=n</span>。度矩阵 <span class="s">D<sub>adj</sub>=diag(deg(v))</span>，邻接矩阵 <span class="s">A</span>（<span class="s">A<sub>uv</sub>=1</span> 当 <span class="s">u∼v</span>，否则 0）。<b>拉普拉斯矩阵</b> <span class="s">L=D<sub>adj</sub>−A</span>。</div>
+
+<p>性质：（i）<span class="s">L</span> 实对称半正定，故所有特征值 <span class="s">λ≥0</span>，特征向量可取为正交归一；（ii）<span class="s">L𝟙=0</span>，故 <span class="s">λ₁=0</span>，特征向量为常向量；（iii）<span class="s">G</span> 连通 <span class="s">⇔ λ₂&gt;0</span>（零特征值重数为 1）。</p>
+
+<div class="define"><span class="bt">定理 A.1（谱定理，实对称情形）</span>
+实对称矩阵 <span class="s">L</span> 可正交对角化：存在正交矩阵 <span class="s">Q</span>（<span class="s">Q<sup>T</sup>Q=I</span>）使 <span class="s">Q<sup>T</sup>LQ=diag(λ₁,…,λ<sub>n</sub>)</span>。等价地，<span class="s">L=Σ<sub>k</sub>λ<sub>k</sub>v<sub>k</sub>v<sub>k</sub><sup>T</sup></span>。</div>
+
+<h2>A.2　线性演化方程</h2>
+
+<div class="define"><span class="bt">定理 A.2（线性 ODE 的解）</span>
+方程 <span class="s">Ḋ=(−αI+βL)D</span> 以 <span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span> 为初值的解为
+<div class="eq"><span class="body">D(t) = Σ<sub>k=1</sub><sup>n</sup> c<sub>k</sub> e^{(−α+βλ<sub>k</sub>)t} v<sub>k</sub></span><span class="num">(A.1)</span></div></div>
+
+<p><b>证明。</b>令 <span class="s">y=Q<sup>T</sup>D</span>，则 <span class="s">ẏ<sub>k</sub>=(−α+βλ<sub>k</sub>)y<sub>k</sub></span>，解为 <span class="s">y<sub>k</sub>(t)=y<sub>k</sub>(0)e^{(−α+βλ<sub>k</sub>)t}</span>。代回 <span class="s">D=Qy</span> 即得。∎</p>
+
+<div class="note"><b>与热方程的区别</b>
+若 <span class="s">α=0</span>，则 <span class="s">Ḋ=βLD</span> 是热方程，所有 <span class="s">λ<sub>k</sub>≥0</span>，所有模式衰减或守恒，无增长相。衰减项 <span class="s">−αI</span> 是相变的来源。</div>
+
+<h2>A.3　临界耦合与两阶段相变的完整推导</h2>
+
+<p>定义 <span class="s">μ<sub>k</sub>:=−α+βλ<sub>k</sub></span>。因为 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>，有 <span class="s">μ₁=−α&lt;0</span> 且 <span class="s">μ<sub>k</sub></span> 随 <span class="s">k</span> 递增。令 <span class="s">β<sub>k</sub>:=α/λ<sub>k</sub></span>，则 <span class="s">μ<sub>k</sub>&gt;0 ⇔ β&gt;β<sub>k</sub></span>。由于 <span class="s">λ<sub>k</sub></span> 递增，<span class="s">β<sub>k</sub></span> 递减：</p>
+
+<div class="eq"><span class="body">β<sub>1</sub> = α/λ<sub>n</sub> ≤ α/λ<sub>n−1</sub> ≤ ⋯ ≤ β<sub>2</sub> = α/λ<sub>2</sub></span><span class="num">(A.2)</span></div>
+
+<p>因此存在一个阈值序列。特别地：</p>
+
+<ul>
+<li><span class="s">β&lt;β<sub>1</sub></span>：所有 <span class="s">μ<sub>k</sub>&lt;0</span>，全部衰减。</li>
+<li><span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>：<span class="s">μ<sub>n</sub>&gt;0</span>（及若干高频），<span class="s">μ<sub>2</sub>&lt;0</span>（低频谱衰减）。</li>
+<li><span class="s">β&gt;β<sub>2</sub></span>：<span class="s">μ₂&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>。</li>
+</ul>
+
+<p>主导增长率 <span class="s">μ<sub>max</sub>=μ<sub>n</sub>=βλ<sub>n</sub>−α</span>。当 <span class="s">β=β<sub>1</sub></span> 时 <span class="s">μ<sub>max</sub>=0</span>，对应 Lyapunov 指数穿零——这是一个连续相变（导数不连续）。</p>
+
+<h2>A.4　具体图的谱表</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 A.1　具体图的拉普拉斯谱与临界耦合（α=1）</b></caption>
+<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λ<sub>n</sub></th><th class="l">β₁</th><th class="l">β₂</th><th class="l">W</th></tr>
+<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.500</td><td class="l">0.300</td></tr>
+<tr><td class="l">C₁₀</td><td class="l">10</td><td class="l">0.382</td><td class="l">4</td><td class="l">0.250</td><td class="l">2.618</td><td class="l">2.368</td></tr>
+<tr><td class="l">K₅</td><td class="l">5</td><td class="l">5</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.200</td><td class="l">0</td></tr>
+<tr><td class="l">K₄,₄</td><td class="l">8</td><td class="l">4</td><td class="l">8</td><td class="l">0.125</td><td class="l">0.250</td><td class="l">0.125</td></tr>
+<tr><td class="l">Q₅</td><td class="l">32</td><td class="l">2</td><td class="l">10</td><td class="l">0.100</td><td class="l">0.500</td><td class="l">0.400</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>精确谱表。等级 A／甲。<b>注：</b>C₁₀ 的 λ₂=2−2cos(36°)≈0.38197，β₂≈2.61803。</div>
+
+<h2>A.5　数值验证协议（完整版）</h2>
+
+<p><b>复现协议。</b>复现 §12—14 的全部结果：</p>
+
+<ol>
+<li>对目标图构造 <span class="s">L=D<sub>adj</sub>−A</span>（<code>numpy</code>）。</li>
+<li>计算特征值 <code>numpy.linalg.eigvalsh(L)</code>，排序得 <span class="s">λ₁,…,λ<sub>n</sub></span>。</li>
+<li>计算 <span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ₂</span>，<span class="s">W=β₂−β₁</span>。</li>
+<li>取随机初值 <span class="s">D(0)</span>，用 <code>scipy.integrate.solve_ivp</code> 积分 <span class="s">Ḋ=(−αI+βL)D</span> 到 <span class="s">t=10</span>。</li>
+<li>把 <span class="s">D(t)</span> 投影到各 <span class="s">v<sub>k</sub></span>，计算 <span class="s">log|⟨D(t),v<sub>k</sub>⟩|</span> 的斜率。</li>
+<li>验证斜率与 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 的差 <span class="s">&lt;10⁻³</span>（数值误差）。</li>
+<li>对 <span class="s">β∈{0.5β₁, (β₁+β₂)/2, 2β₂}</span> 重复，覆盖三相位。</li>
+</ol>
+
+<div class="note"><b>实现</b>
+随书脚本 <code>analysis/graph_phase_transition.py</code> 实现复现协议，输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。运行命令：<code>python analysis/graph_phase_transition.py</code>。依赖：numpy、scipy。</div>
+
+<h2>A.6　非线性结果的技术细节</h2>
+
+<p><b>对称解。</b>式 (18.3) 的推导：把 <span class="s">u=e^{−αt}</span> 代入验证。爆破时间式 (18.4) 由分母为零得到。</p>
+
+<p><b>保证衰减阈值。</b>式 (18.5) 的推导：<span class="s">Ṡ=−αS+βS²−βΣ<sub>i</sub>D<sub>i</sub>²</span>，而由 Cauchy–Schwarz <span class="s">Σ<sub>i</sub>D<sub>i</sub>²≥S²/k</span>，故 <span class="s">Ṡ≤S(−α+βS(1−1/k))</span>。</p>
+
+<p><b>有效探针数。</b><span class="s">k<sub>eff</sub>=1/Σp<sub>i</sub>²</span>，其中 <span class="s">p<sub>i</sub>=D<sub>i</sub>/S</span>。由 <span class="s">Σp<sub>i</sub>²≥1/k</span> 得 <span class="s">1≤k<sub>eff</sub>≤k</span>。均匀分布时 <span class="s">k<sub>eff</sub>=k</span>；集中分布时 <span class="s">k<sub>eff</sub>→1</span>。</p>
+
+<p><b>四维缺口猜想的检验。</b>猜想 <span class="s">f(n)=1/(2n+1)</span>。二维 <span class="s">f(1)=1/3</span> 与已知一致。四维情形的检验需要：计算热核展开的相应系数，与四维欧拉形式比较，提取比例。这是附录 可证伪登记簿 中登记的可执行任务之一。</p>
+
+<h1 class="chapter">附录 形式化与证明　形式化路线图：从 sorry 到编译</h1>
+
+<p class="lead">第 25.6 节把"用 Lean 4 形式化定理 15.1"列为短期任务，并标注难度"中等"。这是一个承诺，不是交付。本附录把这个承诺落成可执行的缺口清单——包括形式化文件、引理分解、瓶颈与建议的 PR 顺序，并明确声明：<b>它尚未编译通过。</b></p>
+
+<div class="warning"><span class="bt">声明（请先读）</span>
+本附录随书提供的 <code>formalization/Distinction.lean</code> 是一个<b>含 <code>sorry</code> 的未编译骨架</b>，不是已通过的证明。本书构建环境没有安装 Lean 4 工具链，因此它<b>未经编译器验证</b>；预期会出现若干因 Mathlib API 版本差异导致的类型错误。<b>本附录不声称定理 15.1 已被形式化。</b>它声称的是：形式化的目标、缺口与瓶颈已被写清楚，任何人可以据此接手。</div>
+
+<h2>H.1　为什么这一步重要</h2>
+
+<p>定理 15.1 的证明只用实对称矩阵的谱定理与线性常微分方程——它<b>不依赖</b>本书特有的任何未定义框架。这意味着形式化它是标准数学任务，一旦通过，就为整个纲领提供一块机器可验证的基石。这也是为什么第 3.4 节把"可形式化"当作样本层的一条证据标准。</p>
+
+<h2>H.2　建议的 PR 顺序（由易到难）</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 H.1　形式化引理的依赖顺序</b></caption>
+<tr><th class="l">顺序</th><th class="l">引理</th><th class="l">难度</th><th class="l">卡点</th></tr>
+<tr><td class="l">1</td><td class="l"><code>intermediate_phase_nonempty</code>：<span class="s">λ₂&lt;λₙ ⇒ β₁&lt;β₂</span></td><td class="l">低</td><td class="l">纯代数，<code>div_lt_div_of_pos_left</code></td></tr>
+<tr><td class="l">2</td><td class="l"><code>laplacian_symm</code>：拉普拉斯矩阵对称</td><td class="l">低</td><td class="l">组合簿记</td></tr>
+<tr><td class="l">3</td><td class="l"><code>evolution_is_solution</code>：<span class="s">D(t)=e^{tM}D₀</span> 满足 ODE</td><td class="l">中</td><td class="l">矩阵指数与 <code>ContinuousLinearMap</code> 的接口</td></tr>
+<tr><td class="l">4</td><td class="l"><code>spectral_decomposition</code>：实对称矩阵正交对角化 + 排序</td><td class="l">高</td><td class="l">Mathlib 谱定理 API 分散</td></tr>
+<tr><td class="l">5</td><td class="l"><code>critical_coupling</code>：三情形符号分析</td><td class="l">高</td><td class="l">有限主项提取 + 指数增长 <code>Filter.Tendsto</code></td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>形式化任务分解。概念乙（作者判断）。<b>建议：</b>先完成 1、2，它们可以在一天内真正编译通过，从而把"承诺"变成"第一个已编译引理"。</div>
+<table class="nat">
+<caption class="cap"><b>表 H.2　形式化工作量评估</b></caption>
+<tr><th class="l">引理</th><th class="l">难度</th><th class="l">预计工作量</th><th class="l">风险</th></tr>
+<tr><td class="l">1 intermediate_phase_nonempty</td><td class="l">低</td><td class="l">数小时</td><td class="l">低</td></tr>
+<tr><td class="l">2 laplacian_symm</td><td class="l">低</td><td class="l">数小时</td><td class="l">低</td></tr>
+<tr><td class="l">3 evolution_is_solution</td><td class="l">中</td><td class="l">数天</td><td class="l">中（接口适配）</td></tr>
+<tr><td class="l">4 spectral_decomposition</td><td class="l">高</td><td class="l">一周以上</td><td class="l">高（Mathlib API 漂移）</td></tr>
+<tr><td class="l">5 critical_coupling</td><td class="l">高</td><td class="l">一周以上</td><td class="l">高</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>工作量评估。<b>概念乙（作者判断）。</b>总量随 Mathlib 版本漂移；引理 1、2 是最可能先兑现的部分。</div>
+
+<h2>H.3　四个关键瓶颈</h2>
+
+<div class="define"><span class="bt">瓶颈 1　谱定理的 API 碎片化</span>
+Mathlib 中实对称矩阵的谱定理散布在若干模块。把"存在正交特征基"与"特征值排序 <span class="s">0=λ₁&lt;λ₂≤⋯≤λₙ</span>"拼到一起，是<b>最重</b>的一步。建议先做一个只含矩阵、不含 ODE 的独立引理文件。</div>
+
+<div class="define"><span class="bt">瓶颈 2　矩阵指数与 ODE 的衔接</span>
+<span class="s">e^{tM}D₀</span> 的导数需要对"矩阵乘向量"的 <code>ContinuousLinearMap</code> 接口。Mathlib 有矩阵指数的现成引理，但作用点需要额外适配。</div>
+
+<div class="define"><span class="bt">瓶颈 3　"最大时间区间"的表述</span>
+定理原文陈述"定义在最大时间区间上"。但在图论情形，解对所有 <span class="s">t∈ℝ</span> 存在（矩阵指数处处有定义），故形式化版本可直接断言"对所有 <span class="s">t</span> 成立"，<b>去掉</b>这个更一般的表述以简化。这是一次合法的"为形式化而收窄陈述"。</div>
+
+<div class="define"><span class="bt">瓶颈 4　一般初值 <span class="s">cₙ≠0</span></span>
+这是一个零测度条件。形式化时要么显式假设"最高频投影非零"，要么证明对几乎处处的初值成立。前者更简单。</div>
+
+<h2>H.4　如何接手</h2>
+
+<pre class="code"># 需要 Lean 4 工具链（本仓库未安装）
+curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh
+cd formalization
+lake init edstmp &amp;&amp; lake exe cache get
+# 把 Distinction.lean 放入，替换 sorry</pre>
+
+<div class="note"><b>本附录与第 25.6 节的关系</b>
+第 25.6 节的形式化任务标注为"短期、难度中等"。本附录把它细化为五个引理、四个瓶颈与一个可立即完成的起点。<b>在骨架被编译通过之前，第 25.6 节的这一项仍应读作"未兑现的承诺"。</b>本附录的作用，是让这个承诺变成一份别人可以执行的工单，而不是一句口号。</div>
+
+<h1 class="chapter">附录 形式化与证明　样本扩展：加权、有向与离散曲率（含证明）</h1>
+
+<p class="lead">本附录汇总样本扩展的结果，给出完整证明与数值。它们是样本扩展的一次兑现：在扩展框架之前，先让定理存在。四个结果——对称加权不可反转（定理 B1）、有向图反转反例（B2）、拉普拉斯谱方差恒等式（C）、高维缺口猜想的证伪——全部可复算。</p>
+
+<h2>J.1　统一的数学内核</h2>
+
+<p>四个结果看似分散，却共享同一个内核：<b>一个线性生成元的谱，决定区分能力随时间的方向。</b></p>
+
+<div class="define"><span class="bt">统一框架</span>
+系统由 <span class="s">Ḋ=M D</span> 描述，解为 <span class="s">D(t)=Σ<sub>k</sub>c<sub>k</sub>e<sup>μ<sub>k</sub>t</sup>v<sub>k</sub></span>，其中 <span class="s">μ<sub>k</sub></span> 是 <span class="s">M</span> 的谱。<br>
+<b>对称 <span class="s">M</span>：</b><span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 实数，谱定理保证"大特征值 = 高振荡"。<br>
+<b>非对称 <span class="s">M</span>：</b>增长率是 <span class="s">Re(μ<sub>k</sub>)</span>，"最大实部"与"最振荡"解耦。</div>
+
+<p>第四部分的词表框架，正是从这个内核抽象出来的。本附录的四个结果，是它的四个具体实例。</p>
+
+<h2>J.2　定理 B1：对称加权不可反转</h2>
+
+<div class="define"><span class="bt">定理 J.1 ［定理，A／甲］</span>
+设 <span class="s">G</span> 连通，边权 <span class="s">w<sub>uv</sub>&gt;0</span> 对称。加权拉普拉斯 <span class="s">L<sub>w</sub></span> 满足：
+<div class="eq"><span class="body">x<sup>T</sup>L<sub>w</sub>x = Σ<sub>{u,v}∈E</sub> w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)² ≥ 0</span></div>
+故 <span class="s">L<sub>w</sub></span> 实对称半正定，谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>。于是 <span class="s">β₁=α/λ<sub>n</sub>≤α/λ₂=β₂</span> 恒成立。</div>
+
+<p><b>证明。</b>对称性、半正定性、谱定理均如第 16.6 节。关键一步是连通性给出 <span class="s">λ₂&gt;0</span>（否则存在非平凡零特征向量，对应图的非连通）。由 <span class="s">λ₂≤λ<sub>n</sub></span> 与 <span class="s">α&gt;0</span> 得结论。<span class="s">∎</span></p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.1　对称加权扫描（400 个随机加权连通图，α=1）</b></caption>
+<tr><th class="l">量</th><th class="l">结果</th></tr>
+<tr><td class="l">保持顺序 β₁≤β₂ 的比例</td><td class="l">400/400</td></tr>
+<tr><td class="l">中间相宽度 W 的范围</td><td class="l">[0.258, 18.618]</td></tr>
+<tr><td class="l">谱比 λₙ/λ₂ 的范围</td><td class="l">[5.74, 296.91]</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>定理 + 数值扫描。等级 A／甲。脚本：<code>analysis/weighted_directed_transition.py</code>。<b>结论：</b>加权可任意拉宽中间相（<span class="s">λₙ/λ₂</span> 高达 297），但顺序不可反转。</div>
+
+<h2>J.3　反例 B2：有向图的顺序反转（完整计算）</h2>
+
+<p>取有向耦合 <span class="s">L=D<sub>out</sub>−A</span>。6 顶点图，弧集为</p>
+
+<div class="eq"><span class="body">(0,2), (1,0), (2,4), (3,1), (3,2), (4,1), (5,1), (5,2)</span><span class="num">(J.1)</span></div>
+
+<p><span class="s">L</span> 的特征值（按实部降序）与对应特征向量的总变差：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.2　反例的特征结构（实部降序）</b></caption>
+<tr><th class="l">Re(λ)</th><th class="l">Im(λ)</th><th class="l">TV（局部性）</th><th class="l">模式形状</th></tr>
+<tr><td class="l">2.000</td><td class="l">0</td><td class="l">0.250</td><td class="l">集中在顶点 3（或 5）——汇点型，<b>平滑/全局</b></td></tr>
+<tr><td class="l">2.000</td><td class="l">0</td><td class="l">0.354</td><td class="l">顶点 3 与 5 的叠加</td></tr>
+<tr><td class="l">1.000</td><td class="l">±1.000</td><td class="l"><b>0.707</b></td><td class="l">顶点 1 与 2 之间振荡，<b>局部/振荡</b></td></tr>
+<tr><td class="l">0.000</td><td class="l">0</td><td class="l">0.000</td><td class="l">常向量</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>显式反例。等级 A／甲。复现：<code>python analysis/weighted_directed_transition.py</code>。</div>
+
+<p><b>相变顺序。</b>增长率 <span class="s">Re(μ<sub>k</sub>)=βRe(λ<sub>k</sub>)−α</span>。随 <span class="s">β</span> 从 0 增大：</p>
+<ul>
+<li><span class="s">β&gt;α/2</span>：汇点型模式（<span class="s">Re(λ)=2</span>，<span class="s">TV=0.25</span>，全局）先增长；</li>
+<li><span class="s">β&gt;α</span>：振荡模式（<span class="s">Re(λ)=1</span>，<span class="s">TV=0.71</span>，局部）后增长。</li>
+</ul>
+
+<p><b>这就是顺序反转：全局先于局部。</b>根因是生成元的<b>非正规性</b>——对称情形下谱定理把"大特征值"与"高振荡"捆绑，非对称情形下这个捆绑断裂。A／甲</p>
+
+<div class="warning"><span class="bt">反例划出的边界</span>
+定理 15.1 的"局部先于全局"：
+<b>（i）</b>在任意对称加权下稳健（J.2）；
+<b>（ii）</b>在有向耦合下失效（J.3）。
+这条边界是本书框架的第一条<b>明确适用边界</b>——它比任何正面例子都更有信息量。</div>
+
+<h2>J.4　定理 C：拉普拉斯谱方差的完整推导</h2>
+
+<div class="define"><span class="bt">定理 J.2 ［定理，A／甲］</span>
+设 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>，<span class="s">S(t)=−tr(ρ log ρ)</span>。则 <span class="s">κ_info(G):=−(1/2)S″(0⁺)=Var(λ)/2</span>。</div>
+
+<p><b>证明。</b><span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，故
+<span class="s">S(t)=−Σp<sub>k</sub>log p<sub>k</sub>=(tA/Z)+log Z</span>，<span class="s">A=Σλ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。
+于是 <span class="s">S′=(Z′/Z)+(A/Z)+t(A/Z)′=−A/Z+A/Z+t(A/Z)′=t(A/Z)′</span>，<span class="s">S′(0)=0</span>。
+<div class="eq"><span class="body">S″(0)=(A/Z)′|<sub>0</sub>=(A′Z−AZ′)/Z²|<sub>0</sub>=(−nΣλ²+(Σλ)²)/n²=−Var(λ)</span></div>
+故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
+
+<p>数值验证（有限差分）误差 <span class="s">&lt;10⁻⁶</span>。计算值见正文表 12.3。A／甲</p>
+
+<h2>J.5　一个负面结果：κ_info 不是 W 的代理</h2>
+
+<p>我们原本希望 <span class="s">κ_info</span> 能预测中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>。<b>数据否定它。</b></p>
+
+<table class="nat">
+<caption class="cap"><b>表 J.3　κ_info 与 W 的对照（部分图）</b></caption>
+<tr><th class="l">图</th><th class="l">κ_info</th><th class="l">W</th></tr>
+<tr><td class="l">星图 S₁₀</td><td class="l">3.78（高）</td><td class="l">0.90（低）</td></tr>
+<tr><td class="l">路径 P₂₀</td><td class="l">0.995（低）</td><td class="l">40.36（高）</td></tr>
+<tr><td class="l">Petersen</td><td class="l">1.50</td><td class="l">0.30</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>负结果。等级 A／甲。8 图上的 Spearman 秩相关 = <b>−0.357</b>。<b>结论：</b><span class="s">κ_info</span> 度量谱的总方差，<span class="s">W</span> 度量两端比值 <span class="s">λₙ/λ₂</span>；二者不同。这个负结果防止了一个过强的声称。</div>
+
+<h2>J.6　高维缺口：f(n)=1/(2n+1) 被证伪</h2>
+
+<p>第 20 章的开放问题 G4 猜测高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 检验：</p>
+
+<div class="eq"><span class="body">ratio(n) = χ_naive/χ(S<sup>2n</sup>) = R·Vol(S<sup>2n</sup>)/(24π)，　R=2n(2n−1)</span></div>
+
+<table class="nat">
+<caption class="cap"><b>表 J.4　高维缺口因子的计算（S^{2n}）</b></caption>
+<tr><th class="l">n</th><th class="l">维数</th><th class="l">R</th><th class="l">ratio(n)</th><th class="l">猜想 1/(2n+1)</th><th class="l">匹配</th></tr>
+<tr><td class="l">1</td><td class="l">2</td><td class="l">2</td><td class="l">0.3333</td><td class="l">0.3333</td><td class="l">✓</td></tr>
+<tr><td class="l">2</td><td class="l">4</td><td class="l">12</td><td class="l">4.1888 = 4π/3</td><td class="l">0.2000</td><td class="l">✗</td></tr>
+<tr><td class="l">3</td><td class="l">6</td><td class="l">30</td><td class="l">13.1595 = 4π²/3</td><td class="l">0.1429</td><td class="l">✗</td></tr>
+<tr><td class="l">4</td><td class="l">8</td><td class="l">56</td><td class="l">22.0489</td><td class="l">0.1111</td><td class="l">✗</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>证伪。等级 A／甲。脚本：<code>analysis/higher_dim_gap.py</code>。<b>结论：</b>猜想只在 <span class="s">n=1</span>（二维）成立。高维 <span class="s">ratio</span> 含 <span class="s">π</span> 且随 <span class="s">n</span> 变化，<b>不存在一个普适常数 <span class="s">f(n)</span></b>。正确的推广必须用陈–高斯–博内的<b>欧拉形式</b>（曲率张量的 Pfaffian），而不是标量曲率。</div>
+
+<div class="scenario"><span class="bt">这个证伪的价值</span>\n它把一个"漂亮但错误"的猜想换成了一个"精确但受限"的结论：<b>因子 <span class="s">1/3</span> 是二维特有的，因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑在一起。</b>高维的推广不是找一个常数，而是换一个曲率对象。这直接把研究指向欧拉形式，而不是徒劳地寻找 <span class="s">f(n)</span>。</div>
+
+<h2>J.7　方向 B1'：Rayleigh 判据与反转的开放问题</h2>
+
+<p>“局部先于全局”背后是一句需要精确化的话：“大特征值 = 高振荡”。本节把它写成 Rayleigh 判据，并报告两个候选判别的失败。</p>
+
+<div class="define"><span class="bt">定理 J.3（Rayleigh 判据）［定理，A／甲］</span>
+对对称拉普拉斯 <span class="s">L</span>，定义局部性 <span class="s">R(v)=v<sup>T</sup>Lv/v<sup>T</sup>v=Σ<sub>e</sub>(v<sub>u</sub>−v<sub>v</sub>)²/Σv²</span>。则 <span class="s">max<sub>v</sub>R(v)=λ<sub>n</sub></span>，且最大特征值模式最大化 <span class="s">R</span>。<b>故“最局部模式最先增长”对对称 L 是 Rayleigh 极小极大的直接推论。</b>数值：500/500。</div>
+
+<div class="define"><span class="bt">定理 J.4（对称—非对称分界）［定理，A／甲］</span>
+实矩阵 <span class="s">L</span> 是正规矩阵且具有实谱，当且仅当 <span class="s">L</span> 对称。因此“由谱定理保证顺序保持”的精确分界线就是<b>对称性</b>：对称 ⇒ 顺序必保持；非对称 ⇒ 可能反转。</div>
+
+<div class="warning"><span class="bt">两个候选判别的失败（负面结果）</span>
+我们检验了两个“显然”的判别法（4000 随机有向图）：<br>
+<b>非正规性 <span class="s">ν=‖LL<sup>T</sup>−L<sup>T</sup>L‖/‖L‖²</span>：</b>与反转率的相关系数为 <b>−0.13</b>（负！），非正规性最高的四分位反转率反而最低（2.4%）。<br>
+<b>强连通性：</b>强连通反转率 7.1%，非强连通 8.4%，无显著差异。<br>
+<b>结论：反转的充要条件仍是开放问题（O8）。</b>这防止了一个错的“定理 B1'”被写出。</div>
+
+<h2>J.8　约定 5 的图论定理与一个生成性推论</h2>
+
+<div class="define"><span class="bt">定理 J.5（原子分解唯一性）［定理，A／甲］</span>
+原子区分动作 = 谱投影 <span class="s">P<sub>k</sub></span>。则原子分解唯一 <span class="s">⟺</span> 谱为单谱（所有特征值互异）。
+计算：测试图中仅路径 <span class="s">P₈</span> 单谱；Petersen、K₅、K₄,₄、星图、环均退化。</div>
+
+<div class="define"><span class="bt">推论 J.1（乘积图的相变结构）［推论，A／甲］</span>
+<span class="s">λ<sub>i</sub>(G□H)=λ<sub>i</sub>(G)+λ<sub>j</sub>(H)</span>，故
+<span class="s">β₁=α/(λ<sub>n</sub>(G)+λ<sub>n</sub>(H))</span>，<span class="s">β₂=α/min(λ₂(G),λ₂(H))</span>。
+数值：Petersen<span class="s">□K₂</span> 得 <span class="s">(0.143,0.500)</span>，预测与直接对角化一致。</div>
+
+<div class="warning"><span class="bt">同时报告的平凡与否定结果</span>
+<b>约定 1（观测完备）在图上平凡：</b>完整谱嵌入的行是正交矩阵的行，必单射（7 图 min row distance 全正）。<b>不存在非平凡的“观测完备定理”。</b><br>
+<b>约定 2（精度连续）在图上平凡</b>；约定 6 不适用。<br>
+所以“为描述约定各编一个定理”是不可能的——六条中两条平凡、一条不适用。这是对“框架生成性”问题最直接的回答。</div>
+
+<h2>J.9　复现</h2>
+
+<pre class="code">python analysis/weighted_directed_transition.py   # 定理 B1 + 反例 B2
+python analysis/discrete_curvature.py             # 定理 C + 负结果 J.5
+python analysis/higher_dim_gap.py                 # 证伪 J.6
+python analysis/graph_phase_transition.py         # 定理 A（复现协议）</pre>
+
+<div class="note"><b>本附录的意义</b>
+它把"先兑现"从口号变成实物：<b>一个推广定理（B1）、一个反例（B2）、一个恒等式（C）、一个证伪（J.6）。</b>其中两个是正面结果，两个是负面结果——而负面结果同样有价值，因为它们划出了理论的边界。这正是本书承诺的"记录失败"的具体兑现。</div>
+
+<h1 class="chapter">附录 形式化与证明　O19 的开放性与证明需求</h1>
+
+<p class="lead">附录 增补：上游、边界与对话 记录了一次失败的"六框架证明"。本附录把它转成可用的东西：<b>要证明 O19（五种区分代数穷尽且会），到底缺什么；什么会推翻它；以及为什么"把标签贴到更多领域"不是验证。</b>O19 保持为开放问题。</p>
+
+<h2>N.1　当前状态</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 N.1　O19 的状态</b></caption>
+<tr><th class="l">命题</th><th class="l">状态</th></tr>
+<tr><td class="l">本样本 27 个领域的区分代数落在五类上</td><td class="l">样本观察C／丙</td></tr>
+<tr><td class="l">五类代数穷尽且会</td><td class="l"><b>未证</b></td></tr>
+<tr><td class="l">六个领域"产生相同的五种代数"</td><td class="l">同一套标签的重放，<b>不算独立验证</b>（附录 增补：上游、边界与对话）</td></tr>
+</table>
+
+<h2>N.2　"区分代数"的三种候选定义（都不够）</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 N.2　三种定义及其缺陷</b></caption>
+<tr><th class="l">层次</th><th class="l">定义</th><th class="l">缺陷</th></tr>
+<tr><td class="l">弱</td><td class="l">带等价关系与偏序的三元组 (O, ∼, ⪯)</td><td class="l">太宽：几乎所有结构都满足，无法推出"五类"</td></tr>
+<tr><td class="l">中</td><td class="l">词表 (O, 𝒟, χ, ∼, κ, Ψ)（即本书 区分语言/IDS/… 的形式）</td><td class="l">仍不能推出"为什么恰好五种"</td></tr>
+<tr><td class="l">强</td><td class="l">函子 F: 𝒞_discern → 𝒞_order</td><td class="l">𝒞_discern、"相变现象"、"本质不同"三者都未定义</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>定义候选。<b>等级 C／丙。</b>没有一层能直接支持穷尽性；这正是 O19 未证的根本原因。</div>
+
+<h2>N.3　要证 O19，缺少的三个引理</h2>
+
+<ul>
+<li><b>引理 1（相变分类）。</b>需要一个定理：所有"参数化系统中的相变现象"恰好分为五类。已知相变（温度、失真、谱间隙、维数、矩、分岔）与 Thom 灾难论的关系尚未建立。</li>
+<li><b>引理 2（观测泛函分类）。</b>需要一个"观测泛函"的范畴及其分类（证明它有五个连通分量）。目前只有描述性的列举。</li>
+<li><b>引理 3（可分解性表征）。</b>需要一个统一的"可分解性测度"，使五种代数恰对应其五个层次。目前各领域的"可分解"定义互不相同。</li>
+</ul>
+<div class="warning"><span class="bt">这三条是 O19 的"缺口清单"</span>
+任何一条补上，O19 都前进一格；三条齐备，才有望证明弱穷尽性。目前<b>三条都缺</b>。<b>把缺口写出来，是本书对后续研究者能做到的最有用的事。</b></div>
+
+<h2>N.4　什么会推翻 O19</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 N.3　O19 的反例条件（使它可证伪）</b></caption>
+<tr><th class="l">反例类型</th><th class="l">具体形式</th></tr>
+<tr><td class="l">第六种代数</td><td class="l">一个领域，其区分代数不属于五类，且在至少三个领域有平行的"自然相变"</td></tr>
+<tr><td class="l">不可分解的混合型</td><td class="l">一个系统同时需要两种代数、且无法写成二者的组合</td></tr>
+<tr><td class="l">与已证定理矛盾</td><td class="l">由 O19 推出某个与已知定理矛盾的结论</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>反例条件。<b>等级 B／乙（作者设定）。</b>写下反例条件，O19 才是一个可反驳的命题，而不是一句口号。</div>
+
+<h2>N.5　三次过度宣称的共同模式</h2>
+
+<table class="nat">
+<caption class="cap"><b>表 N.4　同一台机器抓到的三次</b></caption>
+<tr><th class="l">#</th><th class="l">宣称</th><th class="l">问题</th><th class="l">处置</th></tr>
+<tr><td class="l">1</td><td class="l">O17：用词表设计的特征验证词表维数≈6</td><td class="l">循环</td><td class="l">独立特征给出 N<sub>eff</sub>≈2.9（负面结果）</td></tr>
+<tr><td class="l">2</td><td class="l">D2：把 6.14≈6 当成数学会</td><td class="l">设计后果当发现</td><td class="l">被 O17 削弱</td></tr>
+<tr><td class="l">3</td><td class="l">O19：六框架"独立验证"五代数会</td><td class="l">标签重放 + 换词</td><td class="l">附录 增补：上游、边界与对话 驳回</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>模式记录。<b>等级 A／甲（本书自身记录）。</b>三次都由同一套机制抓到：提出可证伪命题、要求独立检验、把失败写进正文。</div>
+
+<h2>N.6　"把标签贴到更多领域"不是验证</h2>
+
+<div class="warning"><span class="bt">一次标注练习，诚实标注</span>
+把五坐标（A/B/C/D/E）扩展到更多已认可分支（Riemann 几何、同调代数、范畴论、K 理论、遍历论、PDE、C*-代数…）是可以做的，<b>但它只是标注练习，不是验证</b>：它把同一套筐套到更多东西上，筐能装，不等于筐是会的。因此本书<b>不</b>把它列为"新证据"。<br>
+至于由空缺格"推测新领域"（如"有限度量几何""随机拓扑"），是<b>最弱的一类声明</b>：它只是一个尚未命名的组合。本书最多列出两三个这样的候选，标注 C／丙，并明确它们不是发现。</div>
+
+<h2>N.7　下一步（三条诚实路径）</h2>
+
+<ol>
+<li><b>给出"区分代数"的精确定义并证明弱穷尽性</b>（缺 N.3 的三条引理）——这是数学工作，可能证不出来；证不出来也是结果。</li>
+<li><b>系统搜索第六种代数的反例</b>（按 N.4 的条件）——检查混沌、奇异空间、分形等"特异系统"是否落在五类之外。</li>
+<li><b>放弃穷尽性主张，专注各领域内部的压缩</b>（区分语言→定理 15.1；IDS→率失真结构；…）——把"统一"降为"局部压缩"，这是本书原本就在做、且能兑现的事。</li>
+</ol>
+
+<h2>N.8　结论</h2>
+
+<p>O19 未证。五种代数是一个<b>有用的样本观察</b>，不是已证的会骨架。要把"观察"变成"定理"，需要 N.3 的三条引理；要把 O19 变成可反驳的科学命题，需要 N.4 的反例条件。<b>在此之前，本书只主张前者，不主张后者。</b></p>

@@ -27,7 +27,7 @@ from build_book import (HERE, SOURCE, CSS_DIR, OUTPUT, FRONT, BACK,
 
 EPUB = os.path.join(OUTPUT, "book.epub")
 OEBPS = "OEBPS"
-UID = "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, "distinction-evolution-book"))
+UID = "urn:uuid:" + str(uuid.uuid5(uuid.NAMESPACE_URL, "entropy-spiral-book"))
 
 
 # --------------------------------------------------------------- 工具
