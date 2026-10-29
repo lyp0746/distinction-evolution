@@ -11,11 +11,13 @@ authors:
     alias: "Li Yipeng"
     email: "1610369302@qq.com"
     affiliation: "独立研究者 / Independent Researcher"
-date-released: "2026-10-18"
+date-released: 2026-10-30
+version: "2026-10-30"
 license: CC-BY-4.0
-doi: "10.5281/zenodo.23345012"
+doi: 10.5281/zenodo.23447201
+concept-doi: 10.5281/zenodo.23345012
 repository-code: "https://github.com/lyp0746/distinction-evolution"
-url: "https://doi.org/10.5281/zenodo.23345012"
+url: "https://doi.org/10.5281/zenodo.23447201"
 keywords:
   - "区分的语法"
   - "区分"
