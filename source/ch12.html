@@ -83,5 +83,22 @@
 
 <p>反过来，这条不等式也划出边界：它要求 <span class="s">Q</span> 半正定。若 <span class="s">Q</span> 不定（闵可夫斯基），不等式反向成为“逆柯西–施瓦茨”，这正是相对论里“因果不等号”的来源。同一族形式，两种不等号，五种解释——统一到形式，分岔到几何。</p>
 
+<h3 id="sec12-7">12.7　五个领域的“秩”与信息损失</h3>
+
+<p>第 12.5b 节讲了零空间的含义，这里补一条定量的：<b>五个领域中，二次型的秩决定了多少信息被保留。</b></p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">秩 = 什么</th><th class="l">秩亏意味着</th><th class="l">可救吗</th></tr>
+<tr><td class="l">统计</td><td class="l">独立方向数</td><td class="l">参数不可辨识</td><td class="l">加正则化</td></tr>
+<tr><td class="l">优化</td><td class="l">强凸方向数</td><td class="l">解不唯一</td><td class="l">加约束</td></tr>
+<tr><td class="l">图论</td><td class="l"><span class="s">n</span> − 分支数</td><td class="l">图不连通</td><td class="l">连起来</td></tr>
+<tr><td class="l">线性代数</td><td class="l">维数</td><td class="l">有零向量</td><td class="l">商掉</td></tr>
+<tr><td class="l">几何</td><td class="l">度量的秩</td><td class="l">退化方向</td><td class="l">限制子流形</td></tr>
+</table>
+
+<p>四个领域里，“秩亏”都对应一个具体的结构缺陷，而修法都是“加一点东西”或“商掉一点东西”。<b>这条统一性比公式的统一性更有用：它给出了一个通用的诊断顺序——先算秩，再决定是加约束还是商。</b></p>
+
+<p>对本书来说，这条还有一层含义：第 16—20 章的全部结论都假设 <span class="s">λ<sub>2</sub>&gt;0</span>，也就是秩满一（连通）。一旦秩亏，临界耦合 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 发散——<b>不是系统坏了，是“全局区分”这件事根本无从谈起。</b></p>
+
 <h3 id="sec12-ref">12　本章参考文献</h3>
 <div class="refs"><p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. <i>Exercices de Mathématiques</i> 4.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p><p>Parlett, B. N. (1998). <i>The Symmetric Eigenvalue Problem</i>. SIAM.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

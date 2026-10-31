@@ -83,5 +83,29 @@
 
 <p>这条区分有一个实际后果：若有人用重整化的直觉去读第 19 章，会以为“<span class="s">β<sub>1</sub></span> 消失”意味着“物理耦合趋于零”，从而推出错误的物理结论。正确读法是：<b>它是“分辨率依赖的量在极限里退场”，不是“物理量变零”。</b></p>
 
+<h3 id="sec9-8">9.8　连续的四级模量：一致、Lipschitz、Hölder、有界变差</h3>
+
+<p>“连续”不是一个词，而是一族条件。用<b>区分尺度 <span class="s">δ</span></b> 与<b>响应模量</b> <span class="s">ω(δ)</span> 写出来，四级的差别立刻显形。</p>
+
+<div class="define"><span class="bt">定义 9.2　区分模量</span>
+称 <span class="s">ω:[0,∞)→[0,∞)</span> 是 <span class="s">f</span> 的区分模量，若 <span class="s">d(x,y)≤δ ⇒ |f(x)−f(y)|≤ω(δ)</span>。四级条件对应四种 <span class="s">ω</span>：
+<ul>
+<li><b>连续</b>：对每点 <span class="s">x</span> 与每 <span class="s">ε</span> 存在 <span class="s">δ(x,ε)</span>——模量依赖点；</li>
+<li><b>一致连续</b>：存在与点无关的 <span class="s">ω</span>，且 <span class="s">ω(δ)→0</span>——模量可比，但可以任意慢；</li>
+<li><b>Hölder-<span class="s">α</span></b>：<span class="s">ω(δ)=Lδ<sup>α</sup></span>（<span class="s">0&lt;α≤1</span>）——模量有幂律界；</li>
+<li><b>Lipschitz</b>：<span class="s">ω(δ)=Lδ</span>（<span class="s">α=1</span>）——模量有线性界。</li>
+</ul></div>
+
+<p>包含关系是严的：Lipschitz ⊂ Hölder-<span class="s">α</span> ⊂ 一致连续 ⊂ 连续。每一级都有反例打掉下一级：<span class="s">√x</span> 在 <span class="s">[0,1]</span> 上一致连续但非 Lipschitz；<span class="s">1/ln(1/x)</span> 型模量一致连续但非 Hölder；<span class="s">x²</span> 在 <span class="s">ℝ</span> 上连续但非一致连续。</p>
+
+<img class="fig" src="assets/svg/fig-modulus-hierarchy.svg" alt="图 9.2　按区分尺度排序的连续性层级">
+<div class="cap"><b>图 9.2　按“区分尺度”排序的连续性层级</b>　双对数下，Lipschitz 是斜率 1 的直线，Hölder-1/2 是斜率 1/2 的直线，一致连续可以是任意慢的曲线；只有“连续”没有统一直线。</div>
+
+<p><b>为什么这四级对本书重要？</b>因为第 19 章的收敛结论需要一个模量假设：误差项里出现 <span class="s">ω(h)</span>。若 <span class="s">f</span> 只连续，误差是 <span class="s">o(1)</span>；若 <span class="s">f</span> 是 <span class="s">C²</span>（梯度 Lipschitz），误差是 <span class="s">O(h²)</span>。<b>同一句“离散逼近连续”，在四个模量下精度差两个数量级。</b></p>
+
+<p>还有一个可算的推论：对 Hölder-<span class="s">α</span> 的函数，用分辨率 <span class="s">δ</span> 区分到精度 <span class="s">ε</span>，所需成本是 <span class="s">(ε/L)<sup>1/α</sup></span>——<span class="s">α</span> 越小，成本涨得越快。这就是分形难测量的算术原因：<b>“区分成本”是一个可算的量，不是隐喻。</b></p>
+
+<p>有界变差（BV）是另一条路：不要求模量小，只要求总变差有限，因此允许跳跃（边缘）。<b>选哪个连续条件，取决于你要不要允许“跳跃式区分”</b>——第 7 章的生成拓扑允许跳跃，所以它对应的自然是 BV 而不是 Lipschitz。</p>
+
 <h3 id="sec9-ref">9　本章参考文献</h3>
 <div class="refs"><p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p><p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces and applications in probability theory. <i>Transactions of the AMS</i> 211, 113–122.</p><p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p><p>Albeverio, S., Fenstad, J. E., Høegh-Krohn, R., &amp; Lindstrøm, T. (1986). <i>Nonstandard Methods in Stochastic Analysis and Mathematical Physics</i>. Academic Press.</p></div>

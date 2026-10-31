@@ -93,5 +93,16 @@
 
 <p>这条估计有一个直观解释：<b>临界值对“最高频模式”敏感，而最高频模式恰是局部的</b>（相邻顶点反号）。所以改一条局部的边，能扰动 <span class="s">β<sub>1</sub></span>，却几乎动不了 <span class="s">β<sub>2</sub></span>（<span class="s">λ<sub>2</sub></span> 是全局量）。<b>两个临界值的稳定性不同，这本身就是一个可测的预言：</b>在噪声图上，第二个门槛比第一个稳定得多。</p>
 
+<h3 id="sec16-8">16.8　Lyapunov 谱就是模式增长率：相变＝符号改变</h3>
+
+<p>动力系统里的 Lyapunov 指数度量“相邻初值的分离速率”。对线性系统 <span class="s">Ḋ=MD</span> 它有闭式：<b>Lyapunov 谱就是 <span class="s">M</span> 的特征值实部</b>。把 <span class="s">M=−αI+βL</span> 代进去，恰好得到第 16 章的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。</p>
+
+<div class="box"><p><b>重述。</b>系统的 Lyapunov 谱随耦合 <span class="s">β</span> 整体平移；第一个变号的是最高频模式（<span class="s">β<sub>1</sub></span>），最后变号的是最低非平凡模式（<span class="s">β<sub>2</sub></span>）。<b>中间相＝“部分指数为正、部分为负”的区间；相变＝Lyapunov 谱的符号结构改变。</b></p></div>
+
+<img class="fig" src="assets/svg/fig-lyapunov-spectrum.svg" alt="图 16.2　相变即 Lyapunov 谱符号改变">
+<div class="cap"><b>图 16.2　Lyapunov 谱与相变</b>　每根柱子是一条模式；红为正（分离增长），绿为负（分离衰减）。<span class="s">β</span> 增大等价于整排柱子上移，最先越过零线的是最右边（最高频）的那根。</div>
+
+<p>这个重述有三个用处。<b>一，把“区分”与“混沌”接上：</b>正 Lyapunov 指数就是“区分被放大”的速率，第 21 章的“混沌”条目应当以它作判据，而不是以“看起来乱”作判据。<b>二，给出可核对的量：</b>给定 <span class="s">β</span> 算符号，就得到解锁序（第 18 章）。<b>三，划出边界：</b>线性系统的 Lyapunov 谱与初值无关，因此<b>线性系统不可能有混沌</b>——混沌要求指数随轨道变化，也就是要求非线性。</p>
+
 <h3 id="sec16-ref">16　本章参考文献</h3>
 <div class="refs"><p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p><p>von Luxburg, U. (2007). A tutorial on spectral clustering. <i>Statistics and Computing</i> 17, 395–416.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

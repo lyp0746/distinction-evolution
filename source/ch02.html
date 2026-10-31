@@ -83,5 +83,21 @@
 
 <p>三种坏味道的共同点是：它们都能通过“看起来很深刻”的初检。<b>唯一可靠的检验仍然是一条具体结论：给我一条压缩前说不出、压缩后说得出的话。</b>给不出，四个数报得再漂亮也没用。</p>
 
+<h3 id="sec2-8">2.8　压缩前后的对照：一个具体例子</h3>
+
+<p>取“相似度”这一件事，看压缩前后的表述差异。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">压缩前的表述</th><th class="l">压缩后的表述</th></tr>
+<tr><td class="l">统计</td><td class="l"><span class="s">x<sup>T</sup>Σ<sup>−1</sup>x</span> 是马氏距离的平方</td><td class="l"><span class="s">Q(x)=½x<sup>T</sup>Ax</span>，<span class="s">A=Σ<sup>−1</sup></span></td></tr>
+<tr><td class="l">优化</td><td class="l"><span class="s">f(x+Δ)≈f+∇f·Δ+½Δ<sup>T</sup>HΔ</span></td><td class="l">同一式，<span class="s">A=H</span></td></tr>
+<tr><td class="l">图论</td><td class="l">相邻顶点差平方和</td><td class="l">同一式，<span class="s">A=L</span></td></tr>
+<tr><td class="l">几何</td><td class="l">弧长平方 <span class="s">g<sub>ij</sub>dx<sup>i</sup>dx<sup>j</sup></span></td><td class="l">同一式，<span class="s">A=g</span></td></tr>
+</table>
+
+<p>压缩的收益是可算的：四个领域原本各有一套术语（马氏距离、Taylor 二阶项、Dirichlet 能量、第一基本形式），压缩后只需要“一个对称矩阵 + 一个向量”。<b>损失也清楚：符号差被藏进了 <span class="s">A</span> 的性质里，读者若不查 <span class="s">A</span>，就看不出哪个是度量、哪个是能量。</b></p>
+
+<p>这条损失正是第 14 章要补的：形式定下、群就定下，只有把 <span class="s">A</span> 的符号差读出来，才知道自己在哪门几何里。<b>压缩把四件事写成一件，代价是必须再写一次“这一件现在指的是哪一件”。</b></p>
+
 <h3 id="sec2-ref">2　本章参考文献</h3>
 <div class="refs"><p>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i> 27, 379–423.</p><p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p><p>Kolmogorov, A. N. (1965). Three approaches to the quantitative definition of information. <i>Problems of Information Transmission</i> 1, 1–7.</p><p>Mac Lane, S. (1998). <i>Categories for the Working Mathematician</i> (2nd ed.). Springer.</p></div>

@@ -88,5 +88,15 @@
 
 <p>于是“把相似度写成二次型”这件事，是一次<b>有代价的升级</b>：换来了谱与分解，代价是必须满足平行四边形律。第 12 章的五个领域之所以能统一，恰恰因为它们都站在最强的那一档上；而第 21 章里那些只能用最弱一档的领域（例如“文化相似性”），就注定只能标 C 级。</p>
 
+<h3 id="sec11-8">11.8　二次型的两个病态：不定与近奇异</h3>
+
+<p>二次型有两处病态，遇到时必须说出来。</p>
+
+<p><b>不定（indefinite）。</b><span class="s">Q(u)</span> 可取负值，于是“距离”可以为负，三角不等式失效。后果是<b>“更远”不再是一个全序</b>：两个方向不可比。这在相对论里是物理事实（类空间隔），在统计里是错误（协方差矩阵不该不定）。<b>判据：看 <span class="s">Q</span> 的符号差。</b></p>
+
+<p><b>近奇异（ill-conditioned）。</b><span class="s">Q</span> 的最小特征值接近零，于是求逆放大误差。后果是<b>数值不稳定</b>：同样的数据，换一个库就得不同的 <span class="s">A<sup>−1</sup></b>。判据是条件数 <span class="s">κ(A)=λ<sub>n</sub>/λ<sub>2</sub></span>——<b>注意：这正是本书第 18 章的 <span class="s">R</span>。</b></p>
+
+<p>于是出现一个漂亮的巧合：<b>“相变宽度”与“数值条件数”是同一个量。</b>网格上 <span class="s">R∼n²</span>，意味着网格上的二次型求逆的条件数也按 <span class="s">n²</span> 增长——这就是为什么解 Poisson 方程的多重网格法在高分辨率下必需，而直接法会崩。<b>一个统计量（相变宽度）与一个数值量（条件数）在这个形式下重合</b>，是“同一个结构”这条主张最实用的一个证据。</p>
+
 <h3 id="sec11-ref">11　本章参考文献</h3>
 <div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

@@ -92,5 +92,24 @@
 
 <p>这条形式化的价值在于它把“边界”写成了<b>一对算子之差</b>：<span class="s">Ē(A)−E‾(A)</span> 就是“分不清的部分”，正对应第 7.2 节的 <span class="s">P=1</span> 那条边界。它也解释了为什么本书语法要求“阈值可传递”：阈值一变，等价关系 <span class="s">E</span> 就变，边界随之移动，结论必须重报。</p>
 
+<h3 id="sec7-7">7.7　生成拓扑的三个代价</h3>
+
+<p>“开集是生成出来的”听起来只赚不赔，其实有三处代价，必须一起报。</p>
+
+<p><b>代价一：分离性。</b>命题 7.2 已经证明：只用序、不用度量，Alexandrov 拓扑一般不 Hausdorff。后果是极限不唯一——同一序列可以有多个极限点。这不必然是坏事（在并行计算里“多解”是常态），但它必须被声明。</p>
+
+<p><b>代价二：商化。</b>为了让 <span class="s">T₀</span> 成立，必须商掉“不可区分”的等价关系。商化的代价是可测性：商的 <span class="s">σ</span>-代数未必由原空间的区分族生成（第 8 章的反例）。</p>
+
+<p><b>代价三：方向性。</b>下闭集的选择给出一个有向的拓扑（“谁在谁的下方”），这使连续映射的方向也被固定。若原问题没有自然方向，这个选择就是额外的假设。</p>
+
+<table class="nat">
+<tr><th class="l">代价</th><th class="l">后果</th><th class="l">补救</th></tr>
+<tr><td class="l">分离性</td><td class="l">极限不唯一</td><td class="l">补一个度量（第 11 章）</td></tr>
+<tr><td class="l">商化</td><td class="l">可测性下降</td><td class="l">要求可数生成（第 8.3b 节）</td></tr>
+<tr><td class="l">方向性</td><td class="l">额外假设</td><td class="l">明确声明方向来源</td></tr>
+</table>
+
+<p>三处代价合起来，正好解释了本书为什么在第 11 章必须引入二次型：<b>不是因为它更“高级”，而是因为不引入它，前两处代价无法偿还。</b></p>
+
 <h3 id="sec7-ref">7　本章参考文献</h3>
 <div class="refs"><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Stong, R. E. (1966). Finite topological spaces. <i>Transactions of the AMS</i> 123, 325–340.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Mazin, A. (2025). Generative Topology. Zenodo.</p></div>

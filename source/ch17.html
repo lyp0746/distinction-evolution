@@ -100,5 +100,23 @@
 
 <p>这条式子也提醒：<b>“看不见”不是“不存在”的证据</b>。要主张“不存在”，必须证明采样条件已经满足而现象仍未出现。第 24 章的 H2 检验把这一条写成了前置条件。</p>
 
+<h3 id="sec17-8">17.8　混沌的边缘：为什么本书不把“正 Lyapunov”当混沌</h3>
+
+<p>“混沌”在动力系统里指三件事同时成立：<b>有界</b>、<b>对初值敏感</b>（最大 Lyapunov 指数 <span class="s">χ<sub>1</sub>&gt;0</span>）、<b>拓扑传递</b>（任两个开集在演化中相交）。三者缺一不可：无界的指数增长是发散，不是混沌；只有敏感而无传递的，是“有结构的分离”。</p>
+
+<p>本书的线性演化只满足第二条的一半：<span class="s">μ<sub>n</sub>&gt;0</span> 时相邻初值确实分离，但分离沿固定方向、以固定速率发生，没有折叠、没有传递。<b>于是得到一个重要的负面结论：Lyapunov 指数为正，不足以称混沌。</b></p>
+
+<table class="nat">
+<tr><th class="l">条件</th><th class="l">线性 <span class="s">Ḋ=(−αI+βL)D</span></th><th class="l">非线性（Lorenz 型）</th><th class="l">含义</th></tr>
+<tr><td class="l">有界</td><td class="l">否（正指数时发散）</td><td class="l">是（吸引子）</td><td class="l">关键差别</td></tr>
+<tr><td class="l">敏感</td><td class="l">是（<span class="s">μ<sub>n</sub>&gt;0</span>）</td><td class="l">是</td><td class="l">必要不充分</td></tr>
+<tr><td class="l">拓扑传递</td><td class="l">否</td><td class="l">是</td><td class="l">需要折叠机制</td></tr>
+</table>
+<p>第一行是关键：<b>正指数 ＋ 有界 ＝ 混沌的必要条件；线性系统只给前半句。</b>这解释了为什么第 21 章把“混沌”相关条目一律标 C：本书的硬核是线性的，它能提供“分离速率”，不能提供“混沌”。</p>
+
+<p>接口在<b>边界</b>上。若加一个饱和项 <span class="s">D↦D/(1+|D|)</span>，系统进入“有界 ＋ 敏感”的区域；小振幅处的指数仍由 <span class="s">βλ<sub>n</sub>−α</span> 主导，饱和项负责把轨道拉回。<b>“混沌的边缘”在本书语言里就是“最大的那个 <span class="s">μ<sub>k</sub></span> 刚好略大于零”。</b>这句话可检验：改 <span class="s">β</span> 使 <span class="s">μ<sub>n</sub></span> 过零，看有界化机制是否把轨道拉回。</p>
+
+<p>最后一条纪律：<b>不要把“Lyapunov 指数为正”当成“不可预测”的唯一理由。</b>不可预测还有第二个来源——观测分辨率（第 9 章）。一个 <span class="s">χ<sub>1</sub>&lt;0</span> 的系统，若分辨率不够，同样测不准。把两者混为一谈，就是第 23 章说的“过度统一”。</p>
+
 <h3 id="sec17-ref">17　本章参考文献</h3>
 <div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>
