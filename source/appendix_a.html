@@ -61,3 +61,29 @@
 <p>比较对角元：<span class="s">L<sub>vv</sub>=d<sub>v</sub>=λ(1−1/n)</span>，故所有顶点度数相同，记为 <span class="s">d</span>。比较非对角元：<span class="s">L<sub>vw</sub>=−A<sub>vw</sub>=−λ/n</span>，即 <span class="s">A<sub>vw</sub>=λ/n</span>。因 <span class="s">A<sub>vw</sub>∈{0,1}</span> 且连通图有边，存在 <span class="s">vw∈E</span>，于是 <span class="s">λ/n=1</span>，即 <span class="s">λ=n</span>。代回得 <span class="s">d=n(1−1/n)=n−1</span>，即每点与其余各点相邻，<span class="s">G≅K<sub>n</sub></span>。<span class="s">∎</span></p>
 
 <p>证明中唯一“有技巧”的一步是由 <span class="s">A<sub>vw</sub>=λ/n</span> 得 <span class="s">λ=n</span>：<b>利用了邻接矩阵取值只有 0 与 1。</b>若换成加权图，这一步失效——加权图上 <span class="s">λ<sub>2</sub>=λ<sub>n</sub></span> 可以出现在非完全图上（例如完全图给每条边同一个权，仍等价；但给部分边不同权时，只要所有行和相同，仍可能成立）。<b>所以定理 18.2 的适用范围是“简单无权图”，这一点必须写进结论。</b></p>
+
+<h3 id="seca11">A.11　定理 7.1、8.1、11.1、12.3 的完整证明</h3>
+
+<p><b>定理 7.1（生成拓扑）。</b>设 <span class="s">𝓕</span> 是一族函数 <span class="s">f<sub>α</sub>:X→ℝ</span>，
+<span class="s">τ={U⊆X : ∀x∈U, ∃α,ε&gt;0, f<sub>α</sub><sup>−1</sup>(f<sub>α</sub>(x)−ε, f<sub>α</sub>(x)+ε)⊆U}</span>。
+则 <span class="s">τ</span> 是拓扑。</p>
+
+<p><b>证明。</b>（i）<span class="s">∅∈τ</span> 真空成立；<span class="s">X∈τ</span>：对任意 <span class="s">x</span> 取任意 <span class="s">α</span> 与 <span class="s">ε</span>，原像含于 <span class="s">X</span>。（ii）并：设 <span class="s">U<sub>i</sub>∈τ</span>，<span class="s">x∈∪U<sub>i</sub></span>，取 <span class="s">i</span> 使 <span class="s">x∈U<sub>i</sub></span>，用其见证 <span class="s">α,ε</span>，同一邻域落在 <span class="s">U<sub>i</sub>⊆∪U<sub>i</sub></span>。（iii）有限交：设 <span class="s">U,V∈τ</span>，<span class="s">x∈U∩V</span>，见证分别为 <span class="s">(α,ε<sub>1</sub>)</span>、<span class="s">(β,ε<sub>2</sub>)</span>。取 <span class="s">δ<sub>1</sub></span> 使 <span class="s">(f<sub>α</sub>(x)−δ<sub>1</sub>,f<sub>α</sub>(x)+δ<sub>1</sub>)⊆(f<sub>α</sub>(x)−ε<sub>1</sub>,f<sub>α</sub>(x)+ε<sub>1</sub>)</span>（取 <span class="s">δ<sub>1</sub>=ε<sub>1</sub></span> 即可），同法取 <span class="s">δ<sub>2</sub>=ε<sub>2</sub></span>；两个邻域各自落在 <span class="s">U</span> 与 <span class="s">V</span>，故交集含两者的交，取较小者作为见证。<span class="s">∎</span></p>
+
+<p><b>定理 8.1（生成 σ-代数）。</b>对任意 <span class="s">𝒜⊆2<sup>X</sup></span>，存在含 <span class="s">𝒜</span> 的最小 <span class="s">σ</span>-代数。</p>
+
+<p><b>证明。</b>令 <span class="s">Φ={Σ : Σ</span> 是 <span class="s">σ</span>-代数且 <span class="s">𝒜⊆Σ}</span>。因 <span class="s">2<sup>X</sup>∈Φ</span>，<span class="s">Φ≠∅</span>。置 <span class="s">Σ<sub>0</sub>=∩Φ</span>。<br>
+先证 <span class="s">Σ<sub>0</sub></span> 是 <span class="s">σ</span>-代数：<span class="s">X</span> 属于每个 <span class="s">Σ∈Φ</span>，故属 <span class="s">Σ<sub>0</sub></span>；若 <span class="s">A∈Σ<sub>0</sub></span>，则 <span class="s">A</span> 属于每个 <span class="s">Σ</span>，故 <span class="s">A<sup>c</sup></span> 亦然；若 <span class="s">A<sub>n</sub>∈Σ<sub>0</sub></span>（<span class="s">n∈ℕ</span>），则每个 <span class="s">Σ</span> 含全部 <span class="s">A<sub>n</sub></span>，故含其并。<br>
+再证最小性：任何 <span class="s">Σ∈Φ</span> 都包含 <span class="s">Σ<sub>0</sub></span>（因为 <span class="s">Σ<sub>0</sub></span> 是交）。唯一性由“最小”直接得到。<span class="s">∎</span></p>
+
+<p><b>命题 11.1（极化恒等式）。</b>设 <span class="s">B</span> 对称双线性、<span class="s">Q(u)=B(u,u)</span>，则
+<span class="s">B(u,v)=¼[Q(u+v)−Q(u−v)]</span>，且 <span class="s">Q(u+v)+Q(u−v)=2Q(u)+2Q(v)</span>。</p>
+
+<p><b>证明。</b>展开：<span class="s">Q(u+v)=Q(u)+2B(u,v)+Q(v)</span>；<span class="s">Q(u−v)=Q(u)−2B(u,v)+Q(v)</span>（用了对称性与双线性）。两式相减得第一式，相加得第二式。<br>
+反之，若 <span class="s">Q</span> 满足平行四边形律且 <span class="s">Q(0)=0</span>，令 <span class="s">B(u,v)=¼[Q(u+v)−Q(u−v)]</span>，则 <span class="s">B</span> 对称、<span class="s">B(u,u)=Q(u)</span>，且由平行四边形律可验证 <span class="s">B</span> 对第一个变量可加——这一步是标准的（Jordan–von Neumann 定理的有限维版本）。<span class="s">∎</span></p>
+
+<p><b>定理 12.3（柯西–施瓦茨）。</b>设 <span class="s">B</span> 半正定对称双线性，则 <span class="s">B(u,v)²≤Q(u)Q(v)</span>。</p>
+
+<p><b>证明。</b>若 <span class="s">Q(v)=0</span>，由半正定性与极化得 <span class="s">B(v,w)=0</span> 对一切 <span class="s">w</span> 成立，故两端为 0。若 <span class="s">Q(v)&gt;0</span>，对一切 <span class="s">t∈ℝ</span> 有 <span class="s">0≤Q(u+tv)=Q(u)+2tB(u,v)+t²Q(v)</span>。右边是 <span class="s">t</span> 的非负二次式，故判别式 <span class="s">4B(u,v)²−4Q(u)Q(v)≤0</span>，即得。<span class="s">∎</span></p>
+
+<p>四条证明都只用到定义与初等代数：<b>它们的价值不在技巧，而在“把语言的断言落到可检查的一步一步”。</b>读到这里若觉得“太简单”，那正是本书想要的效果——<b>可检查的定理本来就该看起来简单。</b></p>
