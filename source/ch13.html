@@ -146,6 +146,36 @@
 
 <p>这张表的价值在“替代”一列：<b>工具失效不是终点，而是换工具的信号。</b>本书只在图上用拉普拉斯，正因为图上的三个条件是齐的；一旦离开图（例如有向、加权、非正规），就要照这张表换工具，而不是硬套结论。</p>
 
+<h3 id="sec13-11">13.11　三套工具与三种误差</h3>
+
+<p>工具与误差一一对应，混用会把误差算错。</p>
+
+<table class="nat">
+<tr><th class="l">工具</th><th class="l">误差来源</th><th class="l">量级</th><th class="l">怎么查</th></tr>
+<tr><td class="l">极化</td><td class="l">浮点相消</td><td class="l"><span class="s">10<sup>−15</sup></span></td><td class="l">换精度重算</td></tr>
+<tr><td class="l">谱</td><td class="l">迭代收敛</td><td class="l"><span class="s">10<sup>−10</sup></span></td><td class="l">改初值重算</td></tr>
+<tr><td class="l">变分</td><td class="l">子空间选择</td><td class="l"><span class="s">10<sup>−2</sup></span></td><td class="l">扩大子空间</td></tr>
+</table>
+
+<p>三行的量级差 13 个数量级，这是本书提醒“数值对上了不是充分证据”的算术依据。<b>若一个结论依赖第三行的精度，用第一行的工具去验它，永远验不出来。</b></p>
+
+<p>实操建议：<b>先确定要验的量属于哪一套工具，再用同一套工具的高精度版本去核。</b>跨工具核对（例如用变分的结果验证谱的结果）只能发现“差一个数量级以上”的错误，发现不了细微偏差。</p>
+
+<h3 id="sec13-12">13.12　谱的三种读法：模式、能量、时间</h3>
+
+<p>同一个谱，可以读成三件事。三种读法对应三种应用。</p>
+
+<table class="nat">
+<tr><th class="l">读法</th><th class="l">把 <span class="s">λ<sub>k</sub></span> 读成</th><th class="l">得到的结论</th><th class="l">本书用在哪</th></tr>
+<tr><td class="l">模式</td><td class="l">第 <span class="s">k</span> 个独立方向的“快慢”</td><td class="l">解锁序、两阶段</td><td class="l">第 16—18 章</td></tr>
+<tr><td class="l">能量</td><td class="l">该方向上“偏离”的代价</td><td class="l">变分原理、界</td><td class="l">第 13.4 节</td></tr>
+<tr><td class="l">时间</td><td class="l">该模式衰减的时间常数 <span class="s">1/λ<sub>k</sub></span></td><td class="l">混合时间、记忆长度</td><td class="l">第 17.5b 节</td></tr>
+</table>
+
+<p>三种读法等价，但用途不同：<b>做定理用“模式”，做界用“能量”，做估计用“时间”。</b>混用会出两种错：把 <span class="s">1/λ<sub>2</sub></span> 当“混合时间”时忘了它只是数量级（真实混合时间还要乘 <span class="s">log n</span>）；把 <span class="s">λ<sub>n</sub></span> 当“最大能量”时忘了它是尺度依赖的。</p>
+
+<p>给本书的提醒：第 17.5b 节的窗口长度 <span class="s">t<sub>vis</sub></span> 用的是“时间”读法，而第 19 章的 <span class="s">R</span> 用的是“模式”读法。<b>两者不能直接相乘或相除</b>——它们的量纲不同。这条细节写在这里，是为了防止读者把两个公式拼成一个。</p>
+
 <h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>

@@ -164,5 +164,21 @@
 <img class="fig" src="assets/svg/fig-degree-vs-R.svg" alt="图 18.4　树的度数异质性与 R">
 <div class="cap"><b>图 18.4　树的度数异质性与 R</b>　n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</div>
 <div class="box"><p><strong>读法：</strong>n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</p></div>
+<h3 id="sec18-10">18.10　R 的三个用法与一个误用</h3>
+
+<p><span class="s">R</span> 有三种正当用法，一种误用。</p>
+
+<table class="nat">
+<tr><th class="l">用法</th><th class="l">怎么做</th><th class="l">前提</th></tr>
+<tr><td class="l">诊断相变宽度</td><td class="l">算 <span class="s">λ<sub>n</sub>/λ<sub>2</sub></span></td><td class="l">图连通、无向</td></tr>
+<tr><td class="l">诊断数值条件数</td><td class="l">同一个 <span class="s">R</span> 就是 <span class="s">κ(A)</span></td><td class="l"><span class="s">A</span> 为拉普拉斯</td></tr>
+<tr><td class="l">诊断“瘦长 + 瓶颈”</td><td class="l">大 <span class="s">R</span> ⇔ 小 <span class="s">λ<sub>2</sub></span> ⇔ 廉价割</td><td class="l">Cheeger 不等式</td></tr>
+<tr><td class="l">误用：当结构指纹</td><td class="l">说“<span class="s">R</span> 相同所以图相同”</td><td class="l">错（第 18.5 节反例）</td></tr>
+</table>
+
+<p>三种用法各有前提，但共享同一个数——这正是“同一个形式”这句话的实际收益：<b>一个量，三种解释，三种可检验的预言。</b></p>
+
+<p>误用的教训是：<b><span class="s">R</span> 是“标量”，不是“指纹”。</b>凡是把标量当指纹的，都会在同谱反例上翻车——离散侧有 6 顶点两图，连续侧有 Sunada 的等谱流形，两边都为这条误用准备了反例。</p>
+
 <h3 id="sec18-ref">18　本章参考文献</h3>
 <div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>

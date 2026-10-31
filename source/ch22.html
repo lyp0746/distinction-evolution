@@ -114,5 +114,52 @@
 
 <p>这次复盘给第 15 章的探针表补了一条经验：<b>“操作探针”最能抓住失败的迁移，因为它检验“在那边做一次合法操作，翻译过来是否仍合法”。</b>凡是“动作语义不唯一”的领域，迁移都会在这一步断。</p>
 
+<h3 id="sec22-10">22.10　迁移的失败代价表</h3>
+
+<p>四个迁移中三个停在等价或同调，一个失败。把“失败代价”列出来，便于排优先级。</p>
+
+<table class="nat">
+<tr><th class="l">迁移</th><th class="l">失败后的代价</th><th class="l">可回退到</th><th class="l">本书处置</th></tr>
+<tr><td class="l">容量与遗忘</td><td class="l">低（互信息仍可用）</td><td class="l">B 级</td><td class="l">保留，标 B</td></tr>
+<tr><td class="l">时间错配 τ</td><td class="l">中（比值仍有意义）</td><td class="l">B 级</td><td class="l">保留，写明“完成”语义</td></tr>
+<tr><td class="l">三性权衡</td><td class="l">高（结论退为方向）</td><td class="l">C 级</td><td class="l">写成“边际收益递减”</td></tr>
+<tr><td class="l">自旋网络面积</td><td class="l">高（需整门理论）</td><td class="l">类比</td><td class="l">撤回，只留形式对照</td></tr>
+</table>
+
+<p>四行的规律：<b>失败代价与“依赖的外部理论量”成正比。</b>容量只依赖一个互信息；τ 依赖两个时间的定义；三性依赖预算的形式；自旋网络依赖一整门量子引力的公理。</p>
+
+<p>这条规律可以写成一句操作建议：<b>迁移前先问“它要搬多少外部公理”，搬得越多，越该降级。</b>这也解释了为什么本书最硬的结论（第 16—20 章）几乎不需要外部公理——它们只用线性代数与谱定理。</p>
+
+<h3 id="sec22-11">22.11　迁移的三种成功形态</h3>
+
+<p>前面多讲失败，这里补三种成功形态，各自对应一个价位。</p>
+
+<table class="nat">
+<tr><th class="l">形态</th><th class="l">条件</th><th class="l">例子</th><th class="l">价位</th></tr>
+<tr><td class="l">同构迁移</td><td class="l">目标领域有表示定理</td><td class="l">布尔代数 → 集合代数（Stone）</td><td class="l">同构</td></tr>
+<tr><td class="l">等价迁移</td><td class="l">有商结构与收敛定理</td><td class="l">离散拉普拉斯 → 连续拉普拉斯</td><td class="l">等价</td></tr>
+<tr><td class="l">同调迁移</td><td class="l">有不变量清单</td><td class="l">三性权衡（子模性）</td><td class="l">同调</td></tr>
+</table>
+
+<p>三种形态的分界很清楚：<b>有表示定理 → 同构；有收敛定理 → 等价；只有不变量 → 同调。</b>本书第 22 章的四个迁移分别落在后两档，第 12 章的形式则属于“候选的同构”（因为它还没有目标领域的表示定理）。</p>
+
+<p>这条分界给读者一个判断迁移成本的口诀：<b>先找定理，再找例子。</b>找到定理，迁移几乎是免费的；找不到定理，举再多例子也只能停在同调。</p>
+
+<h3 id="sec22-12">22.12　迁移的四种证据强度</h3>
+
+<p>判断一次迁移值不值得做，看它手里有什么证据。四种强度，从弱到强。</p>
+
+<table class="nat">
+<tr><th class="l">证据</th><th class="l">内容</th><th class="l">能支持的价位</th><th class="l">成本</th></tr>
+<tr><td class="l">类比</td><td class="l">几个共同特征</td><td class="l">类比</td><td class="l">分钟级</td></tr>
+<tr><td class="l">不变量</td><td class="l">一组量在两边相等</td><td class="l">同调</td><td class="l">小时级</td></tr>
+<tr><td class="l">收敛</td><td class="l">一边是另一边的极限</td><td class="l">等价</td><td class="l">天级</td></tr>
+<tr><td class="l">表示定理</td><td class="l">每个对象都能被表示</td><td class="l">同构</td><td class="l">月级</td></tr>
+</table>
+
+<p>四级的成本差三个数量级，而收益（结论的强度）也差三级。<b>所以“先做哪一级”是一个明确的性价比问题</b>：类比几乎免费，表示定理昂贵；中间的收敛与不变量是大多数研究的实际落脚点。</p>
+
+<p>本书的四个迁移分别停在不同档：容量（不变量 + 收敛）、τ（不变量）、三性（不变量）、自旋网络（类比）。<b>没有一条到表示定理</b>——这也是本书诚实的地方：能到同构的迁移极少，绝大多数跨领域研究只能到同调。</p>
+
 <h3 id="sec22-ref">22　本章参考文献</h3>
 <div class="refs"><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Baez, J. C. (2000). An introduction to spin foam models. <i>Lecture Notes in Physics</i> 543, 25–94.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p></div>

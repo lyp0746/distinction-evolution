@@ -150,5 +150,18 @@
 
 <p>设计上还有一个技巧：<b>不要只测一个 <span class="s">β</span>。</b>扫一条曲线（<span class="s">β</span> 从 <span class="s">0.5β<sub>1</sub></span> 到 <span class="s">2β<sub>2</sub></span>），同时记录解锁计数与分块度，两个台阶会同时显形；单点测量几乎一定会误判。</p>
 
+<h3 id="sec17-11">17.11　中间相的三条实用判据</h3>
+
+<p>要在数据上认出中间相，三条判据任一条成立即可。</p>
+
+<table class="nat">
+<tr><th class="l">判据</th><th class="l">怎么算</th><th class="l">误判风险</th></tr>
+<tr><td class="l">解锁计数非零且未满</td><td class="l">数 <span class="s">βλ<sub>k</sub>&gt;α</span> 的 <span class="s">k</span></td><td class="l">低（只需谱）</td></tr>
+<tr><td class="l">相关长度短而分块度为零</td><td class="l">两点相关 + 模块度</td><td class="l">中（依赖测法）</td></tr>
+<tr><td class="l">两个时间尺度分离</td><td class="l">快慢增长率之比</td><td class="l">高（需长时间序列）</td></tr>
+</table>
+
+<p>三条判据的成本递增，可靠性递减。<b>第一条只需谱，是首选；后两条是补充证据，不是必要条件。</b>本条判据的用处：它让“我看到中间相了”从印象变成可报的数。</p>
+
 <h3 id="sec17-ref">17　本章参考文献</h3>
 <div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>

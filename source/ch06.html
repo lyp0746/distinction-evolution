@@ -126,5 +126,38 @@
 
 <p>给本书的接口：<b><span class="s">d′</span> 是“区分能力”的第一个可测量。</b>第 21 章的知觉阈限条目之所以是 A 级，正是因为它有 <span class="s">d′</span> 这个两分钟能算的量；其余认知条目没有对应的可测量，所以停在 B 或 C。</p>
 
+<h3 id="sec6-10">6.10　三张 ROC 曲线说明阈值与能力的分离</h3>
+
+<p>同一组 <span class="s">d′</span>，换判据 <span class="s">c</span>，命中率与虚报率一起平移，但曲线形状不变。三行数值可以手算：</p>
+
+<table class="nat">
+<tr><th class="l">情形</th><th class="l">d′</th><th class="l">c</th><th class="l">命中率</th><th class="l">虚报率</th></tr>
+<tr><td class="l">宽松</td><td class="l">1.5</td><td class="l">−0.5</td><td class="l">0.88</td><td class="l">0.31</td></tr>
+<tr><td class="l">中性</td><td class="l">1.5</td><td class="l">0</td><td class="l">0.77</td><td class="l">0.23</td></tr>
+<tr><td class="l">严格</td><td class="l">1.5</td><td class="l">+0.5</td><td class="l">0.67</td><td class="l">0.16</td></tr>
+</table>
+
+<p>三行说明：<b>正确率从 0.88 掉到 0.67，但敏感度 <span class="s">d′</span> 一点没变。</b>于是“准确率”这个指标会把“判据宽”误读成“能力强”——这是第 10 章第一条规则（可比）在实验设计上的直接后果。</p>
+
+<p>给本书的教训：<b>任何“区分能力”的比较，都必须先固定判据，或同时报告 <span class="s">d′</span> 与 <span class="s">c</span>。</b>只报一个数，比不报更容易误导。</p>
+
+<img class="fig" src="assets/svg/fig-roc-three.svg" alt="图 6.2　同一 d′ 的三条 ROC 曲线">
+<div class="cap"><b>图 6.2　同一 d′ 的三条 ROC 曲线</b>　三条曲线形状相同、位置不同：判据 c 只平移操作点，不改变曲线下面积。</div>
+<div class="box"><p><strong>读法：</strong>三条曲线形状相同、位置不同：判据 c 只平移操作点，不改变曲线下面积。</p></div>
+<h3 id="sec6-11">6.11　区分与信息：三个量的关系</h3>
+
+<p>“区分”在信息论里有三个近邻：熵、互信息、KL 散度。它们的关系可以用一句话说清：<b>熵是“一个变量内部的不确定性”，互信息是“用另一个变量的区分能消掉多少不确定性”，KL 是“两个分布之间的区分有多大”。</b></p>
+
+<table class="nat">
+<tr><th class="l">量</th><th class="l">区分什么</th><th class="l">取值范围</th><th class="l">在本书哪里用</th></tr>
+<tr><td class="l">熵 <span class="s">H(X)</span></td><td class="l">一个分布内部的分散度</td><td class="l"><span class="s">≥0</span></td><td class="l">第 6.7 节的 <span class="s">I=H(f(X))</span></td></tr>
+<tr><td class="l">互信息 <span class="s">I(X;Y)</span></td><td class="l">两个变量共享的区分</td><td class="l"><span class="s">≥0</span></td><td class="l">第 22.2 节容量</td></tr>
+<tr><td class="l">KL 散度</td><td class="l">两个分布之间的差</td><td class="l"><span class="s">≥0</span>，不对称</td><td class="l">第 3.2 节的“可复算”成本</td></tr>
+</table>
+
+<p>三者的共同点是<b>非负</b>，差别在对称性：<span class="s">H</span> 与 <span class="s">I</span> 对称，KL 不对称。这个不对称有实际含义：<b>“用 A 的区分去近似 B”与“用 B 的区分去近似 A”代价不同。</b>本书第 22.2 节的信息瓶颈正是利用了这一点——压缩方向一旦定下，代价就不对称。</p>
+
+<p>还有一条恒等式把它们串起来：<span class="s">I(X;Y)=H(X)−H(X|Y)=H(Y)−H(Y|X)</span>。它说明<b>互信息是“消掉的不确定性”，而不是“共享的信息实体”</b>——这条读法能避免一个常见误解：把互信息当成“两者之间的管道”，从而以为它可加。<b>它不可加，这正是子模性（第 22.4 节）的来源。</b></p>
+
 <h3 id="sec6-ref">6　本章参考文献</h3>
 <div class="refs"><p>Spencer-Brown, G. (1969). <i>Laws of Form</i>. Allen &amp; Unwin.</p><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p></div>

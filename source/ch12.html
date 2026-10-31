@@ -136,5 +136,36 @@
 
 <p>这张表的作用是<b>把“统一”从抽象变成五个可验算的算术题</b>。任何人都能在纸上核完；核完仍不同意“五个领域同一结构”的人，至少知道分歧在哪一步——是符号差、是取等条件，还是“零”的含义。</p>
 
+<h3 id="sec12-10">12.10　零空间维数的三个可算后果</h3>
+
+<p>第 12.5b 节讲了零空间的含义，这里补三个可算后果。</p>
+
+<table class="nat">
+<tr><th class="l">后果</th><th class="l">公式</th><th class="l">可观测</th></tr>
+<tr><td class="l">参数不可辨识</td><td class="l">零空间维数 <span class="s">k</span> ⇒ 有 <span class="s">k</span> 个方向无法确定</td><td class="l">置信区间发散</td></tr>
+<tr><td class="l">全局区分缺失</td><td class="l"><span class="s">λ<sub>2</sub>=0</span> ⇒ <span class="s">β<sub>2</sub>=∞</span></td><td class="l">无中间相</td></tr>
+<tr><td class="l">数值不稳</td><td class="l">条件数 <span class="s">λ<sub>n</sub>/λ<sub>2</sub>→∞</span></td><td class="l">求逆误差爆炸</td></tr>
+</table>
+
+<p>三条后果是同一件事的三张脸：<b>零空间让某个方向“看不见”，而“看不见”在统计里叫不可辨识，在图论里叫不连通，在数值上叫病态。</b></p>
+
+<p>这条统一性是本书最实用的一条：<b>遇到“结果不稳”时，先查零空间，而不是先换算法。</b>换算法只是在病态问题上换一种崩法；查零空间才知道该加约束还是该商掉。</p>
+
+<h3 id="sec12-11">12.11　五个领域的“零”与“无穷”</h3>
+
+<p>同一个形式，五个领域对“零”和“无穷”的解释各不相同，而这决定了它们的适用边界。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">“零”意味着</th><th class="l">“无穷”意味着</th><th class="l">边界</th></tr>
+<tr><td class="l">统计</td><td class="l">完全共线</td><td class="l">方差无穷（重尾）</td><td class="l">重尾时协方差不存在</td></tr>
+<tr><td class="l">优化</td><td class="l">平坦方向</td><td class="l">目标无下界</td><td class="l">无下界时二阶方法失效</td></tr>
+<tr><td class="l">图论</td><td class="l">常数方向（不连通）</td><td class="l">无（谱有界）</td><td class="l">有限图谱必有界</td></tr>
+<tr><td class="l">几何</td><td class="l">退化方向</td><td class="l">曲率奇点</td><td class="l">奇点处度量不光滑</td></tr>
+</table>
+
+<p>四行里只有图论那一行没有“无穷”——因为有限图的谱有上界 <span class="s">2Δ</span>。<b>这条差别正是第 19—20 章的起点</b>：把图换成流形，“无穷”（无界谱）立刻出现，两阶段结构随之塌缩。</p>
+
+<p>于是“同一个形式”这句话有一个精确的限度：<b>形式相同，但定义域的有界性不同，结论就不同。</b>把图上的直觉搬到流形上，第一个撞墙的地方就是这里。</p>
+
 <h3 id="sec12-ref">12　本章参考文献</h3>
 <div class="refs"><p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. <i>Exercices de Mathématiques</i> 4.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p><p>Parlett, B. N. (1998). <i>The Symmetric Eigenvalue Problem</i>. SIAM.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

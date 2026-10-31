@@ -45,7 +45,9 @@ BACK = [
         ("附录 A　形式化与证明", "appendix_a.html", "apxA"),
         ("附录 B　数据与案例", "appendix_b.html", "apxB"),
         ("附录 C　工具与清单", "appendix_d.html", "apxC"),
-        ("附录 D　可证伪登记簿（append-only）", "appendix_f.html", "apxD"),
+        ("附录 D　可证伪登记簿（append-only）", "appendix_e.html", "apxD"),
+        ("附录 E　定理与命题索引", "appendix_f.html", "apxE"),
+        ("附录 F　术语中英对照", "appendix_f2.html", "apxF"),
 ]
 
 def load_json(p, default=None):

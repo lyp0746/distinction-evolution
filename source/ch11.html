@@ -132,5 +132,35 @@
 
 <p>举例：第 16 章的临界耦合 <span class="s">β<sub>k</sub>=α/λ<sub>k</sub></span> 依赖特征值，因此它对一般换基不不变——<b>但图上的换基被限制为顶点置换（一种正交变换），所以它是不变量。</b>这条细节解释了为什么本书的定理只在“图”上成立：<b>图的对称群小，不变量才多。</b></p>
 
+<h3 id="sec11-11">11.11　二次型的三类典型图形</h3>
+
+<p>二维情形下，二次型只有三种形状，与惯性指数一一对应。</p>
+
+<table class="nat">
+<tr><th class="l">符号差</th><th class="l">等值线 <span class="s">Q=const</span></th><th class="l">几何</th><th class="l">例子</th></tr>
+<tr><td class="l">(2,0)</td><td class="l">椭圆</td><td class="l">正定，有唯一极小</td><td class="l">协方差、Hessian（极小点）</td></tr>
+<tr><td class="l">(1,1)</td><td class="l">双曲线</td><td class="l">不定，有鞍点</td><td class="l">时空间隔</td></tr>
+<tr><td class="l">(1,0,1)</td><td class="l">两条平行直线</td><td class="l">退化，有零方向</td><td class="l">不连通图的拉普拉斯</td></tr>
+</table>
+
+<p>三行的对照给出一条判据：<b>看等值线的形状，就知道系统在做什么。</b>椭圆意味着“有一个最优”；双曲线意味着“有一个鞍点，差别在多方向”；平行线意味着“有一个方向完全看不见”。</p>
+
+<p>本书的五个实例分别落在三行上：统计与几何多在第一行，优化看极值点的符号（第一行或第二行），图论在不连通时落到第三行。<b>于是“同一个结构”这句话有了最直观的版本：五件事画出来的等值线，只有三种形状。</b></p>
+
+<h3 id="sec11-12">11.12　二次型与相关性：一个必须分清的区别</h3>
+
+<p>二次型刻画“相似”，相关性刻画“同向变动”。两者都用一个矩阵表示，但不是同一件事。</p>
+
+<table class="nat">
+<tr><th class="l">量</th><th class="l">定义</th><th class="l">对尺度敏感</th><th class="l">能否为零而相似</th></tr>
+<tr><td class="l">协方差</td><td class="l"><span class="s">E[(X−μ)(Y−ν)]</span></td><td class="l">是</td><td class="l">能（正交）</td></tr>
+<tr><td class="l">相关系数</td><td class="l">协方差除以两个标准差</td><td class="l">否</td><td class="l">能（正交）</td></tr>
+<tr><td class="l">二次型 <span class="s">Q(u)</span></td><td class="l"><span class="s">½u<sup>T</sup>Au</span></td><td class="l">是（除非归一化）</td><td class="l">能（零空间）</td></tr>
+</table>
+
+<p>三行的关键差别在“对尺度敏感”一列：<b>相关系数把尺度除掉，因此它是二次型的“归一化版本”</b>；而二次型保留尺度，因此它能回答“差多少”而不只是“差的方向对不对”。</p>
+
+<p>这条区别对本书有直接后果：<b>第 16—20 章的全部结论都建立在“保留尺度”的二次型上</b>（因为要算 <span class="s">λ<sub>k</sub></span> 与 <span class="s">β</span> 的比值）。若换成相关系数（归一化），谱会被压到 <span class="s">[0,2]</span>，<span class="s">R</span> 也随之改变——第 16.5b 节的归一化拉普拉斯就是这种情况。读书时若把两者混用，数值会差一个尺度因子。</p>
+
 <h3 id="sec11-ref">11　本章参考文献</h3>
 <div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

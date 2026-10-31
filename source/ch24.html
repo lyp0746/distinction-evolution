@@ -134,5 +134,23 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 
 <p>这条实例也说明了为什么要“先写判据”：<b>如果先看到反例再写判据，很容易把判据写成“无向图上局部先增长”——于是什么也没学到。</b>判据先行，才有“出局”这一档。</p>
 
+<h3 id="sec24-9">24.9　三个杀手实验的当前状态</h3>
+
+<p>第 24.2 节给了三个实验，这里报告它们的执行状态——这是登记簿纪律的一部分。</p>
+
+<table class="nat">
+<tr><th class="l">实验</th><th class="l">状态</th><th class="l">结果</th><th class="l">对本书的影响</th></tr>
+<tr><td class="l">H1 有向反转</td><td class="l">已执行</td><td class="l">6 顶点反例成立</td><td class="l">定理 16.1 前提补「对称」</td></tr>
+<tr><td class="l">H2 缺失中间相</td><td class="l">未执行</td><td class="l">—</td><td class="l">若命中，定理 17.1 需重检</td></tr>
+<tr><td class="l">H3 同谱异构</td><td class="l">已执行</td><td class="l">6 顶点两图成立</td><td class="l">第 18.5 节；撤回「谱＝结构」</td></tr>
+</table>
+
+<p>三行里两行已执行、一行未执行。<b>未执行的那一行是最该被做的</b>：它直接检验第 17 章的核心定理，而成本只有十几行代码（取随机图族，比较 <span class="s">λ<sub>2</sub></span> 与 <span class="s">λ<sub>n</sub></span> 是否相等却不等于 <span class="s">n</span>）。</p>
+
+<p>把状态写出来，是本书对“可裁决”的最后一次兑现：<b>不是所有实验都要做完，但每一个都要说清做没做。</b>没做的写在表里，比含糊地说“已验证”更可靠。</p>
+
+<img class="fig" src="assets/svg/fig-registry-status.svg" alt="图 24.3　登记簿现状">
+<div class="cap"><b>图 24.3　登记簿现状</b>　出局 4 条、成立 0 条、未执行 5 条——「出局多于成立」说明判据写得严，而不是结论少。</div>
+<div class="box"><p><strong>读法：</strong>出局 4 条、成立 0 条、未执行 5 条——「出局多于成立」说明判据写得严，而不是结论少。</p></div>
 <h3 id="sec24-ref">24　本章参考文献</h3>
 <div class="refs"><p>Nakamoto, S. (2008). Bitcoin: a peer-to-peer electronic cash system. (哈希链的最小可行性说明)</p><p>Merkle, R. C. (1988). A digital signature based on a conventional encryption function. <i>CRYPTO '87</i>, LNCS 293.</p><p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. <i>Scientific Data</i> 3, 160018.</p><p>Nosek, B. A., et al. (2018). The preregistration revolution. <i>PNAS</i> 115, 2600–2606.</p></div>

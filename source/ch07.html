@@ -131,5 +131,37 @@
 
 <p>这一点与第 7.5 节的 <span class="s">T₀</span> 反例是同一件事的两个版本：<b>结构由区分生成，而区分是可以选的</b>——所以任何“客观的连通性”都必须先声明约定。</p>
 
+<h3 id="sec7-9">7.9　一个可算的连通性反例</h3>
+
+<p>取 4×4 网格，去掉 <span class="s">(1,1)</span> 与 <span class="s">(2,2)</span> 两个点，其余全部保留。问“剩下的图形连通吗？”答案取决于邻接。</p>
+
+<table class="nat">
+<tr><th class="l">邻接</th><th class="l">(0,0) 能否到达 (3,3)</th><th class="l">分支数</th></tr>
+<tr><td class="l">4-邻接</td><td class="l">能（沿边界绕行）</td><td class="l">1</td></tr>
+<tr><td class="l">8-邻接</td><td class="l">能（更快）</td><td class="l">1</td></tr>
+</table>
+
+<p>换一个更尖锐的配置：只保留两段对角相接的阶梯（<span class="s">(0,0),(1,1),(2,2)</span>）。此时 <b>4-邻接下 3 个分支，8-邻接下 1 个</b>——同一张图，同一个问题，两个答案。</p>
+
+<p>这说明第 7 章的“生成”不是修辞：<b>连通性是生成的，而生成规则（邻接）是人的选择。</b>工程上一旦换了邻接约定，所有“区域数”“边界长度”都要重算；这正是第 10 章第二条规则（阈值可传递）在多维情形下的版本。</p>
+
+<img class="fig" src="assets/svg/fig-adjacency.svg" alt="图 7.2　4-邻接与 8-邻接的分支数">
+<div class="cap"><b>图 7.2　4-邻接与 8-邻接的分支数</b>　同一批点，8-邻接有对角边直接连通（1 个分支），4-邻接必须绕行（3 个分支）。</div>
+<div class="box"><p><strong>读法：</strong>同一批点，8-邻接有对角边直接连通（1 个分支），4-邻接必须绕行（3 个分支）。</p></div>
+<h3 id="sec7-10">7.10　三种生成方式的对照</h3>
+
+<p>由区分生成结构有三条路，各自给出不同的“空间”，用同一组例子对照最清楚。</p>
+
+<table class="nat">
+<tr><th class="l">生成方式</th><th class="l">原始数据</th><th class="l">得到</th><th class="l">丢掉什么</th></tr>
+<tr><td class="l">序 → Alexandrov 拓扑</td><td class="l">偏序 <span class="s">≼</span></td><td class="l"><span class="s">T₀</span> 拓扑</td><td class="l">分离性（命题 7.2）</td></tr>
+<tr><td class="l">函数族 → 初始拓扑</td><td class="l">区分函数 <span class="s">f<sub>α</sub></span></td><td class="l">一般拓扑</td><td class="l">“距离”（无度量）</td></tr>
+<tr><td class="l">等价关系 → 粗糙集</td><td class="l">可分关系 <span class="s">E</span></td><td class="l">上下近似对</td><td class="l">点之间的邻域</td></tr>
+</table>
+
+<p>三行给出三种“空间”的含义：第一种只有“谁在谁下面”，第二种有“开集与连续”，第三种只有“确定属于/可能属于”。<b>选哪一种，取决于你要回答什么问题</b>——这正是第 10 章“可比”规则在多维情形下的版本：不同生成方式给出不同的比较基础。</p>
+
+<p>本书的选择是第二种（定理 7.1），因为它保留了“稳定区”这个直觉；第一种留作极限情形（第 7.5 节的反例），第三种留作数据不完整时的工具（第 7.6 节）。</p>
+
 <h3 id="sec7-ref">7　本章参考文献</h3>
 <div class="refs"><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Stong, R. E. (1966). Finite topological spaces. <i>Transactions of the AMS</i> 123, 325–340.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Mazin, A. (2025). Generative Topology. Zenodo.</p></div>
