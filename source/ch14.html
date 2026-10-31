@@ -50,6 +50,10 @@
 
 <p>需要说清的边界：这一点是<b>理论内部的结果</b>，不是实验结论；把它当作“空间确实是离散的”证据是越界（第 3 章的分级）。本书引用它，只为一件事——<b>说明“二次型 → 谱 → 离散几何”这条链条在物理学里已经有人走过一遍</b>，而本书第 16—20 章在图上走的是同一条链条的最简版本。</p>
 
+<img class="fig" src="assets/svg/fig-spin-network.svg" alt="图 14.1　自旋网络：面积＝被区分出来的边">
+<div class="cap"><b>图 14.1　自旋网络的一小块</b>　左边四个结点与五条边，边上的 <span class="s">j</span> 是表示指标；橙色平面只与“被它切开的边”相交，于是面积只依赖这些边的 <span class="s">j</span>。</div>
+<p><strong>读法：</strong>左边四个结点与五条边，边上的 <span class="s">j</span> 是表示指标；橙色平面只与“被它切开的边”相交，于是面积只依赖这些边的 <span class="s">j</span>。</p>
+
 <h3 id="sec14-5">14.5　反例：退化与例外</h3>
 
 <p>若形式退化（存在非零 <span class="s">u</span> 使 <span class="s">B(u,·)≡0</span>），保形式群不再是经典的这三类，而是一个半直积：它必须同时保住零空间。统计里的共线、图论里的非连通分支，都落在这里。处理方式有两种：商掉零空间（得到正定形式），或把零空间当作“看不见的方向”显式保留（第 18 章的零特征值重数）。</p>
@@ -71,6 +75,24 @@
 <p><b>第二，它示范了“形式决定谱”。</b>换一个群（<span class="s">SU(2)</span> 换 <span class="s">SU(1,1)</span>），Casimir 的公式就变，面积谱也随之变。这与第 14 章的“形式决定群”是同一条定理的两种读法：形式定了，群和谱一起定。</p>
 
 <p><b>第三，它给出一个反面教材。</b>若有人把 <span class="s">A(j)</span> 的离散性直接搬到本书的网格上，会得出“<span class="s">R</span> 应该收敛”的错误结论——因为两者的“分辨率”不是一回事：前者是离散谱的间隔，后者是网格步长。<b>同一个词（分辨率）在两个语境里指两个量</b>，这是第 4 章第七个赝品（定义滑移）的实例。</p>
+
+<h3 id="sec14-6">14.6　面积谱的两个可算事实</h3>
+
+<p>第 14.4b 节的公式给出两个立刻可算的事实，它们都不需要任何物理假设。</p>
+
+<p><b>事实一：最小面积不为零。</b><span class="s">A(1/2)=8πγℓ<sub>P</sub><sup>2</sup>√(3/4)=4√3πγℓ<sub>P</sub><sup>2</sup>≈21.8γℓ<sub>P</sub><sup>2</sup></span>。<b>面积有下限</b>——这与连续几何的直觉相反，却与第 9 章“有限分辨率”的立场一致：分辨率不可能无限小。</p>
+
+<p><b>事实二：谱不是等间隔的。</b><span class="s">A(1)/A(1/2)=√2/√(3/4)=2/√3≈1.155</span>，而 <span class="s">A(3/2)/A(1)=√(15/4)/√2≈1.369</span>。相邻比值不相等，因此<b>面积不是“某个算子的等间隔谱”</b>。这条事实直接决定了第 22.5b 节那个迁移只能到类比价位。</p>
+
+<table class="nat">
+<tr><th class="l"><span class="s">j</span></th><th class="l"><span class="s">√(j(j+1))</span></th><th class="l">相对 <span class="s">j=1/2</span></th><th class="l">相邻比</th></tr>
+<tr><td class="l">1/2</td><td class="l">0.8660</td><td class="l">1.000</td><td class="l">—</td></tr>
+<tr><td class="l">1</td><td class="l">1.4142</td><td class="l">1.633</td><td class="l">1.633</td></tr>
+<tr><td class="l">3/2</td><td class="l">1.9365</td><td class="l">2.236</td><td class="l">1.369</td></tr>
+<tr><td class="l">2</td><td class="l">2.4495</td><td class="l">2.828</td><td class="l">1.265</td></tr>
+<tr><td class="l">5/2</td><td class="l">2.9580</td><td class="l">3.416</td><td class="l">1.208</td></tr>
+</table>
+<p>表里最后一列单调下降并趋于 1（因为 <span class="s">√(j(j+1))≈j+1/2</span>）。<b>于是“小面积处稀疏、大面积处密集”</b>——这与网格上“高频密集”的方向相反。两个模型都能给出离散谱，但谱的疏密结构不同，这是可以区分它们的一个观察点。</p>
 
 <h3 id="sec14-ref">14　本章参考文献</h3>
 <div class="refs"><p>Penrose, R. (1971). Angular momentum: an approach to combinatorial space-time. In <i>Quantum Theory and Beyond</i>, Cambridge University Press.</p><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p><p>Baez, J. C. (2000). An introduction to spin foam models of quantum gravity and BF theory. <i>Lecture Notes in Physics</i> 543, 25–94.</p></div>

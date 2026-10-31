@@ -64,5 +64,19 @@
 
 <p>压力测试的结果是：语法<b>能用，但只到 B 级</b>。原因是第四项——观察者不是中立的：法官的阈值本身是争议对象（第 21.3b 节的表已说明）。所以本书把法律涵摄列为 C 级条目（第 25 条），并把“把语法用进法律”写成附录 D 的未执行项 O4。<b>能用而不敢标 A 级，正是分级的用处。</b></p>
 
+<h3 id="sec10-7">10.7　三条规则的可判定性</h3>
+
+<p>三条规则里，只有一条是“可判定”的，其余两条是“可检查”。分清这一点，能省掉很多争论。</p>
+
+<ul>
+<li><b>可比</b>：不可判定。给定两个对象，判断“它们是否在同一属性上比较”需要外部知识。</li>
+<li><b>阈值可传递</b>：可检查。给定 <span class="s">f,θ</span> 与两个对象，<span class="s">|f(x)−f(y)|&gt;θ</span> 是一次算术比较。</li>
+<li><b>可复算</b>：可检查。给定输入与算法，重跑一次即可。</li>
+</ul>
+
+<p>于是“语法错误”分两类：第一类（不可比）只能靠人工审查，第二类（阈值、复算）可以由程序发现。这个区分解释了为什么本书把附录 B 的代码放在那么显眼的位置——<b>它覆盖的正是那两条可检查的规则。</b></p>
+
+<p>也给第 24 章一个提示：可裁决的检验只能建立在可检查的规则上。凡要求“换一个属性再看”的检验，都不是检验，而是重新提问。</p>
+
 <h3 id="sec10-ref">10　本章参考文献</h3>
 <div class="refs"><p>Mac Lane, S. (1998). <i>Categories for the Working Mathematician</i> (2nd ed.). Springer.</p><p>Lawvere, F. W. (1969). Adjointness in foundations. <i>Dialectica</i> 23, 281–296.</p><p>Awodey, S. (2010). <i>Category Theory</i> (2nd ed.). Oxford University Press.</p><p>Spivak, D. I. (2014). <i>Category Theory for the Sciences</i>. MIT Press.</p></div>

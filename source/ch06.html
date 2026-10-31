@@ -81,5 +81,14 @@
 
 <p>这个旁证的价值在于它给出“阈值可调”的实证：同一组刺激，换指导语就换阈值，边界随之平移。这正好印证第 10 章的第二条规则——<b>阈值换了，结论必须重新报告</b>。它也提醒一件事：凡是把“范畴”当成客观分界的说法，都要先问“用谁的阈值”。</p>
 
+<h3 id="sec6-7">6.7　区分的信息论刻画</h3>
+
+<p>第 6.2 节的四元组可以再加一项：<b>区分能带走多少不确定性。</b>把 <span class="s">f</span> 离散化后，两个对象被分到同一格的概率为 <span class="s">p<sub>same</sub></span>，则一次区分的<b>信息量</b>可以写成</p>
+<div class="eq"><span class="body">I = H(对象) − H(对象 | 格子) = H(f(X))</span><span class="num">(6.1)</span></div>
+
+<p>这条式子的好处是把“区分”与“压缩”接上：<b>阈值变粗，<span class="s">H(f(X))</span> 变小，区分能力下降，但可复现性上升。</b>第 8 章会把它写成“分辨率预算”，第 22 章会把它写成“容量与遗忘”。三个地方说的是同一件事：<b>区分是一次有损压缩，损失可以量化。</b></p>
+
+<p>它也给“过度分辨”一个数：若 <span class="s">θ</span> 小到把噪声也分开，<span class="s">H(f(X))</span> 会变得很大，但其中大部分是不可复现的信息。判据是：<b>把同一个对象测两次，如果两次分到不同格子，那么这部分 <span class="s">H</span> 是噪声。</b>重复测量的方差就是这个判据的可算版本。</p>
+
 <h3 id="sec6-ref">6　本章参考文献</h3>
 <div class="refs"><p>Spencer-Brown, G. (1969). <i>Laws of Form</i>. Allen &amp; Unwin.</p><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p></div>

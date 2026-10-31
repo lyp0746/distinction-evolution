@@ -104,6 +104,16 @@
 </table>
 <p>最后一列是本书反复强调“可复算”的技术理由：<b>三种误差来源互不相同，因此“数值对上了”不是充分证据。</b>第 19 章表 19.1 的 0.1% 是三种误差叠加后的结果，而不是其中某一种的精度。想知道是哪一种，必须换一种算法再算一遍——这就是附录 B 给出独立代码的原因。</p>
 
+<h3 id="sec13-8">13.8　极限情形：极值原理与 Perron–Frobenius</h3>
+
+<p>三套工具在“极端情形”下会退化，退化处往往藏着最有用的定理。两例。</p>
+
+<p><b>图上的极值原理。</b>若 <span class="s">Lu=0</span>（调和），则 <span class="s">u</span> 在每个连通分支上为常数；若 <span class="s">Lu≥0</span>，则 <span class="s">u</span> 的最大值在边界（度为 1 的顶点或人为指定的边界）取到。这条离散极值原理是第 16 章“零空间＝常数”的另一面，也是数值方法（有限元）稳定性的来源。</p>
+
+<p><b>Perron–Frobenius。</b>若把 <span class="s">L</span> 换成邻接矩阵 <span class="s">A</span>（非负），则最大特征值 <span class="s">ρ(A)</span> 为正、代数重数为 1、对应特征向量可全正。它给出一条与拉普拉斯互补的谱信息：<b>拉普拉斯看“差”，邻接看“量”。</b></p>
+
+<p>两例的对照说明第 13 章的分工：<b>变分工具处理极值，谱工具处理分解，而“哪个矩阵”决定你看到的是差还是量。</b>本书选拉普拉斯，因为“区分”天然是比较，而比较天然是差。</p>
+
 <h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>

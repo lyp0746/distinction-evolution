@@ -73,5 +73,20 @@
 </table>
 <p>这张表是第 12 章“五个领域同一个结构”的分母：五个实例落在这张表的不同行上。<b>“同一个”指同一张表，不指同一行。</b>混淆两者，就是第 23 章说的“过度统一”。</p>
 
+<h3 id="sec11-7">11.7　相似度的三种度量与它们的秩</h3>
+
+<p>“有多像”可以写成三种不同强度的对象，按信息量递增：</p>
+
+<table class="nat">
+<tr><th class="l">强度</th><th class="l">对象</th><th class="l">能回答</th><th class="l">不能回答</th></tr>
+<tr><td class="l">最弱</td><td class="l">相似度函数 <span class="s">s(x,y)∈[0,1]</span></td><td class="l">谁更像谁</td><td class="l">能否相加、能否比较三个对象</td></tr>
+<tr><td class="l">中等</td><td class="l">距离 <span class="s">d(x,y)</span></td><td class="l">三角不等式、最近邻</td><td class="l">方向、内积</td></tr>
+<tr><td class="l">最强</td><td class="l">二次型 <span class="s">Q(u)</span></td><td class="l">内积、谱、分解</td><td class="l">因果方向、局部结构</td></tr>
+</table>
+
+<p>三者的关系是“后者蕴含前者，反之不然”。二次型给出内积，内积给出距离，距离给出相似度——每一步都有反例：距离不必来自内积（出租车距离），相似度不必满足三角不等式（余弦相似度）。</p>
+
+<p>于是“把相似度写成二次型”这件事，是一次<b>有代价的升级</b>：换来了谱与分解，代价是必须满足平行四边形律。第 12 章的五个领域之所以能统一，恰恰因为它们都站在最强的那一档上；而第 21 章里那些只能用最弱一档的领域（例如“文化相似性”），就注定只能标 C 级。</p>
+
 <h3 id="sec11-ref">11　本章参考文献</h3>
 <div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

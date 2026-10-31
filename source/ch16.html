@@ -84,5 +84,14 @@
 
 <p>于是临界耦合就是 <span class="s">Γ<sub>1</sub>=1/λ<sub>n</sub></span>、<span class="s">Γ<sub>2</sub>=1/λ<sub>2</sub></span>，与 <span class="s">α</span> 无关。<b>这个改写的好处是把“尺度”从参数里去掉</b>：换单位不改变任何结论，因为 <span class="s">Γ</span> 是无量纲的。第 19 章讨论“推向连续”时，正是用 <span class="s">Γ</span> 与网格步长 <span class="s">h</span> 的关系来说明哪个临界值消失、哪个留下。</p>
 
+<h3 id="sec16-7">16.7　临界值有多稳：一次扰动估计</h3>
+
+<p>定理 16.1 的临界值是 <span class="s">α/λ<sub>k</sub></span>。若图被扰动（加一条边、改一个权），临界值会移动多少？由 Weyl 不等式（第 13.5b 节）与 <span class="s">λ=0</span> 的固定性可得</p>
+<div class="eq"><span class="body">|Δλ<sub>k</sub>| ≤ ‖E‖<sub>2</sub>，故 |Δβ<sub>1</sub>|/β<sub>1</sub> ≤ ‖E‖<sub>2</sub>/λ<sub>n</sub></span><span class="num">(16.5)</span></div>
+
+<p>代入具体数：加一条边至多使 <span class="s">λ<sub>n</sub></span> 变化 2，所以对 <span class="s">C<sub>10</sub></span>（<span class="s">λ<sub>n</sub>=4</span>）而言，<span class="s">β<sub>1</sub></span> 的相对变化不超过 50%——<b>不算小</b>。而对网格（<span class="s">λ<sub>n</sub>≈8</span>），不超过 25%。</p>
+
+<p>这条估计有一个直观解释：<b>临界值对“最高频模式”敏感，而最高频模式恰是局部的</b>（相邻顶点反号）。所以改一条局部的边，能扰动 <span class="s">β<sub>1</sub></span>，却几乎动不了 <span class="s">β<sub>2</sub></span>（<span class="s">λ<sub>2</sub></span> 是全局量）。<b>两个临界值的稳定性不同，这本身就是一个可测的预言：</b>在噪声图上，第二个门槛比第一个稳定得多。</p>
+
 <h3 id="sec16-ref">16　本章参考文献</h3>
 <div class="refs"><p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p><p>von Luxburg, U. (2007). A tutorial on spectral clustering. <i>Statistics and Computing</i> 17, 395–416.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

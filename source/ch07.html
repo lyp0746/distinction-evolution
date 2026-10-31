@@ -82,5 +82,15 @@
 
 <p>这件小事的教训很大：<b>“连通”不是图像自带的性质，而是邻接约定（区分）的产物。</b>换约定，物体个数就变。这与第 7.5 节的 T₀ 反例是同一件事的两个版本——都说明“结构由区分生成，而区分是可以选的”。</p>
 
+<h3 id="sec7-6">7.6　第三种形式化：粗糙集与上下近似</h3>
+
+<p>除了 Alexandrov 拓扑与 locale，还有一条常被忽略的路：<b>粗糙集</b>。给定等价关系 <span class="s">E</span>（“用现在的区分分不开”），每个集合 <span class="s">A</span> 有一对近似：下近似 <span class="s">E‾(A)</span>（确定属于 <span class="s">A</span> 的等价类之并）与上近似 <span class="s">Ē(A)</span>（可能属于 <span class="s">A</span> 的等价类之并）。</p>
+
+<p><b>命题 7.4。</b>下近似是内核算子，上近似是闭包算子：<span class="s">E‾(A)⊆A⊆Ē(A)</span>，且 <span class="s">E‾</span> 保交、<span class="s">Ē</span> 保并。</p>
+
+<p><b>证明。</b>由定义直接验证：等价类要么整体属于 <span class="s">A</span>（进下近似），要么与之相交（进上近似）。保交保并由集合运算的分配律给出。<span class="s">∎</span></p>
+
+<p>这条形式化的价值在于它把“边界”写成了<b>一对算子之差</b>：<span class="s">Ē(A)−E‾(A)</span> 就是“分不清的部分”，正对应第 7.2 节的 <span class="s">P=1</span> 那条边界。它也解释了为什么本书语法要求“阈值可传递”：阈值一变，等价关系 <span class="s">E</span> 就变，边界随之移动，结论必须重报。</p>
+
 <h3 id="sec7-ref">7　本章参考文献</h3>
 <div class="refs"><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Stong, R. E. (1966). Finite topological spaces. <i>Transactions of the AMS</i> 123, 325–340.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Mazin, A. (2025). Generative Topology. Zenodo.</p></div>

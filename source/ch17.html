@@ -57,6 +57,14 @@
 
 <p>这条式子的用处是给实验设计一个先验：若 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 很大（网格、环、路），中间相窗口极短，只有按 <span class="s">1/(βλ<sub>n</sub>)</span> 的时间分辨率采样才能看见；若 <span class="s">R</span> 接近 2（Petersen 型），窗口宽，容易观察。<b>“看不见”与“不存在”由此被分开。</b></p>
 
+<img class="fig" src="assets/svg/fig-two-stage-steps.svg" alt="图 17.2　两阶段相变：中间相是阶跃之间的平台">
+<div class="cap"><b>图 17.2　已解锁模式数随耦合强度的两次阶跃</b>　两级台阶之间就是中间相；台阶的高度由特征值重数决定，宽度由 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 决定。</div>
+<p><strong>读法：</strong>两级台阶之间就是中间相；台阶的高度由特征值重数决定，宽度由 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 决定。</p>
+
+<img class="fig" src="assets/svg/fig-intermediate-window.svg" alt="图 17.3　中间相里高频已增长、低频仍衰减">
+<div class="cap"><b>图 17.3　三个模式的增长率</b>　橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</div>
+<p><strong>读法：</strong>橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</p>
+
 <h3 id="sec17-5">17.5　反例：正则完全图里没有中间相</h3>
 
 <p>完全图 <span class="s">K<sub>n</sub></span> 的谱是 <span class="s">0</span> 与 <span class="s">n</span>（<span class="s">n−1</span> 重）。于是 <span class="s">λ<sub>2</sub>=λ<sub>n</sub>=n</span>，<span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>：所有非平凡模式同时解锁，没有中间相。直观上也对——完全图里没有“局部”与“全局”的区别，任何一块都和整体一样连得紧。</p>
@@ -80,6 +88,17 @@
 <tr><td class="l">分块度</td><td class="l">0</td><td class="l">≈0</td><td class="l"><span class="s">&gt;0</span></td></tr>
 </table>
 <p>三个量里，<b>只有第一个是“已经发生”的直接证据</b>；另两个是它的几何后果。这也是第 24 章 H2 检验把“解锁计数”作为主判据的原因：它最不容易被模型设定污染。</p>
+
+<h3 id="sec17-7">17.7　中间相的可观测性：一个采样条件</h3>
+
+<p>第 17.5b 节给了窗口长度 <span class="s">t<sub>vis</sub></span>，但“看得见”还需要第二个条件：采样间隔必须小于系统的快时间尺度。</p>
+
+<p>设采样间隔 <span class="s">Δt</span>，快时间尺度 <span class="s">τ<sub>fast</sub>=1/(βλ<sub>n</sub>−α)</span>。若 <span class="s">Δt&gt;τ<sub>fast</sub></span>，高频模式的增长会被采样平均掉，看起来像“没发生”。于是“看见中间相”的条件是</p>
+<div class="eq"><span class="body">Δt &lt; 1/(βλ<sub>n</sub>−α)  且  总时长 &gt; t<sub>vis</sub></span><span class="num">(17.2)</span></div>
+
+<p>两条合起来给出一个“可观测窗口”的矩形：宽由采样率定，高由总时长定。<b>网格类系统的窗口极窄（<span class="s">λ<sub>n</sub></span> 大），Petersen 类系统的窗口宽（<span class="s">λ<sub>n</sub>=5</span>）。</b>这解释了为什么实验室里“两阶段”常被报成“一次相变”——多数观测的分辨率不够。</p>
+
+<p>这条式子也提醒：<b>“看不见”不是“不存在”的证据</b>。要主张“不存在”，必须证明采样条件已经满足而现象仍未出现。第 24 章的 H2 检验把这一条写成了前置条件。</p>
 
 <h3 id="sec17-ref">17　本章参考文献</h3>
 <div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>

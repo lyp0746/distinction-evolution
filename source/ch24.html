@@ -53,6 +53,10 @@
 
 <p>哈希链不能防止作者自欺，但能防止作者<b>事后修改自欺的证据</b>。两者的区别很重要：前者是认知问题，后者是记录问题，而记录问题有工程解。</p>
 
+<img class="fig" src="assets/svg/fig-hash-chain.svg" alt="图 24.1　登记簿的哈希链">
+<div class="cap"><b>图 24.1　哈希链</b>　每条记录带前一条的哈希，于是“事后改判据”会在链上留下断点。</div>
+<p><strong>读法：</strong>每条记录带前一条的哈希，于是“事后改判据”会在链上留下断点。</p>
+
 <h3 id="sec24-5">24.5　反例：不可裁决的检验长什么样</h3>
 
 <p>四种典型：<b>事后追加条件</b>（“在控制了……之后”）；<b>移动靶</b>（每次失败都换一个版本的解释）；<b>不可算</b>（判据里出现无法测量的量）；<b>单向可证</b>（只写“若成立则如何”，不写“若不成立则如何”）。看到这四种，直接按第 3 章标 C 级，不必争论。</p>
@@ -98,6 +102,19 @@
 </ul>
 
 <p>三种失败里，第三种最难查（因为缺失的记录不出现）。唯一可行的对策是<b>公开分母</b>：说清一共有多少条登记，而不是只说“我们做了检验”。</p>
+
+<h3 id="sec24-7">24.7　登记簿的机器可读格式</h3>
+
+<p>为了让登记簿能被别人核对，本书给它一个固定的 CSV 列：</p>
+
+<pre>id,claim,criterion,status,result,date,hash_prev
+R1,"局部总先于全局","有向图上 Re(λ_k) 的序","出局","6 顶点反例","2026-10-31","—"
+R2,"谱刻画结构","构造同谱不同构图","出局","6 顶点两图","2026-10-31",h(R1)
+O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4)</pre>
+
+<p>七列里最重要的是 <span class="s">criterion</span> 与 <span class="s">date</span>：前者必须在 <span class="s">status</span> 之前写好，后者让“事后改判据”留下时间戳。加上 <span class="s">hash_prev</span>，三者合起来构成“可核对的登记”。</p>
+
+<p>这份格式可以直接被脚本读：校验脚本只需两件事——哈希链连贯、<span class="s">status=出局</span> 的行必须有 <span class="s">result</span>。<b>把纪律写成 schema，是让纪律能被第三方执行的最低成本方式。</b>本书附录 D 的表格就是这个 schema 的排版版。</p>
 
 <h3 id="sec24-ref">24　本章参考文献</h3>
 <div class="refs"><p>Nakamoto, S. (2008). Bitcoin: a peer-to-peer electronic cash system. (哈希链的最小可行性说明)</p><p>Merkle, R. C. (1988). A digital signature based on a conventional encryption function. <i>CRYPTO '87</i>, LNCS 293.</p><p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. <i>Scientific Data</i> 3, 160018.</p><p>Nosek, B. A., et al. (2018). The preregistration revolution. <i>PNAS</i> 115, 2600–2606.</p></div>

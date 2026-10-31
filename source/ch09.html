@@ -67,5 +67,21 @@
 
 <p>差别在于：物理学用它做计算，本书用它做“极限的类型澄清”。前者要求结果与格距无关（重整化），后者要求指出“哪些量在取标准部分后消失”。第 19 章的 <span class="s">β<sub>1</sub></span> 就是后者：它在超有限格上非零，取标准部分后归零——<b>一个量在极限里消失，不等于它不存在，只等于它不是极限的量。</b></p>
 
+<h3 id="sec9-7">9.7　两种“取标准部分”：与重整化的区别</h3>
+
+<p>超有限方法里“取标准部分”与物理里的“重整化”看起来同型，实则不同，值得分清。</p>
+
+<table class="nat">
+<tr><th class="l">步骤</th><th class="l">超有限（本书）</th><th class="l">重整化（物理）</th></tr>
+<tr><td class="l">出发点</td><td class="l">一个超有限对象</td><td class="l">一个带截断的场论</td></tr>
+<tr><td class="l">关键操作</td><td class="l">取标准部分 <span class="s">st</span></td><td class="l">取连续极限 + 参数重标定</td></tr>
+<tr><td class="l">消失的量</td><td class="l">无穷小量</td><td class="l">截断依赖（发散项）</td></tr>
+<tr><td class="l">留下的量</td><td class="l">标准实数</td><td class="l">可观测（有限）量</td></tr>
+</table>
+
+<p>差别在“参数要不要跟着改”。超有限方法里参数不动，只把无穷小化成零；重整化里必须改参数（耦合常数跑动），否则极限不存在。<b>本书第 19 章做的是前者：<span class="s">h²β<sub>1</sub>→0</span> 是“取标准部分”的结果，不是“参数跑动”的结果。</b></p>
+
+<p>这条区分有一个实际后果：若有人用重整化的直觉去读第 19 章，会以为“<span class="s">β<sub>1</sub></span> 消失”意味着“物理耦合趋于零”，从而推出错误的物理结论。正确读法是：<b>它是“分辨率依赖的量在极限里退场”，不是“物理量变零”。</b></p>
+
 <h3 id="sec9-ref">9　本章参考文献</h3>
 <div class="refs"><p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p><p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces and applications in probability theory. <i>Transactions of the AMS</i> 211, 113–122.</p><p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p><p>Albeverio, S., Fenstad, J. E., Høegh-Krohn, R., &amp; Lindstrøm, T. (1986). <i>Nonstandard Methods in Stochastic Analysis and Mathematical Physics</i>. Academic Press.</p></div>

@@ -73,5 +73,14 @@
 
 <p>反过来也有另一种事故：一个 C 级的机制故事（“瘴气致病”）因为讲得通而被当成 A 级，压住了 A 级数据几十年。两次事故的方向相反，病因相同——<b>把“讲得通”与“可复现”混成一条判据。</b>第 3.2 节把两者分开写，就是为了避免这类事故。</p>
 
+<h3 id="sec3-7">3.7　分级与统计功效：一个可算的例子</h3>
+
+<p>为什么“样本量”会改变证据等级？因为功效是可算的。要在双侧检验中检出效应量 <span class="s">d</span>，显著水平 <span class="s">α=0.05</span>、功效 <span class="s">1−β=0.8</span>，所需样本量近似为</p>
+<div class="eq"><span class="body">n ≈ 16/d²</span><span class="num">(3.1)</span></div>
+
+<p>于是 <span class="s">d=0.5</span> 需要约 64 例，<span class="s">d=0.2</span> 需要约 400 例。若一项研究只有 30 例却报告 <span class="s">d=0.2</span> 显著，那它的“显著”在数学上就不可能稳定复现——<b>这不是方法学意见，是算术</b>。本书把这类结论标 B 而不是 A，理由就在这里。</p>
+
+<p>这条式子的用处有一个边界：它只适用于“有明确效应量”的情形。凡效应量本身不可定义（例如“制度是否更有效”），<span class="s">d</span> 就无从谈起，功效分析也就失效——此时只能退回定性判据（第 3.5b 节的“中标准”）。<b>分级不是更严格的判断，它只是把“能不能算”写在了明处。</b></p>
+
 <h3 id="sec3-ref">3　本章参考文献</h3>
 <div class="refs"><p>Popper, K. R. (1959). <i>The Logic of Scientific Discovery</i>. Hutchinson.</p><p>Mayo, D. G. (1996). <i>Error and the Growth of Experimental Knowledge</i>. University of Chicago Press.</p><p>Simmons, J. P., Nelson, L. D., &amp; Simonsohn, U. (2011). False-positive psychology. <i>Psychological Science</i> 22, 1359–1366.</p><p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. <i>Scientific Data</i> 3, 160018.</p><p>Nosek, B. A., et al. (2018). The preregistration revolution. <i>PNAS</i> 115, 2600–2606.</p></div>

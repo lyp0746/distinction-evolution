@@ -64,6 +64,14 @@
 
 <p>图拉普拉斯收敛定理给这一节一个连续侧对应：若网格序列以 <span class="s">h→0</span>、<span class="s">n h<sup>d/2+2</sup>→∞</span> 的方式逼近流形，则归一化谱收敛到 Laplace–Beltrami 谱（Belkin–Niyogi 2007；von Luxburg–Belkin–Bousquet 2008）。<b>收敛的是“按 <span class="s">h²</span> 缩放后的低谱”，不是 <span class="s">R</span></b>——因为 <span class="s">λ<sub>n</sub></span> 不收敛（第 19.2 节）。这条差别正是本书“推向连续”的全部技术内容。</p>
 
+<img class="fig" src="assets/svg/fig-r-scaling.svg" alt="图 19.1　谱各向异性随分辨率二次增长">
+<div class="cap"><b>图 19.1　R 随 n 的二次增长</b>　两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</div>
+<p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</p>
+
+<img class="fig" src="assets/svg/fig-lam2-convergence.svg" alt="图 19.2　缩放后的 λ₂ 收敛到 π²">
+<div class="cap"><b>图 19.2　λ₂/h² 的收敛</b>　缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</div>
+<p><strong>读法：</strong>缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</p>
+
 <h3 id="sec19-5">19.5　反例：不是所有加密都让 R 发散</h3>
 
 <p>若一族图的谱间隙有一致下界、最大度有上界（例如度 <span class="s">d</span> 的膨胀图族），则 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>≤2d/c</span>，<b>有界</b>。所以“<span class="s">R</span> 随规模发散”不是规模本身的效应，而是<b>几何型结构</b>（网格、环面、路）的效应。这个反例很重要：它挡住了“<span class="s">R</span> 大就是系统复杂”的误读。</p>
@@ -135,6 +143,21 @@
 </ol>
 
 <p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.4 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
+
+<h3 id="sec19-8">19.8　三种收敛与一个不收敛的量</h3>
+
+<p>“离散收敛到连续”有强弱之分，本书用到三种，区别必须写清。</p>
+
+<table class="nat">
+<tr><th class="l">收敛</th><th class="l">说的是</th><th class="l">本书用在哪</th><th class="l">反例</th></tr>
+<tr><td class="l">强预解</td><td class="l">对每个 <span class="s">λ</span>，<span class="s">(L<sub>h</sub>−λ)<sup>−1</sup>f→(Δ−λ)<sup>−1</sup>f</span></td><td class="l">命题 B（第 19 章）</td><td class="l">谱在极限点处跳变</td></tr>
+<tr><td class="l">谱（特征值）</td><td class="l">固定 <span class="s">k</span>，<span class="s">λ<sub>k</sub>(h)/h²→μ<sub>k</sub></span></td><td class="l">表 19.1 末列</td><td class="l">重数不收敛（交叉）</td></tr>
+<tr><td class="l">热核</td><td class="l"><span class="s">e<sup>tL<sub>h</sub></sup>→e<sup>tΔ</sup></span>（<span class="s">t&gt;0</span> 固定）</td><td class="l">表 20.1 的数值影子</td><td class="l"><span class="s">t→0</span> 时发散</td></tr>
+</table>
+
+<p><b>不收敛的量</b>是 <span class="s">R</span> 与 <span class="s">λ<sub>n</sub></span>：前者按 <span class="s">n²</span> 发散，后者趋于常数 <span class="s">8</span>（不随 <span class="s">h</span> 缩放）。<b>所以“离散逼近连续”只对“按 <span class="s">h²</span> 缩放后的低谱”成立</b>；凡是拿未缩放的 <span class="s">R</span> 去谈“连续极限”，都会得到错误结论。</p>
+
+<p>三种收敛的强弱次序是：强预解 ⟹ 谱（加上一致有界）⟹ 热核（对固定 <span class="s">t</span>）。反过来都不成立，因此本书引用收敛结果时一律写明是哪一种——这不是学究，而是第 3 章“可复算”的具体要求。</p>
 
 <h3 id="sec19-ref">19　本章参考文献</h3>
 <div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>

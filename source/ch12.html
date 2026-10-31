@@ -71,5 +71,17 @@
 </table>
 <p>四个领域里，零空间维数都直接对应一个“结构数”（不可辨识参数、失效方向、连通分支、退化维数）。<b>这就是“同一个结构”的实证版本：不是五个公式长得像，而是五个领域各自的一个结构数等于同一个线性代数量。</b></p>
 
+<h3 id="sec12-6">12.6　最强的一条统一证据：柯西–施瓦茨不成立的地方</h3>
+
+<p>要说“五个领域真的是同一个结构”，最有说服力的证据不是它们长得像，而是<b>同一个不等式在五个领域里用同一句证明成立</b>。</p>
+
+<p><b>定理 12.3（柯西–施瓦茨）。</b>设 <span class="s">B</span> 是半正定对称双线性形式，则 <span class="s">B(u,v)²≤B(u,u)B(v,v)</span>。</p>
+
+<p><b>证明。</b>对任意实数 <span class="s">t</span>，<span class="s">0≤Q(u+tv)=Q(u)+2tB(u,v)+t²Q(v)</span>。这是一个关于 <span class="s">t</span> 的非负二次式，故判别式 <span class="s">≤0</span>，即 <span class="s">B(u,v)²≤Q(u)Q(v)</span>。<span class="s">∎</span></p>
+
+<p>三行证明，五个领域通用：统计学里它是相关系数 <span class="s">|ρ|≤1</span>；优化里它是“最速下降方向不能超过梯度范数”；图论里它是“两个函数的内积被能量控制”；线性代数与几何里它是标准形式。<b>同一条证明，五种解释——这是本书能给出的最强的“统一”证据。</b></p>
+
+<p>反过来，这条不等式也划出边界：它要求 <span class="s">Q</span> 半正定。若 <span class="s">Q</span> 不定（闵可夫斯基），不等式反向成为“逆柯西–施瓦茨”，这正是相对论里“因果不等号”的来源。同一族形式，两种不等号，五种解释——统一到形式，分岔到几何。</p>
+
 <h3 id="sec12-ref">12　本章参考文献</h3>
 <div class="refs"><p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. <i>Exercices de Mathématiques</i> 4.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p><p>Parlett, B. N. (1998). <i>The Symmetric Eigenvalue Problem</i>. SIAM.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

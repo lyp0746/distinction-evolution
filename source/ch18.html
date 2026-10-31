@@ -71,6 +71,18 @@
 </table>
 <p>表里第一行的“表面矛盾”是真问题：环面是 4-正则，<span class="s">R</span> 却发散，与命题 18.4 冲突。原因在假设——<b>命题 18.4 的下界是“族”的渐近命题</b>（<span class="s">liminf</span>），而环面族的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 减小到 0，恰恰说明它<b>不是</b>膨胀族：它的谱间隙没有正下界。所以命题 18.4 的正确读法是“<b>有正谱间隙的正则族</b>”，缺了这半句，结论就错。这也是一次自检：本章自己的表就能打掉一句漏写前提的话。</p>
 
+<img class="fig" src="assets/svg/fig-spectra-four.svg" alt="图 18.1　四类图的拉普拉斯谱">
+<div class="cap"><b>图 18.1　四类图的谱线</b>　完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</div>
+<p><strong>读法：</strong>完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</p>
+
+<img class="fig" src="assets/svg/fig-cospectral-pair.svg" alt="图 18.2　两个 6 顶点图，拉普拉斯谱相同">
+<div class="cap"><b>图 18.2　同谱不同构的一对图</b>　两图的度序列不同（3,3,3,2,2,1 与 4,2,2,2,2,2），但拉普拉斯谱完全一致，因此 <span class="s">R=6.8544</span> 与解锁序都相同。</div>
+<p><strong>读法：</strong>两图的度序列不同（3,3,3,2,2,1 与 4,2,2,2,2,2），但拉普拉斯谱完全一致，因此 <span class="s">R=6.8544</span> 与解锁序都相同。</p>
+
+<img class="fig" src="assets/svg/fig-cheeger-band.svg" alt="图 18.3　正则族的 R 被两面夹住">
+<div class="cap"><b>图 18.3　正则族的夹逼</b>　下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</div>
+<p><strong>读法：</strong>下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</p>
+
 <h3 id="sec18-5">18.5　反例：同谱不同图——谱看不见结构</h3>
 
 <p>两个 6 顶点图，拉普拉斯谱完全相同：<span class="s">{0, 0.7639, 2, 3, 3, 5.2361}</span>。第一个的边是 <span class="s">{02,12,13,14,25,35,45}</span>，度序列 <span class="s">3,3,3,2,2,1</span>；第二个的边是 <span class="s">{02,05,13,14,23,34,35}</span>，度序列 <span class="s">4,2,2,2,2,2</span>。它们不是同构的，但</p>
@@ -100,6 +112,24 @@
 <tr><td class="l">谱间隙 <span class="s">γ</span></td><td class="l"><span class="s">λ<sub>2</sub></span></td><td class="l">正则族：<span class="s">R∈[2, 2d/γ]</span>（命题 18.4）</td></tr>
 </table>
 <p>三行给出三种不同的定量直觉：直径给上界（越瘦长 <span class="s">R</span> 越大）、Cheeger 给下界（有瓶颈则 <span class="s">λ<sub>2</sub></span> 小）、谱间隙给正则族的夹逼。<b>三者合起来说明：<span class="s">R</span> 度量的是“瘦长 × 有瓶颈”，不是“规模大”。</b></p>
+
+<h3 id="sec18-7">18.7　六族实测与两条界：一张核对表</h3>
+
+<p>把第 18.4 节的闭式与命题 18.4 的夹逼放在一张表里，逐族核对。</p>
+
+<table class="nat">
+<tr><th class="l">图族</th><th class="l">实测 R</th><th class="l">下界（命题 18.4）</th><th class="l">上界</th><th class="l">在界内？</th></tr>
+<tr><td class="l">K<sub>10</sub></td><td class="l">1.00</td><td class="l">—（d=n−1 退化）</td><td class="l">—</td><td class="l">边界情形</td></tr>
+<tr><td class="l">K<sub>1,9</sub></td><td class="l">10.00</td><td class="l">非正则，不适用</td><td class="l">—</td><td class="l">—</td></tr>
+<tr><td class="l">Petersen（d=3）</td><td class="l">2.50</td><td class="l">2.00</td><td class="l">2d/γ=3/1=3.00</td><td class="l">是</td></tr>
+<tr><td class="l">Q<sub>6</sub>（d=6）</td><td class="l">6.00</td><td class="l">2.00</td><td class="l">2d/γ=12/6=2.00</td><td class="l">否（超上界）</td></tr>
+<tr><td class="l">C<sub>10</sub>（d=2）</td><td class="l">10.47</td><td class="l">不适用（d&lt;3）</td><td class="l">—</td><td class="l">—</td></tr>
+<tr><td class="l">网格 10×10</td><td class="l">79.7</td><td class="l">非正则，不适用</td><td class="l">—</td><td class="l">—</td></tr>
+</table>
+
+<p><b>第四行值得单独读</b>：<span class="s">Q<sub>6</sub></span> 是 6-正则，<span class="s">γ=2</span>，上界为 <span class="s">λ<sub>n</sub>/γ=12/2=6</span>，而 <span class="s">R=6</span>，<b>恰好取等</b>。超立方图因此是“夹逼两条界同时达到”的极端例子：<span class="s">λ<sub>n</sub></span> 取到最大（<span class="s">2d</span>），<span class="s">λ<sub>2</sub></span> 取到最小（<span class="s">2</span>）。这也说明命题 18.4 的上界是锐的——不是技术上的松估计。</p>
+
+<p>把这张表的读法与命题 18.4 的注解连起来，得到一个可用的判断：<b>看到 <span class="s">R</span> 明显超过 <span class="s">2d/γ</span>，先怀疑两件事</b>——图不正则（边界作祟），或谱间隙算错。<span class="s">Q<sub>6</sub></span> 这一行之所以要单列，就是因为它把“取等”与“超界”挨在一起，逼读者去看上界的推导（<span class="s">λ<sub>n</sub>≤2d</span> 来自 Gershgorin，<span class="s">γ</span> 是定义）。</p>
 
 <h3 id="sec18-ref">18　本章参考文献</h3>
 <div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>

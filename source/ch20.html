@@ -57,6 +57,14 @@
 
 <p><b>Kac 问题。</b>“能不能听见鼓的形状？”Milnor（1964）给出 16 维环面的反例，Sunada（1985）给出系统构造。<b>答案是否定的：谱不决定几何。</b>这与第 18.5 节的 6 顶点反例是同一件事的两个尺度：离散侧有同谱不同图，连续侧有等谱不等距。本书把这一现象归入“同调价位”的固有限制，并在第 15 章给出四个价位作为语言。</p>
 
+<img class="fig" src="assets/svg/fig-weyl-count.svg" alt="图 20.1　解锁计数的三层对照">
+<div class="cap"><b>图 20.1　三种计数方式</b>　网格计数与格点精确计数在小 Λ 上重合，Weyl 主项只在 Λ→∞ 时逼近；低阶项是 <span class="s">O(√Λ)</span>。</div>
+<p><strong>读法：</strong>网格计数与格点精确计数在小 Λ 上重合，Weyl 主项只在 Λ→∞ 时逼近；低阶项是 <span class="s">O(√Λ)</span>。</p>
+
+<img class="fig" src="assets/svg/fig-heat-kernel.svg" alt="图 20.2　热核迹的短时渐近给出体积项">
+<div class="cap"><b>图 20.2　热核迹与体积项</b>　双对数下，网格热核迹在 <span class="s">t→0</span> 一端贴近 <span class="s">(4πt)<sup>−1</sup>·面积</span>，这条直线就是 Weyl 律的来源。</div>
+<p><strong>读法：</strong>双对数下，网格热核迹在 <span class="s">t→0</span> 一端贴近 <span class="s">(4πt)<sup>−1</sup>·面积</span>，这条直线就是 Weyl 律的来源。</p>
+
 <h3 id="sec20-5">20.5　反例：把有限图的直觉搬到流形上</h3>
 
 <p>三种典型误搬：</p>
@@ -85,6 +93,16 @@
 <tr><td class="l">同谱不同图</td><td class="l">等谱不等距（Sunada）</td><td class="l">能（现象同型）</td><td class="l">谱不决定几何</td></tr>
 </table>
 <p>五行里三行“不能直接搬”，但这不等于失败：<b>搬不过去的部分正是“缺口”的内容</b>，而搬得过去的两行（<span class="s">κ</span> 与同谱现象）给出了两个跨尺度的稳定事实。</p>
+
+<h3 id="sec20-6">20.6　热核两项展开的数值核对</h3>
+
+<p>把第 20.4b 节的两项展开写成可核对的式子：对单位正方形（<span class="s">d=2</span>，面积 1），</p>
+<div class="eq"><span class="body">Tr e<sup>tΔ</sup> = 1/(4πt) + |∂M|/(8√(πt)) + O(1)</span><span class="num">(20.3)</span></div>
+<p>其中 <span class="s">|∂M|=4</span> 是周长。第二项就是表 20.1 里“Weyl 主项偏低”的原因：<b>边界贡献为正，所以计数在主项之下</b>——与我们的直觉（边界减少可用面积）相反，但那是对 Dirichlet 边界的直觉，这里是 Neumann（图拉普拉斯对应 Neumann）。</p>
+
+<p>核对方式：取 <span class="s">t=0.01,0.03,0.1</span>，算网格（<span class="s">n=40</span>，<span class="s">h=1/40</span>）的 <span class="s">Tr e<sup>tL/h²</sup></span>，与 <span class="s">1/(4πt)+1/(2√(πt))</span> 比较。三档残差应随 <span class="s">t</span> 增大，因为高阶项 <span class="s">O(1)</span> 的相对比重上升。<b>这条练习的用处不是验证公式，而是让人看到“Weyl 律的常数项从哪来”</b>——它来自边界，而不是体积。</p>
+
+<p>对本书而言，这条边界项还有一个含义：第 19 章的 <span class="s">R</span> 发散正是由“边界顶点度数低”驱动（命题 18.4 的注解），而热核的边界项也由同一件事驱动。<b>两处现象同一个来源：边界。</b>这是把“谱的边界效应”与“相变宽度发散”连起来的一条暗线。</p>
 
 <h3 id="sec20-ref">20　本章参考文献</h3>
 <div class="refs"><p>Minakshisundaram, S., &amp; Pleijel, Å. (1949). Some properties of the eigenfunctions of the Laplace operator on Riemannian manifolds. <i>Canadian Journal of Mathematics</i> 1, 242–256.</p><p>Milnor, J. (1964). Eigenvalues of the Laplace operator on certain manifolds. <i>PNAS</i> 51, 542.</p><p>Kac, M. (1966). Can one hear the shape of a drum? <i>American Mathematical Monthly</i> 73, 1–23.</p><p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah–Singer Index Theorem</i> (2nd ed.). CRC Press.</p><p>Chavel, I. (1984). <i>Eigenvalues in Riemannian Geometry</i>. Academic Press.</p></div>
