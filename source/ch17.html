@@ -59,11 +59,11 @@
 
 <img class="fig" src="assets/svg/fig-two-stage-steps.svg" alt="图 17.2　两阶段相变：中间相是阶跃之间的平台">
 <div class="cap"><b>图 17.2　已解锁模式数随耦合强度的两次阶跃</b>　两级台阶之间就是中间相；台阶的高度由特征值重数决定，宽度由 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 决定。</div>
-<p><strong>读法：</strong>两级台阶之间就是中间相；台阶的高度由特征值重数决定，宽度由 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 决定。</p>
+<div class="box"><p><strong>读法：</strong>两级台阶之间就是中间相；台阶的高度由特征值重数决定，宽度由 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 决定。</p></div>
 
 <img class="fig" src="assets/svg/fig-intermediate-window.svg" alt="图 17.3　中间相里高频已增长、低频仍衰减">
 <div class="cap"><b>图 17.3　三个模式的增长率</b>　橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</div>
-<p><strong>读法：</strong>橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</p>
+<div class="box"><p><strong>读法：</strong>橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</p></div>
 
 <h3 id="sec17-5">17.5　反例：正则完全图里没有中间相</h3>
 
@@ -117,6 +117,23 @@
 <p>接口在<b>边界</b>上。若加一个饱和项 <span class="s">D↦D/(1+|D|)</span>，系统进入“有界 ＋ 敏感”的区域；小振幅处的指数仍由 <span class="s">βλ<sub>n</sub>−α</span> 主导，饱和项负责把轨道拉回。<b>“混沌的边缘”在本书语言里就是“最大的那个 <span class="s">μ<sub>k</sub></span> 刚好略大于零”。</b>这句话可检验：改 <span class="s">β</span> 使 <span class="s">μ<sub>n</sub></span> 过零，看有界化机制是否把轨道拉回。</p>
 
 <p>最后一条纪律：<b>不要把“Lyapunov 指数为正”当成“不可预测”的唯一理由。</b>不可预测还有第二个来源——观测分辨率（第 9 章）。一个 <span class="s">χ<sub>1</sub>&lt;0</span> 的系统，若分辨率不够，同样测不准。把两者混为一谈，就是第 23 章说的“过度统一”。</p>
+
+
+<div class="box box-expert"><p><strong>【给专家的注】</strong>中间相在参数轴上宽、在时间上短（17.5b 节）。给实验设计的提醒：采样间隔必须小于 1/(βλ_n−α)，否则高频增长会被平均掉，看起来像「没发生」。</p></div>
+<h3 id="sec17-9">17.9　给专家的注：三个常被混淆的“指数”</h3>
+
+<p>讨论混沌时，三个指数常被混着用，后果是结论互相矛盾。分清它们：</p>
+
+<table class="nat">
+<tr><th class="l">指数</th><th class="l">定义</th><th class="l">本书里等于</th><th class="l">用途</th></tr>
+<tr><td class="l">Lyapunov <span class="s">χ</span></td><td class="l">相邻轨道的指数分离率</td><td class="l"><span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span></td><td class="l">判“是否敏感”</td></tr>
+<tr><td class="l">临界指数 <span class="s">ν</span></td><td class="l">相关长度随参数的发散率</td><td class="l">本书不谈</td><td class="l">判“相变类型”</td></tr>
+<tr><td class="l">谱指数 <span class="s">α</span></td><td class="l">模量 <span class="s">ω(δ)=Lδ<sup>α</sup></span> 中的 <span class="s">α</span></td><td class="l">第 9.8 节</td><td class="l">判“区分成本”</td></tr>
+</table>
+
+<p>三者的混淆方式很典型：<b>用 Lyapunov 指数去说“复杂度”，用临界指数去说“敏感性”，用谱指数去说“混沌”。</b>三种说法都错，但都不容易被当场揭穿，因为它们各自在自己的语境里是对的。</p>
+
+<p>本书的纪律是：<b>凡出现“指数”二字，必须写明是哪一个。</b>这条纪律也适用于第 19 章（那里的指数是 <span class="s">n²</span>，是“缩放指数”，第四个东西）。四个指数、四种意义、四套算法——写清楚它们，是这一章对读者的最低要求。</p>
 
 <h3 id="sec17-ref">17　本章参考文献</h3>
 <div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>

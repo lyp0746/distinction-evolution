@@ -66,11 +66,11 @@
 
 <img class="fig" src="assets/svg/fig-r-scaling.svg" alt="图 19.1　谱各向异性随分辨率二次增长">
 <div class="cap"><b>图 19.1　R 随 n 的二次增长</b>　两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</div>
-<p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</p>
+<div class="box"><p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</p></div>
 
 <img class="fig" src="assets/svg/fig-lam2-convergence.svg" alt="图 19.2　缩放后的 λ₂ 收敛到 π²">
 <div class="cap"><b>图 19.2　λ₂/h² 的收敛</b>　缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</div>
-<p><strong>读法：</strong>缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</p>
+<div class="box"><p><strong>读法：</strong>缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</p></div>
 
 <h3 id="sec19-5">19.5　反例：不是所有加密都让 R 发散</h3>
 
@@ -159,5 +159,7 @@
 
 <p>三种收敛的强弱次序是：强预解 ⟹ 谱（加上一致有界）⟹ 热核（对固定 <span class="s">t</span>）。反过来都不成立，因此本书引用收敛结果时一律写明是哪一种——这不是学究，而是第 3 章“可复算”的具体要求。</p>
 
+
+<div class="box box-expert"><p><strong>【给专家的注】</strong>三种收敛（强预解、谱、热核）的强弱次序是单向的：强预解 ⟹ 谱 ⟹ 热核。引用时务必写明是哪一种，否则会出现「收敛了但可观测量的极限不对」这类错误。</p></div>
 <h3 id="sec19-ref">19　本章参考文献</h3>
 <div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>

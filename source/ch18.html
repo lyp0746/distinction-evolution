@@ -73,15 +73,15 @@
 
 <img class="fig" src="assets/svg/fig-spectra-four.svg" alt="图 18.1　四类图的拉普拉斯谱">
 <div class="cap"><b>图 18.1　四类图的谱线</b>　完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</div>
-<p><strong>读法：</strong>完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</p>
+<div class="box"><p><strong>读法：</strong>完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</p></div>
 
 <img class="fig" src="assets/svg/fig-cospectral-pair.svg" alt="图 18.2　两个 6 顶点图，拉普拉斯谱相同">
 <div class="cap"><b>图 18.2　同谱不同构的一对图</b>　两图的度序列不同（3,3,3,2,2,1 与 4,2,2,2,2,2），但拉普拉斯谱完全一致，因此 <span class="s">R=6.8544</span> 与解锁序都相同。</div>
-<p><strong>读法：</strong>两图的度序列不同（3,3,3,2,2,1 与 4,2,2,2,2,2），但拉普拉斯谱完全一致，因此 <span class="s">R=6.8544</span> 与解锁序都相同。</p>
+<div class="box"><p><strong>读法：</strong>两图的度序列不同（3,3,3,2,2,1 与 4,2,2,2,2,2），但拉普拉斯谱完全一致，因此 <span class="s">R=6.8544</span> 与解锁序都相同。</p></div>
 
 <img class="fig" src="assets/svg/fig-cheeger-band.svg" alt="图 18.3　正则族的 R 被两面夹住">
 <div class="cap"><b>图 18.3　正则族的夹逼</b>　下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</div>
-<p><strong>读法：</strong>下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</p>
+<div class="box"><p><strong>读法：</strong>下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</p></div>
 
 <h3 id="sec18-5">18.5　反例：同谱不同图——谱看不见结构</h3>
 
@@ -131,5 +131,7 @@
 
 <p>把这张表的读法与命题 18.4 的注解连起来，得到一个可用的判断：<b>看到 <span class="s">R</span> 明显超过 <span class="s">2d/γ</span>，先怀疑两件事</b>——图不正则（边界作祟），或谱间隙算错。<span class="s">Q<sub>6</sub></span> 这一行之所以要单列，就是因为它把“取等”与“超界”挨在一起，逼读者去看上界的推导（<span class="s">λ<sub>n</sub>≤2d</span> 来自 Gershgorin，<span class="s">γ</span> 是定义）。</p>
 
+
+<div class="box box-expert"><p><strong>【给专家的注】</strong>R 的两条界（2 ≤ R ≤ 2d/γ）只对有正谱间隙的正则族成立。环面是正则的但间隙趋于零，因此不适用——这条自检写在第 18.5b 节，是全书的示范：表能打掉漏写前提的话。</p></div>
 <h3 id="sec18-ref">18　本章参考文献</h3>
 <div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>

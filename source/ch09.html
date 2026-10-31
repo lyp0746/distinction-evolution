@@ -107,5 +107,15 @@
 
 <p>有界变差（BV）是另一条路：不要求模量小，只要求总变差有限，因此允许跳跃（边缘）。<b>选哪个连续条件，取决于你要不要允许“跳跃式区分”</b>——第 7 章的生成拓扑允许跳跃，所以它对应的自然是 BV 而不是 Lipschitz。</p>
 
+
+<div class="box box-expert"><p><strong>【给专家的注】</strong>四个连续模量的差别在第 19 章的误差项里会显形：连续→o(1)、Hölder→O(h^α)、Lipschitz→O(h)、C²→O(h²)。同一句「收敛」，精度差两个数量级。</p></div>
+<h3 id="sec9-9">9.9　给专家的注：模量与可计算性</h3>
+
+<p>第 9.8 节的四级模量不只是分类，它给出一个“可计算性阶梯”。给定函数只满足第 <span class="s">k</span> 级模量，则用分辨率 <span class="s">δ</span> 求值的误差上界是：连续 <span class="s">o(1)</span>（无速率）、一致连续 <span class="s">ω(δ)</span>（有速率但无幂律）、Hölder <span class="s">Lδ<sup>α</sup></span>、Lipschitz <span class="s">Lδ</span>。</p>
+
+<p>对数值分析而言，这四级对应四种算法复杂度：<b>只连续时，任何求值算法都只能给“收敛但无速率”的保证</b>；一旦有 Hölder 模量，就能给出复杂度 <span class="s">O(ε<sup>−1/α</sup>)</span>。这是“区分成本”的算法版本——同一个词在两处指的是同一件事。</p>
+
+<p>给专家的提醒：本书第 19 章的收敛表（表 19.1）之所以能给出 0.1% 的精度，是因为网格上的解满足 Lipschitz（甚至 <span class="s">C²</span>）模量。<b>若把同一结论用到只有连续性的对象上，精度保证会整体失效。</b>这不是技术细节，而是第 19 章结论的适用范围。</p>
+
 <h3 id="sec9-ref">9　本章参考文献</h3>
 <div class="refs"><p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p><p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces and applications in probability theory. <i>Transactions of the AMS</i> 211, 113–122.</p><p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p><p>Albeverio, S., Fenstad, J. E., Høegh-Krohn, R., &amp; Lindstrøm, T. (1986). <i>Nonstandard Methods in Stochastic Analysis and Mathematical Physics</i>. Academic Press.</p></div>
