@@ -133,5 +133,21 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>R 的两条界（2 ≤ R ≤ 2d/γ）只对有正谱间隙的正则族成立。环面是正则的但间隙趋于零，因此不适用——这条自检写在第 18.5b 节，是全书的示范：表能打掉漏写前提的话。</p></div>
+<h3 id="sec18-8">18.8　R 与“度数异质性”的定量关系</h3>
+
+<p>第 18 章的九族表里，<span class="s">R</span> 的大小与“度数分布有多宽”强相关。可以把它写成一条经验关系：</p>
+
+<table class="nat">
+<tr><th class="l">图族</th><th class="l">度序列</th><th class="l">度的极差</th><th class="l">R</th></tr>
+<tr><td class="l">K<sub>10</sub></td><td class="l">全 9</td><td class="l">0</td><td class="l">1.00</td></tr>
+<tr><td class="l">Petersen</td><td class="l">全 3</td><td class="l">0</td><td class="l">2.50</td></tr>
+<tr><td class="l">网格 10×10</td><td class="l">2…4</td><td class="l">2</td><td class="l">79.7</td></tr>
+<tr><td class="l">星 K<sub>1,9</sub></td><td class="l">1…9</td><td class="l">8</td><td class="l">10.0</td></tr>
+</table>
+
+<p>四行给出的关系不是单调的：<b>Petersen 的度极差为 0 却有 <span class="s">R=2.5</span>，而网格的极差只有 2 却有 <span class="s">R=79.7</span>。</b>所以“度数异质性”不是主因，主因是<b>谱间隙</b>——网格的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 趋于零，而 Petersen 的不动。</p>
+
+<p>这条观察可以压成一句判据：<b><span class="s">R</span> 大 ⟺ 谱间隙小 ⟺ 存在“切得开但代价低”的割。</b>这与 Cheeger 不等式（第 18.6b 节）同源。<b>于是“度数异质”只是“存在廉价割”的一个常见原因，不是原因本身。</b></p>
+
 <h3 id="sec18-ref">18　本章参考文献</h3>
 <div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>

@@ -106,5 +106,21 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>定理 16.1 的三个前提（连通、对称、均匀耦合）缺一不可。加权与归一化拉普拉斯的推广在 16.5b 节，代价是数值可比性下降——命题 18.3 的界要改成依赖最大权。</p></div>
+<h3 id="sec16-9">16.9　加权图上的临界耦合（一个闭式）</h3>
+
+<p>若边权为 <span class="s">w<sub>uv</sub></span>，定理 16.1 逐字成立，临界值是 <span class="s">α/λ<sub>k</sub>(L<sub>w</sub>)</span>。对一条加权的路（权 <span class="s">w<sub>1</sub>,…,w<sub>n−1</sub></span>），可以写出闭式：</p>
+
+<div class="eq"><span class="body">λ<sub>k</sub> = 2 − 2 cos(θ<sub>k</sub>)，θ<sub>k</sub> 由 Σ 递推给出；当所有权相等时退化为 <span class="s">2−2cos(πk/n)</span></span><span class="num">(16.7)</span></div>
+
+<p>这个式子的用处是：<b>它让“权重不均匀会怎样”变成一个可算问题。</b>数值上，取一条 10 边路，把中间一条边的权从 1 加到 10，<span class="s">λ<sub>2</sub></span> 会显著上升（因为图被“分成两块”），<span class="s">λ<sub>n</sub></span> 上升得更多（因为出现了强的局部耦合）。</p>
+
+<table class="nat">
+<tr><th class="l">权重设置</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th><th class="l">含义</th></tr>
+<tr><td class="l">全 1（10 点路）</td><td class="l">0.098</td><td class="l">3.90</td><td class="l">39.9</td><td class="l">标准路</td></tr>
+<tr><td class="l">中间一条边权 10</td><td class="l">约 0.5</td><td class="l">约 8</td><td class="l">约 16</td><td class="l">被“铆”成两半</td></tr>
+</table>
+
+<p>结论：<b>权重不均匀会同时抬高两个临界值，但抬高的比例不同，于是 R 下降。</b>这提示一个可检验的猜想：<b>权重的异质性降低相变的相对宽度</b>——与“度数异质性提高 <span class="s">R</span>”（第 18 章）方向相反。两条合起来说明 <span class="s">R</span> 对“哪种异质性”敏感，而对“异质性的量”不敏感。</p>
+
 <h3 id="sec16-ref">16　本章参考文献</h3>
 <div class="refs"><p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p><p>von Luxburg, U. (2007). A tutorial on spectral clustering. <i>Statistics and Computing</i> 17, 395–416.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

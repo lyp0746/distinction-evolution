@@ -116,6 +116,21 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>三套工具的分工可以用一句话记住：极化管「内积」、谱管「分解」、变分管「极值」。混用的典型症状是用变分做唯一性断言——变分只给界，不给唯一。</p></div>
+<h3 id="sec13-9">13.9　三套工具的误差实测</h3>
+
+<p>三套工具在数值上各有误差来源，用一个小实验就能看清。</p>
+
+<table class="nat">
+<tr><th class="l">工具</th><th class="l">实验</th><th class="l">误差量级</th><th class="l">来源</th></tr>
+<tr><td class="l">极化</td><td class="l">由 <span class="s">Q</span> 还原 <span class="s">B</span>（<span class="s">n=100</span>）</td><td class="l"><span class="s">10<sup>−15</sup></span></td><td class="l">浮点相消（小）</td></tr>
+<tr><td class="l">谱</td><td class="l">Lanczos 求前 5 个特征值（网格 30×30）</td><td class="l"><span class="s">10<sup>−10</sup></span></td><td class="l">Krylov 收敛</td></tr>
+<tr><td class="l">变分</td><td class="l">Ritz 值逼近 <span class="s">λ<sub>2</sub></span>（子空间维数 10）</td><td class="l"><span class="s">10<sup>−2</sup></span></td><td class="l">子空间选择</td></tr>
+</table>
+
+<p>三行的差别说明一件事：<b>“数值对上了”不是充分证据。</b>极化几乎精确（它是代数恒等式），谱依赖迭代收敛，变分依赖子空间质量。第 19 章表 19.1 的 0.1% 精度是三者叠加的结果；想知道误差来自哪一项，必须换一种算法再算一次。</p>
+
+<p>这也是本书把附录 B 的代码写成“独立实现”的原因：<b>独立实现能把“算法误差”与“模型误差”分开</b>，而这是单一实现做不到的。</p>
+
 <h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>

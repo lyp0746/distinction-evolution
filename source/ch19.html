@@ -161,5 +161,20 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>三种收敛（强预解、谱、热核）的强弱次序是单向的：强预解 ⟹ 谱 ⟹ 热核。引用时务必写明是哪一种，否则会出现「收敛了但可观测量的极限不对」这类错误。</p></div>
+<h3 id="sec19-9">19.9　连续极限的三个数值检验</h3>
+
+<p>第 19 章的结论可以用三张图/表检验，各自的判据不同。</p>
+
+<table class="nat">
+<tr><th class="l">检验</th><th class="l">判据</th><th class="l">本书数据</th></tr>
+<tr><td class="l">低谱收敛</td><td class="l"><span class="s">λ<sub>2</sub>/h²→π²</span></td><td class="l">9.7887→9.8683（n=10→80）</td></tr>
+<tr><td class="l">R 发散</td><td class="l"><span class="s">R/((8/π²)n²)→1</span></td><td class="l">误差 1.7%→0.03%</td></tr>
+<tr><td class="l">高谱不收敛</td><td class="l"><span class="s">λ<sub>n</sub>→8</span>（不随 <span class="s">h</span> 缩放）</td><td class="l">7.8042→7.9969</td></tr>
+</table>
+
+<p>三项里第三项最容易被忽略：<b><span class="s">λ<sub>n</sub></span> 收敛到一个常数，而不是发散。</b>这看起来与“谱无界”矛盾，其实不矛盾——图拉普拉斯近似的是 <span class="s">−h²Δ</span>，不是 <span class="s">−Δ</span>；缩放的差别正是第 19.8 节三种收敛的分水岭。</p>
+
+<p>检验的价值在于它们互相独立：<b>若第一项成立而第二项不成立，说明 <span class="s">λ<sub>n</sub></span> 的行为不同（例如权重不均匀）；若第二项成立而第三项不成立，说明缩放搞错了。</b>独立的检验合起来才有排除力，单一的“看起来收敛”没有。</p>
+
 <h3 id="sec19-ref">19　本章参考文献</h3>
 <div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>

@@ -100,5 +100,20 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>二次型的分类只由符号差 (p,q,z) 决定，共 (n+1)(n+2)/2 类。给专家的提醒：本书五个实例落在不同行上，「同一个形式」指的是同一张分类表，不是同一行。</p></div>
+<h3 id="sec11-9">11.9　一个可算例：三组数据的二次型</h3>
+
+<p>取三组二维数据，算它们的二次型矩阵，看“有多像”如何被矩阵编码。</p>
+
+<table class="nat">
+<tr><th class="l">数据</th><th class="l">协方差矩阵 A</th><th class="l">特征值</th><th class="l">几何读法</th></tr>
+<tr><td class="l">标准正态</td><td class="l">[[1,0],[0,1]]</td><td class="l">1, 1</td><td class="l">各向同性，<span class="s">R=1</span></td></tr>
+<tr><td class="l">沿 x 拉长</td><td class="l">[[4,0],[0,1]]</td><td class="l">4, 1</td><td class="l">各向异性，<span class="s">R=4</span></td></tr>
+<tr><td class="l">完全相关</td><td class="l">[[1,1],[1,1]]</td><td class="l">2, 0</td><td class="l">退化，零空间一维</td></tr>
+</table>
+
+<p>三行的对比如下：<b>第一行是“各向同性”（<span class="s">R=1</span>，对应第 18 章的完全图）；第二行是“有方向偏好”（<span class="s">R=4</span>，对应第 18 章的中间相宽度）；第三行是“退化”（<span class="s">λ<sub>2</sub>=0</span>，对应第 16 章的非连通，此时 <span class="s">β<sub>2</sub></span> 发散）。</b></p>
+
+<p>这个小表把第 12—18 章的三条主线压进三行数据：<b>形式（A）→ 谱（特征值）→ 相变（R 与非连通）</b>。它也是第 11.8 节“条件数即 R”的最简例子：第三行的条件数无穷大，对应“相变宽度无穷大”。</p>
+
 <h3 id="sec11-ref">11　本章参考文献</h3>
 <div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

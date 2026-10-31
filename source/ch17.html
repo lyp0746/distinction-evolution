@@ -135,5 +135,20 @@
 
 <p>本书的纪律是：<b>凡出现“指数”二字，必须写明是哪一个。</b>这条纪律也适用于第 19 章（那里的指数是 <span class="s">n²</span>，是“缩放指数”，第四个东西）。四个指数、四种意义、四套算法——写清楚它们，是这一章对读者的最低要求。</p>
 
+<h3 id="sec17-10">17.10　中间相的数值实验设计</h3>
+
+<p>若要在数值上确认中间相，需要三件事同时满足：参数落在区间内、时间分辨率足够、观测量选对。</p>
+
+<table class="nat">
+<tr><th class="l">要素</th><th class="l">取值</th><th class="l">依据</th><th class="l">失败时看到什么</th></tr>
+<tr><td class="l">参数</td><td class="l"><span class="s">β∈(β<sub>1</sub>,β<sub>2</sub>)</span></td><td class="l">定理 17.1</td><td class="l">阶跃已被跳过</td></tr>
+<tr><td class="l">时间分辨率</td><td class="l"><span class="s">Δt&lt;1/(βλ<sub>n</sub>−α)</span></td><td class="l">式 (17.2)</td><td class="l">高频被平均掉</td></tr>
+<tr><td class="l">观测量</td><td class="l">解锁计数 + 分块度</td><td class="l">表 17.2</td><td class="l">两个量同向变化，分不清阶段</td></tr>
+</table>
+
+<p>三要素里最容易失败的是第二项。<b>网格类系统 <span class="s">λ<sub>n</sub></span> 大，窗口窄到需要 <span class="s">10<sup>−3</sup></span> 量级的时间步</b>；这也是为什么文献里“两阶段”常被报成“一次相变”。</p>
+
+<p>设计上还有一个技巧：<b>不要只测一个 <span class="s">β</span>。</b>扫一条曲线（<span class="s">β</span> 从 <span class="s">0.5β<sub>1</sub></span> 到 <span class="s">2β<sub>2</sub></span>），同时记录解锁计数与分块度，两个台阶会同时显形；单点测量几乎一定会误判。</p>
+
 <h3 id="sec17-ref">17　本章参考文献</h3>
 <div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>
