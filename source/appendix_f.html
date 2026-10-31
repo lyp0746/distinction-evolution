@@ -29,3 +29,16 @@
 </table>
 
 <div class="box"><p><b>求反馈的唯一格式：</b>在本表新增一行（不改旧行），写明命题、判据、你的结果。没有判据的记录不予登记——这一条对作者与读者同样适用。</p></div>
+
+<h3 id="secd4">D.4　登记簿的校验脚本与当前状态</h3>
+
+<p>六行校验脚本足以核对整本登记簿：<b>①</b> 每行七列；<b>②</b> <span class="s">status∈{成立,出局,未执行}</span>；<b>③</b> <span class="s">出局</span>行必须非空 <span class="s">result</span>；<b>④</b> <span class="s">hash_prev</span> 等于上一行的哈希；<b>⑤</b> <span class="s">date</span> 不早于 <span class="s">criterion</span> 的登记日；<b>⑥</b> 行数不减（append-only）。</p>
+
+<table class="nat">
+<tr><th class="l">状态</th><th class="l">条数</th><th class="l">本版变化</th><th class="l">判据是否写明</th></tr>
+<tr><td class="l">出局</td><td class="l">4</td><td class="l">无（R1—R4 保持）</td><td class="l">是</td></tr>
+<tr><td class="l">成立</td><td class="l">0</td><td class="l">无</td><td class="l">—</td></tr>
+<tr><td class="l">未执行</td><td class="l">5</td><td class="l">新增 O5（随机几何图的 R 缩放）</td><td class="l">是</td></tr>
+</table>
+
+<p>本书登记簿的现状是“<b>出局多于成立</b>”，这不是坏消息：一个只有成立的登记簿，通常意味着判据写得太松。四条出局各自推翻了一条越界读法，而定理本身仍然成立——<b>这正是“分级＋登记”想达到的效果：让部分错误可以被精确表达。</b></p>

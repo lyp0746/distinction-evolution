@@ -130,5 +130,20 @@ HoTT 把类型解释为空间（同伦类型），项解释为点，类型 <span
 
 <p>走查的价值在于：<b>它把一句话拆成五项，逐项打分。</b>五项里两项“部分成立”、一项“要单独处理”，于是任何“同构”的说法都不成立——这不是苛刻，而是价位判定的正常结论。</p>
 
+<h3 id="sec15-9">15.9　三个例子的价位判定</h3>
+
+<p>用第 15.8 节的四步，判三个常见说法的价位。</p>
+
+<table class="nat">
+<tr><th class="l">说法</th><th class="l">映射是否显式</th><th class="l">结构是否全保</th><th class="l">价位</th></tr>
+<tr><td class="l">“电路与水管是同一个系统”</td><td class="l">是（电压↔压强，电流↔流量）</td><td class="l">否（电容无对应）</td><td class="l">类比（C）</td></tr>
+<tr><td class="l">“离散拉普拉斯收敛到连续拉普拉斯”</td><td class="l">是（缩放 <span class="s">h²</span>）</td><td class="l">部分（低谱）</td><td class="l">等价（B）</td></tr>
+<tr><td class="l">“布尔代数＝集合代数”</td><td class="l">是（Stone 映射）</td><td class="l">是（含补与序）</td><td class="l">同构（A）</td></tr>
+</table>
+
+<p>三行的对照给出一条经验：<b>价位越高，越依赖一个“表示定理”。</b>电路与水管没有表示定理（所以是类比）；离散→连续有收敛定理（等价）；布尔代数有 Stone 定理（同构）。</p>
+
+<p>这条经验对本书有直接含义：<b>想升级某个迁移的价位，最省力的路不是补例子，而是找一个表示定理。</b>第 12 章能站住，正是因为它找到了“二次型”这个表示；第 22 章的几个迁移升不上去，正是因为它们在目标领域里没有对应的表示定理。</p>
+
 <h3 id="sec15-ref">15　本章参考文献</h3>
 <div class="refs"><p>Gromov, M. (1981). <i>Structures métriques pour les variétés riemanniennes</i>. Cedic/Fernand Nathan.</p><p>Burago, D., Burago, Y., &amp; Ivanov, S. (2001). <i>A Course in Metric Geometry</i>. AMS.</p><p>Sunada, T. (1985). Riemannian coverings and isospectral manifolds. <i>Annals of Mathematics</i> 121, 169–186.</p><p>Chazal, F., de Silva, V., Glisse, M., &amp; Oudot, S. (2016). <i>The Structure and Stability of Persistence Modules</i>. Springer.</p><p>Gu, K., &amp; Tomasi, C. (2018). On the stability of graph Laplacians under edge perturbations. (谱距离与结构距离的对照，综述见 von Luxburg 2007.)</p></div>

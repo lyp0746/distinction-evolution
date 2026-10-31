@@ -53,14 +53,14 @@ text{{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}}
 .au{{font-size:30px;fill:{ink};letter-spacing:2px;}}
 .rule{{stroke:{dim};stroke-width:1;opacity:0.6;}}
 </style>
-<text x="80" y="176" class="eng">THE GRAMMAR OF DISTINCTION</text>
+<text x="80" y="176" class="eng">THE LANGUAGE OF DISTINCTION</text>
 <text x="80" y="300" class="ttl">区分的语言</text>
 <line x1="84" y1="344" x2="660" y2="344" class="rule"/>
-<text x="84" y="396" class="sub">五个领域</text>
-<text x="84" y="440" class="sub">同一个二次型</text>
+<text x="84" y="396" class="sub">区分如何生成空间、形式与谱</text>
+<text x="84" y="440" class="sub">七条定理　三十六个领域　一次连续极限</text>
 <text x="80" y="1180" class="au">李毅芃　著</text>
-<text x="80" y="1232" class="eng">Five Domains, One Quadratic Form</text>
-<text x="80" y="1274" class="eng">语言规范 · 2026</text>
+<text x="80" y="1232" class="eng">How Distinctions Generate Space, Form and Spectrum</text>
+<text x="80" y="1274" class="eng">七条定理 · 三十六个领域 · 一次连续极限</text>
 </svg>
 '''
     with open(OUT, "w", encoding="utf-8") as f:

@@ -131,6 +131,21 @@
 
 <p>这也是本书把附录 B 的代码写成“独立实现”的原因：<b>独立实现能把“算法误差”与“模型误差”分开</b>，而这是单一实现做不到的。</p>
 
+<h3 id="sec13-10">13.10　三套工具的适用边界表</h3>
+
+<p>三套工具各自在什么条件下失效，写成一张表，便于现场查。</p>
+
+<table class="nat">
+<tr><th class="l">工具</th><th class="l">成立条件</th><th class="l">失效症状</th><th class="l">替代</th></tr>
+<tr><td class="l">极化</td><td class="l">对称双线性</td><td class="l">平行四边形律不成立（如 L1 距离）</td><td class="l">用凸分析的对偶</td></tr>
+<tr><td class="l">谱</td><td class="l">对称或正规</td><td class="l">非正规矩阵出现复谱、特征向量不正交</td><td class="l">Schur 分解 / 奇异值</td></tr>
+<tr><td class="l">变分</td><td class="l">可算 Rayleigh 商</td><td class="l">约束集非凸时极值不稳定</td><td class="l">KKT + 全局搜索</td></tr>
+</table>
+
+<p>三种失效各有一个著名的实例：<b>极化</b>在 L1 距离上失效（出租车几何不满足平行四边形律）；<b>谱</b>在有向图上失效（第 16.5 节的反例）；<b>变分</b>在非凸约束上失效（局部极小不等于全局）。</p>
+
+<p>这张表的价值在“替代”一列：<b>工具失效不是终点，而是换工具的信号。</b>本书只在图上用拉普拉斯，正因为图上的三个条件是齐的；一旦离开图（例如有向、加权、非正规），就要照这张表换工具，而不是硬套结论。</p>
+
 <h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
 <div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>

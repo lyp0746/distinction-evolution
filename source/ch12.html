@@ -119,5 +119,22 @@
 
 <p>这张表也给本书的分级一个依据：<b>凡能给出这个整数的领域，条目可以到 B 级以上；给不出的，只能到 C。</b>第 21 章的覆盖表正是按这条标准裁的。</p>
 
+<h3 id="sec12-9">12.9　柯西–施瓦茨的五个数字实例</h3>
+
+<p>同一个不等式，五个领域各算一次，全部可以手算核对。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">算例</th><th class="l">左端</th><th class="l">右端</th></tr>
+<tr><td class="l">统计</td><td class="l">两个标准化变量，<span class="s">ρ=0.6</span></td><td class="l"><span class="s">0.36</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
+<tr><td class="l">线性代数</td><td class="l"><span class="s">u=(1,2)</span>，<span class="s">v=(2,1)</span></td><td class="l"><span class="s">16</span></td><td class="l"><span class="s">5·5=25</span></td></tr>
+<tr><td class="l">图论</td><td class="l"><span class="s">K<sub>3</sub></span> 上 <span class="s">u=(1,−1,0)</span>，<span class="s">v=(0,1,−1)</span></td><td class="l"><span class="s">1</span></td><td class="l"><span class="s">3·3=9</span></td></tr>
+<tr><td class="l">优化</td><td class="l"><span class="s">H=diag(2,8)</span>，<span class="s">u=(1,1)</span>，<span class="s">v=(1,−1)</span></td><td class="l"><span class="s">0</span></td><td class="l"><span class="s">10·10</span></td></tr>
+<tr><td class="l">几何</td><td class="l">平面两向量夹角 60°</td><td class="l"><span class="s">0.25</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
+</table>
+
+<p>五行都成立，且强度不同：<b>统计与几何接近饱和（0.36、0.25），线性代数与图论离界很远（16≤25、1≤9），优化那一行取等号（0≤100）</b>。取等号的情形最有信息量：它意味着两个方向正交（<span class="s">B(u,v)=0</span>），在优化里就是“一个方向曲率大、另一个方向平坦”。</p>
+
+<p>这张表的作用是<b>把“统一”从抽象变成五个可验算的算术题</b>。任何人都能在纸上核完；核完仍不同意“五个领域同一结构”的人，至少知道分歧在哪一步——是符号差、是取等条件，还是“零”的含义。</p>
+
 <h3 id="sec12-ref">12　本章参考文献</h3>
 <div class="refs"><p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. <i>Exercices de Mathématiques</i> 4.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p><p>Parlett, B. N. (1998). <i>The Symmetric Eigenvalue Problem</i>. SIAM.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

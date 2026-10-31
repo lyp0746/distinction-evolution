@@ -115,5 +115,22 @@
 
 <p>这个小表把第 12—18 章的三条主线压进三行数据：<b>形式（A）→ 谱（特征值）→ 相变（R 与非连通）</b>。它也是第 11.8 节“条件数即 R”的最简例子：第三行的条件数无穷大，对应“相变宽度无穷大”。</p>
 
+<h3 id="sec11-10">11.10　换基之下什么变、什么不变</h3>
+
+<p>二次型的“坐标自由”常被误解。用一张表说清：换基时哪些量变，哪些不变。</p>
+
+<table class="nat">
+<tr><th class="l">对象</th><th class="l">换基后</th><th class="l">是否不变量</th></tr>
+<tr><td class="l">矩阵 <span class="s">A</span></td><td class="l"><span class="s">P<sup>T</sup>AP</span></td><td class="l">否</td></tr>
+<tr><td class="l">二次型 <span class="s">Q(u)</span></td><td class="l">不变（同一个数）</td><td class="l">是</td></tr>
+<tr><td class="l">特征值</td><td class="l">正交换基下不变</td><td class="l">正交换基：是；一般换基：否</td></tr>
+<tr><td class="l">符号差 <span class="s">(p,q,z)</span></td><td class="l">不变（惯性律）</td><td class="l">是</td></tr>
+<tr><td class="l">特征向量</td><td class="l">变</td><td class="l">否</td></tr>
+</table>
+
+<p>五行里只有两个真不变量：<b><span class="s">Q</span> 的取值与符号差</b>。这条结论有一个实用推论：<b>任何“由二次型决定的量”必须能被写成符号差与取值的函数</b>；写不出来的（例如“主方向”），都是坐标依赖的，不能当作系统的性质。</p>
+
+<p>举例：第 16 章的临界耦合 <span class="s">β<sub>k</sub>=α/λ<sub>k</sub></span> 依赖特征值，因此它对一般换基不不变——<b>但图上的换基被限制为顶点置换（一种正交变换），所以它是不变量。</b>这条细节解释了为什么本书的定理只在“图”上成立：<b>图的对称群小，不变量才多。</b></p>
+
 <h3 id="sec11-ref">11　本章参考文献</h3>
 <div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

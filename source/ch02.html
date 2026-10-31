@@ -115,5 +115,20 @@
 
 <p>最后一列是判据所在：<b>前三行有 <span class="s">n<sub>new</sub>&gt;0</span>，最后一行没有。</b>于是按第 1 章的成本函数，第四行是“整理”而不是“压缩”——它有价值（便于教学），但不该被写成发现。</p>
 
+<h3 id="sec2-10">2.10　压缩失败的三条判据</h3>
+
+<p>前九节讲压缩怎么做，这一节讲怎么判断它失败了。三条判据，按成本排序。</p>
+
+<table class="nat">
+<tr><th class="l">判据</th><th class="l">怎么查</th><th class="l">失败的样子</th></tr>
+<tr><td class="l">反推失败</td><td class="l">从压缩后的表述能否推出两条原结论</td><td class="l">只能复述，不能推导</td></tr>
+<tr><td class="l">前提膨胀</td><td class="l">每加一个领域要加几条前提</td><td class="l">前提数随领域数线性增长</td></tr>
+<tr><td class="l">损失未报</td><td class="l">有没有交出四类损失清单</td><td class="l">只报收益</td></tr>
+</table>
+
+<p>三条判据的用法有一个顺序：<b>先查第三条</b>（因为它不需要任何专业判断），再查第一条（要算），最后查第二条（要统计）。<b>若第三条就不过，前两条不必查</b>——一份不报损失的压缩，本来就没打算被检验。</p>
+
+<p>本书自查的结果：第 12 章的压缩三条全过（能反推零空间维数、前提只有一条“存在度量”、损失清单在第 2.5 与 12.5 节）；第 15 章的“四价位”第一条不过（它不能反推新结论），所以本书只把它写成“整理”，不写成“压缩”。</p>
+
 <h3 id="sec2-ref">2　本章参考文献</h3>
 <div class="refs"><p>Shannon, C. E. (1948). A mathematical theory of communication. <i>Bell System Technical Journal</i> 27, 379–423.</p><p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p><p>Kolmogorov, A. N. (1965). Three approaches to the quantitative definition of information. <i>Problems of Information Transmission</i> 1, 1–7.</p><p>Mac Lane, S. (1998). <i>Categories for the Working Mathematician</i> (2nd ed.). Springer.</p></div>

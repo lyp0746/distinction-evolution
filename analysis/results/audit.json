@@ -66,8 +66,12 @@
       "first": null
     },
     "临界耦合": {
-      "total": 10,
+      "total": 11,
       "by_chapter": [
+        [
+          "ch11.html",
+          1
+        ],
         [
           "ch12.html",
           1
@@ -77,7 +81,7 @@
           9
         ]
       ],
-      "first": "ch12.html"
+      "first": "ch11.html"
     },
     "两阶段相变": {
       "total": 15,
@@ -164,7 +168,7 @@
       "first": "ch01.html"
     },
     "拉普拉斯": {
-      "total": 28,
+      "total": 31,
       "by_chapter": [
         [
           "ch02.html",
@@ -184,11 +188,11 @@
         ],
         [
           "ch13.html",
-          3
+          4
         ],
         [
           "ch15.html",
-          4
+          6
         ],
         [
           "ch16.html",
@@ -210,8 +214,12 @@
       "first": "ch02.html"
     },
     "生成拓扑": {
-      "total": 16,
+      "total": 17,
       "by_chapter": [
+        [
+          "ch05.html",
+          1
+        ],
         [
           "ch06.html",
           2
@@ -229,7 +237,7 @@
           1
         ]
       ],
-      "first": "ch06.html"
+      "first": "ch05.html"
     },
     "非标准分析": {
       "total": 1,
@@ -275,11 +283,11 @@
       "first": null
     },
     "压缩": {
-      "total": 74,
+      "total": 80,
       "by_chapter": [
         [
           "ch02.html",
-          60
+          66
         ],
         [
           "ch04.html",
@@ -631,7 +639,9 @@
       "ch25.html"
     ],
     "15": [
+      "ch02.html",
       "ch03.html",
+      "ch05.html",
       "ch12.html",
       "ch14.html",
       "ch15.html",
@@ -643,6 +653,7 @@
     "16": [
       "ch11.html",
       "ch13.html",
+      "ch14.html",
       "ch16.html",
       "ch17.html"
     ],
@@ -749,6 +760,7 @@
       "ch25.html"
     ],
     "4": [
+      "ch03.html",
       "ch04.html",
       "ch05.html",
       "ch10.html",
@@ -768,6 +780,7 @@
       "ch08.html"
     ],
     "7": [
+      "ch05.html",
       "ch06.html",
       "ch07.html",
       "ch08.html",
@@ -821,6 +834,15 @@
     "0.20": [
       "ch18.html"
     ],
+    "0.25": [
+      "ch12.html"
+    ],
+    "0.251": [
+      "ch12.html"
+    ],
+    "0.36": [
+      "ch12.html"
+    ],
     "0.37": [
       "ch20.html"
     ],
@@ -834,6 +856,7 @@
       "ch22.html"
     ],
     "0.60": [
+      "ch12.html",
       "ch20.html"
     ],
     "0.73": [
@@ -870,6 +893,9 @@
       "ch22.html"
     ],
     "1.1": [
+      "ch01.html"
+    ],
+    "1.10": [
       "ch01.html"
     ],
     "1.155": [
@@ -974,6 +1000,9 @@
     "11.1": [
       "ch11.html"
     ],
+    "11.10": [
+      "ch11.html"
+    ],
     "11.2": [
       "ch11.html",
       "ch25.html"
@@ -1019,6 +1048,7 @@
       "ch12.html"
     ],
     "12.5": [
+      "ch02.html",
       "ch12.html"
     ],
     "12.6": [
@@ -1029,6 +1059,9 @@
       "ch25.html"
     ],
     "12.8": [
+      "ch12.html"
+    ],
+    "12.9": [
       "ch12.html"
     ],
     "1280117113320.00": [
@@ -1100,6 +1133,9 @@
     "14.7": [
       "ch14.html"
     ],
+    "14.8": [
+      "ch14.html"
+    ],
     "15.1": [
       "ch15.html"
     ],
@@ -1144,6 +1180,7 @@
     ],
     "16.5": [
       "ch05.html",
+      "ch13.html",
       "ch16.html",
       "ch23.html",
       "ch24.html"
@@ -1296,6 +1333,9 @@
       "ch16.html"
     ],
     "2.1": [
+      "ch02.html"
+    ],
+    "2.10": [
       "ch02.html"
     ],
     "2.2": [
@@ -1516,6 +1556,9 @@
     "3.1": [
       "ch03.html"
     ],
+    "3.10": [
+      "ch03.html"
+    ],
     "3.2": [
       "ch03.html"
     ],
@@ -1571,6 +1614,9 @@
     "4.1": [
       "ch04.html"
     ],
+    "4.10": [
+      "ch04.html"
+    ],
     "4.19": [
       "ch19.html"
     ],
@@ -1614,6 +1660,9 @@
       "ch18.html"
     ],
     "5.1": [
+      "ch05.html"
+    ],
+    "5.10": [
       "ch05.html"
     ],
     "5.2": [
@@ -1853,7 +1902,12 @@
   "A7_images_missing": [],
   "A8_eq_malformed": [],
   "A9_debug_strings": [],
-  "A10_version_labels": [],
+  "A10_version_labels": [
+    {
+      "file": "appendix_f.html",
+      "snippet": "/th><th class=\"l\">本版变化</th><th class=\""
+    }
+  ],
   "A11_fatalism": [
     {
       "chapter": "ch07.html",
