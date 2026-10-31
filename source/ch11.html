@@ -40,6 +40,14 @@
 
 <p>处理方式决定后文的全部结论。若商掉零空间，得到的是正定形式，谱的最小值严格为正，于是 <span class="s">λ<sub>2</sub></span> 的定义需要小心（第 16 章用“第二小的特征值”而不是“最小的正值”）；若保留零空间，则零特征值的重数本身就是一个信息（连通分支数）。本书选择保留，因为<b>“看不见的方向”恰恰是结构的一部分</b>。</p>
 
+<h3 id="sec11-5b">11.5b　Witt 定理：等距可以延拓</h3>
+
+<p>对称形式有一个容易被低估的强定理。<b>定理 11.2（Witt, 1937）。</b>设 <span class="s">B</span> 是有限维向量空间上的非退化对称双线性形式。若子空间 <span class="s">U,W</span> 之间存在保 <span class="s">B</span> 的线性同构 <span class="s">σ:U→W</span>（即 <span class="s">B(σu,σu′)=B(u,u′)</span>），则 <span class="s">σ</span> 可延拓为整个 <span class="s">V</span> 上保 <span class="s">B</span> 的可逆线性映射。</p>
+
+<p><b>证明要点。</b>先处理一维情形（用非退化性找补向量），再对 <span class="s">dim U</span> 归纳；关键在于“非退化 ⇒ 存在与 <span class="s">U</span> 正交的补空间”，而这一步对退化形式失效——这正是第 14.5 节说“退化形式需要半直积”的根源。</p>
+
+<p>这条定理给“形式语言”一个很强的结论：<b>局部的等距必然来自整体的等距。</b>于是“部分相似”与“整体相似”不是两件事，而是同一件事的局部与整体。反过来说，一旦形式退化（统计里的共线、图论里的不连通），这条延拓就断——这就是为什么本书反复强调“零空间不是细节”。</p>
+
 <h3 id="sec11-5">11.5　反例：伪度量与非正定形式</h3>
 
 <p>若 <span class="s">Q</span> 只半正定（存在非零 <span class="s">u</span> 使 <span class="s">Q(u)=0</span>），则 <span class="s">B</span> 给出的是伪内积：两个不同对象可以有零“距离”。这在统计里是常态（共线），在几何里是禁忌（不可分点）。处理方式有两种：商掉零空间（得到真内积），或保留它并承认“有方向看不见”（本书第 18 章会看到这正好对应图的非连通）。</p>
@@ -51,3 +59,19 @@
 <p>二次型是“相似度”的唯一可用形式（极化恒等式），有三种等价坐标，代价是必须面对半正定与不定两种退化。第 12 章把五个领域的相似度工具逐个对上来。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：把“像不像”写成差的平方和，不是审美，是因为只有这样才能反推出内积。</p></div>
+
+<h3 id="sec11-6b">11.6b　二次型的完整分类：惯性指数表</h3>
+
+<p>Sylvester 惯性律把实二次型分成有限多类：由 <span class="s">(p,q,z)</span> 三个数决定，<span class="s">p+q+z=n</span>。这把“有多像”的讨论推向一个干净的结论：<b>在换基的意义下，二次型只有 <span class="s">(n+1)(n+2)/2</span> 种。</b></p>
+
+<table class="nat">
+<tr><th class="l">类别</th><th class="l"><span class="s">(p,q,z)</span></th><th class="l">例子</th><th class="l">保形式群</th></tr>
+<tr><td class="l">正定</td><td class="l"><span class="s">(n,0,0)</span></td><td class="l">欧氏内积、协方差（满秩）</td><td class="l"><span class="s">O(n)</span></td></tr>
+<tr><td class="l">半正定退化</td><td class="l"><span class="s">(p,0,z)</span></td><td class="l">图拉普拉斯（<span class="s">z</span>=分支数）</td><td class="l">半直积</td></tr>
+<tr><td class="l">不定（洛伦兹）</td><td class="l"><span class="s">(n−1,1,0)</span></td><td class="l">闵可夫斯基间隔</td><td class="l"><span class="s">O(n−1,1)</span></td></tr>
+<tr><td class="l">交错</td><td class="l">—（反对称）</td><td class="l">辛形式</td><td class="l"><span class="s">Sp(2m)</span></td></tr>
+</table>
+<p>这张表是第 12 章“五个领域同一个结构”的分母：五个实例落在这张表的不同行上。<b>“同一个”指同一张表，不指同一行。</b>混淆两者，就是第 23 章说的“过度统一”。</p>
+
+<h3 id="sec11-ref">11　本章参考文献</h3>
+<div class="refs"><p>Witt, E. (1937). Theorie der quadratischen Formen in beliebigen Körpern. <i>Journal für die reine und angewandte Mathematik</i> 176, 31–44.</p><p>Sylvester, J. J. (1852). A demonstration of the theorem that every homogeneous quadratic polynomial is reducible by real orthogonal substitutions. <i>Philosophical Magazine</i> 4, 138–142.</p><p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p></div>

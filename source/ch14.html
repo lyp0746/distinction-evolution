@@ -40,6 +40,16 @@
 
 <p>对本书而言，这一章给出一个判断标准：<b>衡量一套语言“有多强”，可以看它的保形式群有多小。</b>群越小，被锁定的量越多，结论越硬；群越大，语言越灵活，但能说死的越少。第 15 章的四个价位可以看成这个连续谱的离散化。</p>
 
+<h3 id="sec14-4b">14.4b　二次型的物理形态：Casimir 与自旋网络的面积谱</h3>
+
+<p>本节是全书离“纯数学”最远、也最能说明“形式决定结构”的一处。取 <span class="s">SU(2)</span> 的不可约表示，指标为 <span class="s">j∈{0,1/2,1,3/2,…}</span>。它的<b>二次 Casimir</b> 是
+<div class="eq"><span class="body">C<sub>2</sub>(j)=j(j+1)，   A(j)=8πγℓ<sub>P</sub><sup>2</sup>√(C<sub>2</sub>(j))</span><span class="num">(14.1)</span></div>
+其中 <span class="s">A(j)</span> 是圈量子引力中“一条边穿过一个面”所贡献的面积（<span class="s">γ</span> 是 Barbero–Immirzi 参数，<span class="s">ℓ<sub>P</sub></span> 是普朗克长度）。〔已知，B／乙：Rovelli–Smolin 1995；推导依赖该理论的公理系统，本书只引用其形式〕</p>
+
+<p>这里有三层与本书直接对应。<b>第一，形式是同一个</b>：<span class="s">j(j+1)</span> 正是第 11 章的二次型在表示空间上的值（Casimir 是 <span class="s">𝔰𝔲(2)</span> 上的对称双线性形式）。<b>第二，离散性是“区分”的产物</b>：自旋网络是一张图，边带 <span class="s">j</span> 指标，面积只依赖“哪些边穿过这个面”——<b>面积＝对被区分出来的边的计数</b>，与本书“区分生成结构”的思路同型。<b>第三，它给出了一个连续量的离散谱</b>：面积不是连续取值的，而是取一列离散值，最小间隔在 <span class="s">j</span> 小时并不均匀。</p>
+
+<p>需要说清的边界：这一点是<b>理论内部的结果</b>，不是实验结论；把它当作“空间确实是离散的”证据是越界（第 3 章的分级）。本书引用它，只为一件事——<b>说明“二次型 → 谱 → 离散几何”这条链条在物理学里已经有人走过一遍</b>，而本书第 16—20 章在图上走的是同一条链条的最简版本。</p>
+
 <h3 id="sec14-5">14.5　反例：退化与例外</h3>
 
 <p>若形式退化（存在非零 <span class="s">u</span> 使 <span class="s">B(u,·)≡0</span>），保形式群不再是经典的这三类，而是一个半直积：它必须同时保住零空间。统计里的共线、图论里的非连通分支，都落在这里。处理方式有两种：商掉零空间（得到正定形式），或把零空间当作“看不见的方向”显式保留（第 18 章的零特征值重数）。</p>
@@ -51,3 +61,16 @@
 <p>形式定下，群就定下（表 14.1），惯性律保证这件事与基无关。于是“统一”在几何层面必须按符号差分类，这是本书第三次限幅。下一章把“一样”这件事本身分级。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：你允许什么样的变换，就等于宣布了哪个量是绝对的。</p></div>
+
+<h3 id="sec14-5b">14.5b　从 Casimir 到面积谱：为什么这条链条值得写进一本数学书</h3>
+
+<p>第 14.4b 节的链条是：<b>二次型 → 表示 → 谱 → 几何量</b>。这条链条在数学上并不神秘，它只是“表示论里的 Casimir 算子”加上“把谱读成面积”。值得写进本书的理由有三个。</p>
+
+<p><b>第一，它示范了“离散不需要辩护”。</b>在本书第 9 章，离散是有限分辨率的产物；在自旋网络里，离散是定义的一部分（图是离散的，指标是离散的）。两者都通向同一个结论：<b>连续量可以是离散结构的导出物</b>，而不是前提。</p>
+
+<p><b>第二，它示范了“形式决定谱”。</b>换一个群（<span class="s">SU(2)</span> 换 <span class="s">SU(1,1)</span>），Casimir 的公式就变，面积谱也随之变。这与第 14 章的“形式决定群”是同一条定理的两种读法：形式定了，群和谱一起定。</p>
+
+<p><b>第三，它给出一个反面教材。</b>若有人把 <span class="s">A(j)</span> 的离散性直接搬到本书的网格上，会得出“<span class="s">R</span> 应该收敛”的错误结论——因为两者的“分辨率”不是一回事：前者是离散谱的间隔，后者是网格步长。<b>同一个词（分辨率）在两个语境里指两个量</b>，这是第 4 章第七个赝品（定义滑移）的实例。</p>
+
+<h3 id="sec14-ref">14　本章参考文献</h3>
+<div class="refs"><p>Penrose, R. (1971). Angular momentum: an approach to combinatorial space-time. In <i>Quantum Theory and Beyond</i>, Cambridge University Press.</p><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p><p>Baez, J. C. (2000). An introduction to spin foam models of quantum gravity and BF theory. <i>Lecture Notes in Physics</i> 543, 25–94.</p></div>

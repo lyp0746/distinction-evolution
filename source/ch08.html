@@ -42,6 +42,14 @@
 
 <p>所以本书在实际使用中加一条规则（第 25 章把它列为待办）：<b>区分族必须可数生成</b>。这不是数学上的必需，而是“可复算”的必需——可数生成意味着每个可测事件都能被有限步近似，于是它可以被程序逼近。凡不满足这条的“可区分”，在本书的覆盖表里只能标 C 级。</p>
 
+<h3 id="sec8-4b">8.4b　可数生成与 Borel 同构</h3>
+
+<p>在第 8.3b 节的基础上补一条技术性但重要的结论。<b>命题 8.3。</b>设 <span class="s">𝒜</span> 可数，则 <span class="s">σ(𝒜)</span> 中的每个元素都能被“有限步生成树”逼近：存在一棵可数的生成树，其第 <span class="s">n</span> 层给出一个有限 <span class="s">σ</span>-代数 <span class="s">Σ<sub>n</sub></span>，且 <span class="s">σ(𝒜)=∪<sub>n</sub>Σ<sub>n</sub></span> 的闭包等于它。</p>
+
+<p>证明用超限归纳的简化版：把生成过程按“取补／取可数并”交替分阶段，每个阶段只处理前 <span class="s">n</span> 个生成元，得到递增序列 <span class="s">Σ<sub>1</sub>⊆Σ<sub>2</sub>⊆⋯</span>。这条命题的实际意义是：<b>可数生成 ⇒ 可计算逼近</b>。它把第 8 章与第 9 章接起来——第 9 章的超有限框架正是“有限层 + 取标准部分”的写法。</p>
+
+<p>反过来，不可数生成会破坏这条性质：你无法用有限步指认一个事件，于是“可复算”失效。这就是本书把“可数生成”写进语法（第 25 章待办 4）的理由。</p>
+
 <h3 id="sec8-5">8.5　反例：维塔利集</h3>
 
 <p>在 <span class="s">[0,1]</span> 上取“相差为有理数”的等价类，每类选一个代表，得到维塔利集 <span class="s">V</span>。可数多个平移 <span class="s">V+q</span> 覆盖 <span class="s">[0,1]</span> 且互不相交，于是若 <span class="s">V</span> 可测，平移不变性会迫使它的测度既为零又为正——矛盾。<b>结论：<span class="s">V</span> 不可测。</b></p>
@@ -53,3 +61,12 @@
 <p><span class="s">σ</span>-代数由区分族唯一生成（8.1），测度是分辨率预算，但可测与可区分是两种能力（8.5）。至此，“空间”与“可测”都由区分生成；还缺一样：连续。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：问卷的选项就是你能问的问题；选项之外不是没有答案，是没有问题。</p></div>
+
+<h3 id="sec8-5b">8.5b　σ-代数与信息：为什么“可测”是一种资源</h3>
+
+<p>把 <span class="s">σ(𝒜)</span> 读成“可问的问题集”，则它的“大小”就是一个资源量。<b>信息论里的“信息量”可以看成 <span class="s">σ(𝒜)</span> 上的一个函数</b>：给定一个概率测度，<span class="s">H(𝒜)</span> 度量“问这些问题平均能得到多少比特”。这个读法解释了一件日常事：加问题不总加信息，若新问题被旧问题决定，<span class="s">H</span> 不增。</p>
+
+<p>它也给第 21 章的“容量”条目一个形式版本：容量不是“能装多少”，而是“<span class="s">σ</span>-代数能粗到什么程度而不失去对目标的相关性”。这正是信息瓶颈的写法（第 22.2 节）。<b>可测结构是资源，不是背景</b>——这句话是本书与“数据越多越好”的直觉的分界线。</p>
+
+<h3 id="sec8-ref">8　本章参考文献</h3>
+<div class="refs"><p>Halmos, P. R. (1950). <i>Measure Theory</i>. Van Nostrand.</p><p>Kolmogorov, A. N. (1933). <i>Grundbegriffe der Wahrscheinlichkeitsrechnung</i>. Springer.</p><p>Kechris, A. S. (1995). <i>Classical Descriptive Set Theory</i>. Springer.</p><p>Jech, T. (2003). <i>Set Theory</i> (3rd millennium ed.). Springer.</p></div>

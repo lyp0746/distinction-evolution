@@ -52,6 +52,25 @@
 
 <p><b>纵向读：</b>比较网格与环面，两者的 <span class="s">λ<sub>n</sub></span> 都是 8，差别全在 <span class="s">λ<sub>2</sub></span> 上：网格的 <span class="s">λ<sub>2</sub></span> 是“一个方向走一步”，环面是“一个方向走一圈的四分之一”，后者大四倍，于是 <span class="s">R</span> 小四倍。<b>同一个几何、两种离散化，差一个因子 4</b>——这就是第 19 章“<span class="s">R</span> 不是几何不变量”的入口。</p>
 
+<h3 id="sec18-5b">18.5b　两面夹：Cheeger 与 Alon–Boppana 给出 R 的界</h3>
+
+<p>第 18.3 节给的界是 <span class="s">R≤nΔ·diam/2</span>，很松。若把图限制在<b>正则</b>族，可以两面夹住。</p>
+
+<p><b>命题 18.4（正则族的夹逼）。</b>设 <span class="s">G</span> 是 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，谱间隙 <span class="s">γ=λ<sub>2</sub></span>。则</p>
+<div class="eq"><span class="body">2 ≤ 2d/(d−2√(d−1)) ≤ liminf R(G) ≤ 2d/γ</span><span class="num">(18.2)</span></div>
+
+<p><b>依据。</b>上界：<span class="s">λ<sub>n</sub>≤2d</span>（Gershgorin）与 <span class="s">λ<sub>2</sub>=γ</span>。下界：Alon–Boppana 型结论（Nilli 1991）给出 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>，而 <span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)</span>，故 <span class="s">λ<sub>2</sub>(L)≤d−2√(d−1)+o(1)</span>；代入 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 并取极限。〔已知，B／乙〕</p>
+
+<p>这条结论解释了第 19 章的核心现象。它说：<b>只要图是正则的、度有界，R 就被夹在常数与常数之间，不可能随规模发散。</b>网格之所以 <span class="s">R∼n²</span>，恰恰因为它<b>不正则</b>——边界顶点的度只有 2 或 3。<b>相变宽度发散不是“变大”的效应，而是“边界变多”的效应。</b></p>
+
+<table class="nat">
+<tr><th class="l">图族</th><th class="l">正则？</th><th class="l">R 的量级</th><th class="l">夹逼是否适用</th></tr>
+<tr><td class="l">环面 <span class="s">C<sub>n</sub>□C<sub>n</sub></span></td><td class="l">是（度 4）</td><td class="l"><span class="s">∼0.2n²</span></td><td class="l">表面矛盾——见 19.5b</td></tr>
+<tr><td class="l">网格 <span class="s">P<sub>n</sub>□P<sub>n</sub></span></td><td class="l">否（边界度 2、3）</td><td class="l"><span class="s">∼0.81n²</span></td><td class="l">不适用</td></tr>
+<tr><td class="l">随机 <span class="s">d</span>-正则</td><td class="l">是</td><td class="l"><span class="s">≈2d/(d−2√(d−1))</span></td><td class="l">适用（近 Ramanujan）</td></tr>
+</table>
+<p>表里第一行的“表面矛盾”是真问题：环面是 4-正则，<span class="s">R</span> 却发散，与命题 18.4 冲突。原因在假设——<b>命题 18.4 的下界是“族”的渐近命题</b>（<span class="s">liminf</span>），而环面族的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 减小到 0，恰恰说明它<b>不是</b>膨胀族：它的谱间隙没有正下界。所以命题 18.4 的正确读法是“<b>有正谱间隙的正则族</b>”，缺了这半句，结论就错。这也是一次自检：本章自己的表就能打掉一句漏写前提的话。</p>
+
 <h3 id="sec18-5">18.5　反例：同谱不同图——谱看不见结构</h3>
 
 <p>两个 6 顶点图，拉普拉斯谱完全相同：<span class="s">{0, 0.7639, 2, 3, 3, 5.2361}</span>。第一个的边是 <span class="s">{02,12,13,14,25,35,45}</span>，度序列 <span class="s">3,3,3,2,2,1</span>；第二个的边是 <span class="s">{02,05,13,14,23,34,35}</span>，度序列 <span class="s">4,2,2,2,2,2</span>。它们不是同构的，但</p>
@@ -69,3 +88,18 @@
 <p><span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 把两阶段相变压成一个数（18.1），九类图有闭式（表 18.1），<span class="s">R=1</span> 只发生在完全图（18.2），而谱相同不代表结构相同（18.5）。第 19 章把这个数推向连续。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：相变的宽度是一个可以算的数，但它算的是“结构有多各向异性”，不是“结构是什么”。</p></div>
+
+<h3 id="sec18-6b">18.6b　R 与三个经典量：直径、Cheeger 常数、谱间隙</h3>
+
+<p><span class="s">R</span> 不是孤立的量，它与三个经典量都能挂钩。</p>
+
+<table class="nat">
+<tr><th class="l">量</th><th class="l">定义</th><th class="l">与 R 的关系</th></tr>
+<tr><td class="l">直径 <span class="s">diam</span></td><td class="l">最长最短路</td><td class="l"><span class="s">λ<sub>2</sub>≥4/(n·diam) ⇒ R≤nΔ·diam/2</span></td></tr>
+<tr><td class="l">Cheeger 常数 <span class="s">h</span></td><td class="l">最小割比（割边数 ÷ 较小一侧顶点数）</td><td class="l"><span class="s">λ<sub>2</sub>/2≤h≤√(2λ<sub>2</sub>) ⇒ R≥λ<sub>n</sub>/√(2λ<sub>2</sub>)</span></td></tr>
+<tr><td class="l">谱间隙 <span class="s">γ</span></td><td class="l"><span class="s">λ<sub>2</sub></span></td><td class="l">正则族：<span class="s">R∈[2, 2d/γ]</span>（命题 18.4）</td></tr>
+</table>
+<p>三行给出三种不同的定量直觉：直径给上界（越瘦长 <span class="s">R</span> 越大）、Cheeger 给下界（有瓶颈则 <span class="s">λ<sub>2</sub></span> 小）、谱间隙给正则族的夹逼。<b>三者合起来说明：<span class="s">R</span> 度量的是“瘦长 × 有瓶颈”，不是“规模大”。</b></p>
+
+<h3 id="sec18-ref">18　本章参考文献</h3>
+<div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>

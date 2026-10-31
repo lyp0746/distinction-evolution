@@ -32,6 +32,22 @@
 
 <p>顺序的意义在于：前三条几乎不需要专业知识，后三条需要。若前三关就倒下，不必走到第四关——这也是本书把第 4 章的五个问题放在最前面的原因。</p>
 
+<h3 id="sec23-5b">23.5b　六种失败 × 五个部分：一张诊断矩阵</h3>
+
+<p>把第 23.1—23.4 节的六种失败与本书五个部分交叉，可以得到一张“高危区”表。读法：格子里的数字是该部分最容易发生的失败编号。</p>
+
+<table class="nat">
+<tr><th class="l">部分</th><th class="l">换词</th><th class="l">过度统一</th><th class="l">分级失效</th><th class="l">路径依赖</th><th class="l">不可通约</th><th class="l">空域</th></tr>
+<tr><td class="l">一　纪律</td><td class="l">—</td><td class="l">—</td><td class="l">●</td><td class="l">—</td><td class="l">—</td><td class="l">—</td></tr>
+<tr><td class="l">二　语言</td><td class="l">●</td><td class="l">—</td><td class="l">—</td><td class="l">—</td><td class="l">●</td><td class="l">●</td></tr>
+<tr><td class="l">三　形式</td><td class="l">—</td><td class="l">●</td><td class="l">●</td><td class="l">—</td><td class="l">—</td><td class="l">●</td></tr>
+<tr><td class="l">四　硬核</td><td class="l">—</td><td class="l">—</td><td class="l">—</td><td class="l">●</td><td class="l">—</td><td class="l">●</td></tr>
+<tr><td class="l">五　覆盖</td><td class="l">●</td><td class="l">●</td><td class="l">●</td><td class="l">●</td><td class="l">●</td><td class="l">●</td></tr>
+</table>
+<p>这张矩阵本身就是结论：<b>第五部分是最危险的部分</b>（六种失败全在），第四部分最安全（只有路径依赖与空域两种）。它解释了为什么本书把“可复算”押在第四部分，而把第五部分写成“标级的覆盖”而不是“结论的推广”。</p>
+
+<p>矩阵也给出一个使用建议：读第五部分时，每遇到一条 C 级，先查它落在哪一格。落在“换词”格的，要求一个能说出新话的句子；落在“空域”格的，要求一个具体反例；落在“不可通约”格的，要求一条双向翻译规则。</p>
+
 <h3 id="sec23-5">23.5　反例：一次真实的失败复盘</h3>
 
 <p>把“曲率”写成“谱的一侧”，是一次真实发生过、也真实失败过的迁移。失败方式属于<b>过度统一＋路径依赖</b>：先用谱的形式重写了曲率，再用“重写成功”论证曲率就是谱。第 2.5 节给出它的确切损失：整体恒等式成立（曲率之和＝欧拉示性数），局部信息丢失（同谱不同图的度序列不同）。复盘的结论只有一句：<b>压缩可以成功，定理可以失败；报账时要分开报。</b></p>
@@ -41,3 +57,27 @@
 <p>六种失败方式、六种信号、六处高危区。它们不构成对本书的否定，而是它的使用说明：每读到一个结论，先看它离这六种失败有多近。第 24 章把“怎么裁决”写成程序。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：一套语言的可信度，取决于它的失败方式是否被写在其使用说明的第一页。</p></div>
+
+<h3 id="sec23-6b">23.6b　失败的自查脚本</h3>
+
+<p>把六种失败写成可执行的检查项，能在写作时自查：</p>
+
+<pre>def audit(claim, context):
+    # 1 换词：删掉新术语，句子还成立吗？
+    if same_after_renaming(claim, context): return "换词"
+    # 2 过度统一：被套的对象与原型符号差相同吗？
+    if signature(claim) != signature(context.prototype): return "过度统一"
+    # 3 分级失效：证据等级 >= 语气等级吗？
+    if evidence(claim) < strength(claim): return "分级失效"
+    # 4 路径依赖：换一个构造，结论还在吗？
+    if not holds_in(other_construction(claim)): return "路径依赖"
+    # 5 不可通约：能写出双向翻译吗？
+    if not translatable(claim): return "不可通约"
+    # 6 空域：前提在现实中成立吗？
+    if not feasible(premise(claim)): return "空域"
+    return "通过"</pre>
+
+<p>这段代码的前四行是“伪代码”，最后两行是真正可判的。<b>诚实的说法是：六项里只有第 3 项能完全自动化</b>（等级比较），其余五项需要人判断。把这一点写出来，比假装有一个全自动检查器更可靠。</p>
+
+<h3 id="sec23-ref">23　本章参考文献</h3>
+<div class="refs"><p>Lakatos, I. (1976). <i>Proofs and Refutations</i>. Cambridge University Press.</p><p>Kuhn, T. S. (1962). <i>The Structure of Scientific Revolutions</i>. University of Chicago Press.</p><p>Mayo, D. G. (2018). <i>Statistical Inference as Severe Testing</i>. Cambridge University Press.</p></div>

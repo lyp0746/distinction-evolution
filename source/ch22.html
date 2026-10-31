@@ -40,6 +40,19 @@
 
 <p>这条共同点值得单独记下：<b>迁移的瓶颈几乎总在阈值，而不在形式。</b>所以第 10 章的语法把“阈值可传递”列为第二条规则，而不是可选项。</p>
 
+<h3 id="sec22-5b">22.5b　第四个迁移（试探）：自旋网络面积与“被切开的边”</h3>
+
+<p>第 14.4b 节给了面积谱 <span class="s">A(j)=8πγℓ<sub>P</sub><sup>2</sup>√(j(j+1))</span>。它能不能按第 15 章的四条探针迁移到本书的语言？逐条看：</p>
+
+<ul>
+<li><b>边界探针</b>：<span class="s">j=0</span> 时面积为 0，等价于“没有边穿过”——与本书“没有区分就没有结构”一致，过。</li>
+<li><b>操作探针</b>：把一个面细分，面积相加；在本书语言里对应“区分变细，测度可加”，过。</li>
+<li><b>不变量探针</b>：面积只依赖穿过的边的指标，不依赖边的排列——对应“只依赖谱/计数，不依赖标号”，过。</li>
+<li><b>反例探针</b>：面积谱的最小间隔在 <span class="s">j</span> 小时不均（<span class="s">√2−0≈1.41</span> 对 <span class="s">√6−√2≈1.04</span>），因此“面积是某算子的等间隔谱”不成立——这一条<b>断</b>。</li>
+</ul>
+
+<p>四条探针三条过、一条断，按第 15 章的规则，这个迁移只能停在<b>类比</b>价位（C 级）。它的价值不在于“证明了什么”，而在于指出一个可检验的方向：<b>如果离散几何的谱不是等间隔的，那么本书第 19 章“<span class="s">R</span> 随分辨率二次增长”的结论就不能直接搬到物理的离散空间上</b>——因为那里的“分辨率”本身是离散谱，而不是网格步长。</p>
+
 <h3 id="sec22-5">22.5　反例：三个都满格却仍稳定的系统</h3>
 
 <p>若存在一个系统，三样同时满格且长期稳定，那么“至多取二”就是错的。候选反例有两类：<b>（i）预算增长快于需求</b>——此时“紧预算”前提不成立，结论本就不适用；<b>（ii）三样由不同承载者承担</b>——此时“共享预算”前提不成立。两类都说不上推翻，只说明前提取消了。真正能推翻的只有一类：预算确实共享、确实紧，却三样都满格。本书没有找到这样的系统，这件事写在附录 D 的登记簿里。</p>
@@ -49,3 +62,19 @@
 <p>三个迁移里两个到“等价”（容量、τ），一个只到“同调”（三性）。可复算的判据是三条验收线，加上第 15 章的四条探针。第 23 章把迁移失败的方式归成六类。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：迁移的成本不在“像不像”，在“算不算得出、翻不翻得倒”。</p></div>
+
+<h3 id="sec22-6b">22.6b　迁移的成本表</h3>
+
+<p>三个迁移（+ 一个失败的第四个）的成本可以量化：<b>写出量</b>要多久、<b>找算例</b>要多久、<b>写反例条件</b>要多久。三者相加，就是这次迁移的“可复算成本”。</p>
+
+<table class="nat">
+<tr><th class="l">迁移</th><th class="l">写出量</th><th class="l">算例</th><th class="l">反例条件</th><th class="l">总成本</th><th class="l">价位</th></tr>
+<tr><td class="l">容量与遗忘</td><td class="l">低（互信息）</td><td class="l">低</td><td class="l">中</td><td class="l">低</td><td class="l">等价</td></tr>
+<tr><td class="l">时间错配 τ</td><td class="l">低（一个比值）</td><td class="l">中（要测两个时间）</td><td class="l">低</td><td class="l">中</td><td class="l">等价</td></tr>
+<tr><td class="l">三性权衡</td><td class="l">低（子模性）</td><td class="l">高（要枚举）</td><td class="l">高</td><td class="l">高</td><td class="l">同调</td></tr>
+<tr><td class="l">自旋网络面积</td><td class="l">高（要引理论）</td><td class="l">中</td><td class="l">高（探针断在第四步）</td><td class="l">高</td><td class="l">类比</td></tr>
+</table>
+<p>这张表的用处是排优先级：<b>成本低而价位高的迁移先做。</b>按此规则，容量与遗忘最值得先做，三性次之，自旋网络最不值得——不是因为不重要，而是因为它要一整门理论的公理做前提，超出“一天可复核”的范围。</p>
+
+<h3 id="sec22-ref">22　本章参考文献</h3>
+<div class="refs"><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Baez, J. C. (2000). An introduction to spin foam models. <i>Lecture Notes in Physics</i> 543, 25–94.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p></div>

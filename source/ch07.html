@@ -50,6 +50,14 @@
 
 <p>这件小事说明生成拓扑的一个特点：<b>“稳定”必须留有余量，开区间就是余量。</b>它同时解释了为什么第 6 章要求阈值严格不等式：<span class="s">|f(x)−f(y)|&gt;θ</span> 里的“大于”正是为了留出余量。若改成“大于等于”，大量日常判断会落在边界上，而边界在生成拓扑里是最不稳定的区域（<span class="s">P=1</span>）。</p>
 
+<h3 id="sec7-4b">7.4b　定理 7.2：Alexandrov 拓扑与预序的双向对应</h3>
+
+<p><b>定理 7.2。</b>设 <span class="s">X</span> 有限。则“<span class="s">X</span> 上的预序”与“<span class="s">X</span> 上的 Alexandrov 拓扑”之间存在一一对应：由预序 <span class="s">≼</span> 定义开集为下闭集，得拓扑 <span class="s">τ<sub>≼</sub></span>；由拓扑定义 <span class="s">x≼y ⇔ x∈cl{y}</span>，得预序；两个构造互逆。</p>
+
+<p><b>证明。</b>(i) 下闭集族对任意并、有限交封闭（下闭性对交与并保持），含 <span class="s">∅</span> 与 <span class="s">X</span>，故是拓扑。(ii) 反向：给定 Alexandrov 拓扑，任意点 <span class="s">y</span> 的最小邻域 <span class="s">U<sub>y</sub></span> 存在（有限交封闭），令 <span class="s">x≼y ⇔ x∈U<sub>y</sub></span>。(iii) 两次构造互逆由“最小邻域＝下闭包”直接得到。<span class="s">∎</span></p>
+
+<p>这条定理是本书“区分生成结构”的最强版本：<b>只要区分只给出“谁包含在谁里”，结构就完全被决定了，不多也不少。</b>代价也由它说清：预序不区分“距离”，所以得到的拓扑没有 Hausdorff 性（命题 7.2）。第 11 章的二次型正是为补这个缺口而来。</p>
+
 <h3 id="sec7-5">7.5　反例：T₀ 不是 Hausdorff</h3>
 
 <p>若区分族只给出序（<span class="s">x≼y</span> 表示“<span class="s">x</span> 在 <span class="s">y</span> 的下闭里”），生成的是 Alexandrov 拓扑：开集就是下闭集。它总是 <span class="s">T₀</span>（任意两点都能被某个开集分开），但只要偏序不是离散的，它<b>不是</b> Hausdorff 的。</p>
@@ -67,3 +75,12 @@
 <p>开集可以从“区分下的稳定性”生成，三条公理是定理而不是假设（7.1）。代价是分离性：Alexandrov 情形下只有 <span class="s">T₀</span>（7.2）。这一个代价决定了全书的走向：语言必须再接上一个形式。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：开集不是世界本来的样子，是“在哪里分得稳”这件事的样子。</p></div>
+
+<h3 id="sec7-5b">7.5b　数字拓扑：离散空间上的“连通”从哪来</h3>
+
+<p>图像处理里的“连通”是一个实际难题：像素是离散的，8 邻域与 4 邻域给出的连通分支数不同，于是同一张图能被数出两种“物体个数”。数字拓扑的解法正是第 7 章的做法：<b>先定区分（邻接关系），再生拓扑</b>。用 4 邻接生成的是 Alexandrov 拓扑，它的连通分支恰好是 4 连通分支；用 8 邻接生成另一个拓扑。</p>
+
+<p>这件小事的教训很大：<b>“连通”不是图像自带的性质，而是邻接约定（区分）的产物。</b>换约定，物体个数就变。这与第 7.5 节的 T₀ 反例是同一件事的两个版本——都说明“结构由区分生成，而区分是可以选的”。</p>
+
+<h3 id="sec7-ref">7　本章参考文献</h3>
+<div class="refs"><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Stong, R. E. (1966). Finite topological spaces. <i>Transactions of the AMS</i> 123, 325–340.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Mazin, A. (2025). Generative Topology. Zenodo.</p></div>

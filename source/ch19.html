@@ -51,14 +51,90 @@
 
 <p>这不是数学上的巧合，而是物理上的老事实（鼓的基频依赖边界条件）。它给第 19 章的结论加了一层限定：<b>“两阶段相变的宽度发散”这件事对边界条件敏感，因此不能写成一个与离散化无关的常数。</b>这正是它不能被升级为“普遍常数”的原因（第 10 章的语法错误）。</p>
 
+<h3 id="sec19-5b">19.5b　为什么环面不违反夹逼：谱间隙的两种消失</h3>
+
+<p>第 18.5b 节的表暴露一个必须处理的问题：环面是正则的，<span class="s">R</span> 却按 <span class="s">n²</span> 增长。答案不是“夹逼错了”，而是<b>谱间隙的消失有两种方式</b>，它们对 <span class="s">R</span> 的影响完全不同。</p>
+
+<ul>
+<li><b>间隙消失（<span class="s">γ→0</span>）</b>：<span class="s">λ<sub>2</sub>→0</span>，<span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>→∞</span>。环面、环、路都属于这一类。</li>
+<li><b>间隙有下界（<span class="s">γ≥c&gt;0</span>）</b>：<span class="s">R≤2d/c</span>，有界。膨胀图、随机正则图属于这一类。</li>
+</ul>
+
+<p>两种消失的几何含义不同：前者是“图被拉长”（直径 <span class="s">∼n</span>），后者是“图很紧”（直径 <span class="s">∼log n</span>）。<b>同样的度、同样的正则性，直径差一个指数，相变宽度差一个平方。</b>这就是为什么“<span class="s">R</span> 大”不能解释为“系统复杂”：膨胀图又大又紧，<span class="s">R</span> 却只有个位数。</p>
+
+<p>图拉普拉斯收敛定理给这一节一个连续侧对应：若网格序列以 <span class="s">h→0</span>、<span class="s">n h<sup>d/2+2</sup>→∞</span> 的方式逼近流形，则归一化谱收敛到 Laplace–Beltrami 谱（Belkin–Niyogi 2007；von Luxburg–Belkin–Bousquet 2008）。<b>收敛的是“按 <span class="s">h²</span> 缩放后的低谱”，不是 <span class="s">R</span></b>——因为 <span class="s">λ<sub>n</sub></span> 不收敛（第 19.2 节）。这条差别正是本书“推向连续”的全部技术内容。</p>
+
 <h3 id="sec19-5">19.5　反例：不是所有加密都让 R 发散</h3>
 
 <p>若一族图的谱间隙有一致下界、最大度有上界（例如度 <span class="s">d</span> 的膨胀图族），则 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>≤2d/c</span>，<b>有界</b>。所以“<span class="s">R</span> 随规模发散”不是规模本身的效应，而是<b>几何型结构</b>（网格、环面、路）的效应。这个反例很重要：它挡住了“<span class="s">R</span> 大就是系统复杂”的误读。</p>
 
 <p>换句话说，<span class="s">R</span> 度量的是“局部与全局之间的尺度落差”，不是“系统的大小”。一个巨大的膨胀图可以 <span class="s">R≈2</span>；一个很小的星图可以 <span class="s">R=n</span>。</p>
 
-<h3 id="sec19-6">19.6　本章小结</h3>
+<h3 id="sec19">19.6　1/3 缺口：一个尚未结算的常数</h3>
+<img class="fig" src="assets/svg/fig18-gauss-bonnet-factor.svg" alt="Gauss-Bonnet 因子问题">
+
+<div class="cap"><b>图 19.7　因子 1/3 的来源</b>。从热核展开到 Gauss–Bonnet 的推导链：热核第一系数 <span class="s">a₁=R/6</span>（左）；二维标量曲率与高斯曲率的关系 <span class="s">R=2K</span>（中）；代入 <span class="s">∫K=2πχ</span> 得到 <span class="s">∫κ=(1/3)∫K=(2π/3)χ</span>（右）。缺口精确为 3。</div>
+
+<p>推导如下（全部为已知数学）：</p>
+
+<ol>
+<li><b>热核展开的局部系数：</b>对拉普拉斯–贝尔特拉米算子，短时渐近展开的第一个非平凡系数为 <span class="s">a₁(x)=R(x)/6</span>，其中 <span class="s">R</span> 是标量曲率。［已知，B／乙］</li>
+<li><b>二维的曲率关系：</b>在二维，<span class="s">R=2K</span>，其中 <span class="s">K</span> 是高斯曲率。［已知，A／甲］</li>
+<li><b>Gauss–Bonnet：</b>对紧致可定向二维曲面，<span class="s">∫<sub>M</sub>K dA=2πχ(M)</span>。［已知，A／甲］</li>
+<li><b>代入：</b>若取 <span class="s">κ=R/6=K/3</span>，则 <span class="s">∫κ dA=(1/3)∫K dA=(2π/3)χ(M)</span>。<b>比标准 Gauss–Bonnet 小 3 倍。</b></li>
+</ol>
+
+<p>所以缺口的来源可以精确定位：<b>热核系数 <span class="s">1/6</span> 与二维曲率关系 <span class="s">R=2K</span> 合起来给出 <span class="s">1/3</span>。</b>问题不是"为什么是 3"，而是"这个 <span class="s">1/3</span> 应当被解释为错误、修正项，还是新的不变量"。</p><p>一个流行的说法是：本语言的内部结构是"加法性"的（线性叠加、谱分解），拓扑不变量是"乘法性"的，于是 1/3 缺口被归因于"加法内部性 vs 乘法外部性"。这个说法值得认真检验，但结论与它不同。脚本：<code>analysis/product_types.py</code>。</p>
+
+<p>取笛卡尔积 <span class="s">G□H</span>，逐条核算（15 对图）：［定理（计算），A／甲］</p>
+<ul>
+<li><b>Δ₀ 热核迹是乘法性的：</b><span class="s">Tr(e<sup>−tΔ₀(G□H)</sup>)=Tr(e<sup>−tΔ₀(G)</sup>)·Tr(e<sup>−tΔ₀(H)</sup>)</span>（<b>15/15</b>），因为 <span class="s">Δ₀(G□H)=Δ₀(G)⊗I+I⊗Δ₀(H)</span>（Kronecker 和）。等价地，分离谱测度满足卷积 <span class="s">μ<sub>G□H</sub>=μ<sub>G</sub>*μ<sub>H</sub></span>（<b>15/15</b>）。</li>
+<li><b>Δ₁（边拉普拉斯）不满足乘法性：</b><b>0/15</b>。原因是交叉项 <span class="s">B<sub>G</sub>⊗B<sub>H</sub><sup>T</sup>≠0</span>。</li>
+<li><b>欧拉示性数（在图上）不满足乘法性：</b>精确公式 <span class="s">χ(G□H)=χ(G)·χ(H)−|E<sub>G</sub>|·|E<sub>H</sub>|</span>（<b>15/15</b>）。</li>
+</ul>
+
+<p><b>关键的一步是看清亏项的来历。</b><span class="s">|E<sub>G</sub>|·|E<sub>H</sub>|</span> 恰是<b>产品复形的 2-胞腔数</b>：补上它们后 <span class="s">V−E+F=χ(G)·χ(H)</span> 精确成立（<b>15/15</b>）。所以这里真正的"不匹配"不是"加法 vs 乘法"，而是<b>维度</b>：<b>图是一维复形，没有 2-胞腔；两个一维复形之积是二维的，而 χ 只在完整的产品复形上才乘法。</b>本语言定义在 1-骨架上，看不见那些 2-胞腔——这与第 5 章"本语言缺少粘合/高阶结构"是同一件事。</p>
+
+<div class="warning"><span class="bt">警告 19.8　不要把乘积行为当成 1/3 的根源</span>
+上述分析精确、可复算，但它<b>不解释</b> 1/3 缺口：缺口是在<b>固定的二维曲面</b>上，"密度归一化 <span class="s">R/6</span>"与"欧拉密度"之间的一个轴，与"乘积下加/乘"是<b>两个不同的轴</b>。把两者混为一谈，正是本章要避免的那种"漂亮口号"。<b>G10—G14 是标准事实，不是本书的新定理；它们的价值在于把口号钉成可复算的语句，并指出它不是缺口的根源。</b>它们对 本语言的真正含义只有一条：本语言的连续对应物应当是<b>谱测度/热核</b>（类型匹配），而不是 <span class="s">χ</span>（类型不匹配、且需要 2-胞腔）。</div><p>一个自然的下一步是：把 本语言放进 Connes 的<b>谱三元组</b> <span class="s">(A, ℋ, D)</span>。在图上这非常具体：取 <span class="s">A=ℂ<sup>V</sup></span>、<span class="s">ℋ=ℂ<sup>V</sup>⊕ℂ<sup>E</sup></span>、<span class="s">D=(0, B<sup>T</sup>; B, 0)</span>（<span class="s">B</span> 为关联矩阵），则 <span class="s">D²=diag(B<sup>T</sup>B, BB<sup>T</sup>)=diag(Δ₀, Δ₁)</span>，超迹 <span class="s">Tr<sub>s</sub>(e<sup>−tD²</sup>)=Tr(e<sup>−tΔ₀</sup>)−Tr(e<sup>−tΔ₁</sup>)</span> 正是 19.9.2 的 <span class="s">X(t)</span>。这确实把离散与连续放进同一个语言：离散对象是有限谱三元组，连续对象是 <span class="s">(C<sup>∞</sup>(M), L²(M,S), D<sub>M</sub>)</span>。［已知，B／乙］</p>
+
+<p>但它<b>不是 1/3 的解药</b>，理由很硬。<span class="s">B<sup>T</sup>B</span> 与 <span class="s">BB<sup>T</sup></span> 只在核上不同（非零谱完全一致），因此由 <b>McKean–Singer</b>，<span class="s">X(t)=dim ker Δ₀−dim ker Δ₁=b₀−b₁=χ(G)</span> <b>对一切 <span class="s">t</span> 精确成立</b>（<code>analysis/dirac_mckean_singer.py</code>：K3/C4/C5 给 0、P3 给 1、K4 给 −2、Petersen 给 −5，全部与 <span class="s">χ</span> 一致）。超迹<b>没有短时发散、没有渐近展开、更没有 1/3</b>。</p>
+
+<div class="warning"><span class="bt">警告 19.10　“换 Dirac 算子能消掉 1/3”是同义反复</span>
+常见说法是“改用狄拉克算子后归一化不同，1/3 不再出现”。这是真的，但是空的：<b>超迹里本来就没有 1/3</b>。1/3 出现在<b>标量</b>拉普拉斯（非超迹）热核的常数项 <span class="s">a₁=R/6</span> 中；把标量谱与超迹混为一谈，正是 19.11.1 类型澄清的又一次重演。另需精确：图上给出 χ 的是 <b>de Rham 算子</b>（<span class="s">B</span> 的度数 ±1 部分），不是旋量 Dirac 算子——后者的指标是 <span class="s">Â</span>-亏格，是另一个不变量。<b>谱三元组给 本语言一个正确的数学家园（有限谱三元组 / 离散 de Rham 复形），但它是标准工具，不产生新定理，也不填 1/3。</b>离散→连续的桥是<b>谱收敛</b>——一个真实但独立的研究问题，本书不做。</div><table class="nat">
+<caption class="cap"><b>表 19.12　因子问题的现状清单</b></caption>
+<tr><th class="l">问题</th><th class="l">现状</th><th class="l">证伪条件</th><th class="l">等级</th></tr>
+<tr><td class="l"><span class="s">κ=R/6</span> 是否是正确的谱方差？</td><td class="l">仅局部展开</td><td class="l">若热核展开在边界/非紧情形给出不同系数</td><td class="l">B</td></tr>
+<tr><td class="l">缺口是否为 3？</td><td class="l">在二维精确</td><td class="l">若 <span class="s">R≠2K</span>（高维）则缺口改变</td><td class="l">A（二维）</td></tr>
+<tr><td class="l">轨形解释是否成立？</td><td class="l">球面例子矛盾</td><td class="l">若找到反例结构，解释被推翻</td><td class="l">C</td></tr>
+<tr><td class="l">是否存在新拓扑不变量？</td><td class="l">未知</td><td class="l">若 <span class="s">χ(D)</span> 可由已知不变量表示</td><td class="l">C</td></tr>
+<tr><td class="l"><span class="s">κ_info</span> 是否等于 <span class="s">R/6</span> 的离散化？</td><td class="l"><b>否</b></td><td class="l">平坦环面 <span class="s">R=0</span> 而 <span class="s">κ_info=2</span>（19.13.1）</td><td class="l">A（反例）</td></tr>
+<tr><td class="l">等变指标解释能否给出 <span class="s">χ(D)=χ(M)/3</span>？</td><td class="l"><b>否</b>（不动点处失败）</td><td class="l">找到使群平均仍等于 <span class="s">χ/3</span> 的非自由作用</td><td class="l">B</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>现状清单。等级见末列。<b>本表是附录 可证伪登记簿 可证伪登记的核心内容之一。</b></div>
+
+<p><b>高维推广的证伪。</b>本章原本猜想高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 计算后，这个猜想<b>被证伪</b>：<span class="s">n=1</span>（二维）时 ratio 为 <span class="s">1/3</span>，但 <span class="s">n=2</span> 时为 <span class="s">4π/3≈4.19</span>，<span class="s">n=3</span> 时为 <span class="s">4π²/3≈13.16</span>，均不等于 <span class="s">1/(2n+1)</span>。<b>结论：不存在一个普适常数 <span class="s">f(n)</span>；因子 <span class="s">1/3</span> 是二维特有的</b>（因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑定）。正确的推广必须使用陈–高斯–博内的<b>欧拉形式</b>，而不是标量曲率。完整计算见附录 形式化与证明.6。［定理（计算），A／甲］</p>
+
+<div class="case"><span class="ct">人的尺度</span><p>一位审稿人问：“这个 1/3 到底是深刻，还是你的构造带来的？”作者没有辩解，他花了两年去回答这个问题，最后的答案是“不知道”。<b>1/3 缺口最像科学的地方，是它至今没有被解释清楚，也没有被吹成宇宙常数。</b></p></div>
+
+
+<h3 id="sec19-6">19.7　本章小结</h3>
 
 <p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>
+
+<h3 id="sec19-6b">19.6b　指数的可检验性：三个可分辨的预言</h3>
+
+<p>第 19 章的结论给出三个可被数值检验的预言，它们彼此独立，因此可以互相验证：</p>
+
+<ol>
+<li><b>网格上 <span class="s">R∝n²</span>，常数 <span class="s">8/π²</span></b>：已在 n=10/20/40/80 上验证（误差 1.7%→0.03%）。</li>
+<li><b>环面上 <span class="s">R∝n²</span>，常数 <span class="s">2/π²</span></b>，即网格的四分之一：n=8 与 n=16 实测 13.66、52.55，比值为 3.85，接近 4。</li>
+<li><b>正则膨胀族 <span class="s">R</span> 有界</b>：随机 4-正则图 <span class="s">R</span> 应在 4 附近，不随 <span class="s">n</span> 增长。</li>
+</ol>
+
+<p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.4 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
+
+<h3 id="sec19-ref">19　本章参考文献</h3>
+<div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>

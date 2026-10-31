@@ -47,6 +47,16 @@
 
 <p>这条细节的作用是提醒：<b>渐进公式只能在足够大的参数上用。</b>本书引用 Weyl 律时，只用它做一件弱的事——证明谱无上界（于是 <span class="s">μ<sub>max</sub>=∞</span>）。用它估计具体的模式数，就必须给出参数范围，否则会像把 <span class="s">Λ/4</span> 当成精确值那样出错。</p>
 
+<h3 id="sec20-4b">20.4b　热核展开、谱 zeta 与 Kac 问题</h3>
+
+<p>连续侧的谱不由“一串数”给出，而由<b>计数函数与热核</b>给出。三件东西是等价的三种说法。</p>
+
+<p><b>热核。</b><span class="s">K(t,x,x) ~ (4πt)<sup>−d/2</sup>Σ<sub>k≥0</sub>a<sub>k</sub>(x)t<sup>k</sup></span>，于是 <span class="s">Tr e<sup>tΔ</sup>=Σe<sup>−tμ<sub>k</sub></sup> ~ (4πt)<sup>−d/2</sup>Σ<sub>k</sub>A<sub>k</sub>t<sup>k</sup></span>，其中 <span class="s">A<sub>0</sub>=vol(M)</span>、<span class="s">A<sub>1</sub>=∫R/6</span>（<span class="s">R</span> 为数量曲率）。<b>Weyl 律就是 <span class="s">A<sub>0</sub></span> 项</b>：<span class="s">N(Λ)~vol·ω<sub>d</sub>(2π)<sup>−d</sup>Λ<sup>d/2</sup></span>。第 20.2 节的密度因此不是“另一个定理”，而是热核展开的最低阶。</p>
+
+<p><b>谱 zeta。</b><span class="s">ζ<sub>Δ</sub>(s)=Σ<sub>μ<sub>k</sub>&gt;0</sub>μ<sub>k</sub><sup>−s</sup></span> 在 <span class="s">s=d/2</span> 处有单极点，留数正比于体积。它与热核互为 Mellin 变换：<b>“体积”这个几何量，在谱侧表现为一个极点的留数。</b>这是本书里“几何 ↔ 谱”最强的一条桥，比 <span class="s">R</span> 强，也比 <span class="s">κ</span> 强——但它只对连续侧成立。</p>
+
+<p><b>Kac 问题。</b>“能不能听见鼓的形状？”Milnor（1964）给出 16 维环面的反例，Sunada（1985）给出系统构造。<b>答案是否定的：谱不决定几何。</b>这与第 18.5 节的 6 顶点反例是同一件事的两个尺度：离散侧有同谱不同图，连续侧有等谱不等距。本书把这一现象归入“同调价位”的固有限制，并在第 15 章给出四个价位作为语言。</p>
+
 <h3 id="sec20-5">20.5　反例：把有限图的直觉搬到流形上</h3>
 
 <p>三种典型误搬：</p>
@@ -61,3 +71,20 @@
 <p>连续侧换对象：从两个端点换成密度（20.1）。可搬过去的是代数恒等式（20.2），搬不过去的是 <span class="s">λ<sub>n</sub></span> 与两阶段结构。第四部分到此结束，硬核清单如下：定理 16.1、17.1、18.2、19.1、19.2、20.1、命题 18.1、18.3、20.2，以及表 18.1、19.1、20.1 的实测值。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：鼓能告诉你有多少个音，不能告诉你鼓是什么形状；流形能告诉你密度，不能告诉你“最后一个音”。</p></div>
+
+<h3 id="sec20-5b">20.5b　把离散侧的直觉搬回连续侧：一张对照表</h3>
+
+<p>第 20 章的核心是“哪些能搬、哪些不能”。把它们列成表，读者可以逐行核对。</p>
+
+<table class="nat">
+<tr><th class="l">离散侧（图）</th><th class="l">连续侧（流形）</th><th class="l">能否搬</th><th class="l">原因</th></tr>
+<tr><td class="l"><span class="s">λ<sub>n</sub></span> 有限</td><td class="l"><span class="s">μ<sub>max</sub>=∞</span></td><td class="l">不能</td><td class="l">谱无上界（Weyl）</td></tr>
+<tr><td class="l">两阶段（两个门槛）</td><td class="l">一个门槛</td><td class="l">不能</td><td class="l">定理 19.2</td></tr>
+<tr><td class="l">解锁计数 <span class="s">N≤n</span></td><td class="l"><span class="s">N(Λ)~cΛ<sup>d/2</sup></span></td><td class="l">换成密度</td><td class="l">Weyl 律</td></tr>
+<tr><td class="l"><span class="s">κ=½Var(λ)</span></td><td class="l"><span class="s">κ</span> 由热核系数给</td><td class="l">能（代数）</td><td class="l">命题 20.2 只依赖求导</td></tr>
+<tr><td class="l">同谱不同图</td><td class="l">等谱不等距（Sunada）</td><td class="l">能（现象同型）</td><td class="l">谱不决定几何</td></tr>
+</table>
+<p>五行里三行“不能直接搬”，但这不等于失败：<b>搬不过去的部分正是“缺口”的内容</b>，而搬得过去的两行（<span class="s">κ</span> 与同谱现象）给出了两个跨尺度的稳定事实。</p>
+
+<h3 id="sec20-ref">20　本章参考文献</h3>
+<div class="refs"><p>Minakshisundaram, S., &amp; Pleijel, Å. (1949). Some properties of the eigenfunctions of the Laplace operator on Riemannian manifolds. <i>Canadian Journal of Mathematics</i> 1, 242–256.</p><p>Milnor, J. (1964). Eigenvalues of the Laplace operator on certain manifolds. <i>PNAS</i> 51, 542.</p><p>Kac, M. (1966). Can one hear the shape of a drum? <i>American Mathematical Monthly</i> 73, 1–23.</p><p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah–Singer Index Theorem</i> (2nd ed.). CRC Press.</p><p>Chavel, I. (1984). <i>Eigenvalues in Riemannian Geometry</i>. Academic Press.</p></div>

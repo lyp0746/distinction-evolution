@@ -58,6 +58,14 @@
 
 <p>三个前提合起来，就是第 5 章“边界第四条”的具体化：<b>定理的锐度来自前提的窄。</b>把前提放宽，结论就变软；本书选择保持窄，而不是把结论写成模糊的大话。</p>
 
+<h3 id="sec16-5b">16.5b　推广：加权图与归一化拉普拉斯</h3>
+
+<p>定理 16.1 只用了“<span class="s">L</span> 实对称、半正定、零空间为一维常数向量”这三条。因此它对两类推广自动成立。</p>
+
+<p><b>加权图。</b>边权 <span class="s">w<sub>uv</sub>&gt;0</span>，令 <span class="s">L<sub>w</sub>=D<sub>w</sub>−W</span>，<span class="s">D<sub>w</sub>=diag(Σ<sub>v</sub>w<sub>uv</sub>)</span>。定理逐字成立，只是 <span class="s">λ<sub>k</sub></span> 换成加权谱；临界耦合变成 <span class="s">α/λ<sub>k</sub>(L<sub>w</sub>)</span>。<b>归一化拉普拉斯</b> <span class="s">ℒ=I−D<sup>−1/2</sup>WD<sup>−1/2</sup></span> 也是实对称半正定，谱在 <span class="s">[0,2]</span>，同样适用——代价是“常数向量”变成“<span class="s">√d</span> 向量”，于是模式的几何解释要重写。</p>
+
+<p>两处推广有一个共同的陷阱：<b>数值不可比。</b>加权图的 <span class="s">λ<sub>n</sub></span> 没有上界 <span class="s">2Δ</span>（权可以任意大），所以命题 18.3 的界要改成依赖最大权。这一点在第 21 章的覆盖表里被标为“可比性风险”。</p>
+
 <h3 id="sec16-5">16.5　反例：非对称耦合会让顺序反转</h3>
 
 <p>若把边改成有向（<span class="s">L</span> 不再对称），<span class="s">L</span> 的特征值可以是复数，增长由 <span class="s">Re(λ<sub>k</sub>)</span> 决定，<span class="s">M=−αI+βL</span> 也不再正规。这时“高频先解锁、低频后解锁”不再成立：附录 B 给出一个 6 顶点有向图，其中的全局模式先于局部模式增长。<b>定理 16.1 的适用范围是有向图的补集</b>，这一点必须写在结论里，而不是留在脚注。</p>
@@ -67,3 +75,14 @@
 <p>线性演化把“区分”变成一串数：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。两个临界耦合（16.3）分开了解锁的先后。第 17 章问：这两个数之间的地带是什么。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：系统先解锁哪个方向，不取决于你拉哪里，取决于谱从哪头开始。</p></div>
+
+<h3 id="sec16-6b">16.6b　定理 16.1 与“记忆–关系”的耦合解释</h3>
+
+<p>把方程 <span class="s">Ḋ=−αD+βLD</span> 的两项读成两个机制：第一项是“遗忘”（每个顶点独立衰减），第二项是“关系”（向邻居看齐再拉开）。二者之比 <span class="s">β/α</span> 决定一切——把它写成一个无量纲数：</p>
+
+<div class="eq"><span class="body">Γ := β/α，   模式 k 增长 ⟺ Γ &gt; 1/λ<sub>k</sub></span><span class="num">(16.4)</span></div>
+
+<p>于是临界耦合就是 <span class="s">Γ<sub>1</sub>=1/λ<sub>n</sub></span>、<span class="s">Γ<sub>2</sub>=1/λ<sub>2</sub></span>，与 <span class="s">α</span> 无关。<b>这个改写的好处是把“尺度”从参数里去掉</b>：换单位不改变任何结论，因为 <span class="s">Γ</span> 是无量纲的。第 19 章讨论“推向连续”时，正是用 <span class="s">Γ</span> 与网格步长 <span class="s">h</span> 的关系来说明哪个临界值消失、哪个留下。</p>
+
+<h3 id="sec16-ref">16　本章参考文献</h3>
+<div class="refs"><p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p><p>von Luxburg, U. (2007). A tutorial on spectral clustering. <i>Statistics and Computing</i> 17, 395–416.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

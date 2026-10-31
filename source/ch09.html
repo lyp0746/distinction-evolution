@@ -39,6 +39,12 @@
 
 <p>这个用法有两个纪律。第一，<b>一致有界</b>：没有一致有界，标准部分可能不存在（第 9.4 节的定理要求里写了这一条）。第二，<b>命题必须是一阶的</b>：转移原理只管一阶命题，“对所有子集”这类二阶陈述不能直接搬。两条纪律合起来，就是“可以用超有限计算，但不能用它做本体论承诺”。</p>
 
+<h3 id="sec9-5b">9.5b　Loeb 测度：超有限计数如何变成标准测度</h3>
+
+<p>把定理 9.1 里的一句展开。超有限集 <span class="s">X</span> 上有计数测度 <span class="s">μ<sub>0</sub>(A)=|A|/|X|</span>（取值在 <span class="s">*[0,1]</span>）。定义 Loeb 测度 <span class="s">μ<sub>L</sub>(A)=st(μ<sub>0</sub>(A))</span>，对任一内集 <span class="s">A</span> 取值。Loeb（1975）证明：<span class="s">μ<sub>L</sub></span> 是标准概率测度，且对标准可测集与标准可测函数的积分满足 <span class="s">∫f dμ<sub>L</sub>=st(Σ f(x)/|X|)</span>。</p>
+
+<p>这条构造是本书“推向连续”的技术支点：它把“在网格上数特征值”与“在流形上积分”写成同一件事（第 20 章表 20.1 的三层对照就是它的数值影子）。<b>它同时给出一个纪律</b>：Loeb 测度只对“内集”定义，因此凡是要取标准部分的量，必须先被写成内集或内函数——这就是第 9.4b 节说的“一阶”要求。</p>
+
 <h3 id="sec9-5">9.5　反例：把无限当属性的三种误用</h3>
 
 <ul>
@@ -54,3 +60,12 @@
 <p>连续是“对任意精度存在足够分辨率”的承诺，三种写法等价，超有限写法把极限内化（9.1）。三种误用的解毒剂是区分“对象 / 极限 / 工具”。至此，空间、可测、连续三样都由区分生成；下一章把它们收进一份语法。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：连续不是无限精细，是你每次给一个精度，它都答得出一个分辨率。</p></div>
+
+<h3 id="sec9-6b">9.6b　超有限方法在物理里的先例</h3>
+
+<p>非标准分析在物理学里最著名的用法，不是“证明什么”，而是“把连续场写成超有限格点”。做法：取格距为无穷小 <span class="s">dx</span>，格点数 <span class="s">N=L/dx</span> 为非标准自然数，于是在超有限格上可以做有限和，再取标准部分得到积分。这条路子与本书第 19—20 章完全同型：<b>先在有限对象上算，再取标准部分。</b></p>
+
+<p>差别在于：物理学用它做计算，本书用它做“极限的类型澄清”。前者要求结果与格距无关（重整化），后者要求指出“哪些量在取标准部分后消失”。第 19 章的 <span class="s">β<sub>1</sub></span> 就是后者：它在超有限格上非零，取标准部分后归零——<b>一个量在极限里消失，不等于它不存在，只等于它不是极限的量。</b></p>
+
+<h3 id="sec9-ref">9　本章参考文献</h3>
+<div class="refs"><p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p><p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces and applications in probability theory. <i>Transactions of the AMS</i> 211, 113–122.</p><p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p><p>Albeverio, S., Fenstad, J. E., Høegh-Krohn, R., &amp; Lindstrøm, T. (1986). <i>Nonstandard Methods in Stochastic Analysis and Mathematical Physics</i>. Academic Press.</p></div>

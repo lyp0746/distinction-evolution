@@ -49,6 +49,14 @@
 
 <p>这一点对实验设计有直接影响：如果只在一个固定时刻采样，很可能看不到中间相，从而误判为“一次相变”。第 24 章的 H2 检验就是为此设计的：它要求同时记录耦合强度与解锁计数，而不是只看最终状态。</p>
 
+<h3 id="sec17-5b">17.5b　中间相能维持多久：一个可算的时间尺度</h3>
+
+<p>第 17.3b 节说中间相“在时间上短”。可以把它写成一个数。设 <span class="s">β</span> 落在区间中点：<span class="s">β=(β<sub>1</sub>+β<sub>2</sub>)/2</span>，则高频模式的增长率为 <span class="s">μ<sub>n</sub>=βλ<sub>n</sub>−α</span>，低频衰减率为 <span class="s">|μ<sub>2</sub>|=α−βλ<sub>2</sub></span>。中间相的“可见窗口”大致满足
+<div class="eq"><span class="body">t<sub>vis</sub> ≈ ln(‖D<sub>0</sub>‖/ε)/min(μ<sub>n</sub>,|μ<sub>2</sub>|)</span><span class="num">(17.1)</span></div>
+其中 <span class="s">ε</span> 是观测精度。用 <span class="s">λ<sub>n</sub>≫λ<sub>2</sub></span> 代入可得 <span class="s">t<sub>vis</sub>≈2ln(1/ε)/(β(λ<sub>n</sub>−λ<sub>2</sub>))</span>：<b>相变越“各向异性”，窗口越短。</b></p>
+
+<p>这条式子的用处是给实验设计一个先验：若 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 很大（网格、环、路），中间相窗口极短，只有按 <span class="s">1/(βλ<sub>n</sub>)</span> 的时间分辨率采样才能看见；若 <span class="s">R</span> 接近 2（Petersen 型），窗口宽，容易观察。<b>“看不见”与“不存在”由此被分开。</b></p>
+
 <h3 id="sec17-5">17.5　反例：正则完全图里没有中间相</h3>
 
 <p>完全图 <span class="s">K<sub>n</sub></span> 的谱是 <span class="s">0</span> 与 <span class="s">n</span>（<span class="s">n−1</span> 重）。于是 <span class="s">λ<sub>2</sub>=λ<sub>n</sub>=n</span>，<span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>：所有非平凡模式同时解锁，没有中间相。直观上也对——完全图里没有“局部”与“全局”的区别，任何一块都和整体一样连得紧。</p>
@@ -60,3 +68,18 @@
 <p>中间相存在 ⟺ <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>（17.1），宽度由两者的比决定。完全图是零宽度的极端例子。第 18 章把这个比命名、算出闭式，并给出它的一条分类定理。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：局部先醒、全局后醒——这不是比喻，是两个特征值之间的那段空隙。</p></div>
+
+<h3 id="sec17-6b">17.6b　中间相在数据上长什么样</h3>
+
+<p>若要在实验里认出中间相，需要三个可观测的量：<b>解锁计数</b>（已增长的模式数）、<b>空间相关长度</b>（高频模式给出短程相关）、<b>分块度</b>（低频模式给出长程分块）。中间相的特征是：解锁计数已经大于零，而分块度仍未起来。</p>
+
+<table class="nat">
+<tr><th class="l">观测量</th><th class="l"><span class="s">β&lt;β<sub>1</sub></span></th><th class="l">中间相</th><th class="l"><span class="s">β&gt;β<sub>2</sub></span></th></tr>
+<tr><td class="l">解锁计数</td><td class="l">0</td><td class="l"><span class="s">&gt;0</span> 且 <span class="s">&lt;n−1</span></td><td class="l"><span class="s">n−1</span></td></tr>
+<tr><td class="l">相关长度</td><td class="l">发散（无结构）</td><td class="l">短程</td><td class="l">长程</td></tr>
+<tr><td class="l">分块度</td><td class="l">0</td><td class="l">≈0</td><td class="l"><span class="s">&gt;0</span></td></tr>
+</table>
+<p>三个量里，<b>只有第一个是“已经发生”的直接证据</b>；另两个是它的几何后果。这也是第 24 章 H2 检验把“解锁计数”作为主判据的原因：它最不容易被模型设定污染。</p>
+
+<h3 id="sec17-ref">17　本章参考文献</h3>
+<div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>

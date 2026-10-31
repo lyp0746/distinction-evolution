@@ -44,14 +44,58 @@
 
 <p>反过来也要小心：价位高不代表结论有用。一个同构可能毫无信息（两个空结构同构），一个类比可能极有启发（把电路与水管类比）。价位管的是<b>举证责任</b>，不管价值。</p>
 
+<h3 id="sec15-4b">15.4b　两个“距离”：Gromov–Hausdorff 与谱距离</h3>
+
+<p>“像到什么程度”可以定量，而且有两种互不等价的定量方式。</p>
+
+<p><b>Gromov–Hausdorff 距离</b> <span class="s">d<sub>GH</sub></span>：把两个度量空间嵌进同一个空间，取最小 Hausdorff 距离。它比较的是<b>几何形状</b>。<b>谱距离</b>：比较两个算子的谱（例如特征值的 <span class="s">ℓ<sub>2</sub></span> 差，或热核的差），它比较的是<b>振动模式</b>。</p>
+
+<p>两者不等价，而且两个方向都有反例：<span class="s">d<sub>GH</sub></span> 小不必谱接近（细网格与粗网格 <span class="s">d<sub>GH</sub>→0</span>，但谱按 <span class="s">h<sup>−2</sup></span> 发散）；谱接近不必 <span class="s">d<sub>GH</sub></span> 小（同谱流形可以不等距，Sunada 1985）。<b>因此“像”这个词必须指定用哪个距离</b>——这正是本书把“同调”与“同构”分成两个价位的原因：它们对应两种不同的距离。</p>
+
 <h3 id="sec15-5">15.5　反例：把同调当同构</h3>
 
 <p>同调价位最诱人的地方，是它总能找到共同的不变量——谱、维数、熵、增长率。但它们都不是同构判据。第 13.5 节的两棵 8 顶点树就是反例：谱相同（同调价位成立），结构不同（同构价位失败）。判据只有一条：<b>若你能构造一个在同调下相同、在同构下不同的例子，那么这条迁移最高只能到同调。</b></p>
 
 <p>同样的逻辑适用于“五个领域同一个二次型”：它是同构（第 12 章逐条验证了公理）还是同调？答案是<b>同构在形式层面、同调在几何层面</b>——因为符号差不同时，保形式群不同（第 14 章）。这句话写在这里，是为了让读者在第 21 章的覆盖表里看到 C 级条目时不至于困惑：它们大多停在同一价位。</p>
 
-<h3 id="sec15-6">15.6　本章小结</h3>
+<h3 id="sec15">15.6　类型论里的相等层级：另一个四价位</h3>
+<p>在依赖类型论中，"类型"取代"集合"，"项"取代"元素"，但关键的新东西是<b>依赖类型</b>：一个类型可以依赖另一个类型的项。例如，"长度为 <span class="s">n</span> 的向量"是一个依赖于 <span class="s">n</span> 的类型，而不是一个固定的集合。</p>
+
+<div class="define"><span class="bt">定义 15.6　依赖类型与命题即类型［已知，A／甲］</span>
+依赖类型族 <span class="s">B: A → Type</span> 给每个 <span class="s">a: A</span> 指定一个类型 <span class="s">B(a)</span>。在"命题即类型"对应下，命题被解释为类型，命题的证明被解释为该项。于是"证明"成为可被机器检查的对象——这是 Lean、Coq 等形式化工具的基础。</div>
+
+<p>这个设计的直接后果是：<b>结构不再是被附加到集合上的东西，而是类型系统的内在性质。</b>"群结构"不是"集合 + 附加数据"，而是一个依赖类型的记录；"同构的群"在这个系统里可以自然地被视为相等。</p><img class="fig" src="assets/svg/fig07-equality-hierarchy.svg" alt="相等的层级">
+
+<div class="cap"><b>图 15.7　相等的层级</b>。在传统集合论中，<span class="s">a=b</span> 是一个布尔判断（有或没有）。在同伦类型论中，<span class="s">a=b</span> 本身是一个类型（"从 <span class="s">a</span> 到 <span class="s">b</span> 的路径"）；两条路径之间也可以有路径（同伦），如此无究上升。相等被结构化了。</div>
+
+<img class="fig" src="assets/svg/fig07b-reconstruction-types.svg" alt="结构语言的重建对比">
+
+<div class="cap"><b>图 15.8　结构语言的重建前后对比</b>。集合论把结构当作集合的附加物；类型论把结构当作派生的内在性质。“同构即相等”是这一转变的核心收益，形式化成本是它的代价。</div>
+
+<div class="define"><span class="bt">定义 15.9　同伦类型论（HoTT）［已知，A／甲］</span>
+HoTT 把类型解释为空间（同伦类型），项解释为点，类型 <span class="s">a=b</span> 解释为从 <span class="s">a</span> 到 <span class="s">b</span> 的路径空间。相等关系满足：自反性（常路径）、对称性（逆路径）、传递性（路径拼接），且这些操作本身之间还有高阶同伦。<b>高阶路径</b>（路径的路径）自然编码了"两个证明也可以被证明等价"。</div>
+
+<p>在这个框架里，"把两个对象视为相等"不再是一个粗暴的断言，而是一个<b>可审计的操作</b>：你必须给出路径。这个约束在很多场合下恰恰是我们想要的——它强制作者说清"相等"到底在哪一层成立。</p>
+
+
+<h3 id="sec15-6">15.7　本章小结</h3>
 
 <p>四个价位（同构／等价／同调／类比）、四条断裂探针、三个升级条件。第三部分到此结束：语言有了形式，形式有了群，迁移有了价位。第四部分只做一件事——在一个具体的对象上把定理证出来。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：说“这两件事一样”之前，先说清你在守哪几样东西。</p></div>
+
+<h3 id="sec15-5b">15.5b　价位判定的四步操作</h3>
+
+<p>把第 15.2 节的表变成本可执行的四步：</p>
+
+<ol>
+<li><b>写出映射</b>：<span class="s">φ:A→B</span> 显式给出，不许写“自然地”。</li>
+<li><b>列出要保持的结构</b>：对象、关系、运算、极限、测度——逐条写，不许写“等等”。</li>
+<li><b>逐条验证</b>：一条不成立，就退一个价位；找不到反例而只验证了前三条，只能算“同调”。</li>
+<li><b>给出断裂点</b>：写清“这条迁移在哪里会断”，并给出一个具体例子。</li>
+</ol>
+
+<p>四步里最容易被跳过的是第四步。跳过它，迁移就变成“看起来像”的故事；写清它，迁移就有了使用说明。<b>本书第 22 章的三个迁移都按四步做过，第四个（自旋网络）在第四步上断掉，因此只到类比。</b></p>
+
+<h3 id="sec15-ref">15　本章参考文献</h3>
+<div class="refs"><p>Gromov, M. (1981). <i>Structures métriques pour les variétés riemanniennes</i>. Cedic/Fernand Nathan.</p><p>Burago, D., Burago, Y., &amp; Ivanov, S. (2001). <i>A Course in Metric Geometry</i>. AMS.</p><p>Sunada, T. (1985). Riemannian coverings and isospectral manifolds. <i>Annals of Mathematics</i> 121, 169–186.</p><p>Chazal, F., de Silva, V., Glisse, M., &amp; Oudot, S. (2016). <i>The Structure and Stability of Persistence Modules</i>. Springer.</p><p>Gu, K., &amp; Tomasi, C. (2018). On the stability of graph Laplacians under edge perturbations. (谱距离与结构距离的对照，综述见 von Luxburg 2007.)</p></div>

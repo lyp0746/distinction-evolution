@@ -38,6 +38,15 @@
 
 <p>三条边界对应三种误读：把两两相同读成整体相同、把核函数读成二次型、把数值当成绝对量。第 21 章的覆盖表里，凡是这三条边界之一被越过的条目，都标了 C 级。</p>
 
+<h3 id="sec12-4b">12.4b　局部与整体的桥：Cauchy 交错定理</h3>
+
+<p>五个领域共用一个形式之后，最实用的一条定理是“局部如何约束整体”。<b>定理 12.2（Cauchy 交错）。</b>设 <span class="s">A</span> 是 <span class="s">n×n</span> 实对称矩阵，<span class="s">A<sub>k</sub></span> 是其 <span class="s">k×k</span> 主子阵，特征值升序分别为 <span class="s">λ<sub>1</sub>≤⋯≤λ<sub>n</sub></span> 与 <span class="s">μ<sub>1</sub>≤⋯≤μ<sub>k</sub></span>，则
+<span class="s">λ<sub>i</sub>≤μ<sub>i</sub>≤λ<sub>i+n−k</sub></span>（<span class="s">i=1,…,k</span>）。</p>
+
+<p>它说的是一件很具体的事：<b>删掉一部分顶点，特征值只会“向上夹紧”，不会越界。</b>于是可以用一个子图的两端夹住原图的谱——这是第 18 章给 <span class="s">R</span> 定界、第 19 章做数值外推的共同工具。</p>
+
+<p>反过来说，交错定理也解释了为什么“局部信息不能决定整体”：夹逼给出的是区间，不是等式。想知道 <span class="s">λ<sub>2</sub></span> 的确切值，仍然需要全局信息。<b>这就是第 15 章“同调价位”的谱版本。</b></p>
+
 <h3 id="sec12-5">12.5　反例：把相关当因果</h3>
 
 <p>协方差是这一族里最容易被误读的一个：它对称、双线性、半正定，完全合格，但它不告诉你方向。<span class="s">Σ<sub>12</sub>≠0</span> 只说两条线的波动同向，不说谁引起谁。把 <span class="s">Σ</span> 读成因果，等于把“差多少”读成“因为什么”。这不是数学的漏洞，是使用的越界：形式承载的是比较，不承载机制。</p>
@@ -47,3 +56,20 @@
 <p>五个实例满足同一组公理（12.1），零空间的含义是它们真正的共同点。至此第二个赌注的前半段兑现：语言层面确实只有一个形式。下一章把这个形式的三套工具摆开。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：五个领域共用一把尺子，但“零”在五个领域里说的是五件不同的事。</p></div>
+
+<h3 id="sec12-5b">12.5b　零空间在五个领域里分别意味着什么</h3>
+
+<p>第 12.2 节的表最后一列值得单独展开，因为它是“同一个形式”这句话的真正内容。零空间是“看不见的方向”，五个领域对它的解释完全不同，但<b>它的维数在五个领域里都是可测的</b>。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">零空间的含义</th><th class="l">维数等于什么</th><th class="l">后果</th></tr>
+<tr><td class="l">统计</td><td class="l">共线方向</td><td class="l">设计矩阵的零化度</td><td class="l">参数不可辨识</td></tr>
+<tr><td class="l">优化</td><td class="l">平坦方向</td><td class="l">Hessian 的零化度</td><td class="l">二阶方法失效</td></tr>
+<tr><td class="l">图论</td><td class="l">常数方向</td><td class="l">连通分支数</td><td class="l">零特征值重数</td></tr>
+<tr><td class="l">线性代数</td><td class="l">零向量</td><td class="l">1（正定时）</td><td class="l">可逆</td></tr>
+<tr><td class="l">几何</td><td class="l">退化方向</td><td class="l">度量的核</td><td class="l">伪黎曼</td></tr>
+</table>
+<p>四个领域里，零空间维数都直接对应一个“结构数”（不可辨识参数、失效方向、连通分支、退化维数）。<b>这就是“同一个结构”的实证版本：不是五个公式长得像，而是五个领域各自的一个结构数等于同一个线性代数量。</b></p>
+
+<h3 id="sec12-ref">12　本章参考文献</h3>
+<div class="refs"><p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. <i>Exercices de Mathématiques</i> 4.</p><p>Horn, R. A., &amp; Johnson, C. R. (1985). <i>Matrix Analysis</i>. Cambridge University Press.</p><p>Parlett, B. N. (1998). <i>The Symmetric Eigenvalue Problem</i>. SIAM.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>

@@ -51,6 +51,18 @@
 
 <p>把 <span class="s">O</span> 写进定义，有一个直接的好处：它把“标准”从一个隐含假设变成一条可检查的数据。<b>你可以不同意我的阈值，但你必须指出我的样本对有问题</b>——争论从此有了落点。反过来，凡是拒绝交代样本对的“客观指标”，都在偷偷把 <span class="s">O</span> 藏起来。</p>
 
+<h3 id="sec6-5b">6.5b　区分的三条最小公理</h3>
+
+<p>把定义 6.1 收成公理，可以看清它到底承诺了什么。设 <span class="s">𝔇⊆X×X</span> 是“可分”关系，公理只有三条：</p>
+
+<ol>
+<li><b>反自反</b>：<span class="s">(x,x)∉𝔇</span>（自己与自己不可区分）。</li>
+<li><b>对称</b>：<span class="s">(x,y)∈𝔇 ⇒ (y,x)∈𝔇</span>（谁能分开谁，是双向的）。</li>
+<li><b>阈值可乘</b>：若 <span class="s">(x,y)∈𝔇</span> 由 <span class="s">f,θ</span> 见证，则对任意 <span class="s">θ′&lt;θ</span> 仍有 <span class="s">(x,y)∈𝔇</span>（放低阈值不减少可分）。</li>
+</ol>
+
+<p>三条公理刻画了一类对象，它比“度量”弱、比“等价关系”强。注意第三条：它把阈值变成一个单调参数，这正是第 10 章“阈值可传递”的形式版本。<b>“可分”不是等价关系</b>（不传递：<span class="s">a</span> 与 <span class="s">b</span> 差 6，<span class="s">b</span> 与 <span class="s">c</span> 差 6，而 <span class="s">a</span> 与 <span class="s">c</span> 差 12，阈值 10 时分可分的两边而中间不可分），这一点决定了“区分”与“分类”不是一回事。</p>
+
 <h3 id="sec6-5">6.5　反例：不可区分的两种情形</h3>
 
 <p><b>同一性。</b>若 <span class="s">x=y</span>，任何函数都给出零差，于是任何阈值下都不可分。这一条看似废话，却推出一个不平凡的结果：区分永远无法把“同一个东西”拆成两半——它只能区分不同的东西。</p>
@@ -62,3 +74,12 @@
 <p>区分是四元组 <span class="s">(X,f,θ,O)</span>，三种传统各给它一套形式化，三种失败各有各的修法。本章仍然只是语言；第 7 章起，用这套语言去生成空间。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：说“我看不出区别”，通常不是眼睛的问题，是还没找到那个能看的量。</p></div>
+
+<h3 id="sec6-6b">6.6b　区分与自然语言范畴：一个旁证</h3>
+
+<p>语言学里有一个与定义 6.1 同型的结构：<b>范畴化</b>。给定一组刺激，被试把它们归为两类，分界线由“最佳样例”（原型）与“可接受度阈值”共同决定。实验上，这条线不是锐利的，而是一条 S 形曲线（范畴感知的边界陡度可测）。用本书的四个字段读它：属性是某个声学参数（如 VOT），阈值是被试的判据，观察者是对照组。</p>
+
+<p>这个旁证的价值在于它给出“阈值可调”的实证：同一组刺激，换指导语就换阈值，边界随之平移。这正好印证第 10 章的第二条规则——<b>阈值换了，结论必须重新报告</b>。它也提醒一件事：凡是把“范畴”当成客观分界的说法，都要先问“用谁的阈值”。</p>
+
+<h3 id="sec6-ref">6　本章参考文献</h3>
+<div class="refs"><p>Spencer-Brown, G. (1969). <i>Laws of Form</i>. Allen &amp; Unwin.</p><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p></div>

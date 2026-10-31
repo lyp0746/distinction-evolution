@@ -43,12 +43,67 @@
 
 <p>第二，<b>数值方法有理论保证</b>：变分写法说明“用有限元或网格算最小特征值”是单调逼近的（Ritz 值从上逼近）。这解释了为什么第 19 章的数值表可以用很粗的网格就得到 0.1% 的精度——误差是二阶的，而 <span class="s">λ<sub>2</sub></span> 的 Ritz 值单调下降。</p>
 
+<h3 id="sec13-5b">13.5b　扰动不等式：谱对“改一点”有多敏感</h3>
+
+<p><b>定理 13.3（Weyl 扰动不等式）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
+<span class="s">max<sub>k</sub>|λ<sub>k</sub>(A+E)−λ<sub>k</sub>(A)| ≤ ‖E‖<sub>2</sub></span>。</p>
+
+<p>证明用变分写法：Rayleigh 商的差被 <span class="s">‖E‖</span> 控制，再对 <span class="s">k</span> 维子空间取极值即可。这条不等式是“谱是稳定的”这一直觉的定量版本：<b>改一条边，<span class="s">λ<sub>k</sub></span> 的变化不超过 2（因为 <span class="s">‖E‖<sub>2</sub>≤2</span>）</b>。</p>
+
+<p>但它同时说明谱不能当作“结构指纹”：扰动 2 就可以让 <span class="s">λ₂</span> 完全变样（在 <span class="s">λ₂</span> 本身很小的网格上尤其如此）。<b>稳定性与识别力是两件事</b>，这与第 18.5 节的同谱反例互补：一个是“小扰动不改变谱”，一个是“不同的结构可以有同一个谱”。</p>
+
 <h3 id="sec13-5">13.5　反例：谱相同、结构不同</h3>
 
 <p>谱是整体量，它会丢信息。最干净的例子在第 18.5 节：两棵各有 8 个顶点的树，邻接谱完全相同（<span class="s">±2.3028, ±1.3028, 0×4</span>），度序列一个是 5,2,2,1,1,1,1,1，另一个是 4,4,1,1,1,1,1,1。谱定理给出的每个模式都一样，但两棵树的结构不同。<b>“谱相同”不等于“结构相同”，这是第 2 章所说“分辨率损失”的实例。</b></p>
 
-<h3 id="sec13-6">13.6　本章小结</h3>
+
+<h3 id="sec13">13.6　第四套工具：外微分与一个公式统摄四个积分定理</h3>
+<p>用第 2 章的判据扫描，四个定理的冗余层次如下：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 13.8　四个积分定理的冗余层次</b></caption>
+<tr><th class="l">定理</th><th class="l">左边</th><th class="l">右边</th><th class="l">冗余所在</th></tr>
+<tr><td class="l">牛顿–莱布尼茨</td><td class="l">区间上的 1-形式积分</td><td class="l">0-形式在端点差</td><td class="l">C1 同构证明骨架</td></tr>
+<tr><td class="l">格林</td><td class="l">平面区域上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3 平行语言</td></tr>
+<tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
+<tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>冗余分析表。等级 B／乙（标准数学史共识）。</div><p>压缩的关键动作是<b>改变基本对象</b>。传统微积分把"函数"当作主角，把"微分表达式"当作配角。外微分反过来：把<b>微分形式</b>当作基本对象，函数只是 0-形式。</p>
+
+<div class="define"><span class="bt">定义 13.9　微分形式与外微分</span>
+在光滑流形 <span class="s">M</span> 上，一个 <span class="s">k</span>-形式 <span class="s">ω</span> 是一个反对称的余切张量场。外微分 <span class="s">d</span> 把 <span class="s">k</span>-形式映为 <span class="s">(k+1)</span>-形式，满足：<br>
+（1）<span class="s">d</span> 是线性的；<br>
+（2）对函数 <span class="s">f</span>，<span class="s">df</span> 是普通微分；<br>
+（3）<span class="s">d(ω∧η) = dω∧η + (−1)<sup>k</sup>ω∧dη</span>（分次莱布尼茨律）；<br>
+（4）<span class="s">d² = 0</span>。<br>
+条件（2）—（4）唯一确定 <span class="s">d</span>。</div>
+
+<p>这个定义有两个非凡之处。<b>第一，它把梯度、旋度、散度三个算子统一为同一个 <span class="s">d</span> 在不同维数下的表现。</b>对 0-形式，<span class="s">d</span> 就是梯度；对 1-形式，<span class="s">d</span> 在线性情形给出旋度；对 2-形式，<span class="s">d</span> 给出散度。<b>第二，<span class="s">d²=0</span> 是自动的，不需要单独证明</b>——它是外代数反对称性的直接结果，而传统矢量微积分里 <span class="s">∇×∇f=0</span> 与 <span class="s">∇·(∇×v)=0</span> 是两个需要分别验证的恒等式。［已知］</p><div class="define"><span class="bt">定理 13.10（广义斯托克斯定理）［已知，A／甲］</span>
+设 <span class="s">M</span> 是带边界 <span class="s">∂M</span> 的紧致可定向光滑 <span class="s">n</span> 维流形，<span class="s">ω</span> 是 <span class="s">M</span> 上的光滑 <span class="s">(n−1)</span>-形式，则
+<div class="eq"><span class="body">∫<sub>M</sub> dω = ∫<sub>∂M</sub> ω</span></div>
+其中 <span class="s">∂M</span> 取诱导定向。</div>
+
+<p>一个公式。所有四个定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。</p>
+
+
+<h3 id="sec13-6">13.7　本章小结</h3>
 
 <p>三套工具各有前提：极化只要对称，谱要对称（正规），变分要可算比值。混用会产生四类典型错误。第 14 章换一个角度：不是问形式能算什么，而是问“谁能保住这个形式”。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子各管一件事；拿水准去量长度，错的不是水准。</p></div>
+
+<h3 id="sec13-6b">13.6b　三套工具与数值方法的对应</h3>
+
+<p>三套工具在数值上各有对应物，这张对照表对实际工作者最有用。</p>
+
+<table class="nat">
+<tr><th class="l">工具</th><th class="l">理论版</th><th class="l">数值版</th><th class="l">误差来源</th></tr>
+<tr><td class="l">极化</td><td class="l">平行四边形律</td><td class="l">内积累加、Gram 矩阵</td><td class="l">浮点相消</td></tr>
+<tr><td class="l">谱</td><td class="l">谱定理</td><td class="l">QR 迭代、Lanczos</td><td class="l">条件数、收敛速度</td></tr>
+<tr><td class="l">变分</td><td class="l">Courant–Fischer</td><td class="l">Ritz 值、子空间迭代</td><td class="l">子空间选择偏差</td></tr>
+</table>
+<p>最后一列是本书反复强调“可复算”的技术理由：<b>三种误差来源互不相同，因此“数值对上了”不是充分证据。</b>第 19 章表 19.1 的 0.1% 是三种误差叠加后的结果，而不是其中某一种的精度。想知道是哪一种，必须换一种算法再算一遍——这就是附录 B 给出独立代码的原因。</p>
+
+<h3 id="sec13-ref">13　本章参考文献</h3>
+<div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
+<div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>
