@@ -1,9 +1,9 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below. 若使用本作，请按下述格式引用。"
 type: book
-title: "区分的语法：五个领域，同一个二次型 / The Grammar of Distinction: Five Domains, One Quadratic Form"
+title: "区分的语言：区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限 / The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit"
 abstract: >-
-  本著作提出“区分的语法”这一语言规范，用以把“统一”从愿望翻译成可检验的操作。 核心主张：把“区分、曲率、演化”三个原语收敛为两个——区分与对称双线性形式；协方差、Hessian、图拉普拉斯、内积与黎曼度量是同一结构在五个领域的实例。它不宣布数学被统一，只交出一种可被使用、压缩与迁移的语言。 结构与证据：25 章、附录 A—P、32 幅图；唯一的完全兑现处是图上两阶段相变（有定理、有临界值、有可复算数值）；局部先行窗口的尺度律 R≈2N^{2/d}/π² 给出可检验的推论。 诚实的纪律：明确区分“定理”“语言规范”与“提案”；19 个开放问题；一次撤回（曲率与谱关系的过度归并）完整记录在正文与附录；并写明本书做的是“用已有工具描述已知结构”，不是“发明新工具发现新现象”。 边界：五个领域中只有一个被严格兑现，其余是结构相似而非同构；“语言规范”指记号系统，不是学科规范。 版本：2026-10-18，222 页，25 章，32 图，附录 A—P，O1—O19；源码与可复算脚本开源，内容 CC BY 4.0，代码 MIT。
+  本著作提出“区分的语言”这一语言规范，用以把“统一”从愿望翻译成可检验的操作。 核心主张：把“区分、曲率、演化”三个原语收敛为两个——区分与对称双线性形式；协方差、Hessian、图拉普拉斯、内积与黎曼度量是同一结构在五个领域的实例。它不宣布数学被统一，只交出一种可被使用、压缩与迁移的语言。 结构与证据：25 章、附录 A—P、32 幅图；唯一的完全兑现处是图上两阶段相变（有定理、有临界值、有可复算数值）；局部先行窗口的尺度律 R≈2N^{2/d}/π² 给出可检验的推论。 诚实的纪律：明确区分“定理”“语言规范”与“提案”；19 个开放问题；一次撤回（曲率与谱关系的过度归并）完整记录在正文与附录；并写明本书做的是“用已有工具描述已知结构”，不是“发明新工具发现新现象”。 边界：五个领域中只有一个被严格兑现，其余是结构相似而非同构；“语言规范”指记号系统，不是学科规范。 版本：2026-10-18，222 页，25 章，32 图，附录 A—P，O1—O19；源码与可复算脚本开源，内容 CC BY 4.0，代码 MIT。
   Abstract (English). This work presents “the grammar of distinction,” a language norm that translates the wish for unity into testable operations. Core thesis: three primitives — distinction, curvature, evolution — reduce to two: distinction and the symmetric bilinear form; covariance, Hessian, graph Laplacian, inner product and Riemannian metric are five instances of one structure. It does not claim that mathematics has been unified; it delivers a language that can be used, compressed and transferred. Structure and evidence: 25 chapters, appendices A–P, 32 figures; the one fully cashed-out case is the two-stage transition on graphs (theorem, thresholds, reproducible numbers), with the window law R≈2N^{2/d}/π² as a testable corollary. Discipline: theorems, language norms and proposals are kept apart; 19 open questions; one retraction is documented in full; the book states plainly that it describes known structures with existing tools rather than discovering new phenomena with new ones. Boundaries: only one of five domains is fully cashed out; elsewhere the relation is structural resemblance, and “norm” means notation, not disciplinary rule. Edition: 2026-10-18, 222 pages, 25 chapters, 32 figures, appendices A–P.
 authors:
   - family-names: "李"
@@ -19,7 +19,7 @@ concept-doi: 10.5281/zenodo.23345012
 repository-code: "https://github.com/lyp0746/distinction-evolution"
 url: "https://doi.org/10.5281/zenodo.23771933"
 keywords:
-  - "区分的语法"
+  - "区分的语言"
   - "区分"
   - "对称双线性形式"
   - "二次型"

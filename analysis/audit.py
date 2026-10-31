@@ -255,7 +255,7 @@ with open(os.path.join(OUT, "audit.json"), "w", encoding="utf-8") as f:
 
 # ---------------------------------------------------------------- Markdown 报告
 L = []
-L.append("# 《区分的语法》校对清单\n")
+L.append("# 《区分的语言》校对清单\n")
 L.append(f"自动生成，覆盖 {len(docs)} 章。原始数据见 `analysis/results/audit.json`。\n")
 
 L.append("## 表 A1　术语与定义一致性\n")

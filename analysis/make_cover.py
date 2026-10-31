@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""make_cover.py — 生成《区分的语法》满版封面 SVG（A4 比例 1000×1414）。
+"""make_cover.py — 生成《区分的语言》满版封面 SVG（A4 比例 1000×1414）。
 
 输出：assets/svg/cover.svg
 封面须满版：配合 assets/css/book.css 中 .cover-page 的 210mm×297mm 与
@@ -54,7 +54,7 @@ text{{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}}
 .rule{{stroke:{dim};stroke-width:1;opacity:0.6;}}
 </style>
 <text x="80" y="176" class="eng">THE GRAMMAR OF DISTINCTION</text>
-<text x="80" y="300" class="ttl">区分的语法</text>
+<text x="80" y="300" class="ttl">区分的语言</text>
 <line x1="84" y1="344" x2="660" y2="344" class="rule"/>
 <text x="84" y="396" class="sub">五个领域</text>
 <text x="84" y="440" class="sub">同一个二次型</text>
