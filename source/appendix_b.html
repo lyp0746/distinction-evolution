@@ -64,3 +64,63 @@ for n in (10, 20, 40, 80):
     N, E = grid(n)
     print(n, round(R(lap(N, E)), 1), round(8/np.pi**2*n*n, 1))</pre>
 <p>输出与表 B.2 一致。这段代码是本书全部“硬核数字”的最小复现路径。</p>
+
+<h3 id="secb6">B.6　十九个图的谱与 R（实算）</h3>
+<p>下表全部由 <code>analysis/figures_rewrite.py</code> 的同一段代码算出，未手抄。最后一列是谱的不同取值个数，用来判断谱的“离散程度”：完全图只有一个非零值，网格与环面的取值个数随规模增长。</p>
+<table class="nat">
+<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th><th class="l">谱不同值数</th></tr>
+<tr><td class="l">完全图 K_5</td><td class="l">5</td><td class="l">5.0000</td><td class="l">5.0000</td><td class="l">1.000</td><td class="l">2</td></tr>
+<tr><td class="l">完全图 K_8</td><td class="l">8</td><td class="l">8.0000</td><td class="l">8.0000</td><td class="l">1.000</td><td class="l">2</td></tr>
+<tr><td class="l">完全二部 K_2,3</td><td class="l">5</td><td class="l">2.0000</td><td class="l">5.0000</td><td class="l">2.500</td><td class="l">4</td></tr>
+<tr><td class="l">完全二部 K_3,7</td><td class="l">10</td><td class="l">3.0000</td><td class="l">10.0000</td><td class="l">3.333</td><td class="l">4</td></tr>
+<tr><td class="l">星 K_1,6</td><td class="l">7</td><td class="l">1.0000</td><td class="l">7.0000</td><td class="l">7.000</td><td class="l">3</td></tr>
+<tr><td class="l">星 K_1,9</td><td class="l">10</td><td class="l">1.0000</td><td class="l">10.0000</td><td class="l">10.000</td><td class="l">3</td></tr>
+<tr><td class="l">环 C_6</td><td class="l">6</td><td class="l">1.0000</td><td class="l">4.0000</td><td class="l">4.000</td><td class="l">4</td></tr>
+<tr><td class="l">环 C_10</td><td class="l">10</td><td class="l">0.3820</td><td class="l">4.0000</td><td class="l">10.472</td><td class="l">6</td></tr>
+<tr><td class="l">环 C_20</td><td class="l">20</td><td class="l">0.0979</td><td class="l">4.0000</td><td class="l">40.863</td><td class="l">11</td></tr>
+<tr><td class="l">路 P_6</td><td class="l">6</td><td class="l">0.2679</td><td class="l">3.7321</td><td class="l">13.928</td><td class="l">6</td></tr>
+<tr><td class="l">路 P_10</td><td class="l">10</td><td class="l">0.0979</td><td class="l">3.9021</td><td class="l">39.863</td><td class="l">10</td></tr>
+<tr><td class="l">路 P_20</td><td class="l">20</td><td class="l">0.0246</td><td class="l">3.9754</td><td class="l">161.448</td><td class="l">20</td></tr>
+<tr><td class="l">超立方 Q_3</td><td class="l">8</td><td class="l">2.0000</td><td class="l">6.0000</td><td class="l">3.000</td><td class="l">4</td></tr>
+<tr><td class="l">超立方 Q_4</td><td class="l">16</td><td class="l">2.0000</td><td class="l">8.0000</td><td class="l">4.000</td><td class="l">5</td></tr>
+<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2.0000</td><td class="l">5.0000</td><td class="l">2.500</td><td class="l">3</td></tr>
+<tr><td class="l">网格 5×5</td><td class="l">25</td><td class="l">0.3820</td><td class="l">7.2361</td><td class="l">18.944</td><td class="l">14</td></tr>
+<tr><td class="l">网格 8×8</td><td class="l">64</td><td class="l">0.1522</td><td class="l">7.6955</td><td class="l">50.548</td><td class="l">33</td></tr>
+<tr><td class="l">环面 4×4</td><td class="l">16</td><td class="l">2.0000</td><td class="l">8.0000</td><td class="l">4.000</td><td class="l">5</td></tr>
+<tr><td class="l">环面 6×6</td><td class="l">36</td><td class="l">1.0000</td><td class="l">8.0000</td><td class="l">8.000</td><td class="l">9</td></tr>
+</table>
+<h3 id="secb7">B.7　谱方差量 κ 的实测</h3>
+<p>κ=½Var(λ)。注意它与 R 的行为相反：<b>κ 有统一上界（因为 0≤λ≤2Δ），而 R 无界。</b>这条对照是附录 D 中 R4 的数值依据。</p>
+<table class="nat"><tr><th class="l">图</th><th class="l">Var(λ)</th><th class="l">κ=½Var</th><th class="l">R</th></tr>
+<tr><td class="l">K_8</td><td class="l">7.0000</td><td class="l">3.5000</td><td class="l">1.000</td></tr>
+<tr><td class="l">C_10</td><td class="l">2.0000</td><td class="l">1.0000</td><td class="l">10.472</td></tr>
+<tr><td class="l">P_10</td><td class="l">1.9600</td><td class="l">0.9800</td><td class="l">39.863</td></tr>
+<tr><td class="l">Petersen</td><td class="l">3.0000</td><td class="l">1.5000</td><td class="l">2.500</td></tr>
+<tr><td class="l">网格 8×8</td><td class="l">3.8750</td><td class="l">1.9375</td><td class="l">50.548</td></tr>
+<tr><td class="l">网格 12×12</td><td class="l">3.9444</td><td class="l">1.9722</td><td class="l">115.391</td></tr>
+<tr><td class="l">环面 6×6</td><td class="l">4.0000</td><td class="l">2.0000</td><td class="l">8.000</td></tr>
+</table>
+<h3 id="secb8">B.8　Lyapunov 谱随耦合的符号变化</h3>
+<p>取 Petersen 图（λₙ=5、λ₂=2），α=1。表中每格是 μ_k=βλ_k−α 的符号（+/−），可以看到 <b>β 跨过 0.2 时最高频先变正，跨过 0.5 时最低非平凡才变正</b>——这就是定理 17.1 的表格版。</p>
+<table class="nat"><tr><th class="l">β</th><th class="l">λₙ=5</th><th class="l">λ=3</th><th class="l">λ₂=2</th><th class="l">已解锁</th></tr>
+<tr><td class="l">0.10</td><td class="l">−</td><td class="l">−</td><td class="l">−</td><td class="l">0</td></tr>
+<tr><td class="l">0.19</td><td class="l">−</td><td class="l">−</td><td class="l">−</td><td class="l">0</td></tr>
+<tr><td class="l">0.21</td><td class="l">+</td><td class="l">−</td><td class="l">−</td><td class="l">1</td></tr>
+<tr><td class="l">0.35</td><td class="l">+</td><td class="l">+</td><td class="l">−</td><td class="l">2</td></tr>
+<tr><td class="l">0.49</td><td class="l">+</td><td class="l">+</td><td class="l">−</td><td class="l">2</td></tr>
+<tr><td class="l">0.51</td><td class="l">+</td><td class="l">+</td><td class="l">+</td><td class="l">3</td></tr>
+<tr><td class="l">0.80</td><td class="l">+</td><td class="l">+</td><td class="l">+</td><td class="l">3</td></tr>
+</table>
+<h3 id="secb9">B.9　网格与环面的收敛（扩展表）</h3>
+<table class="nat"><tr><th class="l">n</th><th class="l">网格 R</th><th class="l">(8/π²)n²</th><th class="l">环面 R</th><th class="l">(2/π²)n²</th><th class="l">λ₂(网格)/h²</th></tr>
+<tr><td class="l">6</td><td class="l">27.9</td><td class="l">29.2</td><td class="l">8.00</td><td class="l">7.3</td><td class="l">9.6462</td></tr>
+<tr><td class="l">8</td><td class="l">50.5</td><td class="l">51.9</td><td class="l">13.66</td><td class="l">13.0</td><td class="l">9.7434</td></tr>
+<tr><td class="l">10</td><td class="l">79.7</td><td class="l">81.1</td><td class="l">20.94</td><td class="l">20.3</td><td class="l">9.7887</td></tr>
+<tr><td class="l">16</td><td class="l">206.2</td><td class="l">207.5</td><td class="l">52.55</td><td class="l">51.9</td><td class="l">9.8379</td></tr>
+<tr><td class="l">20</td><td class="l">322.9</td><td class="l">324.2</td><td class="l">81.73</td><td class="l">81.1</td><td class="l">9.8493</td></tr>
+<tr><td class="l">32</td><td class="l">828.7</td><td class="l">830.0</td><td class="l">208.17</td><td class="l">207.5</td><td class="l">9.8617</td></tr>
+<tr><td class="l">40</td><td class="l">1295.6</td><td class="l">1296.9</td><td class="l">324.90</td><td class="l">324.2</td><td class="l">9.8645</td></tr>
+<tr><td class="l">64</td><td class="l">3318.8</td><td class="l">3320.1</td><td class="l">830.69</td><td class="l">830.0</td><td class="l">9.8676</td></tr>
+<tr><td class="l">80</td><td class="l">5186.3</td><td class="l">5187.6</td><td class="l">1297.58</td><td class="l">1296.9</td><td class="l">9.8683</td></tr>
+</table>
+<p>最后一列单调上升趋近 π²=9.8696；两族 R 的比值稳定在 4 附近（第 19.3b 节解释了这个 4 的来源）。</p>
