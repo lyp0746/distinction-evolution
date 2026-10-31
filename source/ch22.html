@@ -102,5 +102,17 @@
 
 <p>清单还暴露一个排序：<b>MVP 越短，迁移越可信</b>。τ 的 MVP 只有一行，所以它是本书唯一被外部使用过的迁移；三性的 MVP 要枚举，因此它停在同调价位。这个相关性不是巧合——<b>可复算的成本，本身就是迁移可信度的一个代理量。</b></p>
 
+<h3 id="sec22-9">22.9　一次失败的迁移复盘：τ 用到高频交易</h3>
+
+<p>把 <span class="s">τ=T<sub>min</sub>/T<sub>avail</sub></span> 迁移到高频交易，是本书试过并主动撤回的一次迁移。</p>
+
+<p><b>四字段。</b>对象是两个报价-成交策略；属性是“从信号出现到下单完成的延迟”；阈值是“延迟是否小于对手的反应时间”；观察者是做市商。</p>
+
+<p><b>探针结果。</b>边界探针过（延迟趋零则必成交）；操作探针<b>断</b>——把策略换成“撤单重报”之后，<span class="s">T<sub>min</sub></span> 的定义变了，因为“完成”指什么变了；不变量探针过（只依赖延迟差）；反例探针<b>断</b>——存在 <span class="s">τ&gt;1</span> 却盈利的策略（做市商的库存管理收益）。</p>
+
+<p><b>结论：只到类比（C 级），且理由充分。</b>失败的根源是<b>“完成”这个动作在这个领域没有唯一含义</b>——成交、部分成交、撤单、排队，四种都可能算“完成”，于是 <span class="s">T<sub>min</sub></span> 不唯一。</p>
+
+<p>这次复盘给第 15 章的探针表补了一条经验：<b>“操作探针”最能抓住失败的迁移，因为它检验“在那边做一次合法操作，翻译过来是否仍合法”。</b>凡是“动作语义不唯一”的领域，迁移都会在这一步断。</p>
+
 <h3 id="sec22-ref">22　本章参考文献</h3>
 <div class="refs"><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Baez, J. C. (2000). An introduction to spin foam models. <i>Lecture Notes in Physics</i> 543, 25–94.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p></div>

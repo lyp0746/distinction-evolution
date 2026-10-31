@@ -97,5 +97,17 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>失败矩阵显示第五部分六种失败全占、第四部分只两种。这不是巧合：越靠近「覆盖」，越依赖外部判断；越靠近「定理」，越依赖可复算。</p></div>
+<h3 id="sec23-8">23.8　一次完整的失败复盘：把“1/3”当常数</h3>
+
+<p>这是本书自己的一次越界，值得完整记录。</p>
+
+<p><b>当时的说法。</b>在某些离散逼近里，连续极限与离散值之间留下一个约 1/3 的差额，于是被写成“离散与连续之间的 1/3 缺口”，并暗示它是一个普遍常数。</p>
+
+<p><b>问题在哪。</b>按第 10 章的第二类语法错误（把阈值当对象）：<b>这个数依赖逼近方式</b>。换网格、换边界条件、换测度，差额随之变化。第 19 章给出了一个可判定的版本——不是关于 1/3，而是关于“两阶段宽度 <span class="s">R</span> 随分辨率的 <span class="s">n²</span> 增长”，那一条有闭式、有实测、有误差。</p>
+
+<p><b>现在的处置。</b>1/3 保留在附录 D 的未执行项 O1 里，判据写明：“若能证明它在某一族构造下不变，则可升级；否则保持 C 级。”<b>没有删除，因为它是那次越界的证据；也没有升级，因为判据未执行。</b></p>
+
+<p>三条教训：<b>（i）</b> 一个数若依赖构造，它就不是结构量；<b>（ii）</b> 把它写成常数是一种“定义滑移”（第 4 章第七赝品）；<b>（iii）</b> 撤回不必删除，登记即可——这也是 append-only 的用处。</p>
+
 <h3 id="sec23-ref">23　本章参考文献</h3>
 <div class="refs"><p>Lakatos, I. (1976). <i>Proofs and Refutations</i>. Cambridge University Press.</p><p>Kuhn, T. S. (1962). <i>The Structure of Scientific Revolutions</i>. University of Chicago Press.</p><p>Mayo, D. G. (2018). <i>Statistical Inference as Severe Testing</i>. Cambridge University Press.</p></div>

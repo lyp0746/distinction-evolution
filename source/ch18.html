@@ -149,5 +149,20 @@
 
 <p>这条观察可以压成一句判据：<b><span class="s">R</span> 大 ⟺ 谱间隙小 ⟺ 存在“切得开但代价低”的割。</b>这与 Cheeger 不等式（第 18.6b 节）同源。<b>于是“度数异质”只是“存在廉价割”的一个常见原因，不是原因本身。</b></p>
 
+<h3 id="sec18-9">18.9　一个待证的猜想：R ≤ n，且星图取等</h3>
+
+<p>由表 18.1 可以提出一个自然的猜想。</p>
+
+<div class="box"><p><b>猜想 18.5。</b>设 <span class="s">G</span> 是 <span class="s">n</span> 顶点的连通图，<span class="s">n≥2</span>。则 <span class="s">R(G)=λ<sub>n</sub>/λ<sub>2</sub> ≤ n</span>，等号由星图 <span class="s">K<sub>1,n−1</sub></span> 取到。</p></div>
+
+<p><b>为什么猜它。</b>三点证据。其一，<span class="s">λ<sub>n</sub>≤n</span> 对全部 <span class="s">n≤7</span> 的连通图成立（可用 <code>networkx</code> 全图遍历验证，见附录 B）。其二，<span class="s">λ<sub>2</sub>≥1</span> 对所有非完全连通图成立吗？不成立（路图的 <span class="s">λ<sub>2</sub></span> 可以小于 1），所以 <span class="s">R≤n</span> 需要更强的论证。其三，星图给出 <span class="s">λ<sub>2</sub>=1</span>、<span class="s">λ<sub>n</sub>=n</span>，所以上界若成立必是锐的。</p>
+
+<p><b>已知的部分。</b>由 Anderson–Morley 定理，<span class="s">λ<sub>n</sub>≤max<sub>(u,v)∈E</sub>(d<sub>u</sub>+d<sub>v</sub>)≤2Δ≤2(n−1)</span>。所以 <span class="s">R≤2(n−1)/λ<sub>2</sub></span>，当 <span class="s">λ<sub>2</sub>≥2</span> 时给出 <span class="s">R≤n−1&lt;n</span>。<b>于是猜想的关键情形只剩 <span class="s">λ<sub>2</sub>&lt;2</span>——也就是“瘦长”的图。</b></p>
+
+<p>把猜想写成这样，它就成了一个可攻的具体问题（附录 D 的 O2）：<b>对 <span class="s">λ<sub>2</sub>&lt;2</span> 的连通图，证明 <span class="s">λ<sub>n</sub>≤nλ<sub>2</sub></span>。</b>这类“分段证明”的写法，是本书希望示范的：一个猜想若能被切成“已证的部分 + 待证的部分”，它就比一句口号有用。</p>
+
+<img class="fig" src="assets/svg/fig-degree-vs-R.svg" alt="图 18.4　树的度数异质性与 R">
+<div class="cap"><b>图 18.4　树的度数异质性与 R</b>　n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</div>
+<div class="box"><p><strong>读法：</strong>n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</p></div>
 <h3 id="sec18-ref">18　本章参考文献</h3>
 <div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>
