@@ -1,112 +1,56 @@
-<h2 class="chapter">第9章　非标准分析与超有限降级</h2>
-<p class="lead" data-story="1">用放大镜看一段曲线，越放大越像直线。可放大到某个程度，尺子本身开始挡视线。<b>“无限接近”是一种工具，不是一种风景。</b></p>
+<h2 class="chapter">第9章　有精度才有形状：有限分辨率与连续</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>“连续”不是“无限精细”，而是“对任意给定精度都存在足够细的离散”。把这句话写成工具，得到三种等价写法：<span class="s">ε-δ</span>、序列、以及标准部分映射。超有限方法让第三种写法成为计算工具（定理 9.1）。</p></div>
 
-<p class="lead">本章演示方法的第三个动作：<b>把技术性层次折叠掉。</b>非标准分析通过把"无穷小"合法化，把 ε-δ 语言的整套不等式机器压缩为一次"取标准部分"。更激进的是超有限方法：它把无穷维结构压成"超有限维"结构，使谱定理变成有限维特征分解加一次标准部分。这是本书框架中"降级"工具的来源。</p>
+<p class="lead" data-story="1">放大镜看一段曲线：放大十倍像直线，放大一百倍又不像了。仪器工程师说：<b>“不是曲线直，是你这次的尺子够短。”</b>同一句话，换一种说法就是微积分。</p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-非标准分析不是替代品，而是一种<b>降级</b>：它把无穷维、连续谱、无界算子这些技术负担，翻译为超有限框架内平凡的对象，再用标准部分映射翻译回来。<b>本案例通过了全部四判据，并已产生新结果（组合数论、拓扑动力学）。</b></div>
+<h3 id="sec9-1">9.1　导论：连续是“够细”，不是“无限”</h3>
 
-<h3 id="sec9-1">9.1　导论：把无穷小合法化</h3>
+<p>前面两章生成了空间与可测。要生成“连续”，必须先回答一个问题：一个只能在有限精度下工作的系统，凭什么谈连续？答案是把连续写成<b>对精度的量化承诺</b>：你给出精度，我给出分辨率。这就是 <span class="s">ε-δ</span> 的真实含义，也是本书处理“有限系统”的总立场。</p>
 
-<p>传统微积分用 ε-δ 语言定义极限、连续、导数、积分。每个概念都需要独立的"∀ε>0, ∃δ>0"句式，证明中反复出现"取 δ=min(δ₁,δ₂)"式的技术拼接。这些不等式操作是<b>冗余层次</b>：它们服务于极限的严格性，却不携带新的数学内容。</p>
-
-<p>非标准分析做了一个抽象选择：<b>不再把无穷小量排除在外，而是把它变成合法的数学对象。</b>一旦无穷小被合法化，ε-δ 的整套不等式机器就变成了冗余层次，可以被压缩掉。［已知］</p>
-
-<h3 id="sec9-2">9.2　超实数与转移原理</h3>
-
-<img class="fig" src="assets/svg/fig06-nonstandard-descent.svg" alt="非标准分析的降级机制">
-
-<div class="cap"><b>图 9.1　非标准分析的降级机制</b>。实数系 <span class="s">ℝ</span> 被嵌入超实数系 <span class="s">*ℝ</span>；在 <span class="s">*ℝ</span> 中可以直接使用无穷小量进行代数运算；结果通过标准部分映射 <span class="s">st</span> 翻译回标准实数。转移原理保证一阶命题的真值不变。</div>
-
-<img class="fig" src="assets/svg/fig06b-reconstruction-nonstandard.svg" alt="非标准分析的重建对比">
-
-<div class="cap"><b>图 9.2　非标准分析的降级对比</b>。左侧的多个 ε-δ 定义被右侧的一个“取标准部分”操作覆盖。这与图 9.1 互补：6.1 讲机制，6.2 讲收益与代价。注意它是四个案例中唯一在全部四判据上通过的。</div>
-
-<div class="define"><span class="bt">定义 9.1　超实数系与转移原理［已知，A／甲］</span>
-超实数系 <span class="s">*ℝ</span> 是实数系经模型论方法扩张得到的域，包含所有标准实数，并含无穷小量（绝对值小于任何正标准实数的非零元素）与无穷大量。<b>转移原理</b>：任何在 <span class="s">ℝ</span> 中为真的一阶逻辑命题，在 <span class="s">*ℝ</span> 中同样为真。</div>
-
-<h3 id="sec9-3">9.3　极限、导数、积分的非标准定义</h3>
+<h3 id="sec9-2">9.2　连续的三种写法</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 9.1　ε-δ 定义与超实数定义的对照</b></caption>
-<tr><th class="l">概念</th><th class="l">ε-δ 定义</th><th class="l">超实数定义</th></tr>
-<tr><td class="l">极限</td><td class="l">∀ε>0, ∃δ>0, 0&lt;|x−a|&lt;δ ⇒ |f(x)−L|&lt;ε</td><td class="l"><span class="s">x≈a, x≠a ⇒ f(x)≈L</span></td></tr>
-<tr><td class="l">连续</td><td class="l">∀ε>0, ∃δ>0, |x−a|&lt;δ ⇒ |f(x)−f(a)|&lt;ε</td><td class="l"><span class="s">x≈a ⇒ f(x)≈f(a)</span></td></tr>
-<tr><td class="l">导数</td><td class="l"><span class="s">lim<sub>h→0</sub>[f(a+h)−f(a)]/h</span></td><td class="l"><span class="s">f′(a)=st([f(a+dx)−f(a)]/dx)</span></td></tr>
-<tr><td class="l">积分</td><td class="l">黎曼和的极限</td><td class="l">超有限和 <span class="s">st(Σ f(x<sub>i</sub>)Δx)</span> 的标准部分</td></tr>
+<tr><th class="l">写法</th><th class="l">怎么说</th><th class="l">它的强项</th><th class="l">它的负担</th></tr>
+<tr><td class="l">ε-δ</td><td class="l">对每个 ε 存在 δ</td><td class="l">完全标准，无需新工具</td><td class="l">证明要反复拼接不等式</td></tr>
+<tr><td class="l">序列</td><td class="l">收敛序列的极限保持</td><td class="l">适合离散逼近</td><td class="l">要先有拓扑</td></tr>
+<tr><td class="l">标准部分</td><td class="l">无穷小被合法化，取标准部分</td><td class="l">把“够细”变成一次代数操作</td><td class="l">要先建超实数系</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>定义对照。等级 A／甲（非标准分析的标准结果）。</div>
+<div class="cap"><b>表 9.1　连续的三种写法</b>　三者等价（转移原理），选哪一种取决于你要证明什么，不取决于哪一种更正确。</div>
 
-<p>以微积分基本定理为例。在 ε-δ 框架下，证明需要构造黎曼和、利用一致连续性、进行不等式估计。在超实数框架下，证明骨架变成：取无穷自然数 <span class="s">N</span>，<span class="s">Δx=(b−a)/N</span>；则 <span class="s">[F(x+Δx)−F(x)]/Δx = ∫<sub>x</sub><sup>x+Δx</sup>f/Δx ≈ f(x)</span>，因为无穷小区间上的平均值与 <span class="s">f(x)</span> 相差无穷小；取标准部分即得 <span class="s">F′(x)=f(x)</span>。<b>没有不等式拼接，没有一致连续性的技术引用。</b></p>
+<h3 id="sec9-3">9.3　超有限与标准部分映射</h3>
 
-<h3 id="sec9-4">9.4　超有限维希尔伯特空间</h3>
+<p>超有限方法的做法是：把一个无穷维或连续的对象换成超有限对象（元素个数是非标准自然数 <span class="s">N</span>，对每个标准 <span class="s">n</span> 都有 <span class="s">N&gt;n</span>），在超有限框架里做有限维的线性代数，再把结果“取标准部分”翻译回来。整个过程中没有一次取极限，极限被内化成了标准部分映射 <span class="s">st</span>。</p>
 
-<p>超有限方法更进一步。它把可分无穷维希尔伯特空间 <span class="s">H</span> 嵌入非标准希尔伯特空间 <span class="s">*H</span>，后者有一个<b>内部正交基</b> <span class="s">{e<sub>n</sub>}<sub>n=1..γ</sub></span>，其中 <span class="s">γ</span> 是非标准自然数（无穷大但在内部视角下是"有限"的）。［已知］</p>
+<img class="fig" src="assets/svg/fig06-nonstandard-descent.svg" alt="图 9.1　超有限降级">
+<div class="cap"><b>图 9.1　超有限降级</b>　左边的 ε-δ 机器被右边的一次“取标准部分”覆盖；转移原理保证一阶命题的真值不变。</div>
 
-<div class="define"><span class="bt">定义 9.2　超有限维希尔伯特空间［已知，B／乙］</span>
-一个超有限维希尔伯特空间是一个内积空间，其维数 <span class="s">γ</span> 是非标准自然数。它满足：<br>
-（1）可以进行有限维线性代数的全部运算（求和、内积、线性算子）；<br>
-（2）位置、动量、哈密顿量等算子在 <span class="s">*H</span> 上处处有界；<br>
-（3）所有谱都是离散的（因为空间在内部视角下有限维）；<br>
-（4）通过标准部分，物理预测与标准量子力学一致。</div>
+<h3 id="sec9-4">9.4　定理：超有限谱的标准部分</h3>
 
-<h3 id="sec9-5">9.5　谱定理的降级</h3>
+<p><b>定理 9.1（论证，A／乙）。</b>设 <span class="s">T</span> 是超有限维内积空间上的自伴算子，且算子族一致有界。则在 <span class="s">*</span> 世界里 <span class="s">T</span> 有标准正交特征基 <span class="s">{e<sub>k</sub>}</span> 与实特征值 <span class="s">{λ<sub>k</sub>}</span>；取标准部分得到的算子 <span class="s">T°</span> 与谱测度 <span class="s">μ°</span> 满足：对每个标准连续函数 <span class="s">ψ</span>，<span class="s">st(Σ<sub>k</sub> ψ(λ<sub>k</sub>)) = ∫ψ dμ°</span>。</p>
 
-<p>这个构造最漂亮的战绩是把泛函分析的技术负担折叠掉。</p>
+<p><b>证明思路。</b>有限维谱定理经转移原理自动成立（一阶陈述）。一致有界保证标准部分存在且唯一。第三步是标准的 Loeb 测度论证：把超有限谱的计数测度取标准部分，得到标准 Borel 测度，它对标准连续函数给出正确的积分。这正是 Loeb（1975）的构造。<span class="s">∎</span></p>
 
-<table class="nat">
-<caption class="cap"><b>表 9.2　超有限框架折叠掉的技术层次</b></caption>
-<tr><th class="l">标准框架</th><th class="l">超有限框架</th></tr>
-<tr><td class="l">无界算子需要独立理论</td><td class="l">所有算子有界、处处有定义</td></tr>
-<tr><td class="l">稠密定义域、闭算子、自伴扩张</td><td class="l">算子处处有定义，问题消失</td></tr>
-<tr><td class="l">连续谱 vs 离散谱的二分</td><td class="l">所有谱离散；连续谱是无穷密集点的标准部分</td></tr>
-<tr><td class="l">广义函数（δ 函数）独立理论</td><td class="l">δ 是普通非标准函数，奇异性来自标准部分</td></tr>
-<tr><td class="l">谱定理的复杂证明</td><td class="l">有限维特征分解 + 取标准部分</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>层次折叠对照。等级 B／乙（公开结果的整理）；<b>参考：</b>Almeida &amp; Teixeira (2004) 的超有限量子力学重构。</div>
+<p>定理的价值在于它把“有限图上的谱”与“紧流形上的谱”放进同一个句子里：前者是后者的一个超有限实现，后者是前者的标准部分。第 19、20 章会各用一次这个接口。</p>
 
-<div class="scenario"><span class="bt">降级的本质</span>
-超有限方法的威力来自一句话：<b>把"无穷维"重新定义为"维数是无穷大的有限维"。</b>一旦采用内部视角，泛函分析中为处理无穷而引入的技术层次（无界、稠密、连续谱、广义函数）全部变成冗余。这不是"消除无穷"，而是把无穷折叠进一个更大的离散结构，再用标准部分取回连续图景。</div>
+<h3 id="sec9-4b">9.4b　超有限写法的一次实际用途</h3>
 
-<h3 id="sec9-6">9.6　有效性检验与边界</h3>
+<p>第 19、20 章要用到一个接口：把图上的谱与连续流形的谱放进同一个句子里。超有限写法提供的正是这个接口：取网格图的顶点数 <span class="s">N=n²</span> 作为非标准自然数，图的拉普拉斯就是一个超有限维算子，它的谱（超有限多个特征值）取标准部分后，恰好给出连续算子的谱测度。</p>
 
-<table class="nat">
-<caption class="cap"><b>表 9.3　非标准分析压缩的四判据评分</b></caption>
-<tr><th class="l">判据</th><th class="l">结果</th><th class="l">说明</th></tr>
-<tr><td class="l">P1 压缩比</td><td class="l">通过</td><td class="l">ε-δ 的多个定义 → 一个标准部分操作；泛函分析的多层技术 → 有限维代数</td></tr>
-<tr><td class="l">P2 统一度</td><td class="l">通过</td><td class="l">连续、导数、积分、谱定理成为同一套代数操作的应用</td></tr>
-<tr><td class="l">P3 问题解决力</td><td class="l">通过</td><td class="l">已在组合数论（Jin 的 sumset 定理）、近似群论、拓扑动力学中产生新证明</td></tr>
-<tr><td class="l">P4 可迁移性</td><td class="l">通过</td><td class="l">已迁移至测度论（Loeb 测度）、概率论（超有限概率）、动力系统</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>方法论评分。等级 B／乙（依据公开文献）。<b>这是四个案例中唯一在全部四判据上通过的。</b></div>
+<p>这个用法有两个纪律。第一，<b>一致有界</b>：没有一致有界，标准部分可能不存在（第 9.4 节的定理要求里写了这一条）。第二，<b>命题必须是一阶的</b>：转移原理只管一阶命题，“对所有子集”这类二阶陈述不能直接搬。两条纪律合起来，就是“可以用超有限计算，但不能用它做本体论承诺”。</p>
 
-<div class="warning"><span class="bt">边界（清单）</span>
-非标准分析有三个代价：<b>（1）模型论依赖</b>——需要超滤子、饱和模型等工具，入门门槛高；<b>（2）非构造性</b>——它告诉你"存在一个超有限维空间"，但通常不给出显式构造；<b>（3）互译成本</b>——把结果翻译回标准语言有时需要额外技术。因此它是<b>可选工具</b>，不是框架的必要基础（见第 3.4 节）。</div>
+<h3 id="sec9-5">9.5　反例：把无限当属性的三种误用</h3>
 
-<div class="case"><span class="ct">人的尺度</span><p>一位做数值计算的人对“非标准分析”毫无兴趣，直到他发现自己论文里那个“无穷小近似”一直无法严格化。他说：“我不信它有实体，但我需要一个能让我把话说完的说法。”<b>降级不是投降，是给不严格的地方一个可指认的名字。</b></p></div>
-<h3 id="sec9-7">9.7　本章小结</h3>
-
-<p>非标准分析与超有限方法展示了压缩的最高回报：它不仅减少层次，而且产生新定理。它也是本书框架中"标准部分映射"这一分量的来源（第 14.2 节约定 6）。下一章进入最后一类语言工具：类型与范畴，它们把"相等"本身结构化。</p>
-
-<div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>本章无 A 级结果（样板章）。</li>
-<li><b>⊕ 有论证（B）：</b>定义 9.1（超实数与转移原理）；定义 9.2（标准部分映射 st）。</li>
-<li><b>○ 启发／描述（C）：</b>极限、导数、积分的非标准定义；超有限维希尔伯特空间与谱定理的降级。</li>
-<li><b>？ 未解决：</b>非标准方法的可接受边界。</li>
-<li><b>↔ 连接：</b>第 13 章时间区分的工具；第 24 章超有限李理论的预备。</li>
-</ul></div>
+<li><b>把极限当对象</b>：说“湍流是无限维的”，好像无限维是一个属性。正确说法是“有限维截断下观察不到某个标度律，取极限后出现”。</li>
+<li><b>把无穷小当零</b>：在标准分析里直接写 <span class="s">dx=0</span> 会毁掉链式法则；在超实数里 <span class="s">dx</span> 非零但小于一切正实数，必须显式取标准部分。</li>
+<li><b>把“够细”当“无限细”</b>：一个只有有限分辨率的系统，其行为在某个尺度以下<strong>没有定义</strong>，而不是“趋于某个连续极限”。</li>
+</ul>
 
-<p><b>反例。</b>非标准分析把无穷小合法化，但并没有让微积分更容易教：超实数的构造本身需要逻辑学基础。这提示"降级"是有门槛的——它把难点从分析搬到了逻辑，而不是取消难点。</p>
+<p>三种误用有一个共同的解毒剂：<b>凡出现“无限”，都要问它出现在哪一步——是对象、是极限，还是工具。</b>本书的立场是：无限只作为工具和极限出现，从不作为现实系统的属性。</p>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>非标准分析不是魔法，是把“无穷小”降级成可算的有限对象。</p></div>
+<h3 id="sec9-6">9.6　本章小结</h3>
 
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p>
-<p>Almeida, R., &amp; Teixeira, F. (2004). The space of state vectors: A hyperfinite approach. <i>Journal of Mathematical Physics</i>.</p>
-<p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces. <i>Transactions of the AMS</i> 211.</p>
-<p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p>
-<p>Jin, R. (2018). Sumset phenomenon in countable amenable groups. arXiv.</p>
-</div>
+<p>连续是“对任意精度存在足够分辨率”的承诺，三种写法等价，超有限写法把极限内化（9.1）。三种误用的解毒剂是区分“对象 / 极限 / 工具”。至此，空间、可测、连续三样都由区分生成；下一章把它们收进一份语法。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：连续不是无限精细，是你每次给一个精度，它都答得出一个分辨率。</p></div>

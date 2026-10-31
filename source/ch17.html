@@ -1,122 +1,62 @@
-<h2 class="chapter">第17章　可计算的实例</h2>
-<p class="lead" data-story="1">十个人围成一圈，每人只跟左右两人说话。这样一张图，两个临界值是可以手算出来的。<b>能算，是这套语言最硬的底气。</b></p>
+<h2 class="chapter">第17章　两阶段相变：局部先于全局</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>当 <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span> 时，系统在 <span class="s">β∈(β<sub>1</sub>,β<sub>2</sub>)</span> 上存在一个<b>中间相</b>：高频（局部）模式已经增长，低频（全局切割）模式仍在衰减。中间相存在的充要条件是 <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>（定理 17.1）。</p></div>
 
-<p class="lead">一个定理只有在能被算出来时才真正可信。本章给出五类图的精确临界耦合，并给出一个可复现的数值验证协议。<b>本节的每个数字都可以用十几行代码独立复算；随书脚本 <code>analysis/graph_phase_transition.py</code> 生成它们。</b></p>
+<p class="lead" data-story="1">森林起火，先是最干的那丛灌木烧起来，一片一片地烧；很久之后，火线才连成一条贯穿整座山的线。护林员说：<b>“局部先着，全局后连。你要防的是第二步。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 对任何具体图都是可精确计算的。<b>本章给出的数字构成样本的可复现证据：任何读者都能在几分钟内验证它们。</b></div>
+<h3 id="sec17-1">17.1　导论：为什么相变会有两次</h3>
 
-<h3 id="sec17-1">17.1　导论：可复现的数字</h3>
+<p>第 16 章的结论是：不同的模式在不同的 <span class="s">β</span> 上解锁。既然解锁有先后，就自然有一个问题：在两次解锁之间，系统处于什么状态？这个问题问得具体，答案也具体：<b>系统的区分能力已经出现，但还没有沿着全局切割出现。</b></p>
 
-<p>数学论文里的"经计算可得"常常是空头支票。本章把它兑现：每个图给出拉普拉斯谱、两个临界耦合、以及中间相宽度。约定 <span class="s">α=1</span>；其他 <span class="s">α</span> 只需按比例缩放。</p>
+<p>这不是类比。谱定理保证高频特征向量在相邻顶点上取值相反（局部剧烈振荡），低频特征向量在整张图上缓慢变化（全局切割）。两头的几何含义完全不同。</p>
 
-<h3 id="sec17-2">17.2　Petersen 图</h3>
-
-<p>Petersen 图：10 个顶点，3-正则，强正则参数 (10,3,0,1)。它是图论中最著名的反例来源之一，也是本书样本的最小非平凡实例。</p>
-
-<div class="define"><span class="bt">例 17.1　Petersen 图</span>
-拉普拉斯谱：<span class="s">λ<sub>1</sub>=0</span>（重数 1），<span class="s">λ=2</span>（重数 5），<span class="s">λ<sub>n</sub>=5</span>（重数 4）。因此
-<div class="eq"><span class="body">β<sub>1</sub>=α/5=0.2α,  β<sub>2</sub>=α/2=0.5α,  W=0.3α</span></div></div>
-
-<p>取 <span class="s">α=1</span>：<span class="s">β&lt;0.2</span> 全部衰减；<span class="s">0.2&lt;β&lt;0.5</span> 沿高频模式增长；<span class="s">β&gt;0.5</span> 沿高频与 Fiedler 模式增长。</p>
-
-<h3 id="sec17-3">17.3　环与路径图</h3>
-
-<p>环 <span class="s">C<sub>n</sub></span> 的拉普拉斯特征值为 <span class="s">λ<sub>k</sub>=2−2cos(2πk/n)</span>，<span class="s">k=0,…,n−1</span>。</p>
-
-<div class="define"><span class="bt">例 17.2　环 C<sub>10</sub></span>
-<div class="eq"><span class="body">λ<sub>2</sub>=2−2cos(36°)≈0.382,  λ<sub>n</sub>=4</span></div>
-<div class="eq"><span class="body">β<sub>1</sub>=0.25α,  β<sub>2</sub>≈2.618α,  W≈2.368α</span></div></div>
-
-<p>路径图 <span class="s">P<sub>n</sub></span> 的特征值为 <span class="s">λ<sub>k</sub>=2−2cos(π(k−1)/n)</span>。对大 <span class="s">n</span>：<span class="s">λ<sub>2</sub>≈π²/n²</span>，<span class="s">λ<sub>n</sub>≈4</span>，故 <span class="s">β<sub>1</sub>≈0.25α</span>，<span class="s">β<sub>2</sub>≈αn²/π²</span>。<b>中间相宽度随 <span class="s">n²</span> 增长——这是"局部先于全局"最戏剧化的表现。</b></p>
-
-<h3 id="sec17-4">17.4　完全图与完全二分图</h3>
-
-<div class="define"><span class="bt">例 17.3　完全图 K<sub>n</sub></span>
-谱：<span class="s">0</span>（重数 1），<span class="s">n</span>（重数 <span class="s">n−1</span>）。故 <span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>。<b>没有中间相</b>——所有非零模式同时解锁。</div>
-
-<div class="define"><span class="bt">例 17.4　完全二分图 K<sub>n,n</sub></span>
-谱：<span class="s">0</span>（重数 1），<span class="s">n</span>（重数 <span class="s">2n−2</span>），<span class="s">2n</span>（重数 1）。故
-<div class="eq"><span class="body">β<sub>1</sub>=α/(2n),  β<sub>2</sub>=α/n,  W=α/(2n)</span></div>
-中间相宽度随 <span class="s">n</span> 减小。</div>
-
-<h3 id="sec17-5">17.5　超立方体：多阶段相变</h3>
-
-<img class="fig" src="assets/svg/fig14-graph-instances.svg" alt="具体图的临界耦合">
-
-<div class="cap"><b>图 17.1　具体图的谱与临界耦合</b>。四个面板分别给出 Petersen 图、环 C₁₀、完全图 K₅、完全二分图 K₄,₄ 的谱与阈值。横轴为 β，纵轴为增长率 μ；阴影区为中间相（局部增长相）。</div>
-
-<p>超立方体 <span class="s">Q<sub>n</sub></span> 的谱是 <span class="s">λ<sub>k</sub>=2k</span>，重数 <span class="s">C(n,k)</span>，<span class="s">k=0,…,n</span>。这给出 <span class="s">n</span> 个不同的临界耦合：</p>
-
-<div class="define"><span class="bt">例 17.5　超立方体 Q<sub>n</sub>（n 阶段相变）</span>
-<div class="eq"><span class="body">β<sub>k</sub>=α/(2k),  k=1,…,n</span></div>
-当 <span class="s">β</span> 从 0 增大时，系统依次经历 <span class="s">n</span> 个相，每越过一个门槛，就有一个新的"频率"模式被激活。<b>这是"区分能力的逐层解锁"。</b></div>
-
-<p>取 <span class="s">α=1, n=5</span>：<span class="s">β₁=0.1</span>（激活最高频），<span class="s">β₂=0.2</span>，<span class="s">β₃≈0.333</span>，<span class="s">β₄=0.5</span>，<span class="s">β₅=1.0</span>（激活 Fiedler）。</p>
-
-<h3 id="sec17-6">17.6　加权图、时变图与随机图</h3>
-
-<p><b>加权图。</b>给边赋电导 <span class="s">w<sub>uv</sub>&gt;0</span>，用加权拉普拉斯 <span class="s">(L<sub>w</sub>D)<sub>v</sub>=(1/m<sub>v</sub>)Σ<sub>u∼v</sub>w<sub>uv</sub>(D<sub>u</sub>−D<sub>v</sub>)</span>。定理 15.1 照常成立，只需用 <span class="s">L<sub>w</sub></span> 的谱。例：环 <span class="s">C₄</span> 若把 <span class="s">w₁₂=w₃₄=10</span>，<span class="s">w₂₃=w₄₁=1</span>，则谱变为 <span class="s">{0, 2, 12, 20}</span>，<span class="s">β₁=0.05</span>，<span class="s">β₂=0.5</span>。<b>加权降低了局部阈值，却几乎不影响全局阈值。</b></p>
-
-<p><b>时变图。</b>若图在有限个图 <span class="s">G₁,…,G<sub>m</sub></span> 间切换，<span class="s">Ḋ=(−αI+βL<sub>σ(t)</sub>)D</span>。稳定性由是否存在公共李雅普诺夫函数决定：若存在正定 <span class="s">P</span> 使所有 <span class="s">k</span> 满足 <span class="s">(−αI+βL<sub>k</sub>)<sup>T</sup>P+P(−αI+βL<sub>k</sub>)≺0</span>，则 <span class="s">D→0</span> 对所有切换成立。<b>切换系统比单个系统更易失稳——这是一个可检验的预言。</b>［论证，B／乙］</p>
-
-<p><b>随机图。</b>对 Erdős–Rényi 图 <span class="s">G(n,p)</span>，当 <span class="s">np→∞</span> 时 <span class="s">λ<sub>n</sub>/n→p</span> 且 <span class="s">λ<sub>2</sub>/n→p</span>（几乎总会）。故 <span class="s">β₁≈β₂≈α/(np)</span>：<b>稠密随机图没有中间相，稀疏随机图有。</b>［已知，B／乙］</p>
-
-<h3 id="sec17-7">17.7　数值验证协议与结果</h3>
-
-<img class="fig" src="assets/svg/fig14b-numerical-verification.svg" alt="数值验证">
-
-<div class="cap"><b>图 17.2　数值验证</b>。左：Petersen 图在 <span class="s">β=0.3</span>（中间相）时，各模式投影的对数随时间的演化；最高频模式线性上升，其余下降。右：<span class="s">β=0.6</span>（全局增长相）时，最高频与 Fiedler 模式同时上升。斜率与 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 的预测一致。</div>
-
-<div class="define"><span class="bt">验证复现协议（可复现）</span>
-（1）构造目标图的拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span>；<br>
-（2）用 <code>numpy.linalg.eigvalsh(L)</code> 计算谱；<br>
-（3）计算 <span class="s">β₁=α/λ<sub>n</sub></span>，<span class="s">β₂=α/λ<sub>2</sub></span>；<br>
-（4）取随机初值 <span class="s">D(0)</span>，用 <code>scipy.integrate.solve_ivp</code> 演化式 (15.2)；<br>
-（5）把 <span class="s">D(t)</span> 投影到各特征向量，检查对数斜率是否等于 <span class="s">μ<sub>k</sub></span>；<br>
-（6）对 <span class="s">β</span> 取三相位各一个值，重复。</div>
+<h3 id="sec17-2">17.2　两个临界点的几何含义</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 17.1　数值验证的预期结果（α=1）</b></caption>
-<tr><th class="l">图</th><th class="l">β 取值</th><th class="l">所处相</th><th class="l">预期主导速率</th></tr>
-<tr><td class="l">Petersen</td><td class="l">0.15</td><td class="l">衰减</td><td class="l">μ<sub>n</sub>=−0.25</td></tr>
-<tr><td class="l">Petersen</td><td class="l">0.30</td><td class="l">局部增长</td><td class="l">μ<sub>n</sub>=+0.50</td></tr>
-<tr><td class="l">Petersen</td><td class="l">0.60</td><td class="l">全局增长</td><td class="l">μ<sub>n</sub>=+2.00；μ<sub>2</sub>=+0.20</td></tr>
-<tr><td class="l">C<sub>10</sub></td><td class="l">1.00</td><td class="l">局部增长</td><td class="l">μ<sub>n</sub>=+3.00；Fiedler 衰减</td></tr>
+<tr><th class="l">临界点</th><th class="l">解锁的模式</th><th class="l">特征向量的样子</th><th class="l">现实对应</th></tr>
+<tr><td class="l"><span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span></td><td class="l">最高频（局部）</td><td class="l">相邻顶点一正一负，剧烈振荡</td><td class="l">局部差异开始被记住</td></tr>
+<tr><td class="l"><span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span></td><td class="l">最低非平凡（Fiedler）</td><td class="l">把图切成两块，缓慢变化</td><td class="l">整体切割开始稳定</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>可复现预测。等级 A／甲。<b>注意：</b>表中"预期主导速率"可由 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 手算，脚本验证其与数值积分一致。</div>
+<div class="cap"><b>表 17.1　两次解锁的几何含义</b>　差别不在“大小”，在“尺度”：一个是相邻顶点之间，一个是整张图的两半之间。</div>
 
-<div class="note"><b>复现方法</b>
-在仓库根目录运行 <code>python analysis/graph_phase_transition.py</code>。脚本会计算上述所有图的谱与临界耦合，做数值演化，把结果写入 <code>data/injected.json</code> 与 <code>analysis/results/</code>，并生成图 17.1、14.2。不需要任何特殊库，只需要 numpy 与 scipy。</div>
+<img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="图 17.1　两阶段相变">
+<div class="cap"><b>图 17.1　两阶段相变</b>　横轴是耦合强度，纵轴是已解锁模式数；两级台阶之间就是中间相。</div>
 
-<div class="case"><span class="ct">人的尺度</span><p>一位本科生照论文跑了 400 次实验，结果和论文一致。他给作者写信，作者回了六个字：“谢谢，麻烦你了。”他说，那六个字让他第一次觉得<b>数学是有人在做的事，不是从天上掉下来的。</b></p></div>
-<h3 id="sec17-8">17.8　本章小结</h3>
+<h3 id="sec17-3">17.3　中间相：局部已解锁、全局未解锁</h3>
 
-<p>样本的临界耦合对具体图是可精确计算的：Petersen 图 <span class="s">(0.2, 0.5)</span>，环 <span class="s">C₁₀</span> <span class="s">(0.25, 2.618)</span>，完全图无中间相，超立方体有 <span class="s">n</span> 个阶段。数值验证协议给出了可复现的检验步骤。下一章把线性情形推广到非线性，并给出一个精确可解的爆破时间。</p>
+<p>在 <span class="s">β∈(β<sub>1</sub>,β<sub>2</sub>)</span> 上，<span class="s">μ<sub>n</sub>&gt;0</span> 而 <span class="s">μ<sub>2</sub>&lt;0</span>：最高频模式在增长，最慢的非平凡模式在衰减。于是系统的区分强度向量会越来越“抖”，但不会越来越“分块”。用一句话说：<b>它越来越会分辨细节，却没有越来越会分辨阵营。</b></p>
 
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>例 17.1–17.5 的临界耦合数值（Petersen、环、完全图、完全二分图、超立方体）；数值验证协议。</li>
-<li><b>↔ 连接：</b>本章验证第 15—16 章的定理；脚本见附录 形式化与证明、G。</li>
-</ul></div>
+<p>这个状态不稳定，也不必然出现——它存在与否由两个特征值的相对大小决定。这就引出本章的定理。</p>
 
-<h3 id="sec17-9">17.9　与网络科学的连接：谱隙是"分几块"的刻度</h3>
-<p>图论里有一个被反复使用的量：拉普拉斯矩阵的第二小特征值 λ₂（代数连通度）。它的倒数近似于图上随机游走的混合时间——λ₂ 越小，图越难被"混匀"，说明它内部有明显的分块。</p>
-<p>这与本书第 15—16 章的"两阶段相变"直接相关：λ₂ 与 λₙ 分别对应"全局何时连成一片"与"局部何时连成一片"。本节补一句网络科学已经确认的事实：<strong>λ₂ 也是社区划分的判据</strong>——谱聚类就是按 λ₂ 对应的特征向量切图。</p>
-<div class="define"><span class="bt">断言 17.4（A 级，谱图理论）</span>
-λ₂ 越小，图的分块越明显，混合时间越长；因此"局部先行"与"社区结构"是同一件事的两个说法。
-</div>
-<p><b>它在哪里会失败。</b>λ₂ 只描述切割的难易，不描述切割的位置；两块大小悬殊时，λ₂ 会低估分块程度（需要看归一化拉普拉斯）。这是本书在数值验证时已经遇到的坑。</p>
-<p><b>它使什么成为可能。</b>它给"区分"一个可算的刻度：<strong>想知道一个系统分成几块，不必先知道块在哪</strong>——先算 λ₂，再看特征向量。</p>
+<h3 id="sec17-4">17.4　定理与证明</h3>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>数值验证不是装饰；五个例子的临界值，任何人都能重算。</p></div>
+<p><b>定理 17.1（两阶段相变）。</b>设 <span class="s">G</span> 连通、<span class="s">n≥2</span>、<span class="s">α&gt;0</span>。则以下三条等价：</p>
+<ol>
+<li><span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>；</li>
+<li><span class="s">β<sub>1</sub>&lt;β<sub>2</sub></span>；</li>
+<li>存在区间 <span class="s">I⊂(0,∞)</span> 使对任意 <span class="s">β∈I</span>，存在初始条件使高频模式增长而所有低频（<span class="s">λ<sub>k</sub>≤λ<sub>2</sub></span>）模式衰减。</li>
+</ol>
 
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Chung, F. R. K., &amp; Lu, L. (2006). <i>Complex Graphs and Networks</i>. AMS.</p>
-<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p>
-<p>Brouwer, A. E., &amp; Haemers, W. H. (2012). <i>Spectra of Graphs</i>. Springer.</p>
-<p>Chung, F., Lu, L., &amp; Vu, V. (2003). Spectra of random graphs with given expected degrees. <i>PNAS</i> 100(11).</p>
-<p>Liberzon, D. (2003). <i>Switching in Systems and Control</i>. Birkhäuser.</p>
-</div>
+<p><b>证明。</b>(1)⇔(2)：<span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span>、<span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>，<span class="s">α&gt;0</span>，故两式同时成立或同时不成立。<br>
+(1)⇒(3)：取 <span class="s">I=(α/λ<sub>n</sub>,α/λ<sub>2</sub>)</span>，其上 <span class="s">βλ<sub>n</sub>&gt;α</span> 且 <span class="s">βλ<sub>2</sub>&lt;α</span>；由 <span class="s">λ<sub>k</sub></span> 单调，所有 <span class="s">λ<sub>k</sub>≤λ<sub>2</sub></span> 的模式都衰减。取 <span class="s">D(0)=e<sub>n</sub></span> 即可。<br>
+(3)⇒(1)：若 <span class="s">λ<sub>2</sub>=λ<sub>n</sub></span>，则 <span class="s">β<sub>1</sub>=β<sub>2</sub></span>，区间为空，与 (3) 矛盾。<span class="s">∎</span></p>
+
+<p>定理把“两阶段”从一个隐喻变成一个判据：<b>只要两个特征值不等，中间相就存在</b>；差得越多，中间相越宽。宽度就是第 18 章的主角。</p>
+
+<h3 id="sec17-3b">17.3b　中间相是一个“不稳定”的相</h3>
+
+<p>中间相有一个反直觉的性质：它不稳定。<span class="s">β</span> 稍大于 <span class="s">β<sub>1</sub></span> 时，高频模式增长得很慢（增长率 <span class="s">βλ<sub>n</sub>−α</span> 很小）；而 <span class="s">β</span> 一旦接近 <span class="s">β<sub>2</sub></span>，低频模式开始增长，系统很快进入“全局也解锁”的相。因此中间相在参数轴上宽，在<b>动力学时间</b>上却短——你需要在正确的时刻观察，才能看见它。</p>
+
+<p>这一点对实验设计有直接影响：如果只在一个固定时刻采样，很可能看不到中间相，从而误判为“一次相变”。第 24 章的 H2 检验就是为此设计的：它要求同时记录耦合强度与解锁计数，而不是只看最终状态。</p>
+
+<h3 id="sec17-5">17.5　反例：正则完全图里没有中间相</h3>
+
+<p>完全图 <span class="s">K<sub>n</sub></span> 的谱是 <span class="s">0</span> 与 <span class="s">n</span>（<span class="s">n−1</span> 重）。于是 <span class="s">λ<sub>2</sub>=λ<sub>n</sub>=n</span>，<span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>：所有非平凡模式同时解锁，没有中间相。直观上也对——完全图里没有“局部”与“全局”的区别，任何一块都和整体一样连得紧。</p>
+
+<p>这说明两阶段相变<b>不是</b>“任何系统都有两个阶段”，而是“结构里存在尺度差异时才有两个阶段”。这一句区分很重要：它把现象从普遍规律降级为结构效应，第 19 章会把这件事推到连续极限。</p>
+
+<h3 id="sec17-6">17.6　本章小结</h3>
+
+<p>中间相存在 ⟺ <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>（17.1），宽度由两者的比决定。完全图是零宽度的极端例子。第 18 章把这个比命名、算出闭式，并给出它的一条分类定理。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：局部先醒、全局后醒——这不是比喻，是两个特征值之间的那段空隙。</p></div>

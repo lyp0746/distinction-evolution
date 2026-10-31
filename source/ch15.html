@@ -1,142 +1,57 @@
-<h2 class="chapter">第15章　图拉普拉斯二次型与临界耦合定理</h2>
-<p class="lead" data-story="1">一张关系网，拉一下某个角，看哪里先动。动得最早的那个地方，往往不是最弱的，是最“边”的。<b>图的谱，会把这句话变成数。</b></p>
+<h2 class="chapter">第15章　强度而不是同一：同构的四个价位</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>“一样”有四个价位：<b>同构</b>（双向保结构）、<b>等价</b>（在某个商下同构）、<b>同调</b>（只保不变量）、<b>类比</b>（只保少数特征）。跨领域迁移时，能说清自己站在哪一档，就已经避免了大多数错误。</p></div>
 
-<p class="lead">本章是全书唯一完全严格的部分。它在有限图上写出拉普拉斯二次型，并证明临界耦合由它的谱决定。<b>这是标准数学（换形式），不是新理论。</b><b>证明只用到实对称矩阵的谱定理与线性常微分方程——没有非标准分析，没有生成拓扑，没有类型论。</b>读者可以逐行检查，也可以用脚本复算。</p>
+<p class="lead" data-story="1">一位翻译把一首唐诗译成英文，读者问：“这和原文是同一首诗吗？”译者想了想说：<b>“它保住了意象和语气，没保住格律。你说它是同一首，得先告诉我你在守什么。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 有一个完全可解的结构：每个模式以速率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。<b>这是本书的样本，也是"框架至少有一根柱子在岩石上"的证据。</b></div>
+<h3 id="sec15-1">15.1　导论：为什么需要四个价位</h3>
 
-<h3 id="sec15-1">15.1　导论：为什么从图开始</h3>
+<p>第 12 章说五个领域共用一个形式。这句话可以被读成四种强度，而它们的举证责任相差极大。把“同调”说成“同构”，是跨领域类比最常见的越界；反过来，把“类比”说成“没有价值”，则丢掉了发现的入口。四个价位的作用是给每一次迁移定位。</p>
 
-<p>一个统一框架若只在语言上成立，就只是修辞。要让纲领可信，必须至少在一个领域给出完整、严格、可复现的结果。图论是理想的首发地，原因有三：</p>
-
-<ul>
-<li><b>谱定理可用。</b>图的拉普拉斯矩阵是实对称的，其特征值理论完备，无需泛函分析。</li>
-<li><b>动力学是线性的。</b>演化方程是线性 ODE，可精确求解。</li>
-<li><b>数字可复算。</b>任何读者用十几行代码即可得到同样的临界值。</li>
-</ul>
-
-<p>更重要的原因是：图论中的"区分"有明确的对应物。<b>一个顶点能否与另一个顶点区分，取决于拉普拉斯扩散模式是否落在它上面。</b>这正是第 11—12 章的抽象概念在离散情形的具体实现。</p>
-
-<h3 id="sec15-2">15.2　构造与演化方程</h3>
-
-<div class="define"><span class="bt">定义 15.1　图上区分语言</span>
-设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>。给每个顶点 <span class="s">v</span> 一个区分强度 <span class="s">D<sub>v</sub>(t)∈ℝ</span>，组成向量 <span class="s">D(t)</span>。定义演化
-<div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>)</span><span class="num">(12.1)</span></div>
-其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度。用拉普拉斯矩阵 <span class="s">L=D<sub>adj</sub>−A</span> 写成矩阵形式：
-<div class="eq"><span class="body">Ḋ = (−αI + βL)D</span><span class="num">(12.2)</span></div></div>
-
-<p>这个方程的物理含义：每个顶点的区分强度以速率 <span class="s">α</span> 衰减（不维护就会丢失），同时通过邻接边以速率 <span class="s">β</span> 促进区分向相邻顶点传播。<b>当传播速率足够高时，区分不再衰减，反而增长。</b>这个转变就是相变。</p>
-
-<p>对应第 11—12 章的抽象分量：区分动作是顶点上的函数；观测是 <span class="s">D<sub>v</sub></span>；谱方差由演化方程 (12.2) 定义（见式 (15.4)）；演化是矩阵指数 <span class="s">Φ<sub>t</sub>=e^{(−αI+βL)t}</span>。约定 1—4 在有限图情形下都成立。</p>
-
-<h3 id="sec15-3">15.3　谱分解</h3>
-
-<div class="define"><span class="bt">定义 15.2　拉普拉斯谱</span>
-图拉普拉斯矩阵 <span class="s">L</span> 是实对称半正定矩阵。记其正交归一特征向量为 <span class="s">v<sub>1</sub>,…,v<sub>n</sub></span>，特征值按序排列
-<div class="eq"><span class="body">0 = λ<sub>1</sub> &lt; λ<sub>2</sub> ≤ ⋯ ≤ λ<sub>n</sub></span></div>
-其中 <span class="s">λ<sub>1</sub>=0</span> 对应常向量 <span class="s">v<sub>1</sub>=𝟙/√n</span>（因为 <span class="s">G</span> 连通，零特征值重数为 1）。<span class="s">λ<sub>2</sub></span> 称<b>代数连通度</b>（Fiedler 值），<span class="s">λ<sub>n</sub></span> 是最大特征值。</div>
-
-<p>把初值 <span class="s">D(0)</span> 在特征基下展开：<span class="s">D(0)=Σ<sub>k</sub>c<sub>k</sub>v<sub>k</sub></span>，<span class="s">c<sub>k</sub>=⟨D(0),v<sub>k</sub>⟩</span>。由于 <span class="s">L</span> 与 <span class="s">−αI</span> 交换，演化方程在特征基下解耦。</p>
-
-<h3 id="sec15-4">15.4　临界耦合定理</h3>
-
-<img class="fig" src="assets/svg/fig12-two-stage-transition.svg" alt="两阶段相变">
-
-<div class="cap"><b>图 15.1　临界耦合与两阶段相变</b>。横轴为耦合强度 <span class="s">β</span>，纵轴为各模式的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。每条直线对应一个拉普拉斯特征值。最先越过零的是最高频模式（<span class="s">λ<sub>n</sub></span>），在 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 处；Fiedler 模式（<span class="s">λ<sub>2</sub></span>）在 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 处越零。两者之间是"局部增长相"。</div>
-
-<img class="fig" src="assets/svg/fig12b-potential-landscape.svg" alt="临界耦合的势能景观">
-
-<div class="cap"><b>图 15.2　临界耦合的势能景观</b>。同一个 <span class="s">β</span> 下，各模式以不同斜率越过 <span class="s">κ=0</span>。斜率由 <span class="s">λ<sub>k</sub></span> 决定：<span class="s">λ</span> 越大，越早解锁。这张图是图 15.1 的“全景版”：把三相位展开为完整的阈值序列。</div>
-
-<div class="define"><span class="bt">定理 15.1（临界耦合定理）［定理，A／甲］</span>
-设 <span class="s">G</span> 是连通有限图，<span class="s">L</span> 的谱为 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>。考虑式 (15.2) 的演化。定义
-<div class="eq"><span class="body">β<sub>1</sub> := α/λ<sub>n</sub>,  β<sub>2</sub> := α/λ<sub>2</sub></span><span class="num">(12.3)</span></div>
-则对一般的初值 <span class="s">D(0)</span>（即投影 <span class="s">c<sub>n</sub>≠0</span>）：<br>
-<b>（i）衰减相</b>（<span class="s">β&lt;β<sub>1</sub></span>）：<span class="s">‖D(t)‖→0</span> 指数快，主导衰减率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>；<br>
-<b>（ii）局部增长相</b>（<span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>）：<span class="s">D(t)</span> 沿所有满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的<b>高频模式</b>指数增长（特别包括最高频模式 <span class="s">v<sub>n</sub></span>），沿所有满足 <span class="s">λ<sub>k</sub>&lt;α/β</span> 的<b>低频模式</b>衰减（特别包括 Fiedler 模式 <span class="s">v<sub>2</sub></span>）；<br>
-<b>（iii）全局增长相</b>（<span class="s">β&gt;β<sub>2</sub></span>）：至少沿 <span class="s">v<sub>n</sub></span> 与 <span class="s">v<sub>2</sub></span> 两个独立方向指数增长。</div>
-
-<h3 id="sec15-5">15.5　完整证明</h3>
-
-<p><b>第一步（解耦）。</b>由于 <span class="s">L</span> 实对称，存在正交矩阵 <span class="s">Q</span> 使 <span class="s">Q<sup>T</sup>LQ=diag(λ<sub>1</sub>,…,λ<sub>n</sub>)</span>。令 <span class="s">y=Q<sup>T</sup>D</span>。则式 (15.2) 变为
-<div class="eq"><span class="body">ẏ<sub>k</sub> = (−α+βλ<sub>k</sub>)y<sub>k</sub>,  k=1,…,n</span></div>
-这是 <span class="s">n</span> 个独立的一阶线性 ODE。</p>
-
-<p><b>第二步（求解）。</b>每个方程的解为
-<div class="eq"><span class="body">y<sub>k</sub>(t) = y<sub>k</sub>(0)e^{μ<sub>k</sub>t},  μ<sub>k</sub> := −α + βλ<sub>k</sub></span><span class="num">(12.4)</span></div>
-因此 <span class="s">D(t)=Σ<sub>k</sub>y<sub>k</sub>(0)e^{μ<sub>k</sub>t}v<sub>k</sub></span>。谱方差（演化型定义 12.2）正是 <span class="s">κ<sub>k</sub>=μ<sub>k</sub></span>。</p>
-
-<p><b>第三步（符号分析）。</b><span class="s">μ<sub>1</sub>=−α&lt;0</span>（常向量分量衰减）。对 <span class="s">k≥2</span>，<span class="s">λ<sub>k</sub>&gt;0</span>，故
-<div class="eq"><span class="body">μ<sub>k</sub>&gt;0 ⇔ β &gt; α/λ<sub>k</sub></span></div>
-由于 <span class="s">λ<sub>n</sub>≥λ<sub>k</sub>≥λ<sub>2</sub></span>，有 <span class="s">α/λ<sub>n</sub> ≤ α/λ<sub>k</sub> ≤ α/λ<sub>2</sub></span>，即 <span class="s">β<sub>1</sub>≤α/λ<sub>k</sub>≤β<sub>2</sub></span>。</p>
-
-<p><b>第四步（三情形）。</b></p>
-
-<p>（i）若 <span class="s">β&lt;β<sub>1</sub>=α/λ<sub>n</sub></span>，则对所有 <span class="s">k≥2</span>，<span class="s">μ<sub>k</sub>≤μ<sub>n</sub>=−α+βλ<sub>n</sub>&lt;0</span>。又 <span class="s">μ<sub>1</sub>&lt;0</span>。故所有模式衰减，<span class="s">‖D(t)‖≤‖D(0)‖e^{μ<sub>max</sub>t}</span>，主导率 <span class="s">γ=α−βλ<sub>n</sub>&gt;0</span>。</p>
-
-<p>（ii）若 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span>，则 <span class="s">μ<sub>n</sub>=−α+βλ<sub>n</sub>&gt;0</span>（因为 <span class="s">β&gt;α/λ<sub>n</sub></span>），而对所有 <span class="s">k&lt;n</span>，<span class="s">μ<sub>k</sub>=−α+βλ<sub>k</sub>≤−α+βλ<sub>n−1</sub></span>。需要说明 <span class="s">μ<sub>k</sub>&lt;0</span> 对 <span class="s">k&lt;n</span>：由 <span class="s">β&lt;β<sub>2</sub>=α/λ<sub>2</sub></span> 得 <span class="s">βλ<sub>2</sub>&lt;α</span>，而 <span class="s">λ<sub>k</sub>≤λ<sub>n</sub></span>……这里需要更细：实际上对 <span class="s">k&lt;n</span> 未必有 <span class="s">μ<sub>k</sub>&lt;0</span>，因为可能存在 <span class="s">λ<sub>k</sub>&gt;λ<sub>2</sub></span> 且 <span class="s">βλ<sub>k</sub>&gt;α</span>。正确的陈述是：在 <span class="s">β<sub>1</sub>&lt;β&lt;β<sub>2</sub></span> 中，那些满足 <span class="s">λ<sub>k</sub>&gt;α/β</span> 的模式增长，其中 <span class="s">α/β∈(λ<sub>2</sub>,λ<sub>n</sub>)</span>。因此增长的模式是"高频"模式（<span class="s">λ<sub>k</sub></span> 较大者），衰减的模式是"低频"模式（<span class="s">λ<sub>k</sub></span> 较小者，特别包括 Fiedler 模式 <span class="s">λ<sub>2</sub></span>，因为 <span class="s">βλ<sub>2</sub>&lt;α</span>）。<b>这正是"局部先于全局"的精确含义：高频（局部）模式先增长，Fiedler（全局切割）模式滞后。</b>主导增长率为 <span class="s">μ<sub>n</sub>&gt;0</span>。</p>
-
-<p>（iii）若 <span class="s">β&gt;β<sub>2</sub>=α/λ<sub>2</sub></span>，则 <span class="s">μ<sub>2</sub>=−α+βλ<sub>2</sub>&gt;0</span> 且 <span class="s">μ<sub>n</sub>&gt;0</span>，至少两个独立方向增长。<span class="s">∎</span></p>
-
-<div class="note"><b>关于"一般情况下 <span class="s">c<sub>n</sub>≠0</span>"</b>
-若初值恰好与 <span class="s">v<sub>n</sub></span> 正交，则最高频模式不参与，增长由下一个可用模式主导。这是一条零测度（在连续初值分布下）的例外。本书的定理陈述因此加上"一般初值"的限定；数值验证使用随机初值，几乎总会满足。</div>
-
-<h3 id="sec15-6">15.6　这个定理的地位</h3>
-
-<p>必须把话说清楚：这个定理<b>不是什么</b>。</p>
-
-<ul>
-<li>它<b>不</b>是"图上的数学大一统"。它只是线性稳定性分析应用在图的拉普拉斯上。</li>
-<li>它<b>不</b>声称对非线性和演化图普遍成立（第 18 章给出一个非线性版本及它的边界）。</li>
-<li>它<b>不</b>直接推广到连续流形（第 19—21 章说明推广的困难）。</li>
-</ul>
-
-<p>它<b>是</b>什么：一个完全严格、可复现的小结果，它演示了"谱方差"这个抽象概念在具体领域中的确切含义。<b>它的价值在于它存在，而不在于它多大。</b></p>
-
-
-<h3 id="sec15-7">15.7　这个定理的适用范围：为什么它不会在 26 个领域复制成 26 个定理</h3>
-
-<p>定理 15.1 的证明只用到一件事：生成元 <span class="s">M=−αI+βL</span> <b>自伴</b>，于是谱为 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>，两个阈值是 <span class="s">α/λ<sub>max</sub></span> 与 <span class="s">α/λ<sub>2</sub></span>；而 <span class="s">λ<sub>max</sub>≥λ<sub>2</sub></span> 使"高频／局部先解锁"成为<b>谱序的自动结果</b>。</p>
-
-<div class="warning"><span class="bt">这个论点里没有"图"</span>
-上面每一步都不依赖图：<b>对任何有限维自伴算子 <span class="s">L</span>，同样的公式成立。</b>因此把它搬到 Markov 链（可逆）、PDE 的 Laplacian、热核等<b>自伴</b>情形，得到的不是新定理，而是<b>同一条谱事实换了一个算子</b>。</div>
+<h3 id="sec15-2">15.2　四个价位</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 15.5　定理 15.1 的适用范围</b></caption>
-<tr><th class="l">情形</th><th class="l">是否产生新定理</th><th class="l">位置</th></tr>
-<tr><td class="l">自伴线性（图、可逆 Markov 链、PDE 的 Laplacian）</td><td class="l"><b>否</b>：同一条谱事实</td><td class="l">定理 15.1</td></tr>
-<tr><td class="l">非自伴线性（有向图）</td><td class="l"><b>是</b>：顺序可反转（反例 B2）；一般判据开放（O8）</td><td class="l">第 16 章</td></tr>
-<tr><td class="l">非线性</td><td class="l"><b>是</b>：保证衰减阈值与有限时间爆破</td><td class="l">第 18 章</td></tr>
+<tr><th class="l">价位</th><th class="l">定义</th><th class="l">举证责任</th><th class="l">断裂时的样子</th></tr>
+<tr><td class="l">同构</td><td class="l">存在双向保结构的映射</td><td class="l">写出映射并验证全部公理</td><td class="l">某条公理失守</td></tr>
+<tr><td class="l">等价</td><td class="l">在某个商（或某个范畴）下同构</td><td class="l">说清商掉什么</td><td class="l">商掉的东西其实是结论要用的</td></tr>
+<tr><td class="l">同调</td><td class="l">只保一组不变量（如谱、维数、同调群）</td><td class="l">列出不变量清单</td><td class="l">不变量相同而结构不同</td></tr>
+<tr><td class="l">类比</td><td class="l">只保少数特征，且无证明</td><td class="l">标明哪几条保住了</td><td class="l">一条新事实在两边不同</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>适用范围核算。<b>等级 A／甲（可复算的代数事实）。</b>结论：<b>领域给出的是"实例"，不是"新定理"。</b></div>
+<div class="cap"><b>表 15.1　同构的四个价位</b>　从左到右举证责任递减、可迁移的结论也递减；越往右，越要标 C 级。</div>
 
-<p>因此，把定理 15.1 在每个领域重述一遍，不会产生 26 个样本；它产生<b>一个样本加 26 个实例</b>。要得到真正的新定理，必须在<b>自伴性失效</b>或<b>非线性</b>的地方下手——这正是本书已经找到反例的两处（有向图反转 B2、非线性阈值第 18 章）。</p>
+<h3 id="sec15-3">15.3　断裂探针：怎么知道一个类比断了</h3>
 
-<div class="warning"><span class="bt">"下一个样本在哪里"</span>
-答案不是"换一个领域重述相变"，而是 <b>O8：为非正规生成元的顺序反转给出充要判据</b>。这是本书唯一还有一个样本空位的地方（第 16.9 节已报告：非正规性、强连通性等五个候选预测量全部失败）。<b>把它证出来，才配得上第二个 A／甲 定理。</b></div>
+<p>四条探针，按成本从低到高：</p>
 
-<div class="case"><span class="ct">人的尺度</span><p>一个研究网络的人算出一个班级的 Fiedler 值，然后说：“这个班会裂。”半年后班级真的分成两拨。他不觉得自己有预言能力，他说：“我只是算了一个班有多难连起来。”<b>数学不解释人心，它只告诉你，桥有几座。</b></p></div>
-<h3 id="sec15-8">15.8　本章小结</h3>
-
-<p>在有限图上，区分语言的动力学完全由拉普拉斯谱决定，两个临界耦合 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 分别对应局部与全局区分的解锁。证明只用谱定理与线性 ODE。下一章把两阶段相变的结构讲透，并给出具体图的数字。</p>
-
-<div class="note"><b>本章清单</b>
 <ul>
-<li><b>⊗ 可引用（A）：</b>定理 15.1（临界耦合定理：<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span>，含完整证明）；定义 15.1（图上区分语言）；定义 15.2（拉普拉斯谱）。</li>
-<li><b>⊕ 有论证（B）：</b>临界值的谱—模式解释（高频先解锁、Fiedler 后解锁）。</li>
-<li><b>？ 未解决：</b>有向与非线性情形（第 16、18 章）。</li>
-<li><b>↔ 连接：</b>第 16 章由此证明两阶段相变；第 22 章用其结论建立"图→信息论"编码。</li>
-</ul></div>
+<li><b>边界探针</b>：给一个极端情形（空集、单点、无穷大），两边是否给出同一结论？</li>
+<li><b>操作探针</b>：在这边做一次合法操作，翻译过去是否仍然合法？</li>
+<li><b>不变量探针</b>：两边的“守恒量”是否一一对应？</li>
+<li><b>反例探针</b>：能否构造一个两边结论相反的具体例子？</li>
+</ul>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>临界耦合有闭式解；能算的东西，才有资格谈“必然”。</p></div>
+<p>四条里只要有一条断，类比就只能留在“类比”这一档，不能升级。第 22 章的三个迁移案例都按这四条探针过了一遍。</p>
 
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p>
-<p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
-<p>Fiedler, M. (1973). Algebraic connectivity of graphs. <i>Czechoslovak Mathematical Journal</i> 23.</p>
-<p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p>
-<p>Hirsch, M. W., Smale, S., &amp; Devaney, R. L. (2012). <i>Differential Equations, Dynamical Systems, and an Introduction to Chaos</i> (3rd ed.). Academic Press.</p>
-</div>
+<h3 id="sec15-4">15.4　从类比到定理的迁移条件</h3>
+
+<p>一个类比要升级为定理，需要三个条件同时满足：<b>（i）</b> 映射是显式写出的；<b>（ii）</b> 目标结构被完整覆盖（不是“主要部分”）；<b>（iii）</b> 迁移后的命题能被独立验证。第三条最关键：如果迁移后只能靠原领域的结论来“解释”，那它仍然是类比。</p>
+
+<p>本书里唯一通过三条的迁移，是“图拉普拉斯 → 连续拉普拉斯”：映射（网格上的差分算子）、覆盖（紧流形上的谱）、独立验证（第 19、20 章分别用数值与 Weyl 定律核对）。其余迁移都只到“等价”或“同调”。</p>
+
+<h3 id="sec15-3b">15.3b　四个价位与四个等级的对应</h3>
+
+<p>四个价位与第 3 章的证据等级有一张粗略的对应表：同构对应 A／甲（可重演），等价对应 A／乙（依赖商的选择），同调对应 B（依赖不变量清单），类比对应 C（依赖少数特征）。这张对应表不是形式定理，但它有一个实际用处：<b>标级时可以直接从价位读出等级</b>，避免“同调的材料配 A 级的语气”。</p>
+
+<p>反过来也要小心：价位高不代表结论有用。一个同构可能毫无信息（两个空结构同构），一个类比可能极有启发（把电路与水管类比）。价位管的是<b>举证责任</b>，不管价值。</p>
+
+<h3 id="sec15-5">15.5　反例：把同调当同构</h3>
+
+<p>同调价位最诱人的地方，是它总能找到共同的不变量——谱、维数、熵、增长率。但它们都不是同构判据。第 13.5 节的两棵 8 顶点树就是反例：谱相同（同调价位成立），结构不同（同构价位失败）。判据只有一条：<b>若你能构造一个在同调下相同、在同构下不同的例子，那么这条迁移最高只能到同调。</b></p>
+
+<p>同样的逻辑适用于“五个领域同一个二次型”：它是同构（第 12 章逐条验证了公理）还是同调？答案是<b>同构在形式层面、同调在几何层面</b>——因为符号差不同时，保形式群不同（第 14 章）。这句话写在这里，是为了让读者在第 21 章的覆盖表里看到 C 级条目时不至于困惑：它们大多停在同一价位。</p>
+
+<h3 id="sec15-6">15.6　本章小结</h3>
+
+<p>四个价位（同构／等价／同调／类比）、四条断裂探针、三个升级条件。第三部分到此结束：语言有了形式，形式有了群，迁移有了价位。第四部分只做一件事——在一个具体的对象上把定理证出来。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：说“这两件事一样”之前，先说清你在守哪几样东西。</p></div>

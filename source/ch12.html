@@ -1,114 +1,49 @@
-<h2 class="chapter">第12章　二次型：双线性形式的「对角线」</h2>
-<p class="lead" data-story="1">一个碗的形状，决定了球往哪里滚、滚多快。<b>二次型就是那只碗——它不说话，但它规定了所有的运动。</b></p>
+<h2 class="chapter">第12章　五个领域，同一个结构</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>协方差、Hessian、图拉普拉斯、内积、度量，是同一个对称双线性形式在五个领域里的五个实例。这不是类比：五个定义域不同，但每个都满足同一组三条公理（定理 12.1），并且两两之间的翻译规则可以写出来、可以逐条验算。</p></div>
 
-<p class="lead">上一章把「区分」写成语言的基本词。这一章给出它的定量内容：<b>二次型</b>——一个向量与自身之「区分」的度量。二次型背后是一个双线性形式，它是双线性形式在对角线上的取值；反过来，知道「自关联」，就能用极化恒等式恢复「互关联」。</p>
+<p class="lead" data-story="1">一个做统计的人、一个做优化的人、一个做图论的人、一个做几何的人坐在同一张桌上改论文。四个人各自写下一个式子，抬头一看，笔迹不同，式子一样。<b>“我们四个都在算同一件事：两个东西差多少。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-二次型、双线性形式、协方差、Hessian、图拉普拉斯、内积——这些名字背后是<b>同一个代数结构</b>：向量空间上的对称双线性形式。<b>本章不证明新定理，只把这套语言写清楚；唯一保留的刚性结果是一个精确恒等式（定理 12.1）。</b>［已知，B；定理 12.1 为 A］</div>
+<h3 id="sec12-1">12.1　导论：把“像”分成两份</h3>
 
-<h3 id="sec12-1">12.1　二次型的定义</h3>
+<p>“A 和 B 像”这句话里藏着两份东西：<b>差</b>（两个对象之间的差异）与<b>权重</b>（每个方向的差异有多重要）。二次型的好处是把两份分开写：<span class="s">Q(u)=½Σ<sub>ij</sub>A<sub>ij</sub>u<sub>i</sub>u<sub>j</sub></span>，<span class="s">u</span> 是差，<span class="s">A</span> 是权重。五个领域的差别，全在“<span class="s">u</span> 是什么”与“<span class="s">A</span> 从哪来”。</p>
 
-<p>一个<b>二次型</b>是形如</p>
-<div class="eq"><span class="body">Q(x) = Σ<sub>i,j</sub> a<sub>ij</sub> x<sub>i</sub> x<sub>j</sub> = x<sup>T</sup>A x</span><span class="num">(12.1)</span></div>
-<p>的齐次二次多项式，其中 <span class="s">A</span> 是对称矩阵。它只含平方项与交叉项，不含一次项与常数项。</p>
-
-<p>关键：二次型是<b>一个向量</b> <span class="s">x</span> 的函数，但它背后藏着一个<b>双线性形式</b></p>
-<div class="eq"><span class="body">B(x,y) = x<sup>T</sup>A y</span><span class="num">(12.2)</span></div>
-<p>对两个向量 <span class="s">x,y</span> 分别线性。二次型是双线性形式在「对角线」上的取值：<span class="s">Q(x)=B(x,x)</span>。</p>
-
-<h3 id="sec12-2">12.2　极化恒等式：知道自关联，就能恢复互关联</h3>
-
-<p>在实数域上，对称双线性形式与二次型<b>一一对应</b>。给定 <span class="s">B</span>，定义 <span class="s">Q(x)=B(x,x)</span>；反过来，给定 <span class="s">Q</span>，可以用<b>极化恒等式</b>恢复 <span class="s">B</span>：</p>
-<div class="eq"><span class="body">B(x,y) = (1/2)[ Q(x+y) − Q(x) − Q(y) ]</span><span class="num">(12.3)</span></div>
-
-<div class="define"><span class="bt">一句话</span>
-双线性形式是「两个变量的交互」，二次型是「一个变量自身的波动」。<b>两者是同一数学对象的两种呈现</b>：全矩阵与对角线。［已知，B］</div>
-
-<h3 id="sec12-3">12.3　协方差：概率论中的双线性形式</h3>
-
-<p>协方差是双线性形式：<span class="s">Cov(X,Y)=E[(X−EX)(Y−EY)]</span>；方差是二次型：<span class="s">Var(X)=Cov(X,X)</span>。对随机向量 <span class="s">X=(X₁,…,Xₙ)</span>，协方差矩阵 <span class="s">Σ</span> 定义二次型</p>
-<div class="eq"><span class="body">Q(a) = a<sup>T</sup>Σa = Var(a<sup>T</sup>X)</span><span class="num">(12.4)</span></div>
-<p><b>协方差矩阵就是二次型的矩阵。</b>方差是二次型在坐标轴上的对角值，协方差是交叉项。几个直接推论：</p>
-<ul>
-<li><b>马氏距离：</b><span class="s">d²(x,μ)=(x−μ)<sup>T</sup>Σ<sup>−1</sup>(x−μ)</span> 是二次型。</li>
-<li><b>高斯分布：</b>密度 <span class="s">∝ exp(−(1/2)(x−μ)<sup>T</sup>Σ<sup>−1</sup>(x−μ))</span>，指数部分是二次型。</li>
-<li><b>PCA：</b>对 <span class="s">Σ</span> 做特征值分解，就是把二次型化为标准型（主轴化）。</li>
-</ul>
-
-<h3 id="sec12-4">12.4　Hessian：优化中的双线性形式</h3>
-
-<p>对多元函数 <span class="s">f: R<sup>n</sup>→R</span>，二阶泰勒展开</p>
-<div class="eq"><span class="body">f(x₀+h) ≈ f(x₀) + ∇f(x₀)<sup>T</sup>h + (1/2) h<sup>T</sup>H<sub>f</sub>(x₀) h</span><span class="num">(12.5)</span></div>
-<p>二阶项 <span class="s">h<sup>T</sup>H<sub>f</sub>h</span> 是<b>二次型</b>，矩阵是 Hessian。Hessian 本身是双线性形式 <span class="s">H<sub>f</sub>(v,w)=v<sup>T</sup>H<sub>f</sub>w</span>。正定 ⇔ 局部极小；负定 ⇔ 局部极大；不定 ⇔ 鞍点。<b>优化中的曲率，就是二次型的正定性。</b></p>
-
-<h3 id="sec12-5">12.5　矩、累积量与高次型</h3>
-
-<p>二阶导数是双线性形式，二阶泰勒项是二次型。推广：<span class="s">n</span> 阶导数是 <b><span class="s">n</span> 线性形式</b>，限制到对角线得到 <b><span class="s">n</span> 次型</b>；泰勒系数 <span class="s">f<sup>(n)</sup>(a)/n!</span> 对应 <span class="s">n</span> 次型，矩 <span class="s">E[X<sup>n</sup>]</span> 对应 <span class="s">n</span> 次型的系数。</p>
-
-<p>矩生成函数 <span class="s">M(t)=E[e<sup>tX</sup>]=Σ E[X<sup>n</sup>]t<sup>n</sup>/n!</span> 的二阶项 <span class="s">E[X²]t²/2</span> 对应二次型，方差是它的中心化版本。累积量生成函数 <span class="s">log M(t)</span> 的二阶项直接是方差，混合二阶项是协方差——<b>累积量的二阶部分就是二次型。</b></p>
-
-<h3 id="sec12-6">12.6　图拉普拉斯二次型与拉普拉斯谱方差</h3>
-
-<p>图拉普拉斯矩阵 <span class="s">L</span> 定义二次型</p>
-<div class="eq"><span class="body">x<sup>T</sup>L x = Σ<sub>(u,v)∈E</sub> (x<sub>u</sub> − x<sub>v</sub>)²</span><span class="num">(12.6)</span></div>
-<p>这是图上的<b>能量</b>，度量相邻顶点取值的差异。它是半正定二次型；谱分解后特征值是二次型在单位球上的驻值；Rayleigh 商 <span class="s">R(x)=x<sup>T</sup>Lx / x<sup>T</sup>x</span> 是二次型与范数之比；第五部分的临界耦合 <span class="s">β₁=α/λ<sub>n</sub></span>、<span class="s">β₂=α/λ₂</span> 完全由这个二次型的谱决定。<b>本书唯一的完全兑现样本，本质上就是这个二次型的谱分析。</b></p>
-
-<div class="define"><span class="bt">定义 12.1　拉普拉斯谱方差（旧称「拉普拉斯谱方差 κ_info」）</span>
-设 <span class="s">G</span> 是 <span class="s">n</span> 顶点图，<span class="s">L</span> 为拉普拉斯矩阵。取热核的密度矩阵 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>、<span class="s">Z(t)=tr(e<sup>−tL</sup>)</span> 与 von Neumann 熵 <span class="s">S(t)=−tr(ρ(t) log ρ(t))</span>。定义 <span class="s">κ_info(G) := −(1/2) S″(0⁺)</span>。</div>
-
-<div class="define"><span class="bt">定理 12.1　拉普拉斯谱方差恒等式 ［定理，A／甲］</span>
-对任意有限图，
-<div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>) = (1/2)[ (1/n)Σ<sub>k</sub>λ<sub>k</sub>² − ((1/n)Σ<sub>k</sub>λ<sub>k</sub>)² ]</span><span class="num">(12.7)</span></div>
-即热核熵的二阶变分等于拉普拉斯谱方差的一半，且对 <span class="s">n≥2</span> 恒有 <span class="s">κ_info&gt;0</span>。</div>
-
-<p><b>推导。</b>由 <span class="s">ρ</span> 的特征值为 <span class="s">p<sub>k</sub>=e<sup>−tλ<sub>k</sub></sup>/Z</span>，得 <span class="s">S(t)=log Z + tA/Z</span>，其中 <span class="s">A(t)=Σ<sub>k</sub>λ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>。直接求导：<span class="s">S′(t)=t(A/Z)′</span>，故 <span class="s">S′(0)=0</span>，且 <span class="s">S″(0)=(A′Z−AZ′)/Z²|<sub>0</sub>=(−nΣλ²+(Σλ)²)/n²=−Var(λ)</span>，故 <span class="s">κ_info=−S″(0)/2=Var(λ)/2</span>。<span class="s">∎</span></p>
+<h3 id="sec12-2">12.2　五个实例</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 12.1　谱方差的计算（与 α 无关；数值验证误差 &lt;10⁻⁶）</b></caption>
-<tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">κ_info = Var(λ)/2</th></tr>
-<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2.0</td><td class="l">5.0</td><td class="l">1.50</td></tr>
-<tr><td class="l">C₁₀</td><td class="l">10</td><td class="l">0.382</td><td class="l">4.0</td><td class="l">1.00</td></tr>
-<tr><td class="l">K₅</td><td class="l">5</td><td class="l">5.0</td><td class="l">5.0</td><td class="l">2.00</td></tr>
-<tr><td class="l">P₂₀</td><td class="l">20</td><td class="l">0.025</td><td class="l">3.975</td><td class="l">0.995</td></tr>
-<tr><td class="l">星图 S₁₀</td><td class="l">10</td><td class="l">1.0</td><td class="l">10.0</td><td class="l">3.78</td></tr>
+<tr><th class="l">领域</th><th class="l">对象 <span class="s">u</span></th><th class="l">形式 <span class="s">Q(u)</span></th><th class="l">权重的来源</th><th class="l">“零”意味着</th></tr>
+<tr><td class="l">统计</td><td class="l">随机向量</td><td class="l"><span class="s">u<sup>T</sup>Σu</span>（<span class="s">Σ</span> 协方差）</td><td class="l">联合波动</td><td class="l">两个方向完全共线</td></tr>
+<tr><td class="l">优化</td><td class="l">参数方向</td><td class="l"><span class="s">u<sup>T</sup>Hu</span>（<span class="s">H</span> Hessian）</td><td class="l">二阶曲率</td><td class="l">该方向上平坦</td></tr>
+<tr><td class="l">图论</td><td class="l">顶点上的函数</td><td class="l"><span class="s">Σ<sub>ij∈E</sub>(u<sub>i</sub>−u<sub>j</sub>)²</span></td><td class="l">边的连接</td><td class="l">相邻顶点同值</td></tr>
+<tr><td class="l">线性代数</td><td class="l">向量</td><td class="l"><span class="s">⟨u,u⟩</span></td><td class="l">基的选择</td><td class="l">零向量</td></tr>
+<tr><td class="l">几何</td><td class="l">切向量</td><td class="l"><span class="s">g<sub>ij</sub>u<sup>i</sup>u<sup>j</sup></span>（度量）</td><td class="l">流形的局部形状</td><td class="l">退化方向</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>精确恒等式 + 数值。<b>等级 A／甲。</b>脚本：<code>analysis/discrete_curvature.py</code>。</div>
+<div class="cap"><b>表 12.1　五个实例</b>　列“零意味着”是全部钥匙：五个领域对“零”的解释不同，但零空间的结构同构。</div>
 
-<div class="warning"><span class="bt">归并 R1　它不叫「分离曲率」，也不是 R/6 的离散化</span>
-定理 12.1 的恒等式精确成立，但它的身份必须写清楚：<b><span class="s">Var(λ)/2</span> 是拉普拉斯谱分布的一个不变量，不是黎曼曲率 <span class="s">R/6</span> 的离散版本。</b>决定性对照：平坦二维环面 <span class="s">R=0</span>，而它的任意 <span class="s">m×m</span> 网格离散的谱方差恒为 <span class="s">2.000</span>，并不趋于 0。初稿把离散谱方差、连续系数 <span class="s">R/6</span>、线性增长率 <span class="s">βλ−α</span> 三者写成「同一个谱方差」，是一种<b>组织</b>，而组织不是等式。该命名与随之而来的「曲率统一」计划登记为<b>归并 R1</b>（附录 可证伪登记簿）。［定理（计算），A／甲］</div>
+<h3 id="sec12-3">12.3　定理：五个实例的共同公理</h3>
 
-<p>另一个负结果同样保留：<span class="s">κ_info</span> <b>不是</b>第五部分中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span> 的代理。在 8 个测试图上，二者 Spearman 秩相关为 <b>−0.357</b>：星图 <span class="s">κ_info</span> 高（3.78）但 <span class="s">W</span> 低，路径图相反。<b>这个负结果防止了一个过强的声称。</b></p>
+<p><b>定理 12.1。</b>上表五个实例都满足：<span class="s">B</span> 对称、双线性；<span class="s">Q(u)≥0</span>；<span class="s">Q(u)=0 ⇔ u</span> 属于某个子空间 <span class="s">N</span>（零空间）；在商空间 <span class="s">V/N</span> 上 <span class="s">Q</span> 正定。</p>
 
-<div class="case"><span class="ct">人的尺度</span><p>一位统计学家说，他最常做的事是“把一件事写成一个二次型”。这不是炫技，是因为写成二次型之后，他才知道该问哪个方向最陡。<b>换一种写法，问题就从“怎么回事”变成了“往哪走”。</b></p></div>
-<h3 id="sec12-7">12.7　本章小结</h3>
+<p><b>证明（逐项）。</b>统计：<span class="s">Σ</span> 对称半正定，零空间是常数方向的补；优化：<span class="s">H</span> 在极小点处半正定，零空间是平坦方向；图论：<span class="s">Q=Σ(u<sub>i</sub>−u<sub>j</sub>)²</span> 显然非负，且 <span class="s">Q=0</span> 当且仅当 <span class="s">u</span> 在每个连通分支上为常数；线性代数与几何按定义。四者都自动对称双线性，因为 <span class="s">Q</span> 是二次型（第 11 章的极化恒等式）。<span class="s">∎</span></p>
 
-<p>二次型是双线性形式在对角线上的取值；极化恒等式让它与双线性形式一一对应。协方差、Hessian、图拉普拉斯都是它的实例。在图上，热核熵的二阶变分给出一个精确的谱方差恒等式（定理 12.1）——它是本书最坚硬的结果之一，但<b>不是</b>几何曲率。下一章把这个结构抽象为一般对象：向量空间上的对称双线性形式。</p>
+<p>证明里最值得看的是图论那一行：<b>零空间的维数等于连通分支的个数。</b>这一句话在后面会变成“零特征值的重数”，再变成“系统被切成几块”。五个领域之所以能被同一个形式承载，是因为它们的零空间都有直接的组合含义。</p>
 
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>定理 12.1（热核熵二阶变分 = 拉普拉斯谱方差的一半，精确恒等式）。</li>
-<li><b>⊕ 有论证（B）：</b>极化恒等式（式 12.3）；协方差／Hessian／矩的二次型表述。</li>
-<li><b>○ 描述（C）：</b>「二次型与双线性形式一一对应」。</li>
-<li><b>？ 未解决：</b>谱方差与相变宽度的关系（已有负结果：秩相关 −0.357）。</li>
-<li><b>↔ 连接：</b>第 13 章的一般结构；第五部分的谱分析样本；附录 可证伪登记簿 的归并 R1。</li>
-</ul></div>
+<h3 id="sec12-4">12.4　翻译规则</h3>
 
-<h3 id="sec12-8">12.8　与物理学能量的连接：二次型是"稳定的最低阶近似"</h3>
-<p>物理学里几乎所有"稳定"的判据都是二次型：弹簧的势能是 <i>kx</i>²／2，小振动的动能是二次型，稳定性判据是 Hessian 正定。原因不是物理偏爱二次函数，而是<strong>极值点附近，一阶项为零，二次项是第一个非零项</strong>。</p>
-<p>这句话值得抄进本书：二次型不是被选中的，是被"展开到二阶"这个操作逼出来的。因此凡是出现"在平衡点附近做小扰动"的地方，二次型就会出现——这解释了第 13 章"五个领域同一个结构"为什么不是巧合：那五个领域都在做同一件事，即在一个平衡点附近看扰动。</p>
-<div class="define"><span class="bt">断言 12.4（A 级，微扰论）</span>
-凡是"平衡点附近线性化"成立的地方，其稳定性由二次型的符号决定；二次型在此处的正定性等价于"局部稳定"，与全局行为无关。
-</div>
-<p><b>它在哪里会失败。</b>非平衡、强扰动、以及一阶项不为零的情形（例如系统在匀速漂移）都不适用。本书的"五个领域"里至少有一个（信息论）不在平衡点附近，因此那条连接只能算结构类比。</p>
-<p><b>它使什么成为可能。</b>它给了一个判据：<strong>看到一个二次型，先问"它是在哪个平衡点附近展开的"</strong>。答不出来，那个二次型多半只是形式上的。</p>
+<p>两个领域之间要真的“同一个结构”，必须能双向翻译。举一例：统计学里的“主成分”与图论里的“低频模式”是同一条翻译规则的两个名字——都把 <span class="s">u</span> 按特征值从小到大排，前几个方向是“慢变”，后几个是“快变”。统计里慢变叫“主成分”，图论里慢变叫“割”，优化里慢变叫“平坦方向”，几何里慢变叫“低曲率方向”。<b>名字不同，序相同。</b></p>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>二次型是双线性形式的对角线——把关系压成一个数，代价是丢掉方向。</p></div>
+<h3 id="sec12-3b">12.3b　定理 12.1 的三条边界</h3>
 
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Horn, R. A., &amp; Johnson, C. R. (2012). <i>Matrix Analysis</i> (2nd ed.). Cambridge University Press.</p>
-<p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. American Mathematical Society.</p>
-<p>Cover, T. M., &amp; Thomas, J. A. (2006). <i>Elements of Information Theory</i> (2nd ed.). Wiley.</p>
-<p>Mohar, B. (1991). The Laplacian spectrum of graphs. In <i>Graph Theory, Combinatorics, and Applications</i>. Wiley.</p>
-</div>
+<p>定理 12.1 看起来强，但它有三条边界必须写在结论里。<b>第一条</b>：它只对“成对比较”成立，三者的联合结构（例如三条边上的三角不等式）不在覆盖范围内。<b>第二条</b>：它要求 <span class="s">Q</span> 是二次的；若某领域的相似度是指数的（例如某些核函数），就不在覆盖范围内，除非先取对数核。<b>第三条</b>：它只保证“同一个公理系统”，不保证“同一个数值尺度”——同一个形式在两组坐标下给出不同的数，这与第 11 章的坐标自由性一致。</p>
+
+<p>三条边界对应三种误读：把两两相同读成整体相同、把核函数读成二次型、把数值当成绝对量。第 21 章的覆盖表里，凡是这三条边界之一被越过的条目，都标了 C 级。</p>
+
+<h3 id="sec12-5">12.5　反例：把相关当因果</h3>
+
+<p>协方差是这一族里最容易被误读的一个：它对称、双线性、半正定，完全合格，但它不告诉你方向。<span class="s">Σ<sub>12</sub>≠0</span> 只说两条线的波动同向，不说谁引起谁。把 <span class="s">Σ</span> 读成因果，等于把“差多少”读成“因为什么”。这不是数学的漏洞，是使用的越界：形式承载的是比较，不承载机制。</p>
+
+<h3 id="sec12-6">12.6　本章小结</h3>
+
+<p>五个实例满足同一组公理（12.1），零空间的含义是它们真正的共同点。至此第二个赌注的前半段兑现：语言层面确实只有一个形式。下一章把这个形式的三套工具摆开。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：五个领域共用一把尺子，但“零”在五个领域里说的是五件不同的事。</p></div>

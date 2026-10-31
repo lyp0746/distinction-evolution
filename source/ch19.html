@@ -1,115 +1,64 @@
-<h2 class="chapter">第19章　归并（一）：曲率收敛为谱的一侧</h2>
-<p class="lead" data-story="1">两个抽屉，一个装左边，一个装右边。整理到最后发现，它们本来就是同一个抽屉的两侧。<b>归并不是合并，是承认原来只有一个。</b></p>
+<h2 class="chapter">第19章　推向连续：R 的 n² 增长与第二个门槛的消失</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>把网格加密，谱各向异性按 <span class="s">(8/π²)n²</span> 增长（定理 19.1，数值吻合到 0.1%）；换算成物理单位后，<b>第一个门槛随分辨率趋于零，第二个趋于常数</b>（定理 19.3）。于是“两阶段相变”在连续极限里只剩一个门槛——它是一个纯离散现象。</p></div>
 
-<p class="lead">第 11 章把「曲率」归并进「形式」这一基本词。本章保留那次连续推广的完整记录——它想把「区分」推到连续情形，用一个「区分流形」取代黎曼流形、用「分离度量」取代距离、用一个连续量取代标量曲率。<b>结论是：它收敛为一个更窄、更清楚的问题（归并 R1）。</b>保留它，是为了让这条线索的边界可见。</p>
+<p class="lead" data-story="1">制图员把 1:10000 的地图换成 1:1000，老板问：“路网变了吗？”“没变。”“那你在忙什么？”“在忙一件事——<b>原来图上不存在的岔路口，现在存在了。</b>”</p>
 
-<div class="warning"><span class="bt">本部分的标注</span>
-从本章起进入第六部分（第 19—25 章）。这一部分的<b>排版形式与前面无异，但严格度不同</b>。全书统一使用四个符号：<br>
-<b>⊗</b> 已完全证明（第五部分的定理及其直接推论）；<b>⊕</b> 有论证支持的框架断言（B／乙 级）；<b>○</b> 启发式对应，尚无严格证明（C／丙 级）；<b>？</b> 明确的开放问题（登记于附录 可证伪登记簿、K）。<br>
-如果你期望第六部分的陈述有第五部分的严格度，你会感到失望。<b>这不是偷工减料，是清楚的界定</b>：本部分的价值在于指出"下一步需要什么"，而不在于"已经证了什么"。［等级 C／丙］</div>
+<h3 id="sec19-1">19.1　导论：分辨率也是变量</h3>
 
+<p>第 18 章的表里，前四族的 <span class="s">R</span> 有界，后五族随规模增长。这个分界不是巧合：它区分了“离散化一个连续对象”与“本来就是一个组合对象”。要把它变成定理，得先定义“加密”这件事。</p>
 
+<div class="define"><span class="bt">定义 19.1　网格序列</span>
+取单位正方形上的 <span class="s">n×n</span> 网格图 <span class="s">G<sub>n</sub>=P<sub>n</sub>□P<sub>n</sub></span>，格距 <span class="s">h=1/n</span>。称 <span class="s">L<sub>n</sub></span> 为其图拉普拉斯，<span class="s">L<sub>n</sub>/h²</span> 为其“物理”拉普拉斯。</div>
 
-<div class="scenario"><span class="bt">本章主张</span>
-分离几何学是一次有明确边界的探索：它把「两点有多难分开」当作几何基本量，并期望得到一个「分离 Gauss–Bonnet」。<b>它给出了形式类比与局部对应，并把问题收敛为一个类型明确的量：连续曲率与离散谱方差并不是同一个对象（第 12.6 节、第 20.2.1 节）。这个澄清本身就是一个结果。</b>［论证，B／乙］</div>
+<h3 id="sec19-2">19.2　定理：网格上 R 的闭式</h3>
 
-<h3 id="sec19-1">19.1　导论：以"区分"取代"距离"</h3>
+<p><b>定理 19.1。</b>对 <span class="s">G<sub>n</sub>=P<sub>n</sub>□P<sub>n</sub></span>，<span class="s">n≥2</span>：
+<div class="eq"><span class="body">λ<sub>2</sub>=2−2cos(π/n),   λ<sub>n</sub>=8−4cos(π/n)−4cos(π(n−1)/n),   R = λ<sub>n</sub>/λ<sub>2</sub> = (8/π²)n²(1+O(n<sup>−2</sup>))</span><span class="num">(19.1)</span></div></p>
 
-<p>黎曼几何的全部结构从一个度量张量 <span class="s">g</span> 生长出来：距离、测地线、联络、曲率、体积。分离几何学问：如果基本对象不是"两点有多远"，而是"两点有多难被分开"，会长出什么样的几何？</p>
-
-<p>这个替换并非任意。在信息几何中，统计流形上的"距离"由 Fisher 度量给出，而 Fisher 度量的本质就是"两个分布有多难被区分"（KL 散度的二阶展开）。因此分离几何学与信息几何共享同一个直觉：<b>几何的基本量可以是可区分性，而不是空间距离。</b>［已知］</p>
-
-<h3 id="sec19-2">19.2　分离流形与分离度量</h3>
-
-<div class="define"><span class="bt">定义 19.1　分离流形与分离度量</span>
-一个<b>分离流形</b>是三元组 <span class="s">(M, D, O)</span>，其中 <span class="s">M</span> 是紧致 Hausdorff 空间，<span class="s">D</span> 是区分动作族，<span class="s">O</span> 是 Hölder 连续的观测泛函。<b>分离度量</b>定义为
-<div class="eq"><span class="body">d<sub>D</sub>(x,y) := inf{ α : x ∼<sub>α</sub> y }</span><span class="num">(16.1)</span></div>
-即把两点变得不可区分所需的最小精度。</div>
-
-<p>与黎曼度量的差别在于：黎曼度量给出"两点有多远"，分离度量给出"两点有多难分开"。在局部，这两个量通过二阶展开相联系；在整体，它们的拓扑含义可能不同——这正是第 20 章缺口的技术根源。</p>
-
-<h3 id="sec19-3">19.3　谱方差张量</h3>
-
-<div class="define"><span class="bt">定义 19.2　谱方差</span>
-在分离流形上，定义<b>谱方差</b>为观测泛函在演化下的对数增长率的二阶变分：
-<div class="eq"><span class="body">κ(D,x) = lim<sub>t→0⁺</sub> (d/dt) log O(Φ<sub>t</sub>(D))(x)</span></div>
-在光滑情形，其二阶变分给出<b>谱方差张量</b>
-<div class="eq"><span class="body">R<sup>D</sup><sub>ijkl</sub> := ∂²κ<sub>ij</sub> / ∂x<sup>k</sup>∂x<sup>l</sup></span><span class="num">(16.2)</span></div></div>
-
-<p>这个定义的形式与黎曼曲率张量相似，但含义不同：黎曼曲率来自联络的交换子，谱方差来自观测增长的二阶变分。二者的桥接是本纲领的核心技术问题。</p>
-
-<h3 id="sec19-4">19.4　一个待验证的猜想：分离 Gauss–Bonnet 会是什么形式？</h3>
-
-<p>在黎曼几何中，Gauss–Bonnet 定理把局部曲率的积分与整体拓扑联系起来：对二维紧致可定向曲面，<span class="s">∫<sub>M</sub>K dA = 2πχ(M)</span>。分离几何学的自然期望是：</p>
-
-<div class="define"><span class="bt">期望 16.1　分离 Gauss–Bonnet（待定形式）</span>
-对紧致可定向分离流形，存在一个<b>区分欧拉示性数</b> <span class="s">χ(D)</span>，使得
-<div class="eq"><span class="body">∫<sub>M</sub> κ dμ = 2π χ(D)</span><span class="num">(16.3)</span></div>
-其中 <span class="s">χ(D)</span> 是分离结构的某种拓扑不变量。</div>
-
-<p>这个期望的形式是自然的，问题在于 <span class="s">χ(D)</span> 是什么，以及它与 <span class="s">χ(M)</span> 的关系。第 20 章会说明：如果取 <span class="s">κ=R/6</span>（热核展开的自然系数），则 <span class="s">χ(D)=χ(M)/3</span>，这带来一个因子 1/3 的缺口。但在继续之前有一个前提必须先检查：<b>被拿来与 Gauss–Bonnet 比较的那个 <span class="s">κ</span>，与第 12.6 节的离散 <span class="s">κ_info</span> 是不是同一个量？</b>第 20.2.1 节会给出一个否定的诊断（平坦环面上 <span class="s">R=0</span> 却 <span class="s">κ_info=2</span>），并把"缺口"分成"类型澄清"与"真正的结构信号"两部分。</p>
-
-<h3 id="sec19-5">19.5　与黎曼几何的类比表</h3>
-
-<img class="fig" src="assets/svg/fig17-riemann-vs-distinction.svg" alt="黎曼几何与分离几何的类比">
-
-<div class="cap"><b>图 19.1　黎曼几何与分离几何的类比</b>。左列为黎曼几何的对象，右列为分离几何的对应物。实线表示"有严格对应"，虚线表示"仅形式类比"。核心的差别在于：黎曼曲率来自联络的交换子，而谱方差来自观测增长，其与全局拓扑的关系尚未建立。</div>
-
-<img class="fig" src="assets/svg/fig16b-separation-vs-euclidean.svg" alt="分离度量与欧氏度量">
-
-<div class="cap"><b>图 19.2　分离度量与欧氏度量的差别</b>。左：欧氏距离与“分离难度等值线”并不同心——两点在欧氏意义上等距，在分离意义上未必等价。右：分离度量的定义与它在信息几何／流形上的对应。<b>两种度量在局部相容、在整体可能分歧，这正是 1/3 缺口的技术根源。</b></div>
+<p><b>证明。</b>路的谱为 <span class="s">2−2cos(πk/n)</span>，<span class="s">k=0,…,n−1</span>；网格是笛卡尔积，谱为两谱之和。<span class="s">λ<sub>2</sub></span> 取“一边走一步、另一边不动”，即 <span class="s">2−2cos(π/n)</span>；<span class="s">λ<sub>n</sub></span> 取两边都到最大。渐近：<span class="s">2−2cos x=x²+O(x⁴)</span>，取 <span class="s">x=π/n</span> 得 <span class="s">λ<sub>2</sub>=π²/n²+O(n<sup>−4</sup>)</span>；而 <span class="s">λ<sub>n</sub>→8</span>。两式相除即得。<span class="s">∎</span></p>
 
 <table class="nat">
-<caption class="cap"><b>表 19.1　黎曼几何与分离几何的类比</b></caption>
-<tr><th class="l">黎曼几何</th><th class="l">分离几何</th><th class="l">严格程度</th></tr>
-<tr><td class="l">度量张量 <span class="s">g<sub>ij</sub></span></td><td class="l">区分动作 <span class="s">D<sub>i</sub></span></td><td class="l">形式类比（乙）</td></tr>
-<tr><td class="l">曲率张量 <span class="s">R<sub>ijkl</sub></span></td><td class="l">谱方差 <span class="s">κ</span></td><td class="l">形式类比（乙）</td></tr>
-<tr><td class="l">测地线</td><td class="l">区分稳定路径</td><td class="l">定义清晰，定理待证</td></tr>
-<tr><td class="l">和乐群</td><td class="l">区分和乐群</td><td class="l">尚未定义</td></tr>
-<tr><td class="l">Gauss–Bonnet</td><td class="l">谱方差积分</td><td class="l">有 1/3 缺口（第 20 章）</td></tr>
-<tr><td class="l">热核展开 <span class="s">a₁=R/6</span></td><td class="l"><span class="s">κ=R/6</span></td><td class="l">B（局部展开，接口未证）</td></tr>
+<tr><th class="l"><span class="s">n</span></th><th class="l"><span class="s">λ<sub>2</sub></span></th><th class="l">实测 <span class="s">R</span></th><th class="l">闭式 <span class="s">(8/π²)n²</span></th><th class="l">相对误差</th><th class="l"><span class="s">λ<sub>2</sub>/h²</span></th></tr>
+<tr><td class="l">10</td><td class="l">0.097887</td><td class="l">79.7</td><td class="l">81.1</td><td class="l">1.7%</td><td class="l">9.7887</td></tr>
+<tr><td class="l">20</td><td class="l">0.024623</td><td class="l">322.9</td><td class="l">324.2</td><td class="l">0.4%</td><td class="l">9.8493</td></tr>
+<tr><td class="l">40</td><td class="l">0.006165</td><td class="l">1295.6</td><td class="l">1296.9</td><td class="l">0.1%</td><td class="l">9.8645</td></tr>
+<tr><td class="l">80</td><td class="l">0.001542</td><td class="l">5186.3</td><td class="l">5187.6</td><td class="l">0.03%</td><td class="l">9.8683</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>类比对照表。<b>关键：</b>本表的大部分行标注为"形式类比"，意味着它们只是概念对应，不是等价定理。</div>
+<div class="cap"><b>表 19.1　网格上的 R 与 <span class="s">λ<sub>2</sub>/h²</span></b>　最后两列同时收敛：<span class="s">λ<sub>2</sub>/h²→π²=9.8696</span>（正方形的最低非零特征值），<span class="s">R</span> 按 <span class="s">n²</span> 发散。</div>
 
-<h3 id="sec19-6">19.6　当前状态：工具对应而非定理</h3>
+<h3 id="sec19-3">19.3　定理：连续侧第二个门槛消失</h3>
 
-<p>必须直说：分离几何学目前<b>没有</b>一个完整定理。它的状态是：</p>
+<p><b>定理 19.2（连续退化）。</b>设 <span class="s">M</span> 是紧连通黎曼流形，<span class="s">dim M≥1</span>，Laplace–Beltrami 算子 <span class="s">−Δ</span> 的谱为 <span class="s">0=μ<sub>0</sub>&lt;μ<sub>1</sub>≤μ<sub>2</sub>≤⋯↑∞</span>。则对任意 <span class="s">α&gt;0</span>：<span class="s">β<sub>1</sub>=α/μ<sub>max</sub>=0</span>，<span class="s">β<sub>2</sub>=α/μ<sub>1</sub>&gt;0</span>。于是每个 <span class="s">β∈(0,β<sub>2</sub>)</span> 都处于“中间相”。</p>
 
-<ul>
-<li><b>定义清晰：</b>分离度量、谱方差、分离流形都有明确的形式定义（甲级概念）。</li>
-<li><b>局部对应：</b>热核展开给出 <span class="s">κ=R/6</span>，这是有公开来源的（B级证据）。</li>
-<li><b>整体对应缺失：</b><span class="s">∫κ</span> 与拓扑不变量的关系尚未建立（缺口）。</li>
-<li><b>无新定理：</b>尚未用分离几何证明黎曼几何无法证明的结果（P3 未通过）。</li>
-</ul>
+<p><b>证明。</b>紧流形上 <span class="s">−Δ</span> 的谱无上界（Weyl 律，见第 20 章），故 <span class="s">μ<sub>max</sub>=∞</span>，<span class="s">β<sub>1</sub>=α/∞=0</span>。对任意 <span class="s">β&gt;0</span>，总存在足够大的 <span class="s">k</span> 使 <span class="s">βμ<sub>k</sub>&gt;α</span>，即总有模式在增长；而 <span class="s">β&lt;α/μ<sub>1</sub></span> 时最低非零模式仍在衰减。<span class="s">∎</span></p>
 
-<div class="warning"><span class="bt">警告 19.1　不要把"类比"读成"对应"</span>
-分离几何学的类比表看起来很完整，容易让人以为它已经建立了黎曼几何的平行理论。<b>它没有。</b>类比表的作用是指出"哪些概念应当有对应物"，而不是声称"这些对应物已经满足同样的定理"。断言"分离几何学的 Gauss–Bonnet 定理"存在，是本书明确不做的过度宣称之一。</div>
+<p><b>系 19.3（缩放极限）。</b>记 <span class="s">β<sub>1</sub><sup>(n)</sup>=α/λ<sub>n</sub><sup>(n)</sup></span>，<span class="s">β<sub>2</sub><sup>(n)</sup>=α/λ<sub>2</sub><sup>(n)</sup></span>。则 <span class="s">h²β<sub>1</sub><sup>(n)</sup>→0</span>，<span class="s">h²β<sub>2</sub><sup>(n)</sup>→α/π²</span>。</p>
 
-<div class="scenario"><span class="bt">价值</span>
-一个纲领最有价值的时刻，往往不是它成功的时候，而是它<b>撞上一堵具体的墙</b>的时候。分离几何学撞上的墙，就是第 20 章的 <span class="s">1/3</span> 因子。这堵墙是具体的、可计算的、可讨论的——它比十句"前景广阔"更能推动研究。</div>
+<p><b>证明。</b>由标准谱收敛 <span class="s">λ<sub>2</sub><sup>(n)</sup>/h²→π²</span>（表 19.1 最后一列），得第二式；由 <span class="s">λ<sub>n</sub><sup>(n)</sup>→8</span> 得 <span class="s">h²β<sub>1</sub>=αh²/λ<sub>n</sub>≈α/(8n²)→0</span>。<span class="s">∎</span></p>
 
-<div class="case"><span class="ct">人的尺度</span><p>作者在写“归并”这一章时，把自己早年的一个主张撤掉了。他写道：“我当时以为找到了曲率的离散化，其实只是找到了它的一侧。”<b>撤销一个主张，比提出十个主张更需要诚实——因为它不带来掌声，只带来安静。</b></p></div>
-<h3 id="sec19-7">19.7　本章小结</h3>
+<h3 id="sec19-4">19.4　这意味着什么</h3>
 
-<p>分离几何学以"区分"取代"距离"，给出一个形式完整的类比框架。它的局部对应（<span class="s">κ=R/6</span>）有公开来源，整体对应（<span class="s">∫κ</span> 与拓扑）尚未建立，而唯一的完整不变量（离散谱方差）与它并非同一类型。<b>因此本章交付的不是一个定理，而是一次清晰的归并：把「分离几何」与「可迁移的谱量」分开。</b>它作为归并记录保留，供后来者使用。</p>
+<p>先看它的反面：若两阶段结构能无损搬到连续，那么“局部先醒、全局后醒”就该是宇宙的普遍节奏。它搬不过去，恰恰说明<b>这道限制使“离散与连续是两种现象”成为可能</b>——不是同一种现象的两个近似。</p>
 
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>○ 描述性（C）：</b>定义 19.1（分离流形与分离度量）、定义 19.2（谱方差）、谱方差张量、期望的分离 Gauss–Bonnet 形式——目前是工具对应，不是定理。</li>
-<li><b>？ 未解决：</b>谱方差的统一定义；<span class="s">1/3</span> 缺口（第 20—21 章）。</li>
-<li><b>↔ 连接：</b>本章把第 12 章的谱方差推到连续情形；结果引向第 20—21 章。</li>
-</ul></div>
+<p>两句话。<b>第一，两阶段相变是离散现象。</b>它精确地存在于每一张有限图上（定理 17.1），但在连续极限里，两个临界点一个归零、一个收敛，中间相膨胀到整个区间——分离度消失了。</p>
 
-<p><b>反例。</b>曲率收敛为谱的一侧，目前只是工具对应：有若干个例子里两者同向，也有例子反向。把它当成定理来用，就会在最需要它的时候失效。</p>
+<p><b>第二，这给了 1/3 缺口一个可证的兄弟。</b>第 10 章说过：把一个常数当成结构，是第二类语法错误。这里出现了它的正例：<span class="s">R</span> 随分辨率按 <span class="s">n²</span> 发散，而任何连续侧的“谱各向异性”都不存在（因为 <span class="s">μ<sub>max</sub>=∞</span>）。所以 <span class="s">R</span> 不可能收敛到一个连续量——<b>“离散与连续之间有一道缝”这句话，在这一点上是定理，不是猜想。</b>至于那道缝是否恰好等于某个常数，本书不作答（C 级，见附录 D 的登记）。</p>
 
-<div class="box box-takeaway"><p><b>一句话带走：</b>曲率收敛为谱的一侧，目前只是工具对应——这句话本身就是结果。</p></div>
+<h3 id="sec19-3b">19.3b　因子 4 从哪里来</h3>
 
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>do Carmo, M. P. (1992). <i>Riemannian Geometry</i>. Birkhäuser.</p>
-<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i>. CRC Press.</p>
-<p>Amari, S. (2016). <i>Information Geometry and Its Applications</i>. Springer.</p>
-<p>Cheeger, J., &amp; Ebin, D. G. (1975). <i>Comparison Theorems in Riemannian Geometry</i>. North-Holland.</p>
-<p>Berger, M. (2003). <i>A Panoramic View of Riemannian Geometry</i>. Springer.</p>
-</div>
+<p>网格与环面的 <span class="s">λ<sub>n</sub></span> 相同（都是 8），<span class="s">R</span> 却差四倍。原因在 <span class="s">λ<sub>2</sub></span>：网格的 <span class="s">λ<sub>2</sub>=2−2cos(π/n)≈π²/n²</span>，环面的 <span class="s">λ<sub>2</sub>=2−2cos(2π/n)≈4π²/n²</span>。前者对应“半个波长等于一整条边”（基频），后者对应“一个整波长等于一整条边”（因为环面是周期的，只能取整数个波长）。<b>边界条件改变了可用的最长波长，于是改变了 <span class="s">λ<sub>2</sub></span>，于是改变了 <span class="s">R</span>。</b></p>
+
+<p>这不是数学上的巧合，而是物理上的老事实（鼓的基频依赖边界条件）。它给第 19 章的结论加了一层限定：<b>“两阶段相变的宽度发散”这件事对边界条件敏感，因此不能写成一个与离散化无关的常数。</b>这正是它不能被升级为“普遍常数”的原因（第 10 章的语法错误）。</p>
+
+<h3 id="sec19-5">19.5　反例：不是所有加密都让 R 发散</h3>
+
+<p>若一族图的谱间隙有一致下界、最大度有上界（例如度 <span class="s">d</span> 的膨胀图族），则 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>≤2d/c</span>，<b>有界</b>。所以“<span class="s">R</span> 随规模发散”不是规模本身的效应，而是<b>几何型结构</b>（网格、环面、路）的效应。这个反例很重要：它挡住了“<span class="s">R</span> 大就是系统复杂”的误读。</p>
+
+<p>换句话说，<span class="s">R</span> 度量的是“局部与全局之间的尺度落差”，不是“系统的大小”。一个巨大的膨胀图可以 <span class="s">R≈2</span>；一个很小的星图可以 <span class="s">R=n</span>。</p>
+
+<h3 id="sec19-6">19.6　本章小结</h3>
+
+<p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>

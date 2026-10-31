@@ -1,117 +1,54 @@
-<h2 class="chapter">第13章　对称双线性形式：五个领域，同一结构</h2>
-<p class="lead" data-story="1">五个人各自拿出一样东西：一个说“能量”，一个说“方差”，一个说“弯曲”，一个说“关系”，一个说“长度”。摆上桌，是同一个。<b>他们不是找到了同一个词，是找到了同一个形状。</b></p>
+<h2 class="chapter">第13章　三套工具：极化、谱、变分</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>同一个二次型有三套标准工具：<b>极化</b>把二次型还原成双线性形式；<b>谱</b>把它对角化成一串数；<b>变分</b>把特征值写成极值问题。三套工具各有各的用场，混用会得出错误结论。</p></div>
 
-<p class="lead">协方差、Hessian、图拉普拉斯、内积、黎曼度量——它们共享同一个代数结构：<b>向量空间上的对称双线性形式</b>。这一章给它一个名字，列出它的五个化身，并说明它为什么是「最弱却适用最广」的二阶结构，以及它自动携带的三套工具。</p>
+<p class="lead" data-story="1">木匠的箱子里只有三件工具，他说了一句话：<b>“量长度用卷尺，找平用水准，试装用锤子。你要是拿水准去量长度，别怪尺子。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-「对称双线性形式」不是一个新的数学对象，而是<b>一个已经被反复发现的结构的名字</b>。本书的价值不在于发现它，而在于把它当作一套<b>语言</b>使用：一旦看清五个领域说的是同一句话，跨领域的迁移就有了统一的语法。［已知，B］</div>
+<h3 id="sec13-1">13.1　导论：三把尺子，三个问题</h3>
 
-<p><b>有限性诊断。</b>五个领域共享同一个形式，可以被读成有限描述的一种共同压缩方式：一个有限的观察者要在五个领域里保持可传递的描述，只能保留二阶结构（谁与谁如何相关），丢掉更高阶的细节。协方差、Hessian、图拉普拉斯、内积、黎曼度量，都是这份“二阶压缩”的不同写法。压缩让跨领域迁移成为可能（A），代价是某些高阶信息不可恢复——这是第 20 章 1/3 缺口的一个可能来源，而不是它的证明。</p>
+<p>二次型能回答三类问题：两个对象的内积是多少（极化）、系统有哪几个独立模式（谱）、最坏情况下差多少（变分）。三问三具，不能互相替代。本章把它们各自成立的条件写清楚，并指出混用的典型症状。</p>
 
-<h3 id="sec13-1">13.1　给它一个名字</h3>
+<h3 id="sec13-2">13.2　极化：从二次型回到双线性</h3>
 
-<div class="define"><span class="bt">定义 13.1　对称双线性形式</span>
-一个<b>对称双线性形式</b>是一个三元组 <span class="s">(V,B)</span>，其中 <span class="s">V</span> 是实向量空间，<span class="s">B: V×V→R</span> 是双线性映射（<span class="s">B(ax+by,z)=aB(x,z)+bB(y,z)</span>，同理对第二个变量），且<b>对称</b>：<span class="s">B(x,y)=B(y,x)</span>。<br>
-等价地，它是一个<b>二次空间</b> <span class="s">(V,q)</span>，其中 <span class="s">q(x)=B(x,x)</span> 是二次型。两者通过极化恒等式（式 12.3）一一对应。</div>
+<p>第 11 章的恒等式 <span class="s">B(u,v)=¼[Q(u+v)−Q(u−v)]</span> 是纯代数的，对任何对称双线性形式成立，不需要正定性。它的用途是“把长度知识变成夹角知识”：只要每个向量的 <span class="s">Q</span> 可测，任意两向量的内积就确定了。统计里的“由方差阵还原相关阵”、几何里的“由度量还原角度”，都是这一条。</p>
 
-<h3 id="sec13-2">13.2　五个领域，同一个结构</h3>
+<h3 id="sec13-3">13.3　谱：把形式对角化</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 13.1　五个领域，同一个对称双线性形式</b></caption>
-<tr><th class="l">领域</th><th class="l">V</th><th class="l">B(x,y)</th><th class="l">二次型 q(x)</th><th class="l">正定性</th></tr>
-<tr><td class="l">线性代数</td><td class="l">欧氏空间</td><td class="l">内积 ⟨x,y⟩</td><td class="l">‖x‖²</td><td class="l">正定</td></tr>
-<tr><td class="l">概率论</td><td class="l">随机变量空间</td><td class="l">Cov(X,Y)</td><td class="l">Var(X)</td><td class="l">半正定</td></tr>
-<tr><td class="l">优化</td><td class="l">切空间</td><td class="l">v<sup>T</sup>H<sub>f</sub>w</td><td class="l">v<sup>T</sup>H<sub>f</sub>v</td><td class="l">不定（鞍点）</td></tr>
-<tr><td class="l">图论</td><td class="l">顶点空间 R<sup>V</sup></td><td class="l">x<sup>T</sup>Ly</td><td class="l">Σ<sub>(u,v)</sub>(x<sub>u</sub>−x<sub>v</sub>)²</td><td class="l">半正定</td></tr>
-<tr><td class="l">微分几何</td><td class="l">切空间</td><td class="l">黎曼度量 g<sub>ij</sub>v<sup>i</sup>w<sup>j</sup></td><td class="l">g(v,v)</td><td class="l">正定</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>结构对应表。<b>等级 B（已知数学）。</b>「同一个代数结构，五件不同的外衣。」</div>
+<p><b>定理 13.1（谱定理）。</b>实对称矩阵 <span class="s">A</span> 存在标准正交特征基，<span class="s">A=Σλ<sub>k</sub>e<sub>k</sub>e<sub>k</sub><sup>T</sup></span>，且 <span class="s">λ<sub>k</sub>∈ℝ</span>。</p>
 
-<h3 id="sec13-3">13.3　为什么是「对称双线性形式」而不是别的</h3>
+<p>它把 <span class="s">Q</span> 写成 <span class="s">½Σλ<sub>k</sub>⟨u,e<sub>k</sub>⟩²</span>：一串数（谱）加一组方向（特征向量）。从此“系统的长期行为”可以逐模式读出：<span class="s">λ<sub>k</sub></span> 大的方向变化快，小的方向变化慢，零的方向不动。第 16—18 章的全部结论都从这一句话来。</p>
 
-<p><b>它只有一个「乘法结构」。</b>双线性形式对两个变量分别线性——这是最弱的要求。它不要求结合律（不是代数乘法），不要求反对称（不是辛形式），只要求对称。<b>这是「两个向量如何相互作用」的最简代数表达。</b></p>
+<img class="fig" src="assets/svg/fig13-spectrum-thresholds.svg" alt="图 13.1　谱与阈值">
+<div class="cap"><b>图 13.1　谱与阈值</b>　把特征值排在一条轴上，横切一个阈值，就得到“已解锁／未解锁”两组模式。</div>
 
-<p><b>对称性是「无方向性」的代数表达。</b><span class="s">B(x,y)=B(y,x)</span> 意味着「<span class="s">x</span> 与 <span class="s">y</span> 的关联」和「<span class="s">y</span> 与 <span class="s">x</span> 的关联」相同。协方差、Hessian、图拉普拉斯度量的都是<b>无方向的二阶关联</b>。</p>
+<h3 id="sec13-4">13.4　变分：Rayleigh 商与 Courant–Fischer</h3>
 
-<p><b>二次型是「自关联」。</b><span class="s">q(x)=B(x,x)</span> 是「<span class="s">x</span> 与自身的关联」：方差是随机变量与自身的协方差，图能量是顶点函数与自身的拉普拉斯配对，<span class="s">‖x‖²</span> 是向量与自身的内积。正如第 12 章所说：<b>二次型是对角线，双线性形式是全矩阵。</b></p>
+<p><b>定理 13.2（Courant–Fischer）。</b>设 <span class="s">A</span> 对称，特征值升序 <span class="s">λ<sub>1</sub>≤⋯≤λ<sub>n</sub></span>，则
+<span class="s">λ<sub>k</sub>=min<sub>dim U=k</sub> max<sub>0≠u∈U</sub> ⟨u,Au⟩/⟨u,u⟩</span>，
+且 <span class="s">λ<sub>n</sub>=max<sub>u≠0</sub>⟨u,Au⟩/⟨u,u⟩</span>。</p>
 
-<h3 id="sec13-4">13.4　在这个结构上能做什么：三套自带的工具</h3>
-
-<p>对称双线性形式之所以强大，是因为它自动携带三套工具。本书此后的全部技术工作，几乎都是这三套工具的应用。</p>
-
-<div class="define"><span class="bt">工具一　谱定理</span>
-若 <span class="s">B</span> 半正定，可正交对角化：<span class="s">B(x,y)=Σ<sub>k</sub>λ<sub>k</sub>⟨x,e<sub>k</sub>⟩⟨y,e<sub>k</sub>⟩</span>。在图上这就是拉普拉斯谱分解；在概率论中就是协方差矩阵的特征值分解（PCA）。［已知，B］</div>
-
-<div class="define"><span class="bt">工具二　变分原理</span>
-二次型 <span class="s">q(x)=B(x,x)</span> 在单位球上的驻值由特征值决定：<span class="s">λ<sub>k</sub> = min{q(x) : x⊥e₁,…,e<sub>k−1</sub>, ‖x‖=1}</span>。Rayleigh 商、Courant–Fischer 极小极大，全部来自这个原理。［已知，B］</div>
-
-<div class="define"><span class="bt">工具三　极化与恢复</span>
-若知道二次型 <span class="s">q(x)</span>，可以恢复双线性形式：<span class="s">B(x,y)=(1/2)[q(x+y)−q(x)−q(y)]</span>。<b>知道「自关联」，就能恢复「互关联」。</b>［已知，B］</div>
+<p>变分写法的好处是它不需要知道特征向量：只要能在某个子空间上算比值，就能给特征值定界。第 18 章的 R 的上下界、第 20 章把离散谱压到连续谱，都靠这一条。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 13.2　三套工具与它们的领域实例</b></caption>
-<tr><th class="l">工具</th><th class="l">线性代数</th><th class="l">概率论</th><th class="l">图论</th></tr>
-<tr><td class="l">谱定理</td><td class="l">正交对角化</td><td class="l">PCA</td><td class="l">拉普拉斯谱分解</td></tr>
-<tr><td class="l">变分原理</td><td class="l">Rayleigh 商</td><td class="l">主成分方差最大化</td><td class="l">Fiedler 向量</td></tr>
-<tr><td class="l">极化</td><td class="l">内积由范数恢复</td><td class="l">协方差由方差恢复</td><td class="l">边权由能量恢复</td></tr>
+<tr><th class="l">工具</th><th class="l">回答的问题</th><th class="l">前提</th><th class="l">混用的症状</th></tr>
+<tr><td class="l">极化</td><td class="l">两个对象的内积</td><td class="l">对称双线性</td><td class="l">用它算“最大差”，得到无意义的数</td></tr>
+<tr><td class="l">谱</td><td class="l">有哪些独立模式</td><td class="l">对称（或正规）</td><td class="l">对非对称矩阵用实谱结论</td></tr>
+<tr><td class="l">变分</td><td class="l">极值与界</td><td class="l">对称、可算比值</td><td class="l">用它做唯一性断言</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>工具对应表。<b>等级 B（已知数学）。</b></div>
+<div class="cap"><b>表 13.1　三套工具的分工</b>　最后一行是被引用最多、也最容易出错的一处：变分给界，不给唯一性。</div>
 
-<h3 id="sec13-5">13.5　更深的代数定位</h3>
+<h3 id="sec13-4b">13.4b　变分写法的两个实用后果</h3>
 
-<p>在抽象代数中，对称双线性形式是若干「形式」中的一种。把它与近邻对比，可以看出它的位置：</p>
+<p>第一，<b>界可以先算后证</b>：用 Courant–Fischer，取一个试验子空间就能给出 <span class="s">λ<sub>k</sub></span> 的上界；取对偶（极小极大）能给下界。第 18 章的 <span class="s">R</span> 的界（命题 18.3）正是这样来的：<span class="s">λ<sub>n</sub>≤2Δ</span> 由 Gershgorin 给，<span class="s">λ<sub>2</sub>≥4/(n·diam)</span> 由 Fiedler 给。</p>
 
-<table class="nat">
-<caption class="cap"><b>表 13.3　形式的分类（对称双线性形式的位置）</b></caption>
-<tr><th class="l">结构</th><th class="l">额外要求</th><th class="l">例子</th></tr>
-<tr><td class="l">双线性形式</td><td class="l">无</td><td class="l">一般 B(x,y)</td></tr>
-<tr><td class="l"><b>对称双线性形式</b></td><td class="l">B(x,y)=B(y,x)</td><td class="l">协方差、Hessian、拉普拉斯、内积</td></tr>
-<tr><td class="l">交错形式</td><td class="l">B(x,x)=0</td><td class="l">辛形式、行列式</td></tr>
-<tr><td class="l">埃尔米特形式</td><td class="l">复共轭对称</td><td class="l">复内积</td></tr>
-<tr><td class="l">结合代数</td><td class="l">有乘法结合律</td><td class="l">矩阵代数、群代数</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>结构分类。<b>等级 B（已知数学）。</b>对称双线性形式是「最弱的对称二阶结构」，但正因为最弱，它适用最广。下一章把它的两个近邻——反对称（辛）与埃尔米特（酉）——展开。</div>
+<p>第二，<b>数值方法有理论保证</b>：变分写法说明“用有限元或网格算最小特征值”是单调逼近的（Ritz 值从上逼近）。这解释了为什么第 19 章的数值表可以用很粗的网格就得到 0.1% 的精度——误差是二阶的，而 <span class="s">λ<sub>2</sub></span> 的 Ritz 值单调下降。</p>
 
-<div class="case"><span class="ct">人的尺度</span><p>一位材料工程师、一位经济学家、一位语言学家在同一个会上发现，他们各自用的“能量”其实是同一个东西。三个人都很兴奋，散会后各自回去，谁也没有改自己的模型。<b>发现同构是快乐，改动模型是成本——后者往往由学生和项目周期来付。</b></p></div>
+<h3 id="sec13-5">13.5　反例：谱相同、结构不同</h3>
+
+<p>谱是整体量，它会丢信息。最干净的例子在第 18.5 节：两棵各有 8 个顶点的树，邻接谱完全相同（<span class="s">±2.3028, ±1.3028, 0×4</span>），度序列一个是 5,2,2,1,1,1,1,1，另一个是 4,4,1,1,1,1,1,1。谱定理给出的每个模式都一样，但两棵树的结构不同。<b>“谱相同”不等于“结构相同”，这是第 2 章所说“分辨率损失”的实例。</b></p>
+
 <h3 id="sec13-6">13.6　本章小结</h3>
 
-<p>对称双线性形式是协方差、Hessian、图拉普拉斯、内积与黎曼度量的共同结构；谱定理、变分原理与极化恒等式是它自带的三套工具。本书不再为这个结构发明新名字，也不再声称「发现」了它——它是已知数学。<b>本书的赌注只是：把它当作一套语言来使用，比当作一个待发明的理论更有用。</b></p>
+<p>三套工具各有前提：极化只要对称，谱要对称（正规），变分要可算比值。混用会产生四类典型错误。第 14 章换一个角度：不是问形式能算什么，而是问“谁能保住这个形式”。</p>
 
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>无（本章整理已知结构）。</li>
-<li><b>⊕ 有论证（B）：</b>定义 13.1（对称双线性形式）；表 13.1（五领域对应）；三套工具。</li>
-<li><b>○ 描述（C）：</b>把五个领域读成「同一个结构的五件外衣」。</li>
-<li><b>？ 未解决：</b>这套语言能否被作者之外的著作采用（见第 26.4.1 节）。</li>
-<li><b>↔ 连接：</b>第 12 章（二次型）、第 14 章（辛／酉／正交）、第五部分（图上样本）。</li>
-</ul></div>
-
-<h3 id="sec13-7">13.7　与量子概率的连接：同一个二次型，两种空间</h3>
-<p>二次型在物理学里最著名的一次出场不是力学，而是量子力学。一个量子态的期望值写作 ⟨ψ|<i>H</i>|ψ⟩——这是一个厄米形式，与第 12 章定义的对称双线性形式同宗，只差一个"复"字：对称换成厄米，实内积换成复内积。这个差别不大，但正是本书判断"同约束而不同构"的典型样本。</p>
-<p>把它摊开看。测量在量子力学里就是把态投影到一组正交方向上；你选择测量什么，等于选择用哪一组区分去切这个态。区分得越细（基越多），单次结果携带的信息越多，但每次测量的可实现精度越低——这与第 15 章在图上看到的"局部先行"是同一条算术：分辨率的提高不是免费的，它要拿可分辨的稳定性去换。</p>
-<p>信息几何给了这件事一把更硬的尺子。概率分布族的 Fisher 信息矩阵 <i>g</i><sub><i>ij</i></sub> 是一个正定二次型，它测量的是"分布沿某个方向移动一小步，你能分辨出多少"。本书的 κ<sub>info</sub>＝Var(λ)／2 是它的离散版本：当"区分"被写成有限个方向时，Fisher 信息退化为谱方差。两者的关系可以写成一句可检验的话：<b>在同一族分布上，κ<sub>info</sub> 与 Fisher 信息的迹应当同向变化，且比值有界。</b></p>
-<div class="define"><span class="bt">断言 13.4（可检验，B 级）</span>
-对任意有限离散分布族，若把区分写成其支撑上的指示函数，则 κ<sub>info</sub> 与 Fisher 信息迹的比值落在 [1/2, 2] 内；越出这个区间，说明"区分"的写法已经不再对应同一个几何对象。
-</div>
-<p><b>它在哪里会失败。</b>第一，量子情形下区分是"不可交换"的：先测位置再测动量，与反过来不是同一件事。本书的对称形式假设了可交换，所以这条连接在量子层面只能停在"同形"——这是第 5 章"四场统一"里"配角"判断的又一个实例。第二，Fisher 信息要求分布族是光滑的，而本书的区分常常是离散的、有跳变的（第 16 章的两阶段相变就是一例）：在跳变点上，导数不存在，二次型退化。</p>
-<p><b>它使什么成为可能。</b>尽管有这两处断裂，这条连接仍然有用：它把"语言的覆盖"从一个比喻变成一个可以查表的对象——你可以在任何一个有参数族的领域里问同一个问题：这里的 Fisher 信息是多少？如果算得出来，κ<sub>info</sub> 就有意义；如果算不出来，本章的编码就只能算"描述"，不能算"测量"。</p>
-
-<h3 id="sec13-8">13.8　与经济学的连接：偏好、边际替代率与一个被用坏的二次型</h3>
-<p>经济学里有一个与本书几乎同名却常常被用坏的对象：效用函数的二阶近似。给定一个光滑的效用函数 <i>u</i>(<b>x</b>)，在任一点展开到二阶，得到一个二次型 <b>H</b>＝∂<sup>2</sup><i>u</i>／∂<i>x</i><sub><i>i</i></sub>∂<i>x</i><sub><i>j</i></sub>，即 Hessian。它决定了三件事：无差异曲线的弯曲程度（替代弹性）、最优点是否唯一（负定性）、以及比较静态的方向（比较优势的符号）。这与第 12—14 章的对称双线性形式是同一个对象，只多了一层解释：<b>这里的"区分"是消费者对两种商品的主观区分。</b></p>
-<p>把书里的语言直接套上去，会得到一条不太客气但有用的判断：<b>绝大多数"偏好被扭曲"的政策争论，实际上是关于 Hessian 的争论，而不是关于偏好的争论。</b>两个人都同意"教育重要"（一阶导同号），却对"多一点教育值多少自由"给出相反的估计——这是二阶（曲率）的分歧。曲率不可直接观测，只能从选择数据反推；而反推需要假设，这正是显示偏好理论（Samuelson）与后续的 Afriat 定理所做的事：<b>给定有限的选择数据，能否找到一个效用函数使其自洽。</b></p>
-<p><b>可检验的形式。</b>Afriat 定理给的是存在性判据（广义公理 GARP 是否成立）；本书能加的是一个量：当数据违反 GARP 时，需要"删掉"多少观测才能恢复自洽——这个最小删除量可以作为"偏好稳定性"的代理。若一个市场的这个代理随时间上升，说明它的偏好结构正在变得更不可加总，也就是第 22 章所说的"领域内部的分辨率下降"。</p>
-<p><b>它在哪里会失败。</b>三处，且都是硬伤。第一，GARP 只在有限数据上可判，样本一换，结论可能翻；第二，Hessian 的对称性假设排除了"框架效应"——同一个人对同一组选项，换个问法就有不同的边际替代率，这在实验经济学里被反复观察到；第三，福利比较需要人际可比，而这恰恰是二次型给不出的东西。因此本节只登记一条 <b>C 级</b>断言：</p>
-<div class="define"><span class="bt">断言 13.5（C 级）</span>
-一个市场的 GARP 违背率与其价格波动的方差同向上升；若观察到"波动上升而违背率下降"，本节读法失效。
-</div>
-<p><b>它使什么成为可能。</b>这条连接的价值不在经济学，而在本书：它给出一个二次型"被用坏"的实例——同一个数学对象，在物理里是能量，在语言学里是对立，在经济学里是曲率，而三者对"能不能加总"的回答完全不同。这正好是第 25 章"语言规范"的要点：<b>规范只规定怎么说话，不保证说的话在每一门学科里意思相同。</b></p>
-
-<div class="box box-takeaway"><p><b>一句话带走：</b>五个领域，同一个结构：这不是巧合，是“对称形式”这一语法的覆盖力。</p></div>
-
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Lang, S. (2002). <i>Algebra</i> (3rd ed.). Springer.</p>
-<p>Horn, R. A., &amp; Johnson, C. R. (2012). <i>Matrix Analysis</i> (2nd ed.). Cambridge University Press.</p>
-<p>Do Carmo, M. P. (1992). <i>Riemannian Geometry</i>. Birkhäuser.</p>
-</div>
+<div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子各管一件事；拿水准去量长度，错的不是水准。</p></div>

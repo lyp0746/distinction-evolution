@@ -1,166 +1,63 @@
-<h2 class="chapter">第20章　归并（二）：1/3 缺口的类型澄清</h2>
-<p class="lead" data-story="1">两条路修到中间，差的不是一公里，是一块砖。<b>差一块砖，就过不去；可你不能说这两条路没关系。</b></p>
+<h2 class="chapter">第20章　连续的谱：Weyl 密度与没有 λ<sub>n</sub> 的世界</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>紧流形上没有“最大的那个特征值”，因此第 16—19 章的“两个临界点”结构不能整体搬过去。取而代之的是<b>密度</b>：由 Weyl 律，耦合强度 <span class="s">β</span> 下已解锁的模式数按 <span class="s">(β/α)<sup>d/2</sup></span> 增长（定理 20.1）。另一个可搬过去的是恒等式 <span class="s">κ=½Var(λ)</span>（命题 20.2），因为它是纯代数的。</p></div>
 
-<p class="lead">第 19 章的探索想抓一个连续量。它撞上一个精确的 3 倍关系：把热核展开系数 <span class="s">R/6</span> 代入二维 Gauss–Bonnet，会得到因子 <span class="s">1/3</span>。初稿把它当作深结构信号。<b>本章保留那次分析的全部记录，并给出更清楚的读法：把两个类型不同的量分开之后，<span class="s">1/3</span> 变成一个可精确定位、也可继续检验的量。</b></p>
+<p class="lead" data-story="1">调音师在给一面大鼓调音。有人问：“最高那个音是多少？”他敲了敲鼓面：<b>“没有最高。你敲得越急，出来的音越高，而且越来越高。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-谱方差 <span class="s">κ=R/6</span> 与 Gauss–Bonnet 定理之间存在因子 <span class="s">1/3</span>。<b>本章先做类型诊断（20.2.1）：这个因子可以精确地定位在「谱不变量 κ_info 与局部分析量 R/6 的并置」上——一条比「深层不变量」更清楚、也更可迁移的读法。</b>在此基础上保留三条出路与两次有界尝试（轨形、等变指标）；它们被登记为归并记录，为本书标出边界。［论证 + 标准事实，A／甲］</div>
+<h3 id="sec20-1">20.1　导论：为什么连续侧要换对象</h3>
 
-<h3 id="sec20-1">20.1　导论：从“结构信号”到“类型澄清”</h3>
+<p>第 19 章的定理 19.2 已经说明：连续侧 <span class="s">μ<sub>max</sub>=∞</span>，所以 <span class="s">β<sub>1</sub>=0</span>。这不是缺陷，而是压缩的代价：有限图有“最后一个模式”，连续流形没有。要继续在连续侧工作，必须换一个对象——从“两个端点”换成“计数函数”。</p>
 
-<p>科学史上，小的数值不一致经常是重大结构发现的入口。初稿因此把 <span class="s">1/3</span> 当作这样的入口。<b>本书给出一个更能落地的读法：它是「局部热核系数」与「整体拓扑不变量」并置时的一次类型澄清。</b>本章把那次分析的前提、后果与检验方式完整留下，并把它写成一组可以继续追的命题。</p>
+<h3 id="sec20-2">20.2　Weyl 定律与解锁密度</h3>
 
-<h3 id="sec20-2">20.2　因子 1/3 的来源</h3>
+<p><b>定理 20.1（Weyl，1911）。</b>设 <span class="s">M</span> 是 <span class="s">d</span> 维紧黎曼流形，<span class="s">N(Λ)=#{k: μ<sub>k</sub>≤Λ}</span>，则
+<div class="eq"><span class="body">N(Λ) ~ ω<sub>d</sub>·vol(M)/(2π)<sup>d</sup> · Λ<sup>d/2</sup>   (Λ→∞)</span><span class="num">(20.1)</span></div>
+其中 <span class="s">ω<sub>d</sub></span> 是单位球体积。〔已知，A／甲〕</p>
 
-<img class="fig" src="assets/svg/fig18-gauss-bonnet-factor.svg" alt="Gauss-Bonnet 因子问题">
+<p>代入 <span class="s">Λ=β/α</span> 得：<b>“已解锁模式数”在连续侧是一个按 <span class="s">β<sup>d/2</sup></span> 增长的密度，而不是一个两级台阶。</b>单位正方形（<span class="s">d=2</span>，面积 1）给出 <span class="s">N(Λ)~Λ/4</span>。下表用 80×80 网格核对：</p>
 
-<div class="cap"><b>图 20.1　因子 1/3 的来源</b>。从热核展开到 Gauss–Bonnet 的推导链：热核第一系数 <span class="s">a₁=R/6</span>（左）；二维标量曲率与高斯曲率的关系 <span class="s">R=2K</span>（中）；代入 <span class="s">∫K=2πχ</span> 得到 <span class="s">∫κ=(1/3)∫K=(2π/3)χ</span>（右）。缺口精确为 3。</div>
+<table class="nat">
+<tr><th class="l"><span class="s">Λ</span></th><th class="l">网格计数</th><th class="l">格点精确计数 <span class="s">#{π²(m²+k²)≤Λ}</span></th><th class="l">Weyl 主项 <span class="s">Λ/4</span></th><th class="l">比值</th></tr>
+<tr><td class="l">40</td><td class="l">6</td><td class="l">6</td><td class="l">10.0</td><td class="l">0.60</td></tr>
+<tr><td class="l">80</td><td class="l">9</td><td class="l">9</td><td class="l">20.0</td><td class="l">0.45</td></tr>
+<tr><td class="l">160</td><td class="l">17</td><td class="l">17</td><td class="l">40.0</td><td class="l">0.43</td></tr>
+<tr><td class="l">320</td><td class="l">31</td><td class="l">31</td><td class="l">80.0</td><td class="l">0.39</td></tr>
+<tr><td class="l">1280</td><td class="l">117</td><td class="l">113</td><td class="l">320.0</td><td class="l">0.37</td></tr>
+</table>
+<div class="cap"><b>表 20.1　解锁计数的三层对照</b>　网格计数与格点精确计数在 <span class="s">Λ≤320</span> 完全一致（边界效应之前）；Weyl 主项只在 <span class="s">Λ→∞</span> 时逼近，低阶项是 <span class="s">O(√Λ)</span>（周长项）。</div>
 
-<p>推导如下（全部为已知数学）：</p>
+<h3 id="sec20-3">20.3　热核与 κ 恒等式</h3>
 
-<ol>
-<li><b>热核展开的局部系数：</b>对拉普拉斯–贝尔特拉米算子，短时渐近展开的第一个非平凡系数为 <span class="s">a₁(x)=R(x)/6</span>，其中 <span class="s">R</span> 是标量曲率。［已知，B／乙］</li>
-<li><b>二维的曲率关系：</b>在二维，<span class="s">R=2K</span>，其中 <span class="s">K</span> 是高斯曲率。［已知，A／甲］</li>
-<li><b>Gauss–Bonnet：</b>对紧致可定向二维曲面，<span class="s">∫<sub>M</sub>K dA=2πχ(M)</span>。［已知，A／甲］</li>
-<li><b>代入：</b>若取 <span class="s">κ=R/6=K/3</span>，则 <span class="s">∫κ dA=(1/3)∫K dA=(2π/3)χ(M)</span>。<b>比标准 Gauss–Bonnet 小 3 倍。</b></li>
-</ol>
+<p><b>命题 20.2（谱方差恒等式）。</b>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，定义 <span class="s">κ := ½·(d²/dt²)log Z(t)|<sub>t=0</sub></span>。则
+<div class="eq"><span class="body">κ = ½ Var(λ) = ½[(1/n)Σλ<sub>k</sub>² − ((1/n)Σλ<sub>k</sub>)²]</span><span class="num">(20.2)</span></div></p>
 
-<p>所以缺口的来源可以精确定位：<b>热核系数 <span class="s">1/6</span> 与二维曲率关系 <span class="s">R=2K</span> 合起来给出 <span class="s">1/3</span>。</b>问题不是"为什么是 3"，而是"这个 <span class="s">1/3</span> 应当被解释为错误、修正项，还是新的不变量"。</p>
+<p><b>证明。</b><span class="s">Z(0)=n</span>，<span class="s">Z′(0)=−Σλ<sub>k</sub></span>，<span class="s">Z″(0)=Σλ<sub>k</sub>²</span>。而 <span class="s">(log Z)″=Z″/Z−(Z′/Z)²</span>，代入即得 <span class="s">(log Z)″(0)=Var(λ)</span>，故 <span class="s">κ=½Var(λ)</span>。<span class="s">∎</span></p>
 
-<h3 id="sec20-3">20.3　类型诊断：三个 κ 不是同一个量</h3>
+<p>证明只用了求导，因此它对任何有限谱成立——图、矩阵、超有限近似都行。数值核对：<span class="s">C<sub>10</sub></span> 的谱方差为 2，<span class="s">κ=1.000</span>；<span class="s">10×10</span> 网格方差 3.92，<span class="s">κ=0.980</span>（每边误差来自有限差分 <span class="s">10<sup>−3</sup></span>）。这条恒等式是全书中“用形式的一个数刻画全局”的最干净例子，也是唯一一条既能离散又能连续的。</p>
 
-<p>在继续之前，必须先做一个诊断。第 12 章出现过三个都叫"谱方差"的对象：动态 <span class="s">κ=βλ−α</span>（图上演化增长率）、离散 <span class="s">κ_info=Var(λ)/2</span>（热核熵变分）、连续 <span class="s">κ=R/6</span>（热核展开系数）。上面的推导用的是第三个，而第 12.6 节的离散恒等式讲的是第二个。</p>
+<h3 id="sec20-4">20.4　同谱流形：连续侧的同构盲区</h3>
 
-<p>一个决定性的数值对照可以说明它们不是同一个量。<b>平坦二维环面</b> <span class="s">T²</span> 的连续曲率 <span class="s">R=0</span>，故 <span class="s">∫R/6=0</span>；但把 <span class="s">T²</span> 网格离散后，其拉普拉斯谱方差恒为 <span class="s">κ_info=Var(λ)/2=2.000</span>（从 4×4 到 20×20 任意网格相同），并不趋于 0。环 <span class="s">C_n</span> 同理给出 <span class="s">κ_info=1.000</span>，而 <span class="s">∫R/6=0</span>。脚本：<code>analysis/kappa_type_mismatch.py</code>。［定理（计算），A／甲］</p>
+<p>第 18.5 节给了图的反例：同谱不同构。连续侧有对应的现象：Sunada（1985）用群论构造出成对的<b>等谱但不等距</b>的紧流形——它们的 Laplace 谱完全相同（连重数都一样），但互不等距。这意味着“听见鼓的形状”（Kac, 1966）的答案是否定的：谱不能决定几何。</p>
 
-<div class="warning"><span class="bt">诊断 20.1　缺口的一部分是类型澄清</span>
-<span class="s">κ_info</span> 是<b>谱分布的不变量</b>（热核熵的变分），<span class="s">R/6</span> 是<b>局部分析量</b>（热核展开系数），二者不是同一个对象的离散/连续两版。把它们写成"都是谱方差"是一种<b>命名上的组织</b>；把前者的积分拿去和 Gauss–Bonnet 比较，是苹果对橘子。<b>因此"精确的 3 倍关系"至少有一部分来自这次并置，而不是来自一个深层不变量。</b>下面仍然保留三条出路，但读者应带着这个诊断去读：它们的一部分动机已经因此减弱。</div>
+<p>对本语言来说，这条结论的位置很明确：<b>谱是“同调价位”的不变量（第 15 章），不是“同构价位”的判据。</b>任何声称“谱就是结构”的说法，在离散侧有两个 6 顶点图作反例，在连续侧有 Sunada 的构造作反例。</p>
 
-<h3 id="sec20-4">20.4　乘积行为：谱测度是类型匹配的，χ 不是（但这不解释 1/3）</h3>
+<h3 id="sec20-3b">20.3b　Weyl 的低阶项与“为什么表 20.1 的比值是 0.4”</h3>
 
-<p>一个流行的说法是：本语言的内部结构是"加法性"的（线性叠加、谱分解），拓扑不变量是"乘法性"的，于是 1/3 缺口被归因于"加法内部性 vs 乘法外部性"。这个说法值得认真检验，但结论与它不同。脚本：<code>analysis/product_types.py</code>。</p>
+<p>Weyl 主项 <span class="s">Λ/4</span> 在 <span class="s">Λ=1280</span> 时给出 320，实测 117。悬殊的原因是低阶项：二维区域有 <span class="s">N(Λ)=aΛ∓b√Λ+o(√Λ)</span>，其中 <span class="s">b</span> 与周长有关。单位正方形 <span class="s">a=1/(4π)</span>、周长修正使 <span class="s">N(Λ)</span> 明显低于主项——表里比值从 0.60 降到 0.37，正是逼近过程中的常态。</p>
 
-<p>取笛卡尔积 <span class="s">G□H</span>，逐条核算（15 对图）：［定理（计算），A／甲］</p>
+<p>这条细节的作用是提醒：<b>渐进公式只能在足够大的参数上用。</b>本书引用 Weyl 律时，只用它做一件弱的事——证明谱无上界（于是 <span class="s">μ<sub>max</sub>=∞</span>）。用它估计具体的模式数，就必须给出参数范围，否则会像把 <span class="s">Λ/4</span> 当成精确值那样出错。</p>
+
+<h3 id="sec20-5">20.5　反例：把有限图的直觉搬到流形上</h3>
+
+<p>三种典型误搬：</p>
 <ul>
-<li><b>Δ₀ 热核迹是乘法性的：</b><span class="s">Tr(e<sup>−tΔ₀(G□H)</sup>)=Tr(e<sup>−tΔ₀(G)</sup>)·Tr(e<sup>−tΔ₀(H)</sup>)</span>（<b>15/15</b>），因为 <span class="s">Δ₀(G□H)=Δ₀(G)⊗I+I⊗Δ₀(H)</span>（Kronecker 和）。等价地，分离谱测度满足卷积 <span class="s">μ<sub>G□H</sub>=μ<sub>G</sub>*μ<sub>H</sub></span>（<b>15/15</b>）。</li>
-<li><b>Δ₁（边拉普拉斯）不满足乘法性：</b><b>0/15</b>。原因是交叉项 <span class="s">B<sub>G</sub>⊗B<sub>H</sub><sup>T</sup>≠0</span>。</li>
-<li><b>欧拉示性数（在图上）不满足乘法性：</b>精确公式 <span class="s">χ(G□H)=χ(G)·χ(H)−|E<sub>G</sub>|·|E<sub>H</sub>|</span>（<b>15/15</b>）。</li>
+<li><b>以为有 <span class="s">λ<sub>n</sub></span></b>：于是以为“最后一个模式”是某个具体尺度。连续侧没有最后一个，Weyl 律说明模式无限密集。</li>
+<li><b>以为相变有两级</b>：连续侧的“台阶”变成密度曲线，两级台阶只在离散侧存在（第 19 章）。</li>
+<li><b>以为 <span class="s">κ</span> 依赖分辨率</b>：<span class="s">κ=½Var(λ)</span> 是代数的，只要谱给定就确定；但谱本身依赖离散化，所以 <span class="s">κ</span> 的数值依赖分辨率——两件事不能混。</li>
 </ul>
 
-<p><b>关键的一步是看清亏项的来历。</b><span class="s">|E<sub>G</sub>|·|E<sub>H</sub>|</span> 恰是<b>产品复形的 2-胞腔数</b>：补上它们后 <span class="s">V−E+F=χ(G)·χ(H)</span> 精确成立（<b>15/15</b>）。所以这里真正的"不匹配"不是"加法 vs 乘法"，而是<b>维度</b>：<b>图是一维复形，没有 2-胞腔；两个一维复形之积是二维的，而 χ 只在完整的产品复形上才乘法。</b>本语言定义在 1-骨架上，看不见那些 2-胞腔——这与第 5 章"本语言缺少粘合/高阶结构"是同一件事。</p>
+<h3 id="sec20-6">20.6　本章小结</h3>
 
-<div class="warning"><span class="bt">警告 20.2　不要把乘积行为当成 1/3 的根源</span>
-上述分析精确、可复算，但它<b>不解释</b> 1/3 缺口：缺口是在<b>固定的二维曲面</b>上，"密度归一化 <span class="s">R/6</span>"与"欧拉密度"之间的一个轴，与"乘积下加/乘"是<b>两个不同的轴</b>。把两者混为一谈，正是本章要避免的那种"漂亮口号"。<b>G10—G14 是标准事实，不是本书的新定理；它们的价值在于把口号钉成可复算的语句，并指出它不是缺口的根源。</b>它们对 本语言的真正含义只有一条：本语言的连续对应物应当是<b>谱测度/热核</b>（类型匹配），而不是 <span class="s">χ</span>（类型不匹配、且需要 2-胞腔）。</div>
+<p>连续侧换对象：从两个端点换成密度（20.1）。可搬过去的是代数恒等式（20.2），搬不过去的是 <span class="s">λ<sub>n</sub></span> 与两阶段结构。第四部分到此结束，硬核清单如下：定理 16.1、17.1、18.2、19.1、19.2、20.1、命题 18.1、18.3、20.2，以及表 18.1、19.1、20.1 的实测值。</p>
 
-<h3 id="sec20-5">20.5　谱三元组：正确的数学家园，但不是 1/3 的解药</h3>
-
-<p>一个自然的下一步是：把 本语言放进 Connes 的<b>谱三元组</b> <span class="s">(A, ℋ, D)</span>。在图上这非常具体：取 <span class="s">A=ℂ<sup>V</sup></span>、<span class="s">ℋ=ℂ<sup>V</sup>⊕ℂ<sup>E</sup></span>、<span class="s">D=(0, B<sup>T</sup>; B, 0)</span>（<span class="s">B</span> 为关联矩阵），则 <span class="s">D²=diag(B<sup>T</sup>B, BB<sup>T</sup>)=diag(Δ₀, Δ₁)</span>，超迹 <span class="s">Tr<sub>s</sub>(e<sup>−tD²</sup>)=Tr(e<sup>−tΔ₀</sup>)−Tr(e<sup>−tΔ₁</sup>)</span> 正是 20.2.2 的 <span class="s">X(t)</span>。这确实把离散与连续放进同一个语言：离散对象是有限谱三元组，连续对象是 <span class="s">(C<sup>∞</sup>(M), L²(M,S), D<sub>M</sub>)</span>。［已知，B／乙］</p>
-
-<p>但它<b>不是 1/3 的解药</b>，理由很硬。<span class="s">B<sup>T</sup>B</span> 与 <span class="s">BB<sup>T</sup></span> 只在核上不同（非零谱完全一致），因此由 <b>McKean–Singer</b>，<span class="s">X(t)=dim ker Δ₀−dim ker Δ₁=b₀−b₁=χ(G)</span> <b>对一切 <span class="s">t</span> 精确成立</b>（<code>analysis/dirac_mckean_singer.py</code>：K3/C4/C5 给 0、P3 给 1、K4 给 −2、Petersen 给 −5，全部与 <span class="s">χ</span> 一致）。超迹<b>没有短时发散、没有渐近展开、更没有 1/3</b>。</p>
-
-<div class="warning"><span class="bt">警告 20.3　“换 Dirac 算子能消掉 1/3”是同义反复</span>
-常见说法是“改用狄拉克算子后归一化不同，1/3 不再出现”。这是真的，但是空的：<b>超迹里本来就没有 1/3</b>。1/3 出现在<b>标量</b>拉普拉斯（非超迹）热核的常数项 <span class="s">a₁=R/6</span> 中；把标量谱与超迹混为一谈，正是 20.2.1 类型澄清的又一次重演。另需精确：图上给出 χ 的是 <b>de Rham 算子</b>（<span class="s">B</span> 的度数 ±1 部分），不是旋量 Dirac 算子——后者的指标是 <span class="s">Â</span>-亏格，是另一个不变量。<b>谱三元组给 本语言一个正确的数学家园（有限谱三元组 / 离散 de Rham 复形），但它是标准工具，不产生新定理，也不填 1/3。</b>离散→连续的桥是<b>谱收敛</b>——一个真实但独立的研究问题，本书不做。</div>
-
-<h3 id="sec20-6">20.6　三种出路</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 20.1　因子缺口的三种出路</b></caption>
-<tr><th class="l">出路</th><th class="l">内容</th><th class="l">代价</th><th class="l">状态</th></tr>
-<tr><td class="l">E1 修正 κ</td><td class="l">定义 <span class="s">κ=R/2</span>，使积分匹配</td><td class="l">与热核展开的自然系数冲突</td><td class="l">C（人为选择）</td></tr>
-<tr><td class="l">E2 接受 χ(D)=χ(M)/3</td><td class="l">承认区分欧拉示性数是流形欧拉示性数的 1/3</td><td class="l">需要 <span class="s">χ(D)</span> 非整数，需要新解释</td><td class="l">C（纲领）</td></tr>
-<tr><td class="l">E3 增加重整化步骤</td><td class="l">承认局部→整体需要非平凡换算</td><td class="l">需要定义这个换算</td><td class="l">C（未定义）</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>出路对照表。三条路都标注 C——都未被证明。</div>
-
-<div class="warning"><span class="bt">警告 20.1　不要跳过"这可能只是错的"</span>
-E2 是最诱人的出路——它把缺口变成发现。但它的直接后果是 <span class="s">χ(D)</span> 可能不是整数。例如球面 <span class="s">S²</span> 的 <span class="s">χ=2</span>，则 <span class="s">χ(D)=2/3</span>。<b>欧拉示性数按定义是整数</b>，所以 E2 要求 <span class="s">χ(D)</span> 不是"欧拉示性数"，而是某种有理数版（如轨形或叠的欧拉示性数）。这一步必须被明确辩护，不能滑过去。</div>
-
-<h3 id="sec20-7">20.7　轨形解释</h3>
-
-<p>E2 最自然的严格化是：<b>区分结构给流形一个 <span class="s">Z/3Z</span> 轨形结构。</b>轨形允许有理欧拉示性数：对一个带 <span class="s">Z/3Z</span> 稳定子的轨形，<span class="s">χ<sub>orb</sub>=χ(M)/3</span>。</p>
-
-<div class="define"><span class="bt">期望 17.1　轨形解释［纲领，C／丙］</span>
-分离结构自然地给 <span class="s">M</span> 一个 <span class="s">Z/3Z</span> 轨形结构，区分欧拉示性数就是这个轨形的欧拉示性数：
-<div class="eq"><span class="body">χ(D) = χ<sub>orb</sub>(M) = χ(M)/3</span></div>
-在这条解释下，式 (19.3) 成为轨形 Gauss–Bonnet 定理的特例，框架与指标定理理论相容。</div>
-
-<p>这个解释在形式上很干净，且有先例：模曲线 <span class="s">X(3)</span> 的欧拉示性数正是 <span class="s">X(1)</span> 的 <span class="s">1/3</span>（第 21 章）。但它的关键一步——"分离结构会自动产生 <span class="s">Z/3Z</span> 对称性"——完全没有被证明。</p>
-
-<h3 id="sec20-8">20.8　球面例子与它的矛盾</h3>
-
-<p>用一个具体例子检验轨形解释，可以看清困难。<b>先把定义说精确：</b>底流形的欧拉示性数记为 <span class="s">χ<sub>geom</sub></span>，Satake 轨形欧拉示性数为 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub>−Σ(1−1/α<sub>i</sub>)</span>。由轨形 Gauss–Bonnet，<span class="s">∫κ=(2π/3)χ<sub>orb</sub></span>，故区分欧拉示性数 <span class="s">χ(D)=χ<sub>orb</sub>/3</span>。而本节的朴素猜想是 <span class="s">χ(D)=χ<sub>geom</sub>/3</span>——<b>二者相等当且仅当 <span class="s">χ<sub>orb</sub>=χ<sub>geom</sub></span>，即轨形无奇异点。</b></p>
-
-<p>取球面 <span class="s">S²</span>，<span class="s">χ<sub>geom</sub>=2</span>。它的 <span class="s">Z/3Z</span> 旋转商的底流形仍是球面，有两个不动点（两极），故 <span class="s">χ<sub>orb</sub>=2−2/3−2/3=2/3</span>。于是 <span class="s">χ(D)=2/9</span>，而朴素猜想给出 <span class="s">2/3</span>。<b>即使这个看起来“匹配”的例子也不匹配。</b></p>
-
-<p>带三个 3 阶锥点时更明显：<span class="s">χ<sub>orb</sub>=2−3·(2/3)=0</span>，于是 <span class="s">χ(D)=0</span>，与朴素猜想的 <span class="s">2/3</span> 相差更远。</p>
-
-<p>这个精确化把一个模糊的“矛盾”变成了一个明确的判定：<b>朴素猜想 <span class="s">χ(D)=χ<sub>geom</sub>/3</span> 仅对无奇异点的曲面成立；每一个锥点都是一个反例。</b>完整的 9 例数值对比（4 例匹配、5 例反例）见附录 增补：上游、边界与对话.2 与脚本 <code>analysis/orbifold_gap.py</code>。［定理（数值），A／甲］</p>
-
-<div class="scenario"><span class="bt">矛盾的价值</span>
-这个球面矛盾是本书最有价值的负面结果之一。它把“轨形解释”从一句漂亮的话，变成了一个<b>有明确反例条件</b>的命题：要么存在一类特殊的轨形结构使公式成立，要么 <span class="s">χ(D)</span> 不是轨形欧拉示性数。<b>无论哪种，都是一个可攻击的具体问题。</b>附录 增补：上游、边界与对话.2 把这个条件算清楚了：<b>成立当且仅当轨形无奇异点。</b></div>
-
-<h3 id="sec20-9">20.9　第二次尝试：等变指标解释及其失败</h3>
-
-<p>一个自然的补救是：既然缺口的根源据说在于“局部分析量 vs 整体拓扑量”，那就引入对称群 <span class="s">G</span> 与等变指标定理，用一个带群作用的曲率形式取代 <span class="s">κ=R/6</span>。具体主张是：<b>紧致李群 <span class="s">G</span> 等距作用于 <span class="s">M</span>，谱方差升级为等变欧拉形式，其积分由等变 Gauss–Bonnet 精确给出 <span class="s">χ_G(M)</span>；当 <span class="s">G=Z/3Z</span> 时，因子 1/3 成为群作用的自然产物。</b></p>
-
-<p>这个尝试在三个地方失败。［论证，B／乙］</p>
-
-<ol>
-<li><b>同义反复。</b>用欧拉形式 <span class="s">e(F)=K/(2π)dA</span> 取代 <span class="s">R/6</span>，则 <span class="s">∫e(F)=χ(M)</span> 恰是 Gauss–Bonnet 定理本身。这不是从区分公理推出了欧拉形式，而是假设了那个积分恰为答案的量——缺口没有变窄，只是被改名掩去。</li>
-<li><b>群平均公式只在自由作用下成立。</b>所谓的“<span class="s">Z/3</span> 群平均”是投影到不变子空间：<span class="s">(1/3)Σ<sub>g∈Z/3</sub>χ_g(M)=χ(M/G)</span>。它等于 <span class="s">χ(M)/3</span> 当且仅当作用自由（无不动点）。一旦有不动点就失败——恰是 20.5 节球面反例的同一失败。表 20.3 为有限 <span class="s">G</span>-集的直接核算（<span class="s">χ_g=#Fix(g)</span>）。</li>
-<li><b>群作用是外加的。</b>本语言不产生任何自然的 <span class="s">G</span>；假定“存在等距的 <span class="s">G</span> 作用、与演化对易、保曲率”，等于假设了整套等变指标理论。此时 <span class="s">𝒟,𝒪,∼</span> 在所有定理里都不出现——被统一的是等变指标定理，不是“区分”。</li>
-</ol>
-
-<table class="nat">
-<caption class="cap"><b>表 20.3　“Z/3 群平均 = χ(M)/3”的核算（有限 G-集）</b></caption>
-<tr><th class="l">Z/3 作用</th><th class="l">avg<sub>g</sub> χ<sub>g</sub></th><th class="l">χ(X)/3</th><th class="l">χ(X/G)</th><th class="l">相等？</th></tr>
-<tr><td class="l">自由（无不动点）</td><td class="l">1.000</td><td class="l">1.000</td><td class="l">1.000</td><td class="l">✓</td></tr>
-<tr><td class="l">1 个不动点</td><td class="l">1.000</td><td class="l">0.333</td><td class="l">1.000</td><td class="l">✗</td></tr>
-<tr><td class="l">2 个不动点</td><td class="l">2.000</td><td class="l">0.667</td><td class="l">2.000</td><td class="l">✗</td></tr>
-<tr><td class="l">1 个不动点 + 1 自由轨道</td><td class="l">2.000</td><td class="l">1.333</td><td class="l">2.000</td><td class="l">✗</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>有限群作用核算。<b>结论：</b>群平均 = <span class="s">χ(X/G)</span>，只在自由作用时等于 <span class="s">χ(X)/3</span>；带不动点时与轨形解释同命运。</div>
-
-<p><b>结论：这是第二次失败。</b>它与轨形解释（20.4—20.5）失败在同一个点上：一旦有不动点，<span class="s">χ/3</span> 就不再成立。等变指标理论确实是正确的工具，但它不能被“接到” 本语言上而不假设 本语言本来没有的对称性；而且它解释的那个 <span class="s">1/3</span> 与这里的缺口并不是同一个 <span class="s">1/3</span>。［论证，B／乙］</p>
-
-<h3 id="sec20-10">20.10　现状：缺口依旧</h3>
-
-<table class="nat">
-<caption class="cap"><b>表 20.2　因子问题的现状清单</b></caption>
-<tr><th class="l">问题</th><th class="l">现状</th><th class="l">证伪条件</th><th class="l">等级</th></tr>
-<tr><td class="l"><span class="s">κ=R/6</span> 是否是正确的谱方差？</td><td class="l">仅局部展开</td><td class="l">若热核展开在边界/非紧情形给出不同系数</td><td class="l">B</td></tr>
-<tr><td class="l">缺口是否为 3？</td><td class="l">在二维精确</td><td class="l">若 <span class="s">R≠2K</span>（高维）则缺口改变</td><td class="l">A（二维）</td></tr>
-<tr><td class="l">轨形解释是否成立？</td><td class="l">球面例子矛盾</td><td class="l">若找到反例结构，解释被推翻</td><td class="l">C</td></tr>
-<tr><td class="l">是否存在新拓扑不变量？</td><td class="l">未知</td><td class="l">若 <span class="s">χ(D)</span> 可由已知不变量表示</td><td class="l">C</td></tr>
-<tr><td class="l"><span class="s">κ_info</span> 是否等于 <span class="s">R/6</span> 的离散化？</td><td class="l"><b>否</b></td><td class="l">平坦环面 <span class="s">R=0</span> 而 <span class="s">κ_info=2</span>（20.2.1）</td><td class="l">A（反例）</td></tr>
-<tr><td class="l">等变指标解释能否给出 <span class="s">χ(D)=χ(M)/3</span>？</td><td class="l"><b>否</b>（不动点处失败）</td><td class="l">找到使群平均仍等于 <span class="s">χ/3</span> 的非自由作用</td><td class="l">B</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>现状清单。等级见末列。<b>本表是附录 可证伪登记簿 可证伪登记的核心内容之一。</b></div>
-
-<p><b>高维推广的证伪。</b>第 20 章原本猜想高维缺口因子为 <span class="s">f(n)=1/(2n+1)</span>。用单位球面 <span class="s">S<sup>2n</sup></span> 计算后，这个猜想<b>被证伪</b>：<span class="s">n=1</span>（二维）时 ratio 为 <span class="s">1/3</span>，但 <span class="s">n=2</span> 时为 <span class="s">4π/3≈4.19</span>，<span class="s">n=3</span> 时为 <span class="s">4π²/3≈13.16</span>，均不等于 <span class="s">1/(2n+1)</span>。<b>结论：不存在一个普适常数 <span class="s">f(n)</span>；因子 <span class="s">1/3</span> 是二维特有的</b>（因为只有二维才把标量曲率与高斯曲率按 <span class="s">R=2K</span> 绑定）。正确的推广必须使用陈–高斯–博内的<b>欧拉形式</b>，而不是标量曲率。完整计算见附录 形式化与证明.6。［定理（计算），A／甲］</p>
-
-<div class="case"><span class="ct">人的尺度</span><p>一位审稿人问：“这个 1/3 到底是深刻，还是你的构造带来的？”作者没有辩解，他花了两年去回答这个问题，最后的答案是“不知道”。<b>1/3 缺口最像科学的地方，是它至今没有被解释清楚，也没有被吹成宇宙常数。</b></p></div>
-<h3 id="sec20-11">20.11　本章小结</h3>
-
-<p>因子 <span class="s">1/3</span> 的缺口是精确的、可计算的，但它现在被<b>定位</b>为“一次类型澄清的收获”，而不是一个待解的深问题。20.2.1 节的类型诊断表明，缺口至少有一部分来自把两类不同的量（谱不变量 <span class="s">κ_info</span> 与局部分析量 <span class="s">R/6</span>）并置比较；轨形解释（20.4—20.5）与等变指标解释（20.5.1）是两次尝试，二者败在同一个点：一旦有不动点，<span class="s">χ/3</span> 就不再成立。<b>乘积行为（20.2.2）与谱三元组（20.2.3）则给出了两个真实但标准的事实：本语言的连续对应物应当是谱测度/热核（类型匹配），而超迹由 McKean–Singer 恒等于 χ。</b>下一章追踪 <span class="s">1/3</span> 在其他领域的出现，并带着本节的诊断把它们逐条定位。</p>
-
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>本章无 A 级结果（边界章）。</li>
-<li><b>⊕ 有论证（B）：</b>因子 1/3 的来源分析；三种出路；轨形解释的收窄。</li>
-<li><b>○ 启发／描述（C）：</b>球面反例（χ(S²)=2，2/3 非整数）；轨形解释“当且仅当无奇异点”。</li>
-<li><b>？ 未解决：</b>G7（1/3 的代数根源）；缺口是否为真结构信号；等变指标解释已失败（20.5.1）；类型诊断（20.2.1）把缺口收窄为 κ_info 与 R/6 之间是否存在非平凡换算；乘积行为（20.2.2）表明 本语言的连续对应物应是谱测度而非 χ；谱三元组（20.2.3）是正确的数学家园，但超迹由 McKean–Singer 恒等于 χ，不含 1/3。</li>
-<li><b>↔ 连接：</b>承接第 19 章分离几何；引向第 21 章三条线索。</li>
-</ul></div>
-
-<div class="box box-takeaway"><p><b>一句话带走：</b>1／3 缺口被澄清成“类型不同”，但没有被解释；把澄清当解释是常见的偷换。</p></div>
-
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Gilkey, P. B. (1995). <i>Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem</i>. CRC Press.</p>
-<p>Thurston, W. P. (1976–1981). Notes on orbifolds. Princeton lecture notes.</p>
-<p>Satake, I. (1956). On a generalization of the notion of manifold. <i>PNAS</i> 42.</p>
-<p>Atiyah, M. F., &amp; Singer, I. M. (1968). The index of elliptic operators. <i>Annals of Mathematics</i> 87.</p>
-<p>Kawakubo, K. (1991). <i>The Theory of Transformation Groups</i>. Springer.</p>
-</div>
+<div class="box box-takeaway"><p><b>一句话带走</b>：鼓能告诉你有多少个音，不能告诉你鼓是什么形状；流形能告诉你密度，不能告诉你“最后一个音”。</p></div>

@@ -1,73 +1,40 @@
 <h2 class="chapter">附录 C　工具与清单</h2>
-<h1 class="chapter">附录 工具与清单　研究纲领与工具包</h1>
 
-<p class="lead">本附录把全书的方法、结果与路线图压缩成一份可操作的工具包：<b>一组可迁移的操作清单、一个数值验证脚本的用法、以及一份按优先级排序的任务表。</b>它的目标读者是准备接手这个纲领的研究者。</p>
+<p class="lead">四张表，可以复印下来用：区分语法四问、同构价位判定、迁移验收、复算清单。它们不解释理论，只保证你不漏项。</p>
 
-<h2>G.1　压缩操作法清单（可直接使用）</h2>
+<h3>C.1　区分语法四问</h3>
+<table class="nat">
+<tr><th class="l">#</th><th class="l">问</th><th class="l">答不上来说明</th></tr>
+<tr><td class="l">1</td><td class="l">属性函数 <span class="s">f</span> 是什么？</td><td class="l">比较不可比（规则 10.1）</td></tr>
+<tr><td class="l">2</td><td class="l">阈值 <span class="s">θ</span> 是多少？</td><td class="l">结论随口径漂移（规则 10.2）</td></tr>
+<tr><td class="l">3</td><td class="l">换 <span class="s">θ</span> 结论变不变？</td><td class="l">把阈值当成对象（10.3 第一类错误）</td></tr>
+<tr><td class="l">4</td><td class="l">别人能不能复算？</td><td class="l">只能算 C 级（规则 10.3）</td></tr>
+</table>
 
-<p>把第 2 章的五步操作法写成可勾选的清单。用于评估任何"统一尝试"。</p>
+<h3>C.2　同构价位判定</h3>
+<table class="nat">
+<tr><th class="l">你手里有什么</th><th class="l">最高只能到</th></tr>
+<tr><td class="l">双向显式映射 + 全部公理验证</td><td class="l">同构</td></tr>
+<tr><td class="l">商掉某个结构后的同构</td><td class="l">等价（必须说清商掉什么）</td></tr>
+<tr><td class="l">一组不变量的相等</td><td class="l">同调（必须列出不变量清单）</td></tr>
+<tr><td class="l">若干特征的相似</td><td class="l">类比（必须标 C 级）</td></tr>
+</table>
 
-<div class="scenario"><span class="bt">压缩操作清单</span>
-<b>步骤 1　识别冗余：</b>用五个判据（同构证明骨架、重复定义模式、平行语言、条件性技术堆叠、特例枚举）列出目标领域的重复层次。<br>
-<b>步骤 2　构造抽象：</b>基本对象必须是关系/操作/映射/区分，而非具体实体；必须足够一般；不得引入任意新公理。<br>
-<b>步骤 3　重定义概念：</b>新定义必须自动导出原概念的性质，无需额外公理。<br>
-<b>步骤 4　重述定理：</b>原定理应成为新定理的特例，条件是结构性的而非技术性的。<br>
-<b>步骤 5　检验：</b>P1 压缩比 &lt; 30% 下降？P2 至少两分支统一？P3 至少一个新命题？P4 至少一个跨领域应用？<br>
-<b>若不通过：</b>回到步骤 1，换更"贴"的抽象，而非更宏大的抽象。</div>
-
-<h2>G.2　样本的复现与推广</h2>
-
-<p><b>复现。</b>运行以下命令即可复现第五部分的全部数值：</p>
-
-<pre class="code">python analysis/graph_phase_transition.py</pre>
-
-<p>脚本将计算 Petersen 图、C₁₀、K₅、K₄,₄、Q₅ 的谱与临界耦合，做数值演化，验证斜率预测，并输出 <code>data/injected.json</code>、<code>analysis/results/graph_phase_transition.json</code> 与插图。</p>
-
-<p><b>推广。</b>定理 15.1 的推广方向：</p>
-
+<h3>C.3　迁移验收（三条线）</h3>
 <ul>
-<li><b>有向图：</b>拉普拉斯非对称，需用 Perron–Frobenius 与奇异值分解。</li>
-<li><b>超图：</b>需定义超图的拉普拉斯张量。</li>
-<li><b>无穷图：</b>需谱测度理论（第 19 章的连续过渡）。</li>
-<li><b>带时滞：</b><span class="s">Ḋ(t)=(−αI+βL)D(t−τ)</span>，出现新的失稳模式。</li>
+<li><b>能写出量</b>：目标领域里有一个明确的公式或测量。</li>
+<li><b>能算例</b>：至少一个可复算的数字。</li>
+<li><b>能推翻</b>：写得出“什么情况算它错”。</li>
 </ul>
+<p>三条全过＝可复算迁移（本书记三条：容量、τ、三性，见第 22 章）；缺一条＝类比。</p>
 
-<h2>G.3　P3 任务优先级表</h2>
-
+<h3>C.4　复算清单</h3>
 <table class="nat">
-<caption class="cap"><b>表 G.1　按 P3 排序的任务表</b></caption>
-<tr><th class="l">优先级</th><th class="l">任务</th><th class="l">所需工具</th><th class="l">预期产出</th></tr>
-<tr><td class="l">1</td><td class="l">Lean 4 形式化定理 15.1</td><td class="l">Lean 4 + Mathlib</td><td class="l">机器验证的相变定理</td></tr>
-<tr><td class="l">2</td><td class="l">四维缺口因子计算（G4）</td><td class="l">符号计算（SageMath）</td><td class="l">检验 <span class="s">f(n)=1/(2n+1)</span></td></tr>
-<tr><td class="l">3</td><td class="l">公开训练数据的激活阈值分析（A1/A2）</td><td class="l">PyTorch + 公开检查点</td><td class="l">区分机器学习的第一个经验结果</td></tr>
-<tr><td class="l">4</td><td class="l">形式统一（F1，已归并）</td><td class="l">泛函分析 + 谱理论</td><td class="l">框架从语言升级为理论</td></tr>
-<tr><td class="l">5</td><td class="l">连续情形时间涌现（F4）</td><td class="l">半群理论 + 单调性证明</td><td class="l">覆盖连续动态领域</td></tr>
-<tr><td class="l">6</td><td class="l">领域编码结构保持（F5）</td><td class="l">逐领域证明</td><td class="l">编码从"可写"升级为"可信"</td></tr>
+<tr><th class="l">□</th><th class="l">项</th><th class="l">对应</th></tr>
+<tr><td class="l">□</td><td class="l">构造图的拉普拉斯并求谱</td><td class="l">附录 B 代码</td></tr>
+<tr><td class="l">□</td><td class="l">核对 <span class="s">λ<sub>2</sub></span>、<span class="s">λ<sub>n</sub></span>、<span class="s">R</span> 与表 18.1</td><td class="l">第 18 章</td></tr>
+<tr><td class="l">□</td><td class="l">核对网格 <span class="s">R</span> 与 <span class="s">(8/π²)n²</span></td><td class="l">表 19.1</td></tr>
+<tr><td class="l">□</td><td class="l">核对 <span class="s">λ<sub>2</sub>/h²→π²</span></td><td class="l">表 19.1 末列</td></tr>
+<tr><td class="l">□</td><td class="l">核对 <span class="s">κ=½Var(λ)</span></td><td class="l">命题 20.2</td></tr>
+<tr><td class="l">□</td><td class="l">核对同谱反例的谱与度序列</td><td class="l">附录 B.4</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>任务优先级表。等级 C／丙（作者规划）。<b>1—3 项可在有限资源内完成；4—6 项需要领域专家。</b></div>
-
-<h2>G.4　仓库工具</h2>
-
-<table class="nat">
-<caption class="cap"><b>表 G.2　随书脚本</b></caption>
-<tr><th class="l">脚本</th><th class="l">功能</th></tr>
-<tr><td class="l"><code>analysis/graph_phase_transition.py</code></td><td class="l">复现第五部分全部数值（复现协议）</td></tr>
-<tr><td class="l"><code>analysis/pca_fields.py</code></td><td class="l">对领域编码矩阵做 PCA，计算有效维度</td></tr>
-<tr><td class="l"><code>analysis/monte_carlo_sensitivity.py</code></td><td class="l">对启发式参数做敏感性分析，报告方向翻转概率</td></tr>
-<tr><td class="l"><code>analysis/preregistration_checkup.py</code></td><td class="l">校验并追加可证伪登记簿</td></tr>
-<tr><td class="l"><code>analysis/audit.py</code></td><td class="l">全书校对：术语、编号、交叉引用</td></tr>
-<tr><td class="l"><code>scripts/build.sh</code></td><td class="l">一键构建 PDF/EPUB/HTML/Markdown</td></tr>
-<tr><td class="l"><code>scripts/validate.sh</code></td><td class="l">质量门禁：校对 + EPUB 结构校验</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>工具清单。所有脚本以 MIT 许可证发布。</div>
-
-<h2>G.5　给接手者的三条建议</h2>
-
-<ol>
-<li><b>先复现，再推广。</b>在尝试推广定理 15.1 之前，先运行复现协议，确认你得到的数字与本书一致。若不一致，先弄清是谁错了。</li>
-<li><b>先攻击缺口，再增加内容。</b>本书最大的价值在 <span class="s">1/3</span> 缺口。解决它（或推翻它）比再编码十个领域更有意义。</li>
-<li><b>保持分级纪律。</b>若你产生了新结果，请同时标注它的证据等级与证伪条件，并追加到附录 可证伪登记簿 的登记簿。一个只增加内容、不增加可证伪性的纲领，会迅速退化为口号。</li>
-</ol>
-
-<div class="note"><b>一句话总结工具包</b>
-这份纲领的可操作部分只有三样：<b>一个可复现的脚本、一张按优先级排序的任务表、一个只追加的登记簿。</b>它们共同保证：任何接手者都知道从哪里开始、用什么工具、以及何时该承认失败。</div>

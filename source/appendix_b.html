@@ -1,169 +1,66 @@
 <h2 class="chapter">附录 B　数据与案例</h2>
-<h1 class="chapter">附录 数据与案例　领域编码总表</h1>
 
-<p class="lead">本附录把第 22—23 章的编码与分类合并成一张总表，供读者快速查阅。严格程度使用证据等级 A/B/C 与概念等级 甲/乙/丙。</p>
+<p class="lead">本附录是正文所有数字的出处：九类图的谱、网格的收敛、Weyl 计数、同谱反例，以及一段可直接运行的代码。所有数值由 <code>analysis/spec_tables.py</code> 生成，随机种子未使用（结果确定）。</p>
 
-<h2>B.1　编码总表</h2>
-
+<h3>B.1　九类图的谱各向异性</h3>
 <table class="nat">
-<caption class="cap"><b>表 B.1　领域 本语言编码总表</b></caption>
-<tr><th class="l">领域</th><th class="l">区分动作</th><th class="l">观测</th><th class="l">不可区分</th><th class="l">演化</th><th class="l">κ</th><th class="l">等级</th><th class="l">验证状态</th></tr>
-<tr><td class="l">图论</td><td class="l">顶点区分</td><td class="l">区分强度</td><td class="l">谱等价</td><td class="l">e^{(−αI+βL)t}</td><td class="l">βλ<sub>k</sub>−α</td><td class="l">A</td><td class="l">已检验</td></tr>
-<tr><td class="l">线性代数</td><td class="l">线性泛函</td><td class="l">内积</td><td class="l">核空间</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">表示论</td><td class="l">矩阵系数</td><td class="l">特征标</td><td class="l">同构</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">调和分析</td><td class="l">特征标</td><td class="l">傅里叶系数</td><td class="l">同谱</td><td class="l">热核</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">点集拓扑</td><td class="l">开集</td><td class="l">连续函数</td><td class="l">局部同胚</td><td class="l">无</td><td class="l">负</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">代数拓扑</td><td class="l">单纯形</td><td class="l">同调类</td><td class="l">同伦</td><td class="l">无</td><td class="l">负</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">测度论</td><td class="l">可测区分</td><td class="l">测度</td><td class="l">几乎处处</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">实分析</td><td class="l">收敛核</td><td class="l">积分</td><td class="l">a.e.</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">泛函分析</td><td class="l">超有限区分</td><td class="l">内积</td><td class="l">标准部分</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">复分析</td><td class="l">局部决定</td><td class="l">留数</td><td class="l">解析等价</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">组合数学</td><td class="l">子结构</td><td class="l">计数</td><td class="l">等价结构</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">数论</td><td class="l">因子分解</td><td class="l">可整除性</td><td class="l">同余</td><td class="l">无</td><td class="l">正</td><td class="l">C</td><td class="l">未检验</td></tr>
-<tr><td class="l">数理逻辑</td><td class="l">可证公式</td><td class="l">真值</td><td class="l">可互推</td><td class="l">无</td><td class="l">0</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">类型论</td><td class="l">恒等类型</td><td class="l">项</td><td class="l">同伦</td><td class="l">无</td><td class="l">负</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">微分方程</td><td class="l">水平集</td><td class="l">解值</td><td class="l">渐近等价</td><td class="l">e^{tL}</td><td class="l">L 增长率</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">动力系统</td><td class="l">轨道</td><td class="l">轨道值</td><td class="l">渐近</td><td class="l">迭代</td><td class="l">Lyapunov</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">概率论</td><td class="l">条件区分</td><td class="l">期望</td><td class="l">a.s.</td><td class="l">条件期望</td><td class="l">信息率</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">信息论</td><td class="l">信息分割</td><td class="l">自信息</td><td class="l">等分布</td><td class="l">Boltzmann</td><td class="l">−β</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">算子代数</td><td class="l">投影</td><td class="l">迹</td><td class="l">等价投影</td><td class="l">模流</td><td class="l">模谱</td><td class="l">C</td><td class="l">未检验</td></tr>
-<tr><td class="l">量子数学</td><td class="l">POVM</td><td class="l">Tr(ρA)</td><td class="l">不可分</td><td class="l">薛定谔</td><td class="l">纠缠熵率</td><td class="l">C</td><td class="l">未检验</td></tr>
-<tr><td class="l">博弈论</td><td class="l">策略</td><td class="l">收益</td><td class="l">均衡等价</td><td class="l">策略更新</td><td class="l">收益梯度</td><td class="l">C</td><td class="l">未检验</td></tr>
-<tr><td class="l">优化</td><td class="l">水平集</td><td class="l">目标值</td><td class="l">同值</td><td class="l">梯度流</td><td class="l">−∇f</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">数值分析</td><td class="l">网格区分</td><td class="l">残差</td><td class="l">误差容限</td><td class="l">迭代</td><td class="l">收敛率</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">微分几何</td><td class="l">联络</td><td class="l">体积</td><td class="l">等距</td><td class="l">热半群</td><td class="l">R/6</td><td class="l">B</td><td class="l">未检验</td></tr>
-<tr><td class="l">马尔可夫链</td><td class="l">状态转移</td><td class="l">平稳分布</td><td class="l">常返类</td><td class="l">迭代</td><td class="l">收敛率</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">编码论</td><td class="l">码字区分</td><td class="l">校验子</td><td class="l">最小距离</td><td class="l">无</td><td class="l">正</td><td class="l">B</td><td class="l">已检验</td></tr>
-<tr><td class="l">LLM 潜在空间</td><td class="l">注意力头</td><td class="l">激活</td><td class="l">语义等价</td><td class="l">层间传播</td><td class="l">βS−α</td><td class="l">C</td><td class="l">未检验</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>保结构评级。<b>等级 A／甲（对已检验者）/ 未验证（其余）。</b>阈值：强/中 ≥ 70% 视为“编码保结构”通过。<b>目前脚本检验 15 个对象（均为微型实例）：14 个达强/中（≈93%），1 个弱；覆盖 27 个领域中的 15 个（≈56%）。结论：在已检验的微型实例上成立，但覆盖率仍低，故仍为“初步通过”而非“全领域通过”。</b>每个检验只证明“该领域的一条定义性性质可被 本语言编码恢复”，不等于整个领域已被严格编码。</div>
-
-<h2>B.2　五坐标分类总表</h2>
-
-<p>旧的"三轴分类"存在轴 1 把 <span class="s">X</span> 的量级与 <span class="s">𝒟</span> 的代数混在一起的问题（见第 23.5.1—23.5.3 节）。下表改用从词表重导的五个坐标。</p>
-
-<table class="nat">
-<caption class="cap"><b>表 B.2　五坐标分类（A 分层 + B/C/D/E）</b></caption>
-<tr><th class="l">领域</th><th class="l">A（X 量级）</th><th class="l">B（𝒟 代数）</th><th class="l">C（O 分辨率）</th><th class="l">D（κ）</th><th class="l">E（演化）</th></tr>
-<tr><td class="l">图论</td><td class="l">0 有限</td><td class="l">格／线性</td><td class="l">精细</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">线性代数</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">表示论</td><td class="l">1 可数</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">调和分析</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">中</td><td class="l">零</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">点集拓扑</td><td class="l">2 稠密</td><td class="l">拓扑／格</td><td class="l">精细</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">代数拓扑</td><td class="l">1 可数</td><td class="l">线性／拓扑</td><td class="l">稀疏</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">测度论</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">实分析</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">泛函分析</td><td class="l">2 稠密</td><td class="l">线性／度量</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">复分析</td><td class="l">2 稠密</td><td class="l">度量／拓扑</td><td class="l">精细</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">组合数学</td><td class="l">0 有限</td><td class="l">格／逻辑</td><td class="l">精细</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">数论</td><td class="l">1 可数</td><td class="l">格／逻辑</td><td class="l">中</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">数理逻辑</td><td class="l">1 可数</td><td class="l">逻辑</td><td class="l">精细</td><td class="l">零</td><td class="l">无</td></tr>
-<tr><td class="l">类型论</td><td class="l">1 可数</td><td class="l">逻辑／拓扑</td><td class="l">精细</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">微分方程</td><td class="l">2 稠密</td><td class="l">度量／线性</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">动力系统</td><td class="l">2 稠密</td><td class="l">度量／格</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">概率论</td><td class="l">2 稠密</td><td class="l">度量</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">无</td></tr>
-<tr><td class="l">信息论</td><td class="l">0 有限</td><td class="l">度量／逻辑</td><td class="l">中</td><td class="l">负</td><td class="l">无</td></tr>
-<tr><td class="l">算子代数</td><td class="l">2 稠密</td><td class="l">线性／拓扑</td><td class="l">稀疏</td><td class="l">负／零／正</td><td class="l">连续可积</td></tr>
-<tr><td class="l">量子数学</td><td class="l">2 稠密</td><td class="l">线性</td><td class="l">稀疏</td><td class="l">正</td><td class="l">连续可积</td></tr>
-<tr><td class="l">博弈论</td><td class="l">0 有限</td><td class="l">格／逻辑</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">优化</td><td class="l">2 稠密</td><td class="l">度量／线性</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">数值分析</td><td class="l">0 有限</td><td class="l">线性／度量</td><td class="l">中</td><td class="l">正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">微分几何</td><td class="l">2 稠密</td><td class="l">度量／拓扑／线性</td><td class="l">精细</td><td class="l">负／零／正</td><td class="l">连续耗散</td></tr>
-<tr><td class="l">LLM 潜在空间</td><td class="l">2 稠密</td><td class="l">线性／度量</td><td class="l">稀疏</td><td class="l">正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">马尔可夫链</td><td class="l">0 有限</td><td class="l">格／度量</td><td class="l">中</td><td class="l">负／零／正</td><td class="l">离散不可逆</td></tr>
-<tr><td class="l">编码论</td><td class="l">0 有限</td><td class="l">逻辑／格</td><td class="l">精细</td><td class="l">正</td><td class="l">无</td></tr>
-<tr><td class="l">生成拓扑</td><td class="l">3 无限自由</td><td class="l">拓扑</td><td class="l">完全</td><td class="l">正</td><td class="l">无</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>分类总表。<b>等级 C／丙（作者判断）。</b>坐标定义见第 23.5.3 节表 23.5。旧表（三轴）已废弃，保留于 B.3 以备对照。</div>
-
-<h2>B.3　空缺组合（旧三轴；已被 23.5.3 的重导分类取代）</h2>
-
-<table class="nat">
-<caption class="cap"><b>表 B.3　有待探索的组合（三轴空间中的空缺）</b></caption>
-<tr><th class="l">组合</th><th class="l">候选领域</th><th class="l">现象</th><th class="l">判断方法（可证伪）</th></tr>
-<tr><td class="l">线性×正×连续</td><td class="l">演化线性代数</td><td class="l">LLM 层间表示演化</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">拓扑×正×离散</td><td class="l">离散同伦论</td><td class="l">图神经网络消息传递</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">度量×负×连续</td><td class="l">刚性测度论</td><td class="l">测度集中、双曲随机游走</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">序×正×连续</td><td class="l">连续组合学</td><td class="l">随机图过程相变</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-<tr><td class="l">逻辑×正×连续</td><td class="l">连续类型论</td><td class="l">HoTT 高阶路径、语义漂移</td><td class="l">在该格子的假想领域上检验描述约定：矛盾→禁戒（O18）；无矛盾→找真实对应</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>空缺表。等级 C／丙（纲领）。<b>完整论证见第 24 章。</b></div>
-
-<h2>B.4　编码保结构的四级定义与评级</h2>
-
-<p>表 B.1 的“等级”列是<b>证据等级</b>（A/B/C），不是<b>结构保持程度</b>。二者不同：一个 B 级工具对应可能完全保结构，也可能只是类比。为回应“如何判断编码是否保持结构”的追问，本附录给出四级精确定义与已检验领域的评级。</p>
-
-<table class="nat">
-<caption class="cap"><b>表 B.4　编码保结构的四级定义</b></caption>
-<tr><th class="l">等级</th><th class="l">名称</th><th class="l">定义（φ: 领域 M → 区分语言）</th></tr>
-<tr><td class="l">1</td><td class="l">强</td><td class="l">φ 单射，且 M 的每条定理对应 本语言中的真定理</td></tr>
-<tr><td class="l">2</td><td class="l">中</td><td class="l">φ 单射；本语言中的定理可能多于 M（是推广而非错误）</td></tr>
-<tr><td class="l">3</td><td class="l">弱</td><td class="l">φ 保部分关键结构（如测度、拓扑），但不单射</td></tr>
-<tr><td class="l">0</td><td class="l">失败</td><td class="l">φ 不单射，或由 φ 产生错定理</td></tr>
+<tr><th class="l">图族</th><th class="l">n</th><th class="l">λ<sub>2</sub></th><th class="l">λ<sub>n</sub></th><th class="l">R</th></tr>
+<tr><td class="l">K<sub>5</sub></td><td class="l">5</td><td class="l">5.0000</td><td class="l">5.0000</td><td class="l">1.0000</td></tr>
+<tr><td class="l">K<sub>20</sub></td><td class="l">20</td><td class="l">20.0000</td><td class="l">20.0000</td><td class="l">1.0000</td></tr>
+<tr><td class="l">K<sub>2,3</sub></td><td class="l">5</td><td class="l">2.0000</td><td class="l">5.0000</td><td class="l">2.5000</td></tr>
+<tr><td class="l">K<sub>3,7</sub></td><td class="l">10</td><td class="l">3.0000</td><td class="l">10.0000</td><td class="l">3.3333</td></tr>
+<tr><td class="l">K<sub>1,9</sub>（星）</td><td class="l">10</td><td class="l">1.0000</td><td class="l">10.0000</td><td class="l">10.0000</td></tr>
+<tr><td class="l">Q<sub>3</sub></td><td class="l">8</td><td class="l">2.0000</td><td class="l">6.0000</td><td class="l">3.0000</td></tr>
+<tr><td class="l">Q<sub>6</sub></td><td class="l">64</td><td class="l">2.0000</td><td class="l">12.0000</td><td class="l">6.0000</td></tr>
+<tr><td class="l">C<sub>10</sub></td><td class="l">10</td><td class="l">0.3820</td><td class="l">4.0000</td><td class="l">10.4721</td></tr>
+<tr><td class="l">C<sub>100</sub></td><td class="l">100</td><td class="l">0.0039</td><td class="l">4.0000</td><td class="l">1013.43</td></tr>
+<tr><td class="l">P<sub>10</sub></td><td class="l">10</td><td class="l">0.0979</td><td class="l">3.9021</td><td class="l">39.86</td></tr>
+<tr><td class="l">P<sub>100</sub></td><td class="l">100</td><td class="l">0.0010</td><td class="l">3.9990</td><td class="l">4051.68</td></tr>
+<tr><td class="l">Petersen</td><td class="l">10</td><td class="l">2.0000</td><td class="l">5.0000</td><td class="l">2.5000</td></tr>
 </table>
 
+<h3>B.2　网格的收敛</h3>
 <table class="nat">
-<caption class="cap"><b>表 B.5　已检验对象的保结构评级（脚本 <code>encoding_preservation.py</code>）</b></caption>
-<tr><th class="l">对象</th><th class="l">检验的性质（微型实例）</th><th class="l">保结构等级</th><th class="l">结果</th></tr>
-<tr><td class="l">图论</td><td class="l">拉普拉斯谱恢复</td><td class="l"><b>1 强</b></td><td class="l">通过</td></tr><tr><td class="l">线性代数</td><td class="l">特征值恢复</td><td class="l"><b>1 强</b></td><td class="l">通过</td></tr><tr><td class="l">概率论</td><td class="l">条件期望=L²投影</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">组合数学</td><td class="l">Pascal 递推（+ 图着色色数）</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">数理逻辑</td><td class="l">De Morgan（真值表）</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">信息论</td><td class="l">数据处理不等式 H(f(X))≤H(X)</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">表示论</td><td class="l">Z/3 特征标正交性</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">调和分析</td><td class="l">DFT Parseval 恒等式</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">优化</td><td class="l">梯度流收敛由谱半径决定</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">测度论</td><td class="l">有限可加性</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">马尔可夫链</td><td class="l">平稳分布 πP=π</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">编码论</td><td class="l">Hamming 界（完美码）</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">代数拓扑</td><td class="l">Euler 示性数（链复形=同调）</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">图着色</td><td class="l">色数（K₄=4、C₅=3）</td><td class="l"><b>2 中</b></td><td class="l">通过</td></tr><tr><td class="l">生成拓扑</td><td class="l">点权重+单阈值能否生成全部拓扑</td><td class="l"><b>3 弱</b></td><td class="l">反例 8/29</td></tr><tr><td class="l">其余 12 个领域</td><td class="l">—</td><td class="l"><b>未验证</b></td><td class="l">—</td></tr>ss="chapter">附录 数据与案例　领域编码总表</h1>
-
-<h1 class="chapter">附录 数据与案例　证据与数据缺口清单</h1>
-
-<p class="lead">本附录登记本书的证据缺口与数据缺口。<b>一个缺口被写出来，就是一个结果；一个缺口被隐藏，就是一个陷阱。</b>凡本书无法获得、无法证明、无法验证的东西，都在此列出。</p>
-
-<h2>F.1　证据缺口（数学）</h2>
-
-<table class="nat">
-<caption class="cap"><b>表 F.1　数学证据缺口</b></caption>
-<tr><th class="l">缺口</th><th class="l">需要什么才能填上</th><th class="l">难度</th><th class="l">当前替代</th></tr>
-<tr><td class="l">（已归并）形式统一</td><td class="l">一个统一定义，使三领域公式为其特例</td><td class="l">高</td><td class="l">并列三个定义（第 12.4 节）</td></tr>
-<tr><td class="l">连续情形的约定 4</td><td class="l">Hille–Yosida 型条件 + 区分相容性证明</td><td class="l">高</td><td class="l">仅图论验证</td></tr>
-<tr><td class="l">1/3 因子的解释</td><td class="l">四维计算或轨形构造</td><td class="l">中</td><td class="l">三种出路并列（第 20.3 节）</td></tr>
-<tr><td class="l">O17 独立特征复核（猜想 D2）</td><td class="l">与词表无关的书目计量数据：nLab/zbMATH/MSC 条目计数、Mathlib 覆盖率、公开问题计数</td><td class="l">中—高</td><td class="l">已用作者估计做概念性复核（结果 N<sub>eff</sub>≈2.9，与 D2 不相容）；正式复核需公开数据集</td></tr>
-<tr><td class="l">高维缺口因子 f(n)</td><td class="l">四维 Gauss–Bonnet 的计算</td><td class="l">中</td><td class="l">猜想 1/(2n+1)（未证）</td></tr>
-<tr><td class="l">领域编码的结构保持</td><td class="l">逐领域证明映射保谱/保度量/保序</td><td class="l">高</td><td class="l">仅写出映射（第 22 章）</td></tr>
-<tr><td class="l">离散—连续函子</td><td class="l">构造保持相变结构的函子</td><td class="l">很高</td><td class="l">仅类比（第 19 章）</td></tr>
-<tr><td class="l">主体间性（多智能体）</td><td class="l">多区分系统的耦合理论</td><td class="l">高</td><td class="l">仅单系统（第 13 章）</td></tr>
+<tr><th class="l">n</th><th class="l">λ<sub>2</sub></th><th class="l">λ<sub>n</sub></th><th class="l">R</th><th class="l">(8/π²)n²</th><th class="l">λ<sub>2</sub>/h²</th></tr>
+<tr><td class="l">10</td><td class="l">0.097887</td><td class="l">7.8042</td><td class="l">79.7</td><td class="l">81.1</td><td class="l">9.7887</td></tr>
+<tr><td class="l">20</td><td class="l">0.024623</td><td class="l">7.9508</td><td class="l">322.9</td><td class="l">324.2</td><td class="l">9.8493</td></tr>
+<tr><td class="l">40</td><td class="l">0.006165</td><td class="l">7.9877</td><td class="l">1295.6</td><td class="l">1296.9</td><td class="l">9.8645</td></tr>
+<tr><td class="l">80</td><td class="l">0.001542</td><td class="l">7.9969</td><td class="l">5186.3</td><td class="l">5187.6</td><td class="l">9.8683</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>数学缺口清单。等级 B／乙（作者判断）。</div>
+<p><span class="s">π²=9.8696</span>。<span class="s">λ<sub>2</sub>/h²</span> 单调上升趋近 <span class="s">π²</span>；<span class="s">R</span> 与闭式的相对误差从 1.7% 降到 0.03%。</p>
 
-<h2>F.2　数据缺口（经验）</h2>
-
+<h3>B.3　Weyl 计数（80×80 网格）</h3>
 <table class="nat">
-<caption class="cap"><b>表 F.2　经验数据缺口</b></caption>
-<tr><th class="l">缺口</th><th class="l">为什么重要</th><th class="l">获取路径</th><th class="l">状态</th></tr>
-<tr><td class="l">LLM 各层总激活与阈值的关系</td><td class="l">检验假说 A1/A2</td><td class="l">公开模型检查点 + 前向钩子</td><td class="l">未获取</td></tr>
-<tr><td class="l">图神经网络消息传递的相变数据</td><td class="l">检验"离散同伦论"候选</td><td class="l">开源 GNN 库 + 合成图</td><td class="l">未获取</td></tr>
-<tr><td class="l">时变网络失稳的实验数据</td><td class="l">检验 A3</td><td class="l">控制实验（电力、传感器网络）</td><td class="l">未获取</td></tr>
-<tr><td class="l">四维流形的热核系数计算</td><td class="l">检验 G4</td><td class="l">符号计算（SageMath/SymPy）</td><td class="l">可计算，未执行</td></tr>
-<tr><td class="l">模曲线 X(3) 的分离结构解释</td><td class="l">检验 G5</td><td class="l">需要新的数学构造</td><td class="l">未开始</td></tr>
+<tr><th class="l">Λ</th><th class="l">网格计数</th><th class="l">格点精确计数</th><th class="l">Λ/4</th></tr>
+<tr><td class="l">40</td><td class="l">6</td><td class="l">6</td><td class="l">10.0</td></tr>
+<tr><td class="l">80</td><td class="l">9</td><td class="l">9</td><td class="l">20.0</td></tr>
+<tr><td class="l">160</td><td class="l">17</td><td class="l">17</td><td class="l">40.0</td></tr>
+<tr><td class="l">320</td><td class="l">31</td><td class="l">31</td><td class="l">80.0</td></tr>
+<tr><td class="l">1280</td><td class="l">117</td><td class="l">113</td><td class="l">320.0</td></tr>
+<tr><td class="l">5120</td><td class="l">453</td><td class="l">427</td><td class="l">1280.0</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>数据缺口清单。<b>重要：</b>本书不伪造这些数据；它们的存在只说明"这些检验尚未被完成"。</div>
+<p>前四行“网格计数＝格点计数”，说明离散侧精确复现了连续侧的计数；第五、六行开始出现边界效应（网格边界与周期性边界不同）。Weyl 主项 <span class="s">Λ/4</span> 只在 <span class="s">Λ→∞</span> 时逼近，低阶项为 <span class="s">O(√Λ)</span>。</p>
 
-<h2>F.3　方法缺口</h2>
-
+<h3>B.4　同谱反例（6 顶点）</h3>
 <table class="nat">
-<caption class="cap"><b>表 F.3　方法缺口</b></caption>
-<tr><th class="l">缺口</th><th class="l">说明</th></tr>
-<tr><td class="l">缺少形式化验证</td><td class="l">定理 15.1 尚未在 Lean 4 中形式化（需要类型论工作）</td></tr>
-<tr><td class="l">缺少独立复现</td><td class="l">本书的所有数值由作者脚本生成，尚无第三方独立复现</td></tr>
-<tr><td class="l">缺少同行评审</td><td class="l">本书是以预印本形式发布的纲领，尚未经过正式同行评审</td></tr>
-<tr><td class="l">缺少专家反馈</td><td class="l">连续情形、1/3 缺口、编码映射都需要领域专家的批评</td></tr>
+<tr><th class="l">图</th><th class="l">边集</th><th class="l">度序列</th><th class="l">拉普拉斯谱</th></tr>
+<tr><td class="l">G<sub>1</sub></td><td class="l">02,12,13,14,25,35,45</td><td class="l">3,3,3,2,2,1</td><td class="l">0, 0.7639, 2, 3, 3, 5.2361</td></tr>
+<tr><td class="l">G<sub>2</sub></td><td class="l">02,05,13,14,23,34,35</td><td class="l">4,2,2,2,2,2</td><td class="l">0, 0.7639, 2, 3, 3, 5.2361</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>方法缺口清单。</div>
+<p>两图不同构（度序列不同），但 <span class="s">λ<sub>2</sub></span>、<span class="s">λ<sub>n</sub></span>、<span class="s">R=6.8544</span> 与解锁序完全相同。它们由 <code>networkx.graph_atlas_g()</code> 遍历 <span class="s">n≤7</span> 的全部连通图、按谱分组后筛出；最小的这类构造出现在 <span class="s">n=6</span>。</p>
 
-<h2>F.4　如何填补一个缺口</h2>
-
-<p>按本附录的纪律，填补缺口的标准流程是：</p>
-
-<ol>
-<li>在附录 可证伪登记簿 登记一个命题（含证伪条件与核验日期）。</li>
-<li>在 <code>docs/preregistration/registry.json</code> 中登记机器可读版本。</li>
-<li>执行核验（计算、证明或数据收集）。</li>
-<li>把结果以<b>新行</b>追加到 <code>checkups.csv</code>，分开报告预测与观察。</li>
-<li>若命题被证伪，在原命题旁标记"已证伪"，并保留原行。</li>
-<li>更新相应的正文章节与 <code>versions/CHANGELOG.md</code>（内部）。</li>
-</ol>
-
-<div class="note"><b>开放贡献</b>
-本书欢迎读者填补上述任何缺口。若你完成了其中一项（例如四维 G4 的计算），请按上述流程登记核销。一个纲领的活力，取决于它是否能被外部的人推进。<b>本附录的存在，就是为了让这种推进有据可依。</b></div>
+<h3>B.5　可运行代码</h3>
+<pre>import numpy as np
+def lap(n, E):
+    A = np.zeros((n, n))
+    for u, v in E: A[u, v] = A[v, u] = 1
+    return np.diag(A.sum(1)) - A
+def R(L):
+    ev = np.sort(np.linalg.eigvalsh(L))
+    return ev[-1] / ev[1]
+grid = lambda n: (n*n, [((i*n+j), (i+1)*n+j) for i in range(n-1) for j in range(n)]
+                       + [((i*n+j), i*n+j+1) for i in range(n) for j in range(n-1)])
+for n in (10, 20, 40, 80):
+    N, E = grid(n)
+    print(n, round(R(lap(N, E)), 1), round(8/np.pi**2*n*n, 1))</pre>
+<p>输出与表 B.2 一致。这段代码是本书全部“硬核数字”的最小复现路径。</p>

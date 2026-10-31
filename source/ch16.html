@@ -1,210 +1,69 @@
-<h2 class="chapter">第16章　两阶段相变：局部先于全局</h2>
-<p class="lead" data-story="1">森林起火，先是一簇火苗，很久以后才连成一条火线。<b>局部的、细碎的变化，总是先于整体的、平滑的变化。</b></p>
+<h2 class="chapter">第16章　图上的临界耦合定理</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>在有限连通图上，区分强度的线性演化 <span class="s">Ḋ=(−αI+βL)D</span> 完全可解：每个模式以 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span> 演化，临界耦合是两个数 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。证明只用实对称谱定理与线性 ODE，读者可逐行检查。</p></div>
 
-<p class="lead">第 15 章的定理有一个不平凡的结构：<b>临界耦合不是一个，而是两个。</b>最先解锁的是最高频（局部）模式，最后解锁的是 Fiedler（全局切割）模式。这意味着一个系统可以先获得"局部区分能力"，再获得"全局区分能力"。本章把这个结构讲透，并说明它与谱间隙的关系。</p>
+<p class="lead" data-story="1">一张关系网摊在桌上，一个人拉住左下角，问：“松手之后，哪里最先动？”有人指中心，有人指最弱的那个点。做图论的那位把笔一放：<b>“都不是。最先动的是最边上的那个模式。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-两阶段相变是图上区分语言的新现象：当 <span class="s">λ<sub>n</sub>&gt;λ<sub>2</sub></span> 时，<b>存在一个中间相，其中局部区分已经解锁而全局区分尚未</b>。这个结构把"局部 vs 全局"这个模糊的区分变成了一个精确的谱条件。</div>
+<h3 id="sec16-1">16.1　导论：为什么从图开始</h3>
 
-<h3 id="sec16-1">16.1　导论：一个非平凡的结构</h3>
+<p>一本谈统一的书若只在语言上成立，就只是修辞。要让它可信，必须在至少一个对象上给出完整、严格、可复现的结果。图是理想的起点：矩阵是实对称的（谱定理可用）、演化是线性的（可精确求解）、数字可以十几行代码复算。</p>
 
-<p>大多数相变理论只有一个临界点。第 15 章的定理却给出两个，而且它们有明确的几何含义。这不是技术细节，而是框架关于"区分如何生长"的第一个结构性发现。</p>
+<p>更重要的是，图上的“区分”有直接对应物：<b>一个顶点能否与另一个顶点区分，取决于扩散模式是否落在它上面。</b>这句话在第 6—10 章只是语言，在这里变成一个方程。</p>
 
-<p>直觉如下：拉普拉斯矩阵的高频特征向量在局部剧烈振荡（相邻顶点取值相反），低频特征向量则在全局缓慢变化（把图切成两半）。<b>耦合 <span class="s">β</span> 从零增大时，先能让"局部差分"生长（高频），再能让"全局切割"生长（低频）。</b></p>
+<h3 id="sec16-2">16.2　区分强度与演化方程</h3>
 
-<h3 id="sec16-2">16.2　两个临界点</h3>
+<div class="define"><span class="bt">定义 16.1　图上的区分演化</span>
+设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>，顶点 <span class="s">v</span> 上的区分强度为 <span class="s">D<sub>v</sub>(t)∈ℝ</span>。演化方程为
+<div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>),  即  Ḋ=(−αI+βL)D</span><span class="num">(16.1)</span></div>
+其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度，<span class="s">L=D<sub>adj</sub>−A</span> 是图拉普拉斯。</div>
 
-<img class="fig" src="assets/svg/fig13-spectrum-thresholds.svg" alt="谱与临界阈值">
+<p>两项各有含义：<span class="s">−αD</span> 是“忘掉”；<span class="s">βL</span> 是“向邻居看齐后再拉开”。没有第一项，系统会收敛到常数（谁也区分不了谁）；没有第二项，每个顶点各自衰减（区分度整体归零）。<b>区分既需要记忆，也需要关系。</b></p>
 
-<div class="cap"><b>图 16.1　谱与临界阈值</b>。左：一个典型图的拉普拉斯谱（从 <span class="s">λ<sub>1</sub>=0</span> 到 <span class="s">λ<sub>n</sub></span>）。右：对应的临界耦合 <span class="s">α/λ<sub>k</sub></span>，随 <span class="s">λ<sub>k</sub></span> 增大而减小。最高频模式对应最小的临界耦合 <span class="s">β<sub>1</sub></span>，Fiedler 模式对应最大的 <span class="s">β<sub>2</sub></span>。两者之间是"局部增益相"。</div>
+<h3 id="sec16-3">16.3　谱分解与临界耦合</h3>
 
-<img class="fig" src="assets/svg/fig13b-two-stage-evolution.svg" alt="两阶段演化示意">
+<p>因为 <span class="s">L</span> 实对称，存在标准正交特征基 <span class="s">e<sub>1</sub>,…,e<sub>n</sub></span>，特征值 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>（连通性保证 <span class="s">λ<sub>2</sub>&gt;0</span>）。把初始条件按基展开：<span class="s">D(0)=Σc<sub>k</sub>e<sub>k</sub></span>，则</p>
 
-<div class="cap"><b>图 16.2　两阶段的区分结构演化</b>。环上 8 个顶点的区分模式：左（衰减相）全部灰化；中（局部相）相邻顶点反相，即高频模式；右（全局相）左右分裂，即 Fiedler 模式。<b>局部模式先于全局模式出现，这正是“局部先于全局”的字面图像。</b></div>
+<div class="eq"><span class="body">D(t)=Σ<sub>k</sub> c<sub>k</sub> e<sup>(βλ<sub>k</sub>−α)t</sup> e<sub>k</sub></span><span class="num">(16.2)</span></div>
 
-<table class="nat">
-<caption class="cap"><b>表 16.1　三个相及其含义</b></caption>
-<tr><th class="l">相</th><th class="l">条件</th><th class="l">增长的模式</th><th class="l">解释</th></tr>
-<tr><td class="l">衰减相</td><td class="l">β &lt; α/λ<sub>n</sub></td><td class="l">无</td><td class="l">区分无法维持，结构均匀化</td></tr>
-<tr><td class="l">局部增长相</td><td class="l">α/λ<sub>n</sub> &lt; β &lt; α/λ<sub>2</sub></td><td class="l">高频（局部）模式</td><td class="l">局部区分生长，全局仍均匀</td></tr>
-<tr><td class="l">全局增长相</td><td class="l">β &gt; α/λ<sub>2</sub></td><td class="l">高频 + Fiedler 模式</td><td class="l">全局切割也开始生长</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>相图。等级 A／甲（定理 15.1 的直接推论）。</div>
+<p>于是每个模式的命运只取决于一个数的符号：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。模式 <span class="s">k</span> 增长当且仅当 <span class="s">β&gt;α/λ<sub>k</sub></span>。这就给出两个临界值：</p>
 
-<h3 id="sec16-3">16.3　中间相的存在性与宽度</h3>
+<div class="eq"><span class="body">β<sub>1</sub>=α/λ<sub>n</sub>（最快模式解锁）,   β<sub>2</sub>=α/λ<sub>2</sub>（最慢模式解锁）</span><span class="num">(16.3)</span></div>
 
-<p>中间相存在的充要条件是 <span class="s">λ<sub>n</sub>&gt;λ<sub>2</sub></span>，即最高特征值严格大于代数连通度。它的宽度为</p>
+<h3 id="sec16-4">16.4　定理与证明</h3>
 
-<div class="eq"><span class="body">W := β<sub>2</sub> − β<sub>1</sub> = α(1/λ<sub>2</sub> − 1/λ<sub>n</sub>) = α(λ<sub>n</sub>−λ<sub>2</sub>)/(λ<sub>2</sub>λ<sub>n</sub>)</span><span class="num">(13.1)</span></div>
+<p><b>定理 16.1（临界耦合）。</b>设 <span class="s">G</span> 连通，<span class="s">α&gt;0</span>。则：</p>
+<ol>
+<li>对任意初始条件，<span class="s">D(t)→0</span> 当且仅当 <span class="s">β&lt;β<sub>1</sub></span>；</li>
+<li>若 <span class="s">c<sub>k</sub>≠0</span>，则模式 <span class="s">k</span> 的增长率为 <span class="s">βλ<sub>k</sub>−α</span>，与其他模式无关；</li>
+<li>当 <span class="s">β&gt;β<sub>2</sub></span> 时，存在不趋于零的初始条件，使所有非平凡模式同时增长。</li>
+</ol>
 
-<p>这个宽度是一个可计算的量。它告诉我们"局部先于全局"这个现象有多显著。</p>
+<p><b>证明。</b>(1) 由 (16.2)，<span class="s">‖D(t)‖²=Σc<sub>k</sub>²e<sup>2(βλ<sub>k</sub>−α)t</sup></span>。因 <span class="s">λ<sub>k</sub>≤λ<sub>n</sub></span>，所有指数项都非正，故 <span class="s">‖D(t)‖</span> 单调不增；若 <span class="s">β&lt;β<sub>1</sub></span>，则对 <span class="s">k≥2</span> 有 <span class="s">βλ<sub>k</sub>−α&lt;0</span>，且常数模式 <span class="s">k=1</span> 的指数为 <span class="s">−α&lt;0</span>，故所有项趋于零，<span class="s">D(t)→0</span>。反之若 <span class="s">β&gt;β<sub>1</sub></span>，取 <span class="s">c<sub>n</sub>≠0</span> 即得一项指数增长，<span class="s">D(t)↛0</span>。<br>
+(2) 由 (16.2) 逐项读出。<br>
+(3) 取 <span class="s">D(0)</span> 在所有 <span class="s">k≥2</span> 上都有非零分量（例如 <span class="s">e<sub>2</sub>+e<sub>n</sub></span>），<span class="s">β&gt;β<sub>2</sub>=α/λ<sub>2</sub></span> 保证最小的非平凡 <span class="s">λ</span> 也使 <span class="s">βλ<sub>k</sub>&gt;α</span>，故所有项增长。<span class="s">∎</span></p>
 
-<table class="nat">
-<caption class="cap"><b>表 16.2　不同图的中间相宽度（取 α=1）</b></caption>
-<tr><th class="l">图</th><th class="l">λ<sub>2</sub></th><th class="l">λ<sub>n</sub></th><th class="l">β<sub>1</sub></th><th class="l">β<sub>2</sub></th><th class="l">宽度 W</th></tr>
-<tr><td class="l">完全图 K<sub>n</sub></td><td class="l">n</td><td class="l">n</td><td class="l">1/n</td><td class="l">1/n</td><td class="l">0（无中间相）</td></tr>
-<tr><td class="l">Petersen</td><td class="l">2</td><td class="l">5</td><td class="l">0.200</td><td class="l">0.500</td><td class="l">0.300</td></tr>
-<tr><td class="l">环 C<sub>10</sub></td><td class="l">0.382</td><td class="l">4</td><td class="l">0.250</td><td class="l">2.618</td><td class="l">2.368</td></tr>
-<tr><td class="l">路径 P<sub>n</sub>（大 n）</td><td class="l">≈π²/n²</td><td class="l">≈4</td><td class="l">≈0.25</td><td class="l">≈n²/π²</td><td class="l">≈n²/π²</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>数值表（部分渐近）。等级 A／甲（可由谱定理直接计算）。精确值见附录 形式化与证明 与 <code>analysis/graph_phase_transition.py</code> 的输出。</div>
-
-<div class="scenario"><span class="bt">一个可检验的结构性预言</span>
-表 16.2 给出一个可检验预言：<b>在路径图这类"长而窄"的图上，中间相宽度随顶点数二次增长。</b>这意味着大图上"局部区分"与"全局区分"之间存在一个巨大的滞后区。这个预言来自纯谱论，可以被任何数值实验直接检验（第 17.7 节）。</div>
-
-<h3 id="sec16-4">16.4　与谱间隙、代数连通度的关系</h3>
-
-<p><span class="s">λ<sub>2</sub></span>（代数连通度）在图论中有明确含义：它度量图的"连通紧密程度"——<span class="s">λ<sub>2</sub></span> 越大，图越难被切成两半。<span class="s">λ<sub>n</sub></span> 度量"局部振荡的强度"。</p>
-
-<p>两阶段相变把这两个量放进同一个框架：<b>全局区分能力解锁的阈值 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span> 直接由代数连通度决定。</b>这与共识协议里的一个著名事实相呼应：共识时间由 <span class="s">1/λ<sub>2</sub></span> 决定。但注意差别：</p>
-
-<ul>
-<li><b>共识协议</b> <span class="s">ẋ=−Lx</span>：<span class="s">λ<sub>2</sub></span> 决定收敛速度（所有模式都在衰减）。</li>
-<li><b>区分语言</b> <span class="s">Ḋ=(−αI+βL)D</span>：<span class="s">λ<sub>n</sub></span> 决定第一个增长阈值，<span class="s">λ<sub>2</sub></span> 决定第二个。</li>
-</ul>
-
-<p>差别来自衰减项 <span class="s">−αI</span> 的存在：在共识协议中，<span class="s">λ<sub>1</sub>=0</span> 模式守恒（总质量不变）；在这里，它衰减。这使"最不稳定"的模式从 Fiedler 变成最高频，从而产生了中间相。</p>
-
-<div class="note"><b>为什么这个差别重要</b>
-如果演化方程里没有衰减项（<span class="s">α=0</span>），则 <span class="s">Ḋ=βLD</span> 是热方程，所有模式都衰减（<span class="s">λ<sub>k</sub>≥0</span>），没有增长相。有衰减项才有相变。这提示：<b>区分系统的相变来自"维持成本"与"传播收益"之间的竞争，而不是来自扩散本身。</b></div>
-
-<h3 id="sec16-5">16.5　与热方程、共识协议的对照</h3>
+<p>证明没有用到任何超出“实对称矩阵可正交对角化”的事实。这就是本书所说的“硬核”：读者不必相信任何框架，只要会线性代数。</p>
 
 <table class="nat">
-<caption class="cap"><b>表 16.3　区分语言与相关动力学的对照</b></caption>
-<tr><th class="l">系统</th><th class="l">方程</th><th class="l">主导速率</th><th class="l">行为</th></tr>
-<tr><td class="l">热方程</td><td class="l">Ḋ=βLD</td><td class="l">βλ<sub>2</sub></td><td class="l">始终衰减（均匀化）</td></tr>
-<tr><td class="l">共识协议</td><td class="l">ẋ=−Lx</td><td class="l">λ<sub>2</sub></td><td class="l">收敛到共识</td></tr>
-<tr><td class="l">区分语言</td><td class="l">Ḋ=(−αI+βL)D</td><td class="l">βλ<sub>n</sub>−α</td><td class="l">三相位，含两阶段相变</td></tr>
+<tr><th class="l">图</th><th class="l"><span class="s">λ<sub>2</sub></span></th><th class="l"><span class="s">λ<sub>n</sub></span></th><th class="l"><span class="s">β<sub>1</sub></span>（<span class="s">α=1</span>）</th><th class="l"><span class="s">β<sub>2</sub></span>（<span class="s">α=1</span>）</th></tr>
+<tr><td class="l">环 <span class="s">C<sub>10</sub></span></td><td class="l">0.3820</td><td class="l">4.0000</td><td class="l">0.2500</td><td class="l">2.6180</td></tr>
+<tr><td class="l">Petersen</td><td class="l">2.0000</td><td class="l">5.0000</td><td class="l">0.2000</td><td class="l">0.5000</td></tr>
+<tr><td class="l">完全图 <span class="s">K<sub>10</sub></span></td><td class="l">10.0000</td><td class="l">10.0000</td><td class="l">0.1000</td><td class="l">0.1000</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>对照表。等级 A／甲（可直接由谱分析验证）。</div>
+<div class="cap"><b>表 16.1　三个图的临界耦合</b>　第三、四列若相等，系统没有中间地带（第 17 章）。数值可用十行代码复算。</div>
 
-<h3 id="sec16-6">16.6　加权图：顺序为何不可反转</h3>
+<h3 id="sec16-4b">16.4b　定理 16.1 的三个隐含前提</h3>
 
-<p>定理 15.1 是针对无权图的。一个自然的推广问题是：<b>如果给每条边赋一个正权重，相变顺序会不会改变？</b>直觉上，不均匀的权重可能让某个“全局”模式提前解锁。本节证明这种直觉是错的。</p>
+<p>三个前提都写在陈述里，但都容易被漏读。<b>其一，连通性</b>：不连通时 <span class="s">λ<sub>2</sub>=0</span>，<span class="s">β<sub>2</sub></span> 发散，定理失效——这不是技术细节，非连通图恰好对应“系统内部已经分块”。<b>其二，对称性</b>：<span class="s">L</span> 必须对称，否则谱可能为复数（16.5 的反例）。<b>其三，均匀耦合</b>：所有边的 <span class="s">β</span> 相同；加权图的结论要改成 <span class="s">βλ<sub>k</sub>(L<sub>w</sub>)</span>，其中 <span class="s">L<sub>w</sub></span> 是加权拉普拉斯，形式不变但数值全变。</p>
 
-<div class="define"><span class="bt">定理 16.1　对称加权不可反转 ［定理，A／甲］</span>
-设 <span class="s">G</span> 连通，每条边赋正权 <span class="s">w<sub>uv</sub>&gt;0</span>，加权拉普拉斯为 <span class="s">(L<sub>w</sub>)<sub>uv</sub>=−w<sub>uv</sub></span>（<span class="s">u≠v</span>），<span class="s">(L<sub>w</sub>)<sub>uu</sub>=Σ<sub>v</sub>w<sub>uv</sub></span>。则 <span class="s">L<sub>w</sub></span> 实对称半正定，谱满足 <span class="s">0=λ₁&lt;λ₂≤⋯≤λ<sub>n</sub></span>，故
-<div class="eq"><span class="body">β₁ = α/λ<sub>n</sub> ≤ α/λ₂ = β₂</span><span class="num">(13.4)</span></div>
-恒成立。</div>
+<p>三个前提合起来，就是第 5 章“边界第四条”的具体化：<b>定理的锐度来自前提的窄。</b>把前提放宽，结论就变软；本书选择保持窄，而不是把结论写成模糊的大话。</p>
 
-<p><b>证明。</b><span class="s">L<sub>w</sub></span> 对称性由 <span class="s">w<sub>uv</sub>=w<sub>vu</sub></span> 直接得。半正定性：对任意 <span class="s">x</span>，<span class="s">x<sup>T</sup>L<sub>w</sub>x=Σ<sub>{u,v}∈E</sub>w<sub>uv</sub>(x<sub>u</sub>−x<sub>v</sub>)²≥0</span>。由谱定理，特征值实且可排序；连通性给 <span class="s">λ₂&gt;0</span>。于是 <span class="s">λ₂≤λ<sub>n</sub></span>，而 <span class="s">α&gt;0</span>，故 <span class="s">α/λ<sub>n</sub>≤α/λ₂</span>。<span class="s">∎</span></p>
+<h3 id="sec16-5">16.5　反例：非对称耦合会让顺序反转</h3>
 
-<p>这个定理的内容是：<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λ<sub>n</sub>)</span>，却不能反转“局部先于全局”。</b>数值上，400 个随机加权连通图全部保持顺序，且 <span class="s">λ<sub>n</sub>/λ₂</span> 可以大到 297（即中间相可以极宽），但顺序不变。A／甲</p>
+<p>若把边改成有向（<span class="s">L</span> 不再对称），<span class="s">L</span> 的特征值可以是复数，增长由 <span class="s">Re(λ<sub>k</sub>)</span> 决定，<span class="s">M=−αI+βL</span> 也不再正规。这时“高频先解锁、低频后解锁”不再成立：附录 B 给出一个 6 顶点有向图，其中的全局模式先于局部模式增长。<b>定理 16.1 的适用范围是有向图的补集</b>，这一点必须写在结论里，而不是留在脚注。</p>
 
-<h3 id="sec16-7">16.7　有向图：反转的反例</h3>
+<h3 id="sec16-6">16.6　本章小结</h3>
 
-<p>如果允许耦合是<b>非对称</b>的（有向图），情形就变了。取有向拉普拉斯 <span class="s">L=D<sub>out</sub>−A</span>，它一般不对称，特征值可为复数。生成元 <span class="s">M=−αI+βL</span> 非正规，增长率由 <span class="s">Re(μ<sub>k</sub>)=βRe(λ<sub>k</sub>)−α</span> 决定。<b>第一个增长的模式是 <span class="s">Re(λ<sub>k</sub>)</span> 最大者——它未必是最振荡的局部模式。</b></p>
+<p>线性演化把“区分”变成一串数：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。两个临界耦合（16.3）分开了解锁的先后。第 17 章问：这两个数之间的地带是什么。</p>
 
-<div class="define"><span class="bt">定义 16.2　局部性的度量（总变差）</span>
-对特征向量 <span class="s">v</span> 与有向弧集 <span class="s">E</span>，定义 <span class="s">TV(v)=Σ<sub>(u,w)∈E</sub>|v<sub>u</sub>−v<sub>w</sub>| / (‖v‖·|E|)</span>。<span class="s">TV</span> 高 = 相邻顶点取值差异大 = 局部振荡；<span class="s">TV</span> 低 = 平滑 = 全局。</div>
-
-<div class="define"><span class="bt">反例 16.1　有向图上的顺序反转 ［反例，A／甲］</span>
-6 顶点有向图，弧集
-<div class="eq"><span class="body">(0,2),(1,0),(2,4),(3,1),(3,2),(4,1),(5,1),(5,2)</span><span class="num">(13.5)</span></div>
-则：首个增长模式 <span class="s">Re(λ)=2.0</span>，<span class="s">TV=0.25</span>（全局/平滑），临界 <span class="s">β=α/2</span>；较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），临界 <span class="s">β=α</span>。<b>全局模式先增长，局部模式后增长——顺序与对称情形相反。</b></div>
-
-<p><b>为什么有向图可以反转。</b>对称情形下，<span class="s">L</span> 的谱定理保证“高频 = 大特征值 = 大振荡”。非对称情形下，“最大实部”与“最振荡”不再捆绑：最大实部的特征向量可以是一个平滑的“源–汇”型模式。<b>反转的根源是生成元的非正规性（non-normality），而不是权重的大小。</b>A／甲</p>
-
-<div class="scenario"><span class="bt">这个反例的价值</span>
-它给出了一个明确的<b>适用边界</b>：定理 15.1 的“局部先于全局”在任意对称加权下稳健（定理 16.1），但在有向耦合下会失效（反例 16.1）。<b>这正是第二层战略想要的“失效条件”——一个能把理论划出边界的反例，比十个正面例子更有价值。</b>完整数据见附录 形式化与证明。</div>
-
-<h3 id="sec16-8">16.8　顺序保持的严格刻画：Rayleigh 判据</h3>
-
-<p>第 16.6 节的证明依赖“谱定理”，但“大特征值 = 高振荡”这句话本身需要一个精确含义。本节把它写成可证的 Rayleigh 判据。</p>
-
-<div class="define"><span class="bt">定义 16.3　局部性（Rayleigh 商）</span>
-对图 <span class="s">G=(V,E)</span> 与向量 <span class="s">v</span>，定义
-<div class="eq"><span class="body">R(v) := (Σ<sub>(u,w)∈E</sub>(v<sub>u</sub>−v<sub>w</sub>)²) / (Σ<sub>v</sub>v²) = v<sup>T</sup>Lv / v<sup>T</sup>v</span><span class="num">(2.7)</span></div>
-<span class="s">R</span> 度量向量的“归一化局部变化”：<span class="s">R</span> 越大，相邻顶点差异越大，越局部。</div>
-
-<div class="define"><span class="bt">定理 16.2　Rayleigh 判据 ［定理，A／甲］</span>
-对对称拉普拉斯 <span class="s">L</span>，最大特征值 <span class="s">λ<sub>n</sub></span> 的特征向量最大化 Rayleigh 商 <span class="s">R</span>；且 <span class="s">max<sub>v</sub>R(v)=λ<sub>n</sub></span>。<b>因此“最局部的模式最先增长”对对称 L 是严格成立的</b>——它不是直觉，而是 Rayleigh 极小极大定理的推论。</div>
-
-<p><b>证明。</b>对称实矩阵的 Rayleigh 商在特征向量处取驻值，且 <span class="s">v<sup>T</sup>Lv/v<sup>T</sup>v = Σ<sub>k</sub>λ<sub>k</sub>y<sub>k</sub>²/Σ<sub>k</sub>y<sub>k</sub>²</span>（<span class="s">y<sub>k</sub></span> 为特征基系数），其最大值在 <span class="s">y</span> 集中于 <span class="s">λ<sub>n</sub></span> 处取得。∎</p>
-
-<p>数值：500/500 对称图上“最大特征值模式最大化 <span class="s">R</span>”成立。A／甲</p>
-
-<h3 id="sec16-9">16.9　反转的判别：一个负面结果与一个开放问题</h3>
-
-<p>定理 B1 说对称不反转，反例 B2 说非对称可反转。那么<b>能否用一个结构量预测反转？</b>两个最自然的候选是<b>非正规性</b>与<b>强连通性</b>。本节报告：<b>它们都失败。</b></p>
-
-<table class="nat">
-<caption class="cap"><b>表 16.5　五个候选判别法的检验（4000 随机有向图）</b></caption>
-<tr><th class="l">候选判别法</th><th class="l">与反转的相关系数</th><th class="l">结论</th></tr>
-<tr><td class="l">非正规性 <span class="s">‖LL<sup>T</sup>−L<sup>T</sup>L‖/‖L‖²</span></td><td class="l"><b>−0.13</b>（负）</td><td class="l">✗</td></tr>
-<tr><td class="l">强连通性</td><td class="l">7.1% vs 8.4%</td><td class="l">✗</td></tr>
-<tr><td class="l">Jordan 缺陷（几何重数&lt;代数重数）</td><td class="l">−0.08</td><td class="l">✗</td></tr>
-<tr><td class="l">反对称部分范数 <span class="s">‖(L−L<sup>T</sup>)/2‖</span></td><td class="l">+0.13</td><td class="l">✗（太弱）</td></tr>
-<tr><td class="l">Rayleigh 间隙</td><td class="l">+0.09</td><td class="l">✗（太弱）</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>否定性数值检验。等级 A／甲。脚本：<code>analysis/reversal_criterion.py</code>。<b>总反转率：</b>8.4%。<b>五个“显然”的判别法全部失败。</b></div>
-
-<div class="warning"><span class="bt">一个负面结果的价值</span>
-我们依次猜测了非正规性、强连通性、Jordan 缺陷、反对称范数、Rayleigh 间隙五个候选。数据说：<b>一个都不行</b>（最强的也仅 +0.13）。这一连串否定防止了五个错的“定理 B1'”被写出。现在能说的只有两件确凿的事：对称 ⇒ 不反转（定理 B1）；非对称 ⇒ 可能反转（B2）。</div>
-
-<div class="define"><span class="bt">开放问题 O8　反转的充要条件</span>
-给定非对称生成元 <span class="s">M=−αI+βL</span>，刻画"最大 <span class="s">Re(λ)</span> 特征向量不是最局部模式"的充要条件。<b>已知：</b>对称 ⇒ 不反转；非对称 ⇒ 可能反转。<b>未知：</b>一个可判定的结构判据。<b>16.9.1 节给出一层分解：</b>在 G-不变（Cayley）类上可判定；一般类仍开放，而且判定必须先改成基底无关。［开放，已登记附录 可证伪登记簿］</div>
-
-<h3 id="sec16-10">16.10　等型视角：一个正向结果、一个良性问题与一次对照</h3>
-
-<p>五个候选都失败后，一个自然的想法来自对称性：若图带有自同构群 <span class="s">G</span>，拉普拉斯 <span class="s">L</span> 与 <span class="s">G</span> 对易，谱就按 <span class="s">G</span> 的不可约表示（等型）分解。能否用等型分解预测反转？我们把这个问题放进可复算的脚本 <code>analysis/isotypic_selection.py</code>（448 个阿贝尔 Cayley 有向图）。结论有三条正向/方法论与一条负面。</p>
-
-<p><b>(1) 选择规则（正向）。</b>在顶点传递（Cayley）图上，平凡等型块恰是常数向量张成的一维空间，它落在核中（特征值 0）。因此<b>任何增长模式都不可能落在平凡（全对称）块中——448/448 成立。</b>这条规则修正了一个直觉：在反转语境里，“全局”不可能指“常数模式”，只能是某个非平凡表示里的平滑模式。</p>
-
-<p><b>(2) 一类可判定的情形（正向，但有限）。</b>在阿贝尔 Cayley 图上，每个模式是一个特征标 <span class="s">χ_k</span>，增长率 <span class="s">Re λ_k=|S|−Σ_s cos(2πks/n)</span> 与局部性 <span class="s">TV_k</span> 都由 <span class="s">k</span> 解析决定。于是 O8 在 G-不变类上<b>可判定</b>——这是本书给出的第一个关于反转的正面结构结论（虽然只在带对称性的子类上）。</p>
-
-<p><b>(3) 一个良性问题（方法论，关键）。</b>代价是：对称类上最大 Re 特征值<b>经常退化</b>（448 例中 366 例重数 ≥2）。一旦退化，“最大特征向量”就不是唯一的（前导空间是一个等型块），而 16.9 的反转判定依赖那一个任意选出的向量。实测：<b>75/448 例（17%）的反转判定随基底翻转；而这 75 例全部来自退化情形；在前导特征值单重的 82 例上，两种判定 82/82 一致。</b>最小演示：8 顶点、<span class="s">S={1,2}</span> 的 Cayley 有向图，前导特征值重数为 2；numpy 任意选基给出 <span class="s">TV=0.500</span>（判为反转），而前导块内的最大局部性 <span class="s">TV=0.559</span>（判为不反转）。<b>结论：16.9 的反转判定在退化情形下不是良性问题；正确的陈述必须基底无关（例如取前导等型块上 TV 的范围，或要求前导特征值单重）。</b></p>
-
-<p><b>(4) 对照（负面）。</b>把“前导是否退化 / 等型标签”作为预测量搬到一般随机有向图（对称破缺）上，并不能预测反转：一般图上前导退化率仅 3.2%，而五个候选已被否定——等型判据没有给出比它们更强的预测力。这与 16.9 的总体结论一致：<b>反转难以预测的原因正是对称破缺；在带对称性的子类上它恰恰是可判定的。</b></p>
-
-<div class="warning"><span class="bt">本节对 O8 的净贡献</span>
-不能把 O8 结清，但把它分了层：<b>(i) G-不变类：可判定（正向）；(ii) 一般（对称破缺）类：仍开放，而且 16.9 的判定需要先改为基底无关，否则在对称图上问得就不清楚。</b>第二条本身就是一个结果：它解释了为什么“对称图上反转”一直没有干净的判据——因为那里的题目本身没问清。脚本：<code>analysis/isotypic_selection.py</code>。</div>
-
-<div class="case"><span class="ct">人的尺度</span><p>一个做火灾模拟的人，最兴奋的一刻是看到“局部先烧起来”在图上真的出现。他说：“原来我不是在编故事。”<b>可复算的意义就在这：它不能让结论变成真理，但能让一个人半夜不再怀疑自己在做梦。</b></p></div>
-<h3 id="sec16-11">16.11　局部先行的窗口有多宽：一条可算的尺度律</h3>
-<p>“局部先于全局”前面已经证明了顺序。但顺序之外还有一个更实用的问题：<b>中间那段“只有局部在动”的窗口，到底有多宽？</b> 这一节给出一个可以算出来、并且与系统规模有关的答案。</p>
-<p><b>命题。</b> 在线性两阶段模型 Ḋ = (−αI + βL)D 中，两个临界值为 β₁ = α/λ_max（局部先解锁）与 β₂ = α/λ₂（全局后解锁）。因此窗口宽度（以 β 计）为</p>
-<div class="box"><p><b>R ≡ β₂ / β₁ = λ_max / λ₂</b>　〔由定义直接得到，等级 A／甲〕</p></div>
-<p><b>推论（规则格点上的尺度律）。</b> 对 d 维边长 n、总点数 N = n^d 的环面：λ₂ = 2d(1 − cos(2π/n))，λ_max = 4d，于是</p>
-<div class="box"><p><b>R = 2 / (1 − cos(2π/n)) ≈ 2n²/π² = 2N^{2/d}/π²</b></p></div>
-<p>也就是说：<b>一维环上窗口按 N² 增长，二维环面上按 N 增长，三维按 N^{2/3} 增长。</b> 系统越大，“只有局部在动”的阶段越长。</p>
-<p><b>数值验证。</b> 直接对角化拉普拉斯矩阵，取 λ₂ 与 λ_max 的比（脚本 <code>analysis/exp_window.py</code>）：</p>
-<table class="nat">
-<tr><th class="l">结构</th><th class="l">N</th><th class="l">实测 R</th><th class="l">公式 2N^(2/d)/π²</th></tr>
-<tr><td class="l">一维环 C₁₀</td><td class="l">10</td><td class="l">10.47</td><td class="l">10.13</td></tr>
-<tr><td class="l">一维环 C₁₀₀</td><td class="l">100</td><td class="l">1013.5</td><td class="l">1013.2</td></tr>
-<tr><td class="l">一维环 C₈₀₀</td><td class="l">800</td><td class="l">64845.9</td><td class="l">64845.3</td></tr>
-<tr><td class="l">二维环面 8×8</td><td class="l">64</td><td class="l">13.66</td><td class="l">12.97</td></tr>
-<tr><td class="l">二维环面 32×32</td><td class="l">1024</td><td class="l">208.2</td><td class="l">207.5</td></tr>
-</table>
-<p>对 log R 与 log N 做线性拟合（N ≥ 100）：<b>一维斜率 2.000，二维斜率 0.987</b>，与 2/d 的预测一致。</p>
-<img class="fig" src="assets/svg/fig-window-scaling.svg" alt="图 16.1　局部先行窗口的尺度律"><div class="cap"><b>图 16.1　局部先行窗口的尺度律：R=λmax/λ₂ 随 N 按 N^(2/d) 增长</b></div>
-<p><b>这条结果有三层用处。</b></p>
-<p><b>第一层：它把一个定性的说法变成了定量预测。</b> “局部先醒”不再只是一句顺序判断——你可以算出，在一个 32×32 的二维系统里，局部模式比全局模式早出现约 208 倍的耦合强度区间。<b>这个数字可以被别人重算、也可以被证伪。</b></p>
-<p><b>第二层：它解释了“大系统为什么难协调”。</b> 系统越大，局部模式能独自增长的那段窗口越长；在这段时间里，全局信号在数学上还没有长出来。<b>于是“全局反应慢”不是治理能力问题，而是谱结构的结果。</b> 这正是《错位的时间》里 τ 的一个具体来源：慢钟之所以慢，部分是因为它的全局模式需要更高的耦合才被解锁。</p>
-<p><b>第三层：它也划出了自己的边界。</b> R = λ_max/λ₂ 不是普适常数，它取决于图的谱。完全图 K_N 的 λ₂ = λ_max = N，R = 1，没有窗口；随机正则扩张图的 R 也停在常数级。<b>所以这条尺度律只对“几何型”结构（环、格点、网格）成立</b>，对“小世界”与“无标度”结构则要重算。这与《涌现的临界》里“有限尺度效应取决于几何”的结论是同一件事的两面。</p>
-<div class="box box-expert"><p><b>【给专家的注】</b>命题本身是谱图论的标准推论（环与环面的拉普拉斯谱有闭式解），本书的贡献不是数学新定理，而是<b>把它接到“局部先行”的模型上，并给出可复算的尺度律与适用边界</b>。等级：推导 A／甲；数值验证 A；对“大系统难协调”的解释为 B／乙。</p></div>
-
-<h3 id="sec16-12">16.12　本章小结</h3>
-
-<p>两阶段相变是样本的第一个结构性结果：局部区分先于全局区分解锁，中间相宽度由 <span class="s">α(1/λ₂−1/λ<sub>n</sub>)</span> 给出。本节进一步证明：对称加权不能反转顺序（定理 16.1），但有向耦合可以（反例 16.1）。下一章给出具体图的数字与数值验证协议。</p>
-
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>定理 16.1（对称加权不可反转）、定理 16.2（Rayleigh 判据）、反例 16.1（有向图可反转）、定义 16.2（总变差）、定义 16.3（Rayleigh 商）。</li>
-<li><b>⊕ 有论证（B）：</b>反转由生成元的非正规性引起。</li>
-<li><b>？ 未解决：</b>反转的充要条件（开放问题 O8）；非正规性/强连通性均被否定为预测量（负结果）；16.9.1 把 O8 分层（G-不变类可判定、一般类开放）并指出一个良性问题（前导退化时判定依赖基底）。</li>
-<li><b>↔ 连接：</b>本章依赖定理 15.1；第 17 章给出可复算数字。</li>
-</ul></div>
-
-<div class="box box-takeaway"><p><b>一句话带走：</b>两阶段相变：局部先醒，全局后醒——这是“局部先行”的模型版本。</p></div>
-
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Fiedler, M. (1973). Algebraic connectivity of graphs. <i>Czechoslovak Mathematical Journal</i> 23.</p>
-<p>Mesbahi, M., &amp; Egerstedt, M. (2010). <i>Graph Theoretic Methods in Multiagent Networks</i>. Princeton University Press.</p>
-<p>Boyd, S., et al. (2004). Fastest mixing Markov chain on a graph. <i>SIAM Review</i> 46(4).</p>
-<p>Biggs, N. (1993). <i>Algebraic Graph Theory</i> (2nd ed.). Cambridge University Press.</p>
-</div>
+<div class="box box-takeaway"><p><b>一句话带走</b>：系统先解锁哪个方向，不取决于你拉哪里，取决于谱从哪头开始。</p></div>

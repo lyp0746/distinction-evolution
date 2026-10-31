@@ -1,66 +1,23 @@
-<h1>先读这一页　三个可复算的事实，与一次归并</h1>
+<h2 class="chapter">先读这一页　五个可复算的事实</h2>
 
-<p class="lead">如果你只读本书的一小部分，读这三页。<b>本书的可信度不来自它的框架有多大，而来自它先兑现了三个可独立复算的事实，并且公开把两个原语归并进一个更基本的结构。</b>第四部分是对这三个事实背后共同结构的整理；其余部分是这套语言的推广、边界与检验。先看兑现与归并，再看诠释。</p>
+<p class="lead">如果你只读几页，读这几页。本书的可信度不来自框架多大，而来自<b>这几条能被你在半小时内复算的事实</b>。每条都给出数字、公式与出处章节；复算脚本在附录 B。</p>
 
-<div class="scenario"><span class="bt">如何复现这一页的数字</span>
-依赖：Python 3.9+、NumPy、SciPy。全部数值只需一条命令：<br>
-<code>bash scripts/verify-experiments.sh</code><br>
-单个实验（例如两阶段相变的临界耦合）：<code>python analysis/graph_phase_transition.py</code>。<br>
-生成插图：<code>python analysis/make_figures.py</code>。完整复现协议见附录 形式化与证明、G。</div>
+<h3>事实一　两阶段相变存在，且判据是两个特征值</h3>
+<p>在有限连通图上，区分强度的演化 <span class="s">Ḋ=(−αI+βL)D</span> 完全可解，临界耦合为 <span class="s">β<sub>1</sub>=α/λ<sub>n</sub></span> 与 <span class="s">β<sub>2</sub>=α/λ<sub>2</sub></span>。中间相存在当且仅当 <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>。〔定理 16.1、17.1，A／甲〕</p>
+<p>复算：环 <span class="s">C<sub>10</sub></span> 的 <span class="s">λ<sub>2</sub>=0.3820</span>、<span class="s">λ<sub>n</sub>=4</span>，故 <span class="s">(β<sub>1</sub>,β<sub>2</sub>)=(0.2500,2.6180)</span>；Petersen 图为 <span class="s">(0.2000,0.5000)</span>；完全图 <span class="s">K<sub>10</sub></span> 为 <span class="s">(0.1,0.1)</span>——没有中间相。</p>
 
-<h2>事实 A　图拉普拉斯二次型的谱：两阶段相变（第 15—18 章）</h2>
+<h3>事实二　相变的宽度是一个可算的数 R，且 R=1 只发生在完全图</h3>
+<p>定义谱各向异性 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span>，它等于两临界点之比。九类图有闭式（表 18.1）；<span class="s">λ<sub>2</sub>=λ<sub>n</sub></span> 当且仅当 <span class="s">G≅K<sub>n</sub></span>。〔定理 18.2，A／甲〕</p>
+<p>复算：<span class="s">K<sub>1,9</sub></span>: <span class="s">R=10</span>；<span class="s">Q<sub>6</sub></span>: <span class="s">R=6</span>；<span class="s">C<sub>100</sub></span>: <span class="s">R=1013.4</span>。</p>
 
-<div class="define"><span class="bt">事实 A ［定理，A／甲］</span>
-设 <span class="s">G</span> 是连通有限图，拉普拉斯谱 <span class="s">0=λ₁&lt;λ₂≤⋯≤λₙ</span>。区分强度按线性 ODE <span class="s">Ḋ=(−αI+βL)D</span> 演化。则临界耦合为
-<div class="eq"><span class="body">β₁ = α/λₙ，　β₂ = α/λ₂</span></div>
-<span class="s">β&lt;β₁</span> 全部衰减；<span class="s">β₁&lt;β&lt;β₂</span> 局部（高频）模式先增长；<span class="s">β&gt;β₂</span> 全局（Fiedler）模式随后增长。<b>证明只用实对称矩阵谱定理与线性 ODE。这是图拉普拉斯二次型的谱分析，属标准数学。</b></div>
+<h3>事实三　推向连续后，第二个门槛消失</h3>
+<p>网格 <span class="s">n×n</span> 上 <span class="s">R=(8/π²)n²(1+o(1))</span>；换算成物理单位，<span class="s">h²β<sub>1</sub>→0</span> 而 <span class="s">h²β<sub>2</sub>→α/π²</span>。连续流形上 <span class="s">μ<sub>max</sub>=∞</span>，故 <span class="s">β<sub>1</sub>=0</span>：每个 <span class="s">β</span> 都在中间相。〔定理 19.1、19.2，A／乙〕</p>
+<p>复算：<span class="s">n=40</span> 时 <span class="s">R=1295.6</span>，闭式给 1296.9（差 0.1%）；<span class="s">λ<sub>2</sub>/h²=9.8645</span>，<span class="s">π²=9.8696</span>。</p>
 
-<p>具体数字（<span class="s">α=1</span>）：Petersen 图 <span class="s">(0.200, 0.500)</span>；环 <span class="s">C₁₀</span> <span class="s">(0.250, 2.618)</span>；完全图无中间相。复现：<code>python analysis/graph_phase_transition.py</code>。</p>
+<h3>事实四　谱方差恒等式</h3>
+<p>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，<span class="s">κ=½(d²/dt²)log Z|<sub>0</sub></span>，则 <span class="s">κ=½Var(λ)</span>，只要谱有限就成立。〔命题 20.2，A／甲，一行求导〕</p>
 
-<h2>事实 B　加权图不可反转，有向图可以（第 16.6—16.7 节）</h2>
+<h3>事实五　谱看不见结构</h3>
+<p>存在两个 6 顶点图，拉普拉斯谱完全相同（<span class="s">0, 0.7639, 2, 3, 3, 5.2361</span>），结构不同（度序列 <span class="s">3,3,3,2,2,1</span> 对 <span class="s">4,2,2,2,2,2</span>）。它们的两阶段相变一模一样。<b>所以：谱刻画“相变有多宽”，不刻画“结构是什么”。</b>〔反例 18.5，A／甲〕</p>
 
-<div class="define"><span class="bt">定理 B1　对称加权：顺序不可反转 ［定理，A／甲］</span>
-对任意连通图赋予任意正对称边权 <span class="s">w<sub>uv</sub>&gt;0</span>，加权拉普拉斯仍实对称半正定，谱满足 <span class="s">0=λ₁&lt;λ₂≤⋯≤λₙ</span>，故
-<div class="eq"><span class="body">β₁ = α/λₙ ≤ α/λ₂ = β₂</span></div>
-恒成立。<b>加权可以任意改变中间相宽度 <span class="s">W=α(1/λ₂−1/λₙ)</span>，却不能反转"局部先于全局"。</b>（数值：400/400 随机加权图保持顺序。）</div>
-
-<div class="define"><span class="bt">定理 B2　有向图：顺序可反转 ［反例，A／甲］</span>
-取有向耦合 <span class="s">L=D<sub>out</sub>−A</span>（非对称），增长率由 <span class="s">Re(μ<sub>k</sub>)=βRe(λ<sub>k</sub>)−α</span> 决定。在 6 顶点图上存在显式反例（弧集见附录 形式化与证明）：<br>
-首个增长模式 <span class="s">Re(λ)=2.0</span>，总变差 <span class="s">TV=0.25</span>（全局/平滑），<span class="s">β=0.5</span>；<br>
-较晚增长模式 <span class="s">Re(λ)=1.0</span>，<span class="s">TV=0.7071</span>（局部/振荡），<span class="s">β=1.0</span>。<br>
-<b>全局模式先增长，局部模式后增长——顺序反转。</b>反转由生成元的非正规性引起，对称加权下不可能。</div>
-
-<h2>事实 C　热核熵变分＝拉普拉斯谱方差的一半（第 12.6 节）</h2>
-
-<div class="define"><span class="bt">事实 C　κ_info = Var(λ)/2 ［定理，A／甲］</span>
-取热核的 von Neumann 熵 <span class="s">ρ(t)=e<sup>−tL</sup>/Z(t)</span>，<span class="s">S(t)=−tr(ρ log ρ)</span>。定义 <span class="s">κ_info(G) := −(1/2) S″(0⁺)</span>，则<b>恒有</b>
-<div class="eq"><span class="body">κ_info(G) = (1/2) Var(λ<sub>k</sub>)</span></div>
-即热核熵的二阶变分等于拉普拉斯谱方差的一半。数值验证误差 <span class="s">&lt;10⁻⁶</span>。<b>它不叫“分离曲率”——它是拉普拉斯谱方差，不是几何曲率 R/6 的离散化（归并 R1，第 12.6 节）。</b></div>
-
-<p>一个补充：<span class="s">κ_info</span> <b>不是</b>中间相宽度 <span class="s">W</span> 的代理。在 8 个测试图上，二者的 Spearman 秩相关为 <b>−0.357</b>（星图 <span class="s">κ_info</span> 高但 <span class="s">W</span> 低，路径图相反）。它们是两个不同的不变量。</p>
-
-<h2>三个事实的强度与位置</h2>
-
-<table class="nat">
-<caption class="cap"><b>表 0.7　三个可复算的事实一览</b></caption>
-<tr><th class="l">事实</th><th class="l">内容</th><th class="l">强度</th><th class="l">位置</th></tr>
-<tr><td class="l">A</td><td class="l">图上两阶段相变，<span class="s">β₁=α/λₙ</span>、<span class="s">β₂=α/λ₂</span></td><td class="l">定理 A／甲</td><td class="l">第 15—18 章</td></tr>
-<tr><td class="l">B1</td><td class="l">对称加权图顺序不可反转</td><td class="l">定理 A／甲</td><td class="l">第 16.6 节</td></tr>
-<tr><td class="l">B2</td><td class="l">有向图顺序可反转（显式反例）</td><td class="l">反例 A／甲</td><td class="l">第 16.7 节</td></tr>
-<tr><td class="l">C</td><td class="l"><span class="s">κ_info = Var(λ)/2</span>（热核熵变分恒等式）</td><td class="l">定理 A／甲</td><td class="l">第 12.6 节</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>可复算事实总表。全部可机器复算。复现：<code>bash scripts/verify-experiments.sh</code>。</div>
-
-<div class="warning"><span class="bt">一次公开的归并（先告知）</span>
-本书初稿曾把框架写成三个原语：区分、曲率、演化。进一步的分析把它们收敛为两个更基本的词：<b>「曲率」是形式谱的一个侧写</b>（离散 κ_info=Var(λ)/2 与连续 a₁=R/6 是类型不同的两个量），<b>「演化」是形式谱上的线性 ODE</b>。两个原语由此归并进<b>向量空间上的对称双线性形式（二次型）</b>（附录 可证伪登记簿 的 R1—R4）。<b>归并之后，语言更简洁、也更一般</b>；本书因此从“一个数学框架”转为“一套语言描述”。</div>
-
-<h2>结构是已知的，样本是可复算的</h2>
-
-<p>这三个事实讨论的是不同对象（无权图、加权图、有向图、谱方差），但它们的证明共享同一个数学内核：<b>一个对称双线性形式的谱，决定一个线性生成元的长期方向。</b>第四部分（第 11—14 章）把这个共同内核写成一套语言——它不是本书发明的：协方差、Hessian、图拉普拉斯、内积、黎曼度量都是这个结构的实例。</p>
-
-<div class="scenario"><span class="bt">推荐的读法（事实→语言→位置→检验）</span>
-<b>第一步（信任）：</b>本页 + 第 15—18 章 + 第 12.6 节 + 附录 形式化与证明。这些是严格、可复现的结果。<br>
-<b>第二步（语言）：</b>第四部分（第 11—14 章）——看这个共同内核如何被写成对称双线性形式，并推广到辛／酉。<br>
-<b>第三步（位置）：</b>第二部分（第 4—6 章）——看这些小结果在现代统一框架旁边站在哪里。<br>
-<b>第四步（检验）：</b>第 26.4.1 节给出语言的三条验收标准：采纳、压缩、迁移。<br>
-<b>如果你走完第一步就停下来，本书仍然成立</b>——你获得的是可复算的事实与它们的证明。</div>
+<div class="box"><p><b>怎么用这五条：</b>事实一、二、四、五是可复算的；事实三多走了一步（从离散到连续），因此标 A／乙。你可以只信前两条，本书后面的框架部分全部依赖它们的支持，而它们不依赖框架。</p></div>

@@ -1,122 +1,53 @@
-<h2 class="chapter">第14章　形式决定群：辛、酉、正交，与两次推广</h2>
-<p class="lead" data-story="1">一把尺子，决定了你能怎么转：转多少度它都不变，那叫对称。<b>先有形式，后有允许的变换。</b></p>
+<h2 class="chapter">第14章　形式决定群：辛、酉、正交</h2>
 
+<div class="box box-takeaway"><p><b>本章主张。</b>一个形式一旦定下，“谁保得住它”就被迫定下来：正定给正交群，交错给辛群，复 Hermite 给酉群。这不是三条并列的定义，而是同一条定理（保形式群）在三类对称性下的三次落实。它解释了为什么“统一的语言”会自然长出三种几何。</p></div>
 
-<p class="lead">对称双线性形式（上一章）只是「形式」家族的一员。它的两个近邻——<b>反对称</b>（辛）与<b>埃尔米特</b>（酉）——各自决定一个李群，也各自带来一套不同的谱与动力学。这一章把它们并排写出，并把「区分语言」向它们各推广一次，然后诚实说明：能做什么，不能做什么。</p>
+<p class="lead" data-story="1">三个工匠在修同一把尺子。一个只许平移和旋转（不许拉伸），一个只许保面积（许拉伸），一个只许保长度平方（许复旋转）。师傅说：<b>“你们不是在修三把尺子，你们在守三种规矩。”</b></p>
 
-<div class="scenario"><span class="bt">本章主张</span>
-辛、酉、正交的本质区别，来自所保持的<b>形式的对称性</b>：对称 → 正交，反对称 → 辛，埃尔米特 → 酉。<b>把区分语言推广到辛形式能产出一个可计算的结果；推广到酉形式新意有限。两次推广都只是「换形式」，不是新数学。</b>［已知，B；辛推广的相变为 A］</div>
+<h3 id="sec14-1">14.1　导论：形式是一个约定，群是它的守约人</h3>
 
-<h3 id="sec14-1">14.1　统一图景：形式决定群</h3>
+<p>第 12 章说五个领域共用一个形式。这一章问下一步：如果形式是“我们约定怎么量差”，那么什么样的变换不破坏这个约定？答案是一个群。群的大小，就是这门语言允许的自由度。</p>
 
-<p>给定向量空间 <span class="s">V</span> 上的一个非退化形式 <span class="s">B</span>，保持它的变换群就是对应的李群：<span class="s">B(gx,gy)=B(x,y)</span> 对所有 <span class="s">g∈G</span> 成立。对李代数，无穷小版本是 <span class="s">B(Xx,y)+B(x,Xy)=0</span>。</p>
+<h3 id="sec14-2">14.2　定义：保形式群</h3>
 
-<table class="nat">
-<caption class="cap"><b>表 14.1　形式决定群</b></caption>
-<tr><th class="l">形式类型</th><th class="l">代数条件</th><th class="l">李群</th><th class="l">李代数</th><th class="l">几何</th></tr>
-<tr><td class="l">实对称双线性</td><td class="l">B(x,y)=B(y,x)</td><td class="l">正交群 O(n)</td><td class="l">so(n)</td><td class="l">欧氏几何</td></tr>
-<tr><td class="l">实反对称双线性</td><td class="l">B(x,y)=−B(y,x)</td><td class="l">辛群 Sp(2n,R)</td><td class="l">sp(2n,R)</td><td class="l">辛几何</td></tr>
-<tr><td class="l">复埃尔米特</td><td class="l">h(x,y)=conj(h(y,x))</td><td class="l">酉群 U(n)</td><td class="l">u(n)</td><td class="l">酉几何</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>形式—群对应表。<b>等级 B（已知数学）。</b>附录 增补：上游、边界与对话 给出速查。</div>
+<div class="define"><span class="bt">定义 14.1　保形式群</span>
+设 <span class="s">B</span> 是 <span class="s">V</span> 上的双线性形式。称线性映射 <span class="s">T</span> <b>保 <span class="s">B</span></b>，若 <span class="s">B(Tu,Tv)=B(u,v)</span> 对所有 <span class="s">u,v</span> 成立。全体保 <span class="s">B</span> 的可逆线性映射构成群，记 <span class="s">G(B)</span>。</div>
 
-<h3 id="sec14-2">14.2　三种形式的本质区别</h3>
-
-<p><b>正交：对称性。</b><span class="s">B(x,y)=B(y,x)</span>，二次型 <span class="s">q(x)=B(x,x)</span> 可正、可负、可零。几何含义是长度与角度；保持它的是旋转与反射。李代数 <span class="s">so(n)</span> 是反对称矩阵 <span class="s">X<sup>T</sup>=−X</span>，维数 <span class="s">n(n−1)/2</span>。</p>
-
-<p><b>辛：反对称性。</b><span class="s">ω(x,y)=−ω(y,x)</span>，特别地 <span class="s">ω(x,x)=0</span> 对所有 <span class="s">x</span> 成立。几何含义是面积。李代数 <span class="s">sp(2n,R)</span> 满足 <span class="s">X<sup>T</sup>J+JX=0</span>（<span class="s">J</span> 为标准辛矩阵），维数 <span class="s">n(2n+1)</span>。<b>关键：辛形式只能存在于偶数维空间</b>（反对称矩阵的秩必须是偶数）。</p>
-
-<p><b>酉：复对称性。</b><span class="s">h(x,y)=conj(h(y,x))</span>，特别地 <span class="s">h(x,x)</span> 是实数，可以正定。几何含义是复长度与复角度。李代数 <span class="s">u(n)</span> 是反埃尔米特矩阵 <span class="s">X*=−X</span>，维数 <span class="s">n²</span>。</p>
-
-<h3 id="sec14-3">14.3　为什么恰好是这三种</h3>
-
-<p>在实向量空间上，非退化双线性形式只有两种对称类型：<b>对称</b>与<b>反对称</b>。在复向量空间上，埃尔米特形式最自然（因为它给出实值范数）。<b>这三种形式穷尽了「有限维向量空间上非退化形式」的基本类型。</b>这不是巧合——它来自对合（involution）的分类：</p>
+<h3 id="sec14-3">14.3　三种对称性，三个群</h3>
 
 <table class="nat">
-<caption class="cap"><b>表 14.2　对合的分类</b></caption>
-<tr><th class="l">对合</th><th class="l">形式</th><th class="l">群</th></tr>
-<tr><td class="l">σ²=+1</td><td class="l">对称</td><td class="l">正交</td></tr>
-<tr><td class="l">σ²=−1</td><td class="l">反对称</td><td class="l">辛</td></tr>
-<tr><td class="l">σ²=+1（复共轭）</td><td class="l">埃尔米特</td><td class="l">酉</td></tr>
+<tr><th class="l">形式的类型</th><th class="l">例子</th><th class="l">保形式群</th><th class="l">它保住的量</th><th class="l">维数</th></tr>
+<tr><td class="l">对称正定</td><td class="l">欧氏内积</td><td class="l">正交群 <span class="s">O(n)</span></td><td class="l">长度与夹角</td><td class="l"><span class="s">n(n−1)/2</span></td></tr>
+<tr><td class="l">对称不定</td><td class="l">闵可夫斯基形式</td><td class="l">洛伦兹群 <span class="s">O(p,q)</span></td><td class="l">时空间隔</td><td class="l"><span class="s">n(n−1)/2</span></td></tr>
+<tr><td class="l">交错</td><td class="l">辛形式 <span class="s">ω</span></td><td class="l">辛群 <span class="s">Sp(2n)</span></td><td class="l">相面积</td><td class="l"><span class="s">n(2n+1)</span></td></tr>
+<tr><td class="l">复 Hermite</td><td class="l"><span class="s">⟨u,v⟩<sub>ℂ</sub></span></td><td class="l">酉群 <span class="s">U(n)</span></td><td class="l">复长度</td><td class="l"><span class="s">n²</span></td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>分类表。<b>等级 B（已知数学）。</b></div>
+<div class="cap"><b>表 14.1　三类对称性与它们的群</b>　“维数”一列是群的自由度：自由度为 0 意味着形式把结构锁死了。</div>
 
-<h3 id="sec14-4">14.4　李代数的统一解释</h3>
+<p><b>命题 14.1（Sylvester 惯性律）。</b>实对称形式的正、负、零惯性指数在换基下不变；因此“保形式”的群只依赖于符号差 <span class="s">(p,q)</span>，与具体的基无关。</p>
 
-<p>三种李代数都是<b>导子</b>的特例。给定结合代数 <span class="s">A</span> 与形式 <span class="s">B</span>，定义 <span class="s">g={X∈A : B(Xx,y)+B(x,Xy)=0}</span>——保持 <span class="s">B</span> 的元素的李代数。三种情形的区别只在 <span class="s">B</span> 的对称性：正交是「关于对称形式的反对称」，辛是「关于反对称形式的反对称」，酉是「关于埃尔米特形式的反对称」。<b>三者都是「反对称」在各自形式下的表现。</b></p>
+<p><b>证明思路。</b>正定子空间的维数是“最大维数的正定子空间”的维数，这是一个只依赖形式的定义；两组正定子空间若维数不同，其交会与某个向量上的 <span class="s">Q&gt;0</span> 与 <span class="s">Q≤0</span> 同时成立相矛盾。负与零同理。<span class="s">∎</span></p>
 
-<h3 id="sec14-5">14.5　谱定理的形式取决于形式的对称性</h3>
+<h3 id="sec14-4">14.4　为什么这件事重要</h3>
 
-<p>这是本章与本书主线最相关的一点：<b>谱的形状决定了可能的动力学。</b></p>
+<p>因为它把“语言的自由度”变成了一个可数的量。正定形式下，你能做的只有旋转与平移——所以欧氏几何里“长度是绝对的”。辛形式下，你能做的是保面积的拉伸——所以哈密顿力学里“面积是绝对的，形状不是”。这不是两门学问的偏好不同，而是两个形式各自锁住了不同的量。</p>
 
-<table class="nat">
-<caption class="cap"><b>表 14.3　三种形式的谱与动力学</b></caption>
-<tr><th class="l">形式</th><th class="l">谱定理</th><th class="l">特征值</th><th class="l">群</th><th class="l">动力学</th></tr>
-<tr><td class="l">对称</td><td class="l">正交对角化</td><td class="l">实</td><td class="l">O(n)</td><td class="l">衰减／增长</td></tr>
-<tr><td class="l">反对称</td><td class="l">辛对角化</td><td class="l">纯虚（成对）</td><td class="l">Sp(2n)</td><td class="l">振荡</td></tr>
-<tr><td class="l">埃尔米特</td><td class="l">酉对角化</td><td class="l">实</td><td class="l">U(n)</td><td class="l">衰减／增长</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>谱—动力学对应。<b>等级 B（已知数学）。</b>这就是为什么：拉普拉斯矩阵（对称）有实谱，故第五部分的临界耦合是实数；哈密顿矩阵（反对称）有纯虚谱，故哈密顿系统的频率是实数；埃尔米特矩阵有实谱，故量子力学的可观测量是实数。</div>
+<p>对本书来说，这一章的作用是划界：<b>“同一个二次型”这句话在不同符号差下指向不同的群，因此不是同一个几何。</b>第 12 章的“五个领域同一个结构”在形式层面成立，在几何层面要按符号差分类。这是第三个赌注的第一次限幅。</p>
 
-<p><b>本书第五部分（图上样本）是正交情形的谱定理。</b>如果换成辛或酉形式，相变结构会完全不同。</p>
+<h3 id="sec14-3b">14.3b　保形式群为什么“大”或“小”值得关心</h3>
 
-<h3 id="sec14-6">14.6　推广到辛、酉：能做什么，不能做什么</h3>
+<p>群的维数就是这门语言允许的自由度。维数大，说明很多变换都不改变结论——这是好事（稳健），也是坏事（识别力弱）。欧氏几何的 <span class="s">O(n)</span> 维数是 <span class="s">n(n−1)/2</span>，所以长度与夹角是绝对量；辛群的维数是 <span class="s">n(2n+1)</span>，比正交群还大，所以辛几何能“保住”的量少得多，但恰是哈密顿力学需要的那个（相面积）。</p>
 
-<p>把「对称形式 + 线性 ODE → 实谱 → 两阶段相变」这套样本推广到辛／酉，意味着把「对称形式」换成「反对称形式」或「埃尔米特形式」，看谱结构与相变如何变化。</p>
+<p>对本书而言，这一章给出一个判断标准：<b>衡量一套语言“有多强”，可以看它的保形式群有多小。</b>群越小，被锁定的量越多，结论越硬；群越大，语言越灵活，但能说死的越少。第 15 章的四个价位可以看成这个连续谱的离散化。</p>
 
-<h3 id="sec14-7">14.7　辛推广：有真实内容</h3>
+<h3 id="sec14-5">14.5　反例：退化与例外</h3>
 
-<p>给定图 <span class="s">G=(V,E)</span>，构造相空间 <span class="s">T*V ≅ R<sup>2|V|</sup></span>，取哈密顿量</p>
-<div class="eq"><span class="body">H(q,p) = (1/2)Σ<sub>v</sub> p<sub>v</sub>² + (1/2)Σ<sub>(u,v)</sub>(q<sub>u</sub>−q<sub>v</sub>)²</span><span class="num">(14.1)</span></div>
-<p>哈密顿方程 <span class="s">q̇<sub>v</sub>=p<sub>v</sub></span>、<span class="s">ṗ<sub>v</sub>=−(Lq)<sub>v</sub></span> 给出 <span class="s">q̈=−Lq</span>——<b>图上的波动方程</b>。线性化 <span class="s">ẋ=Mx</span>，其中 <span class="s">M=[[0,I],[−L,0]]</span>，其特征值为 <span class="s">±i√λ<sub>k</sub></span>。因为 <span class="s">L</span> 半正定，所有特征值都是纯虚的——<b>无阻尼系统总是稳定的</b>。</p>
+<p>若形式退化（存在非零 <span class="s">u</span> 使 <span class="s">B(u,·)≡0</span>），保形式群不再是经典的这三类，而是一个半直积：它必须同时保住零空间。统计里的共线、图论里的非连通分支，都落在这里。处理方式有两种：商掉零空间（得到正定形式），或把零空间当作“看不见的方向”显式保留（第 18 章的零特征值重数）。</p>
 
-<p>加入阻尼 <span class="s">q̈+γq̇+Lq=0</span>（阻尼波动方程）。模式 <span class="s">k</span> 从振荡变为过阻尼的临界值由拉普拉斯谱决定：</p>
-<div class="eq"><span class="body">γ<sub>k</sub> = 2√λ<sub>k</sub>,　k=1,…,n</span><span class="num">(14.2)</span></div>
+<p>另一个常见的误解是把“保形式”与“保谱”混为一谈：保形式一定保谱，保谱不一定保形式（同谱不同图就是例子）。两者的差别正是第 15 章要谈的“同构的价位”。</p>
 
-<div class="define"><span class="bt">辛推广的相变 ［可计算，A／甲］</span>
-随 <span class="s">γ</span> 从 0 增大，模式<b>从低频到高频依次过阻尼</b>：<span class="s">γ&lt;2√λ<sub>k</sub></span> 欠阻尼振荡，<span class="s">γ=2√λ<sub>k</sub></span> 临界阻尼，<span class="s">γ&gt;2√λ<sub>k</sub></span> 过阻尼。这是一个 <span class="s">n</span> 阶段相变。例：超立方体 <span class="s">λ<sub>k</sub>=2k</span>，故 <span class="s">γ<sub>k</sub>=2√(2k)</span>。脚本：<code>analysis/symplectic_probe.py</code>。</div>
+<h3 id="sec14-6">14.6　本章小结</h3>
 
-<p>它与第五部分的样本是<b>不同动力学</b>的相变：原样本是「区分能力的衰减／增长」，辛版是「振荡模式的稳定性」。<b>这是真正的推广，不是换词。</b></p>
+<p>形式定下，群就定下（表 14.1），惯性律保证这件事与基无关。于是“统一”在几何层面必须按符号差分类，这是本书第三次限幅。下一章把“一样”这件事本身分级。</p>
 
-<h3 id="sec14-8">14.8　酉推广：新意有限</h3>
-
-<p>在复向量空间上取埃尔米特形式 <span class="s">h(f,g)=Σ<sub>v</sub>conj(f(v))g(v)</span>。无向图的拉普拉斯是实对称的，因此也是埃尔米特的；酉情形的算子仍是 <span class="s">L</span>，谱定理仍给出实谱。<b>结构上与正交情形相同。</b></p>
-
-<p>唯一的新东西来自<b>磁拉普拉斯</b> <span class="s">(L<sub>θ</sub>f)(v)=Σ<sub>u∼v</sub>(f(v)−e<sup>iθ<sub>uv</sub></sup>f(u))</span>，它产生 Aharonov–Bohm 型效应（谱依赖于相位）。但这是「加了额外结构」，不是酉推广的自然结果。<b>诚实判断：酉推广本质上是正交情形的复化，不产生本质新东西。</b></p>
-
-<h3 id="sec14-9">14.9　诚实结论：换形式，不是新数学</h3>
-
-<ol>
-<li><b>辛推广有真实内容：</b>它给出图上阻尼波动方程的稳定性相变，临界阻尼由拉普拉斯谱决定，可计算、可复现。</li>
-<li><b>酉推广新意有限：</b>埃尔米特与实对称的谱定理形式相同，复化不产生本质新东西（除非引入磁拉普拉斯）。</li>
-<li><b>两者都不解决 1/3 缺口：</b>后者是「把不同类型的量当成同一个」的产物，与形式选择无关（见第六部分）。</li>
-<li><b>这仍然是「换形式」，不是「新数学」：</b>哈密顿力学、辛几何、酉表示都是已有工具；把它们用到图上是有趣的练习，但不构成新理论。</li>
-</ol>
-
-<div class="warning"><span class="bt">不要把「推广」读成「统一」</span>
-本部分到此为止的全部内容，都可以用一句话概括：<b>把已知的二阶结构语言，依次套到几个领域上。</b>它成立、它有用、它可迁移——但它不宣布任何新的数学对象。本书把它称为「一套语言」，而不是「一个理论」，原因就在这里。</div>
-
-<div class="case"><span class="ct">人的尺度</span><p>一位物理老师讲“对称决定相互作用”，学生问：“那要是没有对称呢？”老师说：“那你就得一个个算。”<b>这句话把整章说完了：对称不是世界的善意，是我们还能算得动的原因。</b></p></div>
-<h3 id="sec14-10">14.10　本章小结</h3>
-
-<p>形式决定群：对称 → 正交，反对称 → 辛，埃尔米特 → 酉。谱定理的形状取决于形式的对称性，从而决定动力学的类型。区分语言向辛形式推广给出可计算的阻尼波动方程相变A／甲，向酉形式推广新意有限。<b>本部分至此完成：区分被定量化为对称双线性形式，并被放进形式家族。下一部分给出唯一的完全兑现样本。</b></p>
-
-<div class="note"><b>本章清单</b>
-<ul>
-<li><b>⊗ 可引用（A）：</b>辛推广的临界阻尼谱 <span class="s">γ<sub>k</sub>=2√λ<sub>k</sub></span>（可计算）。</li>
-<li><b>⊕ 有论证（B）：</b>表 14.1—14.3（形式—群—谱对应）；李代数的导子解释。</li>
-<li><b>○ 描述（C）：</b>「三种形式穷尽非退化形式的基本类型」。</li>
-<li><b>？ 未解决：</b>辛推广的完整定理与数值验证（附录 增补：上游、边界与对话 新增脚本）；酉推广是否有非平凡的复结构。</li>
-<li><b>↔ 连接：</b>第 13 章（对称形式）、第五部分（正交样本）、附录 增补：上游、边界与对话（形式速查）。</li>
-</ul></div>
-
-<p><b>反例。</b>形式决定群的推论在有限维半单情形成立得很好，但在无限维情形常常失效：那里"形式"不足以决定结构，还需要拓扑。这是这条主张最清楚的一个边界。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走：</b>形式决定群；换掉形式，换的不是新数学，而是新的允许操作。</p></div>
-
-<h3>本章参考文献</h3>
-<div class="refs">
-<p>Arnold, V. I. (1989). <i>Mathematical Methods of Classical Mechanics</i> (2nd ed.). Springer.</p>
-<p>Hall, B. C. (2015). <i>Lie Groups, Lie Algebras, and Representations</i> (2nd ed.). Springer.</p>
-<p>McDuff, D., &amp; Salamon, D. (2017). <i>Introduction to Symplectic Topology</i> (3rd ed.). Oxford University Press.</p>
-</div>
+<div class="box box-takeaway"><p><b>一句话带走</b>：你允许什么样的变换，就等于宣布了哪个量是绝对的。</p></div>

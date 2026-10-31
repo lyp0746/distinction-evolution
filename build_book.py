@@ -32,21 +32,20 @@ OUTPUT = os.path.join(HERE, "output")
 DATA_DIR = os.path.join(HERE, "data")
 
 FRONT = [("总纲　现实中不存在无限", "front_finitude.html", "finitude"),
-         ("先读这一页　三个可复算的定理", "front_hardcore.html", "hardcore"),
-         ("两个框架：五种代数（骨架）与四种机制（兑现方式）", "front_two_frameworks.html", "twoframeworks"),
+         ("先读这一页　五个可复算的事实", "front_hardcore.html", "hardcore"),
          ("前言　为什么把“统一”降级为“可检验的操作”", "front_preface.html", "preface"),
          ("十分钟读懂本书", "front_quickstart.html", "quickstart"),
          ("阅读合约　本书向你承诺什么，又不承诺什么", "front_theorymap.html", "theorymap"),
          ("术语、记号与断言分级速查", "front_terms.html", "terms")]
 BACK = [
         ("结语　一份开放的邀请", "back_epilogue.html", "apxe"),
-        ("本系列（六本专著 + 两本通俗读本）", "back_popular_guide.html", "apxp"),
+        ("本系列（九本书）", "back_popular_guide.html", "apxp"),
         ("参考文献", "back_references.html", "apxr"),
         ("术语表", "back_glossary.html", "apxg"),
         ("附录 A　形式化与证明", "appendix_a.html", "apxA"),
         ("附录 B　数据与案例", "appendix_b.html", "apxB"),
         ("附录 C　工具与清单", "appendix_d.html", "apxC"),
-        ("附录 D　补编：提案、警告与登记接口", "appendix_f.html", "apxD"),
+        ("附录 D　可证伪登记簿（append-only）", "appendix_f.html", "apxD"),
 ]
 
 def load_json(p, default=None):
