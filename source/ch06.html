@@ -107,5 +107,24 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>区分的四元组与信号检测论同构：属性 f 是判别变量，阈值 θ 是判据 c，观察者对 O 决定先验。三者的联合分布决定 ROC 曲线，而曲线下面积就是「区分能力」的可算版本。</p></div>
+<h3 id="sec6-9">6.9　与信号检测论的接口：d′ 与 ROC</h3>
+
+<p>区分能力在心理学里有一个标准量：<b>敏感度 <span class="s">d′</span></b>。设信号与噪声的判别变量服从等方差正态，均值差为 <span class="s">μ<sub>s</sub>−μ<sub>n</sub></span>、标准差 <span class="s">σ</span>，则</p>
+
+<div class="eq"><span class="body">d′ = (μ<sub>s</sub> − μ<sub>n</sub>)/σ，　判据 c = −(θ − (μ<sub>s</sub>+μ<sub>n</sub>)/2)/σ</span><span class="num">(6.2)</span></div>
+
+<p>两个量正好对应第 6 章的四元组：<span class="s">d′</span> 是“属性 + 噪声”的比值（区分能力），<span class="s">c</span> 是“阈值的位置”（判据）。<b>把两者分开，是本世纪心理学最实用的一次概念清理</b>：说“他更敏感”与说“他更敢说 yes”是两件事。</p>
+
+<table class="nat">
+<tr><th class="l">观察</th><th class="l"><span class="s">d′</span></th><th class="l"><span class="s">c</span></th><th class="l">解释</th></tr>
+<tr><td class="l">命中率高、虚报率也高</td><td class="l">大</td><td class="l">小（偏宽松）</td><td class="l">真的分得开，但门槛低</td></tr>
+<tr><td class="l">命中率高、虚报率低</td><td class="l">大</td><td class="l">大（偏严格）</td><td class="l">分得开且谨慎</td></tr>
+<tr><td class="l">两者都低</td><td class="l">小</td><td class="l">—</td><td class="l">分不开</td></tr>
+</table>
+
+<p>三行的对照说明：<b>只报“正确率”是无效的</b>，因为它把 <span class="s">d′</span> 与 <span class="s">c</span> 混在一起。这也是第 10 章语法第一条（可比）的实例：不比同一属性上的 <span class="s">d′</span>，任何“更准”都不可比。</p>
+
+<p>给本书的接口：<b><span class="s">d′</span> 是“区分能力”的第一个可测量。</b>第 21 章的知觉阈限条目之所以是 A 级，正是因为它有 <span class="s">d′</span> 这个两分钟能算的量；其余认知条目没有对应的可测量，所以停在 B 或 C。</p>
+
 <h3 id="sec6-ref">6　本章参考文献</h3>
 <div class="refs"><p>Spencer-Brown, G. (1969). <i>Laws of Form</i>. Allen &amp; Unwin.</p><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p></div>

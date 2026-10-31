@@ -113,5 +113,23 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>定理 7.1 是初始拓扑的标准结论，本书的贡献只在「把它读成区分生成」这一步。给专家的提醒：不要把它当成新定理，它是把已有定理换到本书的语言里。</p></div>
+<h3 id="sec7-8">7.8　数字拓扑：邻接约定决定连通分支数</h3>
+
+<p>图像里“有几个物体”这件事，答案取决于邻接约定。取一个 2×2 的黑白像素块，其中对角两个黑点：</p>
+
+<table class="nat">
+<tr><th class="l">邻接</th><th class="l">生成的结构</th><th class="l">连通分支数</th><th class="l">“物体个数”</th></tr>
+<tr><td class="l">4-邻接</td><td class="l">Alexandrov 拓扑（下闭集）</td><td class="l">2</td><td class="l">2</td></tr>
+<tr><td class="l">8-邻接</td><td class="l">另一套 Alexandrov 拓扑</td><td class="l">1</td><td class="l">1</td></tr>
+</table>
+
+<p><b>命题 7.5。</b>4-邻接与 8-邻接生成的两个 Alexandrov 拓扑通常不同，因此连通分支数可以不同。</p>
+
+<p><b>证明。</b>两点在对角时，4-邻接下不存在路径（每一步只允许水平或垂直），8-邻接下存在一条长度 1 的路径。连通分支按路径连通定义，故不同。<span class="s">∎</span></p>
+
+<p>这件小事的分量在于：<b>它证明“连通”不是数据自带的性质，而是邻接约定（即区分）的产物。</b>同一张图，换一个约定，物体个数就变。图像处理里所谓“分割算法”，本质就是在选一套区分；所谓“分割错误”，常常是区分与任务不匹配，而不是算法有 bug。</p>
+
+<p>这一点与第 7.5 节的 <span class="s">T₀</span> 反例是同一件事的两个版本：<b>结构由区分生成，而区分是可以选的</b>——所以任何“客观的连通性”都必须先声明约定。</p>
+
 <h3 id="sec7-ref">7　本章参考文献</h3>
 <div class="refs"><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Stong, R. E. (1966). Finite topological spaces. <i>Transactions of the AMS</i> 123, 325–340.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Mazin, A. (2025). Generative Topology. Zenodo.</p></div>

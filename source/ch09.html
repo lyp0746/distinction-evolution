@@ -117,5 +117,24 @@
 
 <p>给专家的提醒：本书第 19 章的收敛表（表 19.1）之所以能给出 0.1% 的精度，是因为网格上的解满足 Lipschitz（甚至 <span class="s">C²</span>）模量。<b>若把同一结论用到只有连续性的对象上，精度保证会整体失效。</b>这不是技术细节，而是第 19 章结论的适用范围。</p>
 
+<h3 id="sec9-10">9.10　超有限的三个实例：积分、导数、谱</h3>
+
+<p>第 9 章说“取标准部分”可以把无穷小化成零。三个实例说明它在做什么。</p>
+
+<p><b>一、积分。</b>把 <span class="s">[0,1]</span> 分成 <span class="s">N</span> 个宽 <span class="s">dx=1/N</span> 的超有限小格（<span class="s">N</span> 为非标准自然数），黎曼和 <span class="s">S=Σ<sub>k=1</sub><sup>N</sup>f(x<sub>k</sub>)dx</span> 是一个超实数。<b><span class="s">st(S)</span> 就是积分</b>——这里没有任何极限符号。</p>
+
+<p><b>二、导数。</b>取 <span class="s">f′(x)=st((f(x+dx)−f(x))/dx)</span>。注意：若先令 <span class="s">dx=0</span> 再除，得到 <span class="s">0/0</span>；必须先除后取标准部分。<b>顺序错了，整台机器就坏。</b></p>
+
+<p><b>三、谱。</b><span class="s">N×N</span> 的超有限自伴矩阵有 <span class="s">N</span> 个实特征值（转移原理），取标准部分得到标准算子与谱测度（定理 9.1）。<b>“谱测度”在超有限框架里就是计数测度的标准部分。</b></p>
+
+<table class="nat">
+<tr><th class="l">对象</th><th class="l">超有限写法</th><th class="l">取标准部分得到</th><th class="l">顺序错误的后果</th></tr>
+<tr><td class="l">积分</td><td class="l"><span class="s">Σf·dx</span></td><td class="l"><span class="s">∫f</span></td><td class="l"><span class="s">dx=0</span> ⇒ 和恒为 0</td></tr>
+<tr><td class="l">导数</td><td class="l"><span class="s">Δf/dx</span></td><td class="l"><span class="s">f′</span></td><td class="l">先取 0 得 <span class="s">0/0</span></td></tr>
+<tr><td class="l">谱</td><td class="l">特征值计数</td><td class="l">谱测度</td><td class="l">先取整得错的重数</td></tr>
+</table>
+
+<p>三行的共同纪律：<b>先做完超有限运算，再取标准部分。</b>这条纪律对本书第 19 章直接有用：那里的 <span class="s">h²β<sub>1</sub>→0</span> 就是“先算 <span class="s">β<sub>1</sub></span> 再取标准部分”的结果；若反过来先令 <span class="s">h=0</span>，会得到“没有网格”，什么也算不出。</p>
+
 <h3 id="sec9-ref">9　本章参考文献</h3>
 <div class="refs"><p>Robinson, A. (1966). <i>Non-standard Analysis</i>. North-Holland.</p><p>Loeb, P. A. (1975). Conversion from nonstandard to standard measure spaces and applications in probability theory. <i>Transactions of the AMS</i> 211, 113–122.</p><p>Goldblatt, R. (1998). <i>Lectures on the Hyperreals</i>. Springer.</p><p>Albeverio, S., Fenstad, J. E., Høegh-Krohn, R., &amp; Lindstrøm, T. (1986). <i>Nonstandard Methods in Stochastic Analysis and Mathematical Physics</i>. Academic Press.</p></div>
