@@ -52,13 +52,13 @@
 </table>
 <div class="cap"><b>表 16.1　三个图的临界耦合</b>　第三、四列若相等，系统没有中间地带（第 17 章）。数值可用十行代码复算。</div>
 
-<h3 id="sec16-4b">16.4b　定理 16.1 的三个隐含前提</h3>
+<h3 id="sec16-5">16.5　定理 16.1 的三个隐含前提</h3>
 
 <p>三个前提都写在陈述里，但都容易被漏读。<b>其一，连通性</b>：不连通时 <span class="s">λ<sub>2</sub>=0</span>，<span class="s">β<sub>2</sub></span> 发散，定理失效——这不是技术细节，非连通图恰好对应“系统内部已经分块”。<b>其二，对称性</b>：<span class="s">L</span> 必须对称，否则谱可能为复数（16.5 的反例）。<b>其三，均匀耦合</b>：所有边的 <span class="s">β</span> 相同；加权图的结论要改成 <span class="s">βλ<sub>k</sub>(L<sub>w</sub>)</span>，其中 <span class="s">L<sub>w</sub></span> 是加权拉普拉斯，形式不变但数值全变。</p>
 
 <p>三个前提合起来，就是第 5 章“边界第四条”的具体化：<b>定理的锐度来自前提的窄。</b>把前提放宽，结论就变软；本书选择保持窄，而不是把结论写成模糊的大话。</p>
 
-<h3 id="sec16-5b">16.5b　推广：加权图与归一化拉普拉斯</h3>
+<h3 id="sec16-6">16.6　推广：加权图与归一化拉普拉斯</h3>
 
 <p>定理 16.1 只用了“<span class="s">L</span> 实对称、半正定、零空间为一维常数向量”这三条。因此它对两类推广自动成立。</p>
 
@@ -66,17 +66,11 @@
 
 <p>两处推广有一个共同的陷阱：<b>数值不可比。</b>加权图的 <span class="s">λ<sub>n</sub></span> 没有上界 <span class="s">2Δ</span>（权可以任意大），所以命题 18.3 的界要改成依赖最大权。这一点在第 21 章的覆盖表里被标为“可比性风险”。</p>
 
-<h3 id="sec16-5">16.5　反例：非对称耦合会让顺序反转</h3>
+<h3 id="sec16-7">16.7　反例：非对称耦合会让顺序反转</h3>
 
 <p>若把边改成有向（<span class="s">L</span> 不再对称），<span class="s">L</span> 的特征值可以是复数，增长由 <span class="s">Re(λ<sub>k</sub>)</span> 决定，<span class="s">M=−αI+βL</span> 也不再正规。这时“高频先解锁、低频后解锁”不再成立：附录 B 给出一个 6 顶点有向图，其中的全局模式先于局部模式增长。<b>定理 16.1 的适用范围是有向图的补集</b>，这一点必须写在结论里，而不是留在脚注。</p>
 
-<h3 id="sec16-6">16.6　本章小结</h3>
-
-<p>线性演化把“区分”变成一串数：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。两个临界耦合（16.3）分开了解锁的先后。第 17 章问：这两个数之间的地带是什么。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：系统先解锁哪个方向，不取决于你拉哪里，取决于谱从哪头开始。</p></div>
-
-<h3 id="sec16-6b">16.6b　定理 16.1 与“记忆–关系”的耦合解释</h3>
+<h3 id="sec16-8">16.8　定理 16.1 与“记忆–关系”的耦合解释</h3>
 
 <p>把方程 <span class="s">Ḋ=−αD+βLD</span> 的两项读成两个机制：第一项是“遗忘”（每个顶点独立衰减），第二项是“关系”（向邻居看齐再拉开）。二者之比 <span class="s">β/α</span> 决定一切——把它写成一个无量纲数：</p>
 
@@ -84,16 +78,16 @@
 
 <p>于是临界耦合就是 <span class="s">Γ<sub>1</sub>=1/λ<sub>n</sub></span>、<span class="s">Γ<sub>2</sub>=1/λ<sub>2</sub></span>，与 <span class="s">α</span> 无关。<b>这个改写的好处是把“尺度”从参数里去掉</b>：换单位不改变任何结论，因为 <span class="s">Γ</span> 是无量纲的。第 19 章讨论“推向连续”时，正是用 <span class="s">Γ</span> 与网格步长 <span class="s">h</span> 的关系来说明哪个临界值消失、哪个留下。</p>
 
-<h3 id="sec16-7">16.7　临界值有多稳：一次扰动估计</h3>
+<h3 id="sec16-9">16.9　临界值有多稳：一次扰动估计</h3>
 
-<p>定理 16.1 的临界值是 <span class="s">α/λ<sub>k</sub></span>。若图被扰动（加一条边、改一个权），临界值会移动多少？由 Weyl 不等式（第 13.5b 节）与 <span class="s">λ=0</span> 的固定性可得</p>
+<p>定理 16.1 的临界值是 <span class="s">α/λ<sub>k</sub></span>。若图被扰动（加一条边、改一个权），临界值会移动多少？由 Weyl 不等式（第 13.6 节）与 <span class="s">λ=0</span> 的固定性可得</p>
 <div class="eq"><span class="body">|Δλ<sub>k</sub>| ≤ ‖E‖<sub>2</sub>，故 |Δβ<sub>1</sub>|/β<sub>1</sub> ≤ ‖E‖<sub>2</sub>/λ<sub>n</sub></span><span class="num">(16.5)</span></div>
 
 <p>代入具体数：加一条边至多使 <span class="s">λ<sub>n</sub></span> 变化 2，所以对 <span class="s">C<sub>10</sub></span>（<span class="s">λ<sub>n</sub>=4</span>）而言，<span class="s">β<sub>1</sub></span> 的相对变化不超过 50%——<b>不算小</b>。而对网格（<span class="s">λ<sub>n</sub>≈8</span>），不超过 25%。</p>
 
 <p>这条估计有一个直观解释：<b>临界值对“最高频模式”敏感，而最高频模式恰是局部的</b>（相邻顶点反号）。所以改一条局部的边，能扰动 <span class="s">β<sub>1</sub></span>，却几乎动不了 <span class="s">β<sub>2</sub></span>（<span class="s">λ<sub>2</sub></span> 是全局量）。<b>两个临界值的稳定性不同，这本身就是一个可测的预言：</b>在噪声图上，第二个门槛比第一个稳定得多。</p>
 
-<h3 id="sec16-8">16.8　Lyapunov 谱就是模式增长率：相变＝符号改变</h3>
+<h3 id="sec16-10">16.10　Lyapunov 谱就是模式增长率：相变＝符号改变</h3>
 
 <p>动力系统里的 Lyapunov 指数度量“相邻初值的分离速率”。对线性系统 <span class="s">Ḋ=MD</span> 它有闭式：<b>Lyapunov 谱就是 <span class="s">M</span> 的特征值实部</b>。把 <span class="s">M=−αI+βL</span> 代进去，恰好得到第 16 章的增长率 <span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。</p>
 
@@ -106,7 +100,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>定理 16.1 的三个前提（连通、对称、均匀耦合）缺一不可。加权与归一化拉普拉斯的推广在 16.5b 节，代价是数值可比性下降——命题 18.3 的界要改成依赖最大权。</p></div>
-<h3 id="sec16-9">16.9　加权图上的临界耦合（一个闭式）</h3>
+<h3 id="sec16-11">16.11　加权图上的临界耦合（一个闭式）</h3>
 
 <p>若边权为 <span class="s">w<sub>uv</sub></span>，定理 16.1 逐字成立，临界值是 <span class="s">α/λ<sub>k</sub>(L<sub>w</sub>)</span>。对一条加权的路（权 <span class="s">w<sub>1</sub>,…,w<sub>n−1</sub></span>），可以写出闭式：</p>
 
@@ -128,5 +122,17 @@
 <img class="fig" src="assets/svg/fig-weighted-sweep.svg" alt="图 16.4　权重集中的扫描">
 <div class="cap"><b>图 16.4　权重集中的扫描</b>　10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</div>
 <div class="box"><p><strong>读法：</strong>10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</p></div>
-<h3 id="sec16-ref">16　本章参考文献</h3>
-<div class="refs"><p>Chung, F. R. K. (1997). <i>Spectral Graph Theory</i>. AMS.</p><p>von Luxburg, U. (2007). A tutorial on spectral clustering. <i>Statistics and Computing</i> 17, 395–416.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Godsil, C., &amp; Royle, G. (2001). <i>Algebraic Graph Theory</i>. Springer.</p></div>
+<h3 id="sec16-12">16.12　本章小结</h3>
+
+<p>线性演化把“区分”变成一串数：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。两个临界耦合（16.3）分开了解锁的先后。第 17 章问：这两个数之间的地带是什么。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：系统先解锁哪个方向，不取决于你拉哪里，取决于谱从哪头开始。</p></div>
+
+<h3>16　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">延伸阅读</p>
+<p>Chung, F. R. K. (1997). Spectral Graph Theory. AMS.</p>
+<p>von Luxburg, U. (2007). A tutorial on spectral clustering. Statistics and Computing 17, 395–416.</p>
+<p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In Graph Symmetry, Kluwer.</p>
+<p>Godsil, C., &amp; Royle, G. (2001). Algebraic Graph Theory. Springer.</p>
+</div>

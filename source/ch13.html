@@ -37,13 +37,13 @@
 </table>
 <div class="cap"><b>表 13.1　三套工具的分工</b>　最后一行是被引用最多、也最容易出错的一处：变分给界，不给唯一性。</div>
 
-<h3 id="sec13-4b">13.4b　变分写法的两个实用后果</h3>
+<h3 id="sec13-5">13.5　变分写法的两个实用后果</h3>
 
 <p>第一，<b>界可以先算后证</b>：用 Courant–Fischer，取一个试验子空间就能给出 <span class="s">λ<sub>k</sub></span> 的上界；取对偶（极小极大）能给下界。第 18 章的 <span class="s">R</span> 的界（命题 18.3）正是这样来的：<span class="s">λ<sub>n</sub>≤2Δ</span> 由 Gershgorin 给，<span class="s">λ<sub>2</sub>≥4/(n·diam)</span> 由 Fiedler 给。</p>
 
 <p>第二，<b>数值方法有理论保证</b>：变分写法说明“用有限元或网格算最小特征值”是单调逼近的（Ritz 值从上逼近）。这解释了为什么第 19 章的数值表可以用很粗的网格就得到 0.1% 的精度——误差是二阶的，而 <span class="s">λ<sub>2</sub></span> 的 Ritz 值单调下降。</p>
 
-<h3 id="sec13-5b">13.5b　扰动不等式：谱对“改一点”有多敏感</h3>
+<h3 id="sec13-6">13.6　扰动不等式：谱对“改一点”有多敏感</h3>
 
 <p><b>定理 13.3（Weyl 扰动不等式）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
 <span class="s">max<sub>k</sub>|λ<sub>k</sub>(A+E)−λ<sub>k</sub>(A)| ≤ ‖E‖<sub>2</sub></span>。</p>
@@ -52,12 +52,12 @@
 
 <p>但它同时说明谱不能当作“结构指纹”：扰动 2 就可以让 <span class="s">λ₂</span> 完全变样（在 <span class="s">λ₂</span> 本身很小的网格上尤其如此）。<b>稳定性与识别力是两件事</b>，这与第 18.5 节的同谱反例互补：一个是“小扰动不改变谱”，一个是“不同的结构可以有同一个谱”。</p>
 
-<h3 id="sec13-5">13.5　反例：谱相同、结构不同</h3>
+<h3 id="sec13-7">13.7　反例：谱相同、结构不同</h3>
 
 <p>谱是整体量，它会丢信息。最干净的例子在第 18.5 节：两棵各有 8 个顶点的树，邻接谱完全相同（<span class="s">±2.3028, ±1.3028, 0×4</span>），度序列一个是 5,2,2,1,1,1,1,1，另一个是 4,4,1,1,1,1,1,1。谱定理给出的每个模式都一样，但两棵树的结构不同。<b>“谱相同”不等于“结构相同”，这是第 2 章所说“分辨率损失”的实例。</b></p>
 
 
-<h3 id="sec13">13.6　第四套工具：外微分与一个公式统摄四个积分定理</h3>
+<h3 id="sec13-8">13.8　第四套工具：外微分与一个公式统摄四个积分定理</h3>
 <p>用第 2 章的判据扫描，四个定理的冗余层次如下：</p>
 
 <table class="nat">
@@ -86,13 +86,7 @@
 <p>一个公式。所有四个定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。</p>
 
 
-<h3 id="sec13-6">13.7　本章小结</h3>
-
-<p>三套工具各有前提：极化只要对称，谱要对称（正规），变分要可算比值。混用会产生四类典型错误。第 14 章换一个角度：不是问形式能算什么，而是问“谁能保住这个形式”。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子各管一件事；拿水准去量长度，错的不是水准。</p></div>
-
-<h3 id="sec13-6b">13.6b　三套工具与数值方法的对应</h3>
+<h3 id="sec13-9">13.9　三套工具与数值方法的对应</h3>
 
 <p>三套工具在数值上各有对应物，这张对照表对实际工作者最有用。</p>
 
@@ -104,7 +98,7 @@
 </table>
 <p>最后一列是本书反复强调“可复算”的技术理由：<b>三种误差来源互不相同，因此“数值对上了”不是充分证据。</b>第 19 章表 19.1 的 0.1% 是三种误差叠加后的结果，而不是其中某一种的精度。想知道是哪一种，必须换一种算法再算一遍——这就是附录 B 给出独立代码的原因。</p>
 
-<h3 id="sec13-8">13.8　极限情形：极值原理与 Perron–Frobenius</h3>
+<h3 id="sec13-10">13.10　极限情形：极值原理与 Perron–Frobenius</h3>
 
 <p>三套工具在“极端情形”下会退化，退化处往往藏着最有用的定理。两例。</p>
 
@@ -116,7 +110,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>三套工具的分工可以用一句话记住：极化管「内积」、谱管「分解」、变分管「极值」。混用的典型症状是用变分做唯一性断言——变分只给界，不给唯一。</p></div>
-<h3 id="sec13-9">13.9　三套工具的误差实测</h3>
+<h3 id="sec13-11">13.11　三套工具的误差实测</h3>
 
 <p>三套工具在数值上各有误差来源，用一个小实验就能看清。</p>
 
@@ -131,7 +125,7 @@
 
 <p>这也是本书把附录 B 的代码写成“独立实现”的原因：<b>独立实现能把“算法误差”与“模型误差”分开</b>，而这是单一实现做不到的。</p>
 
-<h3 id="sec13-10">13.10　三套工具的适用边界表</h3>
+<h3 id="sec13-12">13.12　三套工具的适用边界表</h3>
 
 <p>三套工具各自在什么条件下失效，写成一张表，便于现场查。</p>
 
@@ -146,7 +140,7 @@
 
 <p>这张表的价值在“替代”一列：<b>工具失效不是终点，而是换工具的信号。</b>本书只在图上用拉普拉斯，正因为图上的三个条件是齐的；一旦离开图（例如有向、加权、非正规），就要照这张表换工具，而不是硬套结论。</p>
 
-<h3 id="sec13-11">13.11　三套工具与三种误差</h3>
+<h3 id="sec13-13">13.13　三套工具与三种误差</h3>
 
 <p>工具与误差一一对应，混用会把误差算错。</p>
 
@@ -161,7 +155,7 @@
 
 <p>实操建议：<b>先确定要验的量属于哪一套工具，再用同一套工具的高精度版本去核。</b>跨工具核对（例如用变分的结果验证谱的结果）只能发现“差一个数量级以上”的错误，发现不了细微偏差。</p>
 
-<h3 id="sec13-12">13.12　谱的三种读法：模式、能量、时间</h3>
+<h3 id="sec13-14">13.14　谱的三种读法：模式、能量、时间</h3>
 
 <p>同一个谱，可以读成三件事。三种读法对应三种应用。</p>
 
@@ -176,6 +170,17 @@
 
 <p>给本书的提醒：第 17.5b 节的窗口长度 <span class="s">t<sub>vis</sub></span> 用的是“时间”读法，而第 19 章的 <span class="s">R</span> 用的是“模式”读法。<b>两者不能直接相乘或相除</b>——它们的量纲不同。这条细节写在这里，是为了防止读者把两个公式拼成一个。</p>
 
-<h3 id="sec13-ref">13　本章参考文献</h3>
-<div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div><h3 id="sec13-ref">13　本章参考文献</h3>
-<div class="refs"><p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. <i>Mathematische Annalen</i> 71, 441–479.</p><p>Kato, T. (1966). <i>Perturbation Theory for Linear Operators</i>. Springer.</p><p>Bhatia, R. (1997). <i>Matrix Analysis</i>. Springer.</p><p>Tao, T. (2012). <i>Topics in Random Matrix Theory</i>. AMS.</p></div>
+<h3 id="sec13-15">13.15　本章小结</h3>
+
+<p>三套工具各有前提：极化只要对称，谱要对称（正规），变分要可算比值。混用会产生四类典型错误。第 14 章换一个角度：不是问形式能算什么，而是问“谁能保住这个形式”。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子各管一件事；拿水准去量长度，错的不是水准。</p></div>
+
+<h3>13　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">延伸阅读</p>
+<p>Weyl, H. (1912). Das asymptotische Verteilungsgesetz der Eigenwerte linearer partieller Differentialgleichungen. Mathematische Annalen 71, 441–479.</p>
+<p>Kato, T. (1966). Perturbation Theory for Linear Operators. Springer.</p>
+<p>Bhatia, R. (1997). Matrix Analysis. Springer.</p>
+<p>Tao, T. (2012). Topics in Random Matrix Theory. AMS.</p>
+</div>

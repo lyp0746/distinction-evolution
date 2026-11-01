@@ -3,7 +3,7 @@
  * 字体体系：
  *   正文（中文宋体 + 西文 Times），标题（微软雅黑/Arial 无衬线）。
  * 明确不使用思源（Source Han / Noto）系列，避免“网页化”观感。
- * 页面：A4 单栏、30/35/32/35mm 边距、10.5pt、1.5 倍行距。
+ * 页面：A4 单栏、30/35/32/35mm 边距、12.5pt、1.76 倍行距。
  * ============================================================ */
 @page {
   size: A4;
@@ -16,8 +16,8 @@
 body {
   /* 西文 Times + 中文宋体，构成衬线正文 */
   font-family: "Times New Roman", "SimSun", "Songti SC", "STSong", "NSimSun", Georgia, serif;
-  font-size: 13pt;
-  line-height: 1.5;
+  font-size: 12.5pt;
+  line-height: 1.76;
   color: #1a1a1a;
   margin: 0 auto;
   max-width: 150mm;          /* 31mm 边距下的行宽 */
@@ -38,14 +38,14 @@ h1, h2, h3, h4, h5 {
 }
 h1 { font-size: 17pt; font-weight: 700; margin: 0 0 10px; }
 h2 {
-  font-size: 14pt; font-weight: 700;
+  font-size: 14.5pt; font-weight: 700;
   margin: 30px 0 12px; padding: 0 0 5px 0;
-  border-bottom: 1.4px solid #222;
+  border-bottom: 0.9px solid #333;
 }
-h3 { font-size: 13pt; font-weight: 700; margin: 20px 0 8px; color: #222; }
-h4 { font-size: 11pt; font-weight: 700; margin: 14px 0 6px; color: #333; }
-h4.arg { font-size: 13pt; font-weight: 700; color: #444; margin: 12px 0 4px; }
-h5 { font-size: 13pt; font-weight: 600; margin: 10px 0 4px; color: #333; }
+h3 { font-size: 12.8pt; font-weight: 700; margin: 21px 0 8px; color: #1f1f1f; }
+h4 { font-size: 1em; font-weight: 700; margin: 16px 0 6px; color: #262626; }
+h4.arg { font-size: 1em; font-weight: 700; color: #333; margin: 14px 0 5px; }
+h5 { font-size: 1em; font-weight: 600; margin: 10px 0 4px; color: #333; }
 
 /* ------------------------------ 扉页 ------------------------------ */
 .title-page { break-after: page; padding-top: 26mm; }
@@ -58,6 +58,10 @@ h5 { font-size: 13pt; font-weight: 600; margin: 10px 0 4px; color: #333; }
 .aff { text-align: left; font-size: 9pt; color: #555; margin: 0 0 18px; }
 
 /* ------------------------------ 摘要 ------------------------------ */
+/* 摘要独立页（去扉页空白页） */
+.abstract-page { break-after: page; padding-top: 6mm; }
+.abstract-page .abstract { margin: 0; }
+
 .abstract {
   background: #f6f6f4; border: 1px solid #e0e0e0; border-left: 3px solid #2E86AB;
   padding: 12px 16px; font-size: 9.6pt; line-height: 1.55; margin: 18px 0 12px;
@@ -70,7 +74,7 @@ h5 { font-size: 13pt; font-weight: 600; margin: 10px 0 4px; color: #333; }
 .kw { font-size: 9pt; margin-top: 8px; color: #333; }
 
 /* ------------------------------ 正文 ------------------------------ */
-p { margin: 0 0 8px; }              /* 8pt 节奏 */
+p { margin: 0 0 9.5px; }
 p.lead { font-size: 13pt; color: #222; }
 ul, ol { margin: 8px 0; padding-left: 20px; }
 li { margin: 4px 0; }
@@ -119,6 +123,13 @@ svg.fig-svg { width: 100%; display: block; margin: 12px 0 4px; }
 .cap { font-size: 9pt; color: #1a1a1a; margin: 2px 0 14px; line-height: 1.45; }
 .cap b:first-child { font-weight: 700; }
 
+img.fig + .cap, svg.fig-svg + .cap { margin-top: 7px; }
+
+
+/* 文献表：引用 / 延伸阅读两栏 */
+.refs p.refh { font-weight: 700; font-size: 9pt; letter-spacing: .5px; color: #333;
+  margin: 8px 0 3px; padding-bottom: 2px; border-bottom: 0.6px solid #cfcfcf; }
+
 /* ------------------------------ 公式 ------------------------------ */
 .mblock { text-align: center; margin: 12px 0; font-size: 11pt; }
 .eq { display: flex; align-items: baseline; justify-content: center;
@@ -132,18 +143,28 @@ svg.fig-svg { width: 100%; display: block; margin: 12px 0 4px; }
   padding: 10px 14px; margin: 12px 0; font-size: 9.6pt; line-height: 1.5;
   break-inside: avoid;
 }
-.define { background: #f4f8fb; border-left: 3.5px solid #2E86AB; }
-.scenario { background: #f3f9f5; border-left: 3.5px solid #009E73; }
-.warning { background: #fff6ee; border-left: 3.5px solid #D55E00; }
-.case { background: #fbfbf9; border: 1px solid #ddd; border-top: 3px solid #333; }
-.note { background: #fafafa; border-left: 3px solid #999; }
-.box { background: #faf9f5; border: 1px solid #ddd; }
+.define { background: #f4f8fb; border-left: 3px solid #2E86AB; }
+.scenario { background: #f7fafc; border-left: 3px solid #7aa8c4; }
+.warning { background: #fbf7ef; border-left: 3px solid #B26B00; }
+.case { background: #fbfbfb; border: 1px solid #e2e2e2; border-top: 1.5px solid #6b6b6b; }
+.note { background: #f7f7f7; border-left: 3px solid #b5b5b5; }
+.box { background: #fafafa; border: 1px solid #e4e4e4; }
 .define .bt, .scenario .bt, .warning .bt, .case .ct, .box .t {
   display: block; font-weight: 700; margin-bottom: 5px;
   font-family: "Microsoft YaHei", "SimHei", sans-serif;
 }
 .warning .bt { color: #A83A00; }
 .case .code { font-family: Arial, sans-serif; color: #777; font-size: 8.6pt; font-weight: 400; }
+
+/* ---- 目录：右侧页码列 ---- */
+.toc .l1, .toc .l2, .toc .l3, .toc .l4 {
+  display: flex; align-items: baseline; flex-wrap: nowrap;
+}
+.toc .l1 > a, .toc .l2 > a, .toc .l3 > a, .toc .l4 > a { flex: 0 1 auto; min-width: 0; }
+.toc .folio {
+  margin-left: auto; padding-left: 10px; flex: 0 0 auto; white-space: nowrap;
+  color: #555; font-size: .9em; font-variant-numeric: tabular-nums;
+}
 
 /* ------------------------------ 其他 ------------------------------ */
 .foot { font-size: 8pt; color: #666; border-top: 1px solid #ccc;
@@ -161,33 +182,35 @@ svg.fig-svg { width: 100%; display: block; margin: 12px 0 4px; }
 }
 .part-intro p { margin: 0 0 .55em; text-indent: 2em; }
 .part-summary {
-  max-width: 132mm; margin: 8mm auto 2mm; padding: 4.5mm 6mm;
-  border-top: 1px solid #d8cbb0; border-bottom: 1px solid #d8cbb0;
-  background: #fbf9f4; font-size: 10pt; line-height: 1.8;
+  max-width: 132mm; margin: 9mm auto 2mm; padding: 4mm 0 0;
+  border-top: 0.8px solid #9a9a9a; font-size: 9.6pt; line-height: 1.9;
 }
 .part-summary .bt {
   display: block; font-weight: 700; letter-spacing: 1px;
-  margin-bottom: .35em; color: #8a6d2f;
+  margin-bottom: .35em; color: #4a4a4a;
 }
 .part-summary p { margin: 0 0 .45em; text-indent: 2em; }
 
-/* ---- 部分扉页：满栏插图页（spec v2 §1·视觉 v3） ---- */
+
+/* ---- 部分扉页 v4：上图下文，互不重叠 ---- */
 .part-page{
   position: relative; width: 100%; height: 243mm;
   margin: 0; padding: 0; overflow: hidden;
   break-before: page; break-after: page; background: #0e1117;
 }
-.part-art{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit: cover; display:block; }
-.part-body{ position:absolute; left:16mm; right:16mm; bottom:20mm; }
+.part-art{ position:absolute; left:0; top:0; width:100%; height:54%; object-fit:cover; display:block; }
+.part-body{ position:absolute; left:13mm; right:13mm; top:57%; bottom:13mm; }
 .part-kicker{
-  font-family:"Helvetica Neue",Arial,sans-serif; font-size:8.5pt; letter-spacing:3.2px;
-  color:#b8862f; text-transform:uppercase; margin:0 0 5mm;
+  font-family:"Helvetica Neue",Arial,sans-serif; font-size:8pt; letter-spacing:3px;
+  color:#b8862f; text-transform:uppercase; margin:0 0 3.5mm;
 }
 h1.part-title{
-  break-before: auto; text-align: left; padding: 0; border: 0;
+  break-before: auto; text-align:left; padding:0; border:0;
   font-family:"Microsoft YaHei","Heiti SC","SimHei",sans-serif;
-  font-size: 22pt; font-weight: 600; letter-spacing: 2.5px;
-  color: #f6f2e8; margin: 0 0 5mm;
+  font-size:16.5pt; font-weight:600; letter-spacing:0.4px;
+  color:#f6f2e8; margin:0 0 4mm; line-height:1.35;
 }
-.part-intro{ color:#c2c7d0; font-size:9.8pt; line-height:1.9; }
-.part-intro p{ margin:0 0 .45em; text-indent:2em; }
+.part-intro{ color:#c2c7d0; font-size:9.2pt; line-height:1.76; text-align:justify; }
+.part-intro p{ margin:0 0 .5em; text-indent:2em; }
+
+/* v4: nature-benchmark */

@@ -43,15 +43,15 @@
 
 <p>定理把“两阶段”从一个隐喻变成一个判据：<b>只要两个特征值不等，中间相就存在</b>；差得越多，中间相越宽。宽度就是第 18 章的主角。</p>
 
-<h3 id="sec17-3b">17.3b　中间相是一个“不稳定”的相</h3>
+<h3 id="sec17-5">17.5　中间相是一个“不稳定”的相</h3>
 
 <p>中间相有一个反直觉的性质：它不稳定。<span class="s">β</span> 稍大于 <span class="s">β<sub>1</sub></span> 时，高频模式增长得很慢（增长率 <span class="s">βλ<sub>n</sub>−α</span> 很小）；而 <span class="s">β</span> 一旦接近 <span class="s">β<sub>2</sub></span>，低频模式开始增长，系统很快进入“全局也解锁”的相。因此中间相在参数轴上宽，在<b>动力学时间</b>上却短——你需要在正确的时刻观察，才能看见它。</p>
 
 <p>这一点对实验设计有直接影响：如果只在一个固定时刻采样，很可能看不到中间相，从而误判为“一次相变”。第 24 章的 H2 检验就是为此设计的：它要求同时记录耦合强度与解锁计数，而不是只看最终状态。</p>
 
-<h3 id="sec17-5b">17.5b　中间相能维持多久：一个可算的时间尺度</h3>
+<h3 id="sec17-6">17.6　中间相能维持多久：一个可算的时间尺度</h3>
 
-<p>第 17.3b 节说中间相“在时间上短”。可以把它写成一个数。设 <span class="s">β</span> 落在区间中点：<span class="s">β=(β<sub>1</sub>+β<sub>2</sub>)/2</span>，则高频模式的增长率为 <span class="s">μ<sub>n</sub>=βλ<sub>n</sub>−α</span>，低频衰减率为 <span class="s">|μ<sub>2</sub>|=α−βλ<sub>2</sub></span>。中间相的“可见窗口”大致满足
+<p>第 17.5 节说中间相“在时间上短”。可以把它写成一个数。设 <span class="s">β</span> 落在区间中点：<span class="s">β=(β<sub>1</sub>+β<sub>2</sub>)/2</span>，则高频模式的增长率为 <span class="s">μ<sub>n</sub>=βλ<sub>n</sub>−α</span>，低频衰减率为 <span class="s">|μ<sub>2</sub>|=α−βλ<sub>2</sub></span>。中间相的“可见窗口”大致满足
 <div class="eq"><span class="body">t<sub>vis</sub> ≈ ln(‖D<sub>0</sub>‖/ε)/min(μ<sub>n</sub>,|μ<sub>2</sub>|)</span><span class="num">(17.1)</span></div>
 其中 <span class="s">ε</span> 是观测精度。用 <span class="s">λ<sub>n</sub>≫λ<sub>2</sub></span> 代入可得 <span class="s">t<sub>vis</sub>≈2ln(1/ε)/(β(λ<sub>n</sub>−λ<sub>2</sub>))</span>：<b>相变越“各向异性”，窗口越短。</b></p>
 
@@ -65,19 +65,13 @@
 <div class="cap"><b>图 17.3　三个模式的增长率</b>　橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</div>
 <div class="box"><p><strong>读法：</strong>橙色带是中间相：最高频（蓝）已跨过零线，最低非平凡（红）仍在零线以下。</p></div>
 
-<h3 id="sec17-5">17.5　反例：正则完全图里没有中间相</h3>
+<h3 id="sec17-7">17.7　反例：正则完全图里没有中间相</h3>
 
 <p>完全图 <span class="s">K<sub>n</sub></span> 的谱是 <span class="s">0</span> 与 <span class="s">n</span>（<span class="s">n−1</span> 重）。于是 <span class="s">λ<sub>2</sub>=λ<sub>n</sub>=n</span>，<span class="s">β<sub>1</sub>=β<sub>2</sub>=α/n</span>：所有非平凡模式同时解锁，没有中间相。直观上也对——完全图里没有“局部”与“全局”的区别，任何一块都和整体一样连得紧。</p>
 
 <p>这说明两阶段相变<b>不是</b>“任何系统都有两个阶段”，而是“结构里存在尺度差异时才有两个阶段”。这一句区分很重要：它把现象从普遍规律降级为结构效应，第 19 章会把这件事推到连续极限。</p>
 
-<h3 id="sec17-6">17.6　本章小结</h3>
-
-<p>中间相存在 ⟺ <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>（17.1），宽度由两者的比决定。完全图是零宽度的极端例子。第 18 章把这个比命名、算出闭式，并给出它的一条分类定理。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：局部先醒、全局后醒——这不是比喻，是两个特征值之间的那段空隙。</p></div>
-
-<h3 id="sec17-6b">17.6b　中间相在数据上长什么样</h3>
+<h3 id="sec17-8">17.8　中间相在数据上长什么样</h3>
 
 <p>若要在实验里认出中间相，需要三个可观测的量：<b>解锁计数</b>（已增长的模式数）、<b>空间相关长度</b>（高频模式给出短程相关）、<b>分块度</b>（低频模式给出长程分块）。中间相的特征是：解锁计数已经大于零，而分块度仍未起来。</p>
 
@@ -89,9 +83,9 @@
 </table>
 <p>三个量里，<b>只有第一个是“已经发生”的直接证据</b>；另两个是它的几何后果。这也是第 24 章 H2 检验把“解锁计数”作为主判据的原因：它最不容易被模型设定污染。</p>
 
-<h3 id="sec17-7">17.7　中间相的可观测性：一个采样条件</h3>
+<h3 id="sec17-9">17.9　中间相的可观测性：一个采样条件</h3>
 
-<p>第 17.5b 节给了窗口长度 <span class="s">t<sub>vis</sub></span>，但“看得见”还需要第二个条件：采样间隔必须小于系统的快时间尺度。</p>
+<p>第 17.6 节给了窗口长度 <span class="s">t<sub>vis</sub></span>，但“看得见”还需要第二个条件：采样间隔必须小于系统的快时间尺度。</p>
 
 <p>设采样间隔 <span class="s">Δt</span>，快时间尺度 <span class="s">τ<sub>fast</sub>=1/(βλ<sub>n</sub>−α)</span>。若 <span class="s">Δt&gt;τ<sub>fast</sub></span>，高频模式的增长会被采样平均掉，看起来像“没发生”。于是“看见中间相”的条件是</p>
 <div class="eq"><span class="body">Δt &lt; 1/(βλ<sub>n</sub>−α)  且  总时长 &gt; t<sub>vis</sub></span><span class="num">(17.2)</span></div>
@@ -100,7 +94,7 @@
 
 <p>这条式子也提醒：<b>“看不见”不是“不存在”的证据</b>。要主张“不存在”，必须证明采样条件已经满足而现象仍未出现。第 24 章的 H2 检验把这一条写成了前置条件。</p>
 
-<h3 id="sec17-8">17.8　混沌的边缘：为什么本书不把“正 Lyapunov”当混沌</h3>
+<h3 id="sec17-10">17.10　混沌的边缘：为什么本书不把“正 Lyapunov”当混沌</h3>
 
 <p>“混沌”在动力系统里指三件事同时成立：<b>有界</b>、<b>对初值敏感</b>（最大 Lyapunov 指数 <span class="s">χ<sub>1</sub>&gt;0</span>）、<b>拓扑传递</b>（任两个开集在演化中相交）。三者缺一不可：无界的指数增长是发散，不是混沌；只有敏感而无传递的，是“有结构的分离”。</p>
 
@@ -120,7 +114,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>中间相在参数轴上宽、在时间上短（17.5b 节）。给实验设计的提醒：采样间隔必须小于 1/(βλ_n−α)，否则高频增长会被平均掉，看起来像「没发生」。</p></div>
-<h3 id="sec17-9">17.9　给专家的注：三个常被混淆的“指数”</h3>
+<h3 id="sec17-11">17.11　给专家的注：三个常被混淆的“指数”</h3>
 
 <p>讨论混沌时，三个指数常被混着用，后果是结论互相矛盾。分清它们：</p>
 
@@ -128,14 +122,14 @@
 <tr><th class="l">指数</th><th class="l">定义</th><th class="l">本书里等于</th><th class="l">用途</th></tr>
 <tr><td class="l">Lyapunov <span class="s">χ</span></td><td class="l">相邻轨道的指数分离率</td><td class="l"><span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span></td><td class="l">判“是否敏感”</td></tr>
 <tr><td class="l">临界指数 <span class="s">ν</span></td><td class="l">相关长度随参数的发散率</td><td class="l">本书不谈</td><td class="l">判“相变类型”</td></tr>
-<tr><td class="l">谱指数 <span class="s">α</span></td><td class="l">模量 <span class="s">ω(δ)=Lδ<sup>α</sup></span> 中的 <span class="s">α</span></td><td class="l">第 9.8 节</td><td class="l">判“区分成本”</td></tr>
+<tr><td class="l">谱指数 <span class="s">α</span></td><td class="l">模量 <span class="s">ω(δ)=Lδ<sup>α</sup></span> 中的 <span class="s">α</span></td><td class="l">第 9.11 节</td><td class="l">判“区分成本”</td></tr>
 </table>
 
 <p>三者的混淆方式很典型：<b>用 Lyapunov 指数去说“复杂度”，用临界指数去说“敏感性”，用谱指数去说“混沌”。</b>三种说法都错，但都不容易被当场揭穿，因为它们各自在自己的语境里是对的。</p>
 
 <p>本书的纪律是：<b>凡出现“指数”二字，必须写明是哪一个。</b>这条纪律也适用于第 19 章（那里的指数是 <span class="s">n²</span>，是“缩放指数”，第四个东西）。四个指数、四种意义、四套算法——写清楚它们，是这一章对读者的最低要求。</p>
 
-<h3 id="sec17-10">17.10　中间相的数值实验设计</h3>
+<h3 id="sec17-12">17.12　中间相的数值实验设计</h3>
 
 <p>若要在数值上确认中间相，需要三件事同时满足：参数落在区间内、时间分辨率足够、观测量选对。</p>
 
@@ -150,7 +144,7 @@
 
 <p>设计上还有一个技巧：<b>不要只测一个 <span class="s">β</span>。</b>扫一条曲线（<span class="s">β</span> 从 <span class="s">0.5β<sub>1</sub></span> 到 <span class="s">2β<sub>2</sub></span>），同时记录解锁计数与分块度，两个台阶会同时显形；单点测量几乎一定会误判。</p>
 
-<h3 id="sec17-11">17.11　中间相的三条实用判据</h3>
+<h3 id="sec17-13">17.13　中间相的三条实用判据</h3>
 
 <p>要在数据上认出中间相，三条判据任一条成立即可。</p>
 
@@ -163,5 +157,16 @@
 
 <p>三条判据的成本递增，可靠性递减。<b>第一条只需谱，是首选；后两条是补充证据，不是必要条件。</b>本条判据的用处：它让“我看到中间相了”从印象变成可报的数。</p>
 
-<h3 id="sec17-ref">17　本章参考文献</h3>
-<div class="refs"><p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. <i>Czechoslovak Mathematical Journal</i> 25, 619–633.</p><p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In <i>Graph Symmetry</i>, Kluwer.</p><p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. <i>Physics D</i> 143, 1–20.</p></div>
+<h3 id="sec17-14">17.14　本章小结</h3>
+
+<p>中间相存在 ⟺ <span class="s">λ<sub>2</sub>&lt;λ<sub>n</sub></span>（17.1），宽度由两者的比决定。完全图是零宽度的极端例子。第 18 章把这个比命名、算出闭式，并给出它的一条分类定理。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：局部先醒、全局后醒——这不是比喻，是两个特征值之间的那段空隙。</p></div>
+
+<h3>17　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">延伸阅读</p>
+<p>Fiedler, M. (1975). A property of eigenvectors of nonnegative symmetric matrices and its application to graph theory. Czechoslovak Mathematical Journal 25, 619–633.</p>
+<p>Mohar, B. (1991). Some applications of Laplace eigenvalues of graphs. In Graph Symmetry, Kluwer.</p>
+<p>Strogatz, S. H. (2000). From Kuramoto to Crawford: exploring the onset of synchronization. Physics D 143, 1–20.</p>
+</div>

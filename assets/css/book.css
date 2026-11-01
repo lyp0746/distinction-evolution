@@ -4,20 +4,6 @@
  * 字体体系与 paper.css 保持一致（宋体正文 / 黑体标题）。
  * ============================================================ */
 
-/* 部分（Part）扉页 —— 作为 h1，进入 PDF 书签第一级 */
-h1.part-title {
-  break-before: page;
-  text-align: center;
-  font-family: "Microsoft YaHei", "Heiti SC", "SimHei", sans-serif;
-  font-size: 20pt;
-  font-weight: 700;
-  letter-spacing: 4px;
-  color: #1a1a1a;
-  border: 0;
-  padding: 46mm 0 0;
-  margin: 0;
-}
-
 /* 目录标题（非标题标签，避免进入书签） */
 .toc-title {
   text-align: center;
@@ -28,9 +14,9 @@ h1.part-title {
 
 /* 章标题 */
 h2.chapter {
-  font-size: 18pt; font-weight: 700; border: 0;
-  border-left: 6px solid #222; padding: 0 0 0 12px;
-  margin: 0 0 14px; break-before: page;
+  font-size: 17pt; font-weight: 700; border: 0;
+  border-top: 1.2px solid #222; padding: 8px 0 0;
+  margin: 0 0 16px; break-before: page;
 }
 h2.chapter + p.lead { margin-top: 6px; }
 
@@ -91,11 +77,6 @@ img.fig[src$=".svg"], .fig-svg { width: 100%; display: block; margin: 12pt 0 4pt
 
 /* ---- 部分扉页 / 部分小结（spec v2 §1） ---- */
 .part-page { break-before: page; }
-.part-intro {
-  max-width: 132mm; margin: 7mm auto 0;
-  font-size: 10.5pt; line-height: 1.9; color: #2b2b2b; text-align: justify;
-}
-.part-intro p { margin: 0 0 .55em; text-indent: 2em; }
 .part-summary {
   max-width: 132mm; margin: 8mm auto 2mm; padding: 4.5mm 6mm;
   border-top: 1px solid #d8cbb0; border-bottom: 1px solid #d8cbb0;
@@ -106,24 +87,3 @@ img.fig[src$=".svg"], .fig-svg { width: 100%; display: block; margin: 12pt 0 4pt
   margin-bottom: .35em; color: #8a6d2f;
 }
 .part-summary p { margin: 0 0 .45em; text-indent: 2em; }
-
-/* ---- 部分扉页：满栏插图页（spec v2 §1·视觉 v3） ---- */
-.part-page{
-  position: relative; width: 100%; height: 243mm;
-  margin: 0; padding: 0; overflow: hidden;
-  break-before: page; break-after: page; background: #0e1117;
-}
-.part-art{ position:absolute; left:0; top:0; width:100%; height:100%; object-fit: cover; display:block; }
-.part-body{ position:absolute; left:16mm; right:16mm; bottom:20mm; }
-.part-kicker{
-  font-family:"Helvetica Neue",Arial,sans-serif; font-size:8.5pt; letter-spacing:3.2px;
-  color:#b8862f; text-transform:uppercase; margin:0 0 5mm;
-}
-h1.part-title{
-  break-before: auto; text-align: left; padding: 0; border: 0;
-  font-family:"Microsoft YaHei","Heiti SC","SimHei",sans-serif;
-  font-size: 22pt; font-weight: 600; letter-spacing: 2.5px;
-  color: #f6f2e8; margin: 0 0 5mm;
-}
-.part-intro{ color:#c2c7d0; font-size:9.8pt; line-height:1.9; }
-.part-intro p{ margin:0 0 .45em; text-indent:2em; }

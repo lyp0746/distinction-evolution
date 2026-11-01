@@ -46,13 +46,13 @@
 
 <p>表里最值得看的是最后两行：<b>同一个正方形，用网格离散得到 <span class="s">R≈0.81n²</span>，用环面离散得到 <span class="s">R≈0.20n²</span></b>。差四倍，而两者在连续极限下是同一个平坦环面/正方形。这意味着 <span class="s">R</span> 不是几何不变量，而是<b>离散化方案的函数</b>。第 19 章把这句话写成定理。</p>
 
-<h3 id="sec18-4b">18.4b　表 18.1 的两条读法</h3>
+<h3 id="sec18-5">18.5　表 18.1 的两条读法</h3>
 
 <p><b>横向读：</b>同一行里 <span class="s">R</span> 与 <span class="s">n</span> 的关系，告诉你这个图族的“尺度落差”有多强。前四行（完全图、完全二部图、星、超立方）的 <span class="s">R</span> 与 <span class="s">n</span> 无关或有界，说明这些结构的局部与全局差不多一样“紧”；后五行（环、路、网格、环面）的 <span class="s">R</span> 随 <span class="s">n</span> 增长，说明它们的局部（相邻顶点）与全局（切成两半）之间隔着巨大的尺度差。</p>
 
 <p><b>纵向读：</b>比较网格与环面，两者的 <span class="s">λ<sub>n</sub></span> 都是 8，差别全在 <span class="s">λ<sub>2</sub></span> 上：网格的 <span class="s">λ<sub>2</sub></span> 是“一个方向走一步”，环面是“一个方向走一圈的四分之一”，后者大四倍，于是 <span class="s">R</span> 小四倍。<b>同一个几何、两种离散化，差一个因子 4</b>——这就是第 19 章“<span class="s">R</span> 不是几何不变量”的入口。</p>
 
-<h3 id="sec18-5b">18.5b　两面夹：Cheeger 与 Alon–Boppana 给出 R 的界</h3>
+<h3 id="sec18-6">18.6　两面夹：Cheeger 与 Alon–Boppana 给出 R 的界</h3>
 
 <p>第 18.3 节给的界是 <span class="s">R≤nΔ·diam/2</span>，很松。若把图限制在<b>正则</b>族，可以两面夹住。</p>
 
@@ -83,7 +83,7 @@
 <div class="cap"><b>图 18.3　正则族的夹逼</b>　下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</div>
 <div class="box"><p><strong>读法：</strong>下界随度增加趋于 2，上界由谱间隙给出；两条曲线之间是正则图 <span class="s">R</span> 的唯一可能区域。</p></div>
 
-<h3 id="sec18-5">18.5　反例：同谱不同图——谱看不见结构</h3>
+<h3 id="sec18-7">18.7　反例：同谱不同图——谱看不见结构</h3>
 
 <p>两个 6 顶点图，拉普拉斯谱完全相同：<span class="s">{0, 0.7639, 2, 3, 3, 5.2361}</span>。第一个的边是 <span class="s">{02,12,13,14,25,35,45}</span>，度序列 <span class="s">3,3,3,2,2,1</span>；第二个的边是 <span class="s">{02,05,13,14,23,34,35}</span>，度序列 <span class="s">4,2,2,2,2,2</span>。它们不是同构的，但</p>
 
@@ -95,13 +95,7 @@
 
 <p><b>结论：</b>谱各向异性刻画的是“两阶段相变有多宽”，不是“图长什么样”。任何把 <span class="s">R</span> 当作结构指纹的说法都过头了。这也是第 2 章“分辨率损失”的第二个实例（第一个是曲率）。</p>
 
-<h3 id="sec18-6">18.6　本章小结</h3>
-
-<p><span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 把两阶段相变压成一个数（18.1），九类图有闭式（表 18.1），<span class="s">R=1</span> 只发生在完全图（18.2），而谱相同不代表结构相同（18.5）。第 19 章把这个数推向连续。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：相变的宽度是一个可以算的数，但它算的是“结构有多各向异性”，不是“结构是什么”。</p></div>
-
-<h3 id="sec18-6b">18.6b　R 与三个经典量：直径、Cheeger 常数、谱间隙</h3>
+<h3 id="sec18-8">18.8　R 与三个经典量：直径、Cheeger 常数、谱间隙</h3>
 
 <p><span class="s">R</span> 不是孤立的量，它与三个经典量都能挂钩。</p>
 
@@ -113,7 +107,7 @@
 </table>
 <p>三行给出三种不同的定量直觉：直径给上界（越瘦长 <span class="s">R</span> 越大）、Cheeger 给下界（有瓶颈则 <span class="s">λ<sub>2</sub></span> 小）、谱间隙给正则族的夹逼。<b>三者合起来说明：<span class="s">R</span> 度量的是“瘦长 × 有瓶颈”，不是“规模大”。</b></p>
 
-<h3 id="sec18-7">18.7　六族实测与两条界：一张核对表</h3>
+<h3 id="sec18-9">18.9　六族实测与两条界：一张核对表</h3>
 
 <p>把第 18.4 节的闭式与命题 18.4 的夹逼放在一张表里，逐族核对。</p>
 
@@ -132,8 +126,8 @@
 <p>把这张表的读法与命题 18.4 的注解连起来，得到一个可用的判断：<b>看到 <span class="s">R</span> 明显超过 <span class="s">2d/γ</span>，先怀疑两件事</b>——图不正则（边界作祟），或谱间隙算错。<span class="s">Q<sub>6</sub></span> 这一行之所以要单列，就是因为它把“取等”与“超界”挨在一起，逼读者去看上界的推导（<span class="s">λ<sub>n</sub>≤2d</span> 来自 Gershgorin，<span class="s">γ</span> 是定义）。</p>
 
 
-<div class="box box-expert"><p><strong>【给专家的注】</strong>R 的两条界（2 ≤ R ≤ 2d/γ）只对有正谱间隙的正则族成立。环面是正则的但间隙趋于零，因此不适用——这条自检写在第 18.5b 节，是全书的示范：表能打掉漏写前提的话。</p></div>
-<h3 id="sec18-8">18.8　R 与“度数异质性”的定量关系</h3>
+<div class="box box-expert"><p><strong>【给专家的注】</strong>R 的两条界（2 ≤ R ≤ 2d/γ）只对有正谱间隙的正则族成立。环面是正则的但间隙趋于零，因此不适用——这条自检写在第 18.6 节，是全书的示范：表能打掉漏写前提的话。</p></div>
+<h3 id="sec18-10">18.10　R 与“度数异质性”的定量关系</h3>
 
 <p>第 18 章的九族表里，<span class="s">R</span> 的大小与“度数分布有多宽”强相关。可以把它写成一条经验关系：</p>
 
@@ -147,9 +141,9 @@
 
 <p>四行给出的关系不是单调的：<b>Petersen 的度极差为 0 却有 <span class="s">R=2.5</span>，而网格的极差只有 2 却有 <span class="s">R=79.7</span>。</b>所以“度数异质性”不是主因，主因是<b>谱间隙</b>——网格的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 趋于零，而 Petersen 的不动。</p>
 
-<p>这条观察可以压成一句判据：<b><span class="s">R</span> 大 ⟺ 谱间隙小 ⟺ 存在“切得开但代价低”的割。</b>这与 Cheeger 不等式（第 18.6b 节）同源。<b>于是“度数异质”只是“存在廉价割”的一个常见原因，不是原因本身。</b></p>
+<p>这条观察可以压成一句判据：<b><span class="s">R</span> 大 ⟺ 谱间隙小 ⟺ 存在“切得开但代价低”的割。</b>这与 Cheeger 不等式（第 18.9 节）同源。<b>于是“度数异质”只是“存在廉价割”的一个常见原因，不是原因本身。</b></p>
 
-<h3 id="sec18-9">18.9　一个待证的猜想：R ≤ n，且星图取等</h3>
+<h3 id="sec18-11">18.11　一个待证的猜想：R ≤ n，且星图取等</h3>
 
 <p>由表 18.1 可以提出一个自然的猜想。</p>
 
@@ -164,7 +158,7 @@
 <img class="fig" src="assets/svg/fig-degree-vs-R.svg" alt="图 18.4　树的度数异质性与 R">
 <div class="cap"><b>图 18.4　树的度数异质性与 R</b>　n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</div>
 <div class="box"><p><strong>读法：</strong>n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</p></div>
-<h3 id="sec18-10">18.10　R 的三个用法与一个误用</h3>
+<h3 id="sec18-12">18.12　R 的三个用法与一个误用</h3>
 
 <p><span class="s">R</span> 有三种正当用法，一种误用。</p>
 
@@ -173,12 +167,26 @@
 <tr><td class="l">诊断相变宽度</td><td class="l">算 <span class="s">λ<sub>n</sub>/λ<sub>2</sub></span></td><td class="l">图连通、无向</td></tr>
 <tr><td class="l">诊断数值条件数</td><td class="l">同一个 <span class="s">R</span> 就是 <span class="s">κ(A)</span></td><td class="l"><span class="s">A</span> 为拉普拉斯</td></tr>
 <tr><td class="l">诊断“瘦长 + 瓶颈”</td><td class="l">大 <span class="s">R</span> ⇔ 小 <span class="s">λ<sub>2</sub></span> ⇔ 廉价割</td><td class="l">Cheeger 不等式</td></tr>
-<tr><td class="l">误用：当结构指纹</td><td class="l">说“<span class="s">R</span> 相同所以图相同”</td><td class="l">错（第 18.5 节反例）</td></tr>
+<tr><td class="l">误用：当结构指纹</td><td class="l">说“<span class="s">R</span> 相同所以图相同”</td><td class="l">错（第 18.7 节反例）</td></tr>
 </table>
 
 <p>三种用法各有前提，但共享同一个数——这正是“同一个形式”这句话的实际收益：<b>一个量，三种解释，三种可检验的预言。</b></p>
 
 <p>误用的教训是：<b><span class="s">R</span> 是“标量”，不是“指纹”。</b>凡是把标量当指纹的，都会在同谱反例上翻车——离散侧有 6 顶点两图，连续侧有 Sunada 的等谱流形，两边都为这条误用准备了反例。</p>
 
-<h3 id="sec18-ref">18　本章参考文献</h3>
-<div class="refs"><p>Alon, N. (1986). Eigenvalues and expanders. <i>Combinatorica</i> 6, 83–96.</p><p>Nilli, A. (1991). On the second eigenvalue of a graph. <i>Discrete Mathematics</i> 91, 207–210.</p><p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In <i>Problems in Analysis</i>, Princeton University Press.</p><p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. <i>Journal of Combinatorial Theory B</i> 38, 73–88.</p><p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. <i>Combinatorica</i> 8, 261–277.</p></div>
+<h3 id="sec18-13">18.13　本章小结</h3>
+
+<p><span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 把两阶段相变压成一个数（18.1），九类图有闭式（表 18.1），<span class="s">R=1</span> 只发生在完全图（18.2），而谱相同不代表结构相同（18.5）。第 19 章把这个数推向连续。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：相变的宽度是一个可以算的数，但它算的是“结构有多各向异性”，不是“结构是什么”。</p></div>
+
+<h3>18　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">本章引用</p>
+<p>★ Nilli, A. (1991). On the second eigenvalue of a graph. Discrete Mathematics 91, 207–210.</p>
+<p class="refh">延伸阅读</p>
+<p>Alon, N. (1986). Eigenvalues and expanders. Combinatorica 6, 83–96.</p>
+<p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In Problems in Analysis, Princeton University Press.</p>
+<p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. Journal of Combinatorial Theory B 38, 73–88.</p>
+<p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. Combinatorica 8, 261–277.</p>
+</div>

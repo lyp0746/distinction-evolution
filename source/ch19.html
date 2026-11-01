@@ -45,15 +45,15 @@
 
 <p><b>第二，这给了 1/3 缺口一个可证的兄弟。</b>第 10 章说过：把一个常数当成结构，是第二类语法错误。这里出现了它的正例：<span class="s">R</span> 随分辨率按 <span class="s">n²</span> 发散，而任何连续侧的“谱各向异性”都不存在（因为 <span class="s">μ<sub>max</sub>=∞</span>）。所以 <span class="s">R</span> 不可能收敛到一个连续量——<b>“离散与连续之间有一道缝”这句话，在这一点上是定理，不是猜想。</b>至于那道缝是否恰好等于某个常数，本书不作答（C 级，见附录 D 的登记）。</p>
 
-<h3 id="sec19-3b">19.3b　因子 4 从哪里来</h3>
+<h3 id="sec19-5">19.5　因子 4 从哪里来</h3>
 
 <p>网格与环面的 <span class="s">λ<sub>n</sub></span> 相同（都是 8），<span class="s">R</span> 却差四倍。原因在 <span class="s">λ<sub>2</sub></span>：网格的 <span class="s">λ<sub>2</sub>=2−2cos(π/n)≈π²/n²</span>，环面的 <span class="s">λ<sub>2</sub>=2−2cos(2π/n)≈4π²/n²</span>。前者对应“半个波长等于一整条边”（基频），后者对应“一个整波长等于一整条边”（因为环面是周期的，只能取整数个波长）。<b>边界条件改变了可用的最长波长，于是改变了 <span class="s">λ<sub>2</sub></span>，于是改变了 <span class="s">R</span>。</b></p>
 
 <p>这不是数学上的巧合，而是物理上的老事实（鼓的基频依赖边界条件）。它给第 19 章的结论加了一层限定：<b>“两阶段相变的宽度发散”这件事对边界条件敏感，因此不能写成一个与离散化无关的常数。</b>这正是它不能被升级为“普遍常数”的原因（第 10 章的语法错误）。</p>
 
-<h3 id="sec19-5b">19.5b　为什么环面不违反夹逼：谱间隙的两种消失</h3>
+<h3 id="sec19-6">19.6　为什么环面不违反夹逼：谱间隙的两种消失</h3>
 
-<p>第 18.5b 节的表暴露一个必须处理的问题：环面是正则的，<span class="s">R</span> 却按 <span class="s">n²</span> 增长。答案不是“夹逼错了”，而是<b>谱间隙的消失有两种方式</b>，它们对 <span class="s">R</span> 的影响完全不同。</p>
+<p>第 18.6 节的表暴露一个必须处理的问题：环面是正则的，<span class="s">R</span> 却按 <span class="s">n²</span> 增长。答案不是“夹逼错了”，而是<b>谱间隙的消失有两种方式</b>，它们对 <span class="s">R</span> 的影响完全不同。</p>
 
 <ul>
 <li><b>间隙消失（<span class="s">γ→0</span>）</b>：<span class="s">λ<sub>2</sub>→0</span>，<span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>→∞</span>。环面、环、路都属于这一类。</li>
@@ -65,20 +65,20 @@
 <p>图拉普拉斯收敛定理给这一节一个连续侧对应：若网格序列以 <span class="s">h→0</span>、<span class="s">n h<sup>d/2+2</sup>→∞</span> 的方式逼近流形，则归一化谱收敛到 Laplace–Beltrami 谱（Belkin–Niyogi 2007；von Luxburg–Belkin–Bousquet 2008）。<b>收敛的是“按 <span class="s">h²</span> 缩放后的低谱”，不是 <span class="s">R</span></b>——因为 <span class="s">λ<sub>n</sub></span> 不收敛（第 19.2 节）。这条差别正是本书“推向连续”的全部技术内容。</p>
 
 <img class="fig" src="assets/svg/fig-r-scaling.svg" alt="图 19.1　谱各向异性随分辨率二次增长">
-<div class="cap"><b>图 19.1　R 随 n 的二次增长</b>　两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</div>
-<div class="box"><p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.3b 节）。</p></div>
+<div class="cap"><b>图 19.1　R 随 n 的二次增长</b>　两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.5 节）。</div>
+<div class="box"><p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.5 节）。</p></div>
 
 <img class="fig" src="assets/svg/fig-lam2-convergence.svg" alt="图 19.2　缩放后的 λ₂ 收敛到 π²">
 <div class="cap"><b>图 19.2　λ₂/h² 的收敛</b>　缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</div>
 <div class="box"><p><strong>读法：</strong>缩放后的最低非零特征值单调上升，逼近正方形的最低非零特征值 <span class="s">π²</span>；这是“第一个门槛在连续极限里留下来”的数值证据。</p></div>
 
-<h3 id="sec19-5">19.5　反例：不是所有加密都让 R 发散</h3>
+<h3 id="sec19-7">19.7　反例：不是所有加密都让 R 发散</h3>
 
 <p>若一族图的谱间隙有一致下界、最大度有上界（例如度 <span class="s">d</span> 的膨胀图族），则 <span class="s">R=λ<sub>n</sub>/λ<sub>2</sub>≤2d/c</span>，<b>有界</b>。所以“<span class="s">R</span> 随规模发散”不是规模本身的效应，而是<b>几何型结构</b>（网格、环面、路）的效应。这个反例很重要：它挡住了“<span class="s">R</span> 大就是系统复杂”的误读。</p>
 
 <p>换句话说，<span class="s">R</span> 度量的是“局部与全局之间的尺度落差”，不是“系统的大小”。一个巨大的膨胀图可以 <span class="s">R≈2</span>；一个很小的星图可以 <span class="s">R=n</span>。</p>
 
-<h3 id="sec19">19.6　1/3 缺口：一个尚未结算的常数</h3>
+<h3 id="sec19-8">19.8　1/3 缺口：一个尚未结算的常数</h3>
 <img class="fig" src="assets/svg/fig18-gauss-bonnet-factor.svg" alt="Gauss-Bonnet 因子问题">
 
 <div class="cap"><b>图 19.7　因子 1/3 的来源</b>。从热核展开到 Gauss–Bonnet 的推导链：热核第一系数 <span class="s">a₁=R/6</span>（左）；二维标量曲率与高斯曲率的关系 <span class="s">R=2K</span>（中）；代入 <span class="s">∫K=2πχ</span> 得到 <span class="s">∫κ=(1/3)∫K=(2π/3)χ</span>（右）。缺口精确为 3。</div>
@@ -126,13 +126,7 @@
 <div class="case"><span class="ct">人的尺度</span><p>一位审稿人问：“这个 1/3 到底是深刻，还是你的构造带来的？”作者没有辩解，他花了两年去回答这个问题，最后的答案是“不知道”。<b>1/3 缺口最像科学的地方，是它至今没有被解释清楚，也没有被吹成宇宙常数。</b></p></div>
 
 
-<h3 id="sec19-6">19.7　本章小结</h3>
-
-<p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>
-
-<h3 id="sec19-6b">19.6b　指数的可检验性：三个可分辨的预言</h3>
+<h3 id="sec19-9">19.9　指数的可检验性：三个可分辨的预言</h3>
 
 <p>第 19 章的结论给出三个可被数值检验的预言，它们彼此独立，因此可以互相验证：</p>
 
@@ -144,7 +138,7 @@
 
 <p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.4 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
 
-<h3 id="sec19-8">19.8　三种收敛与一个不收敛的量</h3>
+<h3 id="sec19-10">19.10　三种收敛与一个不收敛的量</h3>
 
 <p>“离散收敛到连续”有强弱之分，本书用到三种，区别必须写清。</p>
 
@@ -161,7 +155,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>三种收敛（强预解、谱、热核）的强弱次序是单向的：强预解 ⟹ 谱 ⟹ 热核。引用时务必写明是哪一种，否则会出现「收敛了但可观测量的极限不对」这类错误。</p></div>
-<h3 id="sec19-9">19.9　连续极限的三个数值检验</h3>
+<h3 id="sec19-11">19.11　连续极限的三个数值检验</h3>
 
 <p>第 19 章的结论可以用三张图/表检验，各自的判据不同。</p>
 
@@ -172,11 +166,11 @@
 <tr><td class="l">高谱不收敛</td><td class="l"><span class="s">λ<sub>n</sub>→8</span>（不随 <span class="s">h</span> 缩放）</td><td class="l">7.8042→7.9969</td></tr>
 </table>
 
-<p>三项里第三项最容易被忽略：<b><span class="s">λ<sub>n</sub></span> 收敛到一个常数，而不是发散。</b>这看起来与“谱无界”矛盾，其实不矛盾——图拉普拉斯近似的是 <span class="s">−h²Δ</span>，不是 <span class="s">−Δ</span>；缩放的差别正是第 19.8 节三种收敛的分水岭。</p>
+<p>三项里第三项最容易被忽略：<b><span class="s">λ<sub>n</sub></span> 收敛到一个常数，而不是发散。</b>这看起来与“谱无界”矛盾，其实不矛盾——图拉普拉斯近似的是 <span class="s">−h²Δ</span>，不是 <span class="s">−Δ</span>；缩放的差别正是第 19.11 节三种收敛的分水岭。</p>
 
 <p>检验的价值在于它们互相独立：<b>若第一项成立而第二项不成立，说明 <span class="s">λ<sub>n</sub></span> 的行为不同（例如权重不均匀）；若第二项成立而第三项不成立，说明缩放搞错了。</b>独立的检验合起来才有排除力，单一的“看起来收敛”没有。</p>
 
-<h3 id="sec19-10">19.10　连续极限的数值协议（可直接执行）</h3>
+<h3 id="sec19-12">19.12　连续极限的数值协议（可直接执行）</h3>
 
 <p>要把第 19 章的结论在别的族上检验，按五步做即可。</p>
 
@@ -193,5 +187,18 @@
 
 <p>这套协议对随机几何图、渗流团簇、真实网络都适用；只要第 1 步能给出可算谱。<b>协议的价值在于：它把“推向连续”从一句主张变成五步操作。</b></p>
 
-<h3 id="sec19-ref">19　本章参考文献</h3>
-<div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>
+<h3 id="sec19-13">19.13　本章小结</h3>
+
+<p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>
+
+<h3>19　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">本章引用</p>
+<p>★ Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. Neural Information Processing Systems 19, 129–136.</p>
+<p>★ von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. Annals of Statistics 36, 555–586.</p>
+<p class="refh">延伸阅读</p>
+<p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. Science 290, 2319–2323.</p>
+<p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. Applied and Computational Harmonic Analysis 21, 5–30.</p>
+</div>

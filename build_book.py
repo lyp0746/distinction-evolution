@@ -157,6 +157,7 @@ def _attr(s):
     return (s or "").replace("&", "&amp;").replace('"', "&quot;").replace("<", "&lt;")
 
 
+# --- abstract page (injected) ---
 def build_title_page(book):
     """扉页。刻意不用 h1/h2，避免污染 PDF 书签层级。"""
     today = book.get("date") or datetime.date.today().isoformat()
@@ -169,13 +170,124 @@ def build_title_page(book):
 <div class="book-subtitle">{book.get('subtitle','')}</div>
 <div class="author">{book.get('author','')}</div>
 <div class="aff">{book.get('email','')}　·　学术专著　·　{today}</div>
-{ab_html}
 </div>
-<div class="pb"></div>
 """
 
 
-def build_toc(parts):
+def build_abstract_page(book):
+    """内容提要与关键词独立成页（扉页只留书名，避免溢出产生空白页）。"""
+    ab = book.get("abstract", "")
+    if not ab:
+        return ""
+    kw = (f'<div class="kw"><b>关键词：</b>{book["keywords"]}</div>'
+          if book.get("keywords") else "")
+    return f'<div class="abstract-page"><div class="abstract"><span class="abt">内容提要</span>　{ab}{kw}</div></div>'
+
+
+
+# --- folio support (injected) ---
+_PM_PATH = os.path.join(OUTPUT, ".pagemap.json")
+_CN_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6,
+           "七": 7, "八": 8, "九": 9, "十": 10}
+
+
+def load_pagemap():
+    return load_json(_PM_PATH, {}) or {}
+
+
+def _toc_key(text):
+    t = re.sub(r"<[^>]+>", "", text or "").strip()
+    m = re.search(r"第\s*(\d+)\s*章", t)
+    if m:
+        return "ch:" + m.group(1)
+    m = re.match(r"^(\d+\.\d+\.\d+)", t)
+    if m:
+        return "sec:" + m.group(1)
+    m = re.match(r"^(\d+\.\d+[a-z]?)", t)
+    if m:
+        return "sec:" + m.group(1)
+    m = re.search(r"第\s*([一二三四五六七八九十]+)\s*部分", t)
+    if m:
+        return "part:" + str(_CN_NUM.get(m.group(1), 0))
+    return "txt:" + re.sub(r"[^0-9A-Za-z\u4e00-\u9fff]", "", t)[:10]
+
+
+def _with_folios(html, pagemap):
+    """给目录行右侧补页码。pagemap: {key: page}"""
+    if not pagemap:
+        return html
+
+    def rep(m):
+        head, inner = m.group(1), m.group(2)
+        page = pagemap.get(_toc_key(inner))
+        if not page:
+            page = pagemap.get("pfx:" + re.sub(r"[^0-9A-Za-z\u4e00-\u9fff]", "", re.sub("<[^>]+>", "", inner))[:8])
+        if not page:
+            return m.group(0)
+        return f'{head}{inner}<span class="folio">{page}</span></div>'
+
+    return re.sub(r'(<div class="l[1-4][^"]*">)(.*?)</div>', rep, html, flags=re.S)
+
+
+def read_toc_map(pdf_path):
+    """从 PDF 书签读出 {key: 页码}。页码为物理页（封面=1）。"""
+    try:
+        import pymupdf
+    except Exception:
+        try:
+            import fitz as pymupdf
+        except Exception:
+            return {}
+    out, seen = {}, {}
+    try:
+        doc = pymupdf.open(pdf_path)
+        toc = doc.get_toc(simple=True)
+        for _lvl, title, _page in toc:
+            k = _toc_key(title)
+            seen[k] = seen.get(k, 0) + 1
+        for _lvl, title, page in toc:
+            k = _toc_key(title)
+            if page and seen.get(k) == 1:
+                out[k] = page
+                out["pfx:" + re.sub(r"[^0-9A-Za-z\u4e00-\u9fff]", "", re.sub("<[^>]+>", "", title))[:8]] = page
+        doc.close()
+    except Exception as e:
+        print("  [folio] 读取书签失败：", e)
+    return out
+
+
+def stamp_folios(pdf_path):
+    """在每页页脚居中盖页码（封面除外）。"""
+    try:
+        import pymupdf
+    except Exception:
+        try:
+            import fitz as pymupdf
+        except Exception:
+            print("  [folio] 无 PyMuPDF，跳过页码")
+            return
+    try:
+        doc = pymupdf.open(pdf_path)
+        n = len(doc)
+        for i in range(1, n):                      # 第 1 页是封面，不盖
+            page = doc[i]
+            w, h = page.rect.width, page.rect.height
+            cx = w / 2.0
+            y = h - 26
+            page.draw_line(pymupdf.Point(cx - 16, y - 11),
+                           pymupdf.Point(cx + 16, y - 11),
+                           color=(0.72, 0.72, 0.72), width=0.4)
+            page.insert_text((cx - 3.2 * len(str(i + 1)), y), str(i + 1),
+                             fontsize=8.5, fontname="helv",
+                             color=(0.32, 0.32, 0.32))
+        doc.saveIncr()
+        doc.close()
+        print(f"  [folio] 已给 {n - 1} 页盖页码")
+    except Exception as e:
+        print("  [folio] 盖章失败：", e)
+
+
+def build_toc(parts, pagemap=None):
     """带分级（部分／章／节）内部链接的目录。"""
     rows = ['<div class="toc-title">目　录</div>', '<div class="toc">']
     # 前置部分：按 FRONT 顺序列出
@@ -214,7 +326,7 @@ def build_toc(parts):
             rows.append(f'<div class="l2"><a href="#{anchor}">{title}</a></div>')
     rows.append("</div>")
     rows.append('<div class="pb"></div>')
-    return "\n".join(rows)
+    return _with_folios("\n".join(rows), pagemap)
 
 
 def build_copyright(book=None):
@@ -269,8 +381,9 @@ def build_part_summary(part):
             f'{_part_para(sm)}</div>')
 
 
-def build(book, parts, ereader=False):
-    blocks = [build_cover(), build_title_page(book), build_copyright(book), build_toc(parts)]
+def build(book, parts, ereader=False, pagemap=None):
+    blocks = [build_cover(), build_title_page(book), build_copyright(book),
+              build_abstract_page(book), build_toc(parts, pagemap)]
     for title, fname, anchor in FRONT:
         f = os.path.join(SOURCE, fname)
         if os.path.exists(f):
@@ -292,9 +405,11 @@ def build(book, parts, ereader=False):
         blocks.append(build_part_summary(part))
     if any(os.path.exists(os.path.join(SOURCE, f)) for _, f, _ in BACK):
         blocks.append('<h1 class="part-title">结语与附录</h1>')
+    _seen_back = set()
     for title, fname, anchor in BACK:
         f = os.path.join(SOURCE, fname)
-        if os.path.exists(f):
+        if os.path.exists(f) and fname not in _seen_back:
+            _seen_back.add(fname)
             with open(f, encoding="utf-8") as fh:
                 blocks.append(f'<div id="{anchor}">{fh.read()}</div>')
 
@@ -477,6 +592,17 @@ if __name__ == "__main__":
     ereader = "--ereader" in sys.argv
     book = load_json(os.path.join(SOURCE, "book.json"), {})
     parts = load_json(os.path.join(SOURCE, "parts.json"), [])
-    out = build(book, parts, ereader=ereader)
+    pm = {} if ereader else load_pagemap()
+    out = build(book, parts, ereader=ereader, pagemap=pm)
     if "--pdf" in sys.argv:
         print_pdf(out)
+        if not ereader:
+            pdf = os.path.join(OUTPUT, "book.pdf")
+            newpm = read_toc_map(pdf)
+            if newpm and newpm != pm:
+                with open(_PM_PATH, "w", encoding="utf-8") as fh:
+                    json.dump(newpm, fh, ensure_ascii=False, indent=0)
+                print(f"  [folio] 目录页码：{len(newpm)} 项，重建一遍")
+                out = build(book, parts, ereader=ereader, pagemap=newpm)
+                print_pdf(out)
+            stamp_folios(pdf)

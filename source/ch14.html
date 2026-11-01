@@ -34,13 +34,13 @@
 
 <p>对本书来说，这一章的作用是划界：<b>“同一个二次型”这句话在不同符号差下指向不同的群，因此不是同一个几何。</b>第 12 章的“五个领域同一个结构”在形式层面成立，在几何层面要按符号差分类。这是第三个赌注的第一次限幅。</p>
 
-<h3 id="sec14-3b">14.3b　保形式群为什么“大”或“小”值得关心</h3>
+<h3 id="sec14-5">14.5　保形式群为什么“大”或“小”值得关心</h3>
 
 <p>群的维数就是这门语言允许的自由度。维数大，说明很多变换都不改变结论——这是好事（稳健），也是坏事（识别力弱）。欧氏几何的 <span class="s">O(n)</span> 维数是 <span class="s">n(n−1)/2</span>，所以长度与夹角是绝对量；辛群的维数是 <span class="s">n(2n+1)</span>，比正交群还大，所以辛几何能“保住”的量少得多，但恰是哈密顿力学需要的那个（相面积）。</p>
 
 <p>对本书而言，这一章给出一个判断标准：<b>衡量一套语言“有多强”，可以看它的保形式群有多小。</b>群越小，被锁定的量越多，结论越硬；群越大，语言越灵活，但能说死的越少。第 15 章的四个价位可以看成这个连续谱的离散化。</p>
 
-<h3 id="sec14-4b">14.4b　二次型的物理形态：Casimir 与自旋网络的面积谱</h3>
+<h3 id="sec14-6">14.6　二次型的物理形态：Casimir 与自旋网络的面积谱</h3>
 
 <p>本节是全书离“纯数学”最远、也最能说明“形式决定结构”的一处。取 <span class="s">SU(2)</span> 的不可约表示，指标为 <span class="s">j∈{0,1/2,1,3/2,…}</span>。它的<b>二次 Casimir</b> 是
 <div class="eq"><span class="body">C<sub>2</sub>(j)=j(j+1)，   A(j)=8πγℓ<sub>P</sub><sup>2</sup>√(C<sub>2</sub>(j))</span><span class="num">(14.1)</span></div>
@@ -54,21 +54,15 @@
 <div class="cap"><b>图 14.1　自旋网络的一小块</b>　左边四个结点与五条边，边上的 <span class="s">j</span> 是表示指标；橙色平面只与“被它切开的边”相交，于是面积只依赖这些边的 <span class="s">j</span>。</div>
 <div class="box"><p><strong>读法：</strong>左边四个结点与五条边，边上的 <span class="s">j</span> 是表示指标；橙色平面只与“被它切开的边”相交，于是面积只依赖这些边的 <span class="s">j</span>。</p></div>
 
-<h3 id="sec14-5">14.5　反例：退化与例外</h3>
+<h3 id="sec14-7">14.7　反例：退化与例外</h3>
 
 <p>若形式退化（存在非零 <span class="s">u</span> 使 <span class="s">B(u,·)≡0</span>），保形式群不再是经典的这三类，而是一个半直积：它必须同时保住零空间。统计里的共线、图论里的非连通分支，都落在这里。处理方式有两种：商掉零空间（得到正定形式），或把零空间当作“看不见的方向”显式保留（第 18 章的零特征值重数）。</p>
 
 <p>另一个常见的误解是把“保形式”与“保谱”混为一谈：保形式一定保谱，保谱不一定保形式（同谱不同图就是例子）。两者的差别正是第 15 章要谈的“同构的价位”。</p>
 
-<h3 id="sec14-6">14.6　本章小结</h3>
+<h3 id="sec14-8">14.8　从 Casimir 到面积谱：为什么这条链条值得写进一本数学书</h3>
 
-<p>形式定下，群就定下（表 14.1），惯性律保证这件事与基无关。于是“统一”在几何层面必须按符号差分类，这是本书第三次限幅。下一章把“一样”这件事本身分级。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：你允许什么样的变换，就等于宣布了哪个量是绝对的。</p></div>
-
-<h3 id="sec14-5b">14.5b　从 Casimir 到面积谱：为什么这条链条值得写进一本数学书</h3>
-
-<p>第 14.4b 节的链条是：<b>二次型 → 表示 → 谱 → 几何量</b>。这条链条在数学上并不神秘，它只是“表示论里的 Casimir 算子”加上“把谱读成面积”。值得写进本书的理由有三个。</p>
+<p>第 14.6 节的链条是：<b>二次型 → 表示 → 谱 → 几何量</b>。这条链条在数学上并不神秘，它只是“表示论里的 Casimir 算子”加上“把谱读成面积”。值得写进本书的理由有三个。</p>
 
 <p><b>第一，它示范了“离散不需要辩护”。</b>在本书第 9 章，离散是有限分辨率的产物；在自旋网络里，离散是定义的一部分（图是离散的，指标是离散的）。两者都通向同一个结论：<b>连续量可以是离散结构的导出物</b>，而不是前提。</p>
 
@@ -76,9 +70,9 @@
 
 <p><b>第三，它给出一个反面教材。</b>若有人把 <span class="s">A(j)</span> 的离散性直接搬到本书的网格上，会得出“<span class="s">R</span> 应该收敛”的错误结论——因为两者的“分辨率”不是一回事：前者是离散谱的间隔，后者是网格步长。<b>同一个词（分辨率）在两个语境里指两个量</b>，这是第 4 章第七个赝品（定义滑移）的实例。</p>
 
-<h3 id="sec14-6">14.6　面积谱的两个可算事实</h3>
+<h3 id="sec14-9">14.9　面积谱的两个可算事实</h3>
 
-<p>第 14.4b 节的公式给出两个立刻可算的事实，它们都不需要任何物理假设。</p>
+<p>第 14.6 节的公式给出两个立刻可算的事实，它们都不需要任何物理假设。</p>
 
 <p><b>事实一：最小面积不为零。</b><span class="s">A(1/2)=8πγℓ<sub>P</sub><sup>2</sup>√(3/4)=4√3πγℓ<sub>P</sub><sup>2</sup>≈21.8γℓ<sub>P</sub><sup>2</sup></span>。<b>面积有下限</b>——这与连续几何的直觉相反，却与第 9 章“有限分辨率”的立场一致：分辨率不可能无限小。</p>
 
@@ -96,7 +90,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>自旋网络这一节是全书唯一引用物理学的地方。给专家的提醒：面积谱 A(j)=8πγℓ_P²√(j(j+1)) 依赖该理论的公理系统，本书只借它的形式（二次型→谱→离散几何），不借它的本体论。</p></div>
-<h3 id="sec14-7">14.7　保形式群的维数表（可核对）</h3>
+<h3 id="sec14-10">14.10　保形式群的维数表（可核对）</h3>
 
 <p>表 14.1 的维数可以逐行核对，因为它们都是标准公式。</p>
 
@@ -112,7 +106,7 @@
 
 <p>这条细节对第 15 章的四个价位有用：<b>“同构”要求群也同构，而不只是维数相同。</b>只比维数，就会把闵可夫斯基几何与欧氏几何判成同一件事——这是“过度统一”的一个具体版本。</p>
 
-<h3 id="sec14-8">14.8　形式、群与守恒量：一张对应表</h3>
+<h3 id="sec14-11">14.11　形式、群与守恒量：一张对应表</h3>
 
 <p>保形式群与守恒量之间有一条标准对应（Noether 型）。写成表，便于查。</p>
 
@@ -128,7 +122,7 @@
 
 <p>对本书的第二个用处在第 16 章：那里被保住的是“特征值”，因为图的对称群（顶点置换）是有限群，不变量恰恰是谱。<b>群越小，不变量越多，结论越硬</b>——这是全书一条隐线，写在这里作为总结。</p>
 
-<h3 id="sec14-9">14.9　群的大小与结论的硬度</h3>
+<h3 id="sec14-12">14.12　群的大小与结论的硬度</h3>
 
 <p>全书有一条隐线：<b>保形式群越小，不变量越多，结论越硬。</b>把它列成表，便于定位每一章的“硬度来源”。</p>
 
@@ -143,5 +137,19 @@
 
 <p>这条隐线也解释了本书的边界：<b>越出“图”这个对象，对称群变大，结论必然变软。</b>第 21 章的 36 条里社会族 8 条全在 C 级，根子就在这里——那些领域的“对称群”（可做的变换）太大，不变量太少。</p>
 
-<h3 id="sec14-ref">14　本章参考文献</h3>
-<div class="refs"><p>Penrose, R. (1971). Angular momentum: an approach to combinatorial space-time. In <i>Quantum Theory and Beyond</i>, Cambridge University Press.</p><p>Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. <i>Nuclear Physics B</i> 442, 593–619.</p><p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. <i>Classical and Quantum Gravity</i> 21, R53.</p><p>Rovelli, C. (2004). <i>Quantum Gravity</i>. Cambridge University Press.</p><p>Baez, J. C. (2000). An introduction to spin foam models of quantum gravity and BF theory. <i>Lecture Notes in Physics</i> 543, 25–94.</p></div>
+<h3 id="sec14-13">14.13　本章小结</h3>
+
+<p>形式定下，群就定下（表 14.1），惯性律保证这件事与基无关。于是“统一”在几何层面必须按符号差分类，这是本书第三次限幅。下一章把“一样”这件事本身分级。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：你允许什么样的变换，就等于宣布了哪个量是绝对的。</p></div>
+
+<h3>14　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">本章引用</p>
+<p>★ Rovelli, C., &amp; Smolin, L. (1995). Discreteness of area and volume in quantum gravity. Nuclear Physics B 442, 593–619.</p>
+<p class="refh">延伸阅读</p>
+<p>Penrose, R. (1971). Angular momentum: an approach to combinatorial space-time. In Quantum Theory and Beyond, Cambridge University Press.</p>
+<p>Ashtekar, A., &amp; Lewandowski, J. (2004). Background independent quantum gravity: a status report. Classical and Quantum Gravity 21, R53.</p>
+<p>Rovelli, C. (2004). Quantum Gravity. Cambridge University Press.</p>
+<p>Baez, J. C. (2000). An introduction to spin foam models of quantum gravity and BF theory. Lecture Notes in Physics 543, 25–94.</p>
+</div>

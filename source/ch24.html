@@ -30,7 +30,7 @@
 
 <p>三条：<b>（i）</b> 判据命中，命题降一级并登记；<b>（ii）</b> 判据连续三次未命中，命题可升一级（但不越过它的证明强度）；<b>（iii）</b> 判据本身被证明无效，则整条记录作废并保留原文（append-only）。</p>
 
-<h3 id="sec24-2b">24.2b　三个实验的执行细节</h3>
+<h3 id="sec24-5">24.5　三个实验的执行细节</h3>
 
 <p><b>H1 的执行：</b>构造一个 6 顶点有向图，算 <span class="s">Re(λ<sub>k</sub>)</span> 并排序，检查全局模式（对应 Fiedler 型特征向量）是否先增长。附录 B 的代码可以直接改成有向版本：把 <span class="s">L</span> 换成 <span class="s">D<sub>out</sub>−A</span> 即可，此时 <span class="s">L</span> 非对称，要用 <code>eigvals</code> 而不是 <code>eigvalsh</code>。</p>
 
@@ -38,7 +38,7 @@
 
 <p><b>H3 的执行：</b>遍历小图（<span class="s">n≤7</span> 的图共有 1253 个连通类），按谱分组，找非同构的对。附录 B.4 给出一对；换更大的 <span class="s">n</span> 会找到更多，但结论不变。</p>
 
-<h3 id="sec24-4b">24.4b　哈希链：怎么证明“判据没有被事后改写”</h3>
+<h3 id="sec24-6">24.6　哈希链：怎么证明“判据没有被事后改写”</h3>
 
 <p>登记簿的纪律靠一个技术细节兜底：<b>每条记录带上一条记录的哈希</b>。<span class="s">h<sub>n</sub>=Hash(记录<sub>n</sub> ‖ h<sub>n−1</sub>)</span>。于是改动第 <span class="s">k</span> 行，会让 <span class="s">k</span> 之后所有哈希失效；任何人拿一份副本重算，就能发现改过。<b>这是“append-only”从道德要求变成可验证事实的唯一办法。</b></p>
 
@@ -57,11 +57,11 @@
 <div class="cap"><b>图 24.1　哈希链</b>　每条记录带前一条的哈希，于是“事后改判据”会在链上留下断点。</div>
 <div class="box"><p><strong>读法：</strong>每条记录带前一条的哈希，于是“事后改判据”会在链上留下断点。</p></div>
 
-<h3 id="sec24-5">24.5　反例：不可裁决的检验长什么样</h3>
+<h3 id="sec24-7">24.7　反例：不可裁决的检验长什么样</h3>
 
 <p>四种典型：<b>事后追加条件</b>（“在控制了……之后”）；<b>移动靶</b>（每次失败都换一个版本的解释）；<b>不可算</b>（判据里出现无法测量的量）；<b>单向可证</b>（只写“若成立则如何”，不写“若不成立则如何”）。看到这四种，直接按第 3 章标 C 级，不必争论。</p>
 
-<h3 id="sec24">24.6　三层可信度：从可复现到可裁决</h3>
+<h3 id="sec24-8">24.8　三层可信度：从可复现到可裁决</h3>
 <table class="nat">
 <caption class="cap"><b>表 24.7　三层的独立可信度</b></caption>
 <tr><th class="l">层</th><th class="l">内容</th><th class="l">它成立所需</th><th class="l">它失败意味着</th></tr>
@@ -85,25 +85,19 @@
 <div class="box box-takeaway"><p><b>一句话带走：</b>可信度是分层的：样本可验、框架可驳、外延要前沿成功——别全信，也别全不信。</p></div>
 
 
-<h3 id="sec24-6">24.7　本章小结</h3>
-
-<p>三个杀手实验、四条登记纪律、三条裁决规则。第四部分的定理与第五部分的覆盖表都挂在同一本登记簿上。最后一章收束全书。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：检验的分量不在结果，在“结果出来之前你写了什么”。</p></div>
-
-<h3 id="sec24-6b">24.6b　登记的三种失败方式</h3>
+<h3 id="sec24-9">24.9　登记的三种失败方式</h3>
 
 <p>登记簿本身会失败，方式有三种：</p>
 
 <ul>
 <li><b>空登记</b>：只登记“将要做”的事，从不写结果。对策：每条登记必须配一个截止日期。</li>
-<li><b>事后判据</b>：结果出来后把判据改细。对策：哈希链（第 24.4b 节）。</li>
+<li><b>事后判据</b>：结果出来后把判据改细。对策：哈希链（第 24.6 节）。</li>
 <li><b>选择性登记</b>：只登记成功的检验。对策：登记总数与出局数一起公开——本书附录 D 明确给出“已裁决 4 条、未执行 5 条”，就是为了让读者看到分母。</li>
 </ul>
 
 <p>三种失败里，第三种最难查（因为缺失的记录不出现）。唯一可行的对策是<b>公开分母</b>：说清一共有多少条登记，而不是只说“我们做了检验”。</p>
 
-<h3 id="sec24-7">24.7　登记簿的机器可读格式</h3>
+<h3 id="sec24-10">24.10　登记簿的机器可读格式</h3>
 
 <p>为了让登记簿能被别人核对，本书给它一个固定的 CSV 列：</p>
 
@@ -118,7 +112,7 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>登记簿的 CSV schema 里，criterion 与 date 是最重要的两列：前者必须在结果之前写好，后者让「事后改判据」留下时间戳。哈希链只是把这两件事变成可验证事实。</p></div>
-<h3 id="sec24-8">24.8　一次完整的裁决实例</h3>
+<h3 id="sec24-11">24.11　一次完整的裁决实例</h3>
 
 <p>取附录 D 的 R1，展示一次裁决的完整过程（从登记到出局）。</p>
 
@@ -127,14 +121,14 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 <tr><td class="l">登记</td><td class="l">命题：「局部总先于全局」；判据：「用 <span class="s">Re(λ<sub>k</sub>)</span> 排序，最高频是否总先变正」</td><td class="l">写作前</td></tr>
 <tr><td class="l">执行</td><td class="l">构造 6 顶点有向图，算 <span class="s">Re(λ<sub>k</sub>)</span>；发现一个全局型模式先变正</td><td class="l">写作中</td></tr>
 <tr><td class="l">裁决</td><td class="l">命题出局（限无向图）；定理 16.1 的前提补写「对称」</td><td class="l">写作中</td></tr>
-<tr><td class="l">留痕</td><td class="l">附录 D 记 R1；第 16.5 节写入反例；正文前提加“对称”</td><td class="l">定稿</td></tr>
+<tr><td class="l">留痕</td><td class="l">附录 D 记 R1；第 16.7 节写入反例；正文前提加“对称”</td><td class="l">定稿</td></tr>
 </table>
 
 <p>四步里第三步最关键：<b>出局的不是定理，而是“定理的无条件表述”。</b>这正是分级与登记的用处——它让“部分错误”可以被精确表达，而不必二选一（要么全对，要么全错）。</p>
 
 <p>这条实例也说明了为什么要“先写判据”：<b>如果先看到反例再写判据，很容易把判据写成“无向图上局部先增长”——于是什么也没学到。</b>判据先行，才有“出局”这一档。</p>
 
-<h3 id="sec24-9">24.9　三个杀手实验的当前状态</h3>
+<h3 id="sec24-12">24.12　三个杀手实验的当前状态</h3>
 
 <p>第 24.2 节给了三个实验，这里报告它们的执行状态——这是登记簿纪律的一部分。</p>
 
@@ -142,7 +136,7 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 <tr><th class="l">实验</th><th class="l">状态</th><th class="l">结果</th><th class="l">对本书的影响</th></tr>
 <tr><td class="l">H1 有向反转</td><td class="l">已执行</td><td class="l">6 顶点反例成立</td><td class="l">定理 16.1 前提补「对称」</td></tr>
 <tr><td class="l">H2 缺失中间相</td><td class="l">未执行</td><td class="l">—</td><td class="l">若命中，定理 17.1 需重检</td></tr>
-<tr><td class="l">H3 同谱异构</td><td class="l">已执行</td><td class="l">6 顶点两图成立</td><td class="l">第 18.5 节；撤回「谱＝结构」</td></tr>
+<tr><td class="l">H3 同谱异构</td><td class="l">已执行</td><td class="l">6 顶点两图成立</td><td class="l">第 18.7 节；撤回「谱＝结构」</td></tr>
 </table>
 
 <p>三行里两行已执行、一行未执行。<b>未执行的那一行是最该被做的</b>：它直接检验第 17 章的核心定理，而成本只有十几行代码（取随机图族，比较 <span class="s">λ<sub>2</sub></span> 与 <span class="s">λ<sub>n</sub></span> 是否相等却不等于 <span class="s">n</span>）。</p>
@@ -152,5 +146,17 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 <img class="fig" src="assets/svg/fig-registry-status.svg" alt="图 24.3　登记簿现状">
 <div class="cap"><b>图 24.3　登记簿现状</b>　出局 4 条、成立 0 条、未执行 5 条——「出局多于成立」说明判据写得严，而不是结论少。</div>
 <div class="box"><p><strong>读法：</strong>出局 4 条、成立 0 条、未执行 5 条——「出局多于成立」说明判据写得严，而不是结论少。</p></div>
-<h3 id="sec24-ref">24　本章参考文献</h3>
-<div class="refs"><p>Nakamoto, S. (2008). Bitcoin: a peer-to-peer electronic cash system. (哈希链的最小可行性说明)</p><p>Merkle, R. C. (1988). A digital signature based on a conventional encryption function. <i>CRYPTO '87</i>, LNCS 293.</p><p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. <i>Scientific Data</i> 3, 160018.</p><p>Nosek, B. A., et al. (2018). The preregistration revolution. <i>PNAS</i> 115, 2600–2606.</p></div>
+<h3 id="sec24-13">24.13　本章小结</h3>
+
+<p>三个杀手实验、四条登记纪律、三条裁决规则。第四部分的定理与第五部分的覆盖表都挂在同一本登记簿上。最后一章收束全书。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：检验的分量不在结果，在“结果出来之前你写了什么”。</p></div>
+
+<h3>24　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">延伸阅读</p>
+<p>Nakamoto, S. (2008). Bitcoin: a peer-to-peer electronic cash system. (哈希链的最小可行性说明)</p>
+<p>Merkle, R. C. (1988). A digital signature based on a conventional encryption function. CRYPTO '87, LNCS 293.</p>
+<p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. Scientific Data 3, 160018.</p>
+<p>Nosek, B. A., et al. (2018). The preregistration revolution. PNAS 115, 2600–2606.</p>
+</div>

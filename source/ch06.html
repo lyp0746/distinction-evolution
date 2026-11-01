@@ -45,13 +45,13 @@
 
 <p>三者的修法不同：前两种调阈值，第三种只能换属性。这也是为什么本书把“属性”放在四元组的第一位——它是唯一不能靠调参补救的一项。</p>
 
-<h3 id="sec6-4b">6.4b　四元组里的第四项：观察者</h3>
+<h3 id="sec6-5">6.5　四元组里的第四项：观察者</h3>
 
 <p>前三项（对象、属性、阈值）都是数学对象，第四项“观察者对”<span class="s">O</span> 常常被当成装饰，其实它承担了一件关键的事：<b>决定阈值怎么校准</b>。同一台仪器，用不同的样本对校准，会得到不同的 <span class="s">θ</span>。这就是为什么同一个指标在两个实验室里给出不同的“异常”判断。</p>
 
 <p>把 <span class="s">O</span> 写进定义，有一个直接的好处：它把“标准”从一个隐含假设变成一条可检查的数据。<b>你可以不同意我的阈值，但你必须指出我的样本对有问题</b>——争论从此有了落点。反过来，凡是拒绝交代样本对的“客观指标”，都在偷偷把 <span class="s">O</span> 藏起来。</p>
 
-<h3 id="sec6-5b">6.5b　区分的三条最小公理</h3>
+<h3 id="sec6-6">6.6　区分的三条最小公理</h3>
 
 <p>把定义 6.1 收成公理，可以看清它到底承诺了什么。设 <span class="s">𝔇⊆X×X</span> 是“可分”关系，公理只有三条：</p>
 
@@ -63,25 +63,19 @@
 
 <p>三条公理刻画了一类对象，它比“度量”弱、比“等价关系”强。注意第三条：它把阈值变成一个单调参数，这正是第 10 章“阈值可传递”的形式版本。<b>“可分”不是等价关系</b>（不传递：<span class="s">a</span> 与 <span class="s">b</span> 差 6，<span class="s">b</span> 与 <span class="s">c</span> 差 6，而 <span class="s">a</span> 与 <span class="s">c</span> 差 12，阈值 10 时分可分的两边而中间不可分），这一点决定了“区分”与“分类”不是一回事。</p>
 
-<h3 id="sec6-5">6.5　反例：不可区分的两种情形</h3>
+<h3 id="sec6-7">6.7　反例：不可区分的两种情形</h3>
 
 <p><b>同一性。</b>若 <span class="s">x=y</span>，任何函数都给出零差，于是任何阈值下都不可分。这一条看似废话，却推出一个不平凡的结果：区分永远无法把“同一个东西”拆成两半——它只能区分不同的东西。</p>
 
 <p><b>有限精度。</b>若 <span class="s">f</span> 只取有限个值（例如五级量表），那么任意两个落在同一级上的对象都不可分，无论它们实际差多少。这不是缺陷，而是设计的代价：五级量表换来的是可重复性。承认这一点之后，“不可区分”就不再是错误，而是一个必须写进结论的前提。</p>
 
-<h3 id="sec6-6">6.6　本章小结</h3>
-
-<p>区分是四元组 <span class="s">(X,f,θ,O)</span>，三种传统各给它一套形式化，三种失败各有各的修法。本章仍然只是语言；第 7 章起，用这套语言去生成空间。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：说“我看不出区别”，通常不是眼睛的问题，是还没找到那个能看的量。</p></div>
-
-<h3 id="sec6-6b">6.6b　区分与自然语言范畴：一个旁证</h3>
+<h3 id="sec6-8">6.8　区分与自然语言范畴：一个旁证</h3>
 
 <p>语言学里有一个与定义 6.1 同型的结构：<b>范畴化</b>。给定一组刺激，被试把它们归为两类，分界线由“最佳样例”（原型）与“可接受度阈值”共同决定。实验上，这条线不是锐利的，而是一条 S 形曲线（范畴感知的边界陡度可测）。用本书的四个字段读它：属性是某个声学参数（如 VOT），阈值是被试的判据，观察者是对照组。</p>
 
 <p>这个旁证的价值在于它给出“阈值可调”的实证：同一组刺激，换指导语就换阈值，边界随之平移。这正好印证第 10 章的第二条规则——<b>阈值换了，结论必须重新报告</b>。它也提醒一件事：凡是把“范畴”当成客观分界的说法，都要先问“用谁的阈值”。</p>
 
-<h3 id="sec6-7">6.7　区分的信息论刻画</h3>
+<h3 id="sec6-9">6.9　区分的信息论刻画</h3>
 
 <p>第 6.2 节的四元组可以再加一项：<b>区分能带走多少不确定性。</b>把 <span class="s">f</span> 离散化后，两个对象被分到同一格的概率为 <span class="s">p<sub>same</sub></span>，则一次区分的<b>信息量</b>可以写成</p>
 <div class="eq"><span class="body">I = H(对象) − H(对象 | 格子) = H(f(X))</span><span class="num">(6.1)</span></div>
@@ -90,7 +84,7 @@
 
 <p>它也给“过度分辨”一个数：若 <span class="s">θ</span> 小到把噪声也分开，<span class="s">H(f(X))</span> 会变得很大，但其中大部分是不可复现的信息。判据是：<b>把同一个对象测两次，如果两次分到不同格子，那么这部分 <span class="s">H</span> 是噪声。</b>重复测量的方差就是这个判据的可算版本。</p>
 
-<h3 id="sec6-8">6.8　给专家的注：与三种既有框架的接口</h3>
+<h3 id="sec6-10">6.10　给专家的注：与三种既有框架的接口</h3>
 
 <p>第 6.3 节的三行表可以再展开成三条接口，各自对应一支成熟文献。</p>
 
@@ -107,7 +101,7 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>区分的四元组与信号检测论同构：属性 f 是判别变量，阈值 θ 是判据 c，观察者对 O 决定先验。三者的联合分布决定 ROC 曲线，而曲线下面积就是「区分能力」的可算版本。</p></div>
-<h3 id="sec6-9">6.9　与信号检测论的接口：d′ 与 ROC</h3>
+<h3 id="sec6-11">6.11　与信号检测论的接口：d′ 与 ROC</h3>
 
 <p>区分能力在心理学里有一个标准量：<b>敏感度 <span class="s">d′</span></b>。设信号与噪声的判别变量服从等方差正态，均值差为 <span class="s">μ<sub>s</sub>−μ<sub>n</sub></span>、标准差 <span class="s">σ</span>，则</p>
 
@@ -126,7 +120,7 @@
 
 <p>给本书的接口：<b><span class="s">d′</span> 是“区分能力”的第一个可测量。</b>第 21 章的知觉阈限条目之所以是 A 级，正是因为它有 <span class="s">d′</span> 这个两分钟能算的量；其余认知条目没有对应的可测量，所以停在 B 或 C。</p>
 
-<h3 id="sec6-10">6.10　三张 ROC 曲线说明阈值与能力的分离</h3>
+<h3 id="sec6-12">6.12　三张 ROC 曲线说明阈值与能力的分离</h3>
 
 <p>同一组 <span class="s">d′</span>，换判据 <span class="s">c</span>，命中率与虚报率一起平移，但曲线形状不变。三行数值可以手算：</p>
 
@@ -144,13 +138,13 @@
 <img class="fig" src="assets/svg/fig-roc-three.svg" alt="图 6.2　同一 d′ 的三条 ROC 曲线">
 <div class="cap"><b>图 6.2　同一 d′ 的三条 ROC 曲线</b>　三条曲线形状相同、位置不同：判据 c 只平移操作点，不改变曲线下面积。</div>
 <div class="box"><p><strong>读法：</strong>三条曲线形状相同、位置不同：判据 c 只平移操作点，不改变曲线下面积。</p></div>
-<h3 id="sec6-11">6.11　区分与信息：三个量的关系</h3>
+<h3 id="sec6-13">6.13　区分与信息：三个量的关系</h3>
 
 <p>“区分”在信息论里有三个近邻：熵、互信息、KL 散度。它们的关系可以用一句话说清：<b>熵是“一个变量内部的不确定性”，互信息是“用另一个变量的区分能消掉多少不确定性”，KL 是“两个分布之间的区分有多大”。</b></p>
 
 <table class="nat">
 <tr><th class="l">量</th><th class="l">区分什么</th><th class="l">取值范围</th><th class="l">在本书哪里用</th></tr>
-<tr><td class="l">熵 <span class="s">H(X)</span></td><td class="l">一个分布内部的分散度</td><td class="l"><span class="s">≥0</span></td><td class="l">第 6.7 节的 <span class="s">I=H(f(X))</span></td></tr>
+<tr><td class="l">熵 <span class="s">H(X)</span></td><td class="l">一个分布内部的分散度</td><td class="l"><span class="s">≥0</span></td><td class="l">第 6.10 节的 <span class="s">I=H(f(X))</span></td></tr>
 <tr><td class="l">互信息 <span class="s">I(X;Y)</span></td><td class="l">两个变量共享的区分</td><td class="l"><span class="s">≥0</span></td><td class="l">第 22.2 节容量</td></tr>
 <tr><td class="l">KL 散度</td><td class="l">两个分布之间的差</td><td class="l"><span class="s">≥0</span>，不对称</td><td class="l">第 3.2 节的“可复算”成本</td></tr>
 </table>
@@ -159,5 +153,17 @@
 
 <p>还有一条恒等式把它们串起来：<span class="s">I(X;Y)=H(X)−H(X|Y)=H(Y)−H(Y|X)</span>。它说明<b>互信息是“消掉的不确定性”，而不是“共享的信息实体”</b>——这条读法能避免一个常见误解：把互信息当成“两者之间的管道”，从而以为它可加。<b>它不可加，这正是子模性（第 22.4 节）的来源。</b></p>
 
-<h3 id="sec6-ref">6　本章参考文献</h3>
-<div class="refs"><p>Spencer-Brown, G. (1969). <i>Laws of Form</i>. Allen &amp; Unwin.</p><p>Alexandrov, P. S. (1937). Diskrete Räume. <i>Matematicheskii Sbornik</i> 2, 501–518.</p><p>Johnstone, P. T. (1982). <i>Stone Spaces</i>. Cambridge University Press.</p><p>Davey, B. A., &amp; Priestley, H. A. (2002). <i>Introduction to Lattices and Order</i> (2nd ed.). Cambridge University Press.</p></div>
+<h3 id="sec6-14">6.14　本章小结</h3>
+
+<p>区分是四元组 <span class="s">(X,f,θ,O)</span>，三种传统各给它一套形式化，三种失败各有各的修法。本章仍然只是语言；第 7 章起，用这套语言去生成空间。</p>
+
+<div class="box box-takeaway"><p><b>一句话带走</b>：说“我看不出区别”，通常不是眼睛的问题，是还没找到那个能看的量。</p></div>
+
+<h3>6　本章文献（引用与延伸）</h3>
+<div class="refs">
+<p class="refh">延伸阅读</p>
+<p>Spencer-Brown, G. (1969). Laws of Form. Allen &amp; Unwin.</p>
+<p>Alexandrov, P. S. (1937). Diskrete Räume. Matematicheskii Sbornik 2, 501–518.</p>
+<p>Johnstone, P. T. (1982). Stone Spaces. Cambridge University Press.</p>
+<p>Davey, B. A., &amp; Priestley, H. A. (2002). Introduction to Lattices and Order (2nd ed.). Cambridge University Press.</p>
+</div>
