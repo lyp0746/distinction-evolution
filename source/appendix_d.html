@@ -68,3 +68,25 @@
 
 <p>这张表是全书的“适用速查”：<b>先找到你的对象在哪一行，再看“不可用”那一列，就知道哪些结论不能引。</b>比逐章读快得多。</p>
 
+<h3 id="secc7">C.7　五步复算协议（适用于任何“推向连续”的主张）</h3>
+
+<p>本书第 19 章的结论，可以用一套与对象无关的五步协议复核。任何“离散收敛到连续”的主张都适用。</p>
+
+<ol>
+<li><b>写清参数化</b>：<span class="s">n</span> 或 <span class="s">h</span>；若是网络，写清抽样规则。</li>
+<li><b>算两个极端特征值</b>：<span class="s">λ<sub>2</sub></span> 与 <span class="s">λ<sub>n</sub></span>（用 <code>eigvalsh</code>）。</li>
+<li><b>双对数拟合</b> <span class="s">R(n)</span>：指数接近 2 则与网格同型；接近 0 则与膨胀族同型。</li>
+<li><b>同时算缩放谱</b> <span class="s">λ<sub>2</sub>/h²</span>：应收敛到常数（连续侧第一特征值）。</li>
+<li><b>换边界条件重做</b>：结论若变，说明它依赖边界而不是几何。</li>
+</ol>
+
+<table class="nat">
+<tr><th class="l">步骤</th><th class="l">失败的样子</th><th class="l">说明什么</th></tr>
+<tr><td class="l">3</td><td class="l">拟合指数在 1 附近</td><td class="l">不是网格型，可能是分形或网络</td></tr>
+<tr><td class="l">4</td><td class="l"><span class="s">λ<sub>2</sub>/h²</span> 不收敛</td><td class="l">缩放写错，或谱不是拉普拉斯谱</td></tr>
+<tr><td class="l">5</td><td class="l">换边界后指数变</td><td class="l">结论是边界效应的产物</td></tr>
+</table>
+
+<p>五步里第 5 步最少被做，却最能识破假象：<b>环面与网格的 <span class="s">R</span> 差四倍，唯一原因就是边界条件</b>（第 19.3b 节）。若不换边界，就会把“边界的效应”误记成“几何的性质”。</p>
+
+<p><b>这套协议也是本书对读者的邀请：</b>不必相信第 19 章，按五步在你自己熟悉的对象上跑一遍；若指数与本书不同，那正是新结果的入口。</p>

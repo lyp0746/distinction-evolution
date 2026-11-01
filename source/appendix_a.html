@@ -87,3 +87,27 @@
 <p><b>证明。</b>若 <span class="s">Q(v)=0</span>，由半正定性与极化得 <span class="s">B(v,w)=0</span> 对一切 <span class="s">w</span> 成立，故两端为 0。若 <span class="s">Q(v)&gt;0</span>，对一切 <span class="s">t∈ℝ</span> 有 <span class="s">0≤Q(u+tv)=Q(u)+2tB(u,v)+t²Q(v)</span>。右边是 <span class="s">t</span> 的非负二次式，故判别式 <span class="s">4B(u,v)²−4Q(u)Q(v)≤0</span>，即得。<span class="s">∎</span></p>
 
 <p>四条证明都只用到定义与初等代数：<b>它们的价值不在技巧，而在“把语言的断言落到可检查的一步一步”。</b>读到这里若觉得“太简单”，那正是本书想要的效果——<b>可检查的定理本来就该看起来简单。</b></p>
+
+<h3 id="seca12">A.12　定理 18.4、19.1、19.2 的证明细节</h3>
+
+<p><b>命题 18.4（正则族的夹逼）。</b>设 <span class="s">G</span> 为 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，<span class="s">γ=λ<sub>2</sub></span>。则有正谱间隙的族满足 <span class="s">2≤liminf R≤2d/γ</span>。</p>
+
+<p><b>证明。</b>上界：由 Gershgorin，<span class="s">λ<sub>n</sub>≤2d</span>，故 <span class="s">R=λ<sub>n</sub>/γ≤2d/γ</span>。下界：对 <span class="s">d</span>-正则族，邻接矩阵第二特征值满足 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>（Alon–Boppana，Nilli 1991）。由 <span class="s">L=dI−A</span> 得 <span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span>。于是
+<span class="s">R≥2d/(d−2√(d−1)+o(1))</span>，其极限为 <span class="s">2d/(d−2√(d−1))→2</span>（<span class="s">d→∞</span>），且对每个 <span class="s">d≥3</span> 该值 <span class="s">≥2</span>。<span class="s">∎</span></p>
+
+<p>注意下界是<b>族的渐近命题</b>：单个有限图的 <span class="s">R</span> 可以任意大（例如很长的路，只要不是正则族）。这就是第 18.5b 节里“环面看似违反夹逼”的解释——环面族没有正谱间隙。</p>
+
+<p><b>定理 19.1（网格的 R）。</b><span class="s">R(P<sub>n</sub>□P<sub>n</sub>)=(8/π²)n²(1+O(n<sup>−2</sup>))</span>。</p>
+
+<p><b>证明。</b>路的谱为 <span class="s">2−2cos(πk/n)</span>，<span class="s">k=0,…,n−1</span>；乘积图的谱为两份之和，故
+<span class="s">λ<sub>2</sub>=2−2cos(π/n)</span>（一条边走一步、另一条不动），
+<span class="s">λ<sub>n</sub>=2[2−2cos(π(n−1)/n)]</span>（两条边都取最大）。
+用 <span class="s">2−2cos x=x²−x⁴/12+O(x⁶)</span>：<span class="s">λ<sub>2</sub>=π²/n²+O(n<sup>−4</sup>)</span>，而 <span class="s">λ<sub>n</sub>→8</span>。相除得 <span class="s">R=(8/π²)n²(1+O(n<sup>−2</sup>))</span>。<span class="s">∎</span></p>
+
+<p>证明里唯一需要小心的是 <span class="s">λ<sub>n</sub></span> 的取法：乘积图的最大特征值是两份最大之和，而路的第二大特征值对应 <span class="s">k=n−1</span>，不是 <span class="s">k=n/2</span>。<b>若误取 <span class="s">k=n/2</span>，会得到 <span class="s">λ<sub>n</sub>=8</span> 的正确值但错误的极值点，随之误判 <span class="s">R</span> 的收敛速率。</b></p>
+
+<p><b>定理 19.2（连续退化）。</b>紧连通流形上 <span class="s">β<sub>1</sub>=α/μ<sub>max</sub>=0</span>，<span class="s">β<sub>2</sub>=α/μ<sub>1</sub>&gt;0</span>。</p>
+
+<p><b>证明。</b>由 Weyl 律 <span class="s">N(Λ)~cΛ<sup>d/2</sup></span>，<span class="s">N(Λ)→∞</span> 对任意 <span class="s">Λ</span>，故 <span class="s">μ<sub>k</sub></span> 无上界，<span class="s">μ<sub>max</sub>=∞</span>，第一式得证。第二式由 <span class="s">μ<sub>1</sub>&gt;0</span>（连通性）与 <span class="s">α&gt;0</span> 直接给出。<span class="s">∎</span></p>
+
+<p>两条式子合起来的含义是：<b>连续侧只剩下一个门槛。</b>这不是“极限更简单”，而是“极限换了问题”——从“何时解锁所有模式”变成“在给定 <span class="s">β</span> 下解锁多少模式”（第 20 章的密度）。</p>

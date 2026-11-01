@@ -176,5 +176,22 @@
 
 <p>检验的价值在于它们互相独立：<b>若第一项成立而第二项不成立，说明 <span class="s">λ<sub>n</sub></span> 的行为不同（例如权重不均匀）；若第二项成立而第三项不成立，说明缩放搞错了。</b>独立的检验合起来才有排除力，单一的“看起来收敛”没有。</p>
 
+<h3 id="sec19-10">19.10　连续极限的数值协议（可直接执行）</h3>
+
+<p>要把第 19 章的结论在别的族上检验，按五步做即可。</p>
+
+<table class="nat">
+<tr><th class="l">步骤</th><th class="l">做什么</th><th class="l">判据</th></tr>
+<tr><td class="l">1</td><td class="l">取一族图，参数化为 <span class="s">n</span>（或 <span class="s">h</span>）</td><td class="l">族要有闭式谱或可算谱</td></tr>
+<tr><td class="l">2</td><td class="l">算 <span class="s">λ<sub>2</sub></span>、<span class="s">λ<sub>n</sub></span>，得 <span class="s">R</span></td><td class="l">用 <code>eigvalsh</code>，不用 <code>eigvals</code></td></tr>
+<tr><td class="l">3</td><td class="l">对 <span class="s">n</span> 做双对数拟合</td><td class="l">指数显著 ≠ 2 即新现象</td></tr>
+<tr><td class="l">4</td><td class="l">同时算 <span class="s">λ<sub>2</sub>/h²</span></td><td class="l">应收敛到一个常数</td></tr>
+<tr><td class="l">5</td><td class="l">换边界条件重做一遍</td><td class="l">结论变则说明依赖边界</td></tr>
+</table>
+
+<p>五步里第三步最容易做错：<b>用 <code>eigvals</code> 会得到复数谱，<span class="s">λ<sub>n</sub></span> 的排序随之出错</b>；第四步则常被跳过，于是“R 发散”被误读成“连续极限不存在”。</p>
+
+<p>这套协议对随机几何图、渗流团簇、真实网络都适用；只要第 1 步能给出可算谱。<b>协议的价值在于：它把“推向连续”从一句主张变成五步操作。</b></p>
+
 <h3 id="sec19-ref">19　本章参考文献</h3>
 <div class="refs"><p>Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. <i>Neural Information Processing Systems</i> 19, 129–136.</p><p>von Luxburg, U., Belkin, M., &amp; Bousquet, O. (2008). Consistency of spectral clustering. <i>Annals of Statistics</i> 36, 555–586.</p><p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. <i>Science</i> 290, 2319–2323.</p><p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <i>Applied and Computational Harmonic Analysis</i> 21, 5–30.</p></div>
