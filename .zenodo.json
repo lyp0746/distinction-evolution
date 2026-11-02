@@ -1,6 +1,6 @@
 {
-  "title": "区分的语言:区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限 / The Language of Distinction: How Distinctions Generate Space, Form and Spectrum — Seven Theorems, Thirty-Six Domains, and One Continuum Limit",
-  "description": "<p><b>中文.</b> 本著作提出“区分的语言”这一语言规范，用以把“统一”从愿望翻译成可检验的操作。</p><p>核心主张：把“区分、曲率、演化”三个原语收敛为两个——区分与对称双线性形式；协方差、Hessian、图拉普拉斯、内积与黎曼度量是同一结构在五个领域的实例。它不宣布数学被统一，只交出一种可被使用、压缩与迁移的语言。</p><p>结构与证据：25 章、附录 A—P、32 幅图；唯一的完全兑现处是图上两阶段相变（有定理、有临界值、有可复算数值）；局部先行窗口的尺度律 R≈2N^{2/d}/π² 给出可检验的推论。</p><p>诚实的纪律：明确区分“定理”“语言规范”与“提案”；19 个开放问题；一次撤回（曲率与谱关系的过度归并）完整记录在正文与附录；并写明本书做的是“用已有工具描述已知结构”，不是“发明新工具发现新现象”。</p><p>边界：五个领域中只有一个被严格兑现，其余是结构相似而非同构；“语言规范”指记号系统，不是学科规范。</p><p>版本：2026-10-18，226 页，25 章，32 图，附录 A—P，O1—O19；源码与可复算脚本开源，内容 CC BY 4.0，代码 MIT。</p><p><b>本版更新（2026-10-18 地基版）。</b>本版把全书的共同前提写到卷首：<b>现实中不存在无限</b>——无限只作为极限出现在模型里，从不出现在现实系统的实际状态里。有限性本身只说明“有上界”；它要变成“必须让出一样”，还需要三个条件同时成立：需求随规模增长、描述/组合/传递共享同一承载者、同时维持两种活动更贵（交互惩罚 ψ&gt;0）。因此“至多取二”一律是“紧预算（K/D 有界）下至多取二”的简写；若预算增长快于需求，三项可以同时满格。</p><p><b>本版新增内容。</b>第 13 章新增“有限性诊断”：五个领域的二阶结构可读成有限描述的共同压缩方式；1/3 缺口被标为“有限离散描述 + 连续极限”的过路费（可能来源，非证明）。卷首总纲明确：书中的“连续极限/无限细分”是取极限操作，不是现实系统的属性。</p><p><b>系列 / Series.</b> 同一作者的独立研究系列：六本学术专著 + 两本通俗读本。入口与外部登记库：<a href=\"https://github.com/lyp0746/knowledge-tradeoffs\">https://github.com/lyp0746/knowledge-tradeoffs</a>；源码与可复算脚本：<a href=\"https://github.com/lyp0746/distinction-evolution\">https://github.com/lyp0746/distinction-evolution</a>。首选预览文件：<code>distinction-evolution-print.pdf</code>（印刷版）。</p><p><b>English.</b> Abstract (English). This work presents “the grammar of distinction,” a language norm that translates the wish for unity into testable operations. Core thesis: three primitives — distinction, curvature, evolution — reduce to two: distinction and the symmetric bilinear form; covariance, Hessian, graph Laplacian, inner product and Riemannian metric are five instances of one structure. It does not claim that mathematics has been unified; it delivers a language that can be used, compressed and transferred. Structure and evidence: 25 chapters, appendices A–P, 32 figures; the one fully cashed-out case is the two-stage transition on graphs (theorem, thresholds, reproducible numbers), with the window law R≈2N^{2/d}/π² as a testable corollary. Discipline: theorems, language norms and proposals are kept apart; 19 open questions; one retraction is documented in full; the book states plainly that it describes known structures with existing tools rather than discovering new phenomena with new ones. Boundaries: only one of five domains is fully cashed out; elsewhere the relation is structural resemblance, and “norm” means notation, not disciplinary rule. Edition: 2026-10-18, 226 pages, 25 chapters, 32 figures, appendices A–P.</p><p><b>What is new in this edition (2026-10-18, Finitude Edition).</b> The common premise is now stated at the front: <b>there is no infinity in reality</b> — infinity appears only as a limit in models, never as a property of a real system. Finitude alone only says that there is a ceiling; to yield a trade-off it also needs three conditions: demand grows with scale, description/composition/transfer share one bearer, and maintaining two activities at once is more expensive (interaction penalty ψ&gt;0). “At most two” is therefore shorthand for “at most two under a tight budget (bounded K/D)”; if the budget grows faster than demand, all three can be full.</p><p><b>New in this edition.</b> Chapter 13 adds a finitude diagnosis: the second-order structure across five domains can be read as a common compression of finite description; the 1/3 gap is framed as the toll of a finite discrete description passing to a continuum limit (a possible source, not a proof). The front matter states that “continuum limit / infinite subdivision” is a limiting operation, not a property of a real system.</p>",
+  "title": "区分的语言：区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限 / The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit",
+  "description": "<p><b>中文摘要。</b>本书的贡献是一次归并。作者初稿把框架写成三个原语——区分、曲率、演化；进一步的分析把它们收敛为两个更基本的词：区分与对称双线性形式（二次型）。「曲率」是形式谱的一个侧写，「演化」是形式谱上的线性 ODE。归并之后，语言更简洁、也更一般：协方差、Hessian、图拉普拉斯、内积、黎曼度量都是同一个结构的实例，谱定理、变分原理、极化恒等式是它自带的三套工具。本书因此从“一个数学框架”转为一套语言描述：以“区分”为线索，把不同领域里重复出现的同一件事写成可描述、可对照的语言。全书唯一完全严格的部分是图拉普拉斯二次型的谱分析——两阶段相变定理，临界耦合由拉普拉斯谱决定，可证明、可计算、可复现；本书明确它是标准数学（换形式），不是新理论。它还报告两次“换形式”的推广：辛推广给出可计算的阻尼波动方程相变，酉推广新意有限。评价这套语言的标准与理论不同：不是“今天证了多少定理”，而是它是否被采用、是否压缩了记号、是否让跨领域迁移变得可读（第 26.4.1 节）。卷首《总纲　现实中不存在无限》把这套语言的地基写在最前面：无限只作为极限，不作为现实系统的属性；有限的分辨率预算，是 1/3 缺口与两阶段相变共同的起点。</p>\n<p><b>核心主张。</b>区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限。本书不把「区分的语言」写成一本无所不包的概论，而是把一个问题做深：一个有限的东西，怎样一边保持结构，一边还能变化。</p>\n<p><b>结构与证据。</b>5 部分、25 章、275 页、附录 A–F、34 幅图；每章保留证据分级（A/B/C 与甲/乙/丙）与可证伪登记，失败与撤回写在正文，不放进脚注。</p>\n<p><b>本版修订（2026-11-02）。</b>统一书名与副题、统一版式与页码；附录收束为 A–F；旧版残留的 DOI、系列计数与错字订正；本版以概念 DOI 归档，版本 DOI 指向 2026-11-02 这一版。</p>\n<p><b>诚实纪律。</b>结论强度不超过证据强度；能算的给出数，不能算的写明「判不了」；每一条硬约束都写清谁在承担代价，以及这条限制使什么成为可能。</p>\n<p><b>边界。</b>本书给坐标与判据，不给判决；它不替代领域专家的材料，也不把类比写成定理。具体边界见各章末与附录的登记簿。</p>\n<p><b>版本信息。</b>2026-11-02，275 页，25 章，附录 A–F；内容 CC BY 4.0，代码 MIT。</p>\n<p><b>Abstract.</b> The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book does not attempt an all-encompassing survey; it works one problem through: how does something finite keep its structure while still being able to change? It is organised in 5 parts and 25 chapters, with appendices A–F and 34 figures; every chapter keeps its evidence grades (A/B/C) and falsifiability register, and reports failures and retractions in the body.</p>\n<p><b>Core thesis.</b> How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book offers coordinates and criteria, not verdicts.</p>\n<p><b>Structure and evidence.</b> 5 parts, 25 chapters, 275 pages, appendices A–F, 34 figures. The apparatus is open: data, scripts and registers are in the repository; the prose keeps a single visible grade per claim rather than hedging every clause.</p>\n<p><b>This edition (2026-11-02).</b> Title and subtitle unified; layout and folios unified; appendices consolidated to A–F; residual DOI, series-count and typographic errors corrected; the concept DOI is stable and the version DOI points to this edition.</p>\n<p><b>Discipline.</b> Conclusion strength does not exceed evidence strength; what can be computed is computed, what cannot is marked as undecidable; every hard constraint names who pays for it and what it makes possible.</p>\n<p><b>Boundaries.</b> The book gives coordinates and criteria, not verdicts; it does not replace field expertise, and it does not dress an analogy as a theorem. See the chapter ends and the register appendices for specific limits.</p>\n<p><b>Edition.</b> 2026-11-02, 275 pages, 25 chapters, appendices A–F; content CC BY 4.0, code MIT.</p>",
   "creators": [
     {
       "name": "李毅芃",
@@ -55,13 +55,13 @@
       "scheme": "custom"
     }
   ],
-  "notes": "科目（中文）：李群与对称性 Lie Groups and Symmetry、线性代数与二次型 Linear Algebra and Quadratic Forms、数学语言与记号 Mathematical Language and Notation、数学基础 Foundations of Mathematics、范畴论 Category Theory、类型论 Type Theory、生成拓扑学 Generative Topology、非标准分析 Nonstandard Analysis、谱图论 Spectral Graph Theory、数学统一 Mathematical Unification、科学方法论 Philosophy of Science。语言：中文（含英文摘要）。结构：25 章，约 222 页。首选预览文件：distinction-evolution-print.pdf（印刷版）。引用格式见 CITATION.cff。",
+  "notes": "学术专著/读本。2026-11-02，275 页，25 章，附录 A–F。",
   "license": "CC-BY-4.0",
   "upload_type": "publication",
   "publication_type": "book",
   "language": "zho",
   "access_right": "open",
-  "publication_date": "2026-10-18",
+  "publication_date": "2026-11-02",
   "related_identifiers": [
     {
       "identifier": "https://github.com/lyp0746/distinction-evolution",
@@ -74,22 +74,22 @@
       "scheme": "url"
     },
     {
-      "identifier": "https://doi.org/10.5281/zenodo.23286403",
+      "identifier": "https://doi.org/10.5281/zenodo.23217100",
       "relation": "references",
       "scheme": "doi"
     },
     {
-      "identifier": "https://doi.org/10.5281/zenodo.23323277",
+      "identifier": "https://doi.org/10.5281/zenodo.23323276",
       "relation": "references",
       "scheme": "doi"
     },
     {
-      "identifier": "https://doi.org/10.5281/zenodo.23388629",
+      "identifier": "https://doi.org/10.5281/zenodo.23388628",
       "relation": "references",
       "scheme": "doi"
     },
     {
-      "identifier": "https://doi.org/10.5281/zenodo.23416220",
+      "identifier": "https://doi.org/10.5281/zenodo.23416219",
       "relation": "references",
       "scheme": "doi"
     },
@@ -114,5 +114,5 @@
       "scheme": "doi"
     }
   ],
-  "version": "2026-10-19"
+  "version": "2026-11-02"
 }
