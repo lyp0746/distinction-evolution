@@ -22,7 +22,7 @@ HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GIT = os.environ.get("GIT_BIN", r"D:\Git\cmd\git.exe")
 REPO = "lyp0746/distinction-evolution"
 BOOK = "区分的语言"
-DOI = "10.5281/zenodo.23412033"
+DOI = "10.5281/zenodo.23345012"
 
 # (本地文件, GitHub 资产名)
 ASSETS = [

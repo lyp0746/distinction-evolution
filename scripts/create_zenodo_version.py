@@ -29,7 +29,7 @@ try:  # Windows 控制台默认 GBK，强制 UTF-8 以打印下标等字符
 except Exception:
     pass
 
-RECORD_ID = "23412033"                       # 当前版本记录号
+RECORD_ID = "23886113"                       # 当前版本记录号
 API = "https://zenodo.org/api"
 BUCKET = "https://zenodo.org/api/files"
 RELEASE_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "release")
