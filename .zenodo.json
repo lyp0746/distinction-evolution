@@ -67,51 +67,6 @@
       "identifier": "https://github.com/lyp0746/distinction-evolution",
       "relation": "isSupplementedBy",
       "scheme": "url"
-    },
-    {
-      "identifier": "https://github.com/lyp0746/knowledge-tradeoffs",
-      "relation": "isPartOf",
-      "scheme": "url"
-    },
-    {
-      "identifier": "https://doi.org/10.5281/zenodo.23217100",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "https://doi.org/10.5281/zenodo.23323276",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "https://doi.org/10.5281/zenodo.23388628",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "https://doi.org/10.5281/zenodo.23416219",
-      "relation": "references",
-      "scheme": "doi"
-    },
-    {
-      "identifier": "https://github.com/lyp0746/emergence-critical",
-      "relation": "references",
-      "scheme": "url"
-    },
-    {
-      "identifier": "https://github.com/lyp0746/knowledge-tradeoffs",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
-    },
-    {
-      "identifier": "https://github.com/lyp0746/hotspot-bills",
-      "relation": "isDocumentedBy",
-      "scheme": "url"
-    },
-    {
-      "identifier": "10.5281/zenodo.23345012",
-      "relation": "isVersionOf",
-      "scheme": "doi"
     }
   ],
   "version": "2026-11-02"
