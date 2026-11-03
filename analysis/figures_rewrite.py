@@ -132,14 +132,18 @@ ax.set_title("图 17.3　中间相里高频已增长、低频仍衰减")
 save(fig, "fig-intermediate-window.svg")
 
 # 8 Cheeger/AB 夹逼
+# 注意：下界有两条。非二分族：分子 d+2√(d−1)（→1）；二分族：分子 2d（→2）。
+# 第一版曾把非二分情形误写成 2d，已更正（见 2026-11-04 修复记录）。
 d = np.arange(3, 61)
-lo = 2 * d / (d - 2 * np.sqrt(d - 1))
+lo_nonbip = (d + 2 * np.sqrt(d - 1)) / (d - 2 * np.sqrt(d - 1))
+lo_bip = 2 * d / (d - 2 * np.sqrt(d - 1))
 fig, ax = plt.subplots(figsize=(5.4, 3.0))
-ax.plot(d, lo, color=C["blue"], label=r"下界 $2d/(d-2\sqrt{d-1})$")
-ax.plot(d, 2 * d / 0.1 * np.ones_like(d), color=C["green"], ls="--", lw=.8, label=r"上界 $2d/\gamma$（取 $\gamma=0.1$）")
-ax.fill_between(d, lo, 2 * d / 0.1, color=C["blue"], alpha=.08)
+ax.plot(d, lo_nonbip, color=C["blue"], label="下界（非二分）(d+2√(d−1))/(d−2√(d−1)) → 1")
+ax.plot(d, lo_bip, color=C["red"], ls=":", lw=.9, label="下界（二分，λn=2d）2d/(d−2√(d−1)) → 2")
+ax.plot(d, 2 * d / 0.1 * np.ones_like(d), color=C["green"], ls="--", lw=.8, label="上界 2d/γ（取 γ=0.1）")
+ax.fill_between(d, lo_nonbip, 2 * d / 0.1, color=C["blue"], alpha=.08)
 ax.set_yscale("log"); ax.set_xlabel("度 d"); ax.set_ylabel("R")
-ax.legend(fontsize=7); ax.set_title("图 18.3　正则族的 R 被两面夹住（下界趋于 2）")
+ax.legend(fontsize=6.5); ax.set_title("图 18.3　正则族的 R 被两面夹住（下界：非二分趋于 1，二分趋于 2）")
 save(fig, "fig-cheeger-band.svg")
 
 # 9 热核

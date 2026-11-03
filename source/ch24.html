@@ -79,6 +79,28 @@
 <p><b>它在哪里会失败。</b>"高估幅度"无法测。这条断言只能作为提醒，不能作为判据——而提醒在学术写作里通常无效，所以它真正的用处是催生门槛，不是修正自评。</p>
 <p><b>它使什么成为可能。</b>它把"分层"从修辞变成纪律：<strong>每上一层，先写下这一层的门槛</strong>。写不出门槛的那一层，就不要上去。</p>
 
+<h3 id="sec24-8b">24.8b　第四级：结论的适用范围（F 轴）</h3>
+
+<p>第 3 章的 A／B／C 管的是<b>证据强到什么程度</b>；它不管另一件事：<b>这条结论在多大的对象上有内容</b>。两者正交，而混在一起是读者最常见的误读：而一个已证定理，若它的内容只活在一个不存在于任何有限实例的极限里，就不能拿来当“本书已证”。</p>
+
+<p>所以本章在可信度之外再加一条轴，专管适用范围：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 24.8　有限性（F 轴）</b></caption>
+<tr><th class="l">级</th><th class="l">含义</th><th class="l">判据</th><th class="l">例</th></tr>
+<tr><td class="l">F1</td><td class="l">每个 <span class="s">n</span>／每个维数成立</td><td class="l">常数显式，能在纸上拿一个具体规模验一遍</td><td class="l">本章的相变宽度与 <span class="s">R</span> 的闭式</td></tr>
+<tr><td class="l">F2</td><td class="l">渐进，但按单位计</td><td class="l">有意义的是“每自旋、每坐标、每维多少”</td><td class="l">Weyl 密度（每单位体积的模式数）</td></tr>
+<tr><td class="l">F3</td><td class="l">仅渐进</td><td class="l">存在性、多项式时间、NP-难度、<span class="s">o(1)</span> 指数</td><td class="l">“存在一族图使…”、复杂度类结果</td></tr>
+</table>
+
+<p><b>一条可执行的写作规则</b>：引用 F3 结果时，正文必须写出“<b>无有限内容</b>”。这条规则不降低 F3 的价值（它们能划出可行域），但拦住一种误读：把“对充分大的 <span class="s">n</span> 存在”读成“在某台机器上算得出来”。</p>
+
+<p><b>它对本节的实质影响。</b>三层可信度里的“外延层（C）”以前是一个筐：连续情形、同伦升维、1/3 缺口、四场互补都装在里面。加上 F 轴后，这个筐可以拆开：<b>连续情形与 1/3 缺口是 F2 问题（按单位计），同伦升维是 F1 问题（每个维数都要成立），四场互补是 F3 问题（只问有没有对应）。</b>不同 F 级的结论不能用同一种证据要求去要求它们——这正是本节想要的那道门槛。</p>
+
+<p><b>一个现成的尺子。</b>本系列正在用的一个外部语料（七百余篇数学手稿）里，能直接进表的是 F1，能当对照的是 F2，而大量“大新闻”是 F3。区分这三类，比争论“算不算定理”有用。</p>
+
+<p><b>一个必要的降级。</b>本书新增的引用里，有一批来自上述语料——那是<b>未经同行评议</b>的预印本（部分有 Lean 形式化）。按第 3 章的定级，它们<b>不能算 A（官方可复现）</b>，只能算<b>B（稳定公开估计）</b>。所以本书给这批引用一律标 B，即使它的表述是一条闭式恒等式。这条降级本身就是一个演示：<b>确定性很高，不等于证据等级高</b>。</p>
+
 <div class="box box-summary"><span class="bt">本章小结</span>
 <ul><li>三层可信度：样本层可独立验证，框架层可被单例反驳，外延层需要一次前沿成功。</li><li>三层之间只有一条真正的依赖（框架→外延），因此可以分层打分。</li><li>分层打分让"部分成立"成为可陈述的状态，而不是含糊的态度。</li></ul></div>
 
@@ -159,4 +181,6 @@ O1,"1/3 是不变结构量","一族构造下不变","未执行","—","—",h(R4
 <p>Merkle, R. C. (1988). A digital signature based on a conventional encryption function. CRYPTO '87, LNCS 293.</p>
 <p>Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management. Scientific Data 3, 160018.</p>
 <p>Nosek, B. A., et al. (2018). The preregistration revolution. PNAS 115, 2600–2606.</p>
+<p class="refh">本章新增引用（B 级：未同行评议的预印本）</p>
+<p>★ OpenAI, <i>Mathematics manuscript collection</i>（2026，373 族）：本书新增引用所依据的外部语料；按 24.8b 一律记为 B。</p>
 </div>

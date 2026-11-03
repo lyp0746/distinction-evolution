@@ -118,7 +118,7 @@
       "first": "ch03.html"
     },
     "相变": {
-      "total": 44,
+      "total": 45,
       "by_chapter": [
         [
           "ch01.html",
@@ -175,6 +175,10 @@
         [
           "ch21.html",
           3
+        ],
+        [
+          "ch24.html",
+          1
         ]
       ],
       "first": "ch01.html"
@@ -389,7 +393,7 @@
       "first": "ch19.html"
     },
     "证据等级": {
-      "total": 5,
+      "total": 6,
       "by_chapter": [
         [
           "ch03.html",
@@ -401,6 +405,10 @@
         ],
         [
           "ch23.html",
+          1
+        ],
+        [
+          "ch24.html",
           1
         ]
       ],
@@ -418,6 +426,7 @@
     "6.1": "ch06.html",
     "8.1": "ch08.html",
     "9.2": "ch09.html",
+    "9.13": "ch09.html",
     "11.1": "ch11.html",
     "13.9": "ch13.html",
     "14.1": "ch14.html",
@@ -429,6 +438,8 @@
   },
   "A2_formulas_defined": [
     "1.1",
+    "12.3",
+    "12.4",
     "14.1",
     "16.1",
     "16.2",
@@ -476,6 +487,13 @@
         1
       ],
       "continuous": true
+    },
+    "ch12.html": {
+      "numbers": [
+        3,
+        4
+      ],
+      "continuous": false
     },
     "ch14.html": {
       "numbers": [
@@ -526,7 +544,8 @@
   "A3_tables_defined": [
     "13.8",
     "19.12",
-    "24.7"
+    "24.7",
+    "24.8"
   ],
   "A3_figures_defined": [
     "1.1",
@@ -646,6 +665,7 @@
       "ch02.html",
       "ch04.html",
       "ch05.html",
+      "ch09.html",
       "ch11.html",
       "ch12.html",
       "ch14.html",
@@ -659,6 +679,7 @@
     "14": [
       "ch01.html",
       "ch02.html",
+      "ch09.html",
       "ch11.html",
       "ch13.html",
       "ch14.html",
@@ -686,6 +707,7 @@
       "ch17.html"
     ],
     "17": [
+      "ch10.html",
       "ch16.html",
       "ch17.html",
       "ch18.html",
@@ -765,6 +787,7 @@
       "ch23.html"
     ],
     "24": [
+      "ch09.html",
       "ch10.html",
       "ch17.html",
       "ch23.html",
@@ -780,6 +803,7 @@
       "ch03.html",
       "ch04.html",
       "ch10.html",
+      "ch12.html",
       "ch14.html",
       "ch15.html",
       "ch19.html",
@@ -815,6 +839,7 @@
       "ch08.html",
       "ch09.html",
       "ch10.html",
+      "ch12.html",
       "ch25.html"
     ],
     "8": [
@@ -932,10 +957,12 @@
       "ch22.html"
     ],
     "1.1": [
-      "ch01.html"
+      "ch01.html",
+      "ch12.html"
     ],
     "1.10": [
-      "ch01.html"
+      "ch01.html",
+      "ch12.html"
     ],
     "1.11": [
       "ch01.html"
@@ -996,7 +1023,8 @@
       "ch01.html"
     ],
     "1.9": [
-      "ch01.html"
+      "ch01.html",
+      "ch12.html"
     ],
     "10.1": [
       "ch10.html"
@@ -2300,10 +2328,6 @@
   "A9_debug_strings": [],
   "A10_version_labels": [
     {
-      "file": "appendix_e.html",
-      "snippet": "/th><th class=\"l\">本版变化</th><th class=\""
-    },
-    {
       "file": "ch21.html",
       "snippet": "<tr><td class=\"l\">第一版（27 条）</td><td cla"
     },
@@ -2383,6 +2407,16 @@
       "chapter": "ch17.html",
       "word": "必然",
       "snippet": "却没有越来越会分辨阵营。\n\n这个状态不稳定，也不必然出现——它存在与否由两个特征值的相对大小决定。这"
+    },
+    {
+      "chapter": "ch18.html",
+      "word": "必然",
+      "snippet": "1))（d→∞ 时 →1）。随机 d-正则图几乎必然非二分，所以它落在低的那条上；确定性非二分 Ra"
+    },
+    {
+      "chapter": "ch18.html",
+      "word": "必然",
+      "snippet": "3）∼0.81n²不适用\n随机 d-正则是（几乎必然非二分）≈(d+2√(d−1))/(d−2√(d"
     }
   ],
   "A12_duplicate_headings": []

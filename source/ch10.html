@@ -72,6 +72,31 @@
 
 <p>也给第 24 章一个提示：可裁决的检验只能建立在可检查的规则上。凡要求“换一个属性再看”的检验，都不是检验，而是重新提问。</p>
 
+<h3 id="sec10-9b">10.9b　一套区分要多少类：区分数</h3>
+
+<p>语法管“一次区分合不合格”，不管“要多少次区分才够”。后者有一个名字：<b>区分数</b>——能把一类对象分开所需的最小类数。它不是修辞：三个已证的例子把它变成了整数。</p>
+
+<table class="nat">
+<tr><th class="l">对象</th><th class="l">区分数</th><th class="l">级</th></tr>
+<tr><td class="l">平面上的距离一单位区分</td><td class="l">五色不够，只能是 <b>6 或 7</b>（任何 5 着色都有单位距离单色对）</td><td class="l">A</td></tr>
+<tr><td class="l"><span class="s">R<sup>9</sup></span> 中的紧凑集（用直径真减的子集覆盖）</td><td class="l"><b>十块不够</b>（Borsuk 在九维破）</td><td class="l">A</td></tr>
+<tr><td class="l">高斯空间的有限可测划分（衡量“取出的总一阶矩”）</td><td class="l">上界 <span class="s">Σ<sub>i</sub>‖∫<sub>A<sub>i</sub></sub>x dγ‖<sup>2</sup> ≤ 9/(8π)</span>，极值由<b>三个</b> <span class="s">2π/3</span> 扇区达到——多给标签不加分</td><td class="l">A</td></tr>
+</table>
+
+<p>三行说的是同一件事：<b>“多少类才够”是一个带下界的整数，而不是一个模糊的数量级</b>。第三行还多给了一条本书以前没有的东西：<b>极值划分恰好是“取有限个线性泛函的 argmax”所诱导的那一个</b>。也就是说，最优区分不是搜出来的，而是<b>由一族线性函数生成的</b>——这正是第 7 章那台生成机器的带最优性证明的版本。</p>
+
+<h3 id="sec10-9c">10.9c　一位的重量：单位区分的杠杆</h3>
+
+<p>若把区分拆到最小单位（翻转一位），就能问一个此前本书没问过的问题：<b>一位的改动能使整体结论变多少？</b>这个问题有精确答案，而且常数很小。</p>
+
+<ul>
+<li><b>一位的影响有显式上界。</b>在 <span class="s">n</span> 维布尔立方上，<span class="s">d</span> 阶阈值函数的平均灵敏度 <span class="s">≤8d√n</span>，对 <span class="s">1≤d≤n</span> 一致。〔B／乙〕</li>
+<li><b>一位与“一块”不是同一个量。</b>把相邻几位成组翻转，影响可以比单个位强出<b>超二次</b>倍：存在布尔函数使 <span class="s">bs(f)≥s(f)<sup>α</sup></span>（固定 <span class="s">α&gt;2</span>）。〔B／乙〕</li>
+<li><b>在噪声下，单个坐标就是最好的一个区分。</b>对独立均匀比特的布尔函数，经独立翻转噪声后，<b>保留互信息最多的策略是只用一个坐标</b>。〔B／乙〕</li>
+</ul>
+
+<p>三条合起来是一句可以进表格的话：<b>区分的单位有确定的重量，而且这个重量不能被“分组”免费放大。</b>这解释了两件事。其一，为什么第 21 章的覆盖表里 A 级条目大多可以“用一条判据钉死”：因为单位区分的杠杆有上界，不必担心漏掉“几个位一起发力”的隐形效应。其二，为什么第 17 章的两阶段只能发生在谱的两端：一位的改动只能沿着现成的模式传播，它不能凭空造出一个新模式。</p>
+
 <h3 id="sec10-10">10.10　三条规则的失效阈值</h3>
 
 <p>规则不是永远成立，它们各有失效条件。写清失效条件，规则才不会被当成教条。</p>
@@ -147,4 +172,10 @@
 <p>Lawvere, F. W. (1969). Adjointness in foundations. Dialectica 23, 281–296.</p>
 <p>Awodey, S. (2010). Category Theory (2nd ed.). Oxford University Press.</p>
 <p>Spivak, D. I. (2014). Category Theory for the Sciences. MIT Press.</p>
+<p class="refh">本章新增引用（B 级：未同行评议的预印本）</p>
+<p>★ 「The Gaussian propeller bound in every dimension」（族 096，2026）：任意可测划分的 <span class="s">Σ‖z(A<sub>i</sub>)‖<sup>2</sup>≤9/(8π)</span>，极值为三个 <span class="s">2π/3</span> 扇区。</p>
+<p>★ 「The asymptotic Gotsman–Linial conjecture」（族 127，2026）：平均灵敏度 <span class="s">≤8d√n</span>。</p>
+<p>★ 「A counterexample to the quadratic sensitivity conjecture」（族 132，2026）：<span class="s">bs(f)≥s(f)<sup>α</sup></span>（<span class="s">α&gt;2</span>）。</p>
+<p>★ 「The Courtade–Kumar and Hellinger conjectures」（族 119，2026）：单坐标在翻转噪声下保留最多互信息。</p>
+<p>★ 「The Euclidean plane is not five-colorable」（族 158）与「Borsuk's conjecture fails in dimension nine」（族 156，2026）：区分数下界。</p>
 </div>

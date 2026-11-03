@@ -161,6 +161,32 @@
 
 <p>于是“同一个形式”这句话有一个精确的限度：<b>形式相同，但定义域的有界性不同，结论就不同。</b>把图上的直觉搬到流形上，第一个撞墙的地方就是这里。</p>
 
+<h3 id="sec12-14b">12.14b　区分与二次型合在一处：一个已证的样本</h3>
+
+<p>本章到目前为止的五个实例，都是“同一个形式在不同领域里的五个副本”。但这样一个陈述始终缺一环：<b>本书把“区分”与“二次型”并列为两个原语，却没有任何一条定理把两样东西放到同一个陈述里。</b>它们要么分开出现（第 7—10 章讲区分，第 11—12 章讲形式），要么一个只是另一个的载体。缺的这一环，在 2026 年的一支结果里有一个现成的样本。</p>
+
+<p><b>构造。</b>取标准高斯测度 <span class="s">γ</span>，取 <span class="s">R<sup>d</sup></span> 的一个有限可测划分 <span class="s">A=(A<sub>1</sub>,…,A<sub>k</sub>)</span>（这就是“区分”），对每个格取未归一化的一阶矩 <span class="s">z(A<sub>i</sub>)=∫<sub>A<sub>i</sub></sub>x dγ</span>，令</p>
+<div class="eq"><span class="body">F(A) = Σ<sub>i</sub> ‖z(A<sub>i</sub>)‖<sup>2</sup></span><span class="num">(12.3)</span></div>
+
+<p><span class="s">F</span> 是一个<b>二次型</b>：它以划分的格心向量为变量，是这些向量的平方和。<b>区分在输入，二次型在输出。</b></p>
+
+<p><b>定理 12.3（任意维数、任意格数）。</b>对一切 <span class="s">d,k</span>，任何有限可测划分满足</p>
+<div class="eq"><span class="body">F(A) ≤ 9/(8π)</span><span class="num">(12.4)</span></div>
+
+<p>且当 <span class="s">d≥2, k≥3</span> 时，这个界由<b>三个 <span class="s">2π/3</span> 的平面扇区</b>（再乘上正交的欧氏因子）达到；多给标签不加分，额外格可以空着。〔B／乙〕</p>
+
+<p><b>为什么它是本章缺的那一环。</b>三点。</p>
+
+<ul>
+<li><b>它把两个原语放进同一句话。</b>左边是划分（区分），右边是二次型，而且常数是闭式、极值构造显式。这不是类比——<b>它是一个可以拿 <span class="s">d=2,k=3</span> 手算一遍的不等式</b>（每格一阶矩长 <span class="s">√3/(2√(2π))</span>，三格平方和为 <span class="s">9/(8π)</span>）。</li>
+<li><b>极值划分的形态是“由线性泛函生成”。</b>极值处每一格几乎处处等于“<span class="s">⟨z<sub>i</sub>,x⟩</span> 取得最大的锥”。也就是说：<b>最优的区分不是搜出来的，而是取有限个线性函数的 argmax 自动得到的。</b>这正是第 7 章那台生成机器的<b>带最优性证明的版本</b>。</li>
+<li><b>常数与维数无关。</b><span class="s">9/(8π)</span> 在 <span class="s">d=2</span> 定下后对所有 <span class="s">d</span> 成立。这正是第 1.10 节所说“结构常数”的三个理由之一：<b>维数无关</b>。</li>
+</ul>
+
+<p><b>限度的声明。</b>式 (12.3) 的二次型作用在<b>格心向量</b>上，不是本书第 11 章的 <span class="s">Q(u)=B(u,u)</span>；两者<b>形状相同，对象不同</b>。所以这一节只能说明“区分与二次型可以合在一句话里，而且有已证的样本”，不能说明“它就是本书那个形式”。按第 3 章的分级，这一条是 <b>B 级（框架层）</b>，不是 A 级。</p>
+
+<p><b>对第 12 章那笔成本的修正。</b>第 1.9 节的式 (1.1) 曾把这笔统一的收益算成 <span class="s">Δ=0</span>（“新命题 3 条、丢 2 条、加 1 条前提”）。现在可以把 <span class="s">n<sub>new</sub></span> 加上一条：<b>“区分 + 二次型”有现成的极值定理可用</b>。代价仍是一个：需要一个测度（本例是高斯）。这笔记账仍不改变结论（<span class="s">Δ</span> 仍接近 0），但它把“新命题”从“可望”变成“可引”。</p>
+
 <h3 id="sec12-15">12.15　本章小结</h3>
 
 <p>五个实例满足同一组公理（12.1），零空间的含义是它们真正的共同点。至此第二个赌注的前半段兑现：语言层面确实只有一个形式。下一章把这个形式的三套工具摆开。</p>
@@ -174,4 +200,7 @@
 <p>Horn, R. A., &amp; Johnson, C. R. (1985). Matrix Analysis. Cambridge University Press.</p>
 <p>Parlett, B. N. (1998). The Symmetric Eigenvalue Problem. SIAM.</p>
 <p>Godsil, C., &amp; Royle, G. (2001). Algebraic Graph Theory. Springer.</p>
+<p class="refh">本章新增引用（B 级：未同行评议的预印本）</p>
+<p>★ 「The Gaussian propeller bound in every dimension」（族 096，2026）：12.14b 的定理与极值构造。</p>
+<p>★ 「A four-dimensional counterexample to Borel rigidity」（族 320）与「Lipschitz equivalence without linear isomorphism」（族 324，2026）：弱不变量不分开、强不变量分开。</p>
 </div>

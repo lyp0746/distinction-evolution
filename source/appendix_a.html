@@ -90,10 +90,12 @@
 
 <h3 id="seca12">A.12　定理 18.4、19.1、19.2 的证明细节</h3>
 
-<p><b>命题 18.4（正则族的夹逼）。</b>设 <span class="s">G</span> 为 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，<span class="s">γ=λ<sub>2</sub></span>。则有正谱间隙的族满足 <span class="s">2≤liminf R≤2d/γ</span>。</p>
+<p><b>命题 18.4（正则族的夹逼）。</b>设 <span class="s">G</span> 为 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，<span class="s">γ=λ<sub>2</sub></span>。则有正谱间隙的族满足 <span class="s">(d+2√(d−1))/(d−2√(d−1))≤liminf R≤2d/γ</span>。</p>
 
-<p><b>证明。</b>上界：由 Gershgorin，<span class="s">λ<sub>n</sub>≤2d</span>，故 <span class="s">R=λ<sub>n</sub>/γ≤2d/γ</span>。下界：对 <span class="s">d</span>-正则族，邻接矩阵第二特征值满足 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>（Alon–Boppana，Nilli 1991）。由 <span class="s">L=dI−A</span> 得 <span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span>。于是
-<span class="s">R≥2d/(d−2√(d−1)+o(1))</span>，其极限为 <span class="s">2d/(d−2√(d−1))→2</span>（<span class="s">d→∞</span>），且对每个 <span class="s">d≥3</span> 该值 <span class="s">≥2</span>。<span class="s">∎</span></p>
+<p><b>证明。</b>上界：由 Gershgorin，<span class="s">λ<sub>n</sub>≤2d</span>，故 <span class="s">R=λ<sub>n</sub>/γ≤2d/γ</span>。下界：对 <span class="s">d</span>-正则族，邻接矩阵两端都有 Alon–Boppana 型结论（Nilli 1991）：<span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span> 且 <span class="s">λ<sub>min</sub>(A)≤−2√(d−1)+o(1)</span>。由 <span class="s">L=dI−A</span> 得 <span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span> 与 <span class="s">λ<sub>n</sub>(L)=d−λ<sub>min</sub>(A)≥d+2√(d−1)−o(1)</span>，相除得
+<span class="s">R≥(d+2√(d−1))/(d−2√(d−1))−o(1)</span>，该值对每个 <span class="s">d≥3</span> 均 <span class="s">≥1</span>，且 <span class="s">d→∞</span> 时 <span class="s">→1</span>。<span class="s">∎</span></p>
+
+<p><b>二分与非二分必须分开。</b>下界里的分子若误写成 <span class="s">2d</span>，就等于假设 <span class="s">λ<sub>min</sub>(A)=−d</span>，而这只对二分图成立。正确读法：二分的正则族下界是 <span class="s">2d/(d−2√(d−1))→2</span>；非二分族是 <span class="s">(d+2√(d−1))/(d−2√(d−1))→1</span>。随机 <span class="s">d</span>-正则图几乎必然非二分，取低的那条；确定性非二分 Ramanujan 图在每个固定度上都存在（第 18 章文献），把低的那条实到底。</p>
 
 <p>注意下界是<b>族的渐近命题</b>：单个有限图的 <span class="s">R</span> 可以任意大（例如很长的路，只要不是正则族）。这就是第 18.5b 节里“环面看似违反夹逼”的解释——环面族没有正谱间隙。</p>
 

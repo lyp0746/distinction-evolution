@@ -1,73 +1,71 @@
 {
-  "title": "区分的语言：区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限 / The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit",
-  "description": "<p><b>中文摘要。</b>本书的贡献是一次归并。作者初稿把框架写成三个原语——区分、曲率、演化；进一步的分析把它们收敛为两个更基本的词：区分与对称双线性形式（二次型）。「曲率」是形式谱的一个侧写，「演化」是形式谱上的线性 ODE。归并之后，语言更简洁、也更一般：协方差、Hessian、图拉普拉斯、内积、黎曼度量都是同一个结构的实例，谱定理、变分原理、极化恒等式是它自带的三套工具。本书因此从“一个数学框架”转为一套语言描述：以“区分”为线索，把不同领域里重复出现的同一件事写成可描述、可对照的语言。全书唯一完全严格的部分是图拉普拉斯二次型的谱分析——两阶段相变定理，临界耦合由拉普拉斯谱决定，可证明、可计算、可复现；本书明确它是标准数学（换形式），不是新理论。它还报告两次“换形式”的推广：辛推广给出可计算的阻尼波动方程相变，酉推广新意有限。评价这套语言的标准与理论不同：不是“今天证了多少定理”，而是它是否被采用、是否压缩了记号、是否让跨领域迁移变得可读（第 26.4.1 节）。卷首《总纲　现实中不存在无限》把这套语言的地基写在最前面：无限只作为极限，不作为现实系统的属性；有限的分辨率预算，是 1/3 缺口与两阶段相变共同的起点。</p>\n<p><b>核心主张。</b>区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限。本书不把「区分的语言」写成一本无所不包的概论，而是把一个问题做深：一个有限的东西，怎样一边保持结构，一边还能变化。</p>\n<p><b>结构与证据。</b>5 部分、25 章、275 页、附录 A–F、34 幅图；每章保留证据分级（A/B/C 与甲/乙/丙）与可证伪登记，失败与撤回写在正文，不放进脚注。</p>\n<p><b>本版修订（2026-11-02）。</b>统一书名与副题、统一版式与页码；附录收束为 A–F；旧版残留的 DOI、系列计数与错字订正；本版以概念 DOI 归档，版本 DOI 指向 2026-11-02 这一版。</p>\n<p><b>诚实纪律。</b>结论强度不超过证据强度；能算的给出数，不能算的写明「判不了」；每一条硬约束都写清谁在承担代价，以及这条限制使什么成为可能。</p>\n<p><b>边界。</b>本书给坐标与判据，不给判决；它不替代领域专家的材料，也不把类比写成定理。具体边界见各章末与附录的登记簿。</p>\n<p><b>版本信息。</b>2026-11-02，275 页，25 章，附录 A–F；内容 CC BY 4.0，代码 MIT。</p>\n<p><b>Abstract.</b> The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book does not attempt an all-encompassing survey; it works one problem through: how does something finite keep its structure while still being able to change? It is organised in 5 parts and 25 chapters, with appendices A–F and 34 figures; every chapter keeps its evidence grades (A/B/C) and falsifiability register, and reports failures and retractions in the body.</p>\n<p><b>Core thesis.</b> How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book offers coordinates and criteria, not verdicts.</p>\n<p><b>Structure and evidence.</b> 5 parts, 25 chapters, 275 pages, appendices A–F, 34 figures. The apparatus is open: data, scripts and registers are in the repository; the prose keeps a single visible grade per claim rather than hedging every clause.</p>\n<p><b>This edition (2026-11-02).</b> Title and subtitle unified; layout and folios unified; appendices consolidated to A–F; residual DOI, series-count and typographic errors corrected; the concept DOI is stable and the version DOI points to this edition.</p>\n<p><b>Discipline.</b> Conclusion strength does not exceed evidence strength; what can be computed is computed, what cannot is marked as undecidable; every hard constraint names who pays for it and what it makes possible.</p>\n<p><b>Boundaries.</b> The book gives coordinates and criteria, not verdicts; it does not replace field expertise, and it does not dress an analogy as a theorem. See the chapter ends and the register appendices for specific limits.</p>\n<p><b>Edition.</b> 2026-11-02, 275 pages, 25 chapters, appendices A–F; content CC BY 4.0, code MIT.</p>",
-  "creators": [
-    {
-      "name": "李毅芃",
-      "affiliation": "独立研究者 / Independent Researcher"
-    }
-  ],
-  "keywords": [
-    "区分的语言",
-    "grammar of distinction",
-    "区分",
-    "distinction",
-    "对称双线性形式",
-    "symmetric bilinear form",
-    "二次型",
-    "quadratic form",
-    "谱定理",
-    "spectral theorem",
-    "图拉普拉斯",
-    "graph Laplacian",
-    "两阶段相变",
-    "two-stage transition",
-    "局部先于全局",
-    "local precedes global",
-    "语言规范",
-    "language norm",
-    "可证伪性",
-    "falsifiability"
-  ],
-  "subjects": [
-    {
-      "term": "Linear Algebra and Quadratic Forms",
-      "scheme": "custom"
-    },
-    {
-      "term": "Spectral Graph Theory",
-      "scheme": "custom"
-    },
-    {
-      "term": "Category Theory",
-      "scheme": "custom"
-    },
-    {
-      "term": "Type Theory",
-      "scheme": "custom"
-    },
-    {
-      "term": "Mathematical Unification",
-      "scheme": "custom"
-    },
-    {
-      "term": "Philosophy of Science",
-      "scheme": "custom"
-    }
-  ],
-  "notes": "学术专著/读本。2026-11-02，275 页，25 章，附录 A–F。",
-  "license": "CC-BY-4.0",
-  "upload_type": "publication",
-  "publication_type": "book",
-  "language": "zho",
-  "access_right": "open",
-  "publication_date": "2026-11-02",
-  "related_identifiers": [
-    {
-      "identifier": "https://github.com/lyp0746/distinction-evolution",
-      "relation": "isSupplementedBy",
-      "scheme": "url"
-    }
-  ],
-  "version": "2026-11-02"
+ "title": "区分的语言：区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限 / The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit",
+ "description": "<p><b>中文摘要。</b>本书的贡献是一次归并。作者初稿把框架写成三个原语——区分、曲率、演化；进一步的分析把它们收敛为两个更基本的词：区分与对称双线性形式（二次型）。「曲率」是形式谱的一个侧写，「演化」是形式谱上的线性 ODE。归并之后，语言更简洁、也更一般：协方差、Hessian、图拉普拉斯、内积、黎曼度量都是同一个结构的实例，谱定理、变分原理、极化恒等式是它自带的三套工具。本书因此从“一个数学框架”转为一套语言描述：以“区分”为线索，把不同领域里重复出现的同一件事写成可描述、可对照的语言。全书唯一完全严格的部分是图拉普拉斯二次型的谱分析——两阶段相变定理，临界耦合由拉普拉斯谱决定，可证明、可计算、可复现；本书明确它是标准数学（换形式），不是新理论。它还报告两次“换形式”的推广：辛推广给出可计算的阻尼波动方程相变，酉推广新意有限。评价这套语言的标准与理论不同：不是“今天证了多少定理”，而是它是否被采用、是否压缩了记号、是否让跨领域迁移变得可读（第 26.4.1 节）。卷首《总纲　现实中不存在无限》把这套语言的地基写在最前面：无限只作为极限，不作为现实系统的属性；有限的分辨率预算，是 1/3 缺口与两阶段相变共同的起点。</p>\n<p><b>核心主张。</b>区分如何生成空间、形式与谱——七条定理、三十六个领域与一次连续极限。本书不把「区分的语言」写成一本无所不包的概论，而是把一个问题做深：一个有限的东西，怎样一边保持结构，一边还能变化。</p>\n<p><b>结构与证据。</b>5 部分、25 章、275 页、附录 A–F、34 幅图；每章保留证据分级（A/B/C 与甲/乙/丙）与可证伪登记，失败与撤回写在正文，不放进脚注。</p>\n<p><b>本版修订（2026-11-02）。</b>统一书名与副题、统一版式与页码；附录收束为 A–F；旧版残留的 DOI、系列计数与错字订正；本版以概念 DOI 归档，版本 DOI 指向 2026-11-02 这一版。</p>\n<p><b>诚实纪律。</b>结论强度不超过证据强度；能算的给出数，不能算的写明「判不了」；每一条硬约束都写清谁在承担代价，以及这条限制使什么成为可能。</p>\n<p><b>边界。</b>本书给坐标与判据，不给判决；它不替代领域专家的材料，也不把类比写成定理。具体边界见各章末与附录的登记簿。</p>\n<p><b>版本信息。</b>2026-11-02，275 页，25 章，附录 A–F；内容 CC BY 4.0，代码 MIT。</p>\n<p><b>Abstract.</b> The Language of Distinction: How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book does not attempt an all-encompassing survey; it works one problem through: how does something finite keep its structure while still being able to change? It is organised in 5 parts and 25 chapters, with appendices A–F and 34 figures; every chapter keeps its evidence grades (A/B/C) and falsifiability register, and reports failures and retractions in the body.</p>\n<p><b>Core thesis.</b> How Distinctions Generate Space, Form and Spectrum: Seven Theorems, Thirty-Six Domains, and One Continuum Limit. The book offers coordinates and criteria, not verdicts.</p>\n<p><b>Structure and evidence.</b> 5 parts, 25 chapters, 275 pages, appendices A–F, 34 figures. The apparatus is open: data, scripts and registers are in the repository; the prose keeps a single visible grade per claim rather than hedging every clause.</p>\n<p><b>This edition (2026-11-02).</b> Title and subtitle unified; layout and folios unified; appendices consolidated to A–F; residual DOI, series-count and typographic errors corrected; the concept DOI is stable and the version DOI points to this edition.</p>\n<p><b>Discipline.</b> Conclusion strength does not exceed evidence strength; what can be computed is computed, what cannot is marked as undecidable; every hard constraint names who pays for it and what it makes possible.</p>\n<p><b>Boundaries.</b> The book gives coordinates and criteria, not verdicts; it does not replace field expertise, and it does not dress an analogy as a theorem. See the chapter ends and the register appendices for specific limits.</p>\n<p><b>Edition.</b> 2026-11-02, 275 pages, 25 chapters, appendices A–F; content CC BY 4.0, code MIT.</p>",
+ "creators": [
+  {
+   "name": "李毅芃",
+   "affiliation": "独立研究者 / Independent Researcher"
+  }
+ ],
+ "keywords": [
+  "区分的语言",
+  "区分",
+  "对称双线性形式",
+  "二次型",
+  "谱定理",
+  "图拉普拉斯",
+  "两阶段相变",
+  "局部先于全局",
+  "语言规范",
+  "分辨率维数",
+  "宏观维数",
+  "平均维数",
+  "熵维数",
+  "畸变",
+  "区分数",
+  "度量嵌入",
+  "F 轴（有限性分级）",
+  "可证伪登记簿"
+ ],
+ "subjects": [
+  {
+   "term": "Linear Algebra and Quadratic Forms",
+   "scheme": "custom"
+  },
+  {
+   "term": "Spectral Graph Theory",
+   "scheme": "custom"
+  },
+  {
+   "term": "Category Theory",
+   "scheme": "custom"
+  },
+  {
+   "term": "Type Theory",
+   "scheme": "custom"
+  },
+  {
+   "term": "Mathematical Unification",
+   "scheme": "custom"
+  },
+  {
+   "term": "Philosophy of Science",
+   "scheme": "custom"
+  }
+ ],
+ "notes": "学术专著/读本。2026-11-02，275 页，25 章，附录 A–F。",
+ "license": "CC-BY-4.0",
+ "upload_type": "publication",
+ "publication_type": "book",
+ "language": "zho",
+ "access_right": "open",
+ "publication_date": "2026-11-04",
+ "related_identifiers": [
+  {
+   "identifier": "https://github.com/lyp0746/distinction-evolution",
+   "relation": "isSupplementedBy",
+   "scheme": "url"
+  }
+ ],
+ "version": "2026-11-04"
 }

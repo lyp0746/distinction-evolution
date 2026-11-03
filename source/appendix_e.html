@@ -16,6 +16,7 @@
 <tr><td class="l">R2</td><td class="l">“谱刻画结构”</td><td class="l">构造同谱不同构图</td><td class="l">出局：6 顶点两图（18.5、B.4）</td></tr>
 <tr><td class="l">R3</td><td class="l">“离散与连续只差一个常数”</td><td class="l"><span class="s">R</span> 是否随分辨率收敛</td><td class="l">出局：<span class="s">R∼n²</span> 发散（19.1）</td></tr>
 <tr><td class="l">R4</td><td class="l">“曲率可以写成谱的一侧”</td><td class="l">局部信息是否保留</td><td class="l">部分出局：整体恒等式成立、局部丢失（2.5）</td></tr>
+<tr><td class="l">R5</td><td class="l">“正则族的 R 下界是 <span class="s">2d/(d−2√(d−1))</span>”</td><td class="l">非二分族上 <span class="s">λ<sub>n</sub></span> 能否达到 <span class="s">2d</span></td><td class="l">更正：只有二分图取 <span class="s">2d</span>；非二分族的下界是 <span class="s">(d+2√(d−1))/(d−2√(d−1))</span>，<span class="s">d→∞</span> 时趋于 1（2026-11-04；18.6、A.12、B.13、登记簿 G10）</td></tr>
 </table>
 
 <h3>D.3　未执行</h3>
@@ -35,7 +36,7 @@
 <p>六行校验脚本足以核对整本登记簿：<b>①</b> 每行七列；<b>②</b> <span class="s">status∈{成立,出局,未执行}</span>；<b>③</b> <span class="s">出局</span>行必须非空 <span class="s">result</span>；<b>④</b> <span class="s">hash_prev</span> 等于上一行的哈希；<b>⑤</b> <span class="s">date</span> 不早于 <span class="s">criterion</span> 的登记日；<b>⑥</b> 行数不减（append-only）。</p>
 
 <table class="nat">
-<tr><th class="l">状态</th><th class="l">条数</th><th class="l">本版变化</th><th class="l">判据是否写明</th></tr>
+<tr><th class="l">状态</th><th class="l">条数</th><th class="l">变化</th><th class="l">判据是否写明</th></tr>
 <tr><td class="l">出局</td><td class="l">4</td><td class="l">无（R1—R4 保持）</td><td class="l">是</td></tr>
 <tr><td class="l">成立</td><td class="l">0</td><td class="l">无</td><td class="l">—</td></tr>
 <tr><td class="l">未执行</td><td class="l">5</td><td class="l">新增 O5（随机几何图的 R 缩放）</td><td class="l">是</td></tr>
