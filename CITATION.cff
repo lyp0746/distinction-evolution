@@ -15,10 +15,10 @@ authors:
 date-released: 2026-11-04
 version: "2026-11-04"
 license: CC-BY-4.0
-doi: 10.5281/zenodo.23924794
+doi: 10.5281/zenodo.23930312
 concept-doi: 10.5281/zenodo.23345012
 repository-code: "https://github.com/lyp0746/distinction-evolution"
-url: "https://doi.org/10.5281/zenodo.23924794"
+url: "https://doi.org/10.5281/zenodo.23930312"
 keywords:
   - "分辨率维数"
   - "宏观维数"
