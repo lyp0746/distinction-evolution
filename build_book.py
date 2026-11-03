@@ -606,3 +606,14 @@ if __name__ == "__main__":
                 out = build(book, parts, ereader=ereader, pagemap=newpm)
                 print_pdf(out)
             stamp_folios(pdf)
+    # 目录必须能跳：Chrome 把锚点写成“页面底部”的命名目标，这里改写成 GOTO
+    try:
+        import importlib.util
+        _fp = os.path.join(HERE, "scripts", "fix_pdf_links.py")
+        if os.path.exists(_fp):
+            _spec = importlib.util.spec_from_file_location("fix_pdf_links", _fp)
+            _mod = importlib.util.module_from_spec(_spec)
+            _spec.loader.exec_module(_mod)
+            _mod.fix(os.path.join(OUTPUT, "book-ereader.pdf" if ereader else "book.pdf"))
+    except Exception as _e:
+        print("  [links] 修复失败：", _e)
