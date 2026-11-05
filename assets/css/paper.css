@@ -214,3 +214,19 @@ h1.part-title{
 .part-intro p{ margin:0 0 .5em; text-indent:2em; }
 
 /* v4: nature-benchmark */
+
+
+/* ---- 章前扉页 ---- */
+.chapter-opener{break-before:page;break-after:page;height:235mm;padding:26mm 8mm 0;box-sizing:border-box;}
+.co-kicker{font-family:Arial,sans-serif;font-size:8pt;letter-spacing:3px;color:#b8862f;}
+.co-num{font-family:"Times New Roman",serif;font-size:54pt;line-height:1;color:#e7e0d0;margin:6mm 0 2mm;}
+.co-title{break-before:auto;font-family:"Microsoft YaHei","SimHei",sans-serif;font-size:22pt;font-weight:600;color:#1f1f1f;border:0;padding:0;margin:0 0 10mm;line-height:1.35;}
+.co-quote{font-size:12.5pt;line-height:2;color:#3a3a3a;border-left:2.5pt solid #b8862f;padding-left:6mm;margin:0 0 12mm;font-style:italic;}
+.co-map span{display:block;font-size:9pt;letter-spacing:2px;color:#888;margin-bottom:3mm;}
+.co-map ol{margin:0;padding-left:5mm;font-size:9.6pt;line-height:1.8;color:#444;}
+.co-map li{margin:0 0 1.2mm;}
+
+
+/* 部分导语独立成页 */
+.part-intro-page{break-before:page;break-after:page;padding:34mm 12mm 0;box-sizing:border-box;min-height:235mm;}
+.part-intro-page .part-intro{max-width:132mm;margin:0 auto;color:#2b2b2b;font-size:12pt;line-height:1.9;}

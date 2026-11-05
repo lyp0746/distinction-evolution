@@ -367,10 +367,42 @@ def build_part_page(part, idx=1, total=1):
             f'<div class="part-body">'
             f'<div class="part-kicker">PART {idx:02d} / {total:02d}</div>'
             f'<h1 class="part-title">{title}</h1>'
+            f'</div></div>'
+            f'<div class="part-intro-page">'
             f'<div class="part-intro">{_part_para(intro)}</div>'
-            f'</div></div>')
+            f'</div>')
 
 
+
+
+def build_chapter_opener(ch):
+    """章前扉页：章号、题记（取自本章开篇场景）、本章结构。"""
+    f = os.path.join(SOURCE, ch.get("file", ""))
+    if not os.path.exists(f):
+        return ""
+    raw = open(f, encoding="utf-8").read()
+    import re as _re
+    m = _re.search(r'<p class="lead"[^>]*>(.*?)</p>', raw, _re.S)
+    quote = ""
+    if m:
+        t = _re.sub(r"<[^>]+>", "", m.group(1)).strip()
+        # 取带 <b> 的那一句；没有就取开头
+        b = _re.search(r"<b>(.*?)</b>", m.group(1), _re.S)
+        if b:
+            quote = _re.sub(r"<[^>]+>", "", b.group(1)).strip()
+        else:
+            quote = t.split("。")[0] + "。"
+    if len(quote) > 90:
+        quote = quote[:88] + "……"
+    secs = [x for x in ch.get("sections", []) if not x.startswith(str(ch.get("no")) + "　") or True]
+    items = "".join(f"<li>{x}</li>" for x in secs[:12])
+    return (f'<div class="chapter-opener">'
+            f'<div class="co-kicker">CHAPTER {int(ch["no"]):02d}</div>'
+            f'<div class="co-num">{ch["no"]}</div>'
+            f'<div class="co-title">{ch["title"]}</div>'
+            f'<div class="co-quote">“{quote}”</div>'
+            f'<div class="co-map"><span>本章结构</span><ol>{items}</ol></div>'
+            f'</div>')
 
 def build_part_summary(part):
     """部分小结：最硬的一条、它依赖的假设、下一部分为什么从这里开始。"""
@@ -400,6 +432,7 @@ def build(book, parts, ereader=False, pagemap=None):
                 if os.path.exists(f):
                     with open(f, encoding="utf-8") as fh:
                         body = fh.read()
+                    blocks.append(build_chapter_opener(ch))
                     blocks.append(f'<div id="ch{ch["no"]}">{body}</div>')
                     written.append(ch["no"])
         blocks.append(build_part_summary(part))
