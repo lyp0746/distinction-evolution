@@ -65,7 +65,7 @@
    },
    {
     "no": "4",
-    "title": "五个看起来像统一的反例",
+    "title": "八种看起来像统一的反例",
     "file": "ch04.html",
     "written": true,
     "sections": [
@@ -259,7 +259,7 @@
    },
    {
     "no": "13",
-    "title": "三套工具：极化、谱、变分",
+    "title": "四套工具：极化、谱、变分、外微分",
     "file": "ch13.html",
     "written": true,
     "sections": [
@@ -360,7 +360,7 @@
    },
    {
     "no": "18",
-    "title": "解锁序与谱各向异性 R=λₙ/λ₂",
+    "title": "解锁序与谱各向异性 R=λn/λ2",
     "file": "ch18.html",
     "written": true,
     "sections": [
@@ -402,7 +402,7 @@
    },
    {
     "no": "20",
-    "title": "连续的谱：Weyl 密度与没有 λₙ 的世界",
+    "title": "连续的谱：Weyl 密度与没有 λn 的世界",
     "file": "ch20.html",
     "written": true,
     "sections": [
