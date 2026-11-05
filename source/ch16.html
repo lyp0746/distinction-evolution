@@ -10,7 +10,9 @@
 
 <p>更重要的是，图上的“区分”有直接对应物：<b>一个顶点能否与另一个顶点区分，取决于扩散模式是否落在它上面。</b>这句话在第 6—10 章只是语言，在这里变成一个方程。</p>
 
-<h3 id="sec16-2">16.2　区分强度与演化方程</h3>
+
+
+<p><b>本章的路线。</b>本章从“为什么从图开始”说起，先写区分强度与演化方程，再谱分解出临界耦合；然后给定理、三个隐含前提与加权推广，最后用非对称反例、扰动估计与 Lyapunov 谱说明临界值的稳与不稳。</p><h3 id="sec16-2">16.2　区分强度与演化方程</h3>
 
 <div class="define"><span class="bt">定义 16.1　图上的区分演化</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>，顶点 <span class="s">v</span> 上的区分强度为 <span class="s">D<sub>v</sub>(t)∈ℝ</span>。演化方程为
@@ -93,8 +95,8 @@
 
 <div class="box"><p><b>重述。</b>系统的 Lyapunov 谱随耦合 <span class="s">β</span> 整体平移；第一个变号的是最高频模式（<span class="s">β<sub>1</sub></span>），最后变号的是最低非平凡模式（<span class="s">β<sub>2</sub></span>）。<b>中间相＝“部分指数为正、部分为负”的区间；相变＝Lyapunov 谱的符号结构改变。</b></p></div>
 
-<img class="fig" src="assets/svg/fig-lyapunov-spectrum.svg" alt="图 16.2　相变即 Lyapunov 谱符号改变">
-<div class="cap"><b>图 16.2　Lyapunov 谱与相变</b>　每根柱子是一条模式；红为正（分离增长），绿为负（分离衰减）。<span class="s">β</span> 增大等价于整排柱子上移，最先越过零线的是最右边（最高频）的那根。</div>
+<img class="fig" src="assets/svg/fig-lyapunov-spectrum.svg" alt="图 16.1　相变即 Lyapunov 谱符号改变">
+<div class="cap"><b>图 16.1　Lyapunov 谱与相变</b>　每根柱子是一条模式；红为正（分离增长），绿为负（分离衰减）。<span class="s">β</span> 增大等价于整排柱子上移，最先越过零线的是最右边（最高频）的那根。</div>
 
 <p>这个重述有三个用处。<b>一，把“区分”与“混沌”接上：</b>正 Lyapunov 指数就是“区分被放大”的速率，第 21 章的“混沌”条目应当以它作判据，而不是以“看起来乱”作判据。<b>二，给出可核对的量：</b>给定 <span class="s">β</span> 算符号，就得到解锁序（第 18 章）。<b>三，划出边界：</b>线性系统的 Lyapunov 谱与初值无关，因此<b>线性系统不可能有混沌</b>——混沌要求指数随轨道变化，也就是要求非线性。</p>
 
@@ -116,11 +118,11 @@
 
 <p>结论：<b>权重不均匀会同时抬高两个临界值，但抬高的比例不同，于是 R 下降。</b>这提示一个可检验的猜想：<b>权重的异质性降低相变的相对宽度</b>——与“度数异质性提高 <span class="s">R</span>”（第 18 章）方向相反。两条合起来说明 <span class="s">R</span> 对“哪种异质性”敏感，而对“异质性的量”不敏感。</p>
 
-<img class="fig" src="assets/svg/fig-weighted-path.svg" alt="图 16.3　权重异质性与 R">
-<div class="cap"><b>图 16.3　权重异质性与 R</b>　10 点路，把中间一条边的权重从 1 倍加到 100 倍：两个临界值同时抬高，但 λ₂ 抬得更快，于是 R 下降。</div>
+<img class="fig" src="assets/svg/fig-weighted-path.svg" alt="图 16.2　权重异质性与 R">
+<div class="cap"><b>图 16.2　权重异质性与 R</b>　10 点路，把中间一条边的权重从 1 倍加到 100 倍：两个临界值同时抬高，但 λ₂ 抬得更快，于是 R 下降。</div>
 <div class="box"><p><strong>读法：</strong>10 点路，把中间一条边的权重从 1 倍加到 100 倍：两个临界值同时抬高，但 λ₂ 抬得更快，于是 R 下降。</p></div>
-<img class="fig" src="assets/svg/fig-weighted-sweep.svg" alt="图 16.4　权重集中的扫描">
-<div class="cap"><b>图 16.4　权重集中的扫描</b>　10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</div>
+<img class="fig" src="assets/svg/fig-weighted-sweep.svg" alt="图 16.3　权重集中的扫描">
+<div class="cap"><b>图 16.3　权重集中的扫描</b>　10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</div>
 <div class="box"><p><strong>读法：</strong>10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</p></div>
 <h3 id="sec16-12">16.12　本章小结</h3>
 

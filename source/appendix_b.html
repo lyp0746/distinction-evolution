@@ -65,7 +65,7 @@ for n in (10, 20, 40, 80):
     print(n, round(R(lap(N, E)), 1), round(8/np.pi**2*n*n, 1))</pre>
 <p>输出与表 B.2 一致。这段代码是本书全部“硬核数字”的最小复现路径。</p>
 
-<h3 id="secb6">B.6　十九个图的谱与 R（实算）</h3>
+<h3 id="secB-6">B.6　十九个图的谱与 R（实算）</h3>
 <p>下表全部由 <code>analysis/figures_rewrite.py</code> 的同一段代码算出，未手抄。最后一列是谱的不同取值个数，用来判断谱的“离散程度”：完全图只有一个非零值，网格与环面的取值个数随规模增长。</p>
 <table class="nat">
 <tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th><th class="l">谱不同值数</th></tr>
@@ -89,7 +89,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">环面 4×4</td><td class="l">16</td><td class="l">2.0000</td><td class="l">8.0000</td><td class="l">4.000</td><td class="l">5</td></tr>
 <tr><td class="l">环面 6×6</td><td class="l">36</td><td class="l">1.0000</td><td class="l">8.0000</td><td class="l">8.000</td><td class="l">9</td></tr>
 </table>
-<h3 id="secb7">B.7　谱方差量 κ 的实测</h3>
+<h3 id="secB-7">B.7　谱方差量 κ 的实测</h3>
 <p>κ=½Var(λ)。注意它与 R 的行为相反：<b>κ 有统一上界（因为 0≤λ≤2Δ），而 R 无界。</b>这条对照是附录 D 中 R4 的数值依据。</p>
 <table class="nat"><tr><th class="l">图</th><th class="l">Var(λ)</th><th class="l">κ=½Var</th><th class="l">R</th></tr>
 <tr><td class="l">K_8</td><td class="l">7.0000</td><td class="l">3.5000</td><td class="l">1.000</td></tr>
@@ -100,7 +100,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">网格 12×12</td><td class="l">3.9444</td><td class="l">1.9722</td><td class="l">115.391</td></tr>
 <tr><td class="l">环面 6×6</td><td class="l">4.0000</td><td class="l">2.0000</td><td class="l">8.000</td></tr>
 </table>
-<h3 id="secb8">B.8　Lyapunov 谱随耦合的符号变化</h3>
+<h3 id="secB-8">B.8　Lyapunov 谱随耦合的符号变化</h3>
 <p>取 Petersen 图（λₙ=5、λ₂=2），α=1。表中每格是 μ_k=βλ_k−α 的符号（+/−），可以看到 <b>β 跨过 0.2 时最高频先变正，跨过 0.5 时最低非平凡才变正</b>——这就是定理 17.1 的表格版。</p>
 <table class="nat"><tr><th class="l">β</th><th class="l">λₙ=5</th><th class="l">λ=3</th><th class="l">λ₂=2</th><th class="l">已解锁</th></tr>
 <tr><td class="l">0.10</td><td class="l">−</td><td class="l">−</td><td class="l">−</td><td class="l">0</td></tr>
@@ -111,7 +111,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">0.51</td><td class="l">+</td><td class="l">+</td><td class="l">+</td><td class="l">3</td></tr>
 <tr><td class="l">0.80</td><td class="l">+</td><td class="l">+</td><td class="l">+</td><td class="l">3</td></tr>
 </table>
-<h3 id="secb9">B.9　网格与环面的收敛（扩展表）</h3>
+<h3 id="secB-9">B.9　网格与环面的收敛（扩展表）</h3>
 <table class="nat"><tr><th class="l">n</th><th class="l">网格 R</th><th class="l">(8/π²)n²</th><th class="l">环面 R</th><th class="l">(2/π²)n²</th><th class="l">λ₂(网格)/h²</th></tr>
 <tr><td class="l">6</td><td class="l">27.9</td><td class="l">29.2</td><td class="l">8.00</td><td class="l">7.3</td><td class="l">9.6462</td></tr>
 <tr><td class="l">8</td><td class="l">50.5</td><td class="l">51.9</td><td class="l">13.66</td><td class="l">13.0</td><td class="l">9.7434</td></tr>
@@ -125,7 +125,7 @@ for n in (10, 20, 40, 80):
 </table>
 <p>最后一列单调上升趋近 π²=9.8696；两族 R 的比值稳定在 4 附近（第 19.3b 节解释了这个 4 的来源）。</p>
 
-<h3 id="secb10">B.10　三张补充数据表</h3>
+<h3 id="secB-10">B.10　三张补充数据表</h3>
 
 <table class="nat">
 <tr><th class="l">图</th><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th><th class="l">κ=½Var</th></tr>
@@ -155,7 +155,7 @@ for n in (10, 20, 40, 80):
 </table>
 <p>误差按 <span class="s">n<sup>−2</sup></span> 衰减（每翻倍约降 4 倍），与定理 19.1 的 <span class="s">1+O(n<sup>−2</sup>)</span> 一致。</p>
 
-<h3 id="secb11">B.11　全部树（n=6—10）的谱各向异性</h3>
+<h3 id="secB-11">B.11　全部树（n=6—10）的谱各向异性</h3>
 <p>下表列出 <span class="s">n=6—10</span> 的全部无标号树共 193 棵，逐棵给出度序列、<span class="s">λ<sub>2</sub></span>、<span class="s">λ<sub>n</sub></span> 与 <span class="s">R</span>。由 <code>networkx.nonisomorphic_trees</code> 生成，未做抽样。</p>
 <table class="nat">
 <tr><th class="l">n</th><th class="l">度序列</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th></tr>
@@ -355,7 +355,7 @@ for n in (10, 20, 40, 80):
 </table>
 <p><b>读法：</b>同一 <span class="s">n</span> 下 <span class="s">R</span> 的跨度很大（例如 <span class="s">n=10</span> 从十几到几十），而度序列重复的树可以有不同的 <span class="s">R</span>——这再次说明 <span class="s">R</span> 不由度数分布决定，而由全局的谱间隙决定（第 18.8 节）。</p>
 
-<h3 id="secb12">B.12　全部 11 点树（235 棵）的 R</h3>
+<h3 id="secB-12">B.12　全部 11 点树（235 棵）的 R</h3>
 <p>与 B.11 同法生成。<span class="s">R</span> 的极差在同一 <span class="s">n</span> 内已接近 3 倍，说明“规模”不决定“相变宽度”。</p>
 <table class="nat"><tr><th class="l">度序列</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th></tr>
 <tr><td class="l">2,2,2,2,2,2,2,2,2,1,1</td><td class="l">0.0810</td><td class="l">3.9190</td><td class="l">48.37</td></tr>
@@ -594,7 +594,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">9,2,1,1,1,1,1,1,1,1,1</td><td class="l">0.4297</td><td class="l">10.0140</td><td class="l">23.30</td></tr>
 <tr><td class="l">10,1,1,1,1,1,1,1,1,1,1</td><td class="l">1.0000</td><td class="l">11.0000</td><td class="l">11.00</td></tr>
 </table>
-<h3 id="secb13">B.13　随机正则图的 R（每格 5 个样本）</h3>
+<h3 id="secB-13">B.13　随机正则图的 R（每格 5 个样本）</h3>
 <p>正则图族的 <span class="s">R</span> 应在个位数且与 <span class="s">n</span> 无关（命题 18.4）。表里 <span class="s">d</span> 越大 <span class="s">R</span> 越小，与<b>非二分</b>下界 <span class="s">(d+2√(d−1))/(d−2√(d−1))</span> 的趋势一致（随机 <span class="s">d</span>-正则图几乎必然非二分；二分族的下界才是 <span class="s">2d/(d−2√(d−1))</span>，约为前者的两倍）。</p>
 <table class="nat"><tr><th class="l">d</th><th class="l">n</th><th class="l">R 均值</th><th class="l">标准差</th></tr>
 <tr><td class="l">3</td><td class="l">20</td><td class="l">16.68</td><td class="l">5.79</td></tr>
@@ -608,7 +608,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">8</td><td class="l">20</td><td class="l">2.54</td><td class="l">0.16</td></tr>
 <tr><td class="l">8</td><td class="l">40</td><td class="l">3.50</td><td class="l">0.19</td></tr>
 </table>
-<h3 id="secb14">B.14　Petersen 图的 Lyapunov 谱随 β（α=1）</h3>
+<h3 id="secB-14">B.14　Petersen 图的 Lyapunov 谱随 β（α=1）</h3>
 <p><span class="s">β=0.2</span> 时最高频刚变正（<span class="s">β<sub>1</sub>=0.2</span>），<span class="s">β=0.5</span> 时最低非平凡才变正（<span class="s">β<sub>2</sub>=0.5</span>）——与表 16.1 的两个临界耦合一致。</p>
 <table class="nat"><tr><th class="l">β</th><th class="l">正指数个数</th><th class="l">μ_max</th><th class="l">μ_min</th></tr>
 <tr><td class="l">0.10</td><td class="l">0</td><td class="l">-0.50</td><td class="l">-1.00</td></tr>
@@ -619,7 +619,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">0.55</td><td class="l">9</td><td class="l">+1.75</td><td class="l">-1.00</td></tr>
 <tr><td class="l">1.00</td><td class="l">9</td><td class="l">+4.00</td><td class="l">-1.00</td></tr>
 </table>
-<h3 id="secb15">B.15　连续极限的三检验（闭式）</h3>
+<h3 id="secB-15">B.15　连续极限的三检验（闭式）</h3>
 <p>三个量分别对应“低谱收敛”“R 发散”“高谱不缩放”：<span class="s">λ<sub>2</sub>h<sup>−2</sup>→π²</span>、<span class="s">R∝n²</span>、<span class="s">λ<sub>n</sub>→8</span>。</p>
 <table class="nat"><tr><th class="l">n</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th><th class="l">λ₂/h²</th></tr>
 <tr><td class="l">10</td><td class="l">0.097887</td><td class="l">7.8042</td><td class="l">79.7</td><td class="l">9.7887</td></tr>
@@ -629,7 +629,7 @@ for n in (10, 20, 40, 80):
 <tr><td class="l">160</td><td class="l">0.000386</td><td class="l">7.9992</td><td class="l">20749.2</td><td class="l">9.8693</td></tr>
 </table>
 
-<h3 id="secb16">B.16　数值实现的六个坑（附规避写法）</h3>
+<h3 id="secB-16">B.16　数值实现的六个坑（附规避写法）</h3>
 
 <p>附录 B 的全部数字由 numpy 现算。实际动手时会撞到六个坑，逐个给规避写法。</p>
 
@@ -647,7 +647,7 @@ for n in (10, 20, 40, 80):
 
 <p>规避写法都很短，但必须写：<b>本书表 18.1 与表 19.1 的每个数字都过这六关</b>，任何读者按同一写法应得同一结果（容差 <span class="s">10<sup>−6</sup></span>）。若你的结果与本书差得多，先查这六个坑，再怀疑结论。</p>
 
-<h3 id="secb17">B.17　全部 12 点树（551 棵）的谱各向异性</h3>
+<h3 id="secB-17">B.17　全部 12 点树（551 棵）的谱各向异性</h3>
 <p>与 B.11／B.12 同法生成，未抽样。<span class="s">R</span> 在同一 <span class="s">n</span> 内的极差超过 10 倍，而 <span class="s">n</span> 增加一倍时 <span class="s">R</span> 的典型值也仅上升数倍——这再次说明「规模」不是 <span class="s">R</span> 的主因，<b>形状（谱间隙）才是</b>。</p>
 <table class="nat">
 <tr><th class="l">度序列</th><th class="l">λ₂</th><th class="l">λₙ</th><th class="l">R</th></tr>

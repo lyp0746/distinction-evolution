@@ -8,7 +8,9 @@
 
 <p>“A 和 B 像”这句话里藏着两份东西：<b>差</b>（两个对象之间的差异）与<b>权重</b>（每个方向的差异有多重要）。二次型的好处是把两份分开写：<span class="s">Q(u)=½Σ<sub>ij</sub>A<sub>ij</sub>u<sub>i</sub>u<sub>j</sub></span>，<span class="s">u</span> 是差，<span class="s">A</span> 是权重。五个领域的差别，全在“<span class="s">u</span> 是什么”与“<span class="s">A</span> 从哪来”。</p>
 
-<h3 id="sec12-2">12.2　五个实例</h3>
+
+
+<p><b>本章的路线。</b>本章先把“像”分成可表示与可解释两份，再列五个实例与共同公理；中段给翻译规则与三条边界，末段用零空间、柯西–施瓦茨与秩把“统一到底统一了什么”落到可算的量上。</p><h3 id="sec12-2">12.2　五个实例</h3>
 
 <table class="nat">
 <tr><th class="l">领域</th><th class="l">对象 <span class="s">u</span></th><th class="l">形式 <span class="s">Q(u)</span></th><th class="l">权重的来源</th><th class="l">“零”意味着</th></tr>
@@ -20,7 +22,7 @@
 </table>
 <div class="cap"><b>表 12.1　五个实例</b>　列“零意味着”是全部钥匙：五个领域对“零”的解释不同，但零空间的结构同构。</div>
 
-<h3 id="sec12-3">12.3　定理：五个实例的共同公理</h3>
+<h3 id="sec12-3">12.3　定理与翻译规则</h3>
 
 <p><b>定理 12.1。</b>上表五个实例都满足：<span class="s">B</span> 对称、双线性；<span class="s">Q(u)≥0</span>；<span class="s">Q(u)=0 ⇔ u</span> 属于某个子空间 <span class="s">N</span>（零空间）；在商空间 <span class="s">V/N</span> 上 <span class="s">Q</span> 正定。</p>
 
@@ -28,17 +30,15 @@
 
 <p>证明里最值得看的是图论那一行：<b>零空间的维数等于连通分支的个数。</b>这一句话在后面会变成“零特征值的重数”，再变成“系统被切成几块”。五个领域之所以能被同一个形式承载，是因为它们的零空间都有直接的组合含义。</p>
 
-<h3 id="sec12-4">12.4　翻译规则</h3>
-
 <p>两个领域之间要真的“同一个结构”，必须能双向翻译。举一例：统计学里的“主成分”与图论里的“低频模式”是同一条翻译规则的两个名字——都把 <span class="s">u</span> 按特征值从小到大排，前几个方向是“慢变”，后几个是“快变”。统计里慢变叫“主成分”，图论里慢变叫“割”，优化里慢变叫“平坦方向”，几何里慢变叫“低曲率方向”。<b>名字不同，序相同。</b></p>
 
-<h3 id="sec12-5">12.5　定理 12.1 的三条边界</h3>
+<h3 id="sec12-4">12.4　定理 12.1 的三条边界</h3>
 
 <p>定理 12.1 看起来强，但它有三条边界必须写在结论里。<b>第一条</b>：它只对“成对比较”成立，三者的联合结构（例如三条边上的三角不等式）不在覆盖范围内。<b>第二条</b>：它要求 <span class="s">Q</span> 是二次的；若某领域的相似度是指数的（例如某些核函数），就不在覆盖范围内，除非先取对数核。<b>第三条</b>：它只保证“同一个公理系统”，不保证“同一个数值尺度”——同一个形式在两组坐标下给出不同的数，这与第 11 章的坐标自由性一致。</p>
 
 <p>三条边界对应三种误读：把两两相同读成整体相同、把核函数读成二次型、把数值当成绝对量。第 21 章的覆盖表里，凡是这三条边界之一被越过的条目，都标了 C 级。</p>
 
-<h3 id="sec12-6">12.6　局部与整体的桥：Cauchy 交错定理</h3>
+<h3 id="sec12-5">12.5　局部与整体的桥：Cauchy 交错定理</h3>
 
 <p>五个领域共用一个形式之后，最实用的一条定理是“局部如何约束整体”。<b>定理 12.2（Cauchy 交错）。</b>设 <span class="s">A</span> 是 <span class="s">n×n</span> 实对称矩阵，<span class="s">A<sub>k</sub></span> 是其 <span class="s">k×k</span> 主子阵，特征值升序分别为 <span class="s">λ<sub>1</sub>≤⋯≤λ<sub>n</sub></span> 与 <span class="s">μ<sub>1</sub>≤⋯≤μ<sub>k</sub></span>，则
 <span class="s">λ<sub>i</sub>≤μ<sub>i</sub>≤λ<sub>i+n−k</sub></span>（<span class="s">i=1,…,k</span>）。</p>
@@ -47,11 +47,13 @@
 
 <p>反过来说，交错定理也解释了为什么“局部信息不能决定整体”：夹逼给出的是区间，不是等式。想知道 <span class="s">λ<sub>2</sub></span> 的确切值，仍然需要全局信息。<b>这就是第 15 章“同调价位”的谱版本。</b></p>
 
-<h3 id="sec12-7">12.7　反例：把相关当因果</h3>
+<h3 id="sec12-6">12.6　反例：把相关当因果</h3>
 
 <p>协方差是这一族里最容易被误读的一个：它对称、双线性、半正定，完全合格，但它不告诉你方向。<span class="s">Σ<sub>12</sub>≠0</span> 只说两条线的波动同向，不说谁引起谁。把 <span class="s">Σ</span> 读成因果，等于把“差多少”读成“因为什么”。这不是数学的漏洞，是使用的越界：形式承载的是比较，不承载机制。</p>
 
-<h3 id="sec12-8">12.8　零空间在五个领域里分别意味着什么</h3>
+<h3 id="sec12-7">12.7　零空间：一个概念，五个领域</h3>
+
+<p>零空间是“区分看不见的东西”。把它在五个领域里的样子并排，才知道统一到底统一了什么。</p>
 
 <p>第 12.2 节的表最后一列值得单独展开，因为它是“同一个形式”这句话的真正内容。零空间是“看不见的方向”，五个领域对它的解释完全不同，但<b>它的维数在五个领域里都是可测的</b>。</p>
 
@@ -65,7 +67,35 @@
 </table>
 <p>四个领域里，零空间维数都直接对应一个“结构数”（不可辨识参数、失效方向、连通分支、退化维数）。<b>这就是“同一个结构”的实证版本：不是五个公式长得像，而是五个领域各自的一个结构数等于同一个线性代数量。</b></p>
 
-<h3 id="sec12-9">12.9　最强的一条统一证据：柯西–施瓦茨不成立的地方</h3>
+<p>第 12.9 节的表可以逐行给出一个具体实例，让“同一个结构”落到可查的对象上。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">具体实例</th><th class="l">零空间维数</th><th class="l">可观测后果</th></tr>
+<tr><td class="l">统计</td><td class="l">身高与臂展（r≈0.95）</td><td class="l">1（近共线）</td><td class="l">回归系数不稳</td></tr>
+<tr><td class="l">优化</td><td class="l">神经网络的一个平坦方向</td><td class="l">大</td><td class="l">二阶方法退化</td></tr>
+<tr><td class="l">图论</td><td class="l">两栋楼的两张关系网</td><td class="l">2</td><td class="l">零特征值重数=2</td></tr>
+<tr><td class="l">线性代数</td><td class="l">一个 3×2 的满秩矩阵</td><td class="l">0</td><td class="l">可逆（左逆）</td></tr>
+<tr><td class="l">几何</td><td class="l">柱面（可展曲面）</td><td class="l">0</td><td class="l">非退化</td></tr>
+</table>
+
+<p>五行的共同点：<b>零空间维数都可以被一个整数读到，而这个整数的变化会立刻改变结论。</b>统计里它让系数不稳，优化里它让二阶方法失效，图论里它让“全局区分”无从谈起。</p>
+
+<p>这张表也给本书的分级一个依据：<b>凡能给出这个整数的领域，条目可以到 B 级以上；给不出的，只能到 C。</b>第 21 章的覆盖表正是按这条标准裁的。</p>
+
+<p>第 12.9 节讲了零空间的含义，这里补三个可算后果。</p>
+
+<table class="nat">
+<tr><th class="l">后果</th><th class="l">公式</th><th class="l">可观测</th></tr>
+<tr><td class="l">参数不可辨识</td><td class="l">零空间维数 <span class="s">k</span> ⇒ 有 <span class="s">k</span> 个方向无法确定</td><td class="l">置信区间发散</td></tr>
+<tr><td class="l">全局区分缺失</td><td class="l"><span class="s">λ<sub>2</sub>=0</span> ⇒ <span class="s">β<sub>2</sub>=∞</span></td><td class="l">无中间相</td></tr>
+<tr><td class="l">数值不稳</td><td class="l">条件数 <span class="s">λ<sub>n</sub>/λ<sub>2</sub>→∞</span></td><td class="l">求逆误差爆炸</td></tr>
+</table>
+
+<p>三条后果是同一件事的三张脸：<b>零空间让某个方向“看不见”，而“看不见”在统计里叫不可辨识，在图论里叫不连通，在数值上叫病态。</b></p>
+
+<p>这条统一性是本书最实用的一条：<b>遇到“结果不稳”时，先查零空间，而不是先换算法。</b>换算法只是在病态问题上换一种崩法；查零空间才知道该加约束还是该商掉。</p>
+
+<h3 id="sec12-8">12.8　最强的一条统一证据：柯西–施瓦茨</h3>
 
 <p>要说“五个领域真的是同一个结构”，最有说服力的证据不是它们长得像，而是<b>同一个不等式在五个领域里用同一句证明成立</b>。</p>
 
@@ -77,7 +107,22 @@
 
 <p>反过来，这条不等式也划出边界：它要求 <span class="s">Q</span> 半正定。若 <span class="s">Q</span> 不定（闵可夫斯基），不等式反向成为“逆柯西–施瓦茨”，这正是相对论里“因果不等号”的来源。同一族形式，两种不等号，五种解释——统一到形式，分岔到几何。</p>
 
-<h3 id="sec12-10">12.10　五个领域的“秩”与信息损失</h3>
+<p>同一个不等式，五个领域各算一次，全部可以手算核对。</p>
+
+<table class="nat">
+<tr><th class="l">领域</th><th class="l">算例</th><th class="l">左端</th><th class="l">右端</th></tr>
+<tr><td class="l">统计</td><td class="l">两个标准化变量，<span class="s">ρ=0.6</span></td><td class="l"><span class="s">0.36</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
+<tr><td class="l">线性代数</td><td class="l"><span class="s">u=(1,2)</span>，<span class="s">v=(2,1)</span></td><td class="l"><span class="s">16</span></td><td class="l"><span class="s">5·5=25</span></td></tr>
+<tr><td class="l">图论</td><td class="l"><span class="s">K<sub>3</sub></span> 上 <span class="s">u=(1,−1,0)</span>，<span class="s">v=(0,1,−1)</span></td><td class="l"><span class="s">1</span></td><td class="l"><span class="s">3·3=9</span></td></tr>
+<tr><td class="l">优化</td><td class="l"><span class="s">H=diag(2,8)</span>，<span class="s">u=(1,1)</span>，<span class="s">v=(1,−1)</span></td><td class="l"><span class="s">0</span></td><td class="l"><span class="s">10·10</span></td></tr>
+<tr><td class="l">几何</td><td class="l">平面两向量夹角 60°</td><td class="l"><span class="s">0.25</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
+</table>
+
+<p>五行都成立，且强度不同：<b>统计与几何接近饱和（0.36、0.25），线性代数与图论离界很远（16≤25、1≤9），优化那一行取等号（0≤100）</b>。取等号的情形最有信息量：它意味着两个方向正交（<span class="s">B(u,v)=0</span>），在优化里就是“一个方向曲率大、另一个方向平坦”。</p>
+
+<p>这张表的作用是<b>把“统一”从抽象变成五个可验算的算术题</b>。任何人都能在纸上核完；核完仍不同意“五个领域同一结构”的人，至少知道分歧在哪一步——是符号差、是取等条件，还是“零”的含义。</p>
+
+<h3 id="sec12-9">12.9　五个领域的“秩”与信息损失</h3>
 
 <p>第 12.9 节讲了零空间的含义，这里补一条定量的：<b>五个领域中，二次型的秩决定了多少信息被保留。</b></p>
 
@@ -96,56 +141,8 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>柯西–施瓦茨的三行证明是本章最强的统一证据：同一句判别式论证，在五个领域给出五个不等式。逆向也成立——不定形式下不等式反向，这正是相对论因果不等号。</p></div>
-<h3 id="sec12-11">12.11　五个领域的零空间实例</h3>
 
-<p>第 12.9 节的表可以逐行给出一个具体实例，让“同一个结构”落到可查的对象上。</p>
-
-<table class="nat">
-<tr><th class="l">领域</th><th class="l">具体实例</th><th class="l">零空间维数</th><th class="l">可观测后果</th></tr>
-<tr><td class="l">统计</td><td class="l">身高与臂展（r≈0.95）</td><td class="l">1（近共线）</td><td class="l">回归系数不稳</td></tr>
-<tr><td class="l">优化</td><td class="l">神经网络的一个平坦方向</td><td class="l">大</td><td class="l">二阶方法退化</td></tr>
-<tr><td class="l">图论</td><td class="l">两栋楼的两张关系网</td><td class="l">2</td><td class="l">零特征值重数=2</td></tr>
-<tr><td class="l">线性代数</td><td class="l">一个 3×2 的满秩矩阵</td><td class="l">0</td><td class="l">可逆（左逆）</td></tr>
-<tr><td class="l">几何</td><td class="l">柱面（可展曲面）</td><td class="l">0</td><td class="l">非退化</td></tr>
-</table>
-
-<p>五行的共同点：<b>零空间维数都可以被一个整数读到，而这个整数的变化会立刻改变结论。</b>统计里它让系数不稳，优化里它让二阶方法失效，图论里它让“全局区分”无从谈起。</p>
-
-<p>这张表也给本书的分级一个依据：<b>凡能给出这个整数的领域，条目可以到 B 级以上；给不出的，只能到 C。</b>第 21 章的覆盖表正是按这条标准裁的。</p>
-
-<h3 id="sec12-12">12.12　柯西–施瓦茨的五个数字实例</h3>
-
-<p>同一个不等式，五个领域各算一次，全部可以手算核对。</p>
-
-<table class="nat">
-<tr><th class="l">领域</th><th class="l">算例</th><th class="l">左端</th><th class="l">右端</th></tr>
-<tr><td class="l">统计</td><td class="l">两个标准化变量，<span class="s">ρ=0.6</span></td><td class="l"><span class="s">0.36</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
-<tr><td class="l">线性代数</td><td class="l"><span class="s">u=(1,2)</span>，<span class="s">v=(2,1)</span></td><td class="l"><span class="s">16</span></td><td class="l"><span class="s">5·5=25</span></td></tr>
-<tr><td class="l">图论</td><td class="l"><span class="s">K<sub>3</sub></span> 上 <span class="s">u=(1,−1,0)</span>，<span class="s">v=(0,1,−1)</span></td><td class="l"><span class="s">1</span></td><td class="l"><span class="s">3·3=9</span></td></tr>
-<tr><td class="l">优化</td><td class="l"><span class="s">H=diag(2,8)</span>，<span class="s">u=(1,1)</span>，<span class="s">v=(1,−1)</span></td><td class="l"><span class="s">0</span></td><td class="l"><span class="s">10·10</span></td></tr>
-<tr><td class="l">几何</td><td class="l">平面两向量夹角 60°</td><td class="l"><span class="s">0.25</span></td><td class="l"><span class="s">1·1=1</span></td></tr>
-</table>
-
-<p>五行都成立，且强度不同：<b>统计与几何接近饱和（0.36、0.25），线性代数与图论离界很远（16≤25、1≤9），优化那一行取等号（0≤100）</b>。取等号的情形最有信息量：它意味着两个方向正交（<span class="s">B(u,v)=0</span>），在优化里就是“一个方向曲率大、另一个方向平坦”。</p>
-
-<p>这张表的作用是<b>把“统一”从抽象变成五个可验算的算术题</b>。任何人都能在纸上核完；核完仍不同意“五个领域同一结构”的人，至少知道分歧在哪一步——是符号差、是取等条件，还是“零”的含义。</p>
-
-<h3 id="sec12-13">12.13　零空间维数的三个可算后果</h3>
-
-<p>第 12.9 节讲了零空间的含义，这里补三个可算后果。</p>
-
-<table class="nat">
-<tr><th class="l">后果</th><th class="l">公式</th><th class="l">可观测</th></tr>
-<tr><td class="l">参数不可辨识</td><td class="l">零空间维数 <span class="s">k</span> ⇒ 有 <span class="s">k</span> 个方向无法确定</td><td class="l">置信区间发散</td></tr>
-<tr><td class="l">全局区分缺失</td><td class="l"><span class="s">λ<sub>2</sub>=0</span> ⇒ <span class="s">β<sub>2</sub>=∞</span></td><td class="l">无中间相</td></tr>
-<tr><td class="l">数值不稳</td><td class="l">条件数 <span class="s">λ<sub>n</sub>/λ<sub>2</sub>→∞</span></td><td class="l">求逆误差爆炸</td></tr>
-</table>
-
-<p>三条后果是同一件事的三张脸：<b>零空间让某个方向“看不见”，而“看不见”在统计里叫不可辨识，在图论里叫不连通，在数值上叫病态。</b></p>
-
-<p>这条统一性是本书最实用的一条：<b>遇到“结果不稳”时，先查零空间，而不是先换算法。</b>换算法只是在病态问题上换一种崩法；查零空间才知道该加约束还是该商掉。</p>
-
-<h3 id="sec12-14">12.14　五个领域的“零”与“无穷”</h3>
+<h3 id="sec12-10">12.10　五个领域的“零”与“无穷”</h3>
 
 <p>同一个形式，五个领域对“零”和“无穷”的解释各不相同，而这决定了它们的适用边界。</p>
 
@@ -161,7 +158,7 @@
 
 <p>于是“同一个形式”这句话有一个精确的限度：<b>形式相同，但定义域的有界性不同，结论就不同。</b>把图上的直觉搬到流形上，第一个撞墙的地方就是这里。</p>
 
-<h3 id="sec12-14b">12.14b　区分与二次型合在一处：一个已证的样本</h3>
+<h3 id="sec12-11">12.11　区分与二次型合在一处：一个已证的样本</h3>
 
 <p>本章到目前为止的五个实例，都是“同一个形式在不同领域里的五个副本”。但这样一个陈述始终缺一环：<b>本书把“区分”与“二次型”并列为两个原语，却没有任何一条定理把两样东西放到同一个陈述里。</b>它们要么分开出现（第 7—10 章讲区分，第 11—12 章讲形式），要么一个只是另一个的载体。缺的这一环，在 2026 年的一支结果里有一个现成的样本。</p>
 
@@ -187,13 +184,14 @@
 
 <p><b>对第 12 章那笔成本的修正。</b>第 1.9 节的式 (1.1) 曾把这笔统一的收益算成 <span class="s">Δ=0</span>（“新命题 3 条、丢 2 条、加 1 条前提”）。现在可以把 <span class="s">n<sub>new</sub></span> 加上一条：<b>“区分 + 二次型”有现成的极值定理可用</b>。代价仍是一个：需要一个测度（本例是高斯）。这笔记账仍不改变结论（<span class="s">Δ</span> 仍接近 0），但它把“新命题”从“可望”变成“可引”。</p>
 
-<h3 id="sec12-15">12.15　本章小结</h3>
+<h3 id="sec12-12">12.12　本章小结</h3>
 
 <p>五个实例满足同一组公理（12.1），零空间的含义是它们真正的共同点。至此第二个赌注的前半段兑现：语言层面确实只有一个形式。下一章把这个形式的三套工具摆开。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：五个领域共用一把尺子，但“零”在五个领域里说的是五件不同的事。</p></div>
 
 <h3>12　本章文献（引用与延伸）</h3>
+
 <div class="refs">
 <p class="refh">延伸阅读</p>
 <p>Cauchy, A.-L. (1829). Sur l'équation à l'aide de laquelle on détermine les inégalités séculaires des mouvements des planètes. Exercices de Mathématiques 4.</p>
@@ -201,6 +199,6 @@
 <p>Parlett, B. N. (1998). The Symmetric Eigenvalue Problem. SIAM.</p>
 <p>Godsil, C., &amp; Royle, G. (2001). Algebraic Graph Theory. Springer.</p>
 <p class="refh">本章新增引用（B 级：未同行评议的预印本）</p>
-<p>★ 「The Gaussian propeller bound in every dimension」（族 096，2026）：12.14b 的定理与极值构造。</p>
+<p>★ 「The Gaussian propeller bound in every dimension」（族 096，2026）：12.15 的定理与极值构造。</p>
 <p>★ 「A four-dimensional counterexample to Borel rigidity」（族 320）与「Lipschitz equivalence without linear isomorphism」（族 324，2026）：弱不变量不分开、强不变量分开。</p>
 </div>

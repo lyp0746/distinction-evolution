@@ -1,16 +1,20 @@
-<h2 class="chapter">第13章　三套工具：极化、谱、变分</h2>
+<h2 class="chapter">第13章　四套工具：极化、谱、变分、外微分</h2>
 
-<div class="box box-takeaway"><p><b>本章主张。</b>同一个二次型有三套标准工具：<b>极化</b>把二次型还原成双线性形式；<b>谱</b>把它对角化成一串数；<b>变分</b>把特征值写成极值问题。三套工具各有各的用场，混用会得出错误结论。</p></div>
+<div class="box box-takeaway"><p><b>本章主张。</b>同一个二次型有四套标准工具：<b>极化</b>把二次型还原成双线性形式；<b>谱</b>把它对角化成一串数；<b>变分</b>把特征值写成极值问题；<b>外微分</b>把“边界”本身写成一个算子。前三套处理“同一个空间里的比较”，第四套处理“空间与它的边界之间的传递”。四套工具各有前提，混用会得出错误结论。</p></div>
 
-<p class="lead" data-story="1">木匠的箱子里只有三件工具，他说了一句话：<b>“量长度用卷尺，找平用水准，试装用锤子。你要是拿水准去量长度，别怪尺子。”</b></p>
+<p class="lead" data-story="1">木匠的箱子里只有三件工具，他说了一句话：<b>“量长度用卷尺，找平用水准，试装用锤子。你要是拿水准去量长度，别怪尺子。”</b>后来他接了一个修屋顶的活，才发现还需要第四件：一把能把屋面和屋檐接起来的折尺。</p>
 
-<h3 id="sec13-1">13.1　导论：三把尺子，三个问题</h3>
+<h3 id="sec13-1">13.1　导论：四把尺子，四个问题</h3>
 
-<p>二次型能回答三类问题：两个对象的内积是多少（极化）、系统有哪几个独立模式（谱）、最坏情况下差多少（变分）。三问三具，不能互相替代。本章把它们各自成立的条件写清楚，并指出混用的典型症状。</p>
+<p>第 11—12 章把“区分”写成了一个二次型 <span class="s">Q</span>，并指出五个领域共用它。但一个形式本身不会说话：要知道两个对象的内积，得把它还原成双线性形式；要知道系统有哪几个独立模式，得把它对角化；要给最坏情况定界，得把它写成极值；要把一个区域内的账与边界上的账对上，得换一套对象。四类问题，四套工具。</p>
+
+<p>本章的路线是：先给前三套工具各自的前提与用场（13.2—13.4），再引入第四套——外微分——并说明它为什么不是“另起炉灶”，而是同一个二次型在“边界”上的自然延伸（13.5）；然后用扰动不等式说明谱的稳定性不等于识别力（13.6），用一个同谱反例把这一点钉死（13.7）；最后把四套工具的适用边界、误差来源与数值对应收进一张表（13.8）。</p>
 
 <h3 id="sec13-2">13.2　极化：从二次型回到双线性</h3>
 
 <p>第 11 章的恒等式 <span class="s">B(u,v)=¼[Q(u+v)−Q(u−v)]</span> 是纯代数的，对任何对称双线性形式成立，不需要正定性。它的用途是“把长度知识变成夹角知识”：只要每个向量的 <span class="s">Q</span> 可测，任意两向量的内积就确定了。统计里的“由方差阵还原相关阵”、几何里的“由度量还原角度”，都是这一条。</p>
+
+<p>极化的前提只有一条：<b>平行四边形律</b>。满足它，二次型与双线性形式一一对应；不满足它，还原出来的“内积”不满足双线性，后面的谱与变分全部失效。这条前提看起来弱，其实是四套工具里最容易在应用中悄悄丢掉的一条——只要有人用 <span class="s">L<sub>1</sub></span> 距离或编辑距离做“相似度”，极化就已经不成立了。</p>
 
 <h3 id="sec13-3">13.3　谱：把形式对角化</h3>
 
@@ -18,8 +22,9 @@
 
 <p>它把 <span class="s">Q</span> 写成 <span class="s">½Σλ<sub>k</sub>⟨u,e<sub>k</sub>⟩²</span>：一串数（谱）加一组方向（特征向量）。从此“系统的长期行为”可以逐模式读出：<span class="s">λ<sub>k</sub></span> 大的方向变化快，小的方向变化慢，零的方向不动。第 16—18 章的全部结论都从这一句话来。</p>
 
-<img class="fig" src="assets/svg/fig13-spectrum-thresholds.svg" alt="图 13.1　谱与阈值">
-<div class="cap"><b>图 13.1　谱与阈值</b>　把特征值排在一条轴上，横切一个阈值，就得到“已解锁／未解锁”两组模式。</div>
+<img class="fig" src="assets/svg/fig13-spectrum-thresholds.svg" alt="图 13.1　谱与阈值"><div class="cap"><b>图 13.1　谱与阈值</b>　把特征值排在一条轴上，横切一个阈值，就得到“已解锁／未解锁”两组模式。</div>
+
+<p>同一个谱可以读成三件事，用途不同：读成<b>模式</b>，<span class="s">λ<sub>k</sub></span> 是第 <span class="s">k</span> 个方向解锁的快慢（第 16—18 章）；读成<b>能量</b>，它是该方向偏离的代价（13.4）；读成<b>时间</b>，<span class="s">1/λ<sub>k</sub></span> 是该模式的衰减常数（第 17 章）。三种读法等价，但不能混用：把 <span class="s">1/λ<sub>2</sub></span> 直接当混合时间，会漏掉 <span class="s">log n</span> 因子；把 <span class="s">λ<sub>n</sub></span> 当“最大能量”，会忘掉它依赖尺度。</p>
 
 <h3 id="sec13-4">13.4　变分：Rayleigh 商与 Courant–Fischer</h3>
 
@@ -27,50 +32,26 @@
 <span class="s">λ<sub>k</sub>=min<sub>dim U=k</sub> max<sub>0≠u∈U</sub> ⟨u,Au⟩/⟨u,u⟩</span>，
 且 <span class="s">λ<sub>n</sub>=max<sub>u≠0</sub>⟨u,Au⟩/⟨u,u⟩</span>。</p>
 
-<p>变分写法的好处是它不需要知道特征向量：只要能在某个子空间上算比值，就能给特征值定界。第 18 章的 R 的上下界、第 20 章把离散谱压到连续谱，都靠这一条。</p>
+<p>变分写法的好处是它不需要知道特征向量：只要能在某个子空间上算比值，就能给特征值定界。第 18 章的 <span class="s">R</span> 的上下界、第 20 章把离散谱压到连续谱，都靠这一条。</p>
 
 <table class="nat">
 <tr><th class="l">工具</th><th class="l">回答的问题</th><th class="l">前提</th><th class="l">混用的症状</th></tr>
 <tr><td class="l">极化</td><td class="l">两个对象的内积</td><td class="l">对称双线性</td><td class="l">用它算“最大差”，得到无意义的数</td></tr>
 <tr><td class="l">谱</td><td class="l">有哪些独立模式</td><td class="l">对称（或正规）</td><td class="l">对非对称矩阵用实谱结论</td></tr>
 <tr><td class="l">变分</td><td class="l">极值与界</td><td class="l">对称、可算比值</td><td class="l">用它做唯一性断言</td></tr>
+<tr><td class="l">外微分</td><td class="l">区域内的账与边界上的账</td><td class="l">可定向、有光滑结构</td><td class="l">对不可定向对象套 Stokes</td></tr>
 </table>
-<div class="cap"><b>表 13.1　三套工具的分工</b>　最后一行是被引用最多、也最容易出错的一处：变分给界，不给唯一性。</div>
+<div class="cap"><b>表 13.1　四套工具的分工</b>　最后一行是最容易被忽略的一处：变分给界，不给唯一性；外微分给守恒，不给大小。</div>
 
-<h3 id="sec13-5">13.5　变分写法的两个实用后果</h3>
+<p>变分还有两个实用后果。第一，<b>界可以先算后证</b>：取一个试验子空间给出上界，取对偶（极小极大）给出下界；第 18 章 <span class="s">R</span> 的界就是这样来的。第二，<b>数值方法有理论保证</b>：Ritz 值从上方单调逼近最小特征值，所以粗网格也能给出可靠的方向，只是精度有限。</p>
 
-<p>第一，<b>界可以先算后证</b>：用 Courant–Fischer，取一个试验子空间就能给出 <span class="s">λ<sub>k</sub></span> 的上界；取对偶（极小极大）能给下界。第 18 章的 <span class="s">R</span> 的界（命题 18.3）正是这样来的：<span class="s">λ<sub>n</sub>≤2Δ</span> 由 Gershgorin 给，<span class="s">λ<sub>2</sub>≥4/(n·diam)</span> 由 Fiedler 给。</p>
+<h3 id="sec13-5">13.5　外微分：第四套工具，把边界写成算子</h3>
 
-<p>第二，<b>数值方法有理论保证</b>：变分写法说明“用有限元或网格算最小特征值”是单调逼近的（Ritz 值从上逼近）。这解释了为什么第 19 章的数值表可以用很粗的网格就得到 0.1% 的精度——误差是二阶的，而 <span class="s">λ<sub>2</sub></span> 的 Ritz 值单调下降。</p>
+<p>前三套工具都在同一个空间里做比较。它们回答不了另一类问题：<b>一个区域内部的账，为什么等于它边界上的账？</b>微积分里四个定理——牛顿–莱布尼茨、格林、高斯、斯托克斯——都在回答这个问题。传统讲法把它们当成四个公式，外微分把它们还原成一个。</p>
 
-<h3 id="sec13-6">13.6　扰动不等式：谱对“改一点”有多敏感</h3>
+<p>关键动作是<b>换基本对象</b>。传统微积分把“函数”当主角，把“微分表达式”当配角；外微分反过来，把<b>微分形式</b>当基本对象，函数只是 0-形式。这样，“边界”不再是一个几何名词，而是一个作用在形式上的算子 <span class="s">d</span>。</p>
 
-<p><b>定理 13.3（Weyl 扰动不等式）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
-<span class="s">max<sub>k</sub>|λ<sub>k</sub>(A+E)−λ<sub>k</sub>(A)| ≤ ‖E‖<sub>2</sub></span>。</p>
-
-<p>证明用变分写法：Rayleigh 商的差被 <span class="s">‖E‖</span> 控制，再对 <span class="s">k</span> 维子空间取极值即可。这条不等式是“谱是稳定的”这一直觉的定量版本：<b>改一条边，<span class="s">λ<sub>k</sub></span> 的变化不超过 2（因为 <span class="s">‖E‖<sub>2</sub>≤2</span>）</b>。</p>
-
-<p>但它同时说明谱不能当作“结构指纹”：扰动 2 就可以让 <span class="s">λ₂</span> 完全变样（在 <span class="s">λ₂</span> 本身很小的网格上尤其如此）。<b>稳定性与识别力是两件事</b>，这与第 18.5 节的同谱反例互补：一个是“小扰动不改变谱”，一个是“不同的结构可以有同一个谱”。</p>
-
-<h3 id="sec13-7">13.7　反例：谱相同、结构不同</h3>
-
-<p>谱是整体量，它会丢信息。最干净的例子在第 18.5 节：两棵各有 8 个顶点的树，邻接谱完全相同（<span class="s">±2.3028, ±1.3028, 0×4</span>），度序列一个是 5,2,2,1,1,1,1,1，另一个是 4,4,1,1,1,1,1,1。谱定理给出的每个模式都一样，但两棵树的结构不同。<b>“谱相同”不等于“结构相同”，这是第 2 章所说“分辨率损失”的实例。</b></p>
-
-
-<h3 id="sec13-8">13.8　第四套工具：外微分与一个公式统摄四个积分定理</h3>
-<p>用第 2 章的判据扫描，四个定理的冗余层次如下：</p>
-
-<table class="nat">
-<caption class="cap"><b>表 13.8　四个积分定理的冗余层次</b></caption>
-<tr><th class="l">定理</th><th class="l">左边</th><th class="l">右边</th><th class="l">冗余所在</th></tr>
-<tr><td class="l">牛顿–莱布尼茨</td><td class="l">区间上的 1-形式积分</td><td class="l">0-形式在端点差</td><td class="l">C1 同构证明骨架</td></tr>
-<tr><td class="l">格林</td><td class="l">平面区域上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3 平行语言</td></tr>
-<tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
-<tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
-</table>
-<div class="datasrc"><b>性质：</b>冗余分析表。等级 B／乙（标准数学史共识）。</div><p>压缩的关键动作是<b>改变基本对象</b>。传统微积分把"函数"当作主角，把"微分表达式"当作配角。外微分反过来：把<b>微分形式</b>当作基本对象，函数只是 0-形式。</p>
-
-<div class="define"><span class="bt">定义 13.9　微分形式与外微分</span>
+<div class="define"><span class="bt">定义 13.2　微分形式与外微分</span>
 在光滑流形 <span class="s">M</span> 上，一个 <span class="s">k</span>-形式 <span class="s">ω</span> 是一个反对称的余切张量场。外微分 <span class="s">d</span> 把 <span class="s">k</span>-形式映为 <span class="s">(k+1)</span>-形式，满足：<br>
 （1）<span class="s">d</span> 是线性的；<br>
 （2）对函数 <span class="s">f</span>，<span class="s">df</span> 是普通微分；<br>
@@ -78,103 +59,77 @@
 （4）<span class="s">d² = 0</span>。<br>
 条件（2）—（4）唯一确定 <span class="s">d</span>。</div>
 
-<p>这个定义有两个非凡之处。<b>第一，它把梯度、旋度、散度三个算子统一为同一个 <span class="s">d</span> 在不同维数下的表现。</b>对 0-形式，<span class="s">d</span> 就是梯度；对 1-形式，<span class="s">d</span> 在线性情形给出旋度；对 2-形式，<span class="s">d</span> 给出散度。<b>第二，<span class="s">d²=0</span> 是自动的，不需要单独证明</b>——它是外代数反对称性的直接结果，而传统矢量微积分里 <span class="s">∇×∇f=0</span> 与 <span class="s">∇·(∇×v)=0</span> 是两个需要分别验证的恒等式。［已知］</p><div class="define"><span class="bt">定理 13.10（广义斯托克斯定理）［已知，A／甲］</span>
+<p>这个定义有两个非凡之处。<b>第一，它把梯度、旋度、散度统一为同一个 <span class="s">d</span> 在不同维数下的表现。</b>对 0-形式，<span class="s">d</span> 就是梯度；对 1-形式，<span class="s">d</span> 在线性情形给出旋度；对 2-形式，<span class="s">d</span> 给出散度。<b>第二，<span class="s">d²=0</span> 是自动的</b>——它是外代数反对称性的直接结果，而传统矢量微积分里 <span class="s">∇×∇f=0</span> 与 <span class="s">∇·(∇×v)=0</span> 是两个需要分别验证的恒等式。［已知］</p>
+
+<div class="define"><span class="bt">定理 13.3（广义斯托克斯定理）［已知，A／甲］</span>
 设 <span class="s">M</span> 是带边界 <span class="s">∂M</span> 的紧致可定向光滑 <span class="s">n</span> 维流形，<span class="s">ω</span> 是 <span class="s">M</span> 上的光滑 <span class="s">(n−1)</span>-形式，则
-<div class="eq"><span class="body">∫<sub>M</sub> dω = ∫<sub>∂M</sub> ω</span></div>
+<div class="eq"><span class="body">∫<sub>M</sub> dω = ∫<sub>∂M</sub> ω</span><span class="num">(13.1)</span></div>
 其中 <span class="s">∂M</span> 取诱导定向。</div>
 
-<p>一个公式。所有四个定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。</p>
-
-
-<h3 id="sec13-9">13.9　三套工具与数值方法的对应</h3>
-
-<p>三套工具在数值上各有对应物，这张对照表对实际工作者最有用。</p>
+<p>四个积分定理都是它在不同 <span class="s">n</span> 与不同流形上的实例。表 13.2 把这份冗余写清楚：所谓“四个定理”，其实是同一个证明骨架在四个维数上的投影。</p>
 
 <table class="nat">
-<tr><th class="l">工具</th><th class="l">理论版</th><th class="l">数值版</th><th class="l">误差来源</th></tr>
-<tr><td class="l">极化</td><td class="l">平行四边形律</td><td class="l">内积累加、Gram 矩阵</td><td class="l">浮点相消</td></tr>
-<tr><td class="l">谱</td><td class="l">谱定理</td><td class="l">QR 迭代、Lanczos</td><td class="l">条件数、收敛速度</td></tr>
-<tr><td class="l">变分</td><td class="l">Courant–Fischer</td><td class="l">Ritz 值、子空间迭代</td><td class="l">子空间选择偏差</td></tr>
+<caption class="cap"><b>表 13.2　四个积分定理的冗余层次</b></caption>
+<tr><th class="l">定理</th><th class="l">左边</th><th class="l">右边</th><th class="l">冗余所在</th></tr>
+<tr><td class="l">牛顿–莱布尼茨</td><td class="l">区间上的 1-形式积分</td><td class="l">0-形式在端点差</td><td class="l">C1 同构证明骨架</td></tr>
+<tr><td class="l">格林</td><td class="l">平面区域上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3 平行语言</td></tr>
+<tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
+<tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
 </table>
-<p>最后一列是本书反复强调“可复算”的技术理由：<b>三种误差来源互不相同，因此“数值对上了”不是充分证据。</b>第 19 章表 19.1 的 0.1% 是三种误差叠加后的结果，而不是其中某一种的精度。想知道是哪一种，必须换一种算法再算一遍——这就是附录 B 给出独立代码的原因。</p>
+<div class="datasrc"><b>性质：</b>冗余分析表。等级 B／乙（标准数学史共识）。</div>
 
-<h3 id="sec13-10">13.10　极限情形：极值原理与 Perron–Frobenius</h3>
+<p><b>这一节为什么放在这本书里。</b>因为本书的基本对象在图上就是二次型 <span class="s">Q(u)=u<sup>T</sup>Lu</span>，而 <span class="s">L=B<sup>T</sup>B</span>，其中 <span class="s">B</span> 是关联矩阵。把 <span class="s">B</span> 读成“离散的外微分”，<span class="s">B<sup>T</sup></span> 读成“离散的边界算子”，则 <span class="s">L=B<sup>T</sup>B</span> 正是 Hodge 拉普拉斯在 0-形式上的限制：<b>散度作用在梯度上</b>。于是第 16—18 章的全部谱结论，都可以被读成“离散 Hodge 理论的一个特例”；第 19 章把离散谱压到连续谱时，用的也正是这套 <span class="s">d</span> 与 <span class="s">∂</span> 的对应。外微分不是插进来的一章数学，它是把图上的二次型接到连续几何去的那座桥。</p>
 
-<p>三套工具在“极端情形”下会退化，退化处往往藏着最有用的定理。两例。</p>
+<p>边界也标清楚：本节只用到“光滑、可定向、紧致”这三个前提。离开它们（分形边界、不可定向曲面、带奇点的空间），Stokes 需要另行陈述，不能照搬。第 19 章讨论的正是这种“搬过去但不再精确”的情形。</p>
 
-<p><b>图上的极值原理。</b>若 <span class="s">Lu=0</span>（调和），则 <span class="s">u</span> 在每个连通分支上为常数；若 <span class="s">Lu≥0</span>，则 <span class="s">u</span> 的最大值在边界（度为 1 的顶点或人为指定的边界）取到。这条离散极值原理是第 16 章“零空间＝常数”的另一面，也是数值方法（有限元）稳定性的来源。</p>
+<h3 id="sec13-6">13.6　扰动：谱对“改一点”有多敏感</h3>
 
-<p><b>Perron–Frobenius。</b>若把 <span class="s">L</span> 换成邻接矩阵 <span class="s">A</span>（非负），则最大特征值 <span class="s">ρ(A)</span> 为正、代数重数为 1、对应特征向量可全正。它给出一条与拉普拉斯互补的谱信息：<b>拉普拉斯看“差”，邻接看“量”。</b></p>
+<p><b>定理 13.4（Weyl 扰动不等式）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
+<span class="s">max<sub>k</sub>|λ<sub>k</sub>(A+E)−λ<sub>k</sub>(A)| ≤ ‖E‖<sub>2</sub></span>。</p>
 
-<p>两例的对照说明第 13 章的分工：<b>变分工具处理极值，谱工具处理分解，而“哪个矩阵”决定你看到的是差还是量。</b>本书选拉普拉斯，因为“区分”天然是比较，而比较天然是差。</p>
+<p>证明用变分写法：Rayleigh 商的差被 <span class="s">‖E‖</span> 控制，再对 <span class="s">k</span> 维子空间取极值即可。这条不等式是“谱是稳定的”这一直觉的定量版本：<b>改一条边，<span class="s">λ<sub>k</sub></span> 的变化不超过 2（因为 <span class="s">‖E‖<sub>2</sub>≤2</span>）</b>。</p>
 
+<p>但它同时说明谱不能当作“结构指纹”：扰动 2 就可以让 <span class="s">λ₂</span> 完全变样（在 <span class="s">λ₂</span> 本身很小的网格上尤其如此）。<b>稳定性与识别力是两件事</b>：一个量稳定，说明它不会被小噪声打翻；不说明它能区分不同的结构。下一节给出后者失效的最干净例子。</p>
 
-<div class="box box-expert"><p><strong>【给专家的注】</strong>三套工具的分工可以用一句话记住：极化管「内积」、谱管「分解」、变分管「极值」。混用的典型症状是用变分做唯一性断言——变分只给界，不给唯一。</p></div>
-<h3 id="sec13-11">13.11　三套工具的误差实测</h3>
+<h3 id="sec13-7">13.7　反例：谱相同、结构不同</h3>
 
-<p>三套工具在数值上各有误差来源，用一个小实验就能看清。</p>
+<p>谱是整体量，它会丢信息。最干净的例子在第 18.7 节：两棵各有 8 个顶点的树，邻接谱完全相同（<span class="s">±2.3028, ±1.3028, 0×4</span>），度序列一个是 5,2,2,1,1,1,1,1，另一个是 4,4,1,1,1,1,1,1。谱定理给出的每个模式都一样，但两棵树的结构不同。<b>“谱相同”不等于“结构相同”，这是第 2 章所说“分辨率损失”的实例。</b></p>
 
-<table class="nat">
-<tr><th class="l">工具</th><th class="l">实验</th><th class="l">误差量级</th><th class="l">来源</th></tr>
-<tr><td class="l">极化</td><td class="l">由 <span class="s">Q</span> 还原 <span class="s">B</span>（<span class="s">n=100</span>）</td><td class="l"><span class="s">10<sup>−15</sup></span></td><td class="l">浮点相消（小）</td></tr>
-<tr><td class="l">谱</td><td class="l">Lanczos 求前 5 个特征值（网格 30×30）</td><td class="l"><span class="s">10<sup>−10</sup></span></td><td class="l">Krylov 收敛</td></tr>
-<tr><td class="l">变分</td><td class="l">Ritz 值逼近 <span class="s">λ<sub>2</sub></span>（子空间维数 10）</td><td class="l"><span class="s">10<sup>−2</sup></span></td><td class="l">子空间选择</td></tr>
-</table>
+<p>这个反例的用途不是否定谱，而是给谱定位：<b>谱是“同调价位”的不变量，不是“同构价位”的判据。</b>第 15 章的四个价位在这里第一次显出必要——同一个谱可以把两个不同构的对象放在同一个等价类里，这既是对谱的赞美（它抓住了不变量），也是对谱的警告（它抓不住结构）。</p>
 
-<p>三行的差别说明一件事：<b>“数值对上了”不是充分证据。</b>极化几乎精确（它是代数恒等式），谱依赖迭代收敛，变分依赖子空间质量。第 19 章表 19.1 的 0.1% 精度是三者叠加的结果；想知道误差来自哪一项，必须换一种算法再算一次。</p>
+<h3 id="sec13-8">13.8　工具的选择：边界、误差与数值对应</h3>
 
-<p>这也是本书把附录 B 的代码写成“独立实现”的原因：<b>独立实现能把“算法误差”与“模型误差”分开</b>，而这是单一实现做不到的。</p>
-
-<h3 id="sec13-12">13.12　三套工具的适用边界表</h3>
-
-<p>三套工具各自在什么条件下失效，写成一张表，便于现场查。</p>
+<p>四套工具各自在什么条件下失效，写成一张表，便于现场查。</p>
 
 <table class="nat">
 <tr><th class="l">工具</th><th class="l">成立条件</th><th class="l">失效症状</th><th class="l">替代</th></tr>
 <tr><td class="l">极化</td><td class="l">对称双线性</td><td class="l">平行四边形律不成立（如 L1 距离）</td><td class="l">用凸分析的对偶</td></tr>
 <tr><td class="l">谱</td><td class="l">对称或正规</td><td class="l">非正规矩阵出现复谱、特征向量不正交</td><td class="l">Schur 分解 / 奇异值</td></tr>
 <tr><td class="l">变分</td><td class="l">可算 Rayleigh 商</td><td class="l">约束集非凸时极值不稳定</td><td class="l">KKT + 全局搜索</td></tr>
+<tr><td class="l">外微分</td><td class="l">光滑、可定向</td><td class="l">边界不可定向或带奇点</td><td class="l">分层 Stokes / 电流（currents）</td></tr>
 </table>
+<div class="cap"><b>表 13.3　四套工具的适用边界</b>　最后一列是重点：工具失效不是终点，而是换工具的信号。</div>
 
-<p>三种失效各有一个著名的实例：<b>极化</b>在 L1 距离上失效（出租车几何不满足平行四边形律）；<b>谱</b>在有向图上失效（第 16.5 节的反例）；<b>变分</b>在非凸约束上失效（局部极小不等于全局）。</p>
+<p>三种失效各有一个著名的实例：<b>极化</b>在 L1 距离上失效（出租车几何不满足平行四边形律）；<b>谱</b>在有向图上失效（第 16.7 节的反例）；<b>变分</b>在非凸约束上失效（局部极小不等于全局）。本书只在无向图上用拉普拉斯，正因为这三个条件在无向图上同时成立；一旦离开图（有向、加权、非正规），就要照这张表换工具，而不是硬套结论。</p>
 
-<p>这张表的价值在“替代”一列：<b>工具失效不是终点，而是换工具的信号。</b>本书只在图上用拉普拉斯，正因为图上的三个条件是齐的；一旦离开图（例如有向、加权、非正规），就要照这张表换工具，而不是硬套结论。</p>
-
-<h3 id="sec13-13">13.13　三套工具与三种误差</h3>
-
-<p>工具与误差一一对应，混用会把误差算错。</p>
+<p>数值上，四套工具也各有对应物，误差量级相差很大：</p>
 
 <table class="nat">
-<tr><th class="l">工具</th><th class="l">误差来源</th><th class="l">量级</th><th class="l">怎么查</th></tr>
-<tr><td class="l">极化</td><td class="l">浮点相消</td><td class="l"><span class="s">10<sup>−15</sup></span></td><td class="l">换精度重算</td></tr>
-<tr><td class="l">谱</td><td class="l">迭代收敛</td><td class="l"><span class="s">10<sup>−10</sup></span></td><td class="l">改初值重算</td></tr>
-<tr><td class="l">变分</td><td class="l">子空间选择</td><td class="l"><span class="s">10<sup>−2</sup></span></td><td class="l">扩大子空间</td></tr>
+<tr><th class="l">工具</th><th class="l">数值版</th><th class="l">误差量级</th><th class="l">来源</th><th class="l">怎么查</th></tr>
+<tr><td class="l">极化</td><td class="l">内积累加、Gram 矩阵</td><td class="l"><span class="s">10<sup>−15</sup></span></td><td class="l">浮点相消</td><td class="l">换精度重算</td></tr>
+<tr><td class="l">谱</td><td class="l">QR 迭代、Lanczos</td><td class="l"><span class="s">10<sup>−10</sup></span></td><td class="l">Krylov 收敛</td><td class="l">改初值重算</td></tr>
+<tr><td class="l">变分</td><td class="l">Ritz 值、子空间迭代</td><td class="l"><span class="s">10<sup>−2</sup></span></td><td class="l">子空间选择</td><td class="l">扩大子空间</td></tr>
+<tr><td class="l">外微分</td><td class="l">有限元、离散 de Rham 复形</td><td class="l">网格依赖</td><td class="l">离散化误差</td><td class="l">加密网格看收敛阶</td></tr>
 </table>
+<div class="cap"><b>表 13.4　四套工具的数值对应与误差</b>　前三行的量级差十三个数量级；若一个结论依赖第三行的精度，用第一行的工具去验它，永远验不出来。</div>
 
-<p>三行的量级差 13 个数量级，这是本书提醒“数值对上了不是充分证据”的算术依据。<b>若一个结论依赖第三行的精度，用第一行的工具去验它，永远验不出来。</b></p>
+<p>这也是本书把附录 B 的代码写成“独立实现”的原因：<b>独立实现能把“算法误差”与“模型误差”分开</b>，而这是单一实现做不到的。第 19 章表 19.1 的 0.1% 是多种误差叠加后的结果，不是其中某一种的精度。</p>
 
-<p>实操建议：<b>先确定要验的量属于哪一套工具，再用同一套工具的高精度版本去核。</b>跨工具核对（例如用变分的结果验证谱的结果）只能发现“差一个数量级以上”的错误，发现不了细微偏差。</p>
+<h3 id="sec13-9">13.9　本章小结</h3>
 
-<h3 id="sec13-14">13.14　谱的三种读法：模式、能量、时间</h3>
+<p>四套工具各有前提：极化只要对称双线性，谱要对称（或正规），变分要可算比值，外微分要光滑可定向。混用会产生四类典型错误。四者不是并列的四把刀，而是一条链：<b>极化把形式还原成内积，谱把内积分解成模式，变分给模式排高低，外微分把模式接到边界上。</b>第 14 章换一个角度：不问形式能算什么，而问“谁能保住这个形式”。</p>
 
-<p>同一个谱，可以读成三件事。三种读法对应三种应用。</p>
-
-<table class="nat">
-<tr><th class="l">读法</th><th class="l">把 <span class="s">λ<sub>k</sub></span> 读成</th><th class="l">得到的结论</th><th class="l">本书用在哪</th></tr>
-<tr><td class="l">模式</td><td class="l">第 <span class="s">k</span> 个独立方向的“快慢”</td><td class="l">解锁序、两阶段</td><td class="l">第 16—18 章</td></tr>
-<tr><td class="l">能量</td><td class="l">该方向上“偏离”的代价</td><td class="l">变分原理、界</td><td class="l">第 13.4 节</td></tr>
-<tr><td class="l">时间</td><td class="l">该模式衰减的时间常数 <span class="s">1/λ<sub>k</sub></span></td><td class="l">混合时间、记忆长度</td><td class="l">第 17.5b 节</td></tr>
-</table>
-
-<p>三种读法等价，但用途不同：<b>做定理用“模式”，做界用“能量”，做估计用“时间”。</b>混用会出两种错：把 <span class="s">1/λ<sub>2</sub></span> 当“混合时间”时忘了它只是数量级（真实混合时间还要乘 <span class="s">log n</span>）；把 <span class="s">λ<sub>n</sub></span> 当“最大能量”时忘了它是尺度依赖的。</p>
-
-<p>给本书的提醒：第 17.5b 节的窗口长度 <span class="s">t<sub>vis</sub></span> 用的是“时间”读法，而第 19 章的 <span class="s">R</span> 用的是“模式”读法。<b>两者不能直接相乘或相除</b>——它们的量纲不同。这条细节写在这里，是为了防止读者把两个公式拼成一个。</p>
-
-<h3 id="sec13-15">13.15　本章小结</h3>
-
-<p>三套工具各有前提：极化只要对称，谱要对称（正规），变分要可算比值。混用会产生四类典型错误。第 14 章换一个角度：不是问形式能算什么，而是问“谁能保住这个形式”。</p>
-
-<div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子各管一件事；拿水准去量长度，错的不是水准。</p></div>
+<div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子、折尺各管一件事；拿水准去量长度，错的不是水准。</p></div>
 
 <h3>13　本章文献（引用与延伸）</h3>
 <div class="refs">
@@ -183,4 +138,6 @@
 <p>Kato, T. (1966). Perturbation Theory for Linear Operators. Springer.</p>
 <p>Bhatia, R. (1997). Matrix Analysis. Springer.</p>
 <p>Tao, T. (2012). Topics in Random Matrix Theory. AMS.</p>
+<p>Arnold, V. I. (1989). Mathematical Methods of Classical Mechanics (2nd ed.). Springer.</p>
+<p>Bott, R., &amp; Tu, L. W. (1982). Differential Forms in Algebraic Topology. Springer.</p>
 </div>

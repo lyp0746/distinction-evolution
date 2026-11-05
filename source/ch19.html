@@ -11,7 +11,9 @@
 <div class="define"><span class="bt">定义 19.1　网格序列</span>
 取单位正方形上的 <span class="s">n×n</span> 网格图 <span class="s">G<sub>n</sub>=P<sub>n</sub>□P<sub>n</sub></span>，格距 <span class="s">h=1/n</span>。称 <span class="s">L<sub>n</sub></span> 为其图拉普拉斯，<span class="s">L<sub>n</sub>/h²</span> 为其“物理”拉普拉斯。</div>
 
-<h3 id="sec19-2">19.2　定理：网格上 R 的闭式</h3>
+
+
+<p><b>本章的路线。</b>本章把分辨率当成变量：先给网格上的闭式与连续侧门槛消失，再解释因子 4 与环面为何不违反夹逼；中段处理 1/3 缺口，末段用三个预言、三种收敛与一套数值协议把可检验性落地。</p><h3 id="sec19-2">19.2　定理：网格上 R 的闭式</h3>
 
 <p><b>定理 19.1。</b>对 <span class="s">G<sub>n</sub>=P<sub>n</sub>□P<sub>n</sub></span>，<span class="s">n≥2</span>：
 <div class="eq"><span class="body">λ<sub>2</sub>=2−2cos(π/n),   λ<sub>n</sub>=8−4cos(π/n)−4cos(π(n−1)/n),   R = λ<sub>n</sub>/λ<sub>2</sub> = (8/π²)n²(1+O(n<sup>−2</sup>))</span><span class="num">(19.1)</span></div></p>
@@ -79,9 +81,10 @@
 <p>换句话说，<span class="s">R</span> 度量的是“局部与全局之间的尺度落差”，不是“系统的大小”。一个巨大的膨胀图可以 <span class="s">R≈2</span>；一个很小的星图可以 <span class="s">R=n</span>。</p>
 
 <h3 id="sec19-8">19.8　1/3 缺口：一个尚未结算的常数</h3>
+
 <img class="fig" src="assets/svg/fig18-gauss-bonnet-factor.svg" alt="Gauss-Bonnet 因子问题">
 
-<div class="cap"><b>图 19.7　因子 1/3 的来源</b>。从热核展开到 Gauss–Bonnet 的推导链：热核第一系数 <span class="s">a₁=R/6</span>（左）；二维标量曲率与高斯曲率的关系 <span class="s">R=2K</span>（中）；代入 <span class="s">∫K=2πχ</span> 得到 <span class="s">∫κ=(1/3)∫K=(2π/3)χ</span>（右）。缺口精确为 3。</div>
+<div class="cap"><b>图 19.3　因子 1/3 的来源</b>。从热核展开到 Gauss–Bonnet 的推导链：热核第一系数 <span class="s">a₁=R/6</span>（左）；二维标量曲率与高斯曲率的关系 <span class="s">R=2K</span>（中）；代入 <span class="s">∫K=2πχ</span> 得到 <span class="s">∫κ=(1/3)∫K=(2π/3)χ</span>（右）。缺口精确为 3。</div>
 
 <p>推导如下（全部为已知数学）：</p>
 
@@ -109,8 +112,8 @@
 <p>但它<b>不是 1/3 的解药</b>，理由很硬。<span class="s">B<sup>T</sup>B</span> 与 <span class="s">BB<sup>T</sup></span> 只在核上不同（非零谱完全一致），因此由 <b>McKean–Singer</b>，<span class="s">X(t)=dim ker Δ₀−dim ker Δ₁=b₀−b₁=χ(G)</span> <b>对一切 <span class="s">t</span> 精确成立</b>（<code>analysis/dirac_mckean_singer.py</code>：K3/C4/C5 给 0、P3 给 1、K4 给 −2、Petersen 给 −5，全部与 <span class="s">χ</span> 一致）。超迹<b>没有短时发散、没有渐近展开、更没有 1/3</b>。</p>
 
 <div class="warning"><span class="bt">警告 19.10　“换 Dirac 算子能消掉 1/3”是同义反复</span>
-常见说法是“改用狄拉克算子后归一化不同，1/3 不再出现”。这是真的，但是空的：<b>超迹里本来就没有 1/3</b>。1/3 出现在<b>标量</b>拉普拉斯（非超迹）热核的常数项 <span class="s">a₁=R/6</span> 中；把标量谱与超迹混为一谈，正是 19.11.1 类型澄清的又一次重演。另需精确：图上给出 χ 的是 <b>de Rham 算子</b>（<span class="s">B</span> 的度数 ±1 部分），不是旋量 Dirac 算子——后者的指标是 <span class="s">Â</span>-亏格，是另一个不变量。<b>谱三元组给 本语言一个正确的数学家园（有限谱三元组 / 离散 de Rham 复形），但它是标准工具，不产生新定理，也不填 1/3。</b>离散→连续的桥是<b>谱收敛</b>——一个真实但独立的研究问题，本书不做。</div><table class="nat">
-<caption class="cap"><b>表 19.12　因子问题的现状清单</b></caption>
+常见说法是“改用狄拉克算子后归一化不同，1/3 不再出现”。这是真的，但是空的：<b>超迹里本来就没有 1/3</b>。1/3 出现在<b>标量</b>拉普拉斯（非超迹）热核的常数项 <span class="s">a₁=R/6</span> 中；把标量谱与超迹混为一谈，正是 第 19.9 节的类型澄清的又一次重演。另需精确：图上给出 χ 的是 <b>de Rham 算子</b>（<span class="s">B</span> 的度数 ±1 部分），不是旋量 Dirac 算子——后者的指标是 <span class="s">Â</span>-亏格，是另一个不变量。<b>谱三元组给 本语言一个正确的数学家园（有限谱三元组 / 离散 de Rham 复形），但它是标准工具，不产生新定理，也不填 1/3。</b>离散→连续的桥是<b>谱收敛</b>——一个真实但独立的研究问题，本书不做。</div><table class="nat">
+<caption class="cap"><b>表 19.2　因子问题的现状清单</b></caption>
 <tr><th class="l">问题</th><th class="l">现状</th><th class="l">证伪条件</th><th class="l">等级</th></tr>
 <tr><td class="l"><span class="s">κ=R/6</span> 是否是正确的谱方差？</td><td class="l">仅局部展开</td><td class="l">若热核展开在边界/非紧情形给出不同系数</td><td class="l">B</td></tr>
 <tr><td class="l">缺口是否为 3？</td><td class="l">在二维精确</td><td class="l">若 <span class="s">R≠2K</span>（高维）则缺口改变</td><td class="l">A（二维）</td></tr>
@@ -125,8 +128,7 @@
 
 <div class="case"><span class="ct">人的尺度</span><p>一位审稿人问：“这个 1/3 到底是深刻，还是你的构造带来的？”作者没有辩解，他花了两年去回答这个问题，最后的答案是“不知道”。<b>1/3 缺口最像科学的地方，是它至今没有被解释清楚，也没有被吹成宇宙常数。</b></p></div>
 
-
-<h3 id="sec19-9">19.9　指数的可检验性：三个可分辨的预言</h3>
+<h3 id="sec19-9">19.9　三个可分辨的预言与三种收敛</h3>
 
 <p>第 19 章的结论给出三个可被数值检验的预言，它们彼此独立，因此可以互相验证：</p>
 
@@ -137,8 +139,6 @@
 </ol>
 
 <p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.4 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
-
-<h3 id="sec19-10">19.10　三种收敛与一个不收敛的量</h3>
 
 <p>“离散收敛到连续”有强弱之分，本书用到三种，区别必须写清。</p>
 
@@ -155,7 +155,10 @@
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>三种收敛（强预解、谱、热核）的强弱次序是单向的：强预解 ⟹ 谱 ⟹ 热核。引用时务必写明是哪一种，否则会出现「收敛了但可观测量的极限不对」这类错误。</p></div>
-<h3 id="sec19-11">19.11　连续极限的三个数值检验</h3>
+
+<h3 id="sec19-10">19.10　连续极限的数值检验与协议</h3>
+
+<p>检验给出数，协议给出别人复算的路径；缺后者，前者只是一张表。</p>
 
 <p>第 19 章的结论可以用三张图/表检验，各自的判据不同。</p>
 
@@ -166,11 +169,9 @@
 <tr><td class="l">高谱不收敛</td><td class="l"><span class="s">λ<sub>n</sub>→8</span>（不随 <span class="s">h</span> 缩放）</td><td class="l">7.8042→7.9969</td></tr>
 </table>
 
-<p>三项里第三项最容易被忽略：<b><span class="s">λ<sub>n</sub></span> 收敛到一个常数，而不是发散。</b>这看起来与“谱无界”矛盾，其实不矛盾——图拉普拉斯近似的是 <span class="s">−h²Δ</span>，不是 <span class="s">−Δ</span>；缩放的差别正是第 19.11 节三种收敛的分水岭。</p>
+<p>三项里第三项最容易被忽略：<b><span class="s">λ<sub>n</sub></span> 收敛到一个常数，而不是发散。</b>这看起来与“谱无界”矛盾，其实不矛盾——图拉普拉斯近似的是 <span class="s">−h²Δ</span>，不是 <span class="s">−Δ</span>；缩放的差别正是第 19.9 节三种收敛的分水岭。</p>
 
 <p>检验的价值在于它们互相独立：<b>若第一项成立而第二项不成立，说明 <span class="s">λ<sub>n</sub></span> 的行为不同（例如权重不均匀）；若第二项成立而第三项不成立，说明缩放搞错了。</b>独立的检验合起来才有排除力，单一的“看起来收敛”没有。</p>
-
-<h3 id="sec19-12">19.12　连续极限的数值协议（可直接执行）</h3>
 
 <p>要把第 19 章的结论在别的族上检验，按五步做即可。</p>
 
@@ -187,13 +188,14 @@
 
 <p>这套协议对随机几何图、渗流团簇、真实网络都适用；只要第 1 步能给出可算谱。<b>协议的价值在于：它把“推向连续”从一句主张变成五步操作。</b></p>
 
-<h3 id="sec19-13">19.13　本章小结</h3>
+<h3 id="sec19-11">19.11　本章小结</h3>
 
 <p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>
 
 <h3>19　本章文献（引用与延伸）</h3>
+
 <div class="refs">
 <p class="refh">本章引用</p>
 <p>★ Belkin, M., &amp; Niyogi, P. (2007). Convergence of Laplacian eigenmaps. Neural Information Processing Systems 19, 129–136.</p>
