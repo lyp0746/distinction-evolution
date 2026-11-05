@@ -16,7 +16,7 @@
 <rect x="252" y="100" width="16" height="160" fill="#3a6ea5" opacity="0.8"/>
 <rect x="278" y="100" width="16" height="160" fill="#3a6ea5" opacity="0.8"/>
 <rect x="304" y="100" width="16" height="160" fill="#3a6ea5" opacity="0.8"/>
-<text x="200" y="300" class="l" text-anchor="middle" fill="#666" font-weight="normal">Petersen 图谱</text>
+<text x="200" y="314" class="l" text-anchor="middle" fill="#666" font-weight="normal">Petersen 图谱</text>
 <line x1="430" y1="260" x2="730" y2="260" class="ax"/>
 <line x1="430" y1="260" x2="430" y2="60" class="ax"/>
 <text x="580.0" y="294" class="l" text-anchor="middle">指标 k</text>
@@ -30,5 +30,5 @@
 <rect x="622" y="200.0" width="16" height="60.0" fill="#b8862f" opacity="0.8"/>
 <rect x="648" y="200.0" width="16" height="60.0" fill="#b8862f" opacity="0.8"/>
 <rect x="674" y="200.0" width="16" height="60.0" fill="#b8862f" opacity="0.8"/>
-<text x="580" y="300" class="l" text-anchor="middle" fill="#666" font-weight="normal">临界耦合（β₁=0.2, β₂=0.5）</text>
+<text x="580" y="314" class="l" text-anchor="middle" fill="#666" font-weight="normal">临界耦合（β₁=0.2, β₂=0.5）</text>
 </svg>

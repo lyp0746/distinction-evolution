@@ -9,10 +9,10 @@
 <text x="228.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">逻辑</text>
 <text x="252.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">κ−</text>
 <text x="276.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">κ0</text>
-<text x="300.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">κ+</text>
-<text x="324.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">无演化</text>
-<text x="348.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">离散</text>
-<text x="372.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">连续</text>
+<text x="292.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="9px">κ+</text>
+<text x="320.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="7.5px">无演化</text>
+<text x="352.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="7.5px">离散</text>
+<text x="384.0" y="62" class="l" text-anchor="middle" fill="#666" font-weight="normal" font-size="7.5px">连续</text>
 <text x="114" y="81" class="l" text-anchor="end" fill="#1a1a1a" font-weight="normal" font-size="9px">图论</text>
 <rect x="120" y="70" width="23" height="14" fill="#ffffff" stroke="#eee" stroke-width="0.5"/>
 <rect x="144" y="70" width="23" height="14" fill="#ffffff" stroke="#eee" stroke-width="0.5"/>

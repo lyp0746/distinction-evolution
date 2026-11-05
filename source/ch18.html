@@ -28,7 +28,7 @@
 <p><b>证明。</b>（⇐）<span class="s">K<sub>n</sub></span> 的谱是 <span class="s">0</span> 与 <span class="s">n</span>（<span class="s">n−1</span> 重）。<br>
 （⇒）设非零谱只有一个值 <span class="s">λ</span>，重数 <span class="s">n−1</span>。由谱分解，<span class="s">L=λ(I−J/n)</span>，其中 <span class="s">J=𝟙𝟙<sup>T</sup></span>（因为特征向量 <span class="s">𝟙/√n</span> 对应 0，其余全对应 <span class="s">λ</span>）。看对角元：<span class="s">L<sub>vv</sub>=λ(1−1/n)=deg(v)</span>，故所有顶点度数相同。看非对角元：<span class="s">L<sub>vw</sub>=−λ/n=−A<sub>vw</sub></span>，即 <span class="s">A<sub>vw</sub>=λ/n</span>。因 <span class="s">A<sub>vw</sub>∈{0,1}</span> 且图有边（连通、<span class="s">n≥2</span>），必得 <span class="s">λ=n</span>；于是每点度数 <span class="s">=n(1−1/n)=n−1</span>，即完全图。<span class="s">∎</span></p>
 
-<p><b>命题 18.3（界）。</b><span class="s">1≤R≤nΔ·diam/2</span>，其中 <span class="s">Δ</span> 是最大度、<span class="s">diam</span> 是直径。〔已知，B／乙：用 Gershgorin 的 <span class="s">λ<sub>n</sub>≤2Δ</span> 与 Fiedler 的 <span class="s">λ<sub>2</sub>≥4/(n·diam)</span>。〕</p>
+<p><b>命题 18.1（界）。</b><span class="s">1≤R≤nΔ·diam/2</span>，其中 <span class="s">Δ</span> 是最大度、<span class="s">diam</span> 是直径。〔已知，B／乙：用 Gershgorin 的 <span class="s">λ<sub>n</sub>≤2Δ</span> 与 Fiedler 的 <span class="s">λ<sub>2</sub>≥4/(n·diam)</span>。〕</p>
 
 <h3 id="sec18-4">18.4　九类图的闭式</h3>
 
@@ -58,7 +58,7 @@
 
 <p>第 18.3 节给的界是 <span class="s">R≤nΔ·diam/2</span>，很松。若把图限制在<b>正则</b>族，可以两面夹住。</p>
 
-<p><b>命题 18.4（正则族的夹逼）。</b>设 <span class="s">G</span> 是 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，谱间隙 <span class="s">γ=λ<sub>2</sub></span>。则</p>
+<p><b>命题 18.2（正则族的夹逼）。</b>设 <span class="s">G</span> 是 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，谱间隙 <span class="s">γ=λ<sub>2</sub></span>。则</p>
 <div class="eq"><span class="body">(d+2√(d−1))/(d−2√(d−1)) ≤ liminf R(G) ≤ 2d/γ</span><span class="num">(18.2)</span></div>
 
 <p><b>依据。</b>上界：<span class="s">λ<sub>n</sub>≤2d</span>（Gershgorin）与 <span class="s">λ<sub>2</sub>=γ</span>，这是<b>上</b>界的来源。下界要动<b>两端</b>：Alon–Boppana 型结论（Nilli 1991）给出 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>，同时在谱的<b>另一端</b>给出 <span class="s">λ<sub>min</sub>(A)≤−2√(d−1)+o(1)</span>。由 <span class="s">L=dI−A</span>，<span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span>，而 <span class="s">λ<sub>n</sub>(L)=d−λ<sub>min</sub>(A)≥d+2√(d−1)−o(1)</span>；两者相除即得 (18.2)。〔已知，B／乙〕</p>
@@ -73,7 +73,7 @@
 <tr><td class="l">网格 <span class="s">P<sub>n</sub>□P<sub>n</sub></span></td><td class="l">否（边界度 2、3）</td><td class="l"><span class="s">∼0.81n²</span></td><td class="l">不适用</td></tr>
 <tr><td class="l">随机 <span class="s">d</span>-正则</td><td class="l">是（几乎必然非二分）</td><td class="l"><span class="s">≈(d+2√(d−1))/(d−2√(d−1))</span></td><td class="l">适用（近 Ramanujan）</td></tr>
 </table>
-<p>表里第一行的“表面矛盾”是真问题：环面是 4-正则，<span class="s">R</span> 却发散，与命题 18.4 冲突。原因在假设——<b>命题 18.4 的下界是“族”的渐近命题</b>（<span class="s">liminf</span>），而环面族的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 减小到 0，恰恰说明它<b>不是</b>膨胀族：它的谱间隙没有正下界。所以命题 18.4 的正确读法是“<b>有正谱间隙的正则族</b>”，缺了这半句，结论就错。这也是一次自检：本章自己的表就能打掉一句漏写前提的话。</p>
+<p>表里第一行的“表面矛盾”是真问题：环面是 4-正则，<span class="s">R</span> 却发散，与命题 18.2 冲突。原因在假设——<b>命题 18.2 的下界是“族”的渐近命题</b>（<span class="s">liminf</span>），而环面族的 <span class="s">λ<sub>2</sub></span> 随 <span class="s">n</span> 减小到 0，恰恰说明它<b>不是</b>膨胀族：它的谱间隙没有正下界。所以命题 18.2 的正确读法是“<b>有正谱间隙的正则族</b>”，缺了这半句，结论就错。这也是一次自检：本章自己的表就能打掉一句漏写前提的话。</p>
 
 <img class="fig" src="assets/svg/fig-spectra-four.svg" alt="图 18.1　四类图的拉普拉斯谱">
 <div class="cap"><b>图 18.1　四类图的谱线</b>　完全图的谱只有一个非零值，环与网格的谱密集，Petersen 图介于两者之间。谱的“形状”直接决定 <span class="s">R</span>。</div>
@@ -107,16 +107,16 @@
 <tr><th class="l">量</th><th class="l">定义</th><th class="l">与 R 的关系</th></tr>
 <tr><td class="l">直径 <span class="s">diam</span></td><td class="l">最长最短路</td><td class="l"><span class="s">λ<sub>2</sub>≥4/(n·diam) ⇒ R≤nΔ·diam/2</span></td></tr>
 <tr><td class="l">Cheeger 常数 <span class="s">h</span></td><td class="l">最小割比（割边数 ÷ 较小一侧顶点数）</td><td class="l"><span class="s">λ<sub>2</sub>/2≤h≤√(2λ<sub>2</sub>) ⇒ R≥λ<sub>n</sub>/√(2λ<sub>2</sub>)</span></td></tr>
-<tr><td class="l">谱间隙 <span class="s">γ</span></td><td class="l"><span class="s">λ<sub>2</sub></span></td><td class="l">正则族：<span class="s">R∈[2, 2d/γ]</span>（命题 18.4）</td></tr>
+<tr><td class="l">谱间隙 <span class="s">γ</span></td><td class="l"><span class="s">λ<sub>2</sub></span></td><td class="l">正则族：<span class="s">R∈[2, 2d/γ]</span>（命题 18.2）</td></tr>
 </table>
 <p>三行给出三种不同的定量直觉：直径给上界（越瘦长 <span class="s">R</span> 越大）、Cheeger 给下界（有瓶颈则 <span class="s">λ<sub>2</sub></span> 小）、谱间隙给正则族的夹逼。<b>三者合起来说明：<span class="s">R</span> 度量的是“瘦长 × 有瓶颈”，不是“规模大”。</b></p>
 
 <h3 id="sec18-9">18.9　六族实测与两条界：一张核对表</h3>
 
-<p>把第 18.4 节的闭式与命题 18.4 的夹逼放在一张表里，逐族核对。</p>
+<p>把第 18.4 节的闭式与命题 18.2 的夹逼放在一张表里，逐族核对。</p>
 
 <table class="nat">
-<tr><th class="l">图族</th><th class="l">实测 R</th><th class="l">下界（命题 18.4）</th><th class="l">上界</th><th class="l">在界内？</th></tr>
+<tr><th class="l">图族</th><th class="l">实测 R</th><th class="l">下界（命题 18.2）</th><th class="l">上界</th><th class="l">在界内？</th></tr>
 <tr><td class="l">K<sub>10</sub></td><td class="l">1.00</td><td class="l">—（d=n−1 退化）</td><td class="l">—</td><td class="l">边界情形</td></tr>
 <tr><td class="l">K<sub>1,9</sub></td><td class="l">10.00</td><td class="l">非正则，不适用</td><td class="l">—</td><td class="l">—</td></tr>
 <tr><td class="l">Petersen（d=3）</td><td class="l">2.50</td><td class="l">2.00</td><td class="l">2d/γ=3/1=3.00</td><td class="l">是</td></tr>
@@ -125,9 +125,9 @@
 <tr><td class="l">网格 10×10</td><td class="l">79.7</td><td class="l">非正则，不适用</td><td class="l">—</td><td class="l">—</td></tr>
 </table>
 
-<p><b>第四行值得单独读</b>：<span class="s">Q<sub>6</sub></span> 是 6-正则，<span class="s">γ=2</span>，上界为 <span class="s">λ<sub>n</sub>/γ=12/2=6</span>，而 <span class="s">R=6</span>，<b>恰好取等</b>。超立方图因此是“夹逼两条界同时达到”的极端例子：<span class="s">λ<sub>n</sub></span> 取到最大（<span class="s">2d</span>），<span class="s">λ<sub>2</sub></span> 取到最小（<span class="s">2</span>）。这也说明命题 18.4 的上界是锐的——不是技术上的松估计。</p>
+<p><b>第四行值得单独读</b>：<span class="s">Q<sub>6</sub></span> 是 6-正则，<span class="s">γ=2</span>，上界为 <span class="s">λ<sub>n</sub>/γ=12/2=6</span>，而 <span class="s">R=6</span>，<b>恰好取等</b>。超立方图因此是“夹逼两条界同时达到”的极端例子：<span class="s">λ<sub>n</sub></span> 取到最大（<span class="s">2d</span>），<span class="s">λ<sub>2</sub></span> 取到最小（<span class="s">2</span>）。这也说明命题 18.2 的上界是锐的——不是技术上的松估计。</p>
 
-<p>把这张表的读法与命题 18.4 的注解连起来，得到一个可用的判断：<b>看到 <span class="s">R</span> 明显超过 <span class="s">2d/γ</span>，先怀疑两件事</b>——图不正则（边界作祟），或谱间隙算错。<span class="s">Q<sub>6</sub></span> 这一行之所以要单列，就是因为它把“取等”与“超界”挨在一起，逼读者去看上界的推导（<span class="s">λ<sub>n</sub>≤2d</span> 来自 Gershgorin，<span class="s">γ</span> 是定义）。</p>
+<p>把这张表的读法与命题 18.2 的注解连起来，得到一个可用的判断：<b>看到 <span class="s">R</span> 明显超过 <span class="s">2d/γ</span>，先怀疑两件事</b>——图不正则（边界作祟），或谱间隙算错。<span class="s">Q<sub>6</sub></span> 这一行之所以要单列，就是因为它把“取等”与“超界”挨在一起，逼读者去看上界的推导（<span class="s">λ<sub>n</sub>≤2d</span> 来自 Gershgorin，<span class="s">γ</span> 是定义）。</p>
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>R 的两条界（2 ≤ R ≤ 2d/γ）只对有正谱间隙的正则族成立。环面是正则的但间隙趋于零，因此不适用——这条自检写在第 18.6 节，是全书的示范：表能打掉漏写前提的话。</p></div>

@@ -12,5 +12,5 @@
 <text x="540" y="90" class="l" text-anchor="start" fill="#009E73" font-weight="700">κ>0</text>
 <text x="540" y="150" class="l" text-anchor="start" fill="#b8862f" font-weight="700">κ=0</text>
 <text x="540" y="220" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">κ&lt;0</text>
-<text x="360" y="300" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">符号决定长期行为：塌缩 / 平衡 / 精细化</text>
+<text x="360" y="314" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">符号决定长期行为：塌缩 / 平衡 / 精细化</text>
 </svg>

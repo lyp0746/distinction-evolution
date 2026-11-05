@@ -10,5 +10,5 @@
 <line x1="80" y1="260" x2="660" y2="260" stroke="#666" stroke-width="1"/>
 <text x="90" y="250" class="l" text-anchor="start" fill="#c94f4f" font-weight="700">d₀→d_c⁺：t*→∞（临界慢化）</text>
 <text x="600" y="90" class="l" text-anchor="end" fill="#666" font-weight="normal">d₀大：t*→0</text>
-<text x="370" y="300" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">t*=(1/α)ln[β(k−1)d₀/(β(k−1)d₀−α)]</text>
+<text x="370" y="314" class="l" text-anchor="middle" fill="#1a1a1a" font-weight="700">t*=(1/α)ln[β(k−1)d₀/(β(k−1)d₀−α)]</text>
 </svg>

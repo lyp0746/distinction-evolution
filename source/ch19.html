@@ -31,7 +31,7 @@
 
 <h3 id="sec19-3">19.3　定理：连续侧第二个门槛消失</h3>
 
-<p><b>定理 19.2（连续退化）。</b>设 <span class="s">M</span> 是紧连通黎曼流形，<span class="s">dim M≥1</span>，Laplace–Beltrami 算子 <span class="s">−Δ</span> 的谱为 <span class="s">0=μ<sub>0</sub>&lt;μ<sub>1</sub>≤μ<sub>2</sub>≤⋯↑∞</span>。则对任意 <span class="s">α&gt;0</span>：<span class="s">β<sub>1</sub>=α/μ<sub>max</sub>=0</span>，<span class="s">β<sub>2</sub>=α/μ<sub>1</sub>&gt;0</span>。于是每个 <span class="s">β∈(0,β<sub>2</sub>)</span> 都处于“中间相”。</p>
+<p><b>定理 19.1（连续退化）。</b>设 <span class="s">M</span> 是紧连通黎曼流形，<span class="s">dim M≥1</span>，Laplace–Beltrami 算子 <span class="s">−Δ</span> 的谱为 <span class="s">0=μ<sub>0</sub>&lt;μ<sub>1</sub>≤μ<sub>2</sub>≤⋯↑∞</span>。则对任意 <span class="s">α&gt;0</span>：<span class="s">β<sub>1</sub>=α/μ<sub>max</sub>=0</span>，<span class="s">β<sub>2</sub>=α/μ<sub>1</sub>&gt;0</span>。于是每个 <span class="s">β∈(0,β<sub>2</sub>)</span> 都处于“中间相”。</p>
 
 <p><b>证明。</b>紧流形上 <span class="s">−Δ</span> 的谱无上界（Weyl 律，见第 20 章），故 <span class="s">μ<sub>max</sub>=∞</span>，<span class="s">β<sub>1</sub>=α/∞=0</span>。对任意 <span class="s">β&gt;0</span>，总存在足够大的 <span class="s">k</span> 使 <span class="s">βμ<sub>k</sub>&gt;α</span>，即总有模式在增长；而 <span class="s">β&lt;α/μ<sub>1</sub></span> 时最低非零模式仍在衰减。<span class="s">∎</span></p>
 
@@ -138,7 +138,7 @@
 <li><b>正则膨胀族 <span class="s">R</span> 有界</b>：随机 4-正则图 <span class="s">R</span> 应在 4 附近，不随 <span class="s">n</span> 增长。</li>
 </ol>
 
-<p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.4 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
+<p>三条预言里，第三条最容易做也最容易错：若在随机正则图上测出 <span class="s">R</span> 随 <span class="s">n</span> 增长，则命题 18.2 或第 19 章的“发散只来自非正则性”这一判断被推翻。附录 B 的代码加上 <code>networkx.random_regular_graph</code> 十行就能做。<b>这正是本书希望的检验方式：不是“你信不信”，而是“十行代码”。</b></p>
 
 <p>“离散收敛到连续”有强弱之分，本书用到三种，区别必须写清。</p>
 

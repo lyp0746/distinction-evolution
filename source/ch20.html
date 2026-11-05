@@ -1,12 +1,12 @@
 <h2 class="chapter">第20章　连续的谱：Weyl 密度与没有 λ<sub>n</sub> 的世界</h2>
 
-<div class="box box-takeaway"><p><b>本章主张。</b>紧流形上没有“最大的那个特征值”，因此第 16—19 章的“两个临界点”结构不能整体搬过去。取而代之的是<b>密度</b>：由 Weyl 律，耦合强度 <span class="s">β</span> 下已解锁的模式数按 <span class="s">(β/α)<sup>d/2</sup></span> 增长（定理 20.1）。另一个可搬过去的是恒等式 <span class="s">κ=½Var(λ)</span>（命题 20.2），因为它是纯代数的。</p></div>
+<div class="box box-takeaway"><p><b>本章主张。</b>紧流形上没有“最大的那个特征值”，因此第 16—19 章的“两个临界点”结构不能整体搬过去。取而代之的是<b>密度</b>：由 Weyl 律，耦合强度 <span class="s">β</span> 下已解锁的模式数按 <span class="s">(β/α)<sup>d/2</sup></span> 增长（定理 20.1）。另一个可搬过去的是恒等式 <span class="s">κ=½Var(λ)</span>（命题 20.1），因为它是纯代数的。</p></div>
 
 <p class="lead" data-story="1">调音师在给一面大鼓调音。有人问：“最高那个音是多少？”他敲了敲鼓面：<b>“没有最高。你敲得越急，出来的音越高，而且越来越高。”</b></p>
 
 <h3 id="sec20-1">20.1　导论：为什么连续侧要换对象</h3>
 
-<p>第 19 章的定理 19.2 已经说明：连续侧 <span class="s">μ<sub>max</sub>=∞</span>，所以 <span class="s">β<sub>1</sub>=0</span>。这不是缺陷，而是压缩的代价：有限图有“最后一个模式”，连续流形没有。要继续在连续侧工作，必须换一个对象——从“两个端点”换成“计数函数”。</p>
+<p>第 19 章的定理 19.1 已经说明：连续侧 <span class="s">μ<sub>max</sub>=∞</span>，所以 <span class="s">β<sub>1</sub>=0</span>。这不是缺陷，而是压缩的代价：有限图有“最后一个模式”，连续流形没有。要继续在连续侧工作，必须换一个对象——从“两个端点”换成“计数函数”。</p>
 
 
 
@@ -30,7 +30,7 @@
 
 <h3 id="sec20-3">20.3　热核与 κ 恒等式</h3>
 
-<p><b>命题 20.2（谱方差恒等式）。</b>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，定义 <span class="s">κ := ½·(d²/dt²)log Z(t)|<sub>t=0</sub></span>。则
+<p><b>命题 20.1（谱方差恒等式）。</b>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，定义 <span class="s">κ := ½·(d²/dt²)log Z(t)|<sub>t=0</sub></span>。则
 <div class="eq"><span class="body">κ = ½ Var(λ) = ½[(1/n)Σλ<sub>k</sub>² − ((1/n)Σλ<sub>k</sub>)²]</span><span class="num">(20.2)</span></div></p>
 
 <p><b>证明。</b><span class="s">Z(0)=n</span>，<span class="s">Z′(0)=−Σλ<sub>k</sub></span>，<span class="s">Z″(0)=Σλ<sub>k</sub>²</span>。而 <span class="s">(log Z)″=Z″/Z−(Z′/Z)²</span>，代入即得 <span class="s">(log Z)″(0)=Var(λ)</span>，故 <span class="s">κ=½Var(λ)</span>。<span class="s">∎</span></p>
@@ -83,9 +83,9 @@
 <table class="nat">
 <tr><th class="l">离散侧（图）</th><th class="l">连续侧（流形）</th><th class="l">能否搬</th><th class="l">原因</th></tr>
 <tr><td class="l"><span class="s">λ<sub>n</sub></span> 有限</td><td class="l"><span class="s">μ<sub>max</sub>=∞</span></td><td class="l">不能</td><td class="l">谱无上界（Weyl）</td></tr>
-<tr><td class="l">两阶段（两个门槛）</td><td class="l">一个门槛</td><td class="l">不能</td><td class="l">定理 19.2</td></tr>
+<tr><td class="l">两阶段（两个门槛）</td><td class="l">一个门槛</td><td class="l">不能</td><td class="l">定理 19.1</td></tr>
 <tr><td class="l">解锁计数 <span class="s">N≤n</span></td><td class="l"><span class="s">N(Λ)~cΛ<sup>d/2</sup></span></td><td class="l">换成密度</td><td class="l">Weyl 律</td></tr>
-<tr><td class="l"><span class="s">κ=½Var(λ)</span></td><td class="l"><span class="s">κ</span> 由热核系数给</td><td class="l">能（代数）</td><td class="l">命题 20.2 只依赖求导</td></tr>
+<tr><td class="l"><span class="s">κ=½Var(λ)</span></td><td class="l"><span class="s">κ</span> 由热核系数给</td><td class="l">能（代数）</td><td class="l">命题 20.1 只依赖求导</td></tr>
 <tr><td class="l">同谱不同图</td><td class="l">等谱不等距（Sunada）</td><td class="l">能（现象同型）</td><td class="l">谱不决定几何</td></tr>
 </table>
 <p>五行里三行“不能直接搬”，但这不等于失败：<b>搬不过去的部分正是“缺口”的内容</b>，而搬得过去的两行（<span class="s">κ</span> 与同谱现象）给出了两个跨尺度的稳定事实。</p>
@@ -98,7 +98,7 @@
 
 <p>核对方式：取 <span class="s">t=0.01,0.03,0.1</span>，算网格（<span class="s">n=40</span>，<span class="s">h=1/40</span>）的 <span class="s">Tr e<sup>tL/h²</sup></span>，与 <span class="s">1/(4πt)+1/(2√(πt))</span> 比较。三档残差应随 <span class="s">t</span> 增大，因为高阶项 <span class="s">O(1)</span> 的相对比重上升。<b>这条练习的用处不是验证公式，而是让人看到“Weyl 律的常数项从哪来”</b>——它来自边界，而不是体积。</p>
 
-<p>对本书而言，这条边界项还有一个含义：第 19 章的 <span class="s">R</span> 发散正是由“边界顶点度数低”驱动（命题 18.4 的注解），而热核的边界项也由同一件事驱动。<b>两处现象同一个来源：边界。</b>这是把“谱的边界效应”与“相变宽度发散”连起来的一条暗线。</p>
+<p>对本书而言，这条边界项还有一个含义：第 19 章的 <span class="s">R</span> 发散正是由“边界顶点度数低”驱动（命题 18.2 的注解），而热核的边界项也由同一件事驱动。<b>两处现象同一个来源：边界。</b>这是把“谱的边界效应”与“相变宽度发散”连起来的一条暗线。</p>
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>热核两项展开 1/(4πt)+|∂M|/(8√(πt)) 的符号是正的（Neumann 边界），这与「边界减少面积」的直觉相反。它是表 20.1 里 Weyl 主项偏低的直接原因。</p></div>

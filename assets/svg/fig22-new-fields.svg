@@ -21,7 +21,7 @@
 <circle cx="260" cy="238" r="8.0" fill="#666" opacity="0.7"/>
 <text x="260.0" y="223.5" class="l" text-anchor="middle" fill="#666" font-weight="700">凝聚区分</text>
 <rect x="560" y="70" width="130" height="60" rx="6" fill="#f3f9f5" stroke="#009E73" stroke-width="1.2"/>
-<text x="625" y="92" class="l" text-anchor="middle" fill="#009E73" font-weight="700">第一梯队</text>
+<text x="642" y="92" class="l" text-anchor="middle" fill="#009E73" font-weight="700">第一梯队</text>
 <text x="625" y="112" class="l" text-anchor="middle" fill="#666" font-weight="normal">值得投入</text>
 <text x="390" y="340" class="l" text-anchor="middle" fill="#666" font-weight="normal">圆大小=与已有领域的联系强度</text>
 </svg>
