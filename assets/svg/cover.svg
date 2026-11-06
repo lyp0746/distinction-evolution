@@ -1,44 +1,25 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1414" width="1000" height="1414">
-<defs>
-<linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-<stop offset="0" stop-color="#0e1117"/><stop offset="0.55" stop-color="#151a23"/>
-<stop offset="1" stop-color="#0b0e14"/>
-</linearGradient>
-</defs>
-<rect x="0" y="0" width="1000" height="1414" fill="url(#bg)"/>
-<rect x="0" y="0" width="1000" height="8" fill="#b8862f" opacity="0.85"/>
-<ellipse cx="500" cy="560" rx="90" ry="31" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.300"/>
-<ellipse cx="500" cy="560" rx="132" ry="45" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.272"/>
-<ellipse cx="500" cy="560" rx="174" ry="59" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.244"/>
-<ellipse cx="500" cy="560" rx="216" ry="73" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.216"/>
-<ellipse cx="500" cy="560" rx="258" ry="88" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.188"/>
-<ellipse cx="500" cy="560" rx="300" ry="102" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.160"/>
-<ellipse cx="500" cy="560" rx="342" ry="116" fill="none" stroke="#3a6ea5" stroke-width="1.4" opacity="0.132"/>
-<ellipse cx="500" cy="560" rx="384" ry="131" fill="none" stroke="#b8862f" stroke-width="1.4" opacity="0.104"/>
-<ellipse cx="500" cy="560" rx="426" ry="145" fill="none" stroke="#009E73" stroke-width="1.4" opacity="0.076"/>
-<line x1="80" y1="980" x2="920" y2="980" stroke="#009E73" stroke-width="1.6" opacity="0.55" stroke-dasharray="8,6"/>
-<line x1="80" y1="1060" x2="920" y2="1060" stroke="#c94f4f" stroke-width="1.6" opacity="0.55" stroke-dasharray="8,6"/>
-<line x1="150" y1="1120" x2="850" y2="1120" stroke="#9aa0a6" stroke-width="1" opacity="0.42"/>
-<line x1="195" y1="1146" x2="805" y2="1146" stroke="#9aa0a6" stroke-width="1" opacity="0.37"/>
-<line x1="240" y1="1172" x2="760" y2="1172" stroke="#9aa0a6" stroke-width="1" opacity="0.32"/>
-<line x1="285" y1="1198" x2="715" y2="1198" stroke="#9aa0a6" stroke-width="1" opacity="0.27"/>
-<line x1="330" y1="1224" x2="670" y2="1224" stroke="#9aa0a6" stroke-width="1" opacity="0.22"/>
-<line x1="375" y1="1250" x2="625" y2="1250" stroke="#9aa0a6" stroke-width="1" opacity="0.17"/>
-<line x1="420" y1="1276" x2="580" y2="1276" stroke="#9aa0a6" stroke-width="1" opacity="0.12"/>
-<style>
-text{font-family:'Microsoft YaHei','SimHei',Arial,sans-serif;}
-.ttl{font-size:108px;font-weight:700;letter-spacing:12px;fill:#e8e6df;}
-.sub{font-size:29px;fill:#9aa0a6;letter-spacing:2px;}
-.eng{font-size:21px;fill:#9aa0a6;letter-spacing:1px;}
-.au{font-size:30px;fill:#e8e6df;letter-spacing:2px;}
-.rule{stroke:#9aa0a6;stroke-width:1;opacity:0.6;}
-</style>
-<text x="80" y="176" class="eng">THE LANGUAGE OF DISTINCTION</text>
-<text x="80" y="300" class="ttl">区分的语言</text>
-<line x1="84" y1="344" x2="660" y2="344" class="rule"/>
-<text x="84" y="396" class="sub">区分如何生成空间、形式与谱</text>
-<text x="84" y="440" class="sub">七条定理　三十六个领域　一次连续极限</text>
-<text x="80" y="1180" class="au">李毅芃　著</text>
-<text x="80" y="1232" class="eng">How Distinctions Generate Space, Form and Spectrum</text>
-<text x="80" y="1274" class="eng">七条定理 · 三十六个领域 · 一次连续极限</text>
+<rect width="1000" height="1414" fill="#f7f4ec"/><rect x="0" y="0" width="1000" height="10" fill="#b8862f"/>
+<circle cx="810" cy="520" r="60" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="98" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="136" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="174" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="212" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<circle cx="810" cy="520" r="250" fill="none" stroke="#d8cfbc" stroke-width="1" opacity="0.45"/>
+<line x1="72" y1="760" x2="880" y2="760" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="784" x2="820" y2="784" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="808" x2="760" y2="808" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="832" x2="700" y2="832" stroke="#e2dac9" stroke-width="1"/>
+<line x1="72" y1="856" x2="640" y2="856" stroke="#e2dac9" stroke-width="1"/>
+<style>text{font-family:"Times New Roman","SimSun",serif}</style>
+<text x="72" y="120" font-size="19" fill="#8a6d2f" letter-spacing="3">有限系统的取舍　THE TRADEOFFS OF FINITE SYSTEMS</text>
+<text x="72" y="330" font-size="94" font-weight="700" fill="#1c1c1c">区分的语言</text>
+<line x1="76" y1="610" x2="620" y2="610" stroke="#b8862f" stroke-width="2"/>
+<text x="76" y="665" font-size="26" fill="#3a3a3a">区分如何生成空间、形式与谱——七条定理、三十六个</text>
+<text x="76" y="705" font-size="26" fill="#3a3a3a">领域与一次连续极限</text>
+<text x="72" y="1150" font-size="30" fill="#1c1c1c">李毅芃　著</text>
+<text x="72" y="1215" font-size="18" fill="#5a5a5a">The Language of Distinction</text>
+<text x="72" y="1290" font-size="15" fill="#7a7a7a">How Distinctions Generate Space, Form and Spectrum: Seven </text>
+<text x="72" y="1314" font-size="15" fill="#7a7a7a">Theorems, Thirty-Six Domains, and One Continuum Limit</text>
+<text x="72" y="1370" font-size="16" fill="#8a6d2f">2026 · CC BY 4.0</text>
 </svg>
