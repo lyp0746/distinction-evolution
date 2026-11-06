@@ -230,3 +230,28 @@ h1.part-title{
 /* 部分导语独立成页 */
 .part-intro-page{break-before:page;break-after:page;padding:34mm 12mm 0;box-sizing:border-box;min-height:235mm;}
 .part-intro-page .part-intro{max-width:132mm;margin:0 auto;color:#2b2b2b;font-size:12pt;line-height:1.9;}
+
+
+/* ---- v5 部分扉页 / 章前扉页：干净排版，不依赖图片 ---- */
+.part-page{background:#fbfaf7;height:235mm;padding:0;position:relative;overflow:hidden;border:0;}
+.part-page::before{content:"";position:absolute;left:0;top:0;width:100%;height:6mm;background:#b8862f;}
+.part-art{display:none;}
+.part-body{position:static;padding:52mm 14mm 0;box-sizing:border-box;}
+.part-kicker{color:#b8862f;font-size:8.5pt;letter-spacing:4px;margin-bottom:8mm;}
+h1.part-title{color:#1a1a1a;font-size:24pt;line-height:1.3;letter-spacing:1px;margin:0 0 8mm;font-weight:600;}
+.part-page .part-title::after{content:"";display:block;width:36mm;height:1.2pt;background:#b8862f;margin-top:9mm;}
+.chapter-opener{height:235mm;padding:30mm 0 0;position:relative;}
+.chapter-opener::before{content:"";position:absolute;left:0;top:0;width:100%;height:2.2pt;background:#b8862f;}
+.co-kicker{color:#b8862f;font-size:8.5pt;letter-spacing:4px;}
+.co-num{font-size:64pt;color:#efe8d8;margin:8mm 0 0;}
+.co-title{font-size:24pt;line-height:1.35;margin:0 0 9mm;color:#1a1a1a;font-weight:600;}
+.co-quote{font-size:11.5pt;line-height:1.95;color:#333;border-left:1.6pt solid #b8862f;padding-left:7mm;margin:0 0 10mm;font-style:normal;}
+.co-map span{font-size:8.5pt;letter-spacing:3px;color:#999;margin-bottom:4mm;}
+.co-map ul{margin:0;padding:0;list-style:none;columns:2;column-gap:10mm;font-size:8.8pt;line-height:1.9;color:#444;}
+.co-map li{margin:0 0 1.2mm;break-inside:avoid;}
+
+.part-page{width:auto;margin:0;height:235mm;padding:0;box-sizing:border-box;overflow:hidden;}
+.part-body{padding:55mm 12mm 0;}
+
+.part-big{position:absolute;right:16mm;bottom:10mm;font-family:"Times New Roman",serif;font-size:150pt;line-height:1;color:#efe8d8;letter-spacing:-4px;z-index:0;}
+.part-body{position:relative;z-index:1;}
