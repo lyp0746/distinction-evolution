@@ -447,7 +447,21 @@
     "6.2",
     "7.1"
   ],
-  "A2_formula_refs": {},
+  "A2_formula_refs": {
+    "1.1": [
+      "ch01.html",
+      "ch01.html",
+      "ch01.html",
+      "ch01.html",
+      "ch12.html"
+    ],
+    "12.3": [
+      "ch12.html"
+    ],
+    "17.2": [
+      "ch17.html"
+    ]
+  },
   "A2_refs_missing_def": [],
   "A2_continuity": {
     "ch01.html": {
@@ -2084,17 +2098,7 @@
     {
       "chapter": "ch08.html",
       "word": "必然",
-      "snippet": "能统一一切”的说法，都可以用这张表逐行打掉——它必然在“不能区分什么”那一列上失守。\n\n8.10　测"
-    },
-    {
-      "chapter": "ch08.html",
-      "word": "必然",
       "snippet": "结构能区分不能区分典型定理\n可测概率、几乎必然、独立性形状、邻域、拓扑类型Kuratowski"
-    },
-    {
-      "chapter": "ch08.html",
-      "word": "必然",
-      "snippet": "，都可以在这张表里被定位：它在“不能区分”那一列必然有失守项。\n\n本书站在第四层（二次型）：它足以谈"
     },
     {
       "chapter": "ch11.html",
@@ -2105,11 +2109,6 @@
       "chapter": "ch11.html",
       "word": "注定",
       "snippet": "些只能用最弱一档的领域（例如“文化相似性”），就注定只能标 C 级。\n\n11.10　一个可算例：三组"
-    },
-    {
-      "chapter": "ch14.html",
-      "word": "必然",
-      "snippet": "本书的边界：越出“图”这个对象，对称群变大，结论必然变软。第 21 章的 36 条里社会族 8 条全"
     },
     {
       "chapter": "ch17.html",

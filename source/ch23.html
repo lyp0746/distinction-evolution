@@ -38,9 +38,9 @@
 
 <pre>def audit(claim, context):
     # 1 换词：删掉新术语，句子还成立吗？
-    if same_after_renaming(claim, context): return "换词"
+    if same_after_renaming(claim, context): return “换词”
     # 2 过度统一：被套的对象与原型符号差相同吗？
-    if signature(claim) != signature(context.prototype): return "过度统一"
+    if signature(claim) != signature(context.prototype): return “过度统一”
     # 3 分级失效：证据等级 >= 语气等级吗？
     if evidence(claim) < strength(claim): return "分级失效"
     # 4 路径依赖：换一个构造，结论还在吗？
