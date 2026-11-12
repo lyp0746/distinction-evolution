@@ -16,7 +16,7 @@
 
 <div class="define"><span class="bt">定义 16.1　图上的区分演化</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>，顶点 <span class="s">v</span> 上的区分强度为 <span class="s">D<sub>v</sub>(t)∈ℝ</span>。演化方程为
-<div class="eq"><span class="body">Ḋ<sub>v</sub> = −αD<sub>v</sub> + β Σ<sub>u∼v</sub>(D<sub>u</sub>−D<sub>v</sub>),  即  Ḋ=(−αI+βL)D</span><span class="num">(16.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>Ḋ</mi><mi>v</mi></msub><mo>=</mo><mo>−</mo><mi>α</mi><msub><mi>D</mi><mi>v</mi></msub><mo>+</mo><mi>β</mi><msub><mo>Σ</mo><mi>u</mi><mo>∼</mo><mi>v</mi></msub><mo>(</mo><msub><mi>D</mi><mi>u</mi></msub><mo>−</mo><msub><mi>D</mi><mi>v</mi></msub><mo>)</mo><mo>,</mo><mtext>即</mtext><mi>Ḋ</mi><mo>=</mo><mo>(</mo><mo>−</mo><mi>α</mi><mi>I</mi><mo>+</mo><mi>β</mi><mi>L</mi><mo>)</mo><mi>D</mi></math></span><span class="num">(16.1)</span></div>
 其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度，<span class="s">L=D<sub>adj</sub>−A</span> 是图拉普拉斯。</div>
 
 <p>两项各有含义：<span class="s">−αD</span> 是“忘掉”；<span class="s">βL</span> 是“向邻居看齐后再拉开”。没有第一项，系统会收敛到常数（谁也区分不了谁）；没有第二项，每个顶点各自衰减（区分度整体归零）。<b>区分既需要记忆，也需要关系。</b></p>
@@ -25,11 +25,11 @@
 
 <p>因为 <span class="s">L</span> 实对称，存在标准正交特征基 <span class="s">e<sub>1</sub>,…,e<sub>n</sub></span>，特征值 <span class="s">0=λ<sub>1</sub>&lt;λ<sub>2</sub>≤⋯≤λ<sub>n</sub></span>（连通性保证 <span class="s">λ<sub>2</sub>&gt;0</span>）。把初始条件按基展开：<span class="s">D(0)=Σc<sub>k</sub>e<sub>k</sub></span>，则</p>
 
-<div class="eq"><span class="body">D(t)=Σ<sub>k</sub> c<sub>k</sub> e<sup>(βλ<sub>k</sub>−α)t</sup> e<sub>k</sub></span><span class="num">(16.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>D</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mo>Σ</mo><mi mathvariant="normal">k</mi></msub><msub><mi>c</mi><mi mathvariant="normal">k</mi></msub><msup><mi>e</mi><mo>(</mo><mi>β</mi><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mo>−</mo><mi>α</mi><mo>)</mo><mi>t</mi></msup><msub><mi>e</mi><mi mathvariant="normal">k</mi></msub></math></span><span class="num">(16.2)</span></div>
 
 <p>于是每个模式的命运只取决于一个数的符号：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。模式 <span class="s">k</span> 增长当且仅当 <span class="s">β&gt;α/λ<sub>k</sub></span>。这就给出两个临界值：</p>
 
-<div class="eq"><span class="body">β<sub>1</sub>=α/λ<sub>n</sub>（最快模式解锁）,   β<sub>2</sub>=α/λ<sub>2</sub>（最慢模式解锁）</span><span class="num">(16.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>β</mi><mn>1</mn></msub><mo>=</mo><mi>α</mi><mo>/</mo><msub><mi>λ</mi><mi>n</mi></msub><mtext>（最快模式解锁）</mtext><mo>,</mo><msub><mi>β</mi><mn>2</mn></msub><mo>=</mo><mi>α</mi><mo>/</mo><msub><mi>λ</mi><mn>2</mn></msub><mtext>（最慢模式解锁）</mtext></math></span><span class="num">(16.3)</span></div>
 
 <h3 id="sec16-4">16.4　定理与证明</h3>
 
@@ -76,14 +76,14 @@
 
 <p>把方程 <span class="s">Ḋ=−αD+βLD</span> 的两项读成两个机制：第一项是“遗忘”（每个顶点独立衰减），第二项是“关系”（向邻居看齐再拉开）。二者之比 <span class="s">β/α</span> 决定一切——把它写成一个无量纲数：</p>
 
-<div class="eq"><span class="body">Γ := β/α，   模式 k 增长 ⟺ Γ &gt; 1/λ<sub>k</sub></span><span class="num">(16.4)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>Γ</mi><mo>:</mo><mo>=</mo><mi>β</mi><mo>/</mo><mi>α</mi><mtext>，</mtext><mtext>模式</mtext><mi mathvariant="normal">k</mi><mtext>增长</mtext><mi>⟺</mi><mi>Γ</mi><mo>&gt;</mo><mn>1</mn><mo>/</mo><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub></math></span><span class="num">(16.4)</span></div>
 
 <p>于是临界耦合就是 <span class="s">Γ<sub>1</sub>=1/λ<sub>n</sub></span>、<span class="s">Γ<sub>2</sub>=1/λ<sub>2</sub></span>，与 <span class="s">α</span> 无关。<b>这个改写的好处是把“尺度”从参数里去掉</b>：换单位不改变任何结论，因为 <span class="s">Γ</span> 是无量纲的。第 19 章讨论“推向连续”时，正是用 <span class="s">Γ</span> 与网格步长 <span class="s">h</span> 的关系来说明哪个临界值消失、哪个留下。</p>
 
 <h3 id="sec16-9">16.9　临界值有多稳：一次扰动估计</h3>
 
 <p>定理 16.1 的临界值是 <span class="s">α/λ<sub>k</sub></span>。若图被扰动（加一条边、改一个权），临界值会移动多少？由 Weyl 不等式（第 13.6 节）与 <span class="s">λ=0</span> 的固定性可得</p>
-<div class="eq"><span class="body">|Δλ<sub>k</sub>| ≤ ‖E‖<sub>2</sub>，故 |Δβ<sub>1</sub>|/β<sub>1</sub> ≤ ‖E‖<sub>2</sub>/λ<sub>n</sub></span><span class="num">(16.5)</span></div>
+<div class="eq"><span class="body"><math display="block"><mo>|</mo><mi>Δ</mi><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mo>|</mo><mo>≤</mo><mi>‖</mi><mi mathvariant="normal">E</mi><msub><mi>‖</mi><mn>2</mn></msub><mtext>，故</mtext><mo>|</mo><mi>Δ</mi><msub><mi>β</mi><mn>1</mn></msub><mo>|</mo><mo>/</mo><msub><mi>β</mi><mn>1</mn></msub><mo>≤</mo><mi>‖</mi><mi mathvariant="normal">E</mi><msub><mi>‖</mi><mn>2</mn></msub><mo>/</mo><msub><mi>λ</mi><mi>n</mi></msub></math></span><span class="num">(16.5)</span></div>
 
 <p>代入具体数：加一条边至多使 <span class="s">λ<sub>n</sub></span> 变化 2，所以对 <span class="s">C<sub>10</sub></span>（<span class="s">λ<sub>n</sub>=4</span>）而言，<span class="s">β<sub>1</sub></span> 的相对变化不超过 50%——<b>不算小</b>。而对网格（<span class="s">λ<sub>n</sub>≈8</span>），不超过 25%。</p>
 
@@ -106,7 +106,7 @@
 
 <p>若边权为 <span class="s">w<sub>uv</sub></span>，定理 16.1 逐字成立，临界值是 <span class="s">α/λ<sub>k</sub>(L<sub>w</sub>)</span>。对一条加权的路（权 <span class="s">w<sub>1</sub>,…,w<sub>n−1</sub></span>），可以写出闭式：</p>
 
-<div class="eq"><span class="body">λ<sub>k</sub> = 2 − 2 cos(θ<sub>k</sub>)，θ<sub>k</sub> 由 Σ 递推给出；当所有权相等时退化为 <span class="s">2−2cos(πk/n)</span></span><span class="num">(16.7)</span></div>
+<div class="eq"><span class="body"><math display="block"><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mo>=</mo><mn>2</mn><mo>−</mo><mn>2</mn><mi mathvariant="normal">cos</mi><mo>(</mo><msub><mi>θ</mi><mi mathvariant="normal">k</mi></msub><mo>)</mo><mtext>，</mtext><msub><mi>θ</mi><mi mathvariant="normal">k</mi></msub><mtext>由</mtext><mo>Σ</mo><mtext>递推给出；当所有权相等时退化为</mtext><mn>2</mn><mo>−</mo><mn>2</mn><mi mathvariant="normal">cos</mi><mfrac><mrow><mi>π</mi><mi mathvariant="normal">k</mi></mrow><mrow><mi>n</mi></mrow></mfrac></math></span><span class="num">(16.7)</span></div>
 
 <p>这个式子的用处是：<b>它让“权重不均匀会怎样”变成一个可算问题。</b>数值上，取一条 10 边路，把中间一条边的权从 1 加到 10，<span class="s">λ<sub>2</sub></span> 会显著上升（因为图被“分成两块”），<span class="s">λ<sub>n</sub></span> 上升得更多（因为出现了强的局部耦合）。</p>
 

@@ -92,7 +92,7 @@ pre.code { font-family: "Courier New", Consolas, monospace; font-size: 8.4pt;
        border-left: 3px solid #3a6ea5; border-radius: 4px;
        padding: 8px 12px; margin: 10px 0; white-space: pre-wrap;
        overflow-wrap: anywhere; color: #222; }
-sup { font-size: 0.7em; }
+sup { font-size: .68em; line-height: 0; }
 
 /* ------------------------------ 三线表 ------------------------------ */
 table.nat {
@@ -130,13 +130,17 @@ img.fig + .cap, svg.fig-svg + .cap { margin-top: 7px; }
 .refs p.refh { font-weight: 700; font-size: 9pt; letter-spacing: .5px; color: #333;
   margin: 8px 0 3px; padding-bottom: 2px; border-bottom: 0.6px solid #cfcfcf; }
 
-/* ------------------------------ 公式 ------------------------------ */
-.mblock { text-align: center; margin: 12px 0; font-size: 11pt; }
-.eq { display: flex; align-items: baseline; justify-content: center;
-      margin: 12px 0; font-size: 10.8pt; break-inside: avoid; page-break-inside: avoid; }
-.eq .body { flex: 0 1 auto; }
-.eq .num { flex: 0 0 auto; margin-left: auto; color: #333; font-size: 9.5pt;
+/* ------------------------------ 公式（MathML，Axler 式） ------------------------------ */
+.eq { position: relative; text-align: center; margin: 1.05em 0 1.15em;
+      font-size: 10.8pt; break-inside: avoid; page-break-inside: avoid; }
+.eq .body { display: inline-block; max-width: 90%; text-align: center; line-height: 1.9; }
+.eq .num { position: absolute; right: 0; bottom: .12em; color: #333; font-size: 9.5pt;
            font-family: "Times New Roman", "SimSun", serif; }
+math { font-family: "Cambria Math", "Latin Modern Math", "STIX Two Math", "Times New Roman", SimSun, serif; }
+math[display="block"] { margin: 0; }
+sub, sup { font-size: .68em; line-height: 0; }
+sub { vertical-align: -.22em; }
+sup { vertical-align: .42em; }
 
 /* ------------------------------ 框 ------------------------------ */
 .define, .scenario, .warning, .case, .note, .box {

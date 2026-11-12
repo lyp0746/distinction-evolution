@@ -13,7 +13,7 @@
 <p><b>本章的路线。</b>本章说明连续侧为什么必须换对象；先给 Weyl 定律与热核恒等式，再用同谱流形与低阶项说明“谱看不见什么”；末段把离散直觉搬回连续侧，并用三个“不能问”划界。</p><h3 id="sec20-2">20.2　Weyl 定律与解锁密度</h3>
 
 <p><b>定理 20.1（Weyl，1911）。</b>设 <span class="s">M</span> 是 <span class="s">d</span> 维紧黎曼流形，<span class="s">N(Λ)=#{k: μ<sub>k</sub>≤Λ}</span>，则
-<div class="eq"><span class="body">N(Λ) ~ ω<sub>d</sub>·vol(M)/(2π)<sup>d</sup> · Λ<sup>d/2</sup>   (Λ→∞)</span><span class="num">(20.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>N</mi><mo>(</mo><mi>Λ</mi><mo>)</mo><mo>~</mo><msub><mi>ω</mi><mi>d</mi></msub><mo>·</mo><mi mathvariant="normal">vol</mi><mo>(</mo><mi>M</mi><mo>)</mo><mo>/</mo><mo>(</mo><mn>2</mn><mi>π</mi><msup><mo>)</mo><mi>d</mi></msup><mo>·</mo><msup><mi>Λ</mi><mi>d</mi><mo>/</mo><mn>2</mn></msup><mo>(</mo><mi>Λ</mi><mo>→</mo><mo>∞</mo><mo>)</mo></math></span><span class="num">(20.1)</span></div>
 其中 <span class="s">ω<sub>d</sub></span> 是单位球体积。〔已知，A／甲〕</p>
 
 <p>代入 <span class="s">Λ=β/α</span> 得：<b>“已解锁模式数”在连续侧是一个按 <span class="s">β<sup>d/2</sup></span> 增长的密度，而不是一个两级台阶。</b>单位正方形（<span class="s">d=2</span>，面积 1）给出 <span class="s">N(Λ)~Λ/4</span>。下表用 80×80 网格核对：</p>
@@ -31,7 +31,7 @@
 <h3 id="sec20-3">20.3　热核与 κ 恒等式</h3>
 
 <p><b>命题 20.1（谱方差恒等式）。</b>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，定义 <span class="s">κ := ½·(d²/dt²)log Z(t)|<sub>t=0</sub></span>。则
-<div class="eq"><span class="body">κ = ½ Var(λ) = ½[(1/n)Σλ<sub>k</sub>² − ((1/n)Σλ<sub>k</sub>)²]</span><span class="num">(20.2)</span></div></p>
+<div class="eq"><span class="body"><math display="block"><mi>κ</mi><mo>=</mo><mi>½</mi><mi mathvariant="normal">Var</mi><mo>(</mo><mi>λ</mi><mo>)</mo><mo>=</mo><mi>½</mi><mo>[</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>Σ</mo><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mi>²</mi><mo>−</mo><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>Σ</mo><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mo>)</mo><mi>²</mi><mo>]</mo></math></span><span class="num">(20.2)</span></div></p>
 
 <p><b>证明。</b><span class="s">Z(0)=n</span>，<span class="s">Z′(0)=−Σλ<sub>k</sub></span>，<span class="s">Z″(0)=Σλ<sub>k</sub>²</span>。而 <span class="s">(log Z)″=Z″/Z−(Z′/Z)²</span>，代入即得 <span class="s">(log Z)″(0)=Var(λ)</span>，故 <span class="s">κ=½Var(λ)</span>。<span class="s">∎</span></p>
 
@@ -93,7 +93,7 @@
 <h3 id="sec20-9">20.9　热核两项展开的数值核对</h3>
 
 <p>把第 20.6 节的两项展开写成可核对的式子：对单位正方形（<span class="s">d=2</span>，面积 1），</p>
-<div class="eq"><span class="body">Tr e<sup>tΔ</sup> = 1/(4πt) + |∂M|/(8√(πt)) + O(1)</span><span class="num">(20.3)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">Tr</mi><msup><mi>e</mi><mi>t</mi><mi>Δ</mi></msup><mo>=</mo><mn>1</mn><mo>/</mo><mo>(</mo><mn>4</mn><mi>π</mi><mi>t</mi><mo>)</mo><mo>+</mo><mo>|</mo><mo>∂</mo><mi>M</mi><mo>|</mo><mo>/</mo><mo>(</mo><mn>8</mn><mi>√</mi><mo>(</mo><mi>π</mi><mi>t</mi><mo>)</mo><mo>)</mo><mo>+</mo><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></math></span><span class="num">(20.3)</span></div>
 <p>其中 <span class="s">|∂M|=4</span> 是周长。第二项就是表 20.1 里“Weyl 主项偏低”的原因：<b>边界贡献为正，所以计数在主项之下</b>——与我们的直觉（边界减少可用面积）相反，但那是对 Dirichlet 边界的直觉，这里是 Neumann（图拉普拉斯对应 Neumann）。</p>
 
 <p>核对方式：取 <span class="s">t=0.01,0.03,0.1</span>，算网格（<span class="s">n=40</span>，<span class="s">h=1/40</span>）的 <span class="s">Tr e<sup>tL/h²</sup></span>，与 <span class="s">1/(4πt)+1/(2√(πt))</span> 比较。三档残差应随 <span class="s">t</span> 增大，因为高阶项 <span class="s">O(1)</span> 的相对比重上升。<b>这条练习的用处不是验证公式，而是让人看到“Weyl 律的常数项从哪来”</b>——它来自边界，而不是体积。</p>

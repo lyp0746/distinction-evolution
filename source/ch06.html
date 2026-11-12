@@ -80,7 +80,7 @@
 <h3 id="sec6-9">6.9　区分的信息论刻画</h3>
 
 <p>第 6.2 节的四元组可以再加一项：<b>区分能带走多少不确定性。</b>把 <span class="s">f</span> 离散化后，两个对象被分到同一格的概率为 <span class="s">p<sub>same</sub></span>，则一次区分的<b>信息量</b>可以写成</p>
-<div class="eq"><span class="body">I = H(对象) − H(对象 | 格子) = H(f(X))</span><span class="num">(6.1)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>I</mi><mo>=</mo><mi>H</mi><mo>(</mo><mtext>对象</mtext><mo>)</mo><mo>−</mo><mi>H</mi><mo>(</mo><mtext>对象</mtext><mo>|</mo><mtext>格子</mtext><mo>)</mo><mo>=</mo><mi>H</mi><mo>(</mo><mi>f</mi><mo>(</mo><mi>X</mi><mo>)</mo><mo>)</mo></math></span><span class="num">(6.1)</span></div>
 
 <p>这条式子的好处是把“区分”与“压缩”接上：<b>阈值变粗，<span class="s">H(f(X))</span> 变小，区分能力下降，但可复现性上升。</b>第 8 章会把它写成“分辨率预算”，第 22 章会把它写成“容量与遗忘”。三个地方说的是同一件事：<b>区分是一次有损压缩，损失可以量化。</b></p>
 
@@ -108,7 +108,7 @@
 
 <p>区分能力在心理学里有一个标准量：<b>敏感度 <span class="s">d′</span></b>。设信号与噪声的判别变量服从等方差正态，均值差为 <span class="s">μ<sub>s</sub>−μ<sub>n</sub></span>、标准差 <span class="s">σ</span>，则</p>
 
-<div class="eq"><span class="body">d′ = (μ<sub>s</sub> − μ<sub>n</sub>)/σ，　判据 c = −(θ − (μ<sub>s</sub>+μ<sub>n</sub>)/2)/σ</span><span class="num">(6.2)</span></div>
+<div class="eq"><span class="body"><math display="block"><mi>d</mi><mi>′</mi><mo>=</mo><mo>(</mo><msub><mi>μ</mi><mi>s</mi></msub><mo>−</mo><msub><mi>μ</mi><mi>n</mi></msub><mo>)</mo><mo>/</mo><mi>σ</mi><mtext>，　判据</mtext><mi>c</mi><mo>=</mo><mo>−</mo><mo>(</mo><mi>θ</mi><mo>−</mo><mo>(</mo><msub><mi>μ</mi><mi>s</mi></msub><mo>+</mo><msub><mi>μ</mi><mi>n</mi></msub><mo>)</mo><mo>/</mo><mn>2</mn><mo>)</mo><mo>/</mo><mi>σ</mi></math></span><span class="num">(6.2)</span></div>
 
 <p>两个量正好对应第 6 章的四元组：<span class="s">d′</span> 是“属性 + 噪声”的比值（区分能力），<span class="s">c</span> 是“阈值的位置”（判据）。<b>把两者分开，是本世纪心理学最实用的一次概念清理</b>：说“他更敏感”与说“他更敢说 yes”是两件事。</p>
 
