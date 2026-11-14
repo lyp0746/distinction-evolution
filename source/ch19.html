@@ -1,4 +1,4 @@
-<h2 class="chapter">第19章　推向连续：R 的 n² 增长与第二个门槛的消失</h2>
+<h2 class="chapter">第19章　两次连续极限：从网格上的 R 到流形上的密度</h2>
 
 <div class="box box-takeaway"><p><b>本章主张。</b>把网格加密，谱各向异性按 <span class="s">(8/π²)n²</span> 增长（定理 19.1，数值吻合到 0.1%）；换算成物理单位后，<b>第一个门槛随分辨率趋于零，第二个趋于常数</b>（定理 19.3）。于是“两阶段相变”在连续极限里只剩一个门槛——它是一个纯离散现象。</p></div>
 
@@ -13,7 +13,9 @@
 
 
 
-<p><b>本章的路线。</b>本章把分辨率当成变量：先给网格上的闭式与连续侧门槛消失，再解释因子 4 与环面为何不违反夹逼；再用三个预言、三种收敛与一套数值协议把可检验性落地。</p><h3 id="sec19-2">19.2　定理：网格上 R 的闭式</h3>
+<p><b></p><p><b>〔技术〕完整路径</b>　以下小节起为技术／形式化内容。只走快速路径的读者可跳过带此标记的段落，直接看每节开头的加粗结论与章末“关键产出”框；本章其余带 〔技术〕 标记处同此。</p>
+
+<h3 id="sec19-2">19.2　定理：网格上 R 的闭式</h3>
 
 <p><b>定理 19.1。</b>对 <span class="s">G<sub>n</sub>=P<sub>n</sub>□P<sub>n</sub></span>，<span class="s">n≥2</span>：
 <div class="eq"><span class="body"><math display="block"><msub><mi>λ</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mo>−</mo><mn>2</mn><mi mathvariant="normal">cos</mi><mfrac><mrow><mi>π</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>,</mo><msub><mi>λ</mi><mi>n</mi></msub><mo>=</mo><mn>8</mn><mo>−</mo><mn>4</mn><mi mathvariant="normal">cos</mi><mfrac><mrow><mi>π</mi></mrow><mrow><mi>n</mi></mrow></mfrac><mo>−</mo><mn>4</mn><mi mathvariant="normal">cos</mi><mo>(</mo><mi>π</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>/</mo><mi>n</mi><mo>)</mo><mo>,</mo><mi>R</mi><mo>=</mo><msub><mi>λ</mi><mi>n</mi></msub><mo>/</mo><msub><mi>λ</mi><mn>2</mn></msub><mo>=</mo><mfrac><mrow><mn>8</mn></mrow><mrow><mi>π</mi><mi>²</mi></mrow></mfrac><mi>n</mi><mi>²</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>O</mi><mo>(</mo><msup><mi>n</mi><mo>−</mo><mn>2</mn></msup><mo>)</mo><mo>)</mo></math></span><span class="num">(19.1)</span></div></p>
@@ -33,11 +35,13 @@
 
 <p><b>定理 19.1（连续退化）。</b>设 <span class="s">M</span> 是紧连通黎曼流形，<span class="s">dim M≥1</span>，Laplace–Beltrami 算子 <span class="s">−Δ</span> 的谱为 <span class="s">0=μ<sub>0</sub>&lt;μ<sub>1</sub>≤μ<sub>2</sub>≤⋯↑∞</span>。则对任意 <span class="s">α&gt;0</span>：<span class="s">β<sub>1</sub>=α/μ<sub>max</sub>=0</span>，<span class="s">β<sub>2</sub>=α/μ<sub>1</sub>&gt;0</span>。于是每个 <span class="s">β∈(0,β<sub>2</sub>)</span> 都处于“中间相”。</p>
 
-<p><b>证明。</b>紧流形上 <span class="s">−Δ</span> 的谱无上界（Weyl 律，见第 20 章），故 <span class="s">μ<sub>max</sub>=∞</span>，<span class="s">β<sub>1</sub>=α/∞=0</span>。对任意 <span class="s">β&gt;0</span>，总存在足够大的 <span class="s">k</span> 使 <span class="s">βμ<sub>k</sub>&gt;α</span>，即总有模式在增长；而 <span class="s">β&lt;α/μ<sub>1</sub></span> 时最低非零模式仍在衰减。<span class="s">∎</span></p>
+<p><b>证明。</b>紧流形上 <span class="s">−Δ</span> 的谱无上界（Weyl 律，见第 19 章），故 <span class="s">μ<sub>max</sub>=∞</span>，<span class="s">β<sub>1</sub>=α/∞=0</span>。对任意 <span class="s">β&gt;0</span>，总存在足够大的 <span class="s">k</span> 使 <span class="s">βμ<sub>k</sub>&gt;α</span>，即总有模式在增长；而 <span class="s">β&lt;α/μ<sub>1</sub></span> 时最低非零模式仍在衰减。<span class="s">∎</span></p>
 
 <p><b>系 19.3（缩放极限）。</b>记 <span class="s">β<sub>1</sub><sup>(n)</sup>=α/λ<sub>n</sub><sup>(n)</sup></span>，<span class="s">β<sub>2</sub><sup>(n)</sup>=α/λ<sub>2</sub><sup>(n)</sup></span>。则 <span class="s">h²β<sub>1</sub><sup>(n)</sup>→0</span>，<span class="s">h²β<sub>2</sub><sup>(n)</sup>→α/π²</span>。</p>
 
 <p><b>证明。</b>由标准谱收敛 <span class="s">λ<sub>2</sub><sup>(n)</sup>/h²→π²</span>（表 19.1 最后一列），得第二式；由 <span class="s">λ<sub>n</sub><sup>(n)</sup>→8</span> 得 <span class="s">h²β<sub>1</sub>=αh²/λ<sub>n</sub>≈α/(8n²)→0</span>。<span class="s">∎</span></p>
+
+<p>代一次数：取 <span class="s">α=1</span>、<span class="s">n=80</span>。<span class="s">λ<sub>2</sub>=0.001542</span>，<span class="s">λ<sub>n</sub>≈8</span>，于是两个门槛是 <span class="s">β<sub>1</sub>=1/8=0.125</span>、<span class="s">β<sub>2</sub>=1/0.001542=648.5</span>——中间相从 0.125 铺到 648.5，宽度 5186，正是表 19.1 末行的 <span class="s">R</span>。换个坐标看同一组数：<span class="s">h<sup>2</sup>β<sub>2</sub>=0.00015625×648.5=0.1013</span>，而 <span class="s">α/π<sup>2</sup>=0.10132</span>，四位有效数字一致；<span class="s">h<sup>2</sup>β<sub>1</sub>=0.00015625×0.125=1.95×10<sup>−5</sup></span>，已经贴地。所以“第二个门槛消失”不是一句定性话：在 <span class="s">n=80</span> 上，中间相已被拉到 5000 倍宽，而门槛的下界被钉在 <span class="s">α/π<sup>2</sup></span> 上不再移动。（示意：<span class="s">λ<sub>2</sub></span> 与 <span class="s">λ<sub>n</sub></span> 取自 80×80 网格的闭式，不是测量。）</p>
 
 <h3 id="sec19-4">19.4　这意味着什么</h3>
 
@@ -66,7 +70,7 @@
 
 <p>图拉普拉斯收敛定理给这一节一个连续侧对应：若网格序列以 <span class="s">h→0</span>、<span class="s">n h<sup>d/2+2</sup>→∞</span> 的方式逼近流形，则归一化谱收敛到 Laplace–Beltrami 谱（Belkin–Niyogi 2007；von Luxburg–Belkin–Bousquet 2008）。<b>收敛的是“按 <span class="s">h²</span> 缩放后的低谱”，不是 <span class="s">R</span></b>——因为 <span class="s">λ<sub>n</sub></span> 不收敛（第 19.2 节）。这条差别正是本书“推向连续”的全部技术内容。</p>
 
-<img class="fig" src="assets/svg/fig-r-scaling.svg" alt="图 19.1　谱各向异性随分辨率二次增长">
+<img class="fig" style="width:88%" src="assets/svg/fig-r-scaling.svg" alt="图 19.1　谱各向异性随分辨率二次增长">
 <div class="cap"><b>图 19.1　R 随 n 的二次增长</b>　两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.5 节）。</div>
 <div class="box"><p><strong>读法：</strong>两条实线是闭式计算的网格与环面，两条虚线是 <span class="s">(8/π²)n²</span> 与 <span class="s">(2/π²)n²</span>；因子 4 来自边界条件（第 19.5 节）。</p></div>
 
@@ -98,7 +102,7 @@
 <tr><th class="l">收敛</th><th class="l">说的是</th><th class="l">本书用在哪</th><th class="l">反例</th></tr>
 <tr><td class="l">强预解</td><td class="l">对每个 <span class="s">λ</span>，<span class="s">(L<sub>h</sub>−λ)<sup>−1</sup>f→(Δ−λ)<sup>−1</sup>f</span></td><td class="l">命题 B（第 19 章）</td><td class="l">谱在极限点处跳变</td></tr>
 <tr><td class="l">谱（特征值）</td><td class="l">固定 <span class="s">k</span>，<span class="s">λ<sub>k</sub>(h)/h²→μ<sub>k</sub></span></td><td class="l">表 19.1 末列</td><td class="l">重数不收敛（交叉）</td></tr>
-<tr><td class="l">热核</td><td class="l"><span class="s">e<sup>tL<sub>h</sub></sup>→e<sup>tΔ</sup></span>（<span class="s">t&gt;0</span> 固定）</td><td class="l">表 20.1 的数值影子</td><td class="l"><span class="s">t→0</span> 时发散</td></tr>
+<tr><td class="l">热核</td><td class="l"><span class="s">e<sup>tL<sub>h</sub></sup>→e<sup>tΔ</sup></span>（<span class="s">t&gt;0</span> 固定）</td><td class="l">表 19.2 的数值影子</td><td class="l"><span class="s">t→0</span> 时发散</td></tr>
 </table>
 
 <p><b>不收敛的量</b>是 <span class="s">R</span> 与 <span class="s">λ<sub>n</sub></span>：前者按 <span class="s">n²</span> 发散，后者趋于常数 <span class="s">8</span>（不随 <span class="s">h</span> 缩放）。<b>所以“离散逼近连续”只对“按 <span class="s">h²</span> 缩放后的低谱”成立</b>；凡是拿未缩放的 <span class="s">R</span> 去谈“连续极限”，都会得到错误结论。</p>
@@ -140,11 +144,150 @@
 
 <p>这套协议对随机几何图、渗流团簇、真实网络都适用；只要第 1 步能给出可算谱。<b>协议的价值在于：它把“推向连续”从一句主张变成五步操作。</b></p>
 
-<h3 id="sec19-10">19.10　本章小结</h3>
+<h2 class="chapter">第19章　连续的谱：Weyl 密度与没有 λ<sub>n</sub> 的世界</h2>
 
-<p>网格上 <span class="s">R=(8/π²)n²(1+o(1))</span>（19.1，实测 0.1% 内），连续侧第二个门槛为零（19.2），缩放后只剩一个门槛（19.3）。这是本书把结论“推向连续”的一次完整尝试：结论没有变强，而是<b>变了性质</b>——从“两个门槛”变成“一个门槛加一个密度”。第 20 章去连续那边把“密度”写清楚。</p>
+<div class="box box-takeaway"><p><b>本章主张。</b>紧流形上没有“最大的那个特征值”，因此第 16—19 章的“两个临界点”结构不能整体搬过去。取而代之的是<b>密度</b>：由 Weyl 律，耦合强度 <span class="s">β</span> 下已解锁的模式数按 <span class="s">(β/α)<sup>d/2</sup></span> 增长（定理 20.1）。另一个可搬过去的是恒等式 <span class="s">κ=½Var(λ)</span>（命题 20.1），因为它是纯代数的。</p></div>
 
-<div class="box box-takeaway"><p><b>一句话带走</b>：把网格加密一百倍，你得到的不是“更精确的两阶段相变”，而是“少了一个阶段”。</p></div>
+<p class="lead" data-story="1">调音师在给一面大鼓调音。有人问：“最高那个音是多少？”他敲了敲鼓面：<b>“没有最高。你敲得越急，出来的音越高，而且越来越高。”</b></p>
+
+<h3 id="sec19-11">19.11　导论：为什么连续侧要换对象</h3>
+
+<p>第 19 章的定理 19.1 已经说明：连续侧 <span class="s">μ<sub>max</sub>=∞</span>，所以 <span class="s">β<sub>1</sub>=0</span>。这不是缺陷，而是压缩的代价：有限图有“最后一个模式”，连续流形没有。要继续在连续侧工作，必须换一个对象——从“两个端点”换成“计数函数”。</p>
+
+
+
+<p><b></p><h3 id="sec19-12">19.12　Weyl 定律与解锁密度</h3>
+
+<p><b>定理 20.1（Weyl，1911）。</b>设 <span class="s">M</span> 是 <span class="s">d</span> 维紧黎曼流形，<span class="s">N(Λ)=#{k: μ<sub>k</sub>≤Λ}</span>，则
+<div class="eq"><span class="body"><math display="block"><mi>N</mi><mo>(</mo><mi>Λ</mi><mo>)</mo><mo>~</mo><msub><mi>ω</mi><mi>d</mi></msub><mo>·</mo><mi mathvariant="normal">vol</mi><mo>(</mo><mi>M</mi><mo>)</mo><mo>/</mo><mo>(</mo><mn>2</mn><mi>π</mi><msup><mo>)</mo><mi>d</mi></msup><mo>·</mo><msup><mi>Λ</mi><mi>d</mi><mo>/</mo><mn>2</mn></msup><mo>(</mo><mi>Λ</mi><mo>→</mo><mo>∞</mo><mo>)</mo></math></span><span class="num">(20.1)</span></div>
+其中 <span class="s">ω<sub>d</sub></span> 是单位球体积。〔已知，A／甲〕</p>
+
+<p>代入 <span class="s">Λ=β/α</span> 得：<b>“已解锁模式数”在连续侧是一个按 <span class="s">β<sup>d/2</sup></span> 增长的密度，而不是一个两级台阶。</b>单位正方形（<span class="s">d=2</span>，面积 1，<span class="s">ω<sub>2</sub>=π</span>）给出 <span class="s">N(Λ)~π·1/(2π)<sup>2</sup>·Λ=Λ/(4π)≈0.0796Λ</span>。下表用 40×40 网格核对（计数对网格加密不敏感，见附录 B.3）：</p>
+
+<table class="nat">
+<tr><th class="l"><span class="s">Λ</span></th><th class="l">网格计数</th><th class="l">格点精确计数 <span class="s">#{π²(m²+k²)≤Λ}</span></th><th class="l">Weyl 主项 <span class="s">Λ/(4π)</span></th><th class="l">比值</th></tr>
+<tr><td class="l">40</td><td class="l">6</td><td class="l">6</td><td class="l">3.18</td><td class="l">1.89</td></tr>
+<tr><td class="l">80</td><td class="l">9</td><td class="l">9</td><td class="l">6.37</td><td class="l">1.41</td></tr>
+<tr><td class="l">160</td><td class="l">17</td><td class="l">17</td><td class="l">12.73</td><td class="l">1.34</td></tr>
+<tr><td class="l">320</td><td class="l">31</td><td class="l">31</td><td class="l">25.46</td><td class="l">1.22</td></tr>
+<tr><td class="l">1280</td><td class="l">117</td><td class="l">113</td><td class="l">101.86</td><td class="l">1.15</td></tr>
+</table>
+<div class="cap"><b>表 19.2　解锁计数的三层对照</b>　网格计数与格点精确计数在 <span class="s">Λ≤320</span> 完全一致（边界效应之前）；计数从上方逼近 Weyl 主项：超出量按 <span class="s">O(√Λ)</span> 缩小（周长项），符号为正——图拉普拉斯对应 Neumann 边界。</div>
+
+<h3 id="sec19-13">19.13　热核与 κ 恒等式</h3>
+
+<p><b>命题 20.1（谱方差恒等式）。</b>令 <span class="s">Z(t)=Σ<sub>k</sub>e<sup>−tλ<sub>k</sub></sup></span>，定义 <span class="s">κ := ½·(d²/dt²)log Z(t)|<sub>t=0</sub></span>。则
+<div class="eq"><span class="body"><math display="block"><mi>κ</mi><mo>=</mo><mi>½</mi><mi mathvariant="normal">Var</mi><mo>(</mo><mi>λ</mi><mo>)</mo><mo>=</mo><mi>½</mi><mo>[</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>Σ</mo><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mi>²</mi><mo>−</mo><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>Σ</mo><msub><mi>λ</mi><mi mathvariant="normal">k</mi></msub><mo>)</mo><mi>²</mi><mo>]</mo></math></span><span class="num">(20.2)</span></div></p>
+
+<p><b>证明。</b><span class="s">Z(0)=n</span>，<span class="s">Z′(0)=−Σλ<sub>k</sub></span>，<span class="s">Z″(0)=Σλ<sub>k</sub>²</span>。而 <span class="s">(log Z)″=Z″/Z−(Z′/Z)²</span>，代入即得 <span class="s">(log Z)″(0)=Var(λ)</span>，故 <span class="s">κ=½Var(λ)</span>。<span class="s">∎</span></p>
+
+<p>证明只用了求导，因此它对任何有限谱成立——图、矩阵、超有限近似都行。数值核对：<span class="s">C<sub>10</sub></span> 的谱方差为 2，<span class="s">κ=1.000</span>；<span class="s">10×10</span> 网格方差 3.92，<span class="s">κ=0.980</span>（每边误差来自有限差分 <span class="s">10<sup>−3</sup></span>）。这条恒等式是全书中“用形式的一个数刻画全局”的最干净例子，也是唯一一条既能离散又能连续的。</p>
+
+<h3 id="sec19-14">19.14　同谱流形：连续侧的同构盲区</h3>
+
+<p>第 18.7 节给了图的反例：同谱不同构。连续侧有对应的现象：Sunada（1985）用群论构造出成对的<b>等谱但不等距</b>的紧流形——它们的 Laplace 谱完全相同（连重数都一样），但互不等距。这意味着“听见鼓的形状”（Kac, 1966）的答案是否定的：谱不能决定几何。</p>
+
+<p>对本语言来说，这条结论的位置很明确：<b>谱是“同调价位”的不变量（第 15 章），不是“同构价位”的判据。</b>任何声称“谱就是结构”的说法，在离散侧有两个 6 顶点图作反例，在连续侧有 Sunada 的构造作反例。</p>
+
+<h3 id="sec19-15">19.15　Weyl 的低阶项与“为什么表 19.2 的比值不是 1”</h3>
+
+<p>Weyl 主项 <span class="s">Λ/(4π)</span> 在 <span class="s">Λ=1280</span> 时给出 102，实测 117。多出的 15 是低阶项：二维区域有 <span class="s">N(Λ)=aΛ+b√Λ+o(√Λ)</span>，<span class="s">a=1/(4π)</span>、<span class="s">b=|∂M|/(4π)=1/π</span>（Neumann 取正号，Dirichlet 取负号）。代进去：<span class="s">Λ=1280</span> 时 <span class="s">102+35.8/π=113.4</span>，实测 117，差 3.6（<span class="s">O(1)</span> 与格点边界约定）；<span class="s">Λ=40</span> 时 <span class="s">3.2+6.3/π=5.2</span>，实测 6。两档都对得上同一组常数。</p>
+
+<p>也可以只看超出量的增长速度：<span class="s">Λ</span> 从 40 涨到 1280（32 倍），超出量从 2.8 涨到 15.1，5.4 倍。若低阶项是 <span class="s">O(√Λ)</span>，这 32 倍应当只放大 <span class="s">√32=5.7</span> 倍；5.4 与 5.7 对得上。表里比值一列从 1.89 落到 1.15，不是“逼近得不好”，而是边界项按 <span class="s">1/√Λ</span> 退场的正常速度。</p>
+
+<p>这条细节的作用是提醒：<b>渐进公式只能在足够大的参数上用。</b>本书引用 Weyl 律（Weyl，1911）时，只用它做一件弱的事——证明谱无上界（于是 <span class="s">μ<sub>max</sub>=∞</span>）。用它估计具体的模式数，就必须给出参数范围与边界条件，否则会像把 <span class="s">Λ/(4π)</span> 当成精确值、又把 Neumann 的 <span class="s">+√Λ/π</span> 漏掉那样出错。</p>
+
+<h3 id="sec19-16">19.16　热核展开、谱 zeta 与 Kac 问题</h3>
+
+<p>连续侧的谱不由“一串数”给出，而由<b>计数函数与热核</b>给出。三件东西是等价的三种说法。</p>
+
+<p><b>热核。</b><span class="s">K(t,x,x) ~ (4πt)<sup>−d/2</sup>Σ<sub>k≥0</sub>a<sub>k</sub>(x)t<sup>k</sup></span>，于是 <span class="s">Tr e<sup>tΔ</sup>=Σe<sup>−tμ<sub>k</sub></sup> ~ (4πt)<sup>−d/2</sup>Σ<sub>k</sub>A<sub>k</sub>t<sup>k</sup></span>，其中 <span class="s">A<sub>0</sub>=vol(M)</span>、<span class="s">A<sub>1</sub>=∫R/6</span>（<span class="s">R</span> 为数量曲率）。<b>Weyl 律就是 <span class="s">A<sub>0</sub></span> 项</b>：<span class="s">N(Λ)~vol·ω<sub>d</sub>(2π)<sup>−d</sup>Λ<sup>d/2</sup></span>。第 19.12 节的密度因此不是“另一个定理”，而是热核展开的最低阶。</p>
+
+<p><b>谱 zeta。</b><span class="s">ζ<sub>Δ</sub>(s)=Σ<sub>μ<sub>k</sub>&gt;0</sub>μ<sub>k</sub><sup>−s</sup></span> 在 <span class="s">s=d/2</span> 处有单极点，留数正比于体积。它与热核互为 Mellin 变换：<b>“体积”这个几何量，在谱侧表现为一个极点的留数。</b>这是本书里“几何 ↔ 谱”最强的一条桥，比 <span class="s">R</span> 强，也比 <span class="s">κ</span> 强——但它只对连续侧成立。</p>
+
+<p><b>Kac 问题。</b>“能不能听见鼓的形状？”Milnor（1964）给出 16 维环面的反例，Sunada（1985）给出系统构造。<b>答案是否定的：谱不决定几何。</b>这与第 18.7 节的 6 顶点反例是同一件事的两个尺度：离散侧有同谱不同图，连续侧有等谱不等距。本书把这一现象归入“同调价位”的固有限制，并在第 15 章给出四个价位作为语言。</p>
+
+<img class="fig" src="assets/svg/fig-weyl-count.svg" alt="图 19.3　解锁计数的三层对照">
+<div class="cap"><b>图 19.3　三种计数方式</b>　网格计数与格点精确计数在小 Λ 上重合，Weyl 主项只在 Λ→∞ 时逼近；低阶项是 <span class="s">O(√Λ)</span>。</div>
+<div class="box"><p><strong>读法：</strong>网格计数与格点精确计数在小 Λ 上重合，Weyl 主项只在 Λ→∞ 时逼近；低阶项是 <span class="s">O(√Λ)</span>。</p></div>
+
+<img class="fig" src="assets/svg/fig-heat-kernel.svg" alt="图 19.4　热核迹的短时渐近给出体积项">
+<div class="cap"><b>图 19.4　热核迹与体积项</b>　双对数下，网格热核迹在 <span class="s">t→0</span> 一端贴近 <span class="s">(4πt)<sup>−1</sup>·面积</span>，这条直线就是 Weyl 律的来源。</div>
+<div class="box"><p><strong>读法：</strong>双对数下，网格热核迹在 <span class="s">t→0</span> 一端贴近 <span class="s">(4πt)<sup>−1</sup>·面积</span>，这条直线就是 Weyl 律的来源。</p></div>
+
+<h3 id="sec19-17">19.17　反例：把有限图的直觉搬到流形上</h3>
+
+<p>三种典型误搬：</p>
+<ul>
+<li><b>以为有 <span class="s">λ<sub>n</sub></span></b>：于是以为“最后一个模式”是某个具体尺度。连续侧没有最后一个，Weyl 律说明模式无限密集。</li>
+<li><b>以为相变有两级</b>：连续侧的“台阶”变成密度曲线，两级台阶只在离散侧存在（第 19 章）。</li>
+<li><b>以为 <span class="s">κ</span> 依赖分辨率</b>：<span class="s">κ=½Var(λ)</span> 是代数的，只要谱给定就确定；但谱本身依赖离散化，所以 <span class="s">κ</span> 的数值依赖分辨率——两件事不能混。</li>
+</ul>
+
+<h3 id="sec19-18">19.18　把离散侧的直觉搬回连续侧：一张对照表</h3>
+
+<p>第 19 章的核心是“哪些能搬、哪些不能”。把它们列成表，读者可以逐行核对。</p>
+
+<table class="nat">
+<tr><th class="l">离散侧（图）</th><th class="l">连续侧（流形）</th><th class="l">能否搬</th><th class="l">原因</th></tr>
+<tr><td class="l"><span class="s">λ<sub>n</sub></span> 有限</td><td class="l"><span class="s">μ<sub>max</sub>=∞</span></td><td class="l">不能</td><td class="l">谱无上界（Weyl）</td></tr>
+<tr><td class="l">两阶段（两个门槛）</td><td class="l">一个门槛</td><td class="l">不能</td><td class="l">定理 19.1</td></tr>
+<tr><td class="l">解锁计数 <span class="s">N≤n</span></td><td class="l"><span class="s">N(Λ)~cΛ<sup>d/2</sup></span></td><td class="l">换成密度</td><td class="l">Weyl 律</td></tr>
+<tr><td class="l"><span class="s">κ=½Var(λ)</span></td><td class="l"><span class="s">κ</span> 由热核系数给</td><td class="l">能（代数）</td><td class="l">命题 20.1 只依赖求导</td></tr>
+<tr><td class="l">同谱不同图</td><td class="l">等谱不等距（Sunada）</td><td class="l">能（现象同型）</td><td class="l">谱不决定几何</td></tr>
+</table>
+<p>五行里三行“不能直接搬”，但这不等于失败：<b>搬不过去的部分正是“缺口”的内容</b>，而搬得过去的两行（<span class="s">κ</span> 与同谱现象）给出了两个跨尺度的稳定事实。</p>
+
+<h3 id="sec19-19">19.19　热核两项展开的数值核对</h3>
+
+<p>把第 19.16 节的两项展开写成可核对的式子：对单位正方形（<span class="s">d=2</span>，面积 1），</p>
+<div class="eq"><span class="body"><math display="block"><mi mathvariant="normal">Tr</mi><msup><mi>e</mi><mi>t</mi><mi>Δ</mi></msup><mo>=</mo><mn>1</mn><mo>/</mo><mo>(</mo><mn>4</mn><mi>π</mi><mi>t</mi><mo>)</mo><mo>+</mo><mo>|</mo><mo>∂</mo><mi>M</mi><mo>|</mo><mo>/</mo><mo>(</mo><mn>8</mn><mi>√</mi><mo>(</mo><mi>π</mi><mi>t</mi><mo>)</mo><mo>)</mo><mo>+</mo><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></math></span><span class="num">(20.3)</span></div>
+<p>其中 <span class="s">|∂M|=4</span> 是周长。第二项就是表 19.2 里计数高于 Weyl 主项的原因：<b>Neumann 边界的热核第二项为正</b>，对应的计数修正形如 <span class="s">+|∂M|√Λ/(4π)</span>。这与“边界减少可用面积”的直觉相反——那是对 Dirichlet 边界的直觉；图拉普拉斯对应 Neumann，符号要反过来。</p>
+
+<p>核对方式：取 <span class="s">t=0.01,0.03,0.1</span>，算网格（<span class="s">n=40</span>，<span class="s">h=1/40</span>）的 <span class="s">Tr e<sup>tL/h²</sup></span>，与 <span class="s">1/(4πt)+1/(2√(πt))</span> 比较。三档残差应随 <span class="s">t</span> 增大，因为高阶项 <span class="s">O(1)</span> 的相对比重上升。<b>这条练习的用处不是验证公式，而是让人看到“Weyl 律的常数项从哪来”</b>——它来自边界，而不是体积。</p>
+
+<p>对本书而言，这条边界项还有一个含义：第 19 章的 <span class="s">R</span> 发散正是由“边界顶点度数低”驱动（命题 18.2 的注解），而热核的边界项也由同一件事驱动。<b>两处现象同一个来源：边界。</b>这是把“谱的边界效应”与“相变宽度发散”连起来的一条暗线。</p>
+
+
+<div class="box box-expert"><p><strong>【给专家的注】</strong>热核两项展开 1/(4πt)+|∂M|/(8√(πt)) 的符号是正的（Neumann 边界），这与「边界减少面积」的直觉相反。它对应表 19.2 里计数高于主项的那 <span class="s">+√Λ/π</span>。</p></div>
+<h3 id="sec19-20">19.20　谱 zeta 的一个可算例</h3>
+
+<p>谱 zeta <span class="s">ζ<sub>Δ</sub>(s)=Σμ<sub>k</sub><sup>−s</sup></span> 在 <span class="s">s=d/2</span> 处有单极点。<b>对图（有限谱）它没有极点，只有有限和</b>——这本身就是离散与连续的一个差别。</p>
+
+<table class="nat">
+<tr><th class="l">对象</th><th class="l">ζ 的形状</th><th class="l">极点</th><th class="l">留数的含义</th></tr>
+<tr><td class="l">有限图</td><td class="l">有限和</td><td class="l">无</td><td class="l">—</td></tr>
+<tr><td class="l">紧流形（d 维）</td><td class="l">Dirichlet 级数</td><td class="l"><span class="s">s=d/2</span></td><td class="l">正比于体积</td></tr>
+</table>
+
+<p>这条对照的意义：<b>“体积”这个几何量，在谱侧表现为一个极点的留数；而在图上，没有这个极点。</b>于是“用谱读出体积”这件事只在连续侧成立，离散侧读不出（只能读出 <span class="s">n</span>，而 <span class="s">n</span> 不是体积）。</p>
+
+<p>这也给第 19 章的“推向连续”一个更硬的表述：<b>不是“图的谱逼近流形的谱”，而是“缩放的谱测度收敛，其 zeta 的极点从无到有”。</b>极点出现这件事，是离散→连续最清楚的相变标志之一，比 <span class="s">R</span> 的判据更强，因为它不依赖边界条件。</p>
+
+<img class="fig" src="assets/svg/fig-kappa-vs-R.svg" alt="图 19.5　κ 有界、R 无界">
+<div class="cap"><b>图 19.5　κ 有界、R 无界</b>　同一族路图：κ 趋于常数（由 0≤λ≤2Δ 保证有界），R 按 n² 增长。两个谱函数一个存活、一个发散。</div>
+<div class="box"><p><strong>读法：</strong>同一族路图：κ 趋于常数（由 0≤λ≤2Δ 保证有界），R 按 n² 增长。两个谱函数一个存活、一个发散。</p></div>
+<h3 id="sec19-21">19.21　连续的三个“不能问”</h3>
+
+<p>连续侧有三件事不能问，问了也没有答案。</p>
+
+<ol>
+<li><b>“最大的特征值是多少？”</b>没有——谱无上界（Weyl 律）。能问的是“计数函数 <span class="s">N(Λ)</span>”。</li>
+<li><b>“有几个洞？”</b>没有——同调群可能无限生成。能问的是 Betti 数是否有限（紧流形上有限）。</li>
+<li><b>“分辨率的极限是多少？”</b>没有——连续侧没有“分辨率”这个参数。能问的是“给定 <span class="s">t</span>，热核的值是多少”。</li>
+</ol>
+
+<p>三件不能问的事，恰好是离散侧最自然的三件事（最大谱、有限个分支、格距）。<b>所以“把离散的直觉搬到连续”失败的方式，往往不是算错，而是问了一个没有答案的问题。</b></p>
+
+<p>本书的处置是：在连续侧换成“密度 / 计数 / 核”三件可问的事（第 19.12 节）。这条换法不是技巧，而是<b>“对象变了，可问的问题也要变”</b>的直接后果——这也回到第 10 章的语法：阈值与属性，都要随对象重设。</p>
+
+<h3 id="sec19-22">19.22　2031 情景：当区分被外包给模型</h3>
+<p><b>情景推演（示意，C 级）。</b>把"划线"这件事交给模型，会同时改变三样东西：线的数量、线的粒度、以及谁对线负责。三条曲线：模型生成区分的成本（指数下降）、人核对区分的成本（线性）、以及"一个区分被采用"所需的共识（近似常数）。</p>
+<p>情景一（区分通胀）：线变得极多且极细，读者拿到的不是结构而是噪声；本书的"三条最小公理"变成筛选器，而不是生成器。情景二（区分标准化）：少数平台把区分固化成默认分类法，线的数量下降、粒度变粗，代价是"看不见的分类"重新出现。情景三（区分即服务）：划线被做成按需调用的接口，用户只拿到结果、不拿到理由——本书最在意的"可复核"被外包掉。</p>
+<p><b>互斥检验。</b>到 2029 年：若主流工具默认给出上百个细分类且无人核对，情景一成立；若跨平台分类法趋同且类目数下降，情景二成立；若用户无法查看"为什么这样分"，情景三成立。三条中任何一条被数据打中，本书关于"区分必须可复核"的主张就要在该场景下加限定。</p>
+<h3 id="sec19-23">19.23　本章小结：推向连续，结论变了性质</h3>
+<p>两次极限给出的是同一个教训：把结论从有限对象推向连续，得到的不是"更精确的同一个结论"，而是换了一个结论。网格上 R=(8/π²)n² 是可算的闭式，连续侧第二个门槛消失、R 从常数变成 n²；换到流形，对象本身从"两个端点"换成"密度"，能搬过去的是代数恒等式，搬不过去的是 λn 与两阶段结构。这不是缺陷，是对象变了的直接后果；把它写成"缺陷"或写成"更强"，都是误读。</p>
+<div class="box box-takeaway"><p><b>一句话带走：</b>连续极限不是放大镜，是换地图——比例尺变了，地名也得重起。</p></div>
 
 <h3>19　本章文献（引用与延伸）</h3>
 
@@ -155,4 +298,13 @@
 <p class="refh">延伸阅读</p>
 <p>Tenenbaum, J. B., de Silva, V., &amp; Langford, J. C. (2000). A global geometric framework for nonlinear dimensionality reduction. Science 290, 2319–2323.</p>
 <p>Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. Applied and Computational Harmonic Analysis 21, 5–30.</p>
+</div>
+<div class="refs">
+<p class="refh">本章引用</p>
+<p>★ Milnor, J. (1964). Eigenvalues of the Laplace operator on certain manifolds. PNAS 51, 542.</p>
+<p>★ Kac, M. (1966). Can one hear the shape of a drum? American Mathematical Monthly 73, 1–23.</p>
+<p class="refh">延伸阅读</p>
+<p>Minakshisundaram, S., &amp; Pleijel, Å. (1949). Some properties of the eigenfunctions of the Laplace operator on Riemannian manifolds. Canadian Journal of Mathematics 1, 242–256.</p>
+<p>Gilkey, P. B. (1995). Invariance Theory, the Heat Equation, and the Atiyah–Singer Index Theorem (2nd ed.). CRC Press.</p>
+<p>Chavel, I. (1984). Eigenvalues in Riemannian Geometry. Academic Press.</p>
 </div>

@@ -87,3 +87,14 @@ img.fig[src$=".svg"], .fig-svg { width: 100%; display: block; margin: 12pt 0 4pt
   margin-bottom: .35em; color: #8a6d2f;
 }
 .part-summary p { margin: 0 0 .45em; text-indent: 2em; }
+
+/* 通俗本：四种读者的分层提示框 */
+.box { padding: 10pt 12pt; border-radius: 4px; }
+.box > p:first-child { margin-top: 0; }
+.box > p:last-child, .box > ol:last-child, .box > ul:last-child { margin-bottom: 0; }
+.box-more1 { background: #eef4fb; border: 1px solid #cfe0f3; border-left: 5px solid #2f6db0; }
+.box-more2 { background: #eef7f0; border: 1px solid #cfe6d5; border-left: 5px solid #2e7d32; }
+.box-expert { background: #f3e9f7; border: 1px solid #e3d0ec; border-left: 5px solid #8e5a9c; }
+.box-do { background: #fff8e1; border: 1px solid #f0e0b8; border-left: 5px solid #ef6c00; }
+.box-takeaway { background: #faf6ec; border: 1px solid #e8dcc0; border-left: 5px solid #b8862f; }
+.box-takeaway p { font-weight: 700; }

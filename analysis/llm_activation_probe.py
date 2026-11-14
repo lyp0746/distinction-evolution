@@ -326,18 +326,22 @@ def main():
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "..", "_series", "tools"))
+        from figstyle import setup, savefig as figsave  # noqa: E402
+        plt = setup(fontsize=8.0)
         os.makedirs(CHARTS, exist_ok=True)
         xs = [h["epoch"] for h in hist]
         fig, ax = plt.subplots(1, 3, figsize=(10.5, 3.0), layout="constrained")
         for L in layers:
             ax[0].plot(xs, [h[L] for h in hist], label=f"layer {L}")
             ax[1].plot(xs, [h["r" + L[1:]] for h in hist], label=f"layer {L}")
-        ax[0].set_title("total activation S"); ax[0].set_xlabel("epoch"); ax[0].legend(fontsize=7)
-        ax[1].set_title("effective rank r"); ax[1].set_xlabel("epoch"); ax[1].legend(fontsize=7)
+        ax[0].set_xlabel("epoch"); ax[0].legend(fontsize=7)
+        ax[1].set_xlabel("epoch"); ax[1].legend(fontsize=7)
         ax[2].plot(xs, [h["train_acc"] for h in hist], label="train")
         ax[2].plot(xs, [h["test_acc"] for h in hist], label="test")
-        ax[2].set_title("accuracy"); ax[2].set_xlabel("epoch"); ax[2].legend(fontsize=7)
-        fig.savefig(os.path.join(CHARTS, "llm_activation_probe.png"), dpi=200)
+        ax[2].set_xlabel("epoch"); ax[2].legend(fontsize=7)
+        figsave(os.path.join(CHARTS, "llm_activation_probe.png"))
         print("[fig]", os.path.join(CHARTS, "llm_activation_probe.png"))
     except Exception as e:
         print("[fig] 跳过：", e)

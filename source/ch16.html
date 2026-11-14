@@ -12,14 +12,14 @@
 
 
 
-<p><b>本章的路线。</b>本章从“为什么从图开始”说起，先写区分强度与演化方程，再谱分解出临界耦合；然后给定理、三个隐含前提与加权推广，最后用非对称反例、扰动估计与 Lyapunov 谱说明临界值的稳与不稳。</p><h3 id="sec16-2">16.2　区分强度与演化方程</h3>
+<p><b></p><h3 id="sec16-2">16.2　区分强度与演化方程</h3>
 
 <div class="define"><span class="bt">定义 16.1　图上的区分演化</span>
 设 <span class="s">G=(V,E)</span> 是连通有限图，<span class="s">|V|=n</span>，顶点 <span class="s">v</span> 上的区分强度为 <span class="s">D<sub>v</sub>(t)∈ℝ</span>。演化方程为
 <div class="eq"><span class="body"><math display="block"><msub><mi>Ḋ</mi><mi>v</mi></msub><mo>=</mo><mo>−</mo><mi>α</mi><msub><mi>D</mi><mi>v</mi></msub><mo>+</mo><mi>β</mi><msub><mo>Σ</mo><mi>u</mi><mo>∼</mo><mi>v</mi></msub><mo>(</mo><msub><mi>D</mi><mi>u</mi></msub><mo>−</mo><msub><mi>D</mi><mi>v</mi></msub><mo>)</mo><mo>,</mo><mtext>即</mtext><mi>Ḋ</mi><mo>=</mo><mo>(</mo><mo>−</mo><mi>α</mi><mi>I</mi><mo>+</mo><mi>β</mi><mi>L</mi><mo>)</mo><mi>D</mi></math></span><span class="num">(16.1)</span></div>
 其中 <span class="s">α&gt;0</span> 是衰减率，<span class="s">β&gt;0</span> 是耦合强度，<span class="s">L=D<sub>adj</sub>−A</span> 是图拉普拉斯。</div>
 
-<p>两项各有含义：<span class="s">−αD</span> 是“忘掉”；<span class="s">βL</span> 是“向邻居看齐后再拉开”。没有第一项，系统会收敛到常数（谁也区分不了谁）；没有第二项，每个顶点各自衰减（区分度整体归零）。<b>区分既需要记忆，也需要关系。</b></p>
+<p>这个形式是“反应–扩散”在图上的特例（连续版本见 Turing，1952；图上版本见 Nakao &amp; Mikhailov，2010）。两项各有含义：<span class="s">−αD</span> 是“忘掉”；<span class="s">βL</span> 是“向邻居看齐后再拉开”。没有第一项，系统会收敛到常数（谁也区分不了谁）；没有第二项，每个顶点各自衰减（区分度整体归零）。<b>区分既需要记忆，也需要关系。</b></p>
 
 <h3 id="sec16-3">16.3　谱分解与临界耦合</h3>
 
@@ -54,6 +54,19 @@
 </table>
 <div class="cap"><b>表 16.1　三个图的临界耦合</b>　第三、四列若相等，系统没有中间地带（第 17 章）。数值可用十行代码复算。</div>
 
+<p><b>把数代进去，两个临界值之间是什么样子。</b>以十边形 <i>C</i><sub>10</sub> 为例：<i>λ</i><sub>2</sub>=0.382、<i>λ</i><sub>n</sub>=4，取 <i>α</i>=1，则 <i>β</i><sub>1</sub>=0.25、<i>β</i><sub>2</sub>=2.62。模式 <i>k</i> 存活的条件是 <i>βλ</i><sub>k</sub>&gt;1，即 <i>λ</i><sub>k</sub>&gt;1/<i>β</i>：</p>
+
+<table class="nat">
+<caption class="cap"><b>表 16.2　耦合强度决定“还剩几种区分”</b></caption>
+<thead><tr><th class="l">耦合 β</th><th class="l">存活需 λ &gt;</th><th class="l">实际存活的模式（λ 值）</th><th class="l">系统还能区分什么</th></tr></thead>
+<tr><td class="l">0.3</td><td class="l">3.33</td><td class="l">k=4,5（3.62, 4.00）</td><td class="l">只剩最细粒度的局部差异</td></tr>
+<tr><td class="l">1.0</td><td class="l">1.00</td><td class="l">k=2,3,4,5（1.38, 2.62, 3.62, 4.00）</td><td class="l">局部与中等尺度都在，缺最慢的那一层</td></tr>
+<tr><td class="l">3.0</td><td class="l">0.33</td><td class="l">k=1…5（0.38 起全部）</td><td class="l">从最慢（全环）到最快都在</td></tr>
+</table>
+<div class="datasrc"><b>性质：</b>算例表（<i>C</i><sub>10</sub>，<i>α</i>=1，<i>λ</i><sub>k</sub>=2−2cos(2π<i>k</i>/10)）。<b>数据来源：</b>本书按 <i>C</i><sub>10</sub>、α=1 计算的算例（本书构造 C），可由随书脚本复算。<b>注释：</b>“存活”指该模式的增长率为正；模式本身的大小由 <i>D</i>(0) 的分量决定，这里只问“会不会长”。</div>
+
+<p>这张表说明了一件容易被忽略的事：<b>两个临界值之间的区段，不是“半死不活”，而是“只剩高频”。</b>当 <i>β</i> 刚过 <i>β</i><sub>1</sub> 时，系统只保住了最细的差异（谁跟邻居不一样），却丢掉了最粗的结构（整个环被分成两半）。换句话说，<b>强耦合保住细节，弱耦合保住全局；中间的区段两头都不全。</b>这解释了为什么在应用里，“把 β 调大一点”往往让局部判断更锐利，却让整体叙事更碎——不是模型坏了，是它只能看见高频那一层。</p>
+
 <h3 id="sec16-5">16.5　定理 16.1 的三个隐含前提</h3>
 
 <p>三个前提都写在陈述里，但都容易被漏读。<b>其一，连通性</b>：不连通时 <span class="s">λ<sub>2</sub>=0</span>，<span class="s">β<sub>2</sub></span> 发散，定理失效——这不是技术细节，非连通图恰好对应“系统内部已经分块”。<b>其二，对称性</b>：<span class="s">L</span> 必须对称，否则谱可能为复数（16.5 的反例）。<b>其三，均匀耦合</b>：所有边的 <span class="s">β</span> 相同；加权图的结论要改成 <span class="s">βλ<sub>k</sub>(L<sub>w</sub>)</span>，其中 <span class="s">L<sub>w</sub></span> 是加权拉普拉斯，形式不变但数值全变。</p>
@@ -62,11 +75,11 @@
 
 <h3 id="sec16-6">16.6　推广：加权图与归一化拉普拉斯</h3>
 
-<p>定理 16.1 只用了“<span class="s">L</span> 实对称、半正定、零空间为一维常数向量”这三条。因此它对两类推广自动成立。</p>
+<p>定理 16.1 只用了“<span class="s">L</span> 实对称、半正定、零空间为一维常数向量”这三条（图拉普拉斯的这三条性质是谱图论的标准起点，见 Chung，1997；谱定理与 Courant–Fischer 极小极大刻画见 Horn &amp; Johnson，1985）。因此它对两类推广自动成立。</p>
 
 <p><b>加权图。</b>边权 <span class="s">w<sub>uv</sub>&gt;0</span>，令 <span class="s">L<sub>w</sub>=D<sub>w</sub>−W</span>，<span class="s">D<sub>w</sub>=diag(Σ<sub>v</sub>w<sub>uv</sub>)</span>。定理逐字成立，只是 <span class="s">λ<sub>k</sub></span> 换成加权谱；临界耦合变成 <span class="s">α/λ<sub>k</sub>(L<sub>w</sub>)</span>。<b>归一化拉普拉斯</b> <span class="s">ℒ=I−D<sup>−1/2</sup>WD<sup>−1/2</sup></span> 也是实对称半正定，谱在 <span class="s">[0,2]</span>，同样适用——代价是“常数向量”变成“<span class="s">√d</span> 向量”，于是模式的几何解释要重写。</p>
 
-<p>两处推广有一个共同的陷阱：<b>数值不可比。</b>加权图的 <span class="s">λ<sub>n</sub></span> 没有上界 <span class="s">2Δ</span>（权可以任意大），所以命题 18.1 的界要改成依赖最大权。这一点在第 21 章的覆盖表里被标为“可比性风险”。</p>
+<p>两处推广有一个共同的陷阱：<b>数值不可比。</b>加权图的 <span class="s">λ<sub>n</sub></span> 没有上界 <span class="s">2Δ</span>（权可以任意大），所以命题 18.1 的界要改成依赖最大权。这一点在第 20 章的覆盖表里被标为“可比性风险”。</p>
 
 <h3 id="sec16-7">16.7　反例：非对称耦合会让顺序反转</h3>
 
@@ -98,7 +111,7 @@
 <img class="fig" src="assets/svg/fig-lyapunov-spectrum.svg" alt="图 16.1　相变即 Lyapunov 谱符号改变">
 <div class="cap"><b>图 16.1　Lyapunov 谱与相变</b>　每根柱子是一条模式；红为正（分离增长），绿为负（分离衰减）。<span class="s">β</span> 增大等价于整排柱子上移，最先越过零线的是最右边（最高频）的那根。</div>
 
-<p>这个重述有三个用处。<b>一，把“区分”与“混沌”接上：</b>正 Lyapunov 指数就是“区分被放大”的速率，第 21 章的“混沌”条目应当以它作判据，而不是以“看起来乱”作判据。<b>二，给出可核对的量：</b>给定 <span class="s">β</span> 算符号，就得到解锁序（第 18 章）。<b>三，划出边界：</b>线性系统的 Lyapunov 谱与初值无关，因此<b>线性系统不可能有混沌</b>——混沌要求指数随轨道变化，也就是要求非线性。</p>
+<p>这个重述有三个用处。<b>一，把“区分”与“混沌”接上：</b>正 Lyapunov 指数就是“区分被放大”的速率，第 20 章的“混沌”条目应当以它作判据，而不是以“看起来乱”作判据。<b>二，给出可核对的量：</b>给定 <span class="s">β</span> 算符号，就得到解锁序（第 18 章）。<b>三，划出边界：</b>线性系统的 Lyapunov 谱与初值无关，因此<b>线性系统不可能有混沌</b>——混沌要求指数随轨道变化，也就是要求非线性。</p>
 
 
 <div class="box box-expert"><p><strong>【给专家的注】</strong>定理 16.1 的三个前提（连通、对称、均匀耦合）缺一不可。加权与归一化拉普拉斯的推广在 16.5b 节，代价是数值可比性下降——命题 18.1 的界要改成依赖最大权。</p></div>
@@ -121,12 +134,14 @@
 <img class="fig" src="assets/svg/fig-weighted-path.svg" alt="图 16.2　权重异质性与 R">
 <div class="cap"><b>图 16.2　权重异质性与 R</b>　10 点路，把中间一条边的权重从 1 倍加到 100 倍：两个临界值同时抬高，但 λ₂ 抬得更快，于是 R 下降。</div>
 <div class="box"><p><strong>读法：</strong>10 点路，把中间一条边的权重从 1 倍加到 100 倍：两个临界值同时抬高，但 λ₂ 抬得更快，于是 R 下降。</p></div>
-<img class="fig" src="assets/svg/fig-weighted-sweep.svg" alt="图 16.3　权重集中的扫描">
+<img class="fig" style="width:88%" src="assets/svg/fig-weighted-sweep.svg" alt="图 16.3　权重集中的扫描">
 <div class="cap"><b>图 16.3　权重集中的扫描</b>　10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</div>
 <div class="box"><p><strong>读法：</strong>10 点路，中间边权重从 1 倍扫到 40 倍：R 单调下降，两个临界值同时被抬高但 λ₂ 抬得更快。</p></div>
 <h3 id="sec16-12">16.12　本章小结</h3>
 
 <p>线性演化把“区分”变成一串数：<span class="s">μ<sub>k</sub>=βλ<sub>k</sub>−α</span>。两个临界耦合（16.3）分开了解锁的先后。第 17 章问：这两个数之间的地带是什么。</p>
+
+<div class="note"><b>若这条判据错了，会看到什么：</b>若实测的解锁顺序与两个临界耦合给出的先后相反，机制式就是错的。</div>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：系统先解锁哪个方向，不取决于你拉哪里，取决于谱从哪头开始。</p></div>
 

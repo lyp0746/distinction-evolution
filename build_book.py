@@ -257,7 +257,7 @@ def read_toc_map(pdf_path):
 
 
 def stamp_folios(pdf_path):
-    """在每页页脚居中盖页码（封面除外）。"""
+    """页脚页码 + 页眉章名（章名由 PDF 书签推出；封面、扉页、部分页不盖章）。"""
     try:
         import pymupdf
     except Exception:
@@ -269,6 +269,14 @@ def stamp_folios(pdf_path):
     try:
         doc = pymupdf.open(pdf_path)
         n = len(doc)
+        # 书签 → (起始页, 层级, 标题)；用于页眉
+        toc = []
+        try:
+            toc = [(p, lvl, t) for lvl, t, p in doc.get_toc()]
+        except Exception:
+            toc = []
+        chapters = [(p, t) for p, lvl, t in toc if re.search(r"第\s*\d+\s*章", t or "")]
+        first_ch = min([p for p, _ in chapters], default=2)
         for i in range(1, n):                      # 第 1 页是封面，不盖
             page = doc[i]
             w, h = page.rect.width, page.rect.height
@@ -280,12 +288,41 @@ def stamp_folios(pdf_path):
             page.insert_text((cx - 3.2 * len(str(i + 1)), y), str(i + 1),
                              fontsize=8.5, fontname="helv",
                              color=(0.32, 0.32, 0.32))
+            # 页眉：只在正文章内盖（扉页、部分页、目录不盖）
+            if chapters and (i + 1) >= first_ch:
+                cur = None
+                for p, lvl, t in toc:
+                    if p > i + 1:
+                        break
+                    if re.search(r"第\s*\d+\s*章", t or ""):
+                        cur = t
+                # 扉页、部分页、章前扉页不盖页眉：一是书签正好压在本页且不是章，
+                # 二是本页正文太短（扉页只有章题、题记与结构，通常 < 260 字）
+                here = [(lvl, t) for p, lvl, t in toc if p == i + 1]
+                fp_here = any(lvl == 1 and not re.search(r"第\s*\d+\s*章", t or "") for lvl, t in here)
+                short = len(page.get_text("text").strip()) < 260
+                # 章首页：本页有超大字号且带“章”字（章标题已在正文中），页眉重复，不盖
+                big_title = False
+                try:
+                    for blk in page.get_text("dict")["blocks"]:
+                        for line in blk.get("lines", []):
+                            for sp in line.get("spans", []):
+                                if sp.get("size", 0) > 16 and "章" in (sp.get("text") or ""):
+                                    big_title = True
+                except Exception:
+                    pass
+                if cur and not fp_here and not short and not big_title:
+                    ttl = re.sub(r"\s+", " ", cur).strip()[:34]
+                    page.insert_text((w - 85 - 7.4 * len(ttl), 40), ttl,
+                                     fontsize=7.6, fontname="china-s",
+                                     color=(0.45, 0.45, 0.45))
+                    page.draw_line(pymupdf.Point(85, 47), pymupdf.Point(w - 85, 47),
+                                   color=(0.85, 0.85, 0.85), width=0.35)
         doc.saveIncr()
         doc.close()
-        print(f"  [folio] 已给 {n - 1} 页盖页码")
+        print(f"  [folio] 已给 {n - 1} 页盖页码（章内页另盖页眉）")
     except Exception as e:
         print("  [folio] 盖章失败：", e)
-
 
 def build_toc(parts, pagemap=None):
     """带分级（部分／章／节）内部链接的目录。"""
@@ -391,13 +428,17 @@ def build_chapter_opener(ch):
         b = _re.search(r"<b>(.*?)</b>", m.group(1), _re.S)
         if b:
             quote = _re.sub(r"<[^>]+>", "", b.group(1)).strip().strip('“”" ')
+            if quote.endswith(("：", ":")):
+                rest = t.split(quote, 1)[-1].strip()
+                if rest:
+                    quote = rest
         else:
             quote = t.split("。")[0] + "。"
     if len(quote) > 90:
         quote = quote[:88] + "……"
     secs = [x for x in ch.get("sections", []) if not x.startswith(str(ch.get("no")) + "　") or True]
     secs = [x for x in secs if "本章文献" not in x and "参考文献" not in x]
-    items = "".join(f"<li>{x}</li>" for x in secs[:12])
+    items = "".join(f"<li>{x}</li>" for x in secs)
     return (f'<div class="chapter-opener">'
             f'<div class="co-kicker">CHAPTER {int(ch["no"]):02d}</div>'
             f'<div class="co-num">{ch["no"]}</div>'
@@ -415,7 +456,113 @@ def build_part_summary(part):
             f'{_part_para(sm)}</div>')
 
 
-def build(book, parts, ereader=False, pagemap=None):
+# --- index support (injected) ---
+_IX_PATH = os.path.join(OUTPUT, ".indexmap.json")
+
+
+def load_terms():
+    """从各书的术语装置取词条（能复用就复用，不另建词表）。
+
+    三种形态都认：
+      1) 表头首列为“术语／中文”的表（capacity、entropy、知识、mind-forks、诠释、涌现）；
+      2) 定义块 <div class="define"><span class="bt">术语</span>（选择的代价）；
+      3) 上面都没有时，退回 front_terms.html 的表。
+    """
+    cands = ["back_glossary.html", "appendix_d.html", "appendix_a.html", "appendix_b.html", "front_terms.html"]
+    terms, seen = [], set()
+
+    def push(t):
+        t = re.sub(r"<[^>]+>", "", t)
+        t = re.sub(r"\s+", " ", t).strip(" 　·、—（）()")
+        if len(t) < 2 or len(t) > 24 or t in seen or t.startswith("["):
+            return
+        if re.fullmatch(r"[\W_]+", t):
+            return
+        seen.add(t)
+        terms.append(t)
+
+    for fn in cands:
+        f = os.path.join(SOURCE, fn)
+        if not os.path.exists(f):
+            continue
+        raw = open(f, encoding="utf-8").read()
+        for tbl in re.findall(r"<table\b.*?</table>", raw, re.S):
+            rows = re.findall(r"<tr[^>]*>(.*?)</tr>", tbl, re.S)
+            if not rows:
+                continue
+            head = re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", rows[0], re.S)
+            if not head:
+                continue
+            h0 = re.sub(r"<[^>]+>", "", head[0])
+            if any(k in h0 for k in ("术语", "中文", "词", "概念", "项", "条目", "名称")):
+                for r in rows[1:]:
+                    cells = re.findall(r"<t[dh][^>]*>(.*?)</t[dh]>", r, re.S)
+                    if cells:
+                        push(cells[0])
+                if terms:
+                    return terms
+        for m in re.finditer(r'<div class="define"><span class="bt">(.*?)</span>', raw, re.S):
+            push(m.group(1))
+        if terms:
+            return terms
+    return terms
+
+
+def compute_indexmap(pdf_path, max_hits=6):
+    """在已生成的 PDF 里检索术语，记录页码（跳过正文之前的页）。"""
+    try:
+        import pymupdf
+    except Exception:
+        try:
+            import fitz as pymupdf
+        except Exception:
+            return {}
+    terms = load_terms()
+    if not terms:
+        return {}
+    doc = pymupdf.open(pdf_path)
+    first = 2
+    try:
+        for lvl, t, p in doc.get_toc():
+            if re.search(r"第\s*\d+\s*章", t or ""):
+                first = p
+                break
+    except Exception:
+        pass
+    last = len(doc) + 1
+    out = {}
+    for t in terms:
+        pages = []
+        for i in range(first - 1, max(first, last - 1)):
+            try:
+                if doc[i].search_for(t):
+                    pages.append(i + 1)
+            except Exception:
+                continue
+            if len(pages) >= max_hits:
+                break
+        if pages:
+            out[t] = pages
+    doc.close()
+    return out
+
+
+def build_index(indexmap):
+    if not indexmap:
+        return ""
+    items = []
+    for t in sorted(indexmap, key=lambda x: (x[0].lower(), x)):
+        shown = "、".join(str(p) for p in indexmap[t])
+        items.append(f'<p class="ix"><b>{t}</b>　{shown}</p>')
+    return ('<div id="index" style="break-before:page;">'
+            '<h1 class="part-title">索引</h1>'
+            '<p class="lead">词条取自术语表（附录 G），页码为印刷版页码；每条最多列六处，'
+            '不列全书出现次数。</p>'
+            '<div style="column-count:2;column-gap:8mm;font-size:0.86em;line-height:1.5;">'
+            + "".join(items) + '</div></div>')
+
+
+def build(book, parts, ereader=False, pagemap=None, indexmap=None):
     blocks = [build_cover(), build_title_page(book), build_copyright(book),
               build_abstract_page(book), build_toc(parts, pagemap)]
     for title, fname, anchor in FRONT:
@@ -448,6 +595,8 @@ def build(book, parts, ereader=False, pagemap=None):
             with open(f, encoding="utf-8") as fh:
                 blocks.append(f'<div id="{anchor}">{fh.read()}</div>')
 
+    if not ereader and indexmap:
+        blocks.append(build_index(indexmap))
     body = "\n".join(blocks)
     body = annotate_headings(inline_images(body))
     body = inject_placeholders(body)
@@ -641,6 +790,19 @@ if __name__ == "__main__":
                 out = build(book, parts, ereader=ereader, pagemap=newpm)
                 print_pdf(out)
             stamp_folios(pdf)
+            # 索引：先检索术语页码，再重建一次（索引追加在书末，不影响前面的页码）
+            try:
+                ix = compute_indexmap(pdf)
+                print(f"  [index] 词条 {len(ix)} 条")
+                if ix:
+                    with open(_IX_PATH, "w", encoding="utf-8") as fh:
+                        json.dump(ix, fh, ensure_ascii=False, indent=0)
+                    out = build(book, parts, ereader=ereader,
+                                pagemap=newpm if newpm else pm, indexmap=ix)
+                    print_pdf(out)
+                    stamp_folios(pdf)
+            except Exception as _ix_e:
+                print("  [index] 跳过：", _ix_e)
     # 目录必须能跳：Chrome 把锚点写成“页面底部”的命名目标，这里改写成 GOTO
     try:
         import importlib.util

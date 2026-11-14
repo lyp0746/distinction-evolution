@@ -226,6 +226,10 @@ def main():
         import matplotlib
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
+        import sys as _sys, os as _os
+        _sys.path.insert(0, _os.path.join(_os.path.dirname(_os.path.abspath(__file__)), "..", "..", "_series", "tools"))
+        from figstyle import setup, savefig as figsave  # noqa: E402
+        plt = setup(fontsize=8.0)
         os.makedirs(CHARTS, exist_ok=True)
         fig, ax = plt.subplots(1, 2, figsize=(9, 3.2), layout="constrained")
         # 左：对称加权的 W 分布
@@ -236,18 +240,16 @@ def main():
             w = rng.uniform(0.05, 5.0, size=len(edges))
             lam = np.sort(np.linalg.eigvalsh(weighted_laplacian(8, edges, w)))
             ws.append(1 / lam[1] - 1 / lam[-1])
-        ax[0].hist(ws, bins=40, color="#3a6ea5")
-        ax[0].set_title("symmetric weighted: W = a(1/l2 - 1/ln) >= 0")
+        ax[0].hist(ws, bins=40, color="#0072B2")
         ax[0].set_xlabel("intermediate-phase width W")
         # 右：有向图 Re 谱与 TV
         if rev["first_example"]:
             arcs = rev["first_example"]["arcs"]
             L = directed_laplacian(7, arcs)
             ev = np.linalg.eigvals(L).real
-            ax[1].plot(np.sort(ev)[::-1], "o-", color="#c94f4f")
-            ax[1].set_title("directed: sorted Re(lambda_k)")
+            ax[1].plot(np.sort(ev)[::-1], "o-", color="#D55E00")
             ax[1].set_xlabel("mode index"); ax[1].set_ylabel("Re(lambda)")
-        fig.savefig(os.path.join(CHARTS, "weighted_directed_transition.png"), dpi=200)
+        figsave(os.path.join(CHARTS, "weighted_directed_transition.png"))
         print("[fig]", os.path.join(CHARTS, "weighted_directed_transition.png"))
     except Exception as e:
         print("[fig] skip:", e)

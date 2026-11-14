@@ -29,17 +29,17 @@
 </table>
 <p><span class="s">π²=9.8696</span>。<span class="s">λ<sub>2</sub>/h²</span> 单调上升趋近 <span class="s">π²</span>；<span class="s">R</span> 与闭式的相对误差从 1.7% 降到 0.03%。</p>
 
-<h3>B.3　Weyl 计数（80×80 网格）</h3>
+<h3>B.3　Weyl 计数（40×40 网格）</h3>
 <table class="nat">
-<tr><th class="l">Λ</th><th class="l">网格计数</th><th class="l">格点精确计数</th><th class="l">Λ/4</th></tr>
-<tr><td class="l">40</td><td class="l">6</td><td class="l">6</td><td class="l">10.0</td></tr>
-<tr><td class="l">80</td><td class="l">9</td><td class="l">9</td><td class="l">20.0</td></tr>
-<tr><td class="l">160</td><td class="l">17</td><td class="l">17</td><td class="l">40.0</td></tr>
-<tr><td class="l">320</td><td class="l">31</td><td class="l">31</td><td class="l">80.0</td></tr>
-<tr><td class="l">1280</td><td class="l">117</td><td class="l">113</td><td class="l">320.0</td></tr>
-<tr><td class="l">5120</td><td class="l">453</td><td class="l">427</td><td class="l">1280.0</td></tr>
+<tr><th class="l">Λ</th><th class="l">网格计数</th><th class="l">格点精确计数</th><th class="l">Λ/(4π)</th></tr>
+<tr><td class="l">40</td><td class="l">6</td><td class="l">6</td><td class="l">3.18</td></tr>
+<tr><td class="l">80</td><td class="l">9</td><td class="l">9</td><td class="l">6.37</td></tr>
+<tr><td class="l">160</td><td class="l">17</td><td class="l">17</td><td class="l">12.73</td></tr>
+<tr><td class="l">320</td><td class="l">31</td><td class="l">31</td><td class="l">25.46</td></tr>
+<tr><td class="l">1280</td><td class="l">117</td><td class="l">113</td><td class="l">101.86</td></tr>
+<tr><td class="l">5120</td><td class="l">453</td><td class="l">427</td><td class="l">407.4</td></tr>
 </table>
-<p>前四行“网格计数＝格点计数”，说明离散侧精确复现了连续侧的计数；第五、六行开始出现边界效应（网格边界与周期性边界不同）。Weyl 主项 <span class="s">Λ/4</span> 只在 <span class="s">Λ→∞</span> 时逼近，低阶项为 <span class="s">O(√Λ)</span>。</p>
+<p>前四行“网格计数＝格点计数”，说明离散侧精确复现了连续侧的计数；第五、六行开始出现边界效应（网格边界与周期性边界不同）。Weyl 主项 <span class="s">Λ/(4π)</span> 从下方逼近，超出量按 <span class="s">O(√Λ)</span> 缩小（Neumann 边界项，系数 <span class="s">1/π</span>）。</p>
 
 <h3>B.4　同谱反例（6 顶点）</h3>
 <table class="nat">

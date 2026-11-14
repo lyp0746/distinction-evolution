@@ -17,11 +17,11 @@
           1
         ],
         [
-          "ch22.html",
+          "ch21.html",
           1
         ],
         [
-          "ch23.html",
+          "ch22.html",
           1
         ]
       ],
@@ -33,7 +33,7 @@
       "first": null
     },
     "不可区分": {
-      "total": 6,
+      "total": 5,
       "by_chapter": [
         [
           "ch02.html",
@@ -41,7 +41,7 @@
         ],
         [
           "ch06.html",
-          4
+          3
         ],
         [
           "ch07.html",
@@ -81,14 +81,14 @@
           10
         ],
         [
-          "ch25.html",
+          "ch24.html",
           1
         ]
       ],
       "first": "ch11.html"
     },
     "两阶段相变": {
-      "total": 15,
+      "total": 14,
       "by_chapter": [
         [
           "ch03.html",
@@ -112,13 +112,13 @@
         ],
         [
           "ch19.html",
-          4
+          3
         ]
       ],
       "first": "ch03.html"
     },
     "相变": {
-      "total": 47,
+      "total": 46,
       "by_chapter": [
         [
           "ch01.html",
@@ -158,33 +158,29 @@
         ],
         [
           "ch17.html",
-          11
+          10
         ],
         [
           "ch18.html",
-          9
+          10
         ],
         [
           "ch19.html",
-          5
+          7
         ],
         [
           "ch20.html",
           3
         ],
         [
-          "ch21.html",
-          3
-        ],
-        [
-          "ch24.html",
+          "ch23.html",
           1
         ]
       ],
       "first": "ch01.html"
     },
     "拉普拉斯": {
-      "total": 31,
+      "total": 34,
       "by_chapter": [
         [
           "ch02.html",
@@ -196,7 +192,7 @@
         ],
         [
           "ch11.html",
-          3
+          4
         ],
         [
           "ch12.html",
@@ -212,7 +208,7 @@
         ],
         [
           "ch16.html",
-          5
+          6
         ],
         [
           "ch18.html",
@@ -220,21 +216,17 @@
         ],
         [
           "ch19.html",
-          4
+          6
         ],
         [
-          "ch20.html",
-          1
-        ],
-        [
-          "ch22.html",
+          "ch21.html",
           2
         ]
       ],
       "first": "ch02.html"
     },
     "生成拓扑": {
-      "total": 17,
+      "total": 16,
       "by_chapter": [
         [
           "ch05.html",
@@ -246,7 +238,7 @@
         ],
         [
           "ch07.html",
-          11
+          10
         ],
         [
           "ch08.html",
@@ -270,7 +262,7 @@
       "first": "ch09.html"
     },
     "超有限": {
-      "total": 33,
+      "total": 32,
       "by_chapter": [
         [
           "ch08.html",
@@ -278,10 +270,10 @@
         ],
         [
           "ch09.html",
-          31
+          30
         ],
         [
-          "ch20.html",
+          "ch19.html",
           1
         ]
       ],
@@ -303,11 +295,11 @@
       "first": null
     },
     "压缩": {
-      "total": 82,
+      "total": 83,
       "by_chapter": [
         [
           "ch02.html",
-          68
+          69
         ],
         [
           "ch04.html",
@@ -322,23 +314,23 @@
           3
         ],
         [
-          "ch20.html",
+          "ch19.html",
           1
         ],
         [
-          "ch21.html",
+          "ch20.html",
           4
+        ],
+        [
+          "ch21.html",
+          1
         ],
         [
           "ch22.html",
           1
         ],
         [
-          "ch23.html",
-          1
-        ],
-        [
-          "ch25.html",
+          "ch24.html",
           2
         ]
       ],
@@ -373,14 +365,14 @@
       "total": 1,
       "by_chapter": [
         [
-          "ch24.html",
+          "ch23.html",
           1
         ]
       ],
-      "first": "ch24.html"
+      "first": "ch23.html"
     },
     "证据等级": {
-      "total": 8,
+      "total": 7,
       "by_chapter": [
         [
           "ch03.html",
@@ -388,14 +380,14 @@
         ],
         [
           "ch15.html",
-          3
+          2
         ],
         [
-          "ch23.html",
+          "ch22.html",
           1
         ],
         [
-          "ch24.html",
+          "ch23.html",
           1
         ]
       ],
@@ -535,23 +527,19 @@
     },
     "ch19.html": {
       "numbers": [
-        1
-      ],
-      "continuous": true
-    },
-    "ch20.html": {
-      "numbers": [
+        1,
         1,
         2,
         3
       ],
-      "continuous": true
+      "continuous": false
     }
   },
   "A3_tables_defined": [
     "13.2",
-    "24.2",
-    "24.3"
+    "16.2",
+    "23.2",
+    "23.3"
   ],
   "A3_figures_defined": [
     "1.1",
@@ -572,14 +560,14 @@
     "18.4",
     "19.1",
     "19.2",
+    "19.3",
+    "19.4",
+    "19.5",
     "2.1",
     "20.1",
-    "20.2",
-    "20.3",
-    "21.1",
+    "22.1",
     "23.1",
-    "24.1",
-    "24.2",
+    "23.2",
     "3.1",
     "6.1",
     "7.1",
@@ -601,13 +589,13 @@
     "17.1",
     "18.1",
     "19.1",
+    "19.2",
     "2.1",
     "20.1",
+    "20.2",
     "21.1",
-    "21.2",
-    "22.1",
+    "23.1",
     "24.1",
-    "25.1",
     "3.1",
     "4.1",
     "4.2",
@@ -622,19 +610,19 @@
   "A3_figures_unreferenced": [],
   "A4_c_grade": [
     {
+      "chapter": "ch20.html",
+      "snippet": "（C 级）"
+    },
+    {
       "chapter": "ch21.html",
       "snippet": "（C 级）"
     },
     {
-      "chapter": "ch22.html",
+      "chapter": "ch21.html",
       "snippet": "（C 级）"
     },
     {
-      "chapter": "ch22.html",
-      "snippet": "（C 级）"
-    },
-    {
-      "chapter": "ch22.html",
+      "chapter": "ch21.html",
       "snippet": "（C 级）"
     }
   ],
@@ -654,8 +642,7 @@
       "ch20.html",
       "ch21.html",
       "ch22.html",
-      "ch23.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "11": [
       "ch07.html",
@@ -676,8 +663,8 @@
       "ch12.html",
       "ch14.html",
       "ch15.html",
-      "ch22.html",
-      "ch25.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "13": [
       "ch13.html"
@@ -690,8 +677,8 @@
       "ch13.html",
       "ch14.html",
       "ch15.html",
-      "ch23.html",
-      "ch25.html"
+      "ch22.html",
+      "ch24.html"
     ],
     "15": [
       "ch02.html",
@@ -701,10 +688,10 @@
       "ch13.html",
       "ch14.html",
       "ch15.html",
-      "ch20.html",
+      "ch19.html",
+      "ch21.html",
       "ch22.html",
-      "ch23.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "16": [
       "ch11.html",
@@ -718,7 +705,7 @@
       "ch16.html",
       "ch17.html",
       "ch18.html",
-      "ch24.html"
+      "ch23.html"
     ],
     "18": [
       "ch02.html",
@@ -743,25 +730,19 @@
       "ch17.html",
       "ch18.html",
       "ch19.html",
-      "ch20.html",
+      "ch21.html",
       "ch22.html",
-      "ch23.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "2": [
       "ch02.html",
       "ch05.html",
       "ch13.html",
-      "ch18.html"
+      "ch18.html",
+      "ch21.html",
+      "ch24.html"
     ],
     "20": [
-      "ch09.html",
-      "ch13.html",
-      "ch19.html",
-      "ch20.html",
-      "ch25.html"
-    ],
-    "21": [
       "ch03.html",
       "ch05.html",
       "ch06.html",
@@ -773,37 +754,38 @@
       "ch15.html",
       "ch16.html",
       "ch17.html",
-      "ch21.html",
-      "ch23.html",
-      "ch25.html"
+      "ch20.html",
+      "ch22.html",
+      "ch24.html"
     ],
-    "22": [
+    "21": [
       "ch05.html",
       "ch06.html",
       "ch08.html",
+      "ch11.html",
       "ch15.html",
+      "ch20.html",
       "ch21.html",
-      "ch22.html",
-      "ch25.html"
+      "ch24.html"
     ],
-    "23": [
+    "22": [
       "ch03.html",
       "ch11.html",
+      "ch17.html",
+      "ch21.html",
+      "ch22.html"
+    ],
+    "23": [
+      "ch09.html",
+      "ch10.html",
       "ch17.html",
       "ch22.html",
       "ch23.html"
     ],
     "24": [
-      "ch09.html",
-      "ch10.html",
-      "ch17.html",
-      "ch23.html",
-      "ch24.html"
-    ],
-    "25": [
       "ch05.html",
       "ch08.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "3": [
       "ch02.html",
@@ -814,10 +796,10 @@
       "ch14.html",
       "ch15.html",
       "ch19.html",
+      "ch20.html",
       "ch21.html",
-      "ch23.html",
-      "ch24.html",
-      "ch25.html"
+      "ch22.html",
+      "ch23.html"
     ],
     "4": [
       "ch03.html",
@@ -825,13 +807,15 @@
       "ch05.html",
       "ch10.html",
       "ch14.html",
-      "ch23.html"
+      "ch21.html",
+      "ch22.html"
     ],
     "5": [
       "ch04.html",
       "ch05.html",
       "ch16.html",
-      "ch25.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "6": [
       "ch06.html",
@@ -846,33 +830,41 @@
       "ch09.html",
       "ch10.html",
       "ch12.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "8": [
       "ch06.html",
       "ch07.html",
       "ch08.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "9": [
       "ch08.html",
       "ch09.html",
       "ch14.html",
       "ch17.html",
-      "ch25.html"
+      "ch24.html"
     ]
   },
   "A5_chapter_refs_invalid": [],
   "A5_section_refs": {
+    "0.00015625": [
+      "ch19.html"
+    ],
+    "0.001542": [
+      "ch19.html"
+    ],
     "0.01": [
-      "ch20.html"
+      "ch19.html"
     ],
     "0.03": [
-      "ch19.html",
-      "ch20.html"
+      "ch19.html"
     ],
     "0.05": [
       "ch03.html"
+    ],
+    "0.0796": [
+      "ch19.html"
     ],
     "0.0983": [
       "ch16.html"
@@ -881,8 +873,16 @@
       "ch03.html",
       "ch09.html",
       "ch13.html",
-      "ch19.html",
-      "ch20.html"
+      "ch19.html"
+    ],
+    "0.1013": [
+      "ch19.html"
+    ],
+    "0.10132": [
+      "ch19.html"
+    ],
+    "0.125": [
+      "ch19.html"
     ],
     "0.1910": [
       "ch18.html"
@@ -896,16 +896,23 @@
     ],
     "0.25": [
       "ch12.html",
-      "ch14.html"
+      "ch14.html",
+      "ch16.html"
     ],
     "0.251": [
       "ch12.html"
     ],
+    "0.33": [
+      "ch16.html"
+    ],
     "0.36": [
       "ch12.html"
     ],
-    "0.37": [
-      "ch20.html"
+    "0.38": [
+      "ch16.html"
+    ],
+    "0.382": [
+      "ch16.html"
     ],
     "0.4": [
       "ch20.html"
@@ -914,14 +921,13 @@
       "ch03.html",
       "ch16.html",
       "ch17.html",
-      "ch22.html"
+      "ch21.html"
     ],
     "0.50": [
       "ch06.html"
     ],
     "0.60": [
-      "ch12.html",
-      "ch20.html"
+      "ch12.html"
     ],
     "0.67": [
       "ch06.html"
@@ -933,7 +939,8 @@
       "ch18.html"
     ],
     "0.8": [
-      "ch03.html"
+      "ch03.html",
+      "ch20.html"
     ],
     "0.81": [
       "ch18.html"
@@ -945,7 +952,7 @@
       "ch12.html"
     ],
     "0.980": [
-      "ch20.html"
+      "ch19.html"
     ],
     "00000.10000": [
       "ch16.html"
@@ -956,11 +963,17 @@
     "00000.25002": [
       "ch16.html"
     ],
-    "1.000": [
+    "1.0": [
       "ch20.html"
     ],
+    "1.000": [
+      "ch19.html"
+    ],
+    "1.01": [
+      "ch16.html"
+    ],
     "1.04": [
-      "ch22.html"
+      "ch21.html"
     ],
     "1.1": [
       "ch01.html",
@@ -973,6 +986,9 @@
     "1.11": [
       "ch01.html"
     ],
+    "1.15": [
+      "ch19.html"
+    ],
     "1.155": [
       "ch14.html"
     ],
@@ -981,7 +997,7 @@
       "ch10.html"
     ],
     "1.265": [
-      "ch22.html"
+      "ch21.html"
     ],
     "1.3": [
       "ch01.html"
@@ -994,13 +1010,16 @@
     ],
     "1.369": [
       "ch14.html",
-      "ch22.html"
+      "ch21.html"
+    ],
+    "1.38": [
+      "ch16.html"
     ],
     "1.4": [
       "ch01.html"
     ],
     "1.41": [
-      "ch22.html"
+      "ch21.html"
     ],
     "1.5": [
       "ch01.html",
@@ -1009,11 +1028,14 @@
     "1.500": [
       "ch06.html"
     ],
+    "1.54": [
+      "ch11.html"
+    ],
     "1.6": [
       "ch01.html"
     ],
     "1.633": [
-      "ch22.html"
+      "ch21.html"
     ],
     "1.7": [
       "ch01.html",
@@ -1022,9 +1044,15 @@
     "1.8": [
       "ch01.html"
     ],
+    "1.89": [
+      "ch19.html"
+    ],
     "1.9": [
       "ch01.html",
       "ch12.html"
+    ],
+    "1.95": [
+      "ch19.html"
     ],
     "10.1": [
       "ch10.html"
@@ -1083,9 +1111,12 @@
     "11.12": [
       "ch11.html"
     ],
+    "11.13": [
+      "ch11.html"
+    ],
     "11.2": [
       "ch11.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "11.3": [
       "ch11.html"
@@ -1111,18 +1142,21 @@
     "11.9": [
       "ch11.html"
     ],
+    "113.4": [
+      "ch19.html"
+    ],
     "12.1": [
       "ch02.html",
       "ch04.html",
       "ch12.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "12.10": [
       "ch12.html"
     ],
     "12.11": [
       "ch12.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "12.12": [
       "ch12.html"
@@ -1156,12 +1190,12 @@
     "12.9": [
       "ch12.html"
     ],
-    "1280117113320.00": [
-      "ch20.html"
+    "1280117113101.861": [
+      "ch19.html"
     ],
     "1295.6": [
       "ch18.html",
-      "ch24.html"
+      "ch23.html"
     ],
     "13.1": [
       "ch13.html"
@@ -1197,7 +1231,7 @@
     ],
     "14.1": [
       "ch14.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "14.2": [
       "ch14.html"
@@ -1214,13 +1248,14 @@
     ],
     "14.6": [
       "ch14.html",
-      "ch22.html"
+      "ch21.html"
     ],
     "14.7": [
       "ch14.html"
     ],
     "15.1": [
-      "ch15.html"
+      "ch15.html",
+      "ch19.html"
     ],
     "15.2": [
       "ch15.html"
@@ -1248,16 +1283,15 @@
     ],
     "16.1": [
       "ch16.html",
-      "ch20.html",
-      "ch24.html",
-      "ch25.html"
+      "ch23.html",
+      "ch24.html"
     ],
     "16.10": [
       "ch16.html"
     ],
     "16.11": [
       "ch16.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "16.12": [
       "ch16.html"
@@ -1282,8 +1316,8 @@
     "16.7": [
       "ch13.html",
       "ch16.html",
-      "ch23.html",
-      "ch24.html"
+      "ch22.html",
+      "ch23.html"
     ],
     "16.8": [
       "ch16.html"
@@ -1291,19 +1325,18 @@
     "16.9": [
       "ch16.html"
     ],
-    "160171740.00": [
-      "ch20.html"
+    "160171712.731": [
+      "ch19.html"
     ],
     "17.1": [
       "ch17.html",
       "ch19.html",
-      "ch20.html",
-      "ch24.html",
-      "ch25.html"
+      "ch23.html",
+      "ch24.html"
     ],
     "17.10": [
       "ch17.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "17.11": [
       "ch17.html"
@@ -1335,8 +1368,7 @@
     "18.1": [
       "ch16.html",
       "ch18.html",
-      "ch20.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "18.10": [
       "ch18.html"
@@ -1353,20 +1385,18 @@
     "18.2": [
       "ch18.html",
       "ch19.html",
-      "ch20.html",
-      "ch24.html",
-      "ch25.html"
+      "ch23.html",
+      "ch24.html"
     ],
     "18.3": [
-      "ch18.html",
-      "ch20.html"
+      "ch18.html"
     ],
     "18.4": [
       "ch18.html"
     ],
     "18.5": [
       "ch18.html",
-      "ch24.html"
+      "ch23.html"
     ],
     "18.6": [
       "ch18.html",
@@ -1375,8 +1405,8 @@
     "18.7": [
       "ch13.html",
       "ch18.html",
-      "ch20.html",
-      "ch24.html"
+      "ch19.html",
+      "ch23.html"
     ],
     "18.8": [
       "ch18.html"
@@ -1390,16 +1420,51 @@
       "ch09.html",
       "ch13.html",
       "ch19.html",
-      "ch20.html",
-      "ch25.html"
+      "ch24.html"
     ],
-    "19.10": [
+    "19.11": [
+      "ch19.html"
+    ],
+    "19.12": [
+      "ch19.html"
+    ],
+    "19.13": [
+      "ch19.html"
+    ],
+    "19.14": [
+      "ch19.html"
+    ],
+    "19.15": [
+      "ch19.html"
+    ],
+    "19.16": [
+      "ch19.html"
+    ],
+    "19.17": [
+      "ch19.html"
+    ],
+    "19.18": [
+      "ch19.html"
+    ],
+    "19.19": [
       "ch19.html"
     ],
     "19.2": [
+      "ch09.html",
       "ch19.html",
-      "ch20.html",
-      "ch25.html"
+      "ch24.html"
+    ],
+    "19.20": [
+      "ch19.html"
+    ],
+    "19.21": [
+      "ch19.html"
+    ],
+    "19.22": [
+      "ch19.html"
+    ],
+    "19.23": [
+      "ch19.html"
     ],
     "19.3": [
       "ch19.html"
@@ -1430,7 +1495,8 @@
       "ch16.html"
     ],
     "2.1": [
-      "ch02.html"
+      "ch02.html",
+      "ch11.html"
     ],
     "2.10": [
       "ch02.html"
@@ -1463,42 +1529,39 @@
     "2.618": [
       "ch14.html"
     ],
+    "2.62": [
+      "ch16.html"
+    ],
     "2.7": [
       "ch02.html",
-      "ch23.html"
+      "ch22.html"
     ],
     "2.8": [
-      "ch02.html"
+      "ch02.html",
+      "ch19.html"
     ],
     "2.9": [
       "ch02.html"
     ],
     "20.1": [
-      "ch09.html",
       "ch19.html",
       "ch20.html",
-      "ch25.html"
-    ],
-    "20.10": [
-      "ch20.html"
-    ],
-    "20.11": [
-      "ch20.html"
-    ],
-    "20.12": [
-      "ch20.html"
+      "ch24.html"
     ],
     "20.2": [
+      "ch19.html",
       "ch20.html"
     ],
     "20.3": [
+      "ch19.html",
       "ch20.html"
     ],
     "20.4": [
       "ch20.html"
     ],
     "20.5": [
-      "ch20.html"
+      "ch20.html",
+      "ch21.html"
     ],
     "20.6": [
       "ch20.html"
@@ -1521,15 +1584,25 @@
     "21.1": [
       "ch21.html"
     ],
-    "21.2": [
+    "21.10": [
       "ch21.html"
+    ],
+    "21.2": [
+      "ch02.html",
+      "ch06.html",
+      "ch08.html",
+      "ch21.html",
+      "ch24.html"
     ],
     "21.3": [
       "ch10.html",
-      "ch21.html"
+      "ch21.html",
+      "ch24.html"
     ],
     "21.4": [
-      "ch21.html"
+      "ch06.html",
+      "ch21.html",
+      "ch24.html"
     ],
     "21.5": [
       "ch21.html",
@@ -1558,28 +1631,20 @@
       "ch22.html"
     ],
     "22.2": [
-      "ch02.html",
-      "ch06.html",
-      "ch08.html",
-      "ch22.html",
-      "ch25.html"
+      "ch22.html"
     ],
     "22.3": [
-      "ch22.html",
-      "ch25.html"
+      "ch22.html"
     ],
     "22.4": [
-      "ch06.html",
-      "ch22.html",
-      "ch25.html"
+      "ch22.html"
     ],
     "22.44952": [
       "ch14.html"
     ],
     "22.5": [
       "ch14.html",
-      "ch22.html",
-      "ch23.html"
+      "ch22.html"
     ],
     "22.6": [
       "ch22.html"
@@ -1597,6 +1662,7 @@
       "ch14.html"
     ],
     "23.1": [
+      "ch22.html",
       "ch23.html"
     ],
     "23.10": [
@@ -1609,6 +1675,7 @@
       "ch23.html"
     ],
     "23.4": [
+      "ch22.html",
       "ch23.html"
     ],
     "23.5": [
@@ -1632,9 +1699,6 @@
     "24.1": [
       "ch24.html"
     ],
-    "24.10": [
-      "ch24.html"
-    ],
     "24.2": [
       "ch24.html"
     ],
@@ -1654,39 +1718,18 @@
       "ch24.html"
     ],
     "24.8": [
+      "ch23.html",
       "ch24.html"
     ],
     "24.9": [
-      "ch24.html"
-    ],
-    "25.1": [
-      "ch25.html"
-    ],
-    "25.2": [
-      "ch25.html"
-    ],
-    "25.3": [
-      "ch25.html"
-    ],
-    "25.4": [
-      "ch25.html"
-    ],
-    "25.5": [
-      "ch25.html"
-    ],
-    "25.6": [
-      "ch25.html"
-    ],
-    "25.7": [
-      "ch25.html"
-    ],
-    "25.8": [
-      "ch25.html"
+      "ch23.html"
     ],
     "252.52": [
       "ch18.html"
     ],
     "3.00": [
+      "ch11.html",
+      "ch16.html",
       "ch18.html"
     ],
     "3.1": [
@@ -1694,7 +1737,8 @@
     ],
     "3.2": [
       "ch03.html",
-      "ch06.html"
+      "ch06.html",
+      "ch19.html"
     ],
     "3.3": [
       "ch03.html"
@@ -1707,17 +1751,21 @@
     ],
     "3.5": [
       "ch03.html",
-      "ch22.html"
+      "ch21.html"
     ],
     "3.6": [
-      "ch03.html"
+      "ch03.html",
+      "ch19.html"
+    ],
+    "3.62": [
+      "ch16.html"
     ],
     "3.7": [
       "ch03.html"
     ],
     "3.8": [
       "ch03.html",
-      "ch23.html"
+      "ch22.html"
     ],
     "3.85": [
       "ch19.html"
@@ -1726,16 +1774,19 @@
       "ch03.html"
     ],
     "3.92": [
-      "ch20.html"
+      "ch19.html"
     ],
     "302.50": [
       "ch18.html"
     ],
-    "320313180.00": [
-      "ch20.html"
+    "320313125.461": [
+      "ch19.html"
     ],
     "322.9": [
       "ch18.html"
+    ],
+    "35.8": [
+      "ch19.html"
     ],
     "35187.60": [
       "ch19.html"
@@ -1743,8 +1794,11 @@
     "39.9": [
       "ch18.html"
     ],
+    "4.00": [
+      "ch16.html"
+    ],
     "4.003": [
-      "ch24.html"
+      "ch23.html"
     ],
     "4.1": [
       "ch04.html"
@@ -1760,6 +1814,9 @@
     ],
     "4.4": [
       "ch04.html"
+    ],
+    "4.46": [
+      "ch11.html"
     ],
     "4.5": [
       "ch04.html"
@@ -1782,8 +1839,8 @@
     "4051.7": [
       "ch18.html"
     ],
-    "406610.00": [
-      "ch20.html"
+    "40663.181": [
+      "ch19.html"
     ],
     "4161.208": [
       "ch14.html"
@@ -1795,7 +1852,8 @@
       "ch05.html"
     ],
     "5.2": [
-      "ch05.html"
+      "ch05.html",
+      "ch19.html"
     ],
     "5.2361": [
       "ch18.html"
@@ -1804,7 +1862,8 @@
       "ch05.html"
     ],
     "5.4": [
-      "ch05.html"
+      "ch05.html",
+      "ch19.html"
     ],
     "5.5": [
       "ch05.html"
@@ -1813,13 +1872,14 @@
       "ch05.html"
     ],
     "5.7": [
-      "ch05.html"
+      "ch05.html",
+      "ch19.html"
     ],
     "5.8": [
       "ch05.html"
     ],
     "5186.3": [
-      "ch24.html"
+      "ch23.html"
     ],
     "52.5": [
       "ch18.html"
@@ -1835,7 +1895,7 @@
     ],
     "6.10": [
       "ch06.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "6.11": [
       "ch06.html"
@@ -1850,7 +1910,8 @@
       "ch06.html"
     ],
     "6.3": [
-      "ch06.html"
+      "ch06.html",
+      "ch19.html"
     ],
     "6.4": [
       "ch06.html"
@@ -1879,13 +1940,16 @@
     "6331.633": [
       "ch14.html"
     ],
+    "648.5": [
+      "ch19.html"
+    ],
     "670.16": [
       "ch06.html"
     ],
     "7.1": [
       "ch04.html",
       "ch07.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "7.10": [
       "ch07.html"
@@ -1896,7 +1960,7 @@
     "7.2": [
       "ch06.html",
       "ch07.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "7.3": [
       "ch07.html"
@@ -1937,7 +2001,7 @@
     "8.1": [
       "ch04.html",
       "ch08.html",
-      "ch25.html"
+      "ch24.html"
     ],
     "8.10": [
       "ch08.html"
@@ -1979,8 +2043,8 @@
     "800.0015425186": [
       "ch19.html"
     ],
-    "809920.00": [
-      "ch20.html"
+    "80996.371": [
+      "ch19.html"
     ],
     "8281.265": [
       "ch14.html"
@@ -2054,6 +2118,15 @@
     ]
   },
   "A6_cited": {
+    "Alon": [
+      "1986"
+    ],
+    "Cheeger": [
+      "1970"
+    ],
+    "Gershgorin": [
+      "1931"
+    ],
     "Kac": [
       "1966"
     ],
@@ -2066,6 +2139,9 @@
   },
   "A6_defined": {},
   "A6_cited_not_defined": [
+    "Alon",
+    "Cheeger",
+    "Gershgorin",
     "Kac",
     "Weyl",
     "Witt"

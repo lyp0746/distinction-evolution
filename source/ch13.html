@@ -8,7 +8,6 @@
 
 <p>第 11—12 章把“区分”写成了一个二次型 <span class="s">Q</span>，并指出五个领域共用它。但一个形式本身不会说话：要知道两个对象的内积，得把它还原成双线性形式；要知道系统有哪几个独立模式，得把它对角化；要给最坏情况定界，得把它写成极值；要把一个区域内的账与边界上的账对上，得换一套对象。四类问题，四套工具。</p>
 
-<p>本章的路线是：先给前三套工具各自的前提与用场（13.2—13.4），再引入第四套——外微分——并说明它为什么不是“另起炉灶”，而是同一个二次型在“边界”上的自然延伸（13.5）；然后用扰动不等式说明谱的稳定性不等于识别力（13.6），用一个同谱反例把这一点钉死（13.7）；最后把四套工具的适用边界、误差来源与数值对应收进一张表（13.8）。</p>
 
 <h3 id="sec13-2">13.2　极化：从二次型回到双线性</h3>
 
@@ -32,7 +31,7 @@
 <span class="s">λ<sub>k</sub>=min<sub>dim U=k</sub> max<sub>0≠u∈U</sub> ⟨u,Au⟩/⟨u,u⟩</span>，
 且 <span class="s">λ<sub>n</sub>=max<sub>u≠0</sub>⟨u,Au⟩/⟨u,u⟩</span>。</p>
 
-<p>变分写法的好处是它不需要知道特征向量：只要能在某个子空间上算比值，就能给特征值定界。第 18 章的 <span class="s">R</span> 的上下界、第 20 章把离散谱压到连续谱，都靠这一条。</p>
+<p>变分写法的好处是它不需要知道特征向量：只要能在某个子空间上算比值，就能给特征值定界。第 18 章的 <span class="s">R</span> 的上下界、第 19 章把离散谱压到连续谱，都靠这一条。</p>
 
 <table class="nat">
 <tr><th class="l">工具</th><th class="l">回答的问题</th><th class="l">前提</th><th class="l">混用的症状</th></tr>
@@ -76,7 +75,7 @@
 <tr><td class="l">高斯</td><td class="l">空间区域上的 3-形式积分</td><td class="l">边界上的 2-形式积分</td><td class="l">C1 + C3</td></tr>
 <tr><td class="l">斯托克斯</td><td class="l">曲面上的 2-形式积分</td><td class="l">边界上的 1-形式积分</td><td class="l">C1 + C3</td></tr>
 </table>
-<div class="datasrc"><b>性质：</b>冗余分析表。等级 B／乙（标准数学史共识）。</div>
+<div class="datasrc"><b>性质：</b>冗余分析表。等级 B／乙（标准数学史共识）。<b>出处：</b>四式统一为广义 Stokes 定理（<span class="s">∫<sub>∂M</sub>ω=∫<sub>M</sub>dω</span>）的表述见 Spivak，1965；微分形式的系统处理见 Lee，2013。<b>数据来源：</b>Spivak（1965）、Lee（2013）的标准表述（公开文献 A）；四式并列与“冗余”关系的整理为本书构造（C）。<b>注释：</b>本表只比较“左边与右边分别是什么”，不比较四式的历史先后。四式的“冗余”指它们都能由同一条定理推出，不是指其中某几条多余。</div>
 
 <p><b>这一节为什么放在这本书里。</b>因为本书的基本对象在图上就是二次型 <span class="s">Q(u)=u<sup>T</sup>Lu</span>，而 <span class="s">L=B<sup>T</sup>B</span>，其中 <span class="s">B</span> 是关联矩阵。把 <span class="s">B</span> 读成“离散的外微分”，<span class="s">B<sup>T</sup></span> 读成“离散的边界算子”，则 <span class="s">L=B<sup>T</sup>B</span> 正是 Hodge 拉普拉斯在 0-形式上的限制：<b>散度作用在梯度上</b>。于是第 16—18 章的全部谱结论，都可以被读成“离散 Hodge 理论的一个特例”；第 19 章把离散谱压到连续谱时，用的也正是这套 <span class="s">d</span> 与 <span class="s">∂</span> 的对应。外微分不是插进来的一章数学，它是把图上的二次型接到连续几何去的那座桥。</p>
 
@@ -84,7 +83,7 @@
 
 <h3 id="sec13-6">13.6　扰动：谱对“改一点”有多敏感</h3>
 
-<p><b>定理 13.4（Weyl 扰动不等式）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
+<p><b>定理 13.4（Weyl 扰动不等式，Weyl，1912）。</b>设 <span class="s">A,E</span> 实对称，<span class="s">λ<sub>k</sub>(A)</span>、<span class="s">λ<sub>k</sub>(A+E)</span> 升序，则
 <span class="s">max<sub>k</sub>|λ<sub>k</sub>(A+E)−λ<sub>k</sub>(A)| ≤ ‖E‖<sub>2</sub></span>。</p>
 
 <p>证明用变分写法：Rayleigh 商的差被 <span class="s">‖E‖</span> 控制，再对 <span class="s">k</span> 维子空间取极值即可。这条不等式是“谱是稳定的”这一直觉的定量版本：<b>改一条边，<span class="s">λ<sub>k</sub></span> 的变化不超过 2（因为 <span class="s">‖E‖<sub>2</sub>≤2</span>）</b>。</p>
@@ -128,6 +127,8 @@
 <h3 id="sec13-9">13.9　本章小结</h3>
 
 <p>四套工具各有前提：极化只要对称双线性，谱要对称（或正规），变分要可算比值，外微分要光滑可定向。混用会产生四类典型错误。四者不是并列的四把刀，而是一条链：<b>极化把形式还原成内积，谱把内积分解成模式，变分给模式排高低，外微分把模式接到边界上。</b>第 14 章换一个角度：不问形式能算什么，而问“谁能保住这个形式”。</p>
+
+<div class="note"><b>若这条判据错了，会看到什么：</b>若有实践能跳过极化直接上谱、而不多要结构，四件工具就不是一条链。</div>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：卷尺、水准、锤子、折尺各管一件事；拿水准去量长度，错的不是水准。</p></div>
 

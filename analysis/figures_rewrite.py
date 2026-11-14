@@ -86,9 +86,9 @@ Lams = np.array([40, 60, 80, 120, 160, 240, 320, 480, 640, 960, 1280, 1920, 2560
 cnt = [int(np.sum(e <= h * h * x)) for x in Lams]
 lat = [sum(1 for a in range(0, 60) for b in range(0, 60) if np.pi ** 2 * (a * a + b * b) <= x) for x in Lams]
 fig, ax = plt.subplots(figsize=(5.6, 3.2))
-ax.loglog(Lams, np.maximum(cnt, 1), "o-", color=C["blue"], label="网格计数（80×80）")
+ax.loglog(Lams, np.maximum(cnt, 1), "o-", color=C["blue"], label="网格计数（40×40）")
 ax.loglog(Lams, np.maximum(lat, 1), "s--", color=C["green"], label="格点精确计数")
-ax.loglog(Lams, Lams / 4.0, ":", color=C["red"], label=r"Weyl 主项 $\Lambda/4$")
+ax.loglog(Lams, Lams / (4 * np.pi), ":", color=C["red"], label=r"Weyl 主项 $\Lambda/(4\pi)$")
 ax.set_xlabel(r"$\Lambda$"); ax.set_ylabel(r"$N(\Lambda)$"); ax.legend(fontsize=7)
 ax.set_title("图 20.1　解锁计数的三层对照")
 save(fig, "fig-weyl-count.svg")

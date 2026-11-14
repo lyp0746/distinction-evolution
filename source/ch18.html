@@ -10,7 +10,9 @@
 
 
 
-<p><b>本章的路线。</b>本章把一个相变压成一个数 R；先定义、再证明 R=1 的判据，随后给九类图的闭式与两条界；中段处理同谱反例与三个经典量，末段收在六族实测、一个猜想与三个用法上。</p><h3 id="sec18-2">18.2　定义：R 与解锁序</h3>
+<p><b></p><p><b>〔技术〕完整路径</b>　以下小节起为技术／形式化内容。只走快速路径的读者可跳过带此标记的段落，直接看每节开头的加粗结论与章末“关键产出”框；本章其余带 〔技术〕 标记处同此。</p>
+
+<h3 id="sec18-2">18.2　定义：R 与解锁序</h3>
 
 <div class="define"><span class="bt">定义 18.1　谱各向异性与解锁序</span>
 设 <span class="s">G</span> 连通、<span class="s">|V|=n≥2</span>，<span class="s">λ<sub>2</sub>&gt;0</span>。定义
@@ -58,10 +60,10 @@
 
 <p>第 18.3 节给的界是 <span class="s">R≤nΔ·diam/2</span>，很松。若把图限制在<b>正则</b>族，可以两面夹住。</p>
 
-<p><b>命题 18.2（正则族的夹逼）。</b>设 <span class="s">G</span> 是 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，谱间隙 <span class="s">γ=λ<sub>2</sub></span>。则</p>
+<p><b>命题 18.2（正则族的夹逼）。</b>下界是 Alon–Boppana 型界（Alon，1986），上界是 Cheeger 型界的正则图版本（Cheeger，1970）。设 <span class="s">G</span> 是 <span class="s">d</span>-正则连通图，<span class="s">d≥3</span>，谱间隙 <span class="s">γ=λ<sub>2</sub></span>。则</p>
 <div class="eq"><span class="body"><math display="block"><mo>(</mo><mi>d</mi><mo>+</mo><mn>2</mn><mi>√</mi><mo>(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>)</mo><mo>/</mo><mo>(</mo><mi>d</mi><mo>−</mo><mn>2</mn><mi>√</mi><mo>(</mo><mi>d</mi><mo>−</mo><mn>1</mn><mo>)</mo><mo>)</mo><mo>≤</mo><mi mathvariant="normal">liminf</mi><mi>R</mi><mo>(</mo><mi>G</mi><mo>)</mo><mo>≤</mo><mn>2</mn><mi>d</mi><mo>/</mo><mi>γ</mi></math></span><span class="num">(18.2)</span></div>
 
-<p><b>依据。</b>上界：<span class="s">λ<sub>n</sub>≤2d</span>（Gershgorin）与 <span class="s">λ<sub>2</sub>=γ</span>，这是<b>上</b>界的来源。下界要动<b>两端</b>：Alon–Boppana 型结论（Nilli 1991）给出 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>，同时在谱的<b>另一端</b>给出 <span class="s">λ<sub>min</sub>(A)≤−2√(d−1)+o(1)</span>。由 <span class="s">L=dI−A</span>，<span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span>，而 <span class="s">λ<sub>n</sub>(L)=d−λ<sub>min</sub>(A)≥d+2√(d−1)−o(1)</span>；两者相除即得 (18.2)。〔已知，B／乙〕</p>
+<p><b>依据。</b>上界：<span class="s">λ<sub>n</sub>≤2d</span>（Gershgorin，1931）与 <span class="s">λ<sub>2</sub>=γ</span>，这是<b>上</b>界的来源。下界要动<b>两端</b>：Alon–Boppana 型结论（Nilli 1991）给出 <span class="s">λ<sub>2</sub>(A)≥2√(d−1)−o(1)</span>，同时在谱的<b>另一端</b>给出 <span class="s">λ<sub>min</sub>(A)≤−2√(d−1)+o(1)</span>。由 <span class="s">L=dI−A</span>，<span class="s">λ<sub>2</sub>(L)=d−λ<sub>2</sub>(A)≤d−2√(d−1)+o(1)</span>，而 <span class="s">λ<sub>n</sub>(L)=d−λ<sub>min</sub>(A)≥d+2√(d−1)−o(1)</span>；两者相除即得 (18.2)。〔已知，B／乙〕</p>
 
 <p><b>一条容易踩的坑。</b>把 Gershgorin 的 <span class="s">λ<sub>n</sub>≤2d</span> 当成等式用，会把下界写成 <span class="s">2d/(d−2√(d−1))</span>。但 <span class="s">λ<sub>n</sub>(L)=d−λ<sub>min</sub>(A)</span>，而 <span class="s">λ<sub>min</sub>(A)≥−d</span> 只对<b>二分图</b>取等；非二分时 <span class="s">λ<sub>n</sub></span> 最多到 <span class="s">d+2√(d−1)</span>，远小于 <span class="s">2d</span>。所以：<b>二分的正则族</b>下界是 <span class="s">2d/(d−2√(d−1))</span>（<span class="s">d→∞</span> 时 <span class="s">→2</span>），<b>非二分的正则族</b>下界是 (18.2) 里的 <span class="s">(d+2√(d−1))/(d−2√(d−1))</span>（<span class="s">d→∞</span> 时 <span class="s">→1</span>）。随机 <span class="s">d</span>-正则图几乎必然非二分，所以它落在低的那条上；确定性非二分 Ramanujan 图在每个固定度上都存在（§18 文献），它把低的那条钉住。</p>
 
@@ -106,7 +108,7 @@
 <table class="nat">
 <tr><th class="l">量</th><th class="l">定义</th><th class="l">与 R 的关系</th></tr>
 <tr><td class="l">直径 <span class="s">diam</span></td><td class="l">最长最短路</td><td class="l"><span class="s">λ<sub>2</sub>≥4/(n·diam) ⇒ R≤nΔ·diam/2</span></td></tr>
-<tr><td class="l">Cheeger 常数 <span class="s">h</span></td><td class="l">最小割比（割边数 ÷ 较小一侧顶点数）</td><td class="l"><span class="s">λ<sub>2</sub>/2≤h≤√(2λ<sub>2</sub>) ⇒ R≥λ<sub>n</sub>/√(2λ<sub>2</sub>)</span></td></tr>
+<tr><td class="l">Cheeger 常数 <span class="s">h</span>（Cheeger，1970）</td><td class="l">最小割比（割边数 ÷ 较小一侧顶点数）</td><td class="l"><span class="s">λ<sub>2</sub>/2≤h≤√(2λ<sub>2</sub>) ⇒ R≥λ<sub>n</sub>/√(2λ<sub>2</sub>)</span></td></tr>
 <tr><td class="l">谱间隙 <span class="s">γ</span></td><td class="l"><span class="s">λ<sub>2</sub></span></td><td class="l">正则族：<span class="s">R∈[2, 2d/γ]</span>（命题 18.2）</td></tr>
 </table>
 <p>三行给出三种不同的定量直觉：直径给上界（越瘦长 <span class="s">R</span> 越大）、Cheeger 给下界（有瓶颈则 <span class="s">λ<sub>2</sub></span> 小）、谱间隙给正则族的夹逼。<b>三者合起来说明：<span class="s">R</span> 度量的是“瘦长 × 有瓶颈”，不是“规模大”。</b></p>
@@ -159,7 +161,7 @@
 
 <p>把猜想写成这样，它就成了一个可攻的具体问题（附录 D 的 O2）：<b>对 <span class="s">λ<sub>2</sub>&lt;2</span> 的连通图，证明 <span class="s">λ<sub>n</sub>≤nλ<sub>2</sub></span>。</b>这类“分段证明”的写法，是本书希望示范的：一个猜想若能被切成“已证的部分 + 待证的部分”，它就比一句口号有用。</p>
 
-<img class="fig" src="assets/svg/fig-degree-vs-R.svg" alt="图 18.4　树的度数异质性与 R">
+<img class="fig" style="width:88%" src="assets/svg/fig-degree-vs-R.svg" alt="图 18.4　树的度数异质性与 R">
 <div class="cap"><b>图 18.4　树的度数异质性与 R</b>　n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</div>
 <div class="box"><p><strong>读法：</strong>n≤10 的全部无标号树（23+47+106 棵）。横轴是度极差，纵轴是 R：两者并不单调，说明 R 的主因是谱间隙而不是度数异质性。</p></div>
 <h3 id="sec18-12">18.12　R 的三个用法与一个误用</h3>
@@ -178,9 +180,13 @@
 
 <p>误用的教训是：<b><span class="s">R</span> 是“标量”，不是“指纹”。</b>凡是把标量当指纹的，都会在同谱反例上翻车——离散侧有 6 顶点两图，连续侧有 Sunada 的等谱流形，两边都为这条误用准备了反例。</p>
 
+<p><b>文献位置。</b>用特征值给连通性定量，最近的前身是阿隆（1986）对 expander 的处理；本书把它从「连通速度」改读成「相变宽度」。</p>
+
 <h3 id="sec18-13">18.13　本章小结</h3>
 
 <p><span class="s">R=λ<sub>n</sub>/λ<sub>2</sub></span> 把两阶段相变压成一个数（18.1），九类图有闭式（表 18.1），<span class="s">R=1</span> 只发生在完全图（18.2），而谱相同不代表结构相同（18.5）。第 19 章把这个数推向连续。</p>
+
+<div class="note"><b>若这条判据错了，会看到什么：</b>若两类图的 R 相同而相变宽度不同，闭式就没覆盖住。</div>
 
 <div class="box box-takeaway"><p><b>一句话带走</b>：相变的宽度是一个可以算的数，但它算的是“结构有多各向异性”，不是“结构是什么”。</p></div>
 
@@ -190,6 +196,7 @@
 <p>★ Nilli, A. (1991). On the second eigenvalue of a graph. Discrete Mathematics 91, 207–210.</p>
 <p class="refh">延伸阅读</p>
 <p>Alon, N. (1986). Eigenvalues and expanders. Combinatorica 6, 83–96.</p>
+<p>Gershgorin, S. A. (1931). Über die Abgrenzung der Eigenwerte einer Matrix. <em>Izv. Akad. Nauk SSSR</em> 7: 749–754.</p>
 <p>Cheeger, J. (1970). A lower bound for the smallest eigenvalue of the Laplacian. In Problems in Analysis, Princeton University Press.</p>
 <p>Alon, N., &amp; Milman, V. D. (1985). λ₁, isoperimetric inequalities for graphs, and superconcentrators. Journal of Combinatorial Theory B 38, 73–88.</p>
 <p>Lubotzky, A., Phillips, R., &amp; Sarnak, P. (1988). Ramanujan graphs. Combinatorica 8, 261–277.</p>
