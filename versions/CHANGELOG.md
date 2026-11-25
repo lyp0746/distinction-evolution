@@ -448,3 +448,13 @@
 - 第 19 章（网格上的 R）与第 20 章（连续侧密度）合并为第 19 章「两次连续极限：从网格上的 R 到流形上的密度」，约 1.1 万字、21 节；新增合并小结 19.21。
 - 章数 25 → 24；原 21—25 章顺移为 20—24；图 20.1—20.3 → 图 19.3—19.5、表 20.1 → 表 19.2；parts.json 一次改完。
 - 页数 299 → 296。
+
+## 2026-11-25　工作区清理（断舍离）
+
+派生件与旧快照不留副本；版本靠本文件与 Zenodo 记录追溯。本次删除：
+
+- `output/book-ereader.html`
+- `output/book.html`
+
+重建：`build_book.py --pdf` / `--ereader --pdf`、`build_markdown.py`、`build_epub.py`；
+论文用 `generate_publication_suite.py`。
