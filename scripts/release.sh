@@ -51,6 +51,7 @@ PY
 fi
 copy assets/svg/cover.svg     "$REL/cover.svg"
 copy assets/distinction-evolution-explorer.html  "$REL/distinction-evolution-explorer.html"
+copy assets/distinction-evolution-reader.html    "$REL/distinction-evolution-reader.html"
 
 copy docs/READERS.md          "$REL/README.md"
 copy docs/RELEASE-NOTES.md    "$REL/修订说明.md"

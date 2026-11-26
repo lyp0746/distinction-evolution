@@ -400,7 +400,6 @@ def build_part_page(part, idx=1, total=1):
     title = __import__("re").sub(r"^第[一二三四五六七八九十]+部分[　 ]*", "", part["part"])
     intro = part.get("intro") or part.get("desc") or ""
     return (f'<div class="part-page">'
-            f'<img class="part-art" src="assets/svg/part-{idx:02d}.svg" alt="">'
             f'<div class="part-body">'
             f'<div class="part-big">{idx:02d}</div>'
             f'<div class="part-kicker">PART {idx:02d} / {total:02d}</div>'
