@@ -75,6 +75,24 @@
 正文与图件 CC BY 4.0；脚本 MIT。
 
 <!-- viz-console -->
+## 可视化阅读台 ｜ Reading console
+
+这一件配了两个**离线单文件**：双击就能开，断网可用，零外部依赖、零服务器、零 API 账单。
+Two offline single-file entries ship with this item. Double-click and it runs — no network, no server, no API bill.
+
+| 入口 | 文件 | 体积 | 里面是什么 |
+|---|---|---|---|
+| 阅读页 | `assets/distinction-evolution-reader.html` | 2239 KB | 三档切换（**骨架**＝只留标题与高亮框／**阅读**＝正文全显、表与证据折叠／**全展**＝全部展开，可用 Ctrl+F 搜全书表格）＋ **24 张章末审问卡** |
+| 结构地图 | `assets/distinction-evolution-explorer.html` | 1608 KB | 章际引用的 3D 螺旋、部 × 部矩阵、附录原表台账（按表号/章/单元格搜索）、图件账（SVG 内联，不缺图） |
+
+- **审问卡**四行全部原文摘录，一个字不增写：`带走`（一句话带走／本章小结末句）／`打脸条件`（表 F.1、附录登记簿、或「反例与边界」节首段）／`封顶`（本章标过的 A/B/C 等级，没有就不印）／`动手`（【动手试试】）。右上角一键复制，粘到自己的 AI 里当严苛伴读。
+  The audit card quotes four things verbatim — takeaway, falsification condition, evidence ceiling, hands-on prompt — and offers a one-click copy for your own AI, with the discipline written into the clipboard.
+- **两页互跳**：阅读页顶部「结构地图 →」，结构地图工具栏「正文阅读页 →」，螺旋上点第 N 章直接落到 `#chN`。
+- **已验证**：`375px` 窄屏与桌面均无横向溢出；0 个 JS 报错；三档切换 10–40 ms（纯 CSS class，不遍历 DOM）。
+- 本件规模：正文 **24 章**；审问卡 **24 张**。
+  Size: **24 chapters**, **24** audit cards.
+
+
 ## 可视化阅读台 / Reading console
 
 `区分的语言` 每件都有两个入口，**离线单文件、断网可开、零外部依赖**：
