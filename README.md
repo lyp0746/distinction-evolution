@@ -73,3 +73,18 @@
 ## 许可
 
 正文与图件 CC BY 4.0；脚本 MIT。
+
+<!-- viz-console -->
+## 可视化阅读台 / Reading console
+
+`区分的语言` 每件都有两个入口，**离线单文件、断网可开、零外部依赖**：
+
+| 入口 | 文件 | 里面是什么 |
+|---|---|---|
+| 阅读页 | [`assets/distinction-evolution-reader.html`](assets/distinction-evolution-reader.html) | 三档切换（骨架／阅读／全展）＋ 每章末尾「审问卡」（带走／打脸条件／封顶／动手，四行全部原文摘录，可一键复制给自己的 AI 当严苛伴读） |
+| 结构地图 | [`assets/distinction-evolution-explorer.html`](assets/distinction-evolution-explorer.html) | 章际引用的 3D 螺旋、部 × 部矩阵、附录原表台账（可搜）、图件账 |
+
+两个页面顶部互跳；`375px` 窄屏与桌面都验过，0 外部请求。
+
+Every item ships two offline single-file entries: a **reading console** (three density levels + a per-chapter audit card quoting the text verbatim) and a **structure map** (chapter-citation spiral, part × part matrix, appendix ledgers). No server, no external requests — double-click and it runs.
+
