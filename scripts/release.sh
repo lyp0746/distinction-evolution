@@ -50,6 +50,8 @@ print('  + %s（Markdown 打包）' % os.path.basename(out))
 PY
 fi
 copy assets/svg/cover.svg     "$REL/cover.svg"
+copy assets/distinction-evolution-explorer.html  "$REL/distinction-evolution-explorer.html"
+
 copy docs/READERS.md          "$REL/README.md"
 copy docs/RELEASE-NOTES.md    "$REL/修订说明.md"
 copy docs/DATA-GAPS.md        "$REL/数据缺口清单.md"
